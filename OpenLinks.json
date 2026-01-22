@@ -1,7 +1,7 @@
 {
 	"title": "Ali Imperiale",
 	"description": "Sex Education without the confusion. Weekly facts, myths, and deep dives.",
-	"url_base": "https://aliimperiale.com",
+	"url_base": "https://gabrieldancause.github.io/aliimperiale",
 	"theme": "brutalism",
 	"footer": "Made with ❤️ by Ali Imperiale",
 	"profile":
@@ -16,17 +16,17 @@
 		{
 			"name": "Watch the Latest Videos",
 			"url": "[Insert YouTube Link]",
-			"icon": "/icons/YouTube.svg"
+			"icon": "icons/YouTube.svg"
 		},
 		{
 			"name": "Daily Facts",
 			"url": "[Insert TikTok Link]",
-			"icon": "/icons/TikTok.svg"
+			"icon": "icons/TikTok.svg"
 		},
 		{
 			"name": "Work With Us",
 			"url": "mailto:contact@aliimperiale.com",
-			"icon": "/icons/Mail.svg"
+			"icon": "icons/Mail.svg"
 		}
 	]
 }
