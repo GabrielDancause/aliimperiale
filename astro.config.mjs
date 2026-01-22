@@ -6,8 +6,8 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://aliimperiale.com',
-  base: '/',
+  site: 'https://gabrieldancause.github.io',
+  base: '/aliimperiale',
   vite: {
     plugins: [tailwindcss()]
   }
