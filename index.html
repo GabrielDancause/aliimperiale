@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali Imperiale — Sex, Relationships & Other Fun Stuff</title>
+  <meta name="description" content="I'm Ali! Sex educator in training chatting about relationships, sexuality, and all the things we're curious about.">
+  <meta property="og:title" content="Ali Imperiale">
+  <meta property="og:description" content="Casual chats about sex, relationships & other fun stuff.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* Brand Fonts */
+    @font-face {
+      font-family: 'New Standard';
+      src: url('fonts/NewStandard-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'The Bloomington';
+      src: url('fonts/TheBloomington-Script.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Brand Color Palette
+       Dark Green:    #2E3E24
+       Plum:          #422626
+       Light Ivory:   #FAF8EB
+       Golden Olive:  #AD9846
+       Grey:          #C6C8BB
+    */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      min-height: 100vh;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      text-align: center;
+      padding: 48px 20px 52px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+
+    .logo {
+      width: 280px;
+      max-width: 70%;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+
+    .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #AD9846;
+      margin-bottom: 18px;
+    }
+
+    .hero .tagline {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.05rem;
+      color: #C6C8BB;
+      letter-spacing: 0.02em;
+      max-width: 360px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Social Icons Row */
+    .social-icons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(173, 152, 70, 0.2);
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+
+    .social-icons a:hover {
+      background: rgba(173, 152, 70, 0.4);
+      transform: scale(1.1);
+    }
+
+    .social-icons a svg {
+      width: 16px;
+      height: 16px;
+      fill: #C6C8BB;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: #2E3E24;
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    /* Links Section */
+    .links-section {
+      padding: 24px 0 0;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 15px 18px;
+      text-decoration: none;
+      color: #2E3E24;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.06);
+    }
+
+    .link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(46, 62, 36, 0.1);
+    }
+
+    .link-card:active {
+      transform: translateY(0);
+    }
+
+    .link-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-right: 14px;
+    }
+
+    .link-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: #ffffff;
+    }
+
+    .link-icon.youtube { background: #2E3E24; }
+    .link-icon.patreon { background: #422626; }
+    .link-icon.facebook { background: #2E3E24; }
+    .link-icon.tiktok { background: #422626; }
+    .link-icon.instagram { background: #AD9846; }
+    .link-icon.email { background: #C6C8BB; }
+    .link-icon.email svg { fill: #2E3E24; }
+
+    .link-text {
+      flex: 1;
+    }
+
+    .link-text .title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 1px;
+      color: #2E3E24;
+    }
+
+    .link-text .subtitle {
+      font-size: 0.82rem;
+      color: #8a8a7a;
+      font-weight: 400;
+    }
+
+    .link-arrow {
+      color: #C6C8BB;
+      margin-left: 10px;
+      flex-shrink: 0;
+    }
+
+    /* Videos Section */
+    .videos-section {
+      padding: 44px 0 0;
+    }
+
+    .video-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .video-card {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.06);
+    }
+
+    .video-card .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .video-card .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-card .video-info {
+      padding: 13px 16px;
+    }
+
+    .video-card .video-info .video-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #2E3E24;
+      line-height: 1.4;
+    }
+
+    .more-btn {
+      display: block;
+      text-align: center;
+      margin-top: 16px;
+      padding: 13px 24px;
+      background: #2E3E24;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #FAF8EB;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.15s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .more-btn:hover {
+      background: #3a5030;
+    }
+
+    /* Books Section */
+    .books-section {
+      padding: 44px 0 0;
+    }
+
+    .book-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 22px 22px;
+      box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.06);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .book-card + .book-card {
+      margin-top: 14px;
+    }
+
+    .book-cover {
+      width: 90px;
+      height: 132px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .book-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .book-info .book-title {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #2E3E24;
+      margin-bottom: 2px;
+      line-height: 1.3;
+    }
+
+    .book-info .book-author {
+      font-size: 0.8rem;
+      color: #AD9846;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .book-info .book-review {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: #555549;
+    }
+
+    .book-info .book-tag {
+      display: inline-block;
+      background: #422626;
+      color: #FAF8EB;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-top: 10px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 480px) {
+      .book-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .book-cover {
+        width: 100px;
+        height: 148px;
+      }
+    }
+
+    /* Blog Section on Homepage */
+    .blog-section {
+      padding: 44px 0 0;
+    }
+
+    .blog-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .blog-preview-card {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #2E3E24;
+      box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .blog-preview-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(46, 62, 36, 0.1);
+    }
+
+    .blog-preview-card .blog-thumb {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .blog-preview-card .blog-preview-info {
+      padding: 12px 16px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .blog-preview-card .blog-preview-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #2E3E24;
+      margin-bottom: 3px;
+    }
+
+    .blog-preview-card .blog-preview-date {
+      font-size: 0.75rem;
+      color: #AD9846;
+    }
+
+    @media (max-width: 480px) {
+      .blog-preview-card .blog-thumb {
+        width: 90px;
+        height: 68px;
+      }
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 44px 0 0;
+    }
+
+    .about {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 30px 26px;
+      box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.06);
+      position: relative;
+    }
+
+    .about .flower-accent {
+      position: absolute;
+      top: -18px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      opacity: 0.15;
+    }
+
+    .about h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 14px;
+      color: #2E3E24;
+    }
+
+    .about p {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: #555549;
+      margin-bottom: 12px;
+    }
+
+    .about p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .about .fun-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .about .tag {
+      display: inline-block;
+      background: #FAF8EB;
+      color: #2E3E24;
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(46, 62, 36, 0.1);
+    }
+
+    /* Divider */
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: #AD9846;
+      margin: 44px auto 0;
+      border-radius: 1px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 36px 20px 48px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #C6C8BB;
+    }
+
+    .footer a {
+      color: #AD9846;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .hero {
+        padding: 36px 16px 44px;
+      }
+
+      .logo {
+        width: 240px;
+      }
+
+      .avatar {
+        width: 110px;
+        height: 110px;
+      }
+
+      .hero .tagline {
+        font-size: 0.95rem;
+      }
+
+      .link-card {
+        padding: 13px 14px;
+      }
+
+      .link-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+      }
+
+      .link-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .about h2 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img class="logo" src="logo-beige.png" alt="Ali Imperiale" width="280">
+    <br>
+    <img class="avatar" src="avatar-pro.jpg" alt="Ali Imperiale" width="130" height="130">
+    <p class="tagline">Casual chats about sex, relationships<br>& other fun stuff</p>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener" aria-label="Patreon">
+        <svg viewBox="0 0 24 24"><path d="M14.82 2.41c3.96 0 7.18 3.24 7.18 7.21 0 3.96-3.22 7.18-7.18 7.18-3.97 0-7.21-3.22-7.21-7.18 0-3.97 3.24-7.21 7.21-7.21M2 21.6h3.5V2.41H2V21.6z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Links -->
+  <div class="container">
+    <div class="links-section">
+      <div class="links">
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon youtube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <div class="link-text">
+            <div class="title">YouTube</div>
+            <div class="subtitle">Casual chats about sex & relationships</div>
+          </div>
+          <div class="link-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </a>
+
+        <!-- Patreon -->
+        <a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon patreon">
+            <svg viewBox="0 0 24 24"><path d="M14.82 2.41c3.96 0 7.18 3.24 7.18 7.21 0 3.96-3.22 7.18-7.18 7.18-3.97 0-7.21-3.22-7.21-7.18 0-3.97 3.24-7.21 7.21-7.21M2 21.6h3.5V2.41H2V21.6z"/></svg>
+          </div>
+          <div class="link-text">
+            <div class="title">Patreon</div>
+            <div class="subtitle">Let's get more personal</div>
+          </div>
+          <div class="link-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </div>
+          <div class="link-text">
+            <div class="title">Facebook</div>
+            <div class="subtitle">Watch more videos</div>
+          </div>
+          <div class="link-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon tiktok">
+            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </div>
+          <div class="link-text">
+            <div class="title">TikTok</div>
+            <div class="subtitle">Follow me on TikTok</div>
+          </div>
+          <div class="link-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </div>
+          <div class="link-text">
+            <div class="title">Instagram</div>
+            <div class="subtitle">See more of me</div>
+          </div>
+          <div class="link-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:ali@aliimperiale.com" class="link-card">
+          <div class="link-icon email">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#2E3E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <polyline points="22,6 12,13 2,6" stroke="#2E3E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="link-text">
+            <div class="title">Business Inquiries</div>
+            <div class="subtitle">ali@aliimperiale.com</div>
+          </div>
+          <div class="link-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Videos -->
+    <div class="videos-section">
+      <h2 class="section-title">Latest Videos</h2>
+      <div class="video-grid">
+
+        <div class="video-card">
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/ZnOK6pria_g" title="I Tried a Happy Ending from a MAN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <div class="video-title">I Tried a "Happy Ending" from a MAN | Here's What No One Talks About</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/5qObkip4q7U" title="Do Women Really Need Emotional Connection for Sex?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <div class="video-title">Do Women Really Need Emotional Connection for Sex?</div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/WkdayyYzIDE" title="Cheating Isn't What You Think" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <div class="video-title">Cheating Isn't What You Think — Here's Why It Happens</div>
+          </div>
+        </div>
+
+      </div>
+      <a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" class="more-btn">See all videos on YouTube &rarr;</a>
+    </div>
+
+    <!-- Books -->
+    <div class="books-section">
+      <h2 class="section-title">My Sexy Reads</h2>
+
+      <div class="book-card">
+        <img class="book-cover" src="https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_UF1000,1000_QL80_.jpg" alt="She Comes First book cover" width="90" height="132" loading="lazy">
+        <div class="book-info">
+          <div class="book-title">She Comes First</div>
+          <div class="book-author">by Ian Kerner, PhD</div>
+          <p class="book-review">This is a book I think every man should read &mdash; but honestly, as a woman, I learned so much about myself too. It's easily digestible, incredibly descriptive, and refreshingly clear when it comes to pleasure. If you or your partner are struggling with oral sex or just want to be more attentive, I can't recommend this enough. It completely changed how I think about intimacy.</p>
+          <span class="book-tag">Must Read</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Preview -->
+    <div class="blog-section">
+      <h2 class="section-title">From the Blog</h2>
+      <div class="blog-preview">
+
+        <a href="blog/cheating-isnt-what-you-think.html" class="blog-preview-card">
+          <img class="blog-thumb" src="https://i3.ytimg.com/vi/WkdayyYzIDE/mqdefault.jpg" alt="" width="120" height="80" loading="lazy">
+          <div class="blog-preview-info">
+            <div class="blog-preview-title">Cheating Isn't What You Think &mdash; Here's Why It Happens</div>
+            <div class="blog-preview-date">January 11, 2026</div>
+          </div>
+        </a>
+
+        <a href="blog/do-women-need-emotional-connection-for-sex.html" class="blog-preview-card">
+          <img class="blog-thumb" src="https://i3.ytimg.com/vi/5qObkip4q7U/mqdefault.jpg" alt="" width="120" height="80" loading="lazy">
+          <div class="blog-preview-info">
+            <div class="blog-preview-title">Do Women Really Need Emotional Connection for Sex?</div>
+            <div class="blog-preview-date">February 4, 2026</div>
+          </div>
+        </a>
+
+        <a href="blog/lets-talk-about-feet.html" class="blog-preview-card">
+          <img class="blog-thumb" src="https://i3.ytimg.com/vi/zmQ7WfVRyEc/mqdefault.jpg" alt="" width="120" height="80" loading="lazy">
+          <div class="blog-preview-info">
+            <div class="blog-preview-title">Let's Talk About Feet &mdash; The Most Popular Fetish in the World</div>
+            <div class="blog-preview-date">January 7, 2026</div>
+          </div>
+        </a>
+
+      </div>
+      <a href="blog/" class="more-btn" style="margin-top: 16px;">Read all articles &rarr;</a>
+    </div>
+
+    <!-- About -->
+    <div class="about-section">
+      <div class="about">
+        <img class="flower-accent" src="icon-flower.png" alt="" aria-hidden="true" width="50" height="50">
+        <h2>Hey, I'm Ali!</h2>
+        <p>I'm a thirty-something Canadian nomad who traded the cold for a life of travel, curiosity, and way too many conversations about sex. I started my YouTube channel in 2022 thinking I'd talk about cooking and travel — but it quickly turned into casual, honest chats about sex, relationships, and all the stuff we're secretly curious about.</p>
+        <p>Think of me as that friend who has some experience and is genuinely open to sharing and talking about the weird, fun, and sometimes awkward side of intimacy. I'm a sex educator in training, and my goal is to make these topics feel normal, approachable, and a little bit funny.</p>
+        <p>When I'm not in front of a camera, you'll probably find me working out, cooking something delicious, or having a minor existential crisis (it happens to the best of us).</p>
+        <div class="fun-facts">
+          <span class="tag">&#127464;&#127462; Qu&eacute;b&eacute;coise</span>
+          <span class="tag">&#127758; Digital Nomad</span>
+          <span class="tag">&#128170; Training Fitness</span>
+          <span class="tag">&#127859; Home Cook</span>
+          <span class="tag">&#127891; Sex Ed Student</span>
+          <span class="tag">&#128172; EN / FR / ES</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2026 Ali Imperiale &middot; <a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></p>
+  </div>
+
+</body>
+</html>

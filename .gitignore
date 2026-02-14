@@ -1,0 +1,18 @@
+# Source/working files (not part of the website)
+*.zip
+IMG_9936 Copy.JPG
+*.xml
+.DS_Store
+.claude/
+
+# Raw brand assets (keep originals locally, not in repo)
+brand-assets/
+brand-guidelines/
+social-media/
+
+# Source font files (woff2 versions are in /fonts/)
+fonts/bloomington/
+fonts/new-standard/
+
+# Old avatar
+avatar.jpg

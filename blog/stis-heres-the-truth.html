@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Get Asked About STIs All the Time — So Here's the Truth | Ali Imperiale</title>
+    <meta name="description" content="Let's break down the stigma around STIs, unpack the biggest misconceptions, and talk about why getting an infection is not a moral failure.">
+    <meta name="author" content="Ali Imperiale">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'New Standard';
+            src: url('../fonts/NewStandard-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'The Bloomington';
+            src: url('../fonts/TheBloomington-Script.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FAF8EB;
+            color: #2E3E24;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px 24px;
+        }
+
+        nav .logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #2E3E24;
+            transition: color 0.2s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: #AD9846;
+        }
+
+        /* HEADER */
+        .post-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 24px;
+        }
+
+        .post-header .tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #AD9846;
+            margin-bottom: 16px;
+        }
+
+        .post-header h1 {
+            font-family: 'New Standard', Georgia, serif;
+            font-size: 40px;
+            line-height: 1.2;
+            font-weight: normal;
+            color: #422626;
+            margin-bottom: 16px;
+        }
+
+        .post-header .date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            color: #C6C8BB;
+            letter-spacing: 0.04em;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background-color: #AD9846;
+            margin: 36px auto;
+            border: none;
+        }
+
+        /* VIDEO EMBED */
+        .video-container {
+            max-width: 720px;
+            margin: 0 auto 40px;
+            padding: 0 24px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 24px rgba(46, 62, 36, 0.10);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* ARTICLE */
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px 60px;
+        }
+
+        article p {
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        article h2 {
+            font-family: 'New Standard', Georgia, serif;
+            font-size: 26px;
+            font-weight: normal;
+            color: #422626;
+            margin-top: 44px;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        article h3 {
+            font-family: 'New Standard', Georgia, serif;
+            font-size: 21px;
+            font-weight: normal;
+            color: #422626;
+            margin-top: 36px;
+            margin-bottom: 12px;
+        }
+
+        article strong {
+            font-weight: 600;
+        }
+
+        article em {
+            font-style: italic;
+        }
+
+        .decorative-text {
+            font-family: 'The Bloomington', cursive;
+            font-size: 32px;
+            color: #AD9846;
+        }
+
+        .pull-quote {
+            border-left: 3px solid #AD9846;
+            padding: 8px 0 8px 24px;
+            margin: 36px 0;
+            font-size: 19px;
+            font-weight: 300;
+            font-style: italic;
+            color: #422626;
+            line-height: 1.65;
+        }
+
+        /* CTA */
+        .cta-section {
+            background-color: #2E3E24;
+            border-radius: 8px;
+            padding: 40px 36px;
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .cta-section .cta-decorative {
+            font-family: 'The Bloomington', cursive;
+            font-size: 36px;
+            color: #AD9846;
+            margin-bottom: 8px;
+        }
+
+        .cta-section h3 {
+            font-family: 'New Standard', Georgia, serif;
+            font-size: 24px;
+            color: #FAF8EB;
+            margin: 0 0 12px;
+        }
+
+        .cta-section p {
+            color: #C6C8BB;
+            font-size: 15px;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .cta-section .btn {
+            display: inline-block;
+            background-color: #AD9846;
+            color: #FAF8EB;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-section .btn:hover {
+            background-color: #9a8740;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid #e4e2d4;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #C6C8BB;
+            letter-spacing: 0.04em;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .post-header h1 {
+                font-size: 28px;
+            }
+
+            article h2 {
+                font-size: 22px;
+            }
+
+            article {
+                font-size: 16px;
+            }
+
+            .cta-section {
+                padding: 32px 24px;
+            }
+
+            nav {
+                padding: 16px 20px;
+            }
+
+            nav .logo img {
+                height: 40px;
+            }
+
+            nav .nav-links {
+                gap: 20px;
+            }
+
+            nav .nav-links a {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="/" class="logo">
+            <img src="../logo-green.png" alt="Ali Imperiale">
+        </a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- POST HEADER -->
+    <header class="post-header">
+        <p class="tag">Sexual Health</p>
+        <h1>I Get Asked About STIs All the Time &mdash; So Here&rsquo;s the Truth</h1>
+        <p class="date">January 15, 2026</p>
+    </header>
+
+    <hr class="divider">
+
+    <!-- VIDEO -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/6_fJbYiVtoM"
+                title="I Get Asked About STIs All the Time | So Here's the Truth — Ali Imperiale"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+            ></iframe>
+        </div>
+    </div>
+
+    <!-- ARTICLE -->
+    <article>
+
+        <p>
+            If you spend any amount of time talking openly about sex on the internet, there is one topic that will land in your inbox, your comments, and your DMs more than almost anything else: STIs. People want to know what they are, how you get them, how you prevent them, and&mdash;most of all&mdash;what it <em>means</em> if you have one.
+        </p>
+
+        <p>
+            And honestly? That last question is the one that breaks my heart the most. Because what they are really asking is: <em>does having an STI make me a bad person?</em>
+        </p>
+
+        <p>
+            No. Absolutely not. And I want to spend some time here unpacking why so many of us believe that it does.
+        </p>
+
+        <h2>Where the Stigma Actually Comes From</h2>
+
+        <p>
+            Somewhere along the way, our culture decided that sexually transmitted infections were not just a health issue but a <em>character</em> issue. If you got one, you must have done something wrong. You must have been reckless. You must have had too many partners. You must not have cared about yourself or the people around you.
+        </p>
+
+        <p>
+            That narrative is everywhere. It showed up in the sex education most of us received (if we received any at all), where STIs were presented as a punishment for having sex rather than a normal, manageable reality of being a sexually active human. It shows up in the jokes people make. It shows up in the way someone whispers when they talk about a friend&rsquo;s diagnosis. And it shows up in the shame people carry silently, sometimes for years.
+        </p>
+
+        <div class="pull-quote">
+            An STI is a health event. That is all it is. It does not say anything about your worth, your intelligence, or the quality of your decisions.
+        </div>
+
+        <p>
+            The stigma is not based on science. It is based on the deeply ingrained idea that sex itself is something to be ashamed of, and that any consequence of sex is a form of moral reckoning. Once you see it for what it is, it is really hard to unsee.
+        </p>
+
+        <h2>The Misconceptions That Keep People Stuck</h2>
+
+        <p>
+            Let me walk through a few of the biggest ones, because I think naming them out loud takes away a lot of their power.
+        </p>
+
+        <h3>Only &ldquo;promiscuous&rdquo; people get STIs</h3>
+
+        <p>
+            This is probably the most common myth and it is completely false. You can contract an STI from a single sexual encounter. You can get one in a long-term, monogamous relationship if your partner was carrying something they did not know about. The number of partners someone has had is a really unreliable predictor of STI status. What matters far more is whether testing and communication are part of your routine, regardless of how many people you have been with.
+        </p>
+
+        <h3>You would know if you had one</h3>
+
+        <p>
+            Many STIs are asymptomatic for long stretches of time, sometimes permanently. Chlamydia, gonorrhea, HPV, and even herpes can all be present without any noticeable symptoms. That means you could have something, pass it to someone, or have it affect your health down the line without ever feeling a thing. This is why regular testing matters so much, and why relying on &ldquo;I feel fine&rdquo; is not a reliable strategy.
+        </p>
+
+        <h3>Getting tested is only for people who are &ldquo;worried&rdquo;</h3>
+
+        <p>
+            Testing should not be an emergency response. It should be a routine part of taking care of yourself, the same way you get your teeth cleaned or go in for a check-up. If you are sexually active, getting tested regularly is just responsible self-care. It does not mean something went wrong. It means you are paying attention.
+        </p>
+
+        <h2>What We Actually Owe Each Other</h2>
+
+        <p>
+            I think one of the reasons STI conversations feel so loaded is because they force us to be vulnerable. Telling a partner about a diagnosis, or asking someone about their testing history, requires a kind of honesty that many of us were never taught how to practice.
+        </p>
+
+        <p>
+            But this is where I think the real work is. We owe each other honesty, not perfection. No one is asking you to have a flawless sexual health history. What matters is that you are willing to be transparent, to have the awkward conversations, and to treat your partners with the same respect you would want for yourself.
+        </p>
+
+        <p>
+            And if someone discloses an STI to you? That person just did something incredibly brave. How you respond in that moment matters. You do not have to commit to anything you are not comfortable with, but you do owe them basic human decency and kindness.
+        </p>
+
+        <h2>Moving Forward Without Shame</h2>
+
+        <p>
+            If you are reading this and you have been carrying shame around a diagnosis, I want you to hear this clearly: you did not do anything wrong by being a person who has sex. STIs are a part of the human experience. They have been around for as long as humans have, and they will continue to be. The only thing that changes when we pile shame on top of them is that people stop getting tested, stop talking to their partners, and stop seeking treatment.
+        </p>
+
+        <p>
+            Shame does not protect anyone. Information does. Honesty does. Access to healthcare does.
+        </p>
+
+        <p>
+            So let&rsquo;s keep talking about this stuff. Let&rsquo;s keep asking questions. Let&rsquo;s keep making it normal to care about our sexual health without treating it like a confession.
+        </p>
+
+        <p>
+            I go deeper into all of this in the video above, including some of the specific questions I get asked most often and the answers I wish more people heard. Give it a watch if you want the full conversation.
+        </p>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <p class="cta-decorative">keep learning</p>
+            <h3>Watch the Full Video</h3>
+            <p>
+                I break down even more myths, answer real audience questions, and talk about what honest sexual health conversations actually look like. If this post resonated with you, the video goes even further.
+            </p>
+            <a href="https://www.youtube.com/watch?v=6_fJbYiVtoM" target="_blank" rel="noopener noreferrer" class="btn">Watch on YouTube</a>
+        </div>
+
+    </article>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Ali Imperiale. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
