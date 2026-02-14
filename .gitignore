@@ -1,5 +1,7 @@
 # Source/working files (not part of the website)
 *.zip
+*.png.tmp
+Screenshot *.png
 IMG_9936 Copy.JPG
 youtube-feed.xml
 .DS_Store
