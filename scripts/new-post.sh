@@ -179,6 +179,7 @@ cat > "$FILEPATH" << HEREDOC
 <html lang="en">
 <head>
 <script src="../consent.js" defer></script>
+<script src="../email-capture.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${HTML_TITLE} | Ali Imperiale</title>
@@ -582,6 +583,13 @@ cat > "$FILEPATH" << HEREDOC
         <iframe src="https://www.youtube.com/embed/${VIDEO_ID}" title="${HTML_TITLE}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
       <p class="video-caption">Watch the full video on YouTube</p>
+    </div>
+
+    <!-- Email Capture Form -->
+    <div id="email-capture-form"
+         data-post-slug="${SLUG}"
+         data-pdf-url=""
+         data-pdf-name="">
     </div>
 
     <!-- CTA Section -->
