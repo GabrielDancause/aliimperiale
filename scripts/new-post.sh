@@ -178,6 +178,7 @@ cat > "$FILEPATH" << HEREDOC
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="../consent.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${HTML_TITLE} | Ali Imperiale</title>
