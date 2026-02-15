@@ -288,21 +288,6 @@
       border-radius: 1px;
     }
 
-    .footer {
-      padding: 36px 20px 48px;
-      text-align: center;
-      font-size: 0.78rem;
-      color: #7a7a6e;
-    }
-
-    .footer a {
-      color: #AD9846;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
 
     @media (max-width: 480px) {
       .nav {
@@ -349,7 +334,17 @@
       .cta-section .cta-heading {
         font-size: 1.7rem;
       }
-    }
+    
+      .footer-columns {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+
+      .breadcrumb {
+        padding: 10px 16px;
+      }
+}
   </style>
 </head>
 <body>
@@ -365,6 +360,11 @@
       <li><a href="/blog/">Blog</a></li>
     </ul>
   </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>&rsaquo;</span><a href="/blog/">Blog</a><span>&rsaquo;</span> Why We Sleep in Separate Bedrooms
+  </div>
 
   <!-- Article Header -->
   <header class="article-header">
@@ -438,8 +438,41 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2026 Ali Imperiale &middot; <a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="../logo-beige.webp" alt="Ali Imperiale" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
   </footer>
 
 </body>
