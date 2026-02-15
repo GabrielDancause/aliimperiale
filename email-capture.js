@@ -134,9 +134,18 @@
       btn.textContent = 'Sending\u2026';
 
       submitEmail(email, postSlug, function () {
-        // Success: dismiss popup, update inline form to success state
+        // Success: show download link inside popup, update inline form too
         try { localStorage.setItem(STORAGE_PREFIX + postSlug, email); } catch (ex) {}
-        dismissPopup(overlay);
+        var card = overlay.querySelector('.ec-card');
+        card.innerHTML =
+          '<button class="ec-popup-close" aria-label="Close">&times;</button>' +
+          '<div class="ec-success-icon">\u2714\uFE0F</div>' +
+          '<p class="ec-heading">You\'re In!</p>' +
+          '<p class="ec-desc">Your guide is ready. Click below to download it now.</p>' +
+          '<a class="ec-download-btn" href="' + pdfUrl + '" download>Download ' + pdfName + ' \u2192</a>';
+        card.querySelector('.ec-popup-close').addEventListener('click', function () {
+          dismissPopup(overlay);
+        });
         if (inlineContainer) {
           renderSuccess(inlineContainer, pdfUrl, pdfName);
         }

@@ -131,11 +131,15 @@
     }
 
     .checklist li::before {
-      content: "\u2610";
+      content: "";
       position: absolute;
       left: 0;
-      font-size: 14pt;
-      color: #AD9846;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #AD9846;
+      border-radius: 3px;
+      background: #fff;
     }
 
     .pull-quote {
@@ -214,13 +218,20 @@
     }
 
     /* Print styles */
+    @page {
+      margin: 0.6in 0.7in;
+    }
+
     @media print {
       body { font-size: 10.5pt; }
-      .page { padding: 40px 32px; max-width: 100%; }
-      .cover { padding: 80px 32px 60px; }
+      .page { padding: 0; max-width: 100%; }
+      .cover { padding: 80px 0 60px; }
       h2 { page-break-after: avoid; }
+      h3 { page-break-after: avoid; }
       .checklist li, li { page-break-inside: avoid; }
       .about-box { page-break-inside: avoid; }
+      .pull-quote { page-break-inside: avoid; }
+      .section-divider { page-break-after: avoid; }
     }
   </style>
 </head>
