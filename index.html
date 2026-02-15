@@ -19,9 +19,10 @@
   <link rel="canonical" href="https://aliimperiale.com/">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preload" as="image" href="avatar-pro.jpg">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
   <style>
     /* Brand Fonts */
     @font-face {
@@ -270,6 +271,48 @@
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+    .video-card .video-embed .video-thumb-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: #000;
+    }
+
+    .video-card .video-embed .video-thumb-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-card .video-embed .play-btn {
+      position: absolute;
+      width: 68px;
+      height: 48px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 14px;
+      pointer-events: none;
+    }
+
+    .video-card .video-embed .play-btn::after {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 14px;
+      border-style: solid;
+      border-width: 10px 0 10px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+
+    .video-card .video-embed .video-thumb-link:hover .play-btn {
+      background: #f00;
     }
 
     .video-card .video-info {
@@ -576,9 +619,9 @@
 
   <!-- Hero -->
   <div class="hero">
-    <img class="logo" src="logo-beige.png" alt="Ali Imperiale" width="280">
+    <img class="logo" src="logo-beige.png" alt="Ali Imperiale" width="280" height="74" loading="eager">
     <br>
-    <img class="avatar" src="avatar-pro.jpg" alt="Ali Imperiale" width="130" height="130">
+    <img class="avatar" src="avatar-pro.jpg" alt="Ali Imperiale" width="130" height="130" fetchpriority="high">
     <p class="tagline">Casual chats about sex, relationships<br>& other fun stuff</p>
 
     <!-- Social Icons -->
@@ -702,8 +745,11 @@
       <div class="video-grid">
 
         <div class="video-card">
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/ZnOK6pria_g" title="I Tried a Happy Ending from a MAN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="video-embed" data-id="ZnOK6pria_g">
+            <a class="video-thumb-link" href="https://www.youtube.com/watch?v=ZnOK6pria_g" data-id="ZnOK6pria_g">
+              <img src="https://i3.ytimg.com/vi/ZnOK6pria_g/hqdefault.jpg" alt="I Tried a Happy Ending from a MAN" width="480" height="360" loading="lazy">
+              <span class="play-btn"></span>
+            </a>
           </div>
           <div class="video-info">
             <div class="video-title">I Tried a "Happy Ending" from a MAN | Here's What No One Talks About</div>
@@ -711,8 +757,11 @@
         </div>
 
         <div class="video-card">
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/5qObkip4q7U" title="Do Women Really Need Emotional Connection for Sex?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="video-embed" data-id="5qObkip4q7U">
+            <a class="video-thumb-link" href="https://www.youtube.com/watch?v=5qObkip4q7U" data-id="5qObkip4q7U">
+              <img src="https://i3.ytimg.com/vi/5qObkip4q7U/hqdefault.jpg" alt="Do Women Really Need Emotional Connection for Sex?" width="480" height="360" loading="lazy">
+              <span class="play-btn"></span>
+            </a>
           </div>
           <div class="video-info">
             <div class="video-title">Do Women Really Need Emotional Connection for Sex?</div>
@@ -720,8 +769,11 @@
         </div>
 
         <div class="video-card">
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/WkdayyYzIDE" title="Cheating Isn't What You Think" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="video-embed" data-id="WkdayyYzIDE">
+            <a class="video-thumb-link" href="https://www.youtube.com/watch?v=WkdayyYzIDE" data-id="WkdayyYzIDE">
+              <img src="https://i3.ytimg.com/vi/WkdayyYzIDE/hqdefault.jpg" alt="Cheating Isn't What You Think" width="480" height="360" loading="lazy">
+              <span class="play-btn"></span>
+            </a>
           </div>
           <div class="video-info">
             <div class="video-title">Cheating Isn't What You Think — Here's Why It Happens</div>
@@ -807,5 +859,15 @@
     <p>&copy; 2026 Ali Imperiale &middot; <a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></p>
   </div>
 
+  <script>
+    document.querySelectorAll('.video-thumb-link').forEach(function(a){
+      a.addEventListener('click',function(e){
+        e.preventDefault();
+        var embed=a.closest('.video-embed');
+        var id=a.dataset.id;
+        embed.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe>';
+      });
+    });
+  </script>
 </body>
 </html>
