@@ -178,7 +178,174 @@
         padding: 10px 16px;
       }
 }
+  
+    /* Hamburger Menu */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      z-index: 101;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #C6C8BB;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .nav-hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    @media (max-width: 768px) {
+      .nav-hamburger {
+        display: block;
+      }
+      .site-nav .nav-links,
+      nav .nav-links,
+      .nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #2E3E24;
+        flex-direction: column;
+        padding: 12px 24px 20px;
+        gap: 0;
+        border-top: 1px solid rgba(198, 200, 187, 0.15);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+      .site-nav .nav-links.nav-open,
+      nav .nav-links.nav-open,
+      .nav .nav-links.nav-open {
+        display: flex;
+      }
+      .site-nav .nav-links li,
+      nav .nav-links li,
+      .nav .nav-links li {
+        border-bottom: 1px solid rgba(198, 200, 187, 0.08);
+      }
+      .site-nav .nav-links li:last-child,
+      nav .nav-links li:last-child,
+      .nav .nav-links li:last-child {
+        border-bottom: none;
+      }
+      .site-nav .nav-links a,
+      nav .nav-links a,
+      .nav .nav-links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 0.95rem;
+      }
+      .site-nav,
+      nav,
+      .nav {
+        position: relative;
+      }
+    }
+  
+    /* Related Posts */
+    .related-posts {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 48px;
+    }
+    .related-posts h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #2E3E24;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .related-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #2E3E24;
+      box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .related-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(46, 62, 36, 0.1);
+    }
+    .related-thumb {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+    .related-title {
+      padding: 12px 14px;
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 0.88rem;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    @media (max-width: 600px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        margin: 0 auto;
+      }
+      .related-thumb {
+        height: 160px;
+      }
+      .related-posts h2 {
+        font-size: 1.7rem;
+      }
+    }
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Do Women Actually Enjoy Anal Play? The Honest Truth",
+  "author": {
+    "@type": "Person",
+    "name": "Ali Imperiale",
+    "url": "https://aliimperiale.com"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ali Imperiale",
+    "url": "https://aliimperiale.com"
+  },
+  "url": "https://aliimperiale.com/blog/do-women-enjoy-anal-play.html",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aliimperiale.com/blog/do-women-enjoy-anal-play.html"
+  },
+  "description": "A judgment-free look at anal play from a woman's perspective — including what makes the difference between a good experience and a bad one.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://i3.ytimg.com/vi/fnqyIyUz4R4/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720
+  }
+}
+</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
@@ -188,6 +355,9 @@
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/blog/">Blog</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
     </ul>
   </nav>
 
@@ -271,6 +441,26 @@
     <div class="divider"></div>
   </main>
 
+  <!-- Related Posts -->
+  <section class="related-posts">
+    <h2>You Might Also Like</h2>
+    <div class="related-grid">
+      <a href="butt-stuff-and-porn-myths.html" class="related-card">
+        <img class="related-thumb" src="https://i3.ytimg.com/vi/rXKb-sw-THY/mqdefault.jpg" alt="" width="200" height="134" loading="lazy">
+        <div class="related-title">Butt Stuff And Why You Shouldn't Believe What You See In Porn</div>
+      </a>
+      <a href="worlds-most-asked-sex-questions-part-2.html" class="related-card">
+        <img class="related-thumb" src="https://i3.ytimg.com/vi/jN6NjtvTZ1Y/mqdefault.jpg" alt="" width="200" height="134" loading="lazy">
+        <div class="related-title">How to Have Anal Sex? — World's Most Asked Sex Questions Part 2</div>
+      </a>
+      <a href="why-so-many-men-are-curious-about-pegging.html" class="related-card">
+        <img class="related-thumb" src="https://i3.ytimg.com/vi/kGaI3L8PNAA/mqdefault.jpg" alt="" width="200" height="134" loading="lazy">
+        <div class="related-title">Why So Many Men Are Curious About Pegging (Let's Talk About It)</div>
+      </a>
+    </div>
+  </section>
+
+
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -283,6 +473,7 @@
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -308,5 +499,6 @@
     </div>
   </footer>
 
+<script src="../mobile-nav.js" defer></script>
 </body>
 </html>
