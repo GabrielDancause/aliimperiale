@@ -445,6 +445,103 @@
         flex-direction: column;
       }
     }
+
+    /* Course Promo */
+    .course-promo {
+      background: #2E3E24;
+      padding: 56px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .course-promo::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #AD9846, #c4b460, #AD9846);
+    }
+    .course-promo-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .course-promo-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #AD9846;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .course-promo h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: #FAF8EB;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .course-promo-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      color: #C6C8BB;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .course-highlights {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .course-highlight {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .course-highlight .icon {
+      font-size: 1.5rem;
+    }
+    .course-highlight span:last-child {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      color: #C6C8BB;
+      font-weight: 500;
+    }
+    .btn-course {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #AD9846;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.3px;
+    }
+    .btn-course:hover {
+      background: #c4b460;
+      transform: translateY(-2px);
+    }
+    .course-price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      color: #8a8a7a;
+      margin-top: 14px;
+    }
+    @media (max-width: 600px) {
+      .course-promo { padding: 44px 16px; }
+      .course-promo h2 { font-size: 2.2rem; }
+      .course-highlights { gap: 20px; }
+    }
   </style>
 </head>
 <body>
@@ -545,6 +642,35 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- Course Promo -->
+  <div class="course-promo">
+    <div class="course-promo-inner">
+      <p class="course-promo-label">Audio Course for Couples</p>
+      <h2>Open &amp; Honest</h2>
+      <p class="course-promo-desc">5 audio modules, real scripts, and step-by-step guides for couples curious about ethical non-monogamy. No fluff &mdash; just honest conversations from someone who actually lives it.</p>
+      <div class="course-highlights">
+        <div class="course-highlight">
+          <span class="icon">&#127911;</span>
+          <span>5 Audio Modules</span>
+        </div>
+        <div class="course-highlight">
+          <span class="icon">&#128196;</span>
+          <span>4 Worksheets</span>
+        </div>
+        <div class="course-highlight">
+          <span class="icon">&#9854;</span>
+          <span>For Couples</span>
+        </div>
+        <div class="course-highlight">
+          <span class="icon">&#8734;</span>
+          <span>Lifetime Access</span>
+        </div>
+      </div>
+      <a href="/open-and-honest.html" class="btn-course">Learn More</a>
+      <p class="course-price">$49 &middot; One-time payment</p>
+    </div>
   </div>
 
   <!-- Subscribe Section -->
