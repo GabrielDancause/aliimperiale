@@ -14,19 +14,38 @@
   btn.innerHTML = '<span></span><span></span><span></span>';
   nav.appendChild(btn);
 
-  // Toggle menu
-  btn.addEventListener('click', function() {
-    var open = links.classList.toggle('nav-open');
-    btn.classList.toggle('active', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  function closeMenu() {
+    links.classList.remove('nav-open');
+    btn.classList.remove('active');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
+  function openMenu() {
+    links.classList.add('nav-open');
+    btn.classList.add('active');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+
+  // Toggle menu — use explicit open/close instead of toggle
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (links.classList.contains('nav-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
   // Close on link click
   links.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      links.classList.remove('nav-open');
-      btn.classList.remove('active');
-      btn.setAttribute('aria-expanded', 'false');
-    });
+    a.addEventListener('click', closeMenu);
+  });
+
+  // Close when tapping outside the nav
+  document.addEventListener('click', function(e) {
+    if (!nav.contains(e.target) && links.classList.contains('nav-open')) {
+      closeMenu();
+    }
   });
 })();
