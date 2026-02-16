@@ -150,7 +150,7 @@ body {
   .site-nav .nav-links,
   nav .nav-links,
   .nav .nav-links {
-    display: none;
+    display: none !important;
     position: absolute;
     top: 100%;
     left: 0;
@@ -165,7 +165,7 @@ body {
   .site-nav .nav-links.nav-open,
   nav .nav-links.nav-open,
   .nav .nav-links.nav-open {
-    display: flex;
+    display: flex !important;
   }
   .site-nav .nav-links li,
   nav .nav-links li,
