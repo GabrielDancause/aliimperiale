@@ -45,6 +45,7 @@
   }
 }
 </script>
+  <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
 /* Navigation */
@@ -363,6 +364,86 @@
       .blog-preview-card .blog-preview-excerpt {
         display: none;
       }
+      .subscribe-section {
+        padding: 24px 16px 32px;
+      }
+      .subscribe-section h2 {
+        font-size: 1.7rem;
+      }
+    }
+
+    /* Subscribe Section */
+    .subscribe-section {
+      padding: 48px 20px 56px;
+      text-align: center;
+    }
+    .subscribe-box {
+      max-width: 480px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 36px 30px;
+      box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.06);
+    }
+    .subscribe-section h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #2E3E24;
+      margin-bottom: 10px;
+    }
+    .subscribe-section p {
+      font-size: 0.9rem;
+      color: #555549;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .subscribe-form {
+      display: flex;
+      gap: 10px;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .subscribe-form input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid #C6C8BB;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      background: #FAF8EB;
+      color: #2E3E24;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .subscribe-form input:focus {
+      border-color: #AD9846;
+    }
+    .subscribe-form input::placeholder {
+      color: #8a8a7a;
+    }
+    .subscribe-form button {
+      padding: 12px 24px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .subscribe-form button:hover {
+      background: #3a5030;
+      transform: translateY(-1px);
+    }
+    @media (max-width: 420px) {
+      .subscribe-form {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -465,6 +546,19 @@
 
   </div>
 
+  <!-- Subscribe Section -->
+  <div class="subscribe-section">
+    <div class="subscribe-box">
+      <h2>Stay curious</h2>
+      <p>Get new posts, guides, and honest conversations about sex and relationships delivered to your inbox.</p>
+      <form class="subscribe-form" id="homepage-subscribe">
+        <input type="email" name="email" placeholder="Your email" required aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="subscribe-status" style="display:none;margin-top:14px;font-size:0.85rem;"></p>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
@@ -505,5 +599,38 @@
   </footer>
 
 <script src="mobile-nav.js" defer></script>
+<script src="back-to-top.js" defer></script>
+<script>
+(function() {
+  var form = document.getElementById('homepage-subscribe');
+  if (!form) return;
+  var status = form.parentElement.querySelector('.subscribe-status');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = form.querySelector('input[name="email"]').value.trim();
+    if (!email) return;
+    var btn = form.querySelector('button');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch('https://script.google.com/macros/s/AKfycbzyxMBbzpTh4An8umtkgzIMZNYkLNADkYzh2_iDngYtHvp1vVXR5Tvkb_R_-QfvjRD1/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'email=' + encodeURIComponent(email) + '&source=homepage&source_url=' + encodeURIComponent(window.location.href),
+      mode: 'no-cors'
+    }).then(function() {
+      status.style.display = 'block';
+      status.style.color = '#2E3E24';
+      status.textContent = 'You\u2019re in! Thanks for subscribing.';
+      form.style.display = 'none';
+    }).catch(function() {
+      status.style.display = 'block';
+      status.style.color = '#AD9846';
+      status.textContent = 'Something went wrong. Please try again.';
+      btn.textContent = 'Subscribe';
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
 </body>
 </html>
