@@ -1,5 +1,36 @@
 /* Shared styles — Ali Imperiale
-   Used across all pages: footer, hamburger menu, related posts */
+   Used across all pages: base, fonts, footer, hamburger menu, related posts */
+
+/* Brand Fonts */
+@font-face {
+  font-family: 'New Standard';
+  src: url('/fonts/NewStandard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'The Bloomington';
+  src: url('/fonts/TheBloomington-Script.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #FAF8EB;
+  color: #2E3E24;
+  min-height: 100vh;
+}
 
 /* Footer */
 .site-footer {
