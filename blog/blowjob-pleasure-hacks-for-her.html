@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared.css">
   <style>
     @font-face { font-family: 'New Standard'; src: url('../fonts/NewStandard-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
     @font-face { font-family: 'The Bloomington'; src: url('../fonts/TheBloomington-Script.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
@@ -80,241 +81,15 @@
       margin: 0 6px;
       color: #C6C8BB;
     }
-
-    /* Footer */
-    .site-footer {
-      background: #2E3E24;
-      color: #C6C8BB;
-      padding: 48px 24px 28px;
-    }
-
-    .footer-inner {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .footer-brand {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-
-    .footer-brand img {
-      height: 28px;
-      opacity: 0.8;
-      margin-bottom: 8px;
-    }
-
-    .footer-brand p {
-      font-size: 0.8rem;
-      color: #8a8a7a;
-      line-height: 1.5;
-    }
-
-    .footer-columns {
-      display: flex;
-      justify-content: space-between;
-      gap: 32px;
-      margin-bottom: 36px;
-    }
-
-    .footer-col h4 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #AD9846;
-      margin-bottom: 14px;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col li {
-      margin-bottom: 10px;
-    }
-
-    .footer-col a {
-      color: #C6C8BB;
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.15s;
-    }
-
-    .footer-col a:hover {
-      color: #FAF8EB;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(198, 200, 187, 0.15);
-      padding-top: 20px;
-      text-align: center;
-      font-size: 0.75rem;
-      color: #8a8a7a;
-    }
-
-    .footer-bottom a {
-      color: #AD9846;
-      text-decoration: none;
-    }
-
-    .footer-bottom a:hover {
-      text-decoration: underline;
-    }
     @media (max-width: 480px) {
       .nav { padding: 14px 16px; } .nav-logo { height: 30px; } .nav-links { gap: 16px; } .nav-links a { font-size: 0.82rem; }
       .article-header { padding: 24px 16px 52px; } .article-header h1 { font-size: 1.55rem; } .article-subtitle { font-size: 0.88rem; }
       .article-container { padding: 10px 16px 0; } .pull-quote { padding-left: 18px; font-size: 1rem; }
       .cta-section { padding: 26px 20px; } .cta-section .cta-heading { font-size: 1.7rem; }
-    
-      .footer-columns {
-        flex-direction: column;
-        gap: 24px;
-        text-align: center;
-      }
-
       .breadcrumb {
         padding: 10px 16px;
       }
 }
-  
-    /* Hamburger Menu */
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 6px;
-      z-index: 101;
-    }
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #C6C8BB;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .nav-hamburger.active span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-    .nav-hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .nav-hamburger.active span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    @media (max-width: 768px) {
-      .nav-hamburger {
-        display: block;
-      }
-      .site-nav .nav-links,
-      nav .nav-links,
-      .nav .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #2E3E24;
-        flex-direction: column;
-        padding: 12px 24px 20px;
-        gap: 0;
-        border-top: 1px solid rgba(198, 200, 187, 0.15);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      }
-      .site-nav .nav-links.nav-open,
-      nav .nav-links.nav-open,
-      .nav .nav-links.nav-open {
-        display: flex;
-      }
-      .site-nav .nav-links li,
-      nav .nav-links li,
-      .nav .nav-links li {
-        border-bottom: 1px solid rgba(198, 200, 187, 0.08);
-      }
-      .site-nav .nav-links li:last-child,
-      nav .nav-links li:last-child,
-      .nav .nav-links li:last-child {
-        border-bottom: none;
-      }
-      .site-nav .nav-links a,
-      nav .nav-links a,
-      .nav .nav-links a {
-        display: block;
-        padding: 12px 0;
-        font-size: 0.95rem;
-      }
-      .site-nav,
-      nav,
-      .nav {
-        position: relative;
-      }
-    }
-  
-    /* Related Posts */
-    .related-posts {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 20px 48px;
-    }
-    .related-posts h2 {
-      font-family: 'The Bloomington', cursive;
-      font-size: 2rem;
-      font-weight: 400;
-      color: #2E3E24;
-      text-align: center;
-      margin-bottom: 24px;
-    }
-    .related-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .related-card {
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      text-decoration: none;
-      color: #2E3E24;
-      box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
-      border: 1px solid rgba(46, 62, 36, 0.06);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .related-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(46, 62, 36, 0.1);
-    }
-    .related-thumb {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-    }
-    .related-title {
-      padding: 12px 14px;
-      font-family: 'New Standard', Georgia, serif;
-      font-size: 0.88rem;
-      line-height: 1.35;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    @media (max-width: 600px) {
-      .related-grid {
-        grid-template-columns: 1fr;
-        max-width: 360px;
-        margin: 0 auto;
-      }
-      .related-thumb {
-        height: 160px;
-      }
-      .related-posts h2 {
-        font-size: 1.7rem;
-      }
-    }
   </style>
 <script type="application/ld+json">
 {
@@ -436,15 +211,15 @@
     <h2>You Might Also Like</h2>
     <div class="related-grid">
       <a href="my-favourite-way-to-please-my-partner-blow-jobs.html" class="related-card">
-        <img class="related-thumb" src="https://i3.ytimg.com/vi/wbWrxAa3Vck/mqdefault.jpg" alt="" width="200" height="134" loading="lazy">
+        <img class="related-thumb" src="https://i3.ytimg.com/vi/wbWrxAa3Vck/mqdefault.jpg" alt="My Favourite Way to Please My Partner — Blow Jobs" width="200" height="134" loading="lazy">
         <div class="related-title">My Favourite Way to Please My Partner — Blow Jobs</div>
       </a>
       <a href="best-oral-sex-tip-make-her-orgasm.html" class="related-card">
-        <img class="related-thumb" src="https://i3.ytimg.com/vi/u6KWSkglvW4/mqdefault.jpg" alt="" width="200" height="134" loading="lazy">
+        <img class="related-thumb" src="https://i3.ytimg.com/vi/u6KWSkglvW4/mqdefault.jpg" alt="The Best Oral Sex Tip She Wants You To Know" width="200" height="134" loading="lazy">
         <div class="related-title">The Best Oral Sex Tip She Wants You To Know</div>
       </a>
       <a href="oral-sex-positions-that-wont-make-her-orgasm.html" class="related-card">
-        <img class="related-thumb" src="https://i3.ytimg.com/vi/qZa18Hw8Vn4/mqdefault.jpg" alt="" width="200" height="134" loading="lazy">
+        <img class="related-thumb" src="https://i3.ytimg.com/vi/qZa18Hw8Vn4/mqdefault.jpg" alt="5 Oral Sex Positions That Look Hot But Probably Won't Make Her Orgasm — Ali Imperiale" width="200" height="134" loading="lazy">
         <div class="related-title">5 Oral Sex Positions That Look Hot But Probably Won't Make Her Orgasm — Ali Imperiale</div>
       </a>
     </div>

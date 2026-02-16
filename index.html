@@ -24,6 +24,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Ali Imperiale",
+  "url": "https://aliimperiale.com",
+  "description": "Casual chats about sex, relationships & other fun stuff.",
+  "author": {
+    "@type": "Person",
+    "name": "Ali Imperiale",
+    "url": "https://aliimperiale.com",
+    "sameAs": [
+      "https://www.youtube.com/@aliimperiale",
+      "https://www.instagram.com/aliimperiale/",
+      "https://www.tiktok.com/@aliimperiale",
+      "https://www.patreon.com/c/aliimperiale"
+    ]
+  }
+}
+</script>
+  <link rel="stylesheet" href="shared.css">
   <style>
     /* Brand Fonts */
     @font-face {
@@ -354,165 +375,6 @@
       margin: 44px auto 0;
       border-radius: 1px;
     }
-
-    /* Footer */
-    .site-footer {
-      background: #2E3E24;
-      color: #C6C8BB;
-      padding: 48px 24px 28px;
-      margin-top: 44px;
-    }
-
-    .footer-inner {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .footer-brand {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-
-    .footer-brand img {
-      height: 28px;
-      opacity: 0.8;
-      margin-bottom: 8px;
-    }
-
-    .footer-brand p {
-      font-size: 0.8rem;
-      color: #8a8a7a;
-      line-height: 1.5;
-    }
-
-    .footer-columns {
-      display: flex;
-      justify-content: space-between;
-      gap: 32px;
-      margin-bottom: 36px;
-    }
-
-    .footer-col h4 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #AD9846;
-      margin-bottom: 14px;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col li {
-      margin-bottom: 10px;
-    }
-
-    .footer-col a {
-      color: #C6C8BB;
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.15s;
-    }
-
-    .footer-col a:hover {
-      color: #FAF8EB;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(198, 200, 187, 0.15);
-      padding-top: 20px;
-      text-align: center;
-      font-size: 0.75rem;
-      color: #8a8a7a;
-    }
-
-    .footer-bottom a {
-      color: #AD9846;
-      text-decoration: none;
-    }
-
-    .footer-bottom a:hover {
-      text-decoration: underline;
-    }
-
-    /* Hamburger Menu */
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 6px;
-      z-index: 101;
-    }
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #C6C8BB;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .nav-hamburger.active span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-    .nav-hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .nav-hamburger.active span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    @media (max-width: 768px) {
-      .nav-hamburger {
-        display: block;
-      }
-      .site-nav .nav-links,
-      nav .nav-links,
-      .nav .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #2E3E24;
-        flex-direction: column;
-        padding: 12px 24px 20px;
-        gap: 0;
-        border-top: 1px solid rgba(198, 200, 187, 0.15);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      }
-      .site-nav .nav-links.nav-open,
-      nav .nav-links.nav-open,
-      .nav .nav-links.nav-open {
-        display: flex;
-      }
-      .site-nav .nav-links li,
-      nav .nav-links li,
-      .nav .nav-links li {
-        border-bottom: 1px solid rgba(198, 200, 187, 0.08);
-      }
-      .site-nav .nav-links li:last-child,
-      nav .nav-links li:last-child,
-      .nav .nav-links li:last-child {
-        border-bottom: none;
-      }
-      .site-nav .nav-links a,
-      nav .nav-links a,
-      .nav .nav-links a {
-        display: block;
-        padding: 12px 0;
-        font-size: 0.95rem;
-      }
-      .site-nav,
-      nav,
-      .nav {
-        position: relative;
-      }
-    }
-
     /* Responsive */
     @media (max-width: 480px) {
       .site-nav {
@@ -535,13 +397,6 @@
       .about h2 {
         font-size: 1.7rem;
       }
-
-      .footer-columns {
-        flex-direction: column;
-        gap: 24px;
-        text-align: center;
-      }
-
       .blog-preview-card .blog-preview-excerpt {
         display: none;
       }
