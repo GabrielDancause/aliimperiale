@@ -16,5 +16,9 @@ social-media/
 fonts/bloomington/
 fonts/new-standard/
 
+# Raw audio files (converted versions in /audio/)
+*.WAV
+*.wav
+
 # Old avatar
 avatar.jpg
