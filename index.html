@@ -262,6 +262,47 @@
       border-radius: 40px 40px 0 0;
     }
 
+    /* Icon Strip */
+    .icon-strip {
+      background: #FAF8EB;
+      padding: 36px 20px;
+      position: relative;
+    }
+    .icon-strip-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+    }
+    .icon-strip-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .icon-strip-item img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      opacity: 0.85;
+      transition: opacity 0.2s, transform 0.25s;
+    }
+    .icon-strip-item img:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    .icon-strip-item span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #2E3E24;
+      opacity: 0.5;
+    }
+
     /* Container */
     .container {
       width: 100%;
@@ -673,6 +714,10 @@
       .subscribe-section h2 {
         font-size: 1.7rem;
       }
+      .icon-strip-inner { gap: 24px; }
+      .icon-strip-item img { width: 56px; height: 56px; }
+      .icon-strip-item span { font-size: 0.6rem; letter-spacing: 1px; }
+      .icon-strip { padding: 28px 16px; }
       .course-banner { padding: 40px 16px; }
       .course-banner-text h2 { font-size: 2rem; }
       .course-banner-visual { display: none; }
@@ -720,7 +765,7 @@
       <div class="hero-content">
         <p class="hero-label">Sex Educator &amp; Content Creator</p>
         <h1 class="hero-title">Casual chats about sex, relationships &amp; other fun stuff</h1>
-        <p class="hero-subtitle">I'm Ali &mdash; a Canadian nomad making honest, judgment-free content about intimacy, dating, and everything in between.</p>
+        <p class="hero-subtitle">I'm Ali &mdash; a Canadian nomad making content about sex, relationships and other fun stuff.</p>
         <div class="hero-cta">
           <a href="/open-and-honest.html" class="btn-hero-primary">Explore the Course</a>
           <a href="/blog/" class="btn-hero-secondary">Read the Blog</a>
@@ -745,6 +790,28 @@
       </div>
       <div class="hero-photo">
         <img src="TAD_9494-Edit_Social.jpg" alt="Ali Imperiale" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+
+  <!-- Icon Strip -->
+  <div class="icon-strip">
+    <div class="icon-strip-inner">
+      <div class="icon-strip-item">
+        <img src="Ali_Highlights_Green_Cherry.png" alt="Sex" loading="lazy" width="72" height="72">
+        <span>Sex</span>
+      </div>
+      <div class="icon-strip-item">
+        <img src="Ali_Highlights_Green_Learning.png" alt="Education" loading="lazy" width="72" height="72">
+        <span>Education</span>
+      </div>
+      <div class="icon-strip-item">
+        <img src="Ali_Highlights_Green_Toy.png" alt="Pleasure" loading="lazy" width="72" height="72">
+        <span>Pleasure</span>
+      </div>
+      <div class="icon-strip-item">
+        <img src="Ali_Highlights_Green_Travel.png" alt="Travel" loading="lazy" width="72" height="72">
+        <span>Travel</span>
       </div>
     </div>
   </div>
@@ -776,7 +843,7 @@
         </div>
       </div>
       <div class="course-banner-visual">
-        <span class="course-icon-large">&#127911;</span>
+        <img src="Ali_Highlights_Green_Cherry.png" alt="" aria-hidden="true" style="width: 140px; height: 140px; object-fit: contain; opacity: 0.3; filter: brightness(3);" loading="lazy">
       </div>
     </div>
   </div>
