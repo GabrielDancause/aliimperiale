@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="about-hero.jpg" type="image/jpeg" fetchpriority="high">
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
@@ -77,12 +78,13 @@
       border-radius: 32px 32px 0 0;
     }
     .about-hero-photo {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
+      width: 220px;
+      height: 293px;
+      border-radius: 16px;
       object-fit: cover;
-      border: 4px solid rgba(250, 248, 235, 0.2);
-      margin-bottom: 24px;
+      border: 4px solid rgba(250, 248, 235, 0.15);
+      margin-bottom: 28px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
     .about-hero h1 {
       font-family: 'The Bloomington', cursive;
@@ -121,6 +123,28 @@
     }
     .story-section p:last-of-type {
       margin-bottom: 0;
+    }
+
+    /* Photo Gallery */
+    .photo-gallery {
+      padding: 8px 24px 48px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    .photo-grid img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
+    .photo-grid img:hover {
+      transform: scale(1.03);
     }
 
     /* Pillars Section */
@@ -320,6 +344,13 @@
       .subscribe-box h2 {
         font-size: 1.9rem;
       }
+      .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+      .photo-grid img {
+        height: 120px;
+      }
     }
     @media (max-width: 480px) {
       .site-nav {
@@ -349,6 +380,18 @@
       }
       .subscribe-form {
         flex-direction: column;
+      }
+      .about-hero-photo {
+        width: 180px;
+        height: 240px;
+      }
+      .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+      }
+      .photo-grid img {
+        height: 100px;
+        border-radius: 8px;
       }
     }
   </style>
@@ -392,7 +435,7 @@
 
   <!-- Hero -->
   <div class="about-hero" id="main-content">
-    <img class="about-hero-photo" src="avatar-pro.webp" alt="Ali Imperiale" width="160" height="160">
+    <img class="about-hero-photo" src="about-hero.jpg" alt="Ali Imperiale" width="600" height="800" fetchpriority="high">
     <h1>Hey, I'm Ali</h1>
     <p>Sex educator in training, content creator, and full-time curious human.</p>
   </div>
@@ -404,6 +447,17 @@
     <p>Turns out, a lot of people were curious too. What started as casual conversations quickly grew into a community of people who wanted honest, judgment-free takes on the topics that actually matter in our relationships and bedrooms. No scripts, no filters, just real talk.</p>
     <p>I'm not a therapist or a doctor. Think of me as that friend who's done some research, has some experience, and is genuinely open to exploring the weird, fun, and sometimes awkward side of intimacy. I'm currently studying sex education, and my goal is simple: make these conversations feel normal, approachable, and maybe a little bit funny.</p>
     <p>When I'm not in front of a camera, you'll probably find me working out, cooking something that takes way too long, or having a minor existential crisis in a new country (it happens to the best of us).</p>
+  </div>
+
+  <!-- Photo Gallery -->
+  <div class="photo-gallery">
+    <div class="photo-grid">
+      <img src="about-travel-3.jpg" alt="Ali and Gab hiking in the Canadian mountains" width="800" height="600" loading="lazy">
+      <img src="about-travel-1.jpg" alt="Ali and Gab on a scooter by the ocean" width="800" height="1066" loading="lazy">
+      <img src="about-travel-4.jpg" alt="Ali and Gab swimming in the ocean" width="800" height="600" loading="lazy">
+      <img src="about-travel-2.jpg" alt="Ali and Gab on a boat in Southeast Asia" width="800" height="1066" loading="lazy">
+      <img src="about-travel-5.jpg" alt="Ali and Gab in a green field" width="800" height="600" loading="lazy">
+    </div>
   </div>
 
   <!-- What I Cover -->
