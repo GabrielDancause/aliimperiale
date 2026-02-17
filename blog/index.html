@@ -83,12 +83,13 @@
     }
 
     .blog-card {
-      display: flex;
+      display: block;
       background: #ffffff;
       border-radius: 14px;
       overflow: hidden;
       text-decoration: none;
       color: #2E3E24;
+      padding: 20px 24px;
       box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
       border: 1px solid rgba(46, 62, 36, 0.06);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -98,20 +99,9 @@
       box-shadow: 0 6px 20px rgba(46, 62, 36, 0.1);
     }
 
-    .blog-card .thumb {
-      width: 200px;
-      height: 134px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
     .blog-card .info {
-      padding: 18px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      flex: 1;
-      min-width: 0;
     }
 
     .blog-card .info .card-date {
@@ -125,17 +115,17 @@
 
     .blog-card .info .card-title {
       font-family: 'New Standard', Georgia, serif;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 400;
-      line-height: 1.35;
+      line-height: 1.4;
       color: #2E3E24;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .blog-card .info .card-excerpt {
-      font-size: 0.82rem;
-      color: #777;
-      line-height: 1.5;
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.55;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -143,11 +133,7 @@
     }
     @media (max-width: 580px) {
       .blog-card {
-        flex-direction: column;
-      }
-      .blog-card .thumb {
-        width: 100%;
-        height: 180px;
+        padding: 16px 18px;
       }
       .page-header h1 {
         font-size: 2.2rem;
@@ -237,7 +223,6 @@
   <div class="blog-grid">
 
     <a href="i-tried-a-happy-ending-from-a-man.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/ZnOK6pria_g/mqdefault.jpg" alt="I Tried a Happy Ending from a Man — Here's What No One Talks About" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">February 13, 2026</div>
         <div class="card-title">I Tried a "Happy Ending" from a Man &mdash; Here's What No One Talks About</div>
@@ -246,7 +231,6 @@
     </a>
 
     <a href="do-women-need-emotional-connection-for-sex.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/5qObkip4q7U/mqdefault.jpg" alt="Do Women Really Need Emotional Connection for Sex?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">February 4, 2026</div>
         <div class="card-title">Do Women Really Need Emotional Connection for Sex?</div>
@@ -255,7 +239,6 @@
     </a>
 
     <a href="oral-sex-positions-that-wont-make-her-orgasm.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/qZa18Hw8Vn4/mqdefault.jpg" alt="5 Oral Sex Positions That Look Hot But Probably Won't Make Her Orgasm — Ali Imperiale" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 28, 2026</div>
         <div class="card-title">5 Oral Sex Positions That Look Hot But Probably Won't Make Her Orgasm &mdash; Ali Imperiale</div>
@@ -264,7 +247,6 @@
     </a>
 
     <a href="stis-heres-the-truth.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/6_fJbYiVtoM/mqdefault.jpg" alt="I Get Asked About STIs All the Time — So Here's the Truth" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 15, 2026</div>
         <div class="card-title">I Get Asked About STIs All the Time — So Here's the Truth</div>
@@ -273,7 +255,6 @@
     </a>
 
     <a href="cheating-isnt-what-you-think.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/WkdayyYzIDE/mqdefault.jpg" alt="Cheating Isn't What You Think — Here's Why It Happens" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 11, 2026</div>
         <div class="card-title">Cheating Isn't What You Think — Here's Why It Happens</div>
@@ -282,7 +263,6 @@
     </a>
 
     <a href="lets-talk-about-feet.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/zmQ7WfVRyEc/mqdefault.jpg" alt="Let's Talk About Feet — The Most Popular Fetish in the World" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 7, 2026</div>
         <div class="card-title">Let's Talk About Feet — The Most Popular Fetish in the World</div>
@@ -291,7 +271,6 @@
     </a>
 
     <a href="2025-was-hard-lessons-for-2026.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/W1xMEC-1Z9o/mqdefault.jpg" alt="2025 Was Hard — The Sex &amp; Relationship Lessons I'm Bringing Into 2026" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 5, 2026</div>
         <div class="card-title">2025 Was Hard — The Sex &amp; Relationship Lessons I'm Bringing Into 2026</div>
@@ -300,7 +279,6 @@
     </a>
 
     <a href="bedroom-techniques-to-get-her-dripping.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/MCTk4keoFes/mqdefault.jpg" alt="3 Bedroom Techniques To Get Her Dripping" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">August 18, 2025</div>
         <div class="card-title">3 Bedroom Techniques To Get Her Dripping</div>
@@ -309,7 +287,6 @@
     </a>
 
     <a href="sexual-fantasies-women-want-to-try.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/9cY21TXRoFI/mqdefault.jpg" alt="4 Most Common Sexual Fantasies Women Want to Try" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 16, 2024</div>
         <div class="card-title">4 Most Common Sexual Fantasies Women Want to Try</div>
@@ -318,7 +295,6 @@
     </a>
 
     <a href="5-erotic-skills-every-couple-needs-before-2026.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/yin4ooLjT5U/mqdefault.jpg" alt="5 Erotic Skills Every Couple Needs Before 2026" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 11, 2025</div>
         <div class="card-title">5 Erotic Skills Every Couple Needs Before 2026</div>
@@ -327,7 +303,6 @@
     </a>
 
     <a href="5-things-confident-men-do-that-drive-women-crazy.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/9qpyj7rgrv8/mqdefault.jpg" alt="5 Things Confident Men Do That Drive Women Crazy" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">October 15, 2025</div>
         <div class="card-title">5 Things Confident Men Do That Drive Women Crazy</div>
@@ -336,7 +311,6 @@
     </a>
 
     <a href="things-to-try-as-a-couple.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/0lQhQQs_N-E/mqdefault.jpg" alt="5 Things You've Probably Never Tried As A Couple (But Should!)" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 24, 2025</div>
         <div class="card-title">5 Things You've Probably Never Tried As A Couple (But Should!)</div>
@@ -345,7 +319,6 @@
     </a>
 
     <a href="things-women-crave-in-bed.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/2jFkdt_ZMEY/mqdefault.jpg" alt="7 Things Women Crave More in Bed" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 20, 2024</div>
         <div class="card-title">7 Things Women Crave More in Bed</div>
@@ -354,7 +327,6 @@
     </a>
 
     <a href="pleasure-habits-for-better-sex-life.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/ar_OZXkFHiY/mqdefault.jpg" alt="9 Pleasure Habits That Will Make Your Life and Sex Life Better" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">October 31, 2024</div>
         <div class="card-title">9 Pleasure Habits That Will Make Your Life and Sex Life Better</div>
@@ -363,7 +335,6 @@
     </a>
 
     <a href="adult-entertainment-date-night-ideas.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/x8OozyAywSc/mqdefault.jpg" alt="Adult Entertainment Date Night Ideas" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 7, 2024</div>
         <div class="card-title">Adult Entertainment Date Night Ideas</div>
@@ -372,7 +343,6 @@
     </a>
 
     <a href="are-female-and-male-orgasms-the-same.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/wDRYkvhPJrI/mqdefault.jpg" alt="Are Female and Male Orgasms the Same?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 15, 2025</div>
         <div class="card-title">Are Female and Male Orgasms the Same?</div>
@@ -381,7 +351,6 @@
     </a>
 
     <a href="are-orgasms-necessary.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/XCWxT1r0Rxw/mqdefault.jpg" alt="Are Orgasms Necessary? It's Not Always About The Destination" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 7, 2024</div>
         <div class="card-title">Are Orgasms Necessary? It's Not Always About The Destination</div>
@@ -390,7 +359,6 @@
     </a>
 
     <a href="best-mutual-masturbation-positions-for-couples.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/EJo58-U8yws/mqdefault.jpg" alt="Best Mutual Masturbation Positions for Couples" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 16, 2025</div>
         <div class="card-title">Best Mutual Masturbation Positions for Couples</div>
@@ -399,7 +367,6 @@
     </a>
 
     <a href="blowjob-pleasure-hacks-for-her.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/_V7eQZB7sEo/mqdefault.jpg" alt="Blowjob Pleasure Hacks (For Her!) — 3 Tips to Make It Feel Good for Her Too" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">February 16, 2025</div>
         <div class="card-title">Blowjob Pleasure Hacks (For Her!) — 3 Tips to Make It Feel Good for Her Too</div>
@@ -408,7 +375,6 @@
     </a>
 
     <a href="butt-stuff-and-porn-myths.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/rXKb-sw-THY/mqdefault.jpg" alt="Butt Stuff And Why You Shouldn't Believe What You See In Porn" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 9, 2025</div>
         <div class="card-title">Butt Stuff And Why You Shouldn't Believe What You See In Porn</div>
@@ -417,7 +383,6 @@
     </a>
 
     <a href="cant-have-an-orgasm-how-i-figured-it-out.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/8QlqOnOZm84/mqdefault.jpg" alt="Can't Have an Orgasm? Me Neither — Until I Figured It Out" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 27, 2023</div>
         <div class="card-title">Can't Have an Orgasm? Me Neither &mdash; Until I Figured It Out</div>
@@ -426,7 +391,6 @@
     </a>
 
     <a href="christian-sex-guilt.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/R-5pPCqRbFQ/mqdefault.jpg" alt="Christian Sex Guilt — Ashley Madison Docuseries Review" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 27, 2024</div>
         <div class="card-title">Christian Sex Guilt — Ashley Madison Docuseries Review</div>
@@ -435,7 +399,6 @@
     </a>
 
     <a href="dating-and-sex-in-quebec.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/1OQqBOtTZaw/mqdefault.jpg" alt="Dating and Sex in Quebec — What It's Like Talking Dirty in French" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 9, 2024</div>
         <div class="card-title">Dating and Sex in Quebec — What It's Like Talking Dirty in French</div>
@@ -444,7 +407,6 @@
     </a>
 
     <a href="do-women-enjoy-anal-play.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/fnqyIyUz4R4/mqdefault.jpg" alt="Do Women Actually Enjoy Anal Play? The Honest Truth" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 16, 2025</div>
         <div class="card-title">Do Women Actually Enjoy Anal Play? The Honest Truth</div>
@@ -453,7 +415,6 @@
     </a>
 
     <a href="do-women-like-to-spit-or-swallow.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/1qj0XE_-uy4/mqdefault.jpg" alt="Do Women Like To Spit or Swallow?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 27, 2025</div>
         <div class="card-title">Do Women Like To Spit or Swallow?</div>
@@ -462,7 +423,6 @@
     </a>
 
     <a href="does-size-really-matter.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/OfNzVuoL5E0/mqdefault.jpg" alt="Does Size Really Matter?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 4, 2024</div>
         <div class="card-title">Does Size Really Matter?</div>
@@ -471,7 +431,6 @@
     </a>
 
     <a href="dont-visit-thailand-with-your-girlfriend.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/9iY3GDY1GAA/mqdefault.jpg" alt="Don't Visit Thailand With Your Girlfriend — Why Are Thai Women So Irresistible?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 11, 2023</div>
         <div class="card-title">Don't Visit Thailand With Your Girlfriend &mdash; Why Are Thai Women So Irresistible?</div>
@@ -480,7 +439,6 @@
     </a>
 
     <a href="erotic-movie-theatre-montreal.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/_8WCAMZb42M/mqdefault.jpg" alt="Erotic Movie Theatre Montreal" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 21, 2024</div>
         <div class="card-title">Erotic Movie Theatre Montreal</div>
@@ -489,7 +447,6 @@
     </a>
 
     <a href="experimenting-sexually-doesnt-make-you-weird.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/nnZFrNjnExo/mqdefault.jpg" alt="Experimenting Sexually Doesn't Make You Weird or Confused" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">February 24, 2024</div>
         <div class="card-title">Experimenting Sexually Doesn't Make You Weird or Confused</div>
@@ -498,7 +455,6 @@
     </a>
 
     <a href="first-experience-going-down-on-a-girl.html" class="blog-card" data-category="personal-stories">
-      <img class="thumb" src="https://i3.ytimg.com/vi/hoJhaRlWS2k/mqdefault.jpg" alt="First Experience Going Down on a Girl" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 27, 2022</div>
         <div class="card-title">First Experience Going Down on a Girl</div>
@@ -507,7 +463,6 @@
     </a>
 
     <a href="first-time-strip-club-for-couples.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/Asa5uS1__0I/mqdefault.jpg" alt="First-Time Strip Club for Couples" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 18, 2024</div>
         <div class="card-title">First-Time Strip Club for Couples</div>
@@ -516,7 +471,6 @@
     </a>
 
     <a href="from-sex-education-to-youtube-edutainment.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/PmLJQ6uUh0w/mqdefault.jpg" alt="From Sex Education to YouTube Sex Edutainment" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">August 16, 2024</div>
         <div class="card-title">From Sex Education to YouTube Sex Edutainment</div>
@@ -525,7 +479,6 @@
     </a>
 
     <a href="get-her-to-be-the-nastiest-version-of-herself.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/nzqcM9aeWoE/mqdefault.jpg" alt="Get Her to Be the Nastiest Version of Herself" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 30, 2025</div>
         <div class="card-title">Get Her to Be the Nastiest Version of Herself</div>
@@ -534,7 +487,6 @@
     </a>
 
     <a href="happy-ending-massage-vs-tantric-massage.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/JAbhpQb_ORo/mqdefault.jpg" alt="Happy Ending Massage vs Tantric Massage — What's the Difference?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 12, 2025</div>
         <div class="card-title">Happy Ending Massage vs Tantric Massage — What's the Difference?</div>
@@ -543,7 +495,6 @@
     </a>
 
     <a href="best-sex-with-a-stranger-who-is-your-lover.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/JLnUcFcMckw/mqdefault.jpg" alt="Have The Best Sex With a Stranger (But It's Actually Your Lover!)" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 27, 2025</div>
         <div class="card-title">Have The Best Sex With a Stranger (But It's Actually Your Lover!)</div>
@@ -552,7 +503,6 @@
     </a>
 
     <a href="getting-more-kinky-in-the-bedroom.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/ETWndqVmk8Q/mqdefault.jpg" alt="How I'm Getting More Kinky in the Bedroom (And Loving It)" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 21, 2025</div>
         <div class="card-title">How I'm Getting More Kinky in the Bedroom (And Loving It)</div>
@@ -561,7 +511,6 @@
     </a>
 
     <a href="couple-dating-profile-for-threesomes.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/-VuJN6KKfDc/mqdefault.jpg" alt="How to Create a Couple Dating Profile for Threesomes" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 10, 2024</div>
         <div class="card-title">How to Create a Couple Dating Profile for Threesomes</div>
@@ -570,7 +519,6 @@
     </a>
 
     <a href="how-to-feel-sexier-in-the-bedroom.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/PrVg-QD0kVE/mqdefault.jpg" alt="How to Feel Sexier in the Bedroom" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 5, 2025</div>
         <div class="card-title">How to Feel Sexier in the Bedroom</div>
@@ -579,7 +527,6 @@
     </a>
 
     <a href="how-to-find-a-threesome.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/1tZq8PDvE_s/mqdefault.jpg" alt="How To Find a Threesome" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 9, 2022</div>
         <div class="card-title">How To Find a Threesome</div>
@@ -588,7 +535,6 @@
     </a>
 
     <a href="how-to-handle-jealousy-in-non-monogamy.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/811TtUMdeZw/mqdefault.jpg" alt="How To Handle Jealousy in Non-Monogamy Relationships" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">October 30, 2025</div>
         <div class="card-title">How To Handle Jealousy in Non-Monogamy Relationships</div>
@@ -597,7 +543,6 @@
     </a>
 
     <a href="worlds-most-asked-sex-questions-part-2.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/jN6NjtvTZ1Y/mqdefault.jpg" alt="How to Have Anal Sex? — World's Most Asked Sex Questions Part 2" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date"></div>
         <div class="card-title">How to Have Anal Sex? &mdash; World's Most Asked Sex Questions Part 2</div>
@@ -606,7 +551,6 @@
     </a>
 
     <a href="how-to-have-casual-sex-without-catching-feelings.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/r1Qq-2tRzcw/mqdefault.jpg" alt="How to Have Casual Sex and Not Catch Feelings" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 16, 2023</div>
         <div class="card-title">How to Have Casual Sex and Not Catch Feelings</div>
@@ -615,7 +559,6 @@
     </a>
 
     <a href="worlds-most-asked-sex-questions-part-1.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/4hulKoQrXHg/mqdefault.jpg" alt="How to Have Sex? — World's Most Asked Sex Questions Part 1" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 20, 2023</div>
         <div class="card-title">How to Have Sex? &mdash; World's Most Asked Sex Questions Part 1</div>
@@ -624,7 +567,6 @@
     </a>
 
     <a href="how-to-last-longer-in-bed.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/lsJjzFmKuLQ/mqdefault.jpg" alt="How To Last Longer In Bed" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 31, 2025</div>
         <div class="card-title">How To Last Longer In Bed</div>
@@ -633,7 +575,6 @@
     </a>
 
     <a href="how-to-make-any-woman-squirt.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/IZGyrjCwRAw/mqdefault.jpg" alt="How To Make Any Woman Squirt — You're Using The Wrong Technique" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 24, 2024</div>
         <div class="card-title">How To Make Any Woman Squirt &mdash; You're Using The Wrong Technique</div>
@@ -642,7 +583,6 @@
     </a>
 
     <a href="how-to-provide-aftercare-after-a-threesome.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/MwJQ-Y5AzkQ/mqdefault.jpg" alt="How to Provide Aftercare After a Threesome" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 18, 2022</div>
         <div class="card-title">How to Provide Aftercare After a Threesome</div>
@@ -651,7 +591,6 @@
     </a>
 
     <a href="how-we-use-role-play-to-keep-things-fun.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/VaQYyGJ-Pyc/mqdefault.jpg" alt="How We Use Role Play To Keep Things Fun in the Bedroom" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 30, 2022</div>
         <div class="card-title">How We Use Role Play To Keep Things Fun in the Bedroom</div>
@@ -660,7 +599,6 @@
     </a>
 
     <a href="i-caught-my-boyfriend-masturbating.html" class="blog-card" data-category="personal-stories">
-      <img class="thumb" src="https://i3.ytimg.com/vi/b2I1uyhXOu4/mqdefault.jpg" alt="I Caught My Boyfriend Masturbating!" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 13, 2024</div>
         <div class="card-title">I Caught My Boyfriend Masturbating!</div>
@@ -669,7 +607,6 @@
     </a>
 
     <a href="i-gave-my-boyfriend-a-lingam-massage.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/y_ilg5pZKbo/mqdefault.jpg" alt="I Gave My Boyfriend a Lingam Massage" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 25, 2024</div>
         <div class="card-title">I Gave My Boyfriend a Lingam Massage</div>
@@ -678,7 +615,6 @@
     </a>
 
     <a href="i-gave-my-boyfriend-a-prostate-massage.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/_7R9QWH3fA0/mqdefault.jpg" alt="I Gave My Boyfriend a Prostate Massage" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date"></div>
         <div class="card-title">I Gave My Boyfriend a Prostate Massage</div>
@@ -687,7 +623,6 @@
     </a>
 
     <a href="orgasm-at-the-gym.html" class="blog-card" data-category="personal-stories">
-      <img class="thumb" src="https://i3.ytimg.com/vi/ZP98MpdeL3g/mqdefault.jpg" alt="I Had an Orgasm at the Gym — Yes, It's a Real Thing" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 28, 2024</div>
         <div class="card-title">I Had an Orgasm at the Gym — Yes, It's a Real Thing</div>
@@ -696,7 +631,6 @@
     </a>
 
     <a href="sex-with-myself-pleasure-practice.html" class="blog-card" data-category="personal-stories">
-      <img class="thumb" src="https://i3.ytimg.com/vi/qTkp4vfO7fE/mqdefault.jpg" alt="I Had Sex With Myself Last Night — Pleasure Practice" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">August 26, 2024</div>
         <div class="card-title">I Had Sex With Myself Last Night — Pleasure Practice</div>
@@ -705,7 +639,6 @@
     </a>
 
     <a href="my-experience-as-a-findom.html" class="blog-card" data-category="personal-stories">
-      <img class="thumb" src="https://i3.ytimg.com/vi/X_4mSxBGFww/mqdefault.jpg" alt="I Made $5000 in 24 Hours — My Experience as a Findom" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 23, 2024</div>
         <div class="card-title">I Made $5000 in 24 Hours &mdash; My Experience as a Findom</div>
@@ -714,7 +647,6 @@
     </a>
 
     <a href="i-tried-a-tantaly-sex-doll.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/9LNNNRufjjc/mqdefault.jpg" alt="I Tried a Tantaly Sex Doll — Here's What Happened" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date"></div>
         <div class="card-title">I Tried a Tantaly Sex Doll — Here's What Happened</div>
@@ -723,7 +655,6 @@
     </a>
 
     <a href="my-sex-trip-in-amsterdam.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/YnVZ8eeydHA/mqdefault.jpg" alt="I Went on a Sex Trip in Amsterdam" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 11, 2025</div>
         <div class="card-title">I Went on a Sex Trip in Amsterdam</div>
@@ -732,7 +663,6 @@
     </a>
 
     <a href="whats-your-sexual-blueprint.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/TlfBHD8-D3Q/mqdefault.jpg" alt="I'm Kinky AF — What's Your Sexual Blueprint?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 6, 2024</div>
         <div class="card-title">I'm Kinky AF — What's Your Sexual Blueprint?</div>
@@ -741,7 +671,6 @@
     </a>
 
     <a href="improve-the-quality-of-your-erection.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/LQj4eQSBN38/mqdefault.jpg" alt="Improve the Quality of Your Erection" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 20, 2025</div>
         <div class="card-title">Improve the Quality of Your Erection</div>
@@ -750,7 +679,6 @@
     </a>
 
     <a href="is-a-happy-ending-considered-cheating.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/N2aKdWkDLRM/mqdefault.jpg" alt="Is A Happy Ending Considered Cheating?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 2, 2024</div>
         <div class="card-title">Is A Happy Ending Considered Cheating?</div>
@@ -759,7 +687,6 @@
     </a>
 
     <a href="is-the-hub-ruining-your-relationship.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/nQMuQtM5544/mqdefault.jpg" alt="Is The Hub Ruining Your Relationship?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 11, 2025</div>
         <div class="card-title">Is The Hub Ruining Your Relationship?</div>
@@ -768,7 +695,6 @@
     </a>
 
     <a href="first-shibari-experience-learning-to-tie-my-partner.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/US4YnhC72dU/mqdefault.jpg" alt="Learning How to Tie My Partner — First Shibari Experience!" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">February 7, 2025</div>
         <div class="card-title">Learning How to Tie My Partner — First Shibari Experience!</div>
@@ -777,7 +703,6 @@
     </a>
 
     <a href="lets-try-fetlife.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/NQBLKRlXbZk/mqdefault.jpg" alt="Let's Try FetLife — Inspiration for New Experiences" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 16, 2024</div>
         <div class="card-title">Let's Try FetLife — Inspiration for New Experiences</div>
@@ -786,7 +711,6 @@
     </a>
 
     <a href="making-money-with-sex-content.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/2TPPZGsbAtc/mqdefault.jpg" alt="Making Money With Sex Related Content Online and Offline" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 21, 2024</div>
         <div class="card-title">Making Money With Sex Related Content Online and Offline</div>
@@ -795,7 +719,6 @@
     </a>
 
     <a href="masturbating-with-your-partner.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/C2XXZnBXppo/mqdefault.jpg" alt="Masturbating With Your Partner — Why Mutual Masturbation Is Underrated" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 5, 2024</div>
         <div class="card-title">Masturbating With Your Partner &mdash; Why Mutual Masturbation Is Underrated</div>
@@ -804,7 +727,6 @@
     </a>
 
     <a href="moaning-is-overrated.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/oI4dmTU8oTs/mqdefault.jpg" alt="Moaning Is Overrated — Here's What You Should Actually Pay Attention To" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 26, 2025</div>
         <div class="card-title">Moaning Is Overrated — Here's What You Should Actually Pay Attention To</div>
@@ -813,7 +735,6 @@
     </a>
 
     <a href="monogamish-new-dating-app.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/nwZiuqvMW5U/mqdefault.jpg" alt="Monogamish — A New Open Dating App Worth Trying" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 8, 2023</div>
         <div class="card-title">Monogamish &mdash; A New Open Dating App Worth Trying</div>
@@ -822,7 +743,6 @@
     </a>
 
     <a href="monogamish-swinging-polyamory-whats-the-difference.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/h0FEaQYTRlY/mqdefault.jpg" alt="Monogamish, Swinging, Polyamory — What's the Difference?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">October 22, 2025</div>
         <div class="card-title">Monogamish, Swinging, Polyamory — What's the Difference?</div>
@@ -831,7 +751,6 @@
     </a>
 
     <a href="montreal-uncovered-sexy-history.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/DVHLRa5g4iw/mqdefault.jpg" alt="Montreal Uncovered: The City's Sexy History" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 11, 2024</div>
         <div class="card-title">Montreal Uncovered: The City's Sexy History</div>
@@ -840,7 +759,6 @@
     </a>
 
     <a href="my-bdsm-experience-in-paris.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/e8ewnhTsfHw/mqdefault.jpg" alt="My BDSM Experience in Paris" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 26, 2025</div>
         <div class="card-title">My BDSM Experience in Paris</div>
@@ -849,7 +767,6 @@
     </a>
 
     <a href="my-experience-as-a-sugar-baby.html" class="blog-card" data-category="personal-stories">
-      <img class="thumb" src="https://i3.ytimg.com/vi/K9U5WxfbhA0/mqdefault.jpg" alt="My Experience as a Sugar Baby" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 22, 2022</div>
         <div class="card-title">My Experience as a Sugar Baby</div>
@@ -858,7 +775,6 @@
     </a>
 
     <a href="my-experience-at-a-bdsm-workshop-in-prague.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/4diOBLaVt4w/mqdefault.jpg" alt="My Experience at a BDSM Workshop in Prague" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 5, 2025</div>
         <div class="card-title">My Experience at a BDSM Workshop in Prague</div>
@@ -867,7 +783,6 @@
     </a>
 
     <a href="blow-job-bar-bangkok.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/ujtPENyJ4vE/mqdefault.jpg" alt="My Experience at a Blow Job Bar in Bangkok" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 2, 2024</div>
         <div class="card-title">My Experience at a Blow Job Bar in Bangkok</div>
@@ -876,7 +791,6 @@
     </a>
 
     <a href="go-go-bar-bangkok.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/EjWdO7XIa90/mqdefault.jpg" alt="My Experience At A Go-Go Bar In Bangkok" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 16, 2024</div>
         <div class="card-title">My Experience At A Go-Go Bar In Bangkok</div>
@@ -885,7 +799,6 @@
     </a>
 
     <a href="my-experience-at-sex-hotels.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/s7DSRzNGe3A/mqdefault.jpg" alt="My Experience at Sex Hotels" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 2, 2022</div>
         <div class="card-title">My Experience at Sex Hotels</div>
@@ -894,7 +807,6 @@
     </a>
 
     <a href="dealing-with-jealousy-in-a-threesome.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/N6fBOhrrWw0/mqdefault.jpg" alt="My Experience Dealing with Jealousy in a Threesome" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 18, 2023</div>
         <div class="card-title">My Experience Dealing with Jealousy in a Threesome</div>
@@ -903,7 +815,6 @@
     </a>
 
     <a href="my-experience-with-threesome-apps.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/4A6Lj-1tgm0/mqdefault.jpg" alt="My Experience with Threesome Apps" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 23, 2022</div>
         <div class="card-title">My Experience with Threesome Apps</div>
@@ -912,7 +823,6 @@
     </a>
 
     <a href="threesome-apps-how-to-find-a-unicorn.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/GlHHm9_yIxQ/mqdefault.jpg" alt="My Experience With Threesome Apps — How To Find A Unicorn For Your Couple" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 31, 2024</div>
         <div class="card-title">My Experience With Threesome Apps — How To Find A Unicorn For Your Couple</div>
@@ -921,7 +831,6 @@
     </a>
 
     <a href="my-favourite-way-to-please-my-partner-blow-jobs.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/wbWrxAa3Vck/mqdefault.jpg" alt="My Favourite Way to Please My Partner — Blow Jobs" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 12, 2022</div>
         <div class="card-title">My Favourite Way to Please My Partner &mdash; Blow Jobs</div>
@@ -930,7 +839,6 @@
     </a>
 
     <a href="my-first-experience-scissoring.html" class="blog-card" data-category="personal-stories">
-      <img class="thumb" src="https://i3.ytimg.com/vi/SeOwAsjVKtk/mqdefault.jpg" alt="My First Experience Scissoring — Expectations vs Reality" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 28, 2024</div>
         <div class="card-title">My First Experience Scissoring &mdash; Expectations vs Reality</div>
@@ -939,7 +847,6 @@
     </a>
 
     <a href="first-happy-ending-yoni-massage.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/SAN-nqMXi7U/mqdefault.jpg" alt="My First Happy Ending and Yoni Massage" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 16, 2024</div>
         <div class="card-title">My First Happy Ending and Yoni Massage</div>
@@ -948,7 +855,6 @@
     </a>
 
     <a href="first-kink-fetish-meetup-bangkok.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/vm0ZsMjmXRk/mqdefault.jpg" alt="My First Kink and Fetish Meetup in Bangkok" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 29, 2024</div>
         <div class="card-title">My First Kink and Fetish Meetup in Bangkok</div>
@@ -957,7 +863,6 @@
     </a>
 
     <a href="my-first-threesome.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/drLPKn551f4/mqdefault.jpg" alt="My First Threesome" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 12, 2022</div>
         <div class="card-title">My First Threesome</div>
@@ -966,7 +871,6 @@
     </a>
 
     <a href="my-prague-sex-trip-sex-machines-and-bdsm.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/YaY74g5NJ-4/mqdefault.jpg" alt="My Prague Sex Trip — Sex Machines &amp; BDSM" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 27, 2025</div>
         <div class="card-title">My Prague Sex Trip — Sex Machines &amp; BDSM</div>
@@ -975,7 +879,6 @@
     </a>
 
     <a href="my-sex-club-experience.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/-VpytkYJXQA/mqdefault.jpg" alt="My Sex Club Experience" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 17, 2022</div>
         <div class="card-title">My Sex Club Experience</div>
@@ -984,7 +887,6 @@
     </a>
 
     <a href="my-vr-adult-entertainment-experience.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/V_gZlWJRvqA/mqdefault.jpg" alt="My VR Adult Entertainment Experience (Pros, Cons &amp; Surprises)" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 17, 2025</div>
         <div class="card-title">My VR Adult Entertainment Experience (Pros, Cons &amp; Surprises)</div>
@@ -993,7 +895,6 @@
     </a>
 
     <a href="my-worst-sex-injury.html" class="blog-card" data-category="personal-stories">
-      <img class="thumb" src="https://i3.ytimg.com/vi/U6E2xTQd7Vk/mqdefault.jpg" alt="My Worst Sex Injury — Always Be Cautious In The Bedroom" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">February 2, 2025</div>
         <div class="card-title">My Worst Sex Injury — Always Be Cautious In The Bedroom</div>
@@ -1002,7 +903,6 @@
     </a>
 
     <a href="naked-saunas-in-the-netherlands.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/roMyAilqIeQ/mqdefault.jpg" alt="Naked Saunas in the Netherlands" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">August 20, 2024</div>
         <div class="card-title">Naked Saunas in the Netherlands</div>
@@ -1011,7 +911,6 @@
     </a>
 
     <a href="lelo-gigi-3-review-g-spot-stimulation.html" class="blog-card" data-category="reviews">
-      <img class="thumb" src="https://i3.ytimg.com/vi/0KmrG9Xa-c8/mqdefault.jpg" alt="Need Help Stimulating Her G-Spot? LELO GIGI 3 Review" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 7, 2025</div>
         <div class="card-title">Need Help Stimulating Her G-Spot? LELO GIGI 3 Review</div>
@@ -1020,7 +919,6 @@
     </a>
 
     <a href="neurodivergence-and-kink-why-they-overlap.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/4TNe7TMalOk/mqdefault.jpg" alt="Neurodivergence &amp; Kink — Why They Overlap" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">October 8, 2025</div>
         <div class="card-title">Neurodivergence &amp; Kink — Why They Overlap</div>
@@ -1029,7 +927,6 @@
     </a>
 
     <a href="lelo-enigma-a-spot-orgasm-review.html" class="blog-card" data-category="reviews">
-      <img class="thumb" src="https://i3.ytimg.com/vi/T2U_foJHYbs/mqdefault.jpg" alt="New Sex Toy for the A-Spot Orgasm — LELO Enigma Review" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 6, 2024</div>
         <div class="card-title">New Sex Toy for the A-Spot Orgasm — LELO Enigma Review</div>
@@ -1038,7 +935,6 @@
     </a>
 
     <a href="lelo-soraya-beads-review.html" class="blog-card" data-category="reviews">
-      <img class="thumb" src="https://i3.ytimg.com/vi/fxbenjFmiR0/mqdefault.jpg" alt="New Year, New Sex Toy — LELO Soraya Beads Review" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 31, 2024</div>
         <div class="card-title">New Year, New Sex Toy — LELO Soraya Beads Review</div>
@@ -1047,7 +943,6 @@
     </a>
 
     <a href="threesome-dating-first-message-tips.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/7Ibxg7DFlMU/mqdefault.jpg" alt="Online Threesome Dating — First Message Tips" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 13, 2024</div>
         <div class="card-title">Online Threesome Dating &mdash; First Message Tips</div>
@@ -1056,7 +951,6 @@
     </a>
 
     <a href="open-relationships-threesomes-dating-as-a-couple.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/U4yv2OgFKZw/mqdefault.jpg" alt="Open Relationships, Threesomes and Dating as a Couple" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">August 21, 2022</div>
         <div class="card-title">Open Relationships, Threesomes and Dating as a Couple</div>
@@ -1065,7 +959,6 @@
     </a>
 
     <a href="our-experience-getting-a-happy-ending.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/2r9-qgQ2FIE/mqdefault.jpg" alt="Our Experience Getting a Happy Ending" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 27, 2023</div>
         <div class="card-title">Our Experience Getting a Happy Ending</div>
@@ -1074,7 +967,6 @@
     </a>
 
     <a href="first-happy-ending-massage-thailand.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/XmyEXpQzZg0/mqdefault.jpg" alt="Our First Happy Ending Massage in Thailand" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 10, 2024</div>
         <div class="card-title">Our First Happy Ending Massage in Thailand</div>
@@ -1083,7 +975,6 @@
     </a>
 
     <a href="our-first-happy-ending-nuru-massage.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/8KHZwgx8E5I/mqdefault.jpg" alt="Our First Happy Ending Nuru Massage Experience" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 27, 2025</div>
         <div class="card-title">Our First Happy Ending Nuru Massage Experience</div>
@@ -1092,7 +983,6 @@
     </a>
 
     <a href="our-first-threesome.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/WTSRczbt6-I/mqdefault.jpg" alt="Our First Threesome" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 18, 2024</div>
         <div class="card-title">Our First Threesome</div>
@@ -1101,7 +991,6 @@
     </a>
 
     <a href="our-surprise-threesome.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/CpYoKE04LJk/mqdefault.jpg" alt="Our Surprise Threesome" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 9, 2024</div>
         <div class="card-title">Our Surprise Threesome</div>
@@ -1110,7 +999,6 @@
     </a>
 
     <a href="disabilities-and-sex.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/MFROx4iC3sM/mqdefault.jpg" alt="People With Disabilities Want and Need Sex Too" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 20, 2024</div>
         <div class="card-title">People With Disabilities Want and Need Sex Too</div>
@@ -1119,7 +1007,6 @@
     </a>
 
     <a href="premature-ejaculation-tips-to-last-longer.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/4FDwRnLLiro/mqdefault.jpg" alt="Premature Ejaculation — Tips to Last Longer" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 21, 2025</div>
         <div class="card-title">Premature Ejaculation — Tips to Last Longer</div>
@@ -1128,7 +1015,6 @@
     </a>
 
     <a href="seeking-dating-app-honest-review.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/KVERPsaFxic/mqdefault.jpg" alt="Seeking — A Dating App Worth Giving a Try: An Honest Review" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 5, 2023</div>
         <div class="card-title">Seeking &mdash; A Dating App Worth Giving a Try: An Honest Review</div>
@@ -1137,7 +1023,6 @@
     </a>
 
     <a href="sex-and-nudity-netherlands.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/9Y-FQ5adtP8/mqdefault.jpg" alt="Sex &amp; Nudity in the Netherlands — Why Are the Dutch So Chill?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">October 28, 2024</div>
         <div class="card-title">Sex &amp; Nudity in the Netherlands — Why Are the Dutch So Chill?</div>
@@ -1146,7 +1031,6 @@
     </a>
 
     <a href="sex-and-disabilities.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/syMUT20SR2s/mqdefault.jpg" alt="Sex and Disabilities: It's Not Just The Disabled Not Getting Laid" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 11, 2024</div>
         <div class="card-title">Sex and Disabilities: It's Not Just The Disabled Not Getting Laid</div>
@@ -1155,7 +1039,6 @@
     </a>
 
     <a href="sex-and-older-adults.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/wTK30gvW-Mo/mqdefault.jpg" alt="Sex and Older Adults — What's It Like Having Sex In Your Later Years" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 20, 2024</div>
         <div class="card-title">Sex and Older Adults — What's It Like Having Sex In Your Later Years</div>
@@ -1164,7 +1047,6 @@
     </a>
 
     <a href="sex-doll-brothels.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/-ITcQVjweKU/mqdefault.jpg" alt="Sex Doll Brothels — What Are They and Why Do They Exist?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 20, 2024</div>
         <div class="card-title">Sex Doll Brothels — What Are They and Why Do They Exist?</div>
@@ -1173,7 +1055,6 @@
     </a>
 
     <a href="sex-in-america-purity-culture-to-chill-vibes.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/_RWIaOBSA-g/mqdefault.jpg" alt="Sex in America — Purity Culture to Chill Vibes" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 9, 2025</div>
         <div class="card-title">Sex in America — Purity Culture to Chill Vibes</div>
@@ -1182,7 +1063,6 @@
     </a>
 
     <a href="sex-in-japan-love-hotels-cosplay-cuddle-cafes.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/dUE7KP26frk/mqdefault.jpg" alt="Sex in Japan — Love Hotels, Cosplay, Cuddle Cafes" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 19, 2025</div>
         <div class="card-title">Sex in Japan — Love Hotels, Cosplay, Cuddle Cafes</div>
@@ -1191,7 +1071,6 @@
     </a>
 
     <a href="sex-in-mexico-religion-vs-freaky.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/OPNMsRDiPAw/mqdefault.jpg" alt="Sex In Mexico — Religion versus Freaky Deaky" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 5, 2025</div>
         <div class="card-title">Sex In Mexico — Religion versus Freaky Deaky</div>
@@ -1200,7 +1079,6 @@
     </a>
 
     <a href="sex-toys-new-career.html" class="blog-card" data-category="reviews">
-      <img class="thumb" src="https://i3.ytimg.com/vi/62DDTdfB-Kw/mqdefault.jpg" alt="Sex Toys I Have to Test — This Is My New Career" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 26, 2024</div>
         <div class="card-title">Sex Toys I Have to Test — This Is My New Career</div>
@@ -1209,7 +1087,6 @@
     </a>
 
     <a href="sexting-flirting-sexual-tension.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/Wv8O8SMLkaI/mqdefault.jpg" alt="Sexting — My Favourite Way to Flirt and Increase Sexual Tension" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 18, 2024</div>
         <div class="card-title">Sexting &mdash; My Favourite Way to Flirt and Increase Sexual Tension</div>
@@ -1218,7 +1095,6 @@
     </a>
 
     <a href="bellesa-whispertech-silent-vibrator-review.html" class="blog-card" data-category="reviews">
-      <img class="thumb" src="https://i3.ytimg.com/vi/tBVJllN47ZY/mqdefault.jpg" alt="Silent Vibrators Are Finally Here?! — Bellesa WhisperTech Review" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 10, 2025</div>
         <div class="card-title">Silent Vibrators Are Finally Here?! — Bellesa WhisperTech Review</div>
@@ -1227,7 +1103,6 @@
     </a>
 
     <a href="spicy-couple-starter-pack-for-better-sex.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/qfVdyzGSlg8/mqdefault.jpg" alt="Spicy Couple Starter Pack for Better Sex — Top 3 Resources" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 21, 2025</div>
         <div class="card-title">Spicy Couple Starter Pack for Better Sex — Top 3 Resources</div>
@@ -1236,7 +1111,6 @@
     </a>
 
     <a href="spontaneous-vs-responsive-desire.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/T2HpOzCAfBI/mqdefault.jpg" alt="Spontaneous Desire vs Responsive Desire — Why You're Not So Horny Anymore" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 1, 2024</div>
         <div class="card-title">Spontaneous Desire vs Responsive Desire — Why You're Not So Horny Anymore</div>
@@ -1245,7 +1119,6 @@
     </a>
 
     <a href="stripping-vs-burlesque-whats-the-difference.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/T1Zb8Eo94zc/mqdefault.jpg" alt="Stripping vs Burlesque — What's The Difference?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 14, 2025</div>
         <div class="card-title">Stripping vs Burlesque — What's The Difference?</div>
@@ -1254,7 +1127,6 @@
     </a>
 
     <a href="benefits-of-solo-travelling-without-partner.html" class="blog-card" data-category="personal-stories">
-      <img class="thumb" src="https://i3.ytimg.com/vi/hQKYTK-NHF8/mqdefault.jpg" alt="The Benefits of Solo Travelling Without Your Partner" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 31, 2024</div>
         <div class="card-title">The Benefits of Solo Travelling Without Your Partner</div>
@@ -1263,7 +1135,6 @@
     </a>
 
     <a href="best-oral-sex-tip-make-her-orgasm.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/u6KWSkglvW4/mqdefault.jpg" alt="The Best Oral Sex Tip She Wants You To Know" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 17, 2024</div>
         <div class="card-title">The Best Oral Sex Tip She Wants You To Know</div>
@@ -1272,7 +1143,6 @@
     </a>
 
     <a href="sex-workers-and-sex-tourism.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/RnMR3solOfg/mqdefault.jpg" alt="The Murky World of Sex Workers and Sex Tourism" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">May 14, 2024</div>
         <div class="card-title">The Murky World of Sex Workers and Sex Tourism</div>
@@ -1281,7 +1151,6 @@
     </a>
 
     <a href="the-no-sex-phase-in-every-relationship.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/D_XKOS4qFt8/mqdefault.jpg" alt="The No Sex Phase That Happens in Every Relationship" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">August 19, 2023</div>
         <div class="card-title">The No Sex Phase That Happens in Every Relationship</div>
@@ -1290,7 +1159,6 @@
     </a>
 
     <a href="the-secret-to-blended-orgasms.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/_Ai-9MXx66k/mqdefault.jpg" alt="The Secret to Blended Orgasms (That Most Men Don't Know About)" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">October 26, 2025</div>
         <div class="card-title">The Secret to Blended Orgasms (That Most Men Don't Know About)</div>
@@ -1299,7 +1167,6 @@
     </a>
 
     <a href="the-sex-industry-is-changing.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/TUvUhq0tOMg/mqdefault.jpg" alt="The Sex Industry Is Changing — And It's All About Wellness" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 3, 2025</div>
         <div class="card-title">The Sex Industry Is Changing — And It's All About Wellness</div>
@@ -1308,7 +1175,6 @@
     </a>
 
     <a href="threesome-sleepovers-yay-or-nay.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/tnN5pPiFTC8/mqdefault.jpg" alt="Threesome Sleepovers — Yay or Nay?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 19, 2022</div>
         <div class="card-title">Threesome Sleepovers &mdash; Yay or Nay?</div>
@@ -1317,7 +1183,6 @@
     </a>
 
     <a href="threesomes-explained-mfm-vs-ffm.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/qyGW0-2oyHo/mqdefault.jpg" alt="Threesomes Explained — MFM vs FFM (And What I Learned)" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">August 11, 2025</div>
         <div class="card-title">Threesomes Explained — MFM vs FFM (And What I Learned)</div>
@@ -1326,7 +1191,6 @@
     </a>
 
     <a href="top-5-sexually-open-minded-countries.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/VPQTOsx8_zQ/mqdefault.jpg" alt="Top 5 Sexually Open-Minded Countries in the World" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">October 1, 2025</div>
         <div class="card-title">Top 5 Sexually Open-Minded Countries in the World</div>
@@ -1335,7 +1199,6 @@
     </a>
 
     <a href="top-5-threesome-positions.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/AKK9K2npoMA/mqdefault.jpg" alt="Top 5 Threesome Positions" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 3, 2025</div>
         <div class="card-title">Top 5 Threesome Positions</div>
@@ -1344,7 +1207,6 @@
     </a>
 
     <a href="unsolicited-happy-ending-massage-thailand.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/tqGwhucSvzg/mqdefault.jpg" alt="Unsolicited Happy Ending — My Weird Massage Experience in Thailand" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 21, 2024</div>
         <div class="card-title">Unsolicited Happy Ending — My Weird Massage Experience in Thailand</div>
@@ -1353,7 +1215,6 @@
     </a>
 
     <a href="thinking-of-opening-your-relationship.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/1kglMrAcRNU/mqdefault.jpg" alt="Watch This If You're Thinking of Opening Your Relationship" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 9, 2025</div>
         <div class="card-title">Watch This If You're Thinking of Opening Your Relationship</div>
@@ -1362,7 +1223,6 @@
     </a>
 
     <a href="weed-sex-canals-thailand.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/uG21Gsn3QPs/mqdefault.jpg" alt="Weed, Sex, Canals — Things You Didn't Know About Thailand" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 9, 2024</div>
         <div class="card-title">Weed, Sex, Canals — Things You Didn't Know About Thailand</div>
@@ -1371,7 +1231,6 @@
     </a>
 
     <a href="questionable-nightlife-and-sex-tourism.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/UvUppXwmCBc/mqdefault.jpg" alt="What City Is Known For Its Questionable Nightlife and Sex Tourism" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 1, 2024</div>
         <div class="card-title">What City Is Known For Its Questionable Nightlife and Sex Tourism</div>
@@ -1380,7 +1239,6 @@
     </a>
 
     <a href="what-do-sexual-fantasies-say-about-you.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/WNwmmQw29ag/mqdefault.jpg" alt="What Do Your Sexual Fantasies Say About You?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">October 21, 2024</div>
         <div class="card-title">What Do Your Sexual Fantasies Say About You?</div>
@@ -1389,7 +1247,6 @@
     </a>
 
     <a href="private-dance-at-a-strip-club.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/Io31yPKe-2k/mqdefault.jpg" alt="What It's Really Like Getting a Private Dance at a Strip Club" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 24, 2024</div>
         <div class="card-title">What It's Really Like Getting a Private Dance at a Strip Club</div>
@@ -1398,7 +1255,6 @@
     </a>
 
     <a href="what-kind-of-porn-did-you-watch.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/WV6PHYj5N7A/mqdefault.jpg" alt="What Kind of Porn Did You Used to Watch?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 5, 2022</div>
         <div class="card-title">What Kind of Porn Did You Used to Watch?</div>
@@ -1407,7 +1263,6 @@
     </a>
 
     <a href="what-men-need-before-dating-apps.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/S0V-vtsJMAc/mqdefault.jpg" alt="What Men Need To Do Before Getting On Dating Apps" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 30, 2025</div>
         <div class="card-title">What Men Need To Do Before Getting On Dating Apps</div>
@@ -1416,7 +1271,6 @@
     </a>
 
     <a href="what-women-are-taught-to-call-down-there.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/JoQ8WyXnHgQ/mqdefault.jpg" alt="What Women Are Taught to Call Down There" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date"></div>
         <div class="card-title">What Women Are Taught to Call Down There</div>
@@ -1425,7 +1279,6 @@
     </a>
 
     <a href="what-women-think-about-your-size.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/up3VIT20D5k/mqdefault.jpg" alt="What Women Really Think About Your Size" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 12, 2024</div>
         <div class="card-title">What Women Really Think About Your Size</div>
@@ -1434,7 +1287,6 @@
     </a>
 
     <a href="where-to-find-swingers-in-mexico.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/LUuWJnnd4XM/mqdefault.jpg" alt="Where to Find Swingers in Mexico" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">February 26, 2023</div>
         <div class="card-title">Where to Find Swingers in Mexico</div>
@@ -1443,7 +1295,6 @@
     </a>
 
     <a href="which-sexual-label-do-i-identify-with.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/kAnxb5g1Mvo/mqdefault.jpg" alt="Which Sexual Label Do I Identify Most With" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 19, 2022</div>
         <div class="card-title">Which Sexual Label Do I Identify Most With</div>
@@ -1452,7 +1303,6 @@
     </a>
 
     <a href="why-people-love-sex-stories-on-youtube.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/zOFsTy87IK8/mqdefault.jpg" alt="Why Are People So Interested in Sex Stories on YouTube?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">April 25, 2024</div>
         <div class="card-title">Why Are People So Interested in Sex Stories on YouTube?</div>
@@ -1461,7 +1311,6 @@
     </a>
 
     <a href="why-clit-stimulation-feels-so-good.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/7QA22YysIhQ/mqdefault.jpg" alt="Why Clit Stimulation Feels So Good — Let's Talk Masturbation" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date"></div>
         <div class="card-title">Why Clit Stimulation Feels So Good — Let's Talk Masturbation</div>
@@ -1470,7 +1319,6 @@
     </a>
 
     <a href="pheromones-and-sexual-attraction.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/H_ahe3IJIMw/mqdefault.jpg" alt="Why Do I Like to Smell His Penis? — Pheromones and Sexual Attraction" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">July 22, 2024</div>
         <div class="card-title">Why Do I Like to Smell His Penis? — Pheromones and Sexual Attraction</div>
@@ -1479,7 +1327,6 @@
     </a>
 
     <a href="why-do-unicorn-hunters-have-a-bad-rep.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/Atpcktga0Zw/mqdefault.jpg" alt="Why Do Unicorn Hunters Have Such a Bad Rep?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 7, 2022</div>
         <div class="card-title">Why Do Unicorn Hunters Have Such a Bad Rep?</div>
@@ -1488,7 +1335,6 @@
     </a>
 
     <a href="why-does-my-boyfriend-want-a-threesome.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/q6-na1Lrxno/mqdefault.jpg" alt="Why Does My Boyfriend Want a Threesome? Should I Do It?" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 29, 2023</div>
         <div class="card-title">Why Does My Boyfriend Want a Threesome? Should I Do It?</div>
@@ -1497,7 +1343,6 @@
     </a>
 
     <a href="why-group-sex-is-the-number-one-fantasy.html" class="blog-card" data-category="threesomes">
-      <img class="thumb" src="https://i3.ytimg.com/vi/AU7wcWBKaS4/mqdefault.jpg" alt="Why Group Sex Is the #1 Fantasy (According to Science)" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">December 17, 2025</div>
         <div class="card-title">Why Group Sex Is the #1 Fantasy (According to Science)</div>
@@ -1506,7 +1351,6 @@
     </a>
 
     <a href="why-im-into-cuckolding.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/Jdo7y5_j22c/mqdefault.jpg" alt="Why I'm Into Cuckolding — My Fantasy + What the Research Says" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 24, 2025</div>
         <div class="card-title">Why I'm Into Cuckolding — My Fantasy + What the Research Says</div>
@@ -1515,7 +1359,6 @@
     </a>
 
     <a href="why-is-morning-sex-the-best-sex.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/FtjIzhy8EGs/mqdefault.jpg" alt="Why Is Morning Sex the Best Sex" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">September 9, 2022</div>
         <div class="card-title">Why Is Morning Sex the Best Sex</div>
@@ -1524,7 +1367,6 @@
     </a>
 
     <a href="why-she-wont-sleep-with-you.html" class="blog-card" data-category="techniques">
-      <img class="thumb" src="https://i3.ytimg.com/vi/MVtFQRt3B7A/mqdefault.jpg" alt="Why She Won't Sleep With You" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">October 10, 2024</div>
         <div class="card-title">Why She Won't Sleep With You</div>
@@ -1533,7 +1375,6 @@
     </a>
 
     <a href="why-so-many-men-are-curious-about-pegging.html" class="blog-card" data-category="kink-exploration">
-      <img class="thumb" src="https://i3.ytimg.com/vi/kGaI3L8PNAA/mqdefault.jpg" alt="Why So Many Men Are Curious About Pegging (Let's Talk About It)" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">November 7, 2025</div>
         <div class="card-title">Why So Many Men Are Curious About Pegging (Let's Talk About It)</div>
@@ -1542,7 +1383,6 @@
     </a>
 
     <a href="why-talking-about-sex-feels-hard.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/SekhfS1_SkM/mqdefault.jpg" alt="Why Talking About Sex Feels Hard — Even for Me" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 16, 2025</div>
         <div class="card-title">Why Talking About Sex Feels Hard — Even for Me</div>
@@ -1551,7 +1391,6 @@
     </a>
 
     <a href="why-we-sleep-in-separate-bedrooms.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/qSaO1-SE-lc/mqdefault.jpg" alt="Why We Sleep in Separate Bedrooms" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">January 17, 2023</div>
         <div class="card-title">Why We Sleep in Separate Bedrooms</div>
@@ -1560,7 +1399,6 @@
     </a>
 
     <a href="why-you-should-see-a-sex-therapist.html" class="blog-card" data-category="sex-ed">
-      <img class="thumb" src="https://i3.ytimg.com/vi/s29TA4YnQaw/mqdefault.jpg" alt="Why You Should Consider Seeing a Sex Therapist" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">August 8, 2025</div>
         <div class="card-title">Why You Should Consider Seeing a Sex Therapist</div>
@@ -1569,7 +1407,6 @@
     </a>
 
     <a href="sex-and-open-relationship-books.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/QJH3_4rdUdo/mqdefault.jpg" alt="Why You Should Read More Sex and Open Relationship Books" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">June 26, 2024</div>
         <div class="card-title">Why You Should Read More Sex and Open Relationship Books</div>
@@ -1578,7 +1415,6 @@
     </a>
 
     <a href="yoni-erotic-massage-intense-pleasure.html" class="blog-card" data-category="sex-travel">
-      <img class="thumb" src="https://i3.ytimg.com/vi/x61L2fei66o/mqdefault.jpg" alt="Yoni Erotic Massage: The Secret to Intense Pleasure (My Experience!)" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 21, 2025</div>
         <div class="card-title">Yoni Erotic Massage: The Secret to Intense Pleasure (My Experience!)</div>
@@ -1587,7 +1423,6 @@
     </a>
 
     <a href="you-dont-always-need-sex-to-be-happy.html" class="blog-card" data-category="relationships">
-      <img class="thumb" src="https://i3.ytimg.com/vi/V4eOJl3_P2w/mqdefault.jpg" alt="You Don't Always Need To Have Sex To Be Happy" width="200" height="134" loading="lazy">
       <div class="info">
         <div class="card-date">March 16, 2024</div>
         <div class="card-title">You Don't Always Need To Have Sex To Be Happy</div>
