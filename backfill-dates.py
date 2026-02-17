@@ -137,7 +137,7 @@ def find_posts_without_dates(index_html):
     #   <div class="info">
     #     <div class="card-date"></div>
     pattern = re.compile(
-        r'<a\s+href="([^"]+)"\s+class="blog-card">\s*'
+        r'<a\s+href="([^"]+)"\s+class="blog-card"[^>]*>\s*'
         r'<img[^>]*src="https://i3\.ytimg\.com/vi/([a-zA-Z0-9_-]{11})/[^"]*"[^>]*>\s*'
         r'<div\s+class="info">\s*'
         r'<div\s+class="card-date">\s*</div>',
@@ -165,7 +165,7 @@ def update_index_html(index_html, updates):
     for vid_id, human_date in updates.items():
         # Find the card that has this video ID in its thumbnail and an empty card-date
         pattern = re.compile(
-            r'(<a\s+href="[^"]+"\s+class="blog-card">\s*'
+            r'(<a\s+href="[^"]+"\s+class="blog-card"[^>]*>\s*'
             r'<img[^>]*src="https://i3\.ytimg\.com/vi/' + re.escape(vid_id) + r'/[^"]*"[^>]*>\s*'
             r'<div\s+class="info">\s*)'
             r'<div\s+class="card-date">\s*</div>',
