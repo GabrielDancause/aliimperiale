@@ -964,6 +964,7 @@
 <script src="back-to-top.js" defer></script>
 <script>
 (function() {
+  var KIT_URL = 'https://app.kit.com/forms/9115688/subscriptions';
   var form = document.getElementById('homepage-subscribe');
   if (!form) return;
   var status = form.parentElement.querySelector('.subscribe-status');
@@ -974,15 +975,17 @@
     var btn = form.querySelector('button');
     btn.textContent = 'Sending...';
     btn.disabled = true;
-    fetch('https://script.google.com/macros/s/AKfycbzyxMBbzpTh4An8umtkgzIMZNYkLNADkYzh2_iDngYtHvp1vVXR5Tvkb_R_-QfvjRD1/exec', {
+    var fd = new FormData();
+    fd.append('email_address', email);
+    fetch(KIT_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: 'email=' + encodeURIComponent(email) + '&source=homepage&source_url=' + encodeURIComponent(window.location.href),
-      mode: 'no-cors'
-    }).then(function() {
+      body: fd,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(r) { return r.json(); })
+    .then(function() {
       status.style.display = 'block';
       status.style.color = '#2E3E24';
-      status.textContent = 'You\u2019re in! Thanks for subscribing.';
+      status.textContent = 'You\u2019re in! Check your email to confirm.';
       form.style.display = 'none';
     }).catch(function() {
       status.style.display = 'block';

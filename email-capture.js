@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyxMBbzpTh4An8umtkgzIMZNYkLNADkYzh2_iDngYtHvp1vVXR5Tvkb_R_-QfvjRD1/exec';
+  var KIT_FORM_URL = 'https://app.kit.com/forms/9115688/subscriptions';
   var STORAGE_PREFIX = 'email_capture_';
 
   if (document.body) { init(); }
@@ -170,16 +170,8 @@
   //  Shared Email Submit
   // ========================
   function submitEmail(email, postSlug, onSuccess, onError) {
-    if (APPS_SCRIPT_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
-      onSuccess();
-      return;
-    }
-
-    var payload = JSON.stringify({
-      email: email,
-      post_slug: postSlug,
-      source_url: window.location.href
-    });
+    var fd = new FormData();
+    fd.append('email_address', email);
 
     var controller;
     var timeoutId;
@@ -190,21 +182,16 @@
 
     var fetchOptions = {
       method: 'POST',
-      redirect: 'follow',
-      headers: { 'Content-Type': 'text/plain' },
-      body: payload
+      body: fd,
+      headers: { 'Accept': 'application/json' }
     };
     if (controller) fetchOptions.signal = controller.signal;
 
-    fetch(APPS_SCRIPT_URL, fetchOptions)
+    fetch(KIT_FORM_URL, fetchOptions)
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (timeoutId) clearTimeout(timeoutId);
-        if (data && data.success !== false) {
-          onSuccess();
-        } else {
-          onError();
-        }
+        onSuccess();
       })
       .catch(function () {
         if (timeoutId) clearTimeout(timeoutId);

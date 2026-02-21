@@ -1433,6 +1433,19 @@
 
   </div>
 
+  <!-- Newsletter -->
+  <div style="padding:48px 20px 56px;text-align:center">
+    <div style="max-width:480px;margin:0 auto;background:#fff;border-radius:18px;padding:36px 30px;box-shadow:0 1px 4px rgba(46,62,36,.06);border:1px solid rgba(46,62,36,.06)">
+      <h2 style="font-family:'The Bloomington',cursive;font-size:2rem;font-weight:400;color:#2E3E24;margin-bottom:10px">Stay curious</h2>
+      <p style="font-size:.9rem;color:#555549;line-height:1.7;margin-bottom:20px">New articles, guides, and honest conversations about sex and relationships — straight to your inbox.</p>
+      <form style="display:flex;gap:10px;max-width:380px;margin:0 auto" id="blog-subscribe">
+        <input type="email" name="email" placeholder="Your email" required aria-label="Email address" style="flex:1;padding:12px 16px;border:1px solid #C6C8BB;border-radius:10px;font-family:Montserrat,sans-serif;font-size:.88rem;background:#FAF8EB;color:#2E3E24;outline:none">
+        <button type="submit" style="padding:12px 24px;background:#2E3E24;color:#FAF8EB;border:none;border-radius:10px;font-family:Montserrat,sans-serif;font-weight:600;font-size:.88rem;cursor:pointer;white-space:nowrap">Subscribe</button>
+      </form>
+      <p class="blog-subscribe-status" style="display:none;margin-top:14px;font-size:.85rem"></p>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -1499,5 +1512,37 @@
   })();
   </script>
 <script src="../back-to-top.js" defer></script>
+<script>
+(function() {
+  var KIT_URL = 'https://app.kit.com/forms/9115688/subscriptions';
+  var form = document.getElementById('blog-subscribe');
+  if (!form) return;
+  var status = form.parentElement.querySelector('.blog-subscribe-status');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = form.querySelector('input[name="email"]').value.trim();
+    if (!email) return;
+    var btn = form.querySelector('button');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    var fd = new FormData();
+    fd.append('email_address', email);
+    fetch(KIT_URL, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+    .then(function(r) { return r.json(); })
+    .then(function() {
+      status.style.display = 'block';
+      status.style.color = '#2E3E24';
+      status.textContent = 'You\u2019re in! Check your email to confirm.';
+      form.style.display = 'none';
+    }).catch(function() {
+      status.style.display = 'block';
+      status.style.color = '#AD9846';
+      status.textContent = 'Something went wrong. Please try again.';
+      btn.textContent = 'Subscribe';
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
 </body>
 </html>
