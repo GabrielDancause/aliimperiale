@@ -388,4 +388,10 @@
     p.textContent = message;
     parent.appendChild(p);
   }
+
+  // Load global newsletter bar on blog posts
+  var nlScript = document.createElement('script');
+  nlScript.src = '/newsletter-bar.js';
+  nlScript.defer = true;
+  document.body.appendChild(nlScript);
 })();
