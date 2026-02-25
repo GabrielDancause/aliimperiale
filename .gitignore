@@ -22,3 +22,14 @@ fonts/new-standard/
 
 # Old avatar
 avatar.jpg
+
+# Raw photos (keep locally, not in repo)
+*.HEIC
+*.JPG
+IMG_*.jpg
+
+# Misc working files
+ec3493f6-*.jpg
+ethical-nightlife-guide (2).pdf
+resolution.pdf
+worksheets/Claude Code*
