@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sexual Health & Wellness Tracker | Ali Imperiale</title>
+<meta name="description" content="A private, judgment-free tracker to log periods, symptoms, mood, and energy levels. Better understand your body's patterns. All data stored locally.">
+<meta property="og:title" content="Sexual Health & Wellness Tracker | Ali Imperiale">
+<meta property="og:description" content="A private, judgment-free tracker to log periods, symptoms, mood, and energy levels. Better understand your body's patterns. All data stored locally.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aliimperiale.com/sexual-health-tracker.html">
+<meta property="og:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+<meta property="og:image:width" content="768">
+<meta property="og:image:height" content="960">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sexual Health & Wellness Tracker | Ali Imperiale">
+<meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+<link rel="canonical" href="https://aliimperiale.com/sexual-health-tracker.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  body {
+    background-color: #FAF8EB;
+    color: #2E3E24;
+  }
+
+  /* Navigation (copied from index) */
+  .site-nav {
+    background: #2E3E24;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+  }
+  .nav-logo {
+    height: 36px;
+    opacity: 0.95;
+    transition: opacity 0.2s;
+  }
+  .nav-logo:hover {
+    opacity: 1;
+  }
+  .site-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .site-nav .nav-links a {
+    color: #C6C8BB;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.15s ease;
+  }
+  .site-nav .nav-links a:hover, .site-nav .nav-links a.active {
+    color: #FAF8EB;
+  }
+
+  /* Page Header */
+  .page-header {
+    background-color: #2E3E24;
+    color: #FAF8EB;
+    text-align: center;
+    padding: 40px 20px 60px;
+    position: relative;
+  }
+  .page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #FAF8EB;
+    border-radius: 30px 30px 0 0;
+  }
+  .page-header h1 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .page-header p {
+    font-size: 1.05rem;
+    color: #C6C8BB;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Main Container */
+  .tracker-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Card Style */
+  .card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
+    border: 1px solid rgba(46, 62, 36, 0.06);
+  }
+
+  .card h2 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2E3E24;
+    text-align: center;
+  }
+
+  /* Calendar Section */
+  .calendar-container {
+    margin-top: 10px;
+  }
+  .calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .btn-nav {
+    background: none;
+    border: 1px solid #AD9846;
+    color: #2E3E24;
+    padding: 6px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .btn-nav:hover {
+    background: #AD9846;
+    color: #fff;
+  }
+  .calendar-month {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
+  .calendar-day-header {
+    font-weight: 600;
+    color: #8a8a7a;
+    font-size: 0.85rem;
+    padding-bottom: 8px;
+  }
+  .calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f5f5f5;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.1s;
+    position: relative;
+  }
+  .calendar-day:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+  .calendar-day.empty {
+    background: none;
+    cursor: default;
+  }
+  .calendar-day.empty:hover {
+    transform: none;
+  }
+
+  .day-today { border: 2px solid #2E3E24; font-weight: bold; }
+
+  /* Logged state colors */
+  .day-period { background-color: #e5b3b3; color: #5a2a2a; }
+  .day-has-log::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: #2E3E24;
+    border-radius: 50%;
+  }
+
+  .calendar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .legend-dot {
+    width: 4px;
+    height: 4px;
+    background-color: #2E3E24;
+    border-radius: 50%;
+  }
+
+  /* Logging Modal/Section */
+  .logging-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #FAF8EB;
+    border-radius: 12px;
+    border: 1px dashed #C6C8BB;
+    display: none;
+  }
+  .logging-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .logging-date {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2E3E24;
+  }
+  .btn-close-log {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #8a8a7a;
+  }
+  .log-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  .log-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .log-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .log-group select, .log-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #C6C8BB;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+  }
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+  }
+  .checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #2E3E24;
+  }
+  .checkbox-group label {
+    font-weight: 600;
+    color: #2E3E24;
+  }
+  .btn-save-log {
+    background: #2E3E24;
+    color: #FAF8EB;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-save-log:hover {
+    background: #3a5030;
+    transform: translateY(-1px);
+  }
+
+  /* Actions container */
+  .actions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+  }
+  .btn-action {
+    background: #FAF8EB;
+    color: #AD9846;
+    border: 2px solid #AD9846;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-action:hover {
+    background: #AD9846;
+    color: #fff;
+  }
+
+  .privacy-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #8a8a7a;
+    margin-top: 15px;
+  }
+
+  @media (max-width: 600px) {
+    .page-header h1 { font-size: 2rem; }
+    .calendar-day { font-size: 0.85rem; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why is it important to track my sexual health?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tracking your sexual health, including periods, mood, energy levels, and symptoms, helps you understand your body's unique patterns. It empowers you to anticipate changes, identify potential issues early, and have more informed conversations with healthcare providers."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What should I track for my sexual wellness?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It's beneficial to track menstruation dates, physical symptoms like cramps or bloating, mood fluctuations, energy levels, and even changes in libido. Tracking these can reveal how your cycle affects your overall well-being."
+    }
+  }, {
+    "@type": "Question",
+    "name": "When should I see a doctor about my period or symptoms?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You should consult a healthcare professional if you experience sudden changes in your cycle, abnormally heavy bleeding, severe pain that disrupts daily activities, bleeding between periods, or if you have concerns about unusual discharge or persistent mood changes."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Is my data safe in this tracker?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. This tracker is privacy-focused. All your logged data is stored locally on your device (in your browser's local storage). No information is sent to or stored on any external servers."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How do mood and energy levels relate to my cycle?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Hormonal fluctuations throughout your menstrual cycle can significantly impact brain chemistry. For example, rising estrogen before ovulation can boost energy and mood, while dropping progesterone before a period might lead to fatigue or irritability."
+    }
+  }]
+}
+</script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/">
+      <img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale">
+    </a>
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Sexual Health & Wellness Tracker</h1>
+    <p>A private, judgment-free space to log periods, symptoms, and moods so you can start understanding your body's beautiful patterns.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="tracker-container">
+    <section class="card">
+      <h2>Wellness Calendar</h2>
+
+      <div class="calendar-container">
+        <div class="calendar-controls">
+          <button class="btn-nav" id="btn-prev-month">&larr; Prev</button>
+          <div class="calendar-month" id="calendar-month-display">Month Year</div>
+          <button class="btn-nav" id="btn-next-month">Next &rarr;</button>
+        </div>
+
+        <div class="calendar-grid" id="calendar-grid">
+          <div class="calendar-day-header">Sun</div>
+          <div class="calendar-day-header">Mon</div>
+          <div class="calendar-day-header">Tue</div>
+          <div class="calendar-day-header">Wed</div>
+          <div class="calendar-day-header">Thu</div>
+          <div class="calendar-day-header">Fri</div>
+          <div class="calendar-day-header">Sat</div>
+          <!-- Calendar days injected via JS -->
+        </div>
+
+        <div class="calendar-legend">
+          <div class="legend-item"><div class="legend-color day-period"></div> Period</div>
+          <div class="legend-item"><div class="legend-dot"></div> Data Logged</div>
+        </div>
+
+        <!-- Logging UI -->
+        <div class="logging-section" id="logging-section">
+          <div class="logging-header">
+            <span class="logging-date" id="log-date-display">Select a date</span>
+            <button class="btn-close-log" id="btn-close-log">&times;</button>
+          </div>
+          <p style="font-size: 0.85rem; margin-bottom: 15px; color: #555549;">Log your symptoms and feelings for this day.</p>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="log-period">
+            <label for="log-period">I am on my period today</label>
+          </div>
+
+          <div class="log-options">
+            <div class="log-group">
+              <label for="log-mood">Mood</label>
+              <select id="log-mood">
+                <option value="">-- Select --</option>
+                <option value="happy">Happy / Joyful</option>
+                <option value="calm">Calm / Balanced</option>
+                <option value="anxious">Anxious / Stressed</option>
+                <option value="sad">Sad / Tearful</option>
+                <option value="irritable">Irritable / Moody</option>
+                <option value="horny">High Libido</option>
+                <option value="low_libido">Low Libido</option>
+              </select>
+            </div>
+            <div class="log-group">
+              <label for="log-energy">Energy Level</label>
+              <select id="log-energy">
+                <option value="">-- Select --</option>
+                <option value="high">High / Energetic</option>
+                <option value="normal">Normal</option>
+                <option value="low">Low / Exhausted</option>
+              </select>
+            </div>
+            <div class="log-group">
+              <label for="log-symptoms">Physical Symptoms</label>
+              <select id="log-symptoms">
+                <option value="">-- Select --</option>
+                <option value="none">Feeling good</option>
+                <option value="cramps">Cramps / Pain</option>
+                <option value="bloating">Bloating</option>
+                <option value="headache">Headache</option>
+                <option value="tender">Tender Breasts</option>
+                <option value="spotting">Spotting / Light Bleeding</option>
+                <option value="discharge">Unusual Discharge</option>
+              </select>
+            </div>
+            <div class="log-group">
+              <label for="log-notes">Personal Notes</label>
+              <input type="text" id="log-notes" placeholder="Any specific details?">
+            </div>
+          </div>
+          <button class="btn-save-log" id="btn-save-log">Save Log</button>
+          <span id="log-save-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-top: 10px; text-align: center;">Saved to your browser!</span>
+        </div>
+
+        <div class="actions-container">
+          <button class="btn-action" id="btn-export-csv">Export as CSV</button>
+          <button class="btn-action" id="btn-share">Share Results (Copy to Clipboard)</button>
+        </div>
+        <p class="privacy-note">Your data is stored securely in your browser's local storage and never leaves your device.</p>
+        <div style="text-align: center;"><span id="share-msg" style="display:none; font-size: 0.85rem; color: #2E3E24;">Copied!</span></div>
+
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="card edu-section">
+      <h2>Why You Should Track Your Cycle (And Your Feels)</h2>
+      <p style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6;">Look, we're complicated, magical creatures. Our bodies aren't machines that operate at 100% capacity every single day, and that's totally okay. Tracking your cycle, your energy, and your mood isn't about being perfectly organized—it's about gathering data on <em>you</em>.</p>
+
+      <div style="margin-bottom: 24px;">
+        <h3 style="font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">The Magic of Patterns</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #555549;">When you log how you feel every day, you start noticing trends. Maybe you always get a little teary-eyed three days before your period. Maybe your sex drive skyrockets mid-month when you're ovulating. Once you spot these patterns, you stop judging yourself for "random" moods and start anticipating what your body needs. It's the ultimate self-care hack.</p>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <h3 style="font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">What to Look Out For</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #555549;">Keep an eye out for extreme shifts. If your period pain suddenly goes from "annoying" to "I need to stay in bed all day," or if your energy levels drop off a cliff and stay there for weeks, that's your body waving a red flag. Tracking gives you the receipts you need when you go to the doctor, so you don't just have to say "I feel weird" — you can show them exactly when and how.</p>
+      </div>
+
+      <div style="background: rgba(173, 152, 70, 0.1); border-left: 4px solid #AD9846; padding: 16px; border-radius: 0 8px 8px 0; margin-top: 24px;">
+        <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">When to See a Doctor</h3>
+        <p style="font-size: 0.9rem; line-height: 1.5; color: #555549; margin-bottom: 0;">This tool is for your personal insight and is definitely <strong>not medical advice</strong>. You should book an appointment with a healthcare professional if you experience: bleeding between periods, pain during sex, consistently irregular cycles, abnormally heavy bleeding, or severe pain that regular over-the-counter meds can't touch. You know your body best—if something feels off, get it checked out!</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FAQ Section -->
+  <section style="max-width: 900px; margin: 40px auto; padding: 0 20px;">
+    <h2 style="font-family: 'New Standard', Georgia, serif; text-align: center; font-size: 2rem; margin-bottom: 30px;">Frequently Asked Questions</h2>
+
+    <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">Why is it important to track my sexual health?</div>
+      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Tracking your sexual health, including periods, mood, energy levels, and symptoms, helps you understand your body's unique patterns. It empowers you to anticipate changes, identify potential issues early, and have more informed conversations with healthcare providers.</div>
+    </div>
+
+    <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">What should I track for my sexual wellness?</div>
+      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">It's beneficial to track menstruation dates, physical symptoms like cramps or bloating, mood fluctuations, energy levels, and even changes in libido. Tracking these can reveal how your cycle affects your overall well-being.</div>
+    </div>
+
+    <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">When should I see a doctor about my period or symptoms?</div>
+      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">You should consult a healthcare professional if you experience sudden changes in your cycle, abnormally heavy bleeding, severe pain that disrupts daily activities, bleeding between periods, or if you have concerns about unusual discharge or persistent mood changes.</div>
+    </div>
+
+    <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">Is my data safe in this tracker?</div>
+      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Yes. This tracker is privacy-focused. All your logged data is stored locally on your device (in your browser's local storage). No information is sent to or stored on any external servers.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // State
+    let currentDisplayMonth = new Date();
+    let selectedLogDateStr = null;
+
+    // Load logs from local storage
+    const getLogs = () => JSON.parse(localStorage.getItem('sexualHealthLogs')) || {};
+    const saveLogs = (logs) => localStorage.setItem('sexualHealthLogs', JSON.stringify(logs));
+
+    const renderCalendar = () => {
+      const grid = document.getElementById('calendar-grid');
+      const monthDisplay = document.getElementById('calendar-month-display');
+
+      // Clear previous days (keep headers)
+      while (grid.children.length > 7) {
+        grid.removeChild(grid.lastChild);
+      }
+
+      const year = currentDisplayMonth.getFullYear();
+      const month = currentDisplayMonth.getMonth();
+
+      monthDisplay.textContent = currentDisplayMonth.toLocaleDateString('en-US', {month: 'long', year: 'numeric'});
+
+      const firstDayOfMonth = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const todayStr = new Date().toISOString().split('T')[0];
+      const logs = getLogs();
+
+      // Empty slots for start of month
+      for (let i = 0; i < firstDayOfMonth; i++) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.className = 'calendar-day empty';
+        grid.appendChild(emptyDiv);
+      }
+
+      // Days
+      for (let i = 1; i <= daysInMonth; i++) {
+        const dayDate = new Date(year, month, i, 12, 0, 0);
+        const dateStr = dayDate.toISOString().split('T')[0];
+
+        const dayDiv = document.createElement('div');
+        dayDiv.className = 'calendar-day';
+        dayDiv.textContent = i;
+
+        // Highlight today
+        if (dateStr === todayStr) {
+          dayDiv.classList.add('day-today');
+        }
+
+        const dayLog = logs[dateStr];
+        if (dayLog) {
+          if (dayLog.period) {
+            dayDiv.classList.add('day-period');
+          }
+          if (dayLog.mood || dayLog.energy || dayLog.symptoms || dayLog.notes) {
+             dayDiv.classList.add('day-has-log');
+          }
+        }
+
+        // Click to log
+        dayDiv.addEventListener('click', () => openLog(dateStr));
+
+        grid.appendChild(dayDiv);
+      }
+    };
+
+    const openLog = (dateStr) => {
+      selectedLogDateStr = dateStr;
+      const logSect = document.getElementById('logging-section');
+      const dateDisplay = document.getElementById('log-date-display');
+
+      // Parse date for display avoiding timezone issues
+      const dParts = dateStr.split('-');
+      const d = new Date(dParts[0], dParts[1]-1, dParts[2]);
+      dateDisplay.textContent = d.toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: 'numeric', year: 'numeric'});
+
+      const logs = getLogs();
+      const dayLog = logs[dateStr] || { period: false, mood: '', energy: '', symptoms: '', notes: '' };
+
+      document.getElementById('log-period').checked = dayLog.period;
+      document.getElementById('log-mood').value = dayLog.mood;
+      document.getElementById('log-energy').value = dayLog.energy;
+      document.getElementById('log-symptoms').value = dayLog.symptoms || '';
+      document.getElementById('log-notes').value = dayLog.notes || '';
+
+      document.getElementById('log-save-msg').style.display = 'none';
+      logSect.style.display = 'block';
+    };
+
+    // Event Listeners
+    document.getElementById('btn-prev-month').addEventListener('click', () => {
+      currentDisplayMonth.setMonth(currentDisplayMonth.getMonth() - 1);
+      renderCalendar();
+    });
+
+    document.getElementById('btn-next-month').addEventListener('click', () => {
+      currentDisplayMonth.setMonth(currentDisplayMonth.getMonth() + 1);
+      renderCalendar();
+    });
+
+    document.getElementById('btn-close-log').addEventListener('click', () => {
+      document.getElementById('logging-section').style.display = 'none';
+    });
+
+    document.getElementById('btn-save-log').addEventListener('click', () => {
+      if(!selectedLogDateStr) return;
+
+      const logs = getLogs();
+      const newLog = {
+        period: document.getElementById('log-period').checked,
+        mood: document.getElementById('log-mood').value,
+        energy: document.getElementById('log-energy').value,
+        symptoms: document.getElementById('log-symptoms').value,
+        notes: document.getElementById('log-notes').value.trim(),
+      };
+
+      // Clear empty logs entirely to save space
+      if(!newLog.period && !newLog.mood && !newLog.energy && !newLog.symptoms && !newLog.notes) {
+        delete logs[selectedLogDateStr];
+      } else {
+        logs[selectedLogDateStr] = newLog;
+      }
+
+      saveLogs(logs);
+
+      const msg = document.getElementById('log-save-msg');
+      msg.style.display = 'block';
+      setTimeout(() => { msg.style.display = 'none'; }, 3000);
+
+      renderCalendar(); // re-render to update indicator dots
+    });
+
+    document.getElementById('btn-export-csv').addEventListener('click', () => {
+      const logs = getLogs();
+      const dates = Object.keys(logs).sort();
+
+      if (dates.length === 0) {
+        alert("You haven't logged any data yet.");
+        return;
+      }
+
+      let csvContent = "Date,Period,Mood,Energy,Symptoms,Notes\n";
+
+      dates.forEach(date => {
+        const d = logs[date];
+        // Escape quotes in notes
+        const notes = d.notes ? `"${d.notes.replace(/"/g, '""')}"` : "";
+        csvContent += `${date},${d.period},${d.mood},${d.energy},${d.symptoms},${notes}\n`;
+      });
+
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute("download", `sexual_health_tracker_export_${new Date().toISOString().split('T')[0]}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    document.getElementById('btn-share').addEventListener('click', async () => {
+      const logs = getLogs();
+      const daysLogged = Object.keys(logs).length;
+      let periodDays = 0;
+      Object.values(logs).forEach(log => {
+        if(log.period) periodDays++;
+      });
+
+      const text = `🌸 My Sexual Health Tracker Summary 🌸\n\nTotal days logged: ${daysLogged}\nTotal period days tracked: ${periodDays}\n\nStart tracking yours securely at: https://aliimperiale.com/sexual-health-tracker.html`;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        const msg = document.getElementById('share-msg');
+        msg.style.display = 'inline';
+        setTimeout(() => msg.style.display = 'none', 3000);
+      } catch (err) {
+        console.error('Failed to copy', err);
+        alert("Failed to copy to clipboard.");
+      }
+    });
+
+    // Initial render
+    renderCalendar();
+  });
+</script>
+</body>
+</html>
