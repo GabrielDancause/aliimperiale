@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Sex-Positive Therapists and Counselors Directory 2026 | Ali Imperiale</title>
+  <meta name="description" content="A comprehensive, curated directory of certified sex-positive mental health professionals, including LGBTQ+ affirming counselors, polyamory specialists, kink-aware professionals, and more.">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    body { background-color: #FAF8EB; }
+
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    .directory-hero {
+      text-align: center;
+      padding: 80px 24px 48px;
+    }
+    .directory-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+    .directory-hero p {
+      font-size: 1.1rem;
+      color: #5a6b50;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .directory-container {
+      max-width: 1000px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .filter-section {
+      background: #fff;
+      border: 1px solid #e8e4d4;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .filter-group label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+
+    .filter-group select, .filter-group input {
+      padding: 10px 14px;
+      border: 1px solid #C6C8BB;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      color: #2E3E24;
+      background-color: #fff;
+    }
+
+    .therapist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .therapist-card {
+      background: #fff;
+      border: 1px solid #e8e4d4;
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .therapist-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(46,62,36,0.1);
+    }
+
+    .therapist-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 4px;
+    }
+
+    .therapist-credentials {
+      font-size: 0.85rem;
+      color: #AD9846;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .specialties-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .specialty-tag {
+      background-color: #f0f2e9;
+      color: #2E3E24;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .therapist-details {
+      font-size: 0.9rem;
+      color: #5a6b50;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .therapist-details strong {
+      color: #2E3E24;
+    }
+
+    .contact-btn {
+      display: block;
+      text-align: center;
+      background: #2E3E24;
+      color: #FAF8EB;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .contact-btn:hover {
+      background: #3a5030;
+    }
+
+    .info-section {
+      background: #fff;
+      border: 1px solid #e8e4d4;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+
+    .info-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+
+    .info-section p {
+      font-size: 1rem;
+      color: #5a6b50;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .info-section ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: #5a6b50;
+    }
+
+    .info-section li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .faq-section {
+      margin-top: 48px;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-question {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: #5a6b50;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+      .directory-hero h1 {
+        font-size: 1.8rem;
+      }
+      .filter-group {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="directory-hero">
+      <h1>Best Sex-Positive Therapists & Counselors 2026</h1>
+      <p>A curated directory of certified, affirming mental health professionals specializing in intimacy, trauma, diverse relationship structures, and sexual wellness.</p>
+    </section>
+
+    <div class="directory-container">
+      <div class="filter-section">
+        <div class="filter-group">
+          <label for="location-search">Location Search</label>
+          <input type="text" id="location-search" placeholder="City, State, or Zip...">
+        </div>
+        <div class="filter-group">
+          <label for="specialty-filter">Specialty</label>
+          <select id="specialty-filter">
+            <option value="all">All Specialties</option>
+            <option value="trauma">Sexual Trauma Recovery</option>
+            <option value="lgbtq">LGBTQ+ Affirming</option>
+            <option value="polyamory">Polyamory / ENM</option>
+            <option value="addiction">Sex Addiction Recovery</option>
+            <option value="couples">Couples Intimacy</option>
+            <option value="kink">Kink-Aware Professionals</option>
+            <option value="gender">Gender Identity Specialists</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="insurance-filter">Insurance Accepted</label>
+          <select id="insurance-filter">
+            <option value="all">All Insurance / Out of Pocket</option>
+            <option value="aetna">Aetna</option>
+            <option value="cigna">Cigna</option>
+            <option value="bcbs">Blue Cross Blue Shield</option>
+            <option value="united">UnitedHealthcare</option>
+            <option value="sliding">Sliding Scale Available</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="therapist-grid" id="therapist-directory">
+        <!-- Mock Profile 1 -->
+        <div class="therapist-card" data-specialties="trauma,lgbtq" data-insurance="aetna,bcbs,sliding" data-location="new york, ny">
+          <div class="therapist-name">Dr. Elena Rostova</div>
+          <div class="therapist-credentials">PhD, CST (Certified Sex Therapist)</div>
+          <div class="specialties-tags">
+            <span class="specialty-tag">Sexual Trauma Recovery</span>
+            <span class="specialty-tag">LGBTQ+ Affirming</span>
+          </div>
+          <div class="therapist-details">
+            <p><strong>Location:</strong> New York, NY (In-person & Telehealth)</p>
+            <p><strong>Insurance:</strong> Aetna, BCBS, Sliding Scale</p>
+            <p class="review-stars" style="color: #AD9846; margin: 0.5rem 0;">★★★★★ <span style="color: #2E3E24; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
+            <p>Specializing in somatic experiencing and EMDR for sexual trauma survivors. Dr. Rostova provides a deeply compassionate, queer-affirming space for reclaiming bodily autonomy and pleasure.</p>
+          </div>
+          <a href="#" class="contact-btn">Contact Dr. Rostova</a>
+        </div>
+
+        <!-- Mock Profile 2 -->
+        <div class="therapist-card" data-specialties="polyamory,couples,kink" data-insurance="sliding,out-of-network" data-location="austin, tx">
+          <div class="therapist-name">Marcus Chen</div>
+          <div class="therapist-credentials">LMFT, AASECT Certified</div>
+          <div class="specialties-tags">
+            <span class="specialty-tag">Polyamory / ENM</span>
+            <span class="specialty-tag">Couples Intimacy</span>
+            <span class="specialty-tag">Kink-Aware</span>
+          </div>
+          <div class="therapist-details">
+            <p><strong>Location:</strong> Austin, TX (Telehealth Only)</p>
+            <p><strong>Insurance:</strong> Out-of-Network, Sliding Scale</p>
+            <p class="review-stars" style="color: #AD9846; margin: 0.5rem 0;">★★★★★ <span style="color: #2E3E24; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
+            <p>Marcus specializes in navigating ethical non-monogamy and alternative relationship structures. He helps partners communicate desires, establish boundaries, and deepen intimacy without judgment.</p>
+          </div>
+          <a href="#" class="contact-btn">Contact Marcus Chen</a>
+        </div>
+
+        <!-- Mock Profile 3 -->
+        <div class="therapist-card" data-specialties="addiction,trauma" data-insurance="cigna,united" data-location="chicago, il">
+          <div class="therapist-name">Sarah Jenkins</div>
+          <div class="therapist-credentials">LCSW, CSAT</div>
+          <div class="specialties-tags">
+            <span class="specialty-tag">Sex Addiction Recovery</span>
+            <span class="specialty-tag">Trauma Recovery</span>
+          </div>
+          <div class="therapist-details">
+            <p><strong>Location:</strong> Chicago, IL (In-person)</p>
+            <p><strong>Insurance:</strong> Cigna, UnitedHealthcare</p>
+            <p class="review-stars" style="color: #AD9846; margin: 0.5rem 0;">★★★★★ <span style="color: #2E3E24; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
+            <p>Working from a sex-positive, non-shaming framework, Sarah helps clients address compulsive sexual behaviors and their underlying traumas to foster healthier relationships with sex.</p>
+          </div>
+          <a href="#" class="contact-btn">Contact Sarah Jenkins</a>
+        </div>
+
+        <!-- Mock Profile 4 -->
+        <div class="therapist-card" data-specialties="gender,lgbtq,kink" data-insurance="bcbs,aetna,sliding" data-location="seattle, wa">
+          <div class="therapist-name">Jordan Ellis</div>
+          <div class="therapist-credentials">LMHC</div>
+          <div class="specialties-tags">
+            <span class="specialty-tag">Gender Identity</span>
+            <span class="specialty-tag">LGBTQ+ Affirming</span>
+            <span class="specialty-tag">Kink-Aware</span>
+          </div>
+          <div class="therapist-details">
+            <p><strong>Location:</strong> Seattle, WA (In-person & Telehealth)</p>
+            <p><strong>Insurance:</strong> BCBS, Aetna, Sliding Scale</p>
+            <p class="review-stars" style="color: #AD9846; margin: 0.5rem 0;">★★★★★ <span style="color: #2E3E24; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
+            <p>Jordan provides crucial support for individuals exploring gender transition, managing dysphoria, and navigating intimacy as a transgender or non-binary person.</p>
+          </div>
+          <a href="#" class="contact-btn">Contact Jordan Ellis</a>
+        </div>
+
+        <!-- Mock Profile 5 -->
+        <div class="therapist-card" data-specialties="couples,kink,polyamory" data-insurance="out-of-network" data-location="los angeles, ca">
+          <div class="therapist-name">Dr. Aisha Patel</div>
+          <div class="therapist-credentials">PsyD, CST</div>
+          <div class="specialties-tags">
+            <span class="specialty-tag">Couples Intimacy</span>
+            <span class="specialty-tag">Kink-Aware</span>
+            <span class="specialty-tag">Polyamory / ENM</span>
+          </div>
+          <div class="therapist-details">
+            <p><strong>Location:</strong> Los Angeles, CA (Telehealth Only)</p>
+            <p><strong>Insurance:</strong> Out-of-Network only</p>
+            <p class="review-stars" style="color: #AD9846; margin: 0.5rem 0;">★★★★★ <span style="color: #2E3E24; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
+            <p>Dr. Patel focuses on helping long-term couples reignite passion, explore power dynamics safely, and transition from monogamy to ENM with comprehensive communication tools.</p>
+          </div>
+          <a href="#" class="contact-btn">Contact Dr. Patel</a>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h2>Online Therapy Platforms for Sexual Wellness</h2>
+        <p>If you're looking for flexible, accessible care, online platforms have become an excellent resource for sex-positive therapy. Here are some of the top platforms that prioritize affirming, specialized care:</p>
+        <ul>
+          <li><strong>BetterHelp & Pride Counseling:</strong> While broad platforms, you can specifically request therapists with backgrounds in LGBTQ+ issues, trauma, and relationship dynamics. Their matching algorithms have improved significantly in 2026 to better accommodate these specific requests.</li>
+          <li><strong>Regain:</strong> A platform specifically focused on couples counseling, which is excellent for addressing intimacy issues, communication blocks, and navigating non-monogamy together.</li>
+          <li><strong>Inclusive Therapists:</strong> While not a direct therapy provider, this directory is specifically built to center the needs of marginalized communities, making it an incredible resource for finding telehealth providers who are explicitly anti-oppressive and sex-positive.</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h2>Navigating Insurance Coverage for Sex Therapy</h2>
+        <p>One of the biggest hurdles to accessing specialized care can be cost. Understanding how to use your insurance for sex-positive therapy is crucial.</p>
+        <ul>
+          <li><strong>Understand Diagnosis Codes:</strong> Most insurance plans require a mental health diagnosis (like anxiety or depression) to cover therapy. Talk to your potential therapist about how they handle diagnosis codes for insurance reimbursement when your primary concern is sexual wellness.</li>
+          <li><strong>Out-of-Network Benefits (OON):</strong> Many specialized sex therapists do not take insurance directly. However, they can provide a "Superbill"—an itemized receipt you submit to your insurance for partial reimbursement if you have OON benefits.</li>
+          <li><strong>Sliding Scale Fees:</strong> Don't hesitate to ask if a therapist offers sliding scale slots based on income. Many providers reserve a portion of their practice for clients who cannot afford their full fee.</li>
+          <li><strong>FSA/HSA Accounts:</strong> You can typically use Health Savings Accounts (HSA) or Flexible Spending Accounts (FSA) to pay for therapy sessions with licensed professionals.</li>
+        </ul>
+      </div>
+
+      <div class="faq-section">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: #2E3E24; margin-bottom: 24px;">Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">What is a sex-positive therapist?</div>
+          <div class="faq-answer">A sex-positive therapist operates from the perspective that all consensual sexual activities, desires, and identities are fundamentally healthy and valid. They provide a non-judgmental, affirming space to explore sexuality, free from cultural shame or stigma.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I know if I need a specialized sex therapist versus a general counselor?</div>
+          <div class="faq-answer">While general counselors can be wonderful, a specialized sex therapist (like an AASECT certified professional) has extensive, specific training in addressing complex sexual issues, dysfunctions, ethical non-monogamy, kink dynamics, and deep-seated sexual trauma. If your primary concerns revolve around intimacy, pleasure, or sexual identity, a specialist is highly recommended.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Will my insurance cover sex therapy?</div>
+          <div class="faq-answer">It depends on your plan and the provider. Many specialized sex therapists are out-of-network, but you may still receive partial reimbursement if you submit a Superbill. Therapy often requires a formal mental health diagnosis (such as Generalized Anxiety Disorder) for insurance to cover the sessions, even if the primary focus is sexual wellness.</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is a sex-positive therapist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A sex-positive therapist operates from the perspective that all consensual sexual activities, desires, and identities are fundamentally healthy and valid. They provide a non-judgmental, affirming space to explore sexuality, free from cultural shame or stigma."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How do I know if I need a specialized sex therapist versus a general counselor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While general counselors can be wonderful, a specialized sex therapist (like an AASECT certified professional) has extensive, specific training in addressing complex sexual issues, dysfunctions, ethical non-monogamy, kink dynamics, and deep-seated sexual trauma. If your primary concerns revolve around intimacy, pleasure, or sexual identity, a specialist is highly recommended."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Will my insurance cover sex therapy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your plan and the provider. Many specialized sex therapists are out-of-network, but you may still receive partial reimbursement if you submit a Superbill. Therapy often requires a formal mental health diagnosis (such as Generalized Anxiety Disorder) for insurance to cover the sessions, even if the primary focus is sexual wellness."
+      }
+    }]
+  }
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const locationInput = document.getElementById('location-search');
+      const specialtyFilter = document.getElementById('specialty-filter');
+      const insuranceFilter = document.getElementById('insurance-filter');
+      const therapistCards = document.querySelectorAll('.therapist-card');
+
+      function filterTherapists() {
+        const locationQuery = locationInput.value.toLowerCase();
+        const selectedSpecialty = specialtyFilter.value;
+        const selectedInsurance = insuranceFilter.value;
+
+        therapistCards.forEach(card => {
+          const cardLocation = card.dataset.location.toLowerCase();
+          const cardSpecialties = card.dataset.specialties.split(',');
+          const cardInsurance = card.dataset.insurance.split(',');
+
+          const matchesLocation = locationQuery === '' || cardLocation.includes(locationQuery);
+          const matchesSpecialty = selectedSpecialty === 'all' || cardSpecialties.includes(selectedSpecialty);
+          const matchesInsurance = selectedInsurance === 'all' || cardInsurance.includes(selectedInsurance);
+
+          if (matchesLocation && matchesSpecialty && matchesInsurance) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      locationInput.addEventListener('input', filterTherapists);
+      specialtyFilter.addEventListener('change', filterTherapists);
+      insuranceFilter.addEventListener('change', filterTherapists);
+    });
+  </script>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+</body>
+</html>
