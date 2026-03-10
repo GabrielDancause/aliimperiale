@@ -7,10 +7,10 @@
 <script src="consent.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sexual Health Symptom Checker Tool — Ali Imperiale</title>
-  <meta name="description" content="An interactive, educational symptom checker to help you understand common sexual health symptoms and when to seek medical care.">
-  <meta property="og:title" content="Sexual Health Symptom Checker Tool — Ali Imperiale">
-  <meta property="og:description" content="An interactive, educational symptom checker to help you understand common sexual health symptoms and when to seek medical care.">
+  <title>Sexual Health Symptom Checker, STI & Dysfunction Assessment Tool — Ali Imperiale</title>
+  <meta name="description" content="An interactive, educational sexual health symptoms and STI symptoms checker to help you understand common concerns, including sexual dysfunction assessment, and when to seek medical care.">
+  <meta property="og:title" content="Sexual Health Symptom Checker, STI & Dysfunction Assessment Tool — Ali Imperiale">
+  <meta property="og:description" content="An interactive, educational sexual health symptoms and STI symptoms checker to help you understand common concerns, including sexual dysfunction assessment, and when to seek medical care.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aliimperiale.com/sexual-health-symptom-checker.html">
   <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
@@ -352,7 +352,7 @@
       <h2>Frequently Asked Questions</h2>
       <div>
 
-        <div style="margin-bottom: 20px;">
+                <div style="margin-bottom: 20px;">
           <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Is it normal for sex to hurt sometimes?</h3>
           <div>
             <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">While it's common for people to experience occasional discomfort (often due to lack of lubrication or arousal), sex should generally not be painful. Consistent pain during sex is a medical symptom that deserves to be evaluated by a healthcare provider. It is not something you just have to "put up with."</p>
@@ -366,10 +366,24 @@
           </div>
         </div>
 
-        <div>
+        <div style="margin-bottom: 20px;">
           <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">How do I know if my discharge is normal?</h3>
           <div>
             <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">Healthy vaginal discharge changes throughout the menstrual cycle (from sticky and white to clear and stretchy). However, if the discharge suddenly changes in volume, becomes clumpy, smells strong or "fishy," or is accompanied by itching, burning, or a green/yellow color, it's a sign to get checked out by a doctor.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">When should I seek emergency medical care for sexual health symptoms?</h3>
+          <div>
+            <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">You should seek emergency medical care if you experience sudden, severe pelvic pain, especially when accompanied by a high fever, vomiting, or unusual heavy bleeding. These can be signs of a medical emergency such as an ectopic pregnancy, ruptured ovarian cyst, or severe pelvic inflammatory disease (PID).</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Can relationship problems cause physical sexual dysfunction?</h3>
+          <div>
+            <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">Yes, absolutely. Relationship concerns, recurring conflict, and trust issues can profoundly impact your physiological sexual response. Emotional safety is often a prerequisite for physical arousal, and chronic relationship stress can lead to low libido, erectile issues, and difficulty reaching orgasm.</p>
           </div>
         </div>
 
@@ -379,7 +393,7 @@
   </main>
 
   <!-- FAQ Schema -->
-  <script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -406,6 +420,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Healthy vaginal discharge changes throughout the menstrual cycle (from sticky and white to clear and stretchy). However, if the discharge suddenly changes in volume, becomes clumpy, smells strong or \"fishy,\" or is accompanied by itching, burning, or a green/yellow color, it's a sign to get checked out by a doctor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I seek emergency medical care for sexual health symptoms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You should seek emergency medical care if you experience sudden, severe pelvic pain, especially when accompanied by a high fever, vomiting, or unusual heavy bleeding. These can be signs of a medical emergency such as an ectopic pregnancy, ruptured ovarian cyst, or severe pelvic inflammatory disease (PID)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can relationship problems cause physical sexual dysfunction?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, absolutely. Relationship concerns, recurring conflict, and trust issues can profoundly impact your physiological sexual response. Emotional safety is often a prerequisite for physical arousal, and chronic relationship stress can lead to low libido, erectile issues, and difficulty reaching orgasm."
         }
       }
     ]
@@ -463,7 +493,7 @@
       const container = document.getElementById('app-container');
 
       // Symptom Checker Data Structure
-      const tree = {
+            const tree = {
         start: {
           q: "What category best describes your primary symptom?",
           options: [
@@ -473,7 +503,8 @@
             { text: "Orgasm difficulties", next: "orgasm_1" },
             { text: "Erectile issues", next: "ed_1" },
             { text: "Menstrual issues affecting sex", next: "menstrual_1" },
-            { text: "Emotional/psychological", next: "emotional_1" }
+            { text: "Emotional/psychological", next: "emotional_1" },
+            { text: "Relationship concerns", next: "relationship_1" }
           ]
         },
 
@@ -497,29 +528,31 @@
         urgent_pain: {
           type: "result",
           urgent: true,
-          title: "Seek Immediate Medical Care",
-          text: "Sudden, severe pelvic pain, especially with fever, vomiting, or unusual heavy bleeding, can be a sign of a medical emergency such as an ectopic pregnancy, ruptured ovarian cyst, or severe pelvic inflammatory disease (PID). Please go to an urgent care clinic or emergency room immediately."
+          title: "Seek Immediate Medical Care - High Risk",
+          text: "Risk Level: High Risk. Sudden, severe pelvic pain, especially with fever, vomiting, or unusual heavy bleeding, can be a sign of a medical emergency such as an ectopic pregnancy, ruptured ovarian cyst, or severe pelvic inflammatory disease (PID). Please go to an urgent care clinic or emergency room immediately."
         },
         pain_shallow: {
           type: "result",
-          title: "Superficial (Shallow) Pain During Sex",
-          text: "Pain at the entrance (vulva/vagina) can be caused by various factors. It's important to discuss this with a healthcare provider to find the root cause and get relief.",
+          title: "Superficial (Shallow) Pain During Sex - Medium Risk",
+          text: "Risk Level: Medium Risk. Pain at the entrance (vulva/vagina) can be caused by various factors. It's important to discuss this with a healthcare provider to find the root cause and get relief.",
           list: [
             "Lack of lubrication: This is very common. Trying a high-quality, body-safe lubricant can often help.",
             "Infections: Yeast infections, bacterial vaginosis (BV), or STIs can cause irritation and pain.",
             "Vaginismus: Involuntary muscle spasms at the vaginal entrance. Pelvic floor physical therapy is highly effective for this.",
-            "Hormonal changes: Menopause, childbirth, or certain medications can cause vaginal dryness and thinning of tissues."
+            "Hormonal changes: Menopause, childbirth, or certain medications can cause vaginal dryness and thinning of tissues.",
+            "Next step: Schedule an appointment with your gynecologist or a pelvic floor physical therapist."
           ]
         },
         pain_deep: {
           type: "result",
-          title: "Deep Pain During Sex",
-          text: "Pain felt deep inside during penetration is often related to the cervix, uterus, or other pelvic organs. A gynecological exam is recommended to investigate further.",
+          title: "Deep Pain During Sex - Medium Risk",
+          text: "Risk Level: Medium Risk. Pain felt deep inside during penetration is often related to the cervix, uterus, or other pelvic organs. A gynecological exam is recommended to investigate further.",
           list: [
             "Endometriosis: A condition where tissue similar to the lining of the uterus grows outside it, often causing deep pain.",
             "Pelvic Inflammatory Disease (PID): An infection of the reproductive organs that needs prompt treatment.",
             "Ovarian cysts or fibroids: These can cause pain if bumped during deep penetration.",
-            "Pelvic floor dysfunction: Tight pelvic floor muscles can refer pain deep into the pelvis."
+            "Pelvic floor dysfunction: Tight pelvic floor muscles can refer pain deep into the pelvis.",
+            "Next step: Consult a healthcare provider for a thorough evaluation and possible imaging."
           ]
         },
 
@@ -543,37 +576,43 @@
         },
         discharge_doctor: {
           type: "result",
-          title: "Consult a Healthcare Provider",
-          text: "Because your discharge is accompanied by pain, burning, or fever, it's important to see a healthcare provider soon. These can be signs of a more significant infection, such as an STI or Pelvic Inflammatory Disease (PID), which requires prescription treatment."
+          title: "Consult a Healthcare Provider - High Risk",
+          text: "Risk Level: High Risk. Because your discharge is accompanied by pain, burning, or fever, it's important to see a healthcare provider soon. These can be signs of a more significant infection, such as an STI or Pelvic Inflammatory Disease (PID), which requires prescription treatment.",
+          list: [
+            "Next step: Make an appointment with your doctor or visit an urgent care or sexual health clinic."
+          ]
         },
         discharge_yeast: {
           type: "result",
-          title: "Possible Yeast Infection",
-          text: "Thick, white discharge accompanied by itching or burning is often a sign of a yeast infection (candidiasis).",
+          title: "Possible Yeast Infection - Low Risk",
+          text: "Risk Level: Low Risk. Thick, white discharge accompanied by itching or burning is often a sign of a yeast infection (candidiasis).",
           list: [
             "Over-the-counter (OTC) antifungal creams or suppositories are available.",
             "If this is your first time experiencing these symptoms, or if OTC treatments don't work, see a healthcare provider for an accurate diagnosis.",
-            "Avoid douching or using scented products, as they can worsen irritation."
+            "Avoid douching or using scented products, as they can worsen irritation.",
+            "Next step: Try an OTC treatment; if no improvement in a few days, consult a provider."
           ]
         },
         discharge_bv: {
           type: "result",
-          title: "Possible Bacterial Vaginosis (BV)",
-          text: "Thin, grayish-white discharge with a distinct 'fishy' odor is commonly associated with Bacterial Vaginosis (BV), an imbalance of the natural bacteria in the vagina.",
+          title: "Possible Bacterial Vaginosis (BV) - Medium Risk",
+          text: "Risk Level: Medium Risk. Thin, grayish-white discharge with a distinct 'fishy' odor is commonly associated with Bacterial Vaginosis (BV), an imbalance of the natural bacteria in the vagina.",
           list: [
             "BV is very common and usually easily treated with prescription antibiotics from a healthcare provider.",
             "It is not considered an STI, but having a new sex partner can increase the risk.",
-            "Avoid douching, which can disrupt healthy bacteria and make BV worse."
+            "Avoid douching, which can disrupt healthy bacteria and make BV worse.",
+            "Next step: Schedule a visit with your doctor for testing and a prescription."
           ]
         },
         discharge_sti: {
           type: "result",
-          title: "STI Screening Recommended",
-          text: "Yellowish, greenish, or frothy discharge can sometimes be a symptom of a Sexually Transmitted Infection (STI) like trichomoniasis, gonorrhea, or chlamydia.",
+          title: "STI Screening Recommended - Medium Risk",
+          text: "Risk Level: Medium Risk. Yellowish, greenish, or frothy discharge can sometimes be a symptom of a Sexually Transmitted Infection (STI) like trichomoniasis, gonorrhea, or chlamydia.",
           list: [
             "Schedule an appointment with a healthcare provider or a local sexual health clinic for testing.",
             "Many STIs are easily curable with antibiotics, but leaving them untreated can cause long-term health issues.",
-            "Consider abstaining from sexual activity or using barrier methods until you have been tested and treated."
+            "Consider abstaining from sexual activity or using barrier methods until you have been tested and treated.",
+            "Next step: Get a full STI screening at a local clinic or with your primary care doctor."
           ]
         },
 
@@ -588,24 +627,26 @@
         },
         desire_sudden: {
           type: "result",
-          title: "Sudden Changes in Libido",
-          text: "A sudden drop in sexual desire is often linked to acute changes in your life or body. It's a very common experience.",
+          title: "Sudden Changes in Libido - Low to Medium Risk",
+          text: "Risk Level: Low to Medium Risk. A sudden drop in sexual desire is often linked to acute changes in your life or body. It's a very common experience.",
           list: [
             "New medications: Antidepressants, hormonal birth control, and blood pressure medications can significantly impact libido.",
             "High stress or trauma: Significant life events, grief, or acute stress take energy away from your sex drive.",
             "Relationship changes: A sudden conflict or breach of trust can immediately affect desire.",
-            "Medical conditions: Sudden hormonal shifts or onset of illness. A chat with your doctor is a good next step."
+            "Medical conditions: Sudden hormonal shifts or onset of illness.",
+            "Next step: Review any new medications or recent stressors. A chat with your doctor or a therapist is a good next step if distress persists."
           ]
         },
         desire_gradual: {
           type: "result",
-          title: "Gradual Changes in Libido",
-          text: "Desire naturally fluctuates throughout our lives. A gradual shift is normal, but if it causes you distress, it's worth exploring.",
+          title: "Gradual Changes in Libido - Low Risk",
+          text: "Risk Level: Low Risk. Desire naturally fluctuates throughout our lives. A gradual shift is normal, but if it causes you distress, it's worth exploring.",
           list: [
             "Hormonal transitions: Perimenopause, menopause, or changes in testosterone levels over time.",
             "Chronic stress or fatigue: Long-term burnout makes it hard to feel sexual.",
             "Relationship dynamics: Over time, relationships can settle into routines that may feel less exciting. Exploring new ways to connect can help.",
-            "Consider reading about 'Responsive Desire' – many people don't feel spontaneous desire but can become aroused once things get started."
+            "Consider reading about 'Responsive Desire' – many people don't feel spontaneous desire but can become aroused once things get started.",
+            "Next step: Talk openly with your partner or consider reading sex-positive literature to reconnect with your desires."
           ]
         },
 
@@ -620,24 +661,25 @@
         },
         orgasm_change: {
           type: "result",
-          title: "Changes in Ability to Orgasm",
-          text: "If you used to orgasm and now find it difficult or impossible (anorgasmia), several factors could be at play.",
+          title: "Changes in Ability to Orgasm - Low to Medium Risk",
+          text: "Risk Level: Low to Medium Risk. If you used to orgasm and now find it difficult or impossible (anorgasmia), several factors could be at play.",
           list: [
             "Medication side effects: SSRI antidepressants are particularly known for delaying or preventing orgasm.",
             "Stress and distraction: Being 'in your head' (spectatoring) makes it hard for the body to reach climax.",
             "Hormonal changes or fatigue.",
-            "Communication: Sometimes we need different types of stimulation than we used to. Don't be afraid to guide your partner or use toys."
+            "Communication: Sometimes we need different types of stimulation than we used to. Don't be afraid to guide your partner or use toys.",
+            "Next step: Consult your doctor if on new medications; otherwise, explore mindfulness or a sex therapist."
           ]
         },
         orgasm_never: {
           type: "result",
-          title: "Primary Anorgasmia",
-          text: "If you have never experienced an orgasm, you are not alone. This is known as primary anorgasmia and is very common, especially among people with vulvas.",
+          title: "Primary Anorgasmia - Low Risk",
+          text: "Risk Level: Low Risk. If you have never experienced an orgasm, you are not alone. This is known as primary anorgasmia and is very common, especially among people with vulvas.",
           list: [
             "Self-exploration is key: Spend time learning what feels good to your body without the pressure of a partner.",
             "Use of toys: Vibrators can provide the consistent, targeted stimulation often needed to reach orgasm.",
             "Anatomy education: Understand where your clitoris is and how it responds. Most people with vulvas need direct clitoral stimulation to climax.",
-            "Consider seeing a sex therapist who can provide guidance and exercises in a safe, judgment-free way."
+            "Next step: Consider seeing a sex therapist who can provide guidance and exercises in a safe, judgment-free way."
           ]
         },
 
@@ -652,25 +694,25 @@
         },
         ed_psychological: {
           type: "result",
-          title: "Likely Psychological or Situational Factors",
-          text: "If you can get erections in some situations (like morning wood or masturbating) but not with a partner, the physical plumbing is likely working fine. The issue is often psychological.",
+          title: "Likely Psychological or Situational Factors - Low to Medium Risk",
+          text: "Risk Level: Low to Medium Risk. If you can get erections in some situations (like morning wood or masturbating) but not with a partner, the physical plumbing is likely working fine. The issue is often psychological.",
           list: [
             "Performance anxiety: Worrying about maintaining an erection can actually cause you to lose it.",
             "Stress, fatigue, or relationship issues.",
             "Taking the pressure off: Try taking penetrative sex off the table for a while and focus on other forms of intimacy and pleasure.",
-            "A sex therapist can be incredibly helpful for working through performance anxiety."
+            "Next step: A sex therapist can be incredibly helpful for working through performance anxiety."
           ]
         },
         ed_physical: {
           type: "result",
-          title: "Possible Physical Factors",
-          text: "If you rarely or never get erections, even in the morning or during masturbation, there may be a physical cause. It is highly recommended to see a healthcare provider.",
+          title: "Possible Physical Factors - Medium Risk",
+          text: "Risk Level: Medium Risk. If you rarely or never get erections, even in the morning or during masturbation, there may be a physical cause. It is highly recommended to see a healthcare provider.",
           list: [
             "Cardiovascular health: Erections are largely about blood flow. ED can sometimes be an early sign of heart or blood pressure issues.",
             "Medications: Many common drugs (like blood pressure meds or antidepressants) affect erections.",
             "Hormonal imbalances: Low testosterone.",
             "Lifestyle factors: Smoking, heavy alcohol use, or lack of sleep.",
-            "Medical treatments for ED (like PDE5 inhibitors) are very effective and widely available through a doctor."
+            "Next step: See a doctor for a checkup, as medical treatments for ED are very effective."
           ]
         },
 
@@ -685,23 +727,24 @@
         },
         menstrual_endo: {
           type: "result",
-          title: "Consult a Provider for Pelvic Pain",
-          text: "Severe period cramps (dysmenorrhea) that interfere with your life, combined with pain during sex and heavy bleeding, are not 'just normal period pain.'",
+          title: "Consult a Provider for Pelvic Pain - Medium to High Risk",
+          text: "Risk Level: Medium to High Risk. Severe period cramps (dysmenorrhea) that interfere with your life, combined with pain during sex and heavy bleeding, are not 'just normal period pain.'",
           list: [
             "These can be symptoms of Endometriosis, Adenomyosis, or Uterine Fibroids.",
             "Advocate for yourself: It is important to find a healthcare provider who takes your pain seriously and will investigate these conditions.",
-            "There are management strategies and treatments available that can significantly improve your quality of life and sexual comfort."
+            "There are management strategies and treatments available that can significantly improve your quality of life and sexual comfort.",
+            "Next step: Seek out a gynecologist who specializes in pelvic pain or endometriosis."
           ]
         },
         menstrual_irregular: {
           type: "result",
-          title: "Irregular Cycles and Spotting",
-          text: "Changes in your cycle can affect your sex life, mood, and comfort.",
+          title: "Irregular Cycles and Spotting - Medium Risk",
+          text: "Risk Level: Medium Risk. Changes in your cycle can affect your sex life, mood, and comfort.",
           list: [
             "Spotting after sex: This should always be evaluated by a doctor, as it can be a sign of cervical irritation, polyps, or infections.",
             "Irregular timing: Can be caused by stress, significant weight changes, PCOS, or perimenopause.",
             "Hormonal birth control: Starting, stopping, or changing methods often causes temporary irregularities.",
-            "Keep a symptom tracker to show your healthcare provider."
+            "Next step: Keep a symptom tracker and schedule an appointment with your healthcare provider to discuss the changes."
           ]
         },
 
@@ -715,18 +758,59 @@
         },
         emotional_result: {
           type: "result",
-          title: "Emotional & Psychological Well-being",
-          text: "Sexual health is intimately connected to our mental health. Feeling anxiety, guilt, or fear around sex is common, but you don't have to live with it.",
+          title: "Emotional & Psychological Well-being - Low to Medium Risk",
+          text: "Risk Level: Low to Medium Risk. Sexual health is intimately connected to our mental health. Feeling anxiety, guilt, or fear around sex is common, but you don't have to live with it.",
           list: [
             "Purity culture trauma: Growing up with strict, shame-based messaging about sex can leave lasting impacts on how you experience pleasure.",
             "Past trauma: If you have experienced sexual assault or non-consensual experiences, your body may react with fear or numbness during intimacy.",
             "Body image issues: Feeling disconnected from or unhappy with your body can make it hard to be present during sex.",
-            "Seeking help: Working with a trauma-informed sex therapist or counselor can provide a safe space to unpack these feelings and reclaim your sexuality."
+            "Next step: Working with a trauma-informed sex therapist or counselor can provide a safe space to unpack these feelings and reclaim your sexuality."
+          ]
+        },
+
+        // RELATIONSHIP CONCERNS
+        relationship_1: {
+          q: "What is the primary relationship concern affecting your sexual wellness?",
+          options: [
+            { text: "Mismatched sex drives", next: "relationship_mismatch" },
+            { text: "Communication issues or recurring conflict", next: "relationship_conflict" },
+            { text: "Trust issues or infidelity", next: "relationship_trust" },
+            { text: "Back", next: "start" }
+          ]
+        },
+        relationship_mismatch: {
+          type: "result",
+          title: "Mismatched Sex Drives - Low Risk",
+          text: "Risk Level: Low Risk. Desire discrepancy is one of the most common issues couples face. It doesn't mean the relationship is doomed, but it requires patience and communication.",
+          list: [
+            "Avoid blame: It's rarely a matter of one person being 'broken' or the other being 'too demanding.'",
+            "Focus on connection: Sometimes expanding your definition of intimacy beyond penetrative sex can help bridge the gap.",
+            "Next step: Consider couples counseling or a sex therapist to help facilitate productive conversations without resentment."
+          ]
+        },
+        relationship_conflict: {
+          type: "result",
+          title: "Communication Issues - Medium Risk",
+          text: "Risk Level: Medium Risk. Recurring conflict outside the bedroom almost always bleeds into sexual intimacy. It's difficult to feel vulnerable and turned on with someone you are angry with.",
+          list: [
+            "Emotional safety is a prerequisite for good sex for many people.",
+            "Focus on active listening and 'I' statements when discussing difficult topics.",
+            "Next step: A relationship counselor can provide tools to improve communication and rebuild emotional intimacy."
+          ]
+        },
+        relationship_trust: {
+          type: "result",
+          title: "Trust Issues or Infidelity - Medium to High Risk",
+          text: "Risk Level: Medium to High Risk. A breach of trust is profoundly disruptive to sexual wellness and emotional safety.",
+          list: [
+            "Rebuilding trust takes significant time and consistent effort from both partners.",
+            "Attempting to rush back into physical intimacy before emotional safety is re-established can cause further harm.",
+            "Next step: Seek out a licensed couples therapist who specializes in infidelity and trust repair."
           ]
         }
       };
 
-      // State Management
+// State Management
       let currentStep = 'start';
       let history = [];
 
