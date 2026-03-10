@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intimacy & Recovery Tracker — Ali Imperiale</title>
+  <meta name="description" content="A gentle, trauma-informed interactive tool for tracking your healing progress, managing triggers, and celebrating positive milestones in intimacy after trauma.">
+  <meta name="keywords" content="trauma recovery tracker, sexual healing tools, intimacy after trauma, trauma therapy resources">
+  <link rel="canonical" href="https://aliimperiale.com/intimacy-recovery-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+
+  <script src="consent.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+    }
+
+    /* Additional nav styling specific to tools with dark headers */
+    .site-nav {
+      background-color: #2E3E24;
+    }
+    .site-nav .nav-links a {
+      color: #FAF8EB;
+    }
+    .site-nav .nav-links a:hover {
+      color: #AD9846;
+    }
+    .nav-hamburger span {
+      background-color: #FAF8EB;
+    }
+
+    .tracker-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      text-align: center;
+      padding: 60px 24px;
+      margin-top: -1px; /* seamless with nav */
+    }
+    .tracker-header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #FAF8EB;
+    }
+    .tracker-header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #e2e4db;
+    }
+
+    .tracker-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    .disclaimer {
+      background-color: #f8e1e1;
+      border-left: 4px solid #d9534f;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: #2E3E24;
+      line-height: 1.5;
+    }
+    .disclaimer strong {
+      color: #d9534f;
+    }
+
+    .tracker-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .tracker-section h2 {
+      font-size: 1.5rem;
+      color: #2E3E24;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 8px;
+    }
+
+    .tracker-section p {
+      color: #4a5c3e;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .slider-container {
+      margin: 20px 0;
+    }
+    input[type="range"] {
+      width: 100%;
+      margin: 10px 0;
+    }
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .mood-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .mood-btn {
+      padding: 10px 16px;
+      border: 2px solid #AD9846;
+      border-radius: 20px;
+      background: transparent;
+      color: #2E3E24;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .mood-btn.selected,
+    .mood-btn:hover {
+      background: #AD9846;
+      color: #fff;
+    }
+
+    .btn-submit {
+      display: inline-block;
+      width: 100%;
+      padding: 14px;
+      background-color: #2E3E24;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 10px;
+    }
+    .btn-submit:hover {
+      background-color: #3f5431;
+    }
+
+    .btn-clear {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      background: transparent;
+      color: #d9534f;
+      border: 1px solid #d9534f;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.2s;
+    }
+    .btn-clear:hover {
+      background: #fdf0f0;
+    }
+
+    .chart-container {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .history-list {
+      margin-top: 20px;
+    }
+    .history-item {
+      background: #FAF8EB;
+      border-left: 4px solid #AD9846;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-radius: 4px;
+    }
+    .history-date {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .resources-list li {
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .resources-list a {
+      color: #AD9846;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .resources-list a:hover {
+      text-decoration: underline;
+    }
+
+    .faq-section {
+      margin-top: 60px;
+    }
+    .faq-item {
+      margin-bottom: 24px;
+    }
+    .faq-item h3 {
+      font-size: 1.2rem;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .faq-item p {
+      color: #4a5c3e;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .tracker-section {
+        padding: 20px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can an intimacy recovery tracker help after trauma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An intimacy recovery tracker helps you gently monitor your healing journey by identifying patterns in your comfort levels, tracking emotional triggers, and celebrating small victories. It provides a structured, judgment-free space to reflect on your progress, which can be invaluable for self-awareness and for sharing insights with a therapist or trusted partner."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data safe and private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. This tool runs entirely in your web browser using local storage. Your deeply personal notes, mood logs, and tracking data are never sent to our servers or stored externally. They remain completely private on your own device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I do if tracking becomes overwhelming?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you find that tracking your triggers or comfort levels causes distress, it's completely okay to stop. Healing is not linear, and taking a break is a valid form of self-care. We strongly recommend discussing your feelings with a trauma-informed therapist. If you are in crisis, please utilize the resources provided in our medical disclaimer."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <header class="tracker-header">
+    <h1>Intimacy & Recovery Tracker</h1>
+    <p>A gentle, private space to track your healing, monitor your comfort levels, and celebrate your milestones on your journey to reclaiming intimacy.</p>
+  </header>
+
+  <main class="tracker-container">
+    <div class="disclaimer">
+      <strong>Important Reminder:</strong> This tool is for educational and personal tracking purposes only. It is not a substitute for professional medical advice, diagnosis, or therapy. Healing from sexual trauma is complex, and we strongly encourage working with a licensed, trauma-informed therapist. If you are experiencing a crisis, please contact emergency services or a crisis helpline immediately, such as RAINN (800-656-HOPE) in the US.
+    </div>
+
+    <section class="tracker-section" id="daily-log">
+      <h2>Daily Reflection & Tracking</h2>
+      <p>Take a moment to check in with yourself. Remember, there are no right or wrong answers—only where you are today.</p>
+
+      <div class="form-group">
+        <label>How are you feeling emotionally regarding intimacy today?</label>
+        <div class="mood-buttons" id="mood-selector">
+          <button type="button" class="mood-btn" data-value="Anxious">Anxious</button>
+          <button type="button" class="mood-btn" data-value="Numb">Numb</button>
+          <button type="button" class="mood-btn" data-value="Neutral">Neutral</button>
+          <button type="button" class="mood-btn" data-value="Curious">Curious</button>
+          <button type="button" class="mood-btn" data-value="Safe">Safe</button>
+          <button type="button" class="mood-btn" data-value="Connected">Connected</button>
+        </div>
+        <input type="hidden" id="selected-mood" value="">
+      </div>
+
+      <div class="form-group slider-container">
+        <label for="comfort-level">Overall Comfort Level (Physical/Emotional)</label>
+        <input type="range" id="comfort-level" min="1" max="10" value="5">
+        <div class="slider-labels">
+          <span>Highly Uncomfortable (1)</span>
+          <span>Neutral (5)</span>
+          <span>Very Comfortable (10)</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="triggers">Did you experience any specific triggers today? (Optional)</label>
+        <textarea id="triggers" placeholder="Briefly describe what happened, what it felt like, or what helped you cope..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="milestones">Celebrate a win or positive milestone (No matter how small!)</label>
+        <input type="text" id="milestones" placeholder="e.g., I communicated a boundary clearly today.">
+      </div>
+
+      <div class="form-group">
+        <label for="therapy-notes">Therapy Notes or Gentle Goals</label>
+        <textarea id="therapy-notes" placeholder="Jot down insights from therapy or a small, gentle goal for tomorrow..."></textarea>
+      </div>
+
+      <button id="save-entry-btn" class="btn-submit">Save Today's Entry</button>
+    </section>
+
+    <section class="tracker-section" id="progress-visualization">
+      <h2>Your Healing Journey</h2>
+      <p>Visualize your comfort levels over time. Healing isn't linear, so expect ups and downs—they are a normal part of the process.</p>
+      <div class="chart-container">
+        <canvas id="comfortChart"></canvas>
+      </div>
+    </section>
+
+    <section class="tracker-section" id="history-section">
+      <h2>Recent Entries</h2>
+      <button id="clear-history-btn" class="btn-clear">Clear All History</button>
+      <div id="history-list" class="history-list">
+        <!-- Entries will be injected here -->
+      </div>
+    </section>
+
+    <section class="tracker-section" id="resources">
+      <h2>Trauma Therapy & Support Resources</h2>
+      <p>You don't have to do this alone. Here are some trusted resources for support and professional guidance:</p>
+      <ul class="resources-list">
+        <li><a href="https://www.rainn.org/" target="_blank" rel="noopener">RAINN (Rape, Abuse & Incest National Network)</a> - The nation's largest anti-sexual violence organization.</li>
+        <li><a href="https://www.psychologytoday.com/us/therapists/trauma-and-ptsd" target="_blank" rel="noopener">Psychology Today</a> - Find a therapist specializing in trauma and PTSD.</li>
+        <li><a href="https://www.aasect.org/referral-directory" target="_blank" rel="noopener">AASECT</a> - Directory for certified sex therapists who are often trauma-informed.</li>
+        <li><a href="/sexual-trauma-recovery-hub.html">Sexual Trauma Recovery Hub</a> - Explore our on-site articles and gentle guides.</li>
+      </ul>
+    </section>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How can an intimacy recovery tracker help after trauma?</h3>
+        <p>An intimacy recovery tracker helps you gently monitor your healing journey by identifying patterns in your comfort levels, tracking emotional triggers, and celebrating small victories. It provides a structured, judgment-free space to reflect on your progress, which can be invaluable for self-awareness and for sharing insights with a therapist or trusted partner.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my data safe and private?</h3>
+        <p>Yes. This tool runs entirely in your web browser using local storage. Your deeply personal notes, mood logs, and tracking data are never sent to our servers or stored externally. They remain completely private on your own device.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What should I do if tracking becomes overwhelming?</h3>
+        <p>If you find that tracking your triggers or comfort levels causes distress, it's completely okay to stop. Healing is not linear, and taking a break is a valid form of self-care. We strongly recommend discussing your feelings with a trauma-informed therapist. If you are in crisis, please utilize the resources provided in our medical disclaimer.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // DOM Elements
+      const moodBtns = document.querySelectorAll('.mood-btn');
+      const selectedMoodInput = document.getElementById('selected-mood');
+      const comfortSlider = document.getElementById('comfort-level');
+      const triggersInput = document.getElementById('triggers');
+      const milestonesInput = document.getElementById('milestones');
+      const therapyNotesInput = document.getElementById('therapy-notes');
+
+      const saveBtn = document.getElementById('save-entry-btn');
+      const clearBtn = document.getElementById('clear-history-btn');
+      const historyList = document.getElementById('history-list');
+
+      let comfortChartInstance = null;
+      const STORAGE_KEY = 'ali_intimacy_recovery_tracker';
+
+      // Load existing data
+      let trackerData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+      // Mood Selection
+      moodBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          moodBtns.forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          selectedMoodInput.value = btn.getAttribute('data-value');
+        });
+      });
+
+      // Format Date
+      function formatDate(dateString) {
+        const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        return new Date(dateString).toLocaleDateString(undefined, options);
+      }
+
+      // Render History
+      function renderHistory() {
+        historyList.innerHTML = '';
+
+        if (trackerData.length === 0) {
+          historyList.innerHTML = '<p>No entries yet. Your gentle tracking journey begins when you save your first entry above.</p>';
+          return;
+        }
+
+        // Sort latest first for list
+        const sortedData = [...trackerData].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        sortedData.forEach(entry => {
+          const item = document.createElement('div');
+          item.className = 'history-item';
+
+          let html = `<div class="history-date">${formatDate(entry.date)}</div>`;
+          html += `<div><strong>Comfort Level:</strong> ${entry.comfort}/10</div>`;
+          if (entry.mood) html += `<div><strong>Mood:</strong> ${entry.mood}</div>`;
+          if (entry.milestones) html += `<div><strong>Milestone:</strong> ${entry.milestones}</div>`;
+          if (entry.triggers) html += `<div><strong>Triggers/Notes:</strong> ${entry.triggers}</div>`;
+          if (entry.therapyNotes) html += `<div><strong>Therapy/Goals:</strong> ${entry.therapyNotes}</div>`;
+
+          item.innerHTML = html;
+          historyList.appendChild(item);
+        });
+      }
+
+      // Render Chart
+      function renderChart() {
+        if (comfortChartInstance) {
+          comfortChartInstance.destroy();
+        }
+
+        if (trackerData.length === 0) return;
+
+        const ctx = document.getElementById('comfortChart').getContext('2d');
+
+        // Sort chronologically for chart
+        const sortedData = [...trackerData].sort((a, b) => new Date(a.date) - new Date(b.date));
+
+        const labels = sortedData.map(entry => {
+          const d = new Date(entry.date);
+          return `${d.getMonth() + 1}/${d.getDate()}`;
+        });
+        const comfortData = sortedData.map(entry => entry.comfort);
+
+        comfortChartInstance = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Comfort Level (1-10)',
+              data: comfortData,
+              borderColor: '#AD9846',
+              backgroundColor: 'rgba(173, 152, 70, 0.1)',
+              borderWidth: 3,
+              tension: 0.3,
+              fill: true,
+              pointBackgroundColor: '#2E3E24',
+              pointRadius: 5
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                min: 0,
+                max: 10,
+                ticks: { stepSize: 1 }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+      }
+
+      // Save Entry
+      saveBtn.addEventListener('click', () => {
+        const now = new Date();
+        // Adjust for local timezone to prevent UTC date shifting
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+
+        const newEntry = {
+          date: now.toISOString(),
+          mood: selectedMoodInput.value,
+          comfort: parseInt(comfortSlider.value, 10),
+          triggers: triggersInput.value.trim(),
+          milestones: milestonesInput.value.trim(),
+          therapyNotes: therapyNotesInput.value.trim()
+        };
+
+        trackerData.push(newEntry);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(trackerData));
+
+        renderHistory();
+        renderChart();
+
+        // Reset form
+        moodBtns.forEach(b => b.classList.remove('selected'));
+        selectedMoodInput.value = '';
+        comfortSlider.value = 5;
+        triggersInput.value = '';
+        milestonesInput.value = '';
+        therapyNotesInput.value = '';
+
+        alert('Your entry has been gently saved.');
+      });
+
+      // Clear History
+      clearBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to clear all your tracking history? This action cannot be undone.')) {
+          trackerData = [];
+          localStorage.removeItem(STORAGE_KEY);
+          renderHistory();
+          renderChart();
+        }
+      });
+
+      // Initial Render
+      renderHistory();
+      renderChart();
+    });
+  </script>
+</body>
+</html>
