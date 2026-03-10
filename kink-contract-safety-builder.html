@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+  <script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Kink Contract Builder & Safety Planner — Ali Imperiale</title>
+  <meta name="description" content="Create personalized BDSM/kink agreements, safety plans, and explore educational content about Risk-Aware Consensual Kink (RACK).">
+  <meta name="keywords" content="BDSM contract template, kink safety planning, consensual kink agreements">
+  <meta property="og:title" content="Interactive Kink Contract Builder & Safety Planner">
+  <meta property="og:description" content="Create personalized BDSM/kink agreements, safety plans, and explore educational content about Risk-Aware Consensual Kink (RACK).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/kink-contract-safety-builder.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/kink-contract-safety-builder.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="shared.css">
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <style>
+    body { background-color: #FAF8EB; }
+
+    /* Tool Styles */
+    .hero-tool {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+    }
+    .hero-tool h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #2E3E24;
+    }
+    .hero-tool p {
+      font-size: 1.1rem;
+      color: #4a5a40;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .disclaimer-banner {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 1rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    .trigger-warning {
+      background-color: #f8d7da;
+      border-left: 4px solid #dc3545;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      position: relative;
+    }
+
+    .quick-exit {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #dc3545;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.2s;
+    }
+    .quick-exit:hover {
+      background-color: #c82333;
+    }
+
+    .form-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      margin-bottom: 3rem;
+    }
+
+    .step-indicator {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .step-indicator::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #eee;
+      z-index: 1;
+      transform: translateY(-50%);
+    }
+    .step {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #eee;
+      color: #666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+    .step.active {
+      background: #AD9846;
+      color: white;
+    }
+    .step.completed {
+      background: #2E3E24;
+      color: white;
+    }
+
+    .form-step {
+      display: none;
+    }
+    .form-step.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #2E3E24;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    @media (min-width: 600px) {
+      .checkbox-group {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-weight: normal !important;
+      cursor: pointer;
+    }
+
+    .dynamic-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .dynamic-list li {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .dynamic-list input {
+      flex: 1;
+    }
+    .btn-remove {
+      background: #f8d7da;
+      color: #dc3545;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-add {
+      background: #e9ecef;
+      color: #495057;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      border: none;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn-primary { background: #AD9846; color: white; }
+    .btn-secondary { background: #eee; color: #333; }
+    .btn-success { background: #2E3E24; color: white; }
+    .btn-clear { background: transparent; color: #dc3545; border: 1px solid #dc3545; }
+
+    /* Results */
+    #results-area {
+      display: none;
+      margin-top: 2rem;
+    }
+    .contract-preview {
+      background: white;
+      padding: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      margin-bottom: 1.5rem;
+      max-height: 500px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    .edu-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .edu-section h2 { color: #2E3E24; margin-bottom: 1rem; }
+    .edu-section h3 { color: #AD9846; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .edu-section p, .edu-section ul { margin-bottom: 1rem; line-height: 1.6; }
+    .edu-section ul { padding-left: 1.5rem; }
+
+    .faq-container { margin-top: 3rem; }
+    .faq-item { margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem; }
+    .faq-question { font-weight: 600; color: #2E3E24; margin-bottom: 0.5rem; cursor: pointer; display: flex; justify-content: space-between; }
+    .faq-answer { display: none; color: #444; line-height: 1.6; }
+    .faq-item.active .faq-answer { display: block; }
+  </style>
+</head>
+<body>
+  <!-- Site Nav -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-container">
+    <div class="page-content">
+
+    <div class="hero-tool">
+      <h1>Kink Contract &amp; Safety Planner</h1>
+      <p>A tool to help partners create personalized, consensual agreements, negotiate boundaries, and establish safety protocols.</p>
+    </div>
+
+    <a href="https://google.com" class="quick-exit" id="quick-exit">Quick Exit</a>
+
+    <div class="trigger-warning">
+      <strong>Trigger Warning:</strong> This tool discusses sexual practices, BDSM, explicit consent, and emergency scenarios. Please proceed only if you feel comfortable. You can click 'Quick Exit' at any time to leave this page immediately.
+    </div>
+
+    <div class="disclaimer-banner">
+      <strong>Disclaimer:</strong> This tool is for educational and communication purposes only. The generated "contract" is <em>not legally binding</em>. Always prioritize safety, communication, and consent. Seek professional or emergency help if you are in danger or experience an adverse event.
+    </div>
+
+    <div class="form-container">
+      <div class="step-indicator" id="step-indicator">
+        <div class="step active" data-step="1">1</div>
+        <div class="step" data-step="2">2</div>
+        <div class="step" data-step="3">3</div>
+        <div class="step" data-step="4">4</div>
+        <div class="step" data-step="5">5</div>
+        <div class="step" data-step="6">6</div>
+      </div>
+
+      <form id="contract-form">
+        <!-- Step 1: Partner Details -->
+        <div class="form-step active" id="step-1">
+          <h2>Step 1: Partner Details</h2>
+          <p>Let's start with who is involved in this agreement.</p>
+
+          <div class="form-group">
+            <label for="partnerA_name">Partner A (Your Name/Alias)</label>
+            <input type="text" id="partnerA_name" required placeholder="e.g., Alex">
+          </div>
+          <div class="form-group">
+            <label for="partnerA_role">Partner A Preferred Role(s)</label>
+            <input type="text" id="partnerA_role" placeholder="e.g., Top, Dominant, Switch">
+          </div>
+
+          <hr style="margin:2rem 0; border-top:1px solid #ddd;">
+
+          <div class="form-group">
+            <label for="partnerB_name">Partner B (Partner's Name/Alias)</label>
+            <input type="text" id="partnerB_name" required placeholder="e.g., Sam">
+          </div>
+          <div class="form-group">
+            <label for="partnerB_role">Partner B Preferred Role(s)</label>
+            <input type="text" id="partnerB_role" placeholder="e.g., Bottom, Submissive, Switch">
+          </div>
+
+          <div class="form-group">
+            <label for="agreement_duration">Duration of Agreement</label>
+            <select id="agreement_duration">
+              <option value="Single Scene">Single Scene / Session</option>
+              <option value="Weekend">Weekend</option>
+              <option value="1 Month">1 Month (Trial)</option>
+              <option value="3 Months">3 Months</option>
+              <option value="Indefinite">Indefinite (Until re-negotiated)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Step 2: Experience & Templates -->
+        <div class="form-step" id="step-2">
+          <h2>Step 2: Experience Level</h2>
+          <p>Selecting an experience level helps frame the conversation. (Optional)</p>
+
+          <div class="form-group">
+            <label>Current Experience Level (as a dynamic)</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="radio" name="experience" value="Beginner" checked> Beginner (Exploring basics)</label>
+              <label class="checkbox-label"><input type="radio" name="experience" value="Intermediate"> Intermediate (Familiar with some protocols)</label>
+              <label class="checkbox-label"><input type="radio" name="experience" value="Advanced"> Advanced (Experienced, deep dynamic)</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="intentions">Core Intentions/Goals for this Dynamic</label>
+            <textarea id="intentions" placeholder="e.g., To explore sensation play safely, to build trust, to relieve stress..."></textarea>
+          </div>
+        </div>
+
+        <!-- Step 3: Limits & Boundaries -->
+        <div class="form-step" id="step-3">
+          <h2>Step 3: Limits &amp; Boundaries</h2>
+          <p>Define what is absolutely off-limits, and what requires specific negotiation.</p>
+
+          <div class="form-group">
+            <label>Hard Limits (Absolute NOs)</label>
+            <p style="font-size:0.9rem; color:#666; margin-bottom:0.5rem;">Activities that will absolutely not occur under any circumstances.</p>
+            <ul class="dynamic-list" id="hard-limits-list">
+              <li><input type="text" class="hard-limit-input" placeholder="e.g., Blood play"><button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button></li>
+            </ul>
+            <button type="button" class="btn-add" onclick="addListItem('hard-limits-list', 'hard-limit-input', 'e.g., Breath play')">+ Add Hard Limit</button>
+          </div>
+
+          <div class="form-group">
+            <label>Soft Limits (Requires prior discussion/Maybes)</label>
+            <p style="font-size:0.9rem; color:#666; margin-bottom:0.5rem;">Activities that might be okay, but require checking in first or specific conditions.</p>
+            <ul class="dynamic-list" id="soft-limits-list">
+              <li><input type="text" class="soft-limit-input" placeholder="e.g., Impact play (light only)"><button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button></li>
+            </ul>
+            <button type="button" class="btn-add" onclick="addListItem('soft-limits-list', 'soft-limit-input', 'e.g., Public play')">+ Add Soft Limit</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Safewords & Protocols -->
+        <div class="form-step" id="step-4">
+          <h2>Step 4: Safewords &amp; Protocols</h2>
+          <p>How will communication happen during a scene?</p>
+
+          <div class="form-group">
+            <label>Standard Traffic Light System</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox" id="use_traffic_lights" checked> We agree to use Red (Stop), Yellow (Slow down/Caution), and Green (All good/More).</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="custom_safeword">Custom Safeword (Optional)</label>
+            <input type="text" id="custom_safeword" placeholder="e.g., Pineapple">
+          </div>
+
+          <div class="form-group">
+            <label for="nonverbal_signal">Non-Verbal Signal (For when speaking isn't possible)</label>
+            <input type="text" id="nonverbal_signal" placeholder="e.g., Dropping an object, two taps on the thigh">
+          </div>
+
+          <div class="form-group">
+            <label for="checkin_protocol">Check-in Protocol</label>
+            <textarea id="checkin_protocol" placeholder="e.g., Top will ask '1 to 10?' every 15 minutes."></textarea>
+          </div>
+        </div>
+
+        <!-- Step 5: Aftercare Plan -->
+        <div class="form-step" id="step-5">
+          <h2>Step 5: Aftercare Plan</h2>
+          <p>What happens immediately after a scene ends?</p>
+
+          <div class="form-group">
+            <label for="aftercare_physical">Physical Needs</label>
+            <textarea id="aftercare_physical" placeholder="e.g., Water, blankets, a warm shower, specific snacks..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="aftercare_emotional">Emotional Needs</label>
+            <textarea id="aftercare_emotional" placeholder="e.g., Reassurance, quiet time, debriefing discussion, cuddling..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="sub_drop">Plan for Sub Drop / Top Drop (Subsequent days)</label>
+            <textarea id="sub_drop" placeholder="e.g., Check-in text the next morning."></textarea>
+          </div>
+        </div>
+
+        <!-- Step 6: Emergency & Health -->
+        <div class="form-step" id="step-6">
+          <h2>Step 6: Emergency &amp; Health</h2>
+          <p>Crucial information in case things go wrong.</p>
+
+          <div class="form-group">
+            <label for="health_conditions">Relevant Health Conditions/Injuries</label>
+            <textarea id="health_conditions" placeholder="e.g., Bad left knee, asthma (inhaler in bag)."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="emergency_contact">Emergency Contact Info (If needed)</label>
+            <textarea id="emergency_contact" placeholder="e.g., Call Jane: 555-1234"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Emergency Stop Protocol</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox" id="emergency_agree" checked> We agree that if a safeword is used, all activity stops immediately, constraints are removed, and we shift to aftercare/assessment.</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="btn-prev" style="display:none;">Previous</button>
+          <div>
+            <button type="button" class="btn btn-clear" id="btn-clear" style="margin-right: 10px;">Clear Form</button>
+            <button type="button" class="btn btn-primary" id="btn-next">Next</button>
+            <button type="submit" class="btn btn-success" id="btn-submit" style="display:none;">Generate Contract</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Results Area -->
+    <div id="results-area">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="color: #2E3E24; margin: 0;">Your Kink Agreement</h2>
+        <div>
+            <button type="button" class="btn btn-primary" id="btn-print">Print / Save as PDF</button>
+            <button type="button" class="btn btn-secondary" id="btn-download-txt">Download .txt</button>
+        </div>
+      </div>
+      <div class="contract-preview" id="contract-output"></div>
+    </div>
+
+    <!-- Educational Content -->
+    <section class="edu-section">
+      <h2>Understanding Consensual Kink</h2>
+      <p>Negotiating boundaries and expectations is a cornerstone of healthy BDSM and kink dynamics. Having a written or clearly outlined agreement helps ensure all parties are on the same page.</p>
+
+      <h3>RACK (Risk-Aware Consensual Kink)</h3>
+      <p>RACK is a philosophy acknowledging that kink activities carry inherent risks. Practitioners educate themselves on these risks, take steps to mitigate them, and engage in activities with informed consent from all parties. It emphasizes personal responsibility and informed decision-making over strict safety guarantees.</p>
+
+      <h3>SSC (Safe, Sane, Consensual)</h3>
+      <p>SSC is an older, alternative framework stating that BDSM activities should be Safe (to a reasonable degree), Sane (in a clear state of mind), and Consensual. While many prefer RACK for acknowledging unavoidable risks, both frameworks emphasize the absolute necessity of ongoing, enthusiastic consent.</p>
+
+      <h3>Why Use a Contract or Safety Plan?</h3>
+      <ul>
+        <li><strong>Clarity:</strong> It forces explicit conversation about things that might otherwise be assumed.</li>
+        <li><strong>Memory Aid:</strong> In the heat of the moment, it's helpful to have a reference for soft limits or aftercare needs.</li>
+        <li><strong>Trust Building:</strong> The process of negotiation itself builds intimacy and trust between partners.</li>
+      </ul>
+
+      <h3>Community Resources</h3>
+      <p>If you want to learn more, look for local Munch groups (casual vanilla meetups for kinky folks), read books like <em>The New Topping Book</em> and <em>The New Bottoming Book</em> by Dossie Easton and Janet W. Hardy, or explore online educational platforms like FetLife (with caution and focus on educational groups).</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-container">
+      <h2 style="color: #2E3E24; margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">Is this contract legally binding? <span>+</span></div>
+        <div class="faq-answer">No. In most jurisdictions, you cannot legally consent to assault, and BDSM contracts hold no weight in criminal court. This tool is strictly for communication, negotiation, and setting interpersonal expectations, not for legal protection.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I change my mind after creating this? <span>+</span></div>
+        <div class="faq-answer">Absolutely. Consent is ongoing and can be revoked at any time by anyone. A contract does not override someone saying "no" or using a safeword in the moment. You should regularly revisit and update your agreements.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is the difference between a hard limit and a soft limit? <span>+</span></div>
+        <div class="faq-answer">A hard limit is an absolute "no" under all circumstances. A soft limit might be a "maybe," a "not right now," or something that requires specific conditions, equipment, or extensive prior discussion before engaging in it.</div>
+      </div>
+    </section>
+
+    <!-- JSON-LD FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this contract legally binding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. In most jurisdictions, you cannot legally consent to assault, and BDSM contracts hold no weight in criminal court. This tool is strictly for communication, negotiation, and setting interpersonal expectations, not for legal protection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I change my mind after creating this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Consent is ongoing and can be revoked at any time by anyone. A contract does not override someone saying 'no' or using a safeword in the moment. You should regularly revisit and update your agreements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a hard limit and a soft limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A hard limit is an absolute 'no' under all circumstances. A soft limit might be a 'maybe,' a 'not right now,' or something that requires specific conditions, equipment, or extensive prior discussion before engaging in it."
+          }
+        }
+      ]
+    }
+    </script>
+
+    </div>
+  </main>
+
+    <script>
+      // Navigation Logic
+      let currentStep = 1;
+      const totalSteps = 6;
+      const formSteps = document.querySelectorAll('.form-step');
+      const stepIndicators = document.querySelectorAll('.step');
+
+      function showStep(step) {
+        formSteps.forEach((fs, index) => {
+          if (index + 1 === step) {
+            fs.classList.add('active');
+          } else {
+            fs.classList.remove('active');
+          }
+        });
+
+        stepIndicators.forEach((ind, index) => {
+          if (index + 1 < step) {
+            ind.classList.add('completed');
+            ind.classList.remove('active');
+          } else if (index + 1 === step) {
+            ind.classList.add('active');
+            ind.classList.remove('completed');
+          } else {
+            ind.classList.remove('active');
+            ind.classList.remove('completed');
+          }
+        });
+
+        document.getElementById('btn-prev').style.display = step > 1 ? 'block' : 'none';
+
+        if (step === totalSteps) {
+          document.getElementById('btn-next').style.display = 'none';
+          document.getElementById('btn-submit').style.display = 'inline-block';
+        } else {
+          document.getElementById('btn-next').style.display = 'inline-block';
+          document.getElementById('btn-submit').style.display = 'none';
+        }
+      }
+
+      document.getElementById('btn-next').addEventListener('click', () => {
+        // Basic Validation
+        if (currentStep === 1) {
+            const partnerA = document.getElementById('partnerA_name').value.trim();
+            const partnerB = document.getElementById('partnerB_name').value.trim();
+            if (!partnerA || !partnerB) {
+                alert('Please enter names/aliases for both partners.');
+                return;
+            }
+        }
+
+        if (currentStep < totalSteps) {
+          currentStep++;
+          showStep(currentStep);
+          saveToLocal();
+        }
+      });
+
+      document.getElementById('btn-prev').addEventListener('click', () => {
+        if (currentStep > 1) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+
+      // Dynamic Lists Add Item
+      window.addListItem = function(listId, inputClass, placeholder) {
+        const list = document.getElementById(listId);
+        const li = document.createElement('li');
+        li.innerHTML = `<input type="text" class="${inputClass}" placeholder="${placeholder}"><button type="button" class="btn-remove" onclick="this.parentElement.remove()">X</button>`;
+        list.appendChild(li);
+      };
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-question').forEach(q => {
+          q.addEventListener('click', () => {
+              const item = q.parentElement;
+              item.classList.toggle('active');
+              const span = q.querySelector('span');
+              span.textContent = item.classList.contains('active') ? '-' : '+';
+          });
+      });
+
+      // Form Submission Logic
+      document.getElementById('contract-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (!document.getElementById('emergency_agree').checked) {
+            alert('You must agree to the Emergency Stop Protocol to generate the contract.');
+            return;
+        }
+
+        saveToLocal();
+        generateContract();
+      });
+
+      function generateContract() {
+        const pA_name = document.getElementById('partnerA_name').value || 'Partner A';
+        const pA_role = document.getElementById('partnerA_role').value || 'N/A';
+        const pB_name = document.getElementById('partnerB_name').value || 'Partner B';
+        const pB_role = document.getElementById('partnerB_role').value || 'N/A';
+        const duration = document.getElementById('agreement_duration').value;
+        const intentions = document.getElementById('intentions').value || 'None specified.';
+
+        let exp = 'Beginner';
+        document.querySelectorAll('input[name="experience"]').forEach(el => {
+            if(el.checked) exp = el.value;
+        });
+
+        const getListValues = (className) => {
+            return Array.from(document.querySelectorAll('.' + className))
+                .map(input => input.value.trim())
+                .filter(val => val !== '');
+        };
+
+        const hardLimits = getListValues('hard-limit-input');
+        const softLimits = getListValues('soft-limit-input');
+
+        const trafficLights = document.getElementById('use_traffic_lights').checked ? 'Yes, agreed to use Red, Yellow, Green.' : 'No standard traffic lights selected.';
+        const customSafeword = document.getElementById('custom_safeword').value || 'None specified.';
+        const nonverbal = document.getElementById('nonverbal_signal').value || 'None specified.';
+        const checkin = document.getElementById('checkin_protocol').value || 'None specified.';
+
+        const aftercarePhys = document.getElementById('aftercare_physical').value || 'None specified.';
+        const aftercareEmo = document.getElementById('aftercare_emotional').value || 'None specified.';
+        const subDrop = document.getElementById('sub_drop').value || 'None specified.';
+
+        const health = document.getElementById('health_conditions').value || 'None specified.';
+        const emergencyContact = document.getElementById('emergency_contact').value || 'None specified.';
+
+        const dateStr = new Date().toLocaleDateString();
+
+        const output = `KINK AND SAFETY AGREEMENT
+=========================================================
+Date Created: ${dateStr}
+
+DISCLAIMER: This document is for interpersonal communication
+and safety planning only. It is not legally binding. Consent
+is ongoing and can be revoked at any time.
+
+1. PARTIES INVOLVED & DURATION
+---------------------------------------------------------
+Partner A: ${pA_name}
+Role(s): ${pA_role}
+
+Partner B: ${pB_name}
+Role(s): ${pB_role}
+
+Agreement Duration: ${duration}
+
+2. DYNAMIC & INTENTIONS
+---------------------------------------------------------
+Experience Level: ${exp}
+Core Intentions:
+${intentions}
+
+3. BOUNDARIES & LIMITS
+---------------------------------------------------------
+HARD LIMITS (Absolute NOs):
+${hardLimits.length ? hardLimits.map(l => '- ' + l).join('\n') : '- None specified.'}
+
+SOFT LIMITS (Requires prior negotiation/check-in):
+${softLimits.length ? softLimits.map(l => '- ' + l).join('\n') : '- None specified.'}
+
+4. SAFEWORDS & PROTOCOLS
+---------------------------------------------------------
+Traffic Light System: ${trafficLights}
+Custom Safeword: ${customSafeword}
+Non-Verbal Signal: ${nonverbal}
+Check-in Protocol:
+${checkin}
+
+Emergency Stop Protocol: BOTH PARTIES AGREE that if a safeword is used, all activity stops immediately, constraints are removed, and we shift to aftercare/assessment.
+
+5. AFTERCARE PLAN
+---------------------------------------------------------
+Physical Needs:
+${aftercarePhys}
+
+Emotional Needs:
+${aftercareEmo}
+
+Sub/Top Drop Plan (Subsequent Days):
+${subDrop}
+
+6. HEALTH & EMERGENCY
+---------------------------------------------------------
+Relevant Health Conditions:
+${health}
+
+Emergency Contact:
+${emergencyContact}
+
+=========================================================
+Signatures (Optional, Symbolic):
+
+${pA_name}: ___________________________
+
+${pB_name}: ___________________________
+`;
+
+        document.getElementById('contract-output').textContent = output;
+        document.getElementById('results-area').style.display = 'block';
+        document.getElementById('results-area').scrollIntoView({ behavior: 'smooth' });
+
+        window.generatedContractText = output;
+      }
+
+      // LocalStorage Logic
+      function saveToLocal() {
+          const data = {
+              pA_name: document.getElementById('partnerA_name').value,
+              pA_role: document.getElementById('partnerA_role').value,
+              pB_name: document.getElementById('partnerB_name').value,
+              pB_role: document.getElementById('partnerB_role').value,
+              duration: document.getElementById('agreement_duration').value,
+              intentions: document.getElementById('intentions').value,
+
+              use_traffic_lights: document.getElementById('use_traffic_lights').checked,
+              custom_safeword: document.getElementById('custom_safeword').value,
+              nonverbal_signal: document.getElementById('nonverbal_signal').value,
+              checkin_protocol: document.getElementById('checkin_protocol').value,
+
+              aftercare_physical: document.getElementById('aftercare_physical').value,
+              aftercare_emotional: document.getElementById('aftercare_emotional').value,
+              sub_drop: document.getElementById('sub_drop').value,
+
+              health_conditions: document.getElementById('health_conditions').value,
+              emergency_contact: document.getElementById('emergency_contact').value,
+              emergency_agree: document.getElementById('emergency_agree').checked
+          };
+
+          let exp = 'Beginner';
+          document.querySelectorAll('input[name="experience"]').forEach(el => {
+              if(el.checked) exp = el.value;
+          });
+          data.experience = exp;
+
+          localStorage.setItem('kinkContractData', JSON.stringify(data));
+      }
+
+      function loadFromLocal() {
+          const stored = localStorage.getItem('kinkContractData');
+          if (stored) {
+              try {
+                  const data = JSON.parse(stored);
+                  document.getElementById('partnerA_name').value = data.pA_name || '';
+                  document.getElementById('partnerA_role').value = data.pA_role || '';
+                  document.getElementById('partnerB_name').value = data.pB_name || '';
+                  document.getElementById('partnerB_role').value = data.pB_role || '';
+                  if(data.duration) document.getElementById('agreement_duration').value = data.duration;
+                  document.getElementById('intentions').value = data.intentions || '';
+
+                  if(data.experience) {
+                      document.querySelectorAll('input[name="experience"]').forEach(el => {
+                          el.checked = (el.value === data.experience);
+                      });
+                  }
+
+                  document.getElementById('use_traffic_lights').checked = data.use_traffic_lights !== false;
+                  document.getElementById('custom_safeword').value = data.custom_safeword || '';
+                  document.getElementById('nonverbal_signal').value = data.nonverbal_signal || '';
+                  document.getElementById('checkin_protocol').value = data.checkin_protocol || '';
+
+                  document.getElementById('aftercare_physical').value = data.aftercare_physical || '';
+                  document.getElementById('aftercare_emotional').value = data.aftercare_emotional || '';
+                  document.getElementById('sub_drop').value = data.sub_drop || '';
+
+                  document.getElementById('health_conditions').value = data.health_conditions || '';
+                  document.getElementById('emergency_contact').value = data.emergency_contact || '';
+                  document.getElementById('emergency_agree').checked = data.emergency_agree !== false;
+
+              } catch(e) {
+                  console.error('Error parsing stored data', e);
+              }
+          }
+      }
+
+      document.getElementById('btn-clear').addEventListener('click', () => {
+          if(confirm('Are you sure you want to clear all form data and start over?')) {
+              localStorage.removeItem('kinkContractData');
+              document.getElementById('contract-form').reset();
+              currentStep = 1;
+              showStep(1);
+              document.getElementById('results-area').style.display = 'none';
+          }
+      });
+
+      // Print/Download
+      document.getElementById('btn-print').addEventListener('click', () => {
+          window.print();
+      });
+
+      document.getElementById('btn-download-txt').addEventListener('click', () => {
+          if(!window.generatedContractText) return;
+          const blob = new Blob([window.generatedContractText], { type: 'text/plain' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `kink_agreement_${new Date().toISOString().slice(0,10)}.txt`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+      });
+
+      // Init
+      document.addEventListener('DOMContentLoaded', () => {
+          loadFromLocal();
+          showStep(1);
+      });
+    </script>
+
+</body>
+</html>
