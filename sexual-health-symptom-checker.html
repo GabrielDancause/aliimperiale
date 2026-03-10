@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Health Symptom Checker Tool — Ali Imperiale</title>
+  <meta name="description" content="An interactive, educational symptom checker to help you understand common sexual health symptoms and when to seek medical care.">
+  <meta property="og:title" content="Sexual Health Symptom Checker Tool — Ali Imperiale">
+  <meta property="og:description" content="An interactive, educational symptom checker to help you understand common sexual health symptoms and when to seek medical care.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-health-symptom-checker.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-health-symptom-checker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Mobile Nav */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: #FAF8EB;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .site-nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #2E3E24;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+      }
+      .site-nav .nav-links.active {
+        display: flex;
+      }
+    }
+
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background-color: #FAF8EB;
+    }
+    .page-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #2E3E24;
+    }
+    .page-header p {
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #4A5D40;
+    }
+
+    .tracker-container {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E8E4D4;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.05);
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #2E3E24;
+      border-bottom: 2px solid #AD9846;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .disclaimer-banner {
+      background-color: rgba(173, 152, 70, 0.15);
+      border-left: 4px solid #AD9846;
+      padding: 16px 20px;
+      margin-bottom: 30px;
+      border-radius: 0 8px 8px 0;
+    }
+    .disclaimer-banner h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #2E3E24;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .disclaimer-banner p {
+      font-size: 0.9rem;
+      margin: 0;
+      line-height: 1.5;
+      color: #4A5D40;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      text-align: center;
+    }
+    .btn:hover {
+      background: #3A5030;
+      transform: translateY(-2px);
+    }
+    .btn.btn-outline {
+      background: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+    }
+    .btn.btn-outline:hover {
+      background: rgba(46, 62, 36, 0.05);
+    }
+
+    /* Checker UI */
+    .checker-box {
+      background: #FAF8EB;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      margin-top: 20px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .checker-question {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+    .checker-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .checker-btn {
+      padding: 12px 24px;
+      background: #FFFFFF;
+      color: #2E3E24;
+      border: 2px solid #AD9846;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-width: 120px;
+    }
+    .checker-btn:hover {
+      background: #AD9846;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+    .checker-result {
+      text-align: left;
+    }
+    .checker-result h3 {
+      font-size: 1.3rem;
+      color: #2E3E24;
+      margin-bottom: 15px;
+    }
+    .checker-result p {
+      font-size: 0.95rem;
+      color: #4A5D40;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .checker-result-urgent {
+      background-color: #fde8e8;
+      border-left: 4px solid #c81e1e;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .checker-result-urgent p {
+      color: #9b1c1c;
+      margin: 0;
+      font-weight: 600;
+    }
+    .checker-result-list {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    .checker-result-list li {
+      margin-bottom: 8px;
+      color: #4A5D40;
+    }
+    .checker-actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+    .history-card {
+      background: #FFFFFF;
+      border: 1px solid #E8E4D4;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .history-card h4 {
+      margin: 0 0 10px 0;
+      color: #2E3E24;
+    }
+    .history-card p {
+      margin: 0 0 10px 0;
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header" id="main-content">
+    <h1>Sexual Health Symptom Checker</h1>
+    <p>An educational tool to help you understand common sexual health symptoms, decode what your body might be telling you, and know when it's time to seek medical care.</p>
+  </header>
+
+  <main class="tracker-container">
+
+    <div class="disclaimer-banner">
+      <h3>⚠️ Educational Tool Only</h3>
+      <p>This tool provides general educational information and is <strong>not a medical diagnosis</strong>. If you are experiencing severe pain, heavy bleeding, high fever, or other urgent symptoms, please seek immediate emergency medical care. Always consult with a qualified healthcare provider for personal medical advice.</p>
+    </div>
+
+    <section class="card" id="symptom-checker-app">
+      <h2>Symptom Assessment</h2>
+      <div id="app-container">
+        <!-- JS App will mount here -->
+        <p>Loading interactive tool...</p>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top: 40px;">
+      <h2>Understanding Your Body</h2>
+      <div style="line-height: 1.7; color: #4A5D40;">
+        <p>Our bodies are incredibly communicative, but we aren't always taught how to listen to them—especially when it comes to sexual and reproductive health. Symptoms like pain, unexpected changes in arousal, or unusual discharge are often your body's way of signaling that something needs attention. These aren't things to feel ashamed of; they are simply data points.</p>
+
+        <h3 style="color: #2E3E24; margin-top: 25px; margin-bottom: 10px;">When to See a Healthcare Provider</h3>
+        <p>While an online tool can provide education and context, it cannot replace a conversation with a qualified professional. You should always consult a doctor or healthcare provider if you experience:</p>
+        <ul style="padding-left: 20px; margin-bottom: 20px;">
+          <li>Sudden, severe, or worsening pelvic pain.</li>
+          <li>Unusual bleeding, especially heavy bleeding, bleeding between periods, or bleeding after sex.</li>
+          <li>Symptoms accompanied by a high fever, nausea, or vomiting.</li>
+          <li>Any symptom that causes you distress or significantly impacts your quality of life.</li>
+        </ul>
+
+        <h3 style="color: #2E3E24; margin-top: 25px; margin-bottom: 10px;">Finding Sex-Positive Care</h3>
+        <p>Finding a healthcare provider who is informed, affirming, and sex-positive can make a massive difference in how you experience care. Look for clinics or practitioners who clearly state they are LGBTQ+ affirming, trauma-informed, and sex-positive. Don't be afraid to advocate for yourself or seek a second opinion if you feel your concerns are being dismissed.</p>
+        <div style="margin-top: 20px;">
+          <a href="/lgbtq-friendly-sex-educators.html" class="btn btn-outline" style="margin-right: 10px;">View LGBTQ+ Affirming Resources</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Frequently Asked Questions</h2>
+      <div>
+
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Is it normal for sex to hurt sometimes?</h3>
+          <div>
+            <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">While it's common for people to experience occasional discomfort (often due to lack of lubrication or arousal), sex should generally not be painful. Consistent pain during sex is a medical symptom that deserves to be evaluated by a healthcare provider. It is not something you just have to "put up with."</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Can stress really affect my physical sexual response?</h3>
+          <div>
+            <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">Absolutely. Stress, anxiety, and fatigue are some of the most common causes of changes in libido, erectile issues, and difficulty reaching orgasm. The brain is the most important sexual organ, and high stress levels can trigger physiological responses that inhibit sexual arousal.</p>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">How do I know if my discharge is normal?</h3>
+          <div>
+            <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">Healthy vaginal discharge changes throughout the menstrual cycle (from sticky and white to clear and stretchy). However, if the discharge suddenly changes in volume, becomes clumpy, smells strong or "fishy," or is accompanied by itching, burning, or a green/yellow color, it's a sign to get checked out by a doctor.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it normal for sex to hurt sometimes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While it's common for people to experience occasional discomfort (often due to lack of lubrication or arousal), sex should generally not be painful. Consistent pain during sex is a medical symptom that deserves to be evaluated by a healthcare provider. It is not something you just have to \"put up with.\""
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can stress really affect my physical sexual response?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Stress, anxiety, and fatigue are some of the most common causes of changes in libido, erectile issues, and difficulty reaching orgasm. The brain is the most important sexual organ, and high stress levels can trigger physiological responses that inhibit sexual arousal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my discharge is normal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Healthy vaginal discharge changes throughout the menstrual cycle (from sticky and white to clear and stretchy). However, if the discharge suddenly changes in volume, becomes clumpy, smells strong or \"fishy,\" or is accompanied by itching, burning, or a green/yellow color, it's a sign to get checked out by a doctor."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('app-container');
+
+      // Symptom Checker Data Structure
+      const tree = {
+        start: {
+          q: "What category best describes your primary symptom?",
+          options: [
+            { text: "Pain during sex", next: "pain_1" },
+            { text: "Unusual discharge or odor", next: "discharge_1" },
+            { text: "Changes in desire/libido", next: "desire_1" },
+            { text: "Orgasm difficulties", next: "orgasm_1" },
+            { text: "Erectile issues", next: "ed_1" },
+            { text: "Menstrual issues affecting sex", next: "menstrual_1" },
+            { text: "Emotional/psychological", next: "emotional_1" }
+          ]
+        },
+
+        // PAIN DURING SEX (Dyspareunia)
+        pain_1: {
+          q: "Is the pain sudden and severe, or accompanied by a high fever, vomiting, or heavy bleeding?",
+          options: [
+            { text: "Yes", next: "urgent_pain" },
+            { text: "No", next: "pain_2" },
+            { text: "Back", next: "start" }
+          ]
+        },
+        pain_2: {
+          q: "Where do you feel the pain mostly?",
+          options: [
+            { text: "At the entrance/shallow", next: "pain_shallow" },
+            { text: "Deep inside", next: "pain_deep" },
+            { text: "Back", next: "pain_1" }
+          ]
+        },
+        urgent_pain: {
+          type: "result",
+          urgent: true,
+          title: "Seek Immediate Medical Care",
+          text: "Sudden, severe pelvic pain, especially with fever, vomiting, or unusual heavy bleeding, can be a sign of a medical emergency such as an ectopic pregnancy, ruptured ovarian cyst, or severe pelvic inflammatory disease (PID). Please go to an urgent care clinic or emergency room immediately."
+        },
+        pain_shallow: {
+          type: "result",
+          title: "Superficial (Shallow) Pain During Sex",
+          text: "Pain at the entrance (vulva/vagina) can be caused by various factors. It's important to discuss this with a healthcare provider to find the root cause and get relief.",
+          list: [
+            "Lack of lubrication: This is very common. Trying a high-quality, body-safe lubricant can often help.",
+            "Infections: Yeast infections, bacterial vaginosis (BV), or STIs can cause irritation and pain.",
+            "Vaginismus: Involuntary muscle spasms at the vaginal entrance. Pelvic floor physical therapy is highly effective for this.",
+            "Hormonal changes: Menopause, childbirth, or certain medications can cause vaginal dryness and thinning of tissues."
+          ]
+        },
+        pain_deep: {
+          type: "result",
+          title: "Deep Pain During Sex",
+          text: "Pain felt deep inside during penetration is often related to the cervix, uterus, or other pelvic organs. A gynecological exam is recommended to investigate further.",
+          list: [
+            "Endometriosis: A condition where tissue similar to the lining of the uterus grows outside it, often causing deep pain.",
+            "Pelvic Inflammatory Disease (PID): An infection of the reproductive organs that needs prompt treatment.",
+            "Ovarian cysts or fibroids: These can cause pain if bumped during deep penetration.",
+            "Pelvic floor dysfunction: Tight pelvic floor muscles can refer pain deep into the pelvis."
+          ]
+        },
+
+        // UNUSUAL DISCHARGE
+        discharge_1: {
+          q: "Are you experiencing pain, burning during urination, pelvic pain, or fever along with the discharge?",
+          options: [
+            { text: "Yes", next: "discharge_doctor" },
+            { text: "No", next: "discharge_2" },
+            { text: "Back", next: "start" }
+          ]
+        },
+        discharge_2: {
+          q: "What does the discharge look/smell like?",
+          options: [
+            { text: "Thick, white, clumpy (like cottage cheese), itchy", next: "discharge_yeast" },
+            { text: "Thin, grayish/white, with a strong 'fishy' odor", next: "discharge_bv" },
+            { text: "Yellow/green, frothy, or unusual", next: "discharge_sti" },
+            { text: "Back", next: "discharge_1" }
+          ]
+        },
+        discharge_doctor: {
+          type: "result",
+          title: "Consult a Healthcare Provider",
+          text: "Because your discharge is accompanied by pain, burning, or fever, it's important to see a healthcare provider soon. These can be signs of a more significant infection, such as an STI or Pelvic Inflammatory Disease (PID), which requires prescription treatment."
+        },
+        discharge_yeast: {
+          type: "result",
+          title: "Possible Yeast Infection",
+          text: "Thick, white discharge accompanied by itching or burning is often a sign of a yeast infection (candidiasis).",
+          list: [
+            "Over-the-counter (OTC) antifungal creams or suppositories are available.",
+            "If this is your first time experiencing these symptoms, or if OTC treatments don't work, see a healthcare provider for an accurate diagnosis.",
+            "Avoid douching or using scented products, as they can worsen irritation."
+          ]
+        },
+        discharge_bv: {
+          type: "result",
+          title: "Possible Bacterial Vaginosis (BV)",
+          text: "Thin, grayish-white discharge with a distinct 'fishy' odor is commonly associated with Bacterial Vaginosis (BV), an imbalance of the natural bacteria in the vagina.",
+          list: [
+            "BV is very common and usually easily treated with prescription antibiotics from a healthcare provider.",
+            "It is not considered an STI, but having a new sex partner can increase the risk.",
+            "Avoid douching, which can disrupt healthy bacteria and make BV worse."
+          ]
+        },
+        discharge_sti: {
+          type: "result",
+          title: "STI Screening Recommended",
+          text: "Yellowish, greenish, or frothy discharge can sometimes be a symptom of a Sexually Transmitted Infection (STI) like trichomoniasis, gonorrhea, or chlamydia.",
+          list: [
+            "Schedule an appointment with a healthcare provider or a local sexual health clinic for testing.",
+            "Many STIs are easily curable with antibiotics, but leaving them untreated can cause long-term health issues.",
+            "Consider abstaining from sexual activity or using barrier methods until you have been tested and treated."
+          ]
+        },
+
+        // CHANGES IN DESIRE
+        desire_1: {
+          q: "Did this change in desire happen suddenly, or has it been a gradual shift?",
+          options: [
+            { text: "Suddenly", next: "desire_sudden" },
+            { text: "Gradually", next: "desire_gradual" },
+            { text: "Back", next: "start" }
+          ]
+        },
+        desire_sudden: {
+          type: "result",
+          title: "Sudden Changes in Libido",
+          text: "A sudden drop in sexual desire is often linked to acute changes in your life or body. It's a very common experience.",
+          list: [
+            "New medications: Antidepressants, hormonal birth control, and blood pressure medications can significantly impact libido.",
+            "High stress or trauma: Significant life events, grief, or acute stress take energy away from your sex drive.",
+            "Relationship changes: A sudden conflict or breach of trust can immediately affect desire.",
+            "Medical conditions: Sudden hormonal shifts or onset of illness. A chat with your doctor is a good next step."
+          ]
+        },
+        desire_gradual: {
+          type: "result",
+          title: "Gradual Changes in Libido",
+          text: "Desire naturally fluctuates throughout our lives. A gradual shift is normal, but if it causes you distress, it's worth exploring.",
+          list: [
+            "Hormonal transitions: Perimenopause, menopause, or changes in testosterone levels over time.",
+            "Chronic stress or fatigue: Long-term burnout makes it hard to feel sexual.",
+            "Relationship dynamics: Over time, relationships can settle into routines that may feel less exciting. Exploring new ways to connect can help.",
+            "Consider reading about 'Responsive Desire' – many people don't feel spontaneous desire but can become aroused once things get started."
+          ]
+        },
+
+        // ORGASM DIFFICULTIES
+        orgasm_1: {
+          q: "Have you ever been able to orgasm, either with a partner or alone?",
+          options: [
+            { text: "Yes, but I'm having trouble now", next: "orgasm_change" },
+            { text: "No, I've never had an orgasm", next: "orgasm_never" },
+            { text: "Back", next: "start" }
+          ]
+        },
+        orgasm_change: {
+          type: "result",
+          title: "Changes in Ability to Orgasm",
+          text: "If you used to orgasm and now find it difficult or impossible (anorgasmia), several factors could be at play.",
+          list: [
+            "Medication side effects: SSRI antidepressants are particularly known for delaying or preventing orgasm.",
+            "Stress and distraction: Being 'in your head' (spectatoring) makes it hard for the body to reach climax.",
+            "Hormonal changes or fatigue.",
+            "Communication: Sometimes we need different types of stimulation than we used to. Don't be afraid to guide your partner or use toys."
+          ]
+        },
+        orgasm_never: {
+          type: "result",
+          title: "Primary Anorgasmia",
+          text: "If you have never experienced an orgasm, you are not alone. This is known as primary anorgasmia and is very common, especially among people with vulvas.",
+          list: [
+            "Self-exploration is key: Spend time learning what feels good to your body without the pressure of a partner.",
+            "Use of toys: Vibrators can provide the consistent, targeted stimulation often needed to reach orgasm.",
+            "Anatomy education: Understand where your clitoris is and how it responds. Most people with vulvas need direct clitoral stimulation to climax.",
+            "Consider seeing a sex therapist who can provide guidance and exercises in a safe, judgment-free way."
+          ]
+        },
+
+        // ERECTILE ISSUES
+        ed_1: {
+          q: "Do you ever have spontaneous erections (e.g., waking up in the morning) or erections during masturbation?",
+          options: [
+            { text: "Yes", next: "ed_psychological" },
+            { text: "No", next: "ed_physical" },
+            { text: "Back", next: "start" }
+          ]
+        },
+        ed_psychological: {
+          type: "result",
+          title: "Likely Psychological or Situational Factors",
+          text: "If you can get erections in some situations (like morning wood or masturbating) but not with a partner, the physical plumbing is likely working fine. The issue is often psychological.",
+          list: [
+            "Performance anxiety: Worrying about maintaining an erection can actually cause you to lose it.",
+            "Stress, fatigue, or relationship issues.",
+            "Taking the pressure off: Try taking penetrative sex off the table for a while and focus on other forms of intimacy and pleasure.",
+            "A sex therapist can be incredibly helpful for working through performance anxiety."
+          ]
+        },
+        ed_physical: {
+          type: "result",
+          title: "Possible Physical Factors",
+          text: "If you rarely or never get erections, even in the morning or during masturbation, there may be a physical cause. It is highly recommended to see a healthcare provider.",
+          list: [
+            "Cardiovascular health: Erections are largely about blood flow. ED can sometimes be an early sign of heart or blood pressure issues.",
+            "Medications: Many common drugs (like blood pressure meds or antidepressants) affect erections.",
+            "Hormonal imbalances: Low testosterone.",
+            "Lifestyle factors: Smoking, heavy alcohol use, or lack of sleep.",
+            "Medical treatments for ED (like PDE5 inhibitors) are very effective and widely available through a doctor."
+          ]
+        },
+
+        // MENSTRUAL ISSUES
+        menstrual_1: {
+          q: "Are you experiencing severe pelvic pain during your period, pain during sex, and very heavy bleeding?",
+          options: [
+            { text: "Yes", next: "menstrual_endo" },
+            { text: "No, mostly irregular timing or spotting", next: "menstrual_irregular" },
+            { text: "Back", next: "start" }
+          ]
+        },
+        menstrual_endo: {
+          type: "result",
+          title: "Consult a Provider for Pelvic Pain",
+          text: "Severe period cramps (dysmenorrhea) that interfere with your life, combined with pain during sex and heavy bleeding, are not 'just normal period pain.'",
+          list: [
+            "These can be symptoms of Endometriosis, Adenomyosis, or Uterine Fibroids.",
+            "Advocate for yourself: It is important to find a healthcare provider who takes your pain seriously and will investigate these conditions.",
+            "There are management strategies and treatments available that can significantly improve your quality of life and sexual comfort."
+          ]
+        },
+        menstrual_irregular: {
+          type: "result",
+          title: "Irregular Cycles and Spotting",
+          text: "Changes in your cycle can affect your sex life, mood, and comfort.",
+          list: [
+            "Spotting after sex: This should always be evaluated by a doctor, as it can be a sign of cervical irritation, polyps, or infections.",
+            "Irregular timing: Can be caused by stress, significant weight changes, PCOS, or perimenopause.",
+            "Hormonal birth control: Starting, stopping, or changing methods often causes temporary irregularities.",
+            "Keep a symptom tracker to show your healthcare provider."
+          ]
+        },
+
+        // EMOTIONAL
+        emotional_1: {
+          q: "Are you feeling anxiety, guilt, or fear specifically related to sex or intimacy?",
+          options: [
+            { text: "Yes", next: "emotional_result" },
+            { text: "Back", next: "start" }
+          ]
+        },
+        emotional_result: {
+          type: "result",
+          title: "Emotional & Psychological Well-being",
+          text: "Sexual health is intimately connected to our mental health. Feeling anxiety, guilt, or fear around sex is common, but you don't have to live with it.",
+          list: [
+            "Purity culture trauma: Growing up with strict, shame-based messaging about sex can leave lasting impacts on how you experience pleasure.",
+            "Past trauma: If you have experienced sexual assault or non-consensual experiences, your body may react with fear or numbness during intimacy.",
+            "Body image issues: Feeling disconnected from or unhappy with your body can make it hard to be present during sex.",
+            "Seeking help: Working with a trauma-informed sex therapist or counselor can provide a safe space to unpack these feelings and reclaim your sexuality."
+          ]
+        }
+      };
+
+      // State Management
+      let currentStep = 'start';
+      let history = [];
+
+      function renderNode(nodeId) {
+        const node = tree[nodeId];
+        container.innerHTML = '';
+
+        if (node.type === 'result') {
+          // Render Result
+          let html = `<div class="checker-box checker-result">`;
+
+          if (node.urgent) {
+            html += `
+              <div class="checker-result-urgent">
+                <p>⚠️ ${node.title}</p>
+                <p style="font-weight:normal; margin-top:5px; color:#4A5D40">${node.text}</p>
+              </div>
+            `;
+          } else {
+            html += `<h3>${node.title}</h3>`;
+            html += `<p>${node.text}</p>`;
+          }
+
+          if (node.list) {
+            html += `<ul class="checker-result-list">`;
+            node.list.forEach(item => {
+              html += `<li>${item}</li>`;
+            });
+            html += `</ul>`;
+          }
+
+          html += `
+            <div class="checker-actions">
+              <button class="btn btn-outline" id="btn-restart">Start Over</button>
+              <button class="btn" id="btn-save">Save Result</button>
+            </div>
+          </div>`;
+
+          container.innerHTML = html;
+
+          document.getElementById('btn-restart').addEventListener('click', () => {
+            currentStep = 'start';
+            renderNode(currentStep);
+          });
+
+          document.getElementById('btn-save').addEventListener('click', () => {
+            saveResult(node.title, node.text);
+          });
+
+        } else {
+          // Render Question
+          let html = `
+            <div class="checker-box">
+              <div class="checker-question">${node.q}</div>
+              <div class="checker-options">
+          `;
+
+          node.options.forEach((opt, index) => {
+            html += `<button class="checker-btn" data-next="${opt.next}">${opt.text}</button>`;
+          });
+
+          html += `</div></div>`;
+          container.innerHTML = html;
+
+          // Add listeners
+          const btns = container.querySelectorAll('.checker-btn');
+          btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              const nextId = e.target.getAttribute('data-next');
+              if (nextId === 'start') {
+                currentStep = 'start';
+              } else {
+                currentStep = nextId;
+              }
+              renderNode(currentStep);
+            });
+          });
+        }
+
+        loadSavedResults();
+      }
+
+      // LocalStorage Persistence
+      function saveResult(title, text) {
+        let results = JSON.parse(localStorage.getItem('ali_symptom_checker') || '[]');
+        const date = new Date().toLocaleDateString();
+        results.unshift({ date, title, text });
+        // Keep only last 3
+        if(results.length > 3) results = results.slice(0, 3);
+        localStorage.setItem('ali_symptom_checker', JSON.stringify(results));
+        alert('Result saved to your browser.');
+        loadSavedResults();
+      }
+
+      function loadSavedResults() {
+        // Create or find history container
+        let historyContainer = document.getElementById('symptom-history');
+        if (!historyContainer) {
+          historyContainer = document.createElement('div');
+          historyContainer.id = 'symptom-history';
+          historyContainer.style.marginTop = '40px';
+          document.getElementById('symptom-checker-app').appendChild(historyContainer);
+        }
+
+        const results = JSON.parse(localStorage.getItem('ali_symptom_checker') || '[]');
+
+        if (results.length === 0) {
+          historyContainer.innerHTML = '';
+          return;
+        }
+
+        let html = `
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 style="margin: 0;">Saved Results</h3>
+            <button class="btn btn-outline" style="padding: 5px 10px; font-size: 0.8rem;" onclick="localStorage.removeItem('ali_symptom_checker'); window.location.reload();">Clear All History</button>
+          </div>
+        `;
+        results.forEach(res => {
+          html += `
+            <div class="history-card">
+              <h4>${res.title}</h4>
+              <p><em>Saved on: ${res.date}</em></p>
+            </div>
+          `;
+        });
+
+        historyContainer.innerHTML = html;
+      }
+
+      // Initialize
+      renderNode(currentStep);
+    });
+  </script>
+</body>
+</html>

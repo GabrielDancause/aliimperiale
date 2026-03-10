@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+  <script src="consent.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arousal and Pleasure Tracking Tool — Ali Imperiale</title>
+  <meta name="description" content="Track arousal patterns, pleasure levels, mood factors, and identify what works best for you with this interactive privacy-focused tracking tool.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Arousal and Pleasure Tracking Tool — Ali Imperiale">
+  <meta property="og:description" content="Track arousal patterns, pleasure levels, mood factors, and identify what works best for you with this interactive privacy-focused tracking tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/arousal-pleasure-tracker.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="canonical" href="https://aliimperiale.com/arousal-pleasure-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Base styling inherited from shared.css, adding tool-specific overrides */
+    body {
+      background-color: #FAF8EB; /* Cream */
+      color: #2E3E24; /* Olive */
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Global Navigation Styles (copied from index.html for horizontal layout) */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Mobile Nav Hamburger overrides */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: #FAF8EB;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Page Header */
+    .page-header {
+      text-align: center;
+      padding: 60px 24px 40px;
+    }
+    .page-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #2E3E24;
+    }
+    .page-header p {
+      font-size: 1.1rem;
+      color: #5a6b50;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Tracker Container & Cards */
+    .tracker-container {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(46,62,36,0.06);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .card > p {
+      color: #5a6b50;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d4c9;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: #2E3E24;
+      background-color: #fafbf9;
+      box-sizing: border-box;
+    }
+    input[type="date"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #AD9846; /* Gold */
+      box-shadow: 0 0 0 2px rgba(173,152,70,0.2);
+    }
+
+    /* Slider styling */
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .slider-label {
+      font-size: 0.85rem;
+      color: #5a6b50;
+      font-weight: 500;
+    }
+    .slider-input {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 6px;
+      background: #e2e5d9;
+      border-radius: 3px;
+      outline: none;
+    }
+    .slider-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #AD9846;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .slider-input::-webkit-slider-thumb:hover {
+      background: #8f7d3a;
+    }
+    .slider-value {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #AD9846;
+    }
+
+    /* Checkbox Grid */
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400 !important;
+      cursor: pointer;
+    }
+    .checkbox-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #AD9846;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 14px 24px;
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #1e2a18;
+    }
+    .btn-secondary {
+      padding: 10px 20px;
+      background-color: #AD9846;
+      color: #FAF8EB;
+      border: none;
+      font-size: 0.9rem;
+    }
+    .btn-secondary:hover {
+      background-color: #8f7d3a;
+    }
+    .btn-outline {
+      padding: 10px 20px;
+      background-color: transparent;
+      color: #2E3E24;
+      border: 1px solid #2E3E24;
+      font-size: 0.9rem;
+    }
+    .btn-outline:hover {
+      background-color: #f0f2ea;
+    }
+
+    /* Dashboard Layout */
+    .dashboard-header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .dashboard-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .insights-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .insight-box {
+      background: #FAF8EB;
+      border: 1px solid #e2e5d9;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+    .insight-box h3 {
+      font-size: 0.9rem;
+      color: #5a6b50;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .insight-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #AD9846;
+    }
+    .insight-value.text-value {
+      font-size: 1.2rem;
+      color: #2E3E24;
+    }
+    .chart-container {
+      margin: 32px 0;
+      position: relative;
+      height: 300px;
+      width: 100%;
+    }
+    .chart-container h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .personalized-insights {
+      background: rgba(173,152,70,0.1);
+      border-left: 4px solid #AD9846;
+      padding: 20px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 32px;
+    }
+    .personalized-insights h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+    .personalized-insights ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #2E3E24;
+      line-height: 1.6;
+    }
+    .personalized-insights li {
+      margin-bottom: 8px;
+    }
+    .share-container {
+      margin-top: 32px;
+      text-align: center;
+    }
+    .share-msg {
+      display: none;
+      color: #AD9846;
+      font-weight: 600;
+      margin-left: 12px;
+      font-size: 0.9rem;
+    }
+
+    /* Table Styles */
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px; /* Ensure scrolling on small devices */
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e2e5d9;
+      font-size: 0.9rem;
+    }
+    th {
+      font-weight: 600;
+      color: #5a6b50;
+      background-color: #fafbf9;
+      white-space: nowrap;
+    }
+    td {
+      color: #2E3E24;
+    }
+    .delete-btn {
+      color: #d32f2f;
+      background: none;
+      border: none;
+      padding: 4px 8px;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .delete-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* Educational Content & FAQ */
+    .educational-content h3 {
+      font-size: 1.2rem;
+      color: #2E3E24;
+      margin: 24px 0 12px;
+    }
+    .faq-section h2 {
+      margin-bottom: 24px;
+    }
+    .faq-item {
+      margin-bottom: 24px;
+    }
+    .faq-item h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .faq-item p {
+      color: #5a6b50;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      .form-row {
+        display: flex;
+        gap: 24px;
+      }
+      .half-width {
+        flex: 1;
+      }
+      .checkbox-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .dashboard-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .insights-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .chart-container {
+        height: 400px;
+      }
+    }
+
+    /* Mobile Nav Media Query */
+    @media (max-width: 767px) {
+      .hamburger {
+        display: block;
+      }
+      .site-nav .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #2E3E24;
+        padding: 16px 24px 24px;
+        gap: 16px;
+        border-top: 1px solid rgba(250, 248, 235, 0.1);
+      }
+      .site-nav .nav-links.active {
+        display: flex;
+      }
+      .site-nav .nav-links a {
+        font-size: 1.1rem;
+        display: block;
+        padding: 8px 0;
+      }
+      .btn-primary {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Is my data private and secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely. This tool relies entirely on local storage within your browser. No personal data, arousal tracking, or pleasure patterns ever leave your device or are sent to any servers."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How do I save my tracking data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your tracking data is automatically saved to your browser's local storage as you log entries. You can also use the Export feature to download your records as a CSV or JSON file."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Can I use this tool as a couple?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! You can choose to track individually or collaboratively with a partner to understand mutual pleasure patterns and communication effectiveness."
+      }
+    }]
+  }
+  </script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Arousal &amp; Pleasure Tracker</h1>
+    <p>Track your arousal patterns, pleasure levels, mood, and lifestyle factors to identify what works best for you and your body.</p>
+  </header>
+
+  <main class="tracker-container">
+
+    <!-- Daily Log Form -->
+    <section class="card" id="log-section">
+      <h2>Daily Log</h2>
+      <p>Record your daily experiences to uncover patterns over time.</p>
+
+      <form id="tracker-form" class="tracker-form">
+        <div class="form-group">
+          <label for="log-date">Date</label>
+          <input type="date" id="log-date" required>
+        </div>
+
+        <div class="form-group">
+          <label>Arousal Level (1-10)</label>
+          <div class="slider-container">
+            <span class="slider-label">Low</span>
+            <input type="range" id="arousal-level" min="1" max="10" value="5" class="slider-input">
+            <span class="slider-label">High</span>
+          </div>
+          <div class="slider-value" id="arousal-value-display">5</div>
+        </div>
+
+        <div class="form-group">
+          <label>Pleasure Level (1-10)</label>
+          <div class="slider-container">
+            <span class="slider-label">Low</span>
+            <input type="range" id="pleasure-level" min="1" max="10" value="5" class="slider-input">
+            <span class="slider-label">High</span>
+          </div>
+          <div class="slider-value" id="pleasure-value-display">5</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="mood-factor">Primary Mood</label>
+            <select id="mood-factor">
+              <option value="relaxed">Relaxed / Calm</option>
+              <option value="happy">Happy / Joyful</option>
+              <option value="stressed">Stressed / Anxious</option>
+              <option value="tired">Tired / Exhausted</option>
+              <option value="confident">Confident / Sexy</option>
+              <option value="distracted">Distracted / Disconnected</option>
+            </select>
+          </div>
+
+          <div class="form-group half-width">
+            <label for="stress-level">Stress Level</label>
+            <select id="stress-level">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="sleep-quality">Sleep Quality</label>
+            <select id="sleep-quality">
+              <option value="poor">Poor</option>
+              <option value="fair">Fair</option>
+              <option value="good">Good</option>
+              <option value="excellent">Excellent</option>
+            </select>
+          </div>
+
+          <div class="form-group half-width">
+            <label for="cycle-stage">Cycle Stage (Optional)</label>
+            <select id="cycle-stage">
+              <option value="none">Not Tracking / N/A</option>
+              <option value="menstrual">Menstrual</option>
+              <option value="follicular">Follicular</option>
+              <option value="ovulatory">Ovulatory</option>
+              <option value="luteal">Luteal</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Techniques / Activities (Check all that apply)</label>
+          <div class="checkbox-grid">
+            <label class="checkbox-label"><input type="checkbox" name="technique" value="solo_play"> Solo Play</label>
+            <label class="checkbox-label"><input type="checkbox" name="technique" value="partner_play"> Partner Play</label>
+            <label class="checkbox-label"><input type="checkbox" name="technique" value="toys"> Toys / Vibes</label>
+            <label class="checkbox-label"><input type="checkbox" name="technique" value="massage"> Sensual Massage</label>
+            <label class="checkbox-label"><input type="checkbox" name="technique" value="oral"> Oral</label>
+            <label class="checkbox-label"><input type="checkbox" name="technique" value="penetration"> Penetration</label>
+            <label class="checkbox-label"><input type="checkbox" name="technique" value="roleplay"> Roleplay / Fantasy</label>
+            <label class="checkbox-label"><input type="checkbox" name="technique" value="kink"> Kink / BDSM</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes &amp; Observations</label>
+          <textarea id="notes" rows="3" placeholder="What felt good? What didn't? Any specific triggers or context?"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Save Daily Log</button>
+      </form>
+    </section>
+
+    <!-- Dashboard & Charts -->
+    <section class="card" id="dashboard-section">
+      <div class="dashboard-header">
+        <h2>Your Insights Dashboard</h2>
+        <div class="dashboard-actions">
+          <button id="export-btn" class="btn-secondary">Export Data</button>
+          <button id="clear-btn" class="btn-outline">Clear Data</button>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <h3>Arousal &amp; Pleasure Trends</h3>
+        <canvas id="trendsChart"></canvas>
+      </div>
+
+      <div class="insights-grid">
+        <div class="insight-box">
+          <h3>Average Arousal</h3>
+          <div class="insight-value" id="avg-arousal">--</div>
+        </div>
+        <div class="insight-box">
+          <h3>Average Pleasure</h3>
+          <div class="insight-value" id="avg-pleasure">--</div>
+        </div>
+        <div class="insight-box">
+          <h3>Top Mood for Pleasure</h3>
+          <div class="insight-value text-value" id="top-mood">--</div>
+        </div>
+        <div class="insight-box">
+          <h3>Most Effective Technique</h3>
+          <div class="insight-value text-value" id="top-technique">--</div>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <h3>Factors Correlating with High Pleasure</h3>
+        <canvas id="factorsChart"></canvas>
+      </div>
+
+      <div id="personalized-insights" class="personalized-insights">
+        <h3>Personalized Insights</h3>
+        <ul id="insights-list">
+          <li>Log more days to see personalized insights about your patterns.</li>
+        </ul>
+      </div>
+
+      <div class="share-container">
+        <button id="share-btn" class="btn-secondary">Copy Insights Summary to Clipboard</button>
+        <span id="share-msg" class="share-msg">Copied!</span>
+      </div>
+    </section>
+
+    <!-- Recent Logs Table -->
+    <section class="card" id="history-section">
+      <h2>Recent Logs</h2>
+      <div class="table-wrapper">
+        <table id="history-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Arousal</th>
+              <th>Pleasure</th>
+              <th>Mood</th>
+              <th>Stress</th>
+              <th>Sleep</th>
+              <th>Techniques</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="history-body">
+            <!-- Data will be populated here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="card educational-content">
+      <h2>Understanding Your Patterns</h2>
+      <p>Tracking your arousal and pleasure isn't about hitting "perfect" scores—it's about gathering data on your own unique body and mind. We often treat our sexual responses as mysterious, unpredictable forces, but they are deeply connected to our overall well-being.</p>
+
+      <h3>The Context Matters</h3>
+      <p>Notice how your <strong>stress levels</strong> and <strong>sleep quality</strong> impact your desire and pleasure. The "brakes and accelerators" model of sexual response shows us that it's often more about removing the brakes (like stress and exhaustion) than hitting the accelerator.</p>
+
+      <h3>Cycle Awareness</h3>
+      <p>If you menstruate, your hormonal fluctuations significantly impact your natural arousal baseline. Many people experience a peak in desire around ovulation (when estrogen and testosterone are high) and a dip during the luteal phase (when progesterone dominates). Tracking helps you work <em>with</em> your cycle rather than fighting it.</p>
+    </section>
+
+    <!-- Privacy FAQ -->
+    <section class="card faq-section">
+      <h2>Privacy &amp; Security FAQ</h2>
+      <div class="faq-item">
+        <h3>Is my data private and secure?</h3>
+        <p>Yes, absolutely. This tool relies entirely on local storage within your browser. No personal data, arousal tracking, or pleasure patterns ever leave your device or are sent to any servers. It stays right here on your phone or computer.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I save my tracking data?</h3>
+        <p>Your tracking data is automatically saved to your browser's local storage as you log entries. You can also use the Export feature to download your records as a CSV or JSON file to keep a permanent backup.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I use this tool as a couple?</h3>
+        <p>Yes! You can choose to track individually or collaboratively with a partner to understand mutual pleasure patterns and communication effectiveness.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <img src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32" style="opacity:0.9; margin-bottom:16px;">
+          <p>Sex Educator &amp; Content Creator based in Canada.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/tools.html">Interactive Tools</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Social</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set today's date as default
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('log-date').value = today;
+
+      // Update slider displays
+      const arousalSlider = document.getElementById('arousal-level');
+      const pleasureSlider = document.getElementById('pleasure-level');
+      const arousalDisplay = document.getElementById('arousal-value-display');
+      const pleasureDisplay = document.getElementById('pleasure-value-display');
+
+      arousalSlider.addEventListener('input', (e) => arousalDisplay.textContent = e.target.value);
+      pleasureSlider.addEventListener('input', (e) => pleasureDisplay.textContent = e.target.value);
+
+      // State
+      let trackerData = JSON.parse(localStorage.getItem('ali_arousal_tracker_data')) || [];
+      let trendsChartInstance = null;
+      let factorsChartInstance = null;
+
+      // Initialize
+      updateDashboard();
+
+      // Handle form submission
+      document.getElementById('tracker-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const date = document.getElementById('log-date').value;
+        const arousal = parseInt(arousalSlider.value);
+        const pleasure = parseInt(pleasureSlider.value);
+        const mood = document.getElementById('mood-factor').value;
+        const stress = document.getElementById('stress-level').value;
+        const sleep = document.getElementById('sleep-quality').value;
+        const cycle = document.getElementById('cycle-stage').value;
+        const notes = document.getElementById('notes').value;
+
+        const techniques = Array.from(document.querySelectorAll('input[name="technique"]:checked')).map(cb => cb.value);
+
+        // Update existing entry for the same date or add new
+        const existingIndex = trackerData.findIndex(entry => entry.date === date);
+        const newEntry = {
+          id: Date.now().toString(),
+          date,
+          arousal,
+          pleasure,
+          mood,
+          stress,
+          sleep,
+          cycle,
+          techniques,
+          notes
+        };
+
+        if (existingIndex >= 0) {
+          trackerData[existingIndex] = newEntry;
+        } else {
+          trackerData.push(newEntry);
+        }
+
+        // Sort by date ascending
+        trackerData.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+        saveData();
+        updateDashboard();
+
+        // Reset form for new entry (keep date)
+        e.target.reset();
+        document.getElementById('log-date').value = date;
+        arousalDisplay.textContent = '5';
+        pleasureDisplay.textContent = '5';
+        alert('Log saved successfully!');
+      });
+
+      // Export Data
+      document.getElementById('export-btn').addEventListener('click', () => {
+        if (trackerData.length === 0) return alert('No data to export.');
+
+        // CSV Export
+        const headers = ['Date', 'Arousal', 'Pleasure', 'Mood', 'Stress', 'Sleep', 'Cycle', 'Techniques', 'Notes'];
+        const rows = trackerData.map(d => [
+          d.date, d.arousal, d.pleasure, d.mood, d.stress, d.sleep, d.cycle,
+          `"${d.techniques.join(', ')}"`,
+          `"${(d.notes || '').replace(/"/g, '""')}"`
+        ]);
+
+        const csvContent = "data:text/csv;charset=utf-8," +
+          [headers.join(','), ...rows.map(e => e.join(','))].join("\n");
+
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "arousal-pleasure-data.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      // Clear Data
+      document.getElementById('clear-btn').addEventListener('click', () => {
+        if (confirm('Are you sure you want to permanently delete all your tracking data?')) {
+          trackerData = [];
+          saveData();
+          updateDashboard();
+        }
+      });
+
+      // Share/Copy Insights
+      document.getElementById('share-btn').addEventListener('click', async () => {
+        if (trackerData.length === 0) return;
+
+        const avgArousal = document.getElementById('avg-arousal').textContent;
+        const avgPleasure = document.getElementById('avg-pleasure').textContent;
+        const topMood = document.getElementById('top-mood').textContent;
+        const topTechnique = document.getElementById('top-technique').textContent;
+
+        const textToCopy = `My Arousal & Pleasure Tracking Insights:\nAverage Arousal: ${avgArousal}/10\nAverage Pleasure: ${avgPleasure}/10\nTop Mood for Pleasure: ${topMood}\nMost Effective Technique: ${topTechnique}\n\nTrack your own patterns at aliimperiale.com/arousal-pleasure-tracker.html`;
+
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          const msg = document.getElementById('share-msg');
+          msg.style.display = 'inline';
+          setTimeout(() => msg.style.display = 'none', 3000);
+        } catch (err) {
+          alert('Failed to copy to clipboard. Try selecting the text manually.');
+        }
+      });
+
+      // Delete single entry
+      window.deleteEntry = function(id) {
+        if (confirm('Delete this log entry?')) {
+          trackerData = trackerData.filter(entry => entry.id !== id);
+          saveData();
+          updateDashboard();
+        }
+      };
+
+      function saveData() {
+        localStorage.setItem('ali_arousal_tracker_data', JSON.stringify(trackerData));
+      }
+
+      function updateDashboard() {
+        renderTable();
+        calculateInsights();
+        renderCharts();
+      }
+
+      function formatValue(val) {
+        return val ? val.charAt(0).toUpperCase() + val.slice(1).replace('_', ' ') : 'N/A';
+      }
+
+      function renderTable() {
+        const tbody = document.getElementById('history-body');
+        tbody.innerHTML = '';
+
+        if (trackerData.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;">No logs yet. Start tracking above!</td></tr>';
+          return;
+        }
+
+        // Show most recent first
+        const recentData = [...trackerData].reverse().slice(0, 10);
+
+        recentData.forEach(entry => {
+          const tr = document.createElement('tr');
+
+          const tdDate = document.createElement('td');
+          tdDate.textContent = entry.date;
+
+          const tdArousal = document.createElement('td');
+          tdArousal.textContent = entry.arousal;
+
+          const tdPleasure = document.createElement('td');
+          tdPleasure.textContent = entry.pleasure;
+
+          const tdMood = document.createElement('td');
+          tdMood.textContent = formatValue(entry.mood);
+
+          const tdStress = document.createElement('td');
+          tdStress.textContent = formatValue(entry.stress);
+
+          const tdSleep = document.createElement('td');
+          tdSleep.textContent = formatValue(entry.sleep);
+
+          const tdTech = document.createElement('td');
+          tdTech.textContent = entry.techniques.length > 0 ? entry.techniques.map(formatValue).join(', ') : 'None';
+
+          const tdAction = document.createElement('td');
+          const delBtn = document.createElement('button');
+          delBtn.className = 'delete-btn';
+          delBtn.textContent = 'Delete';
+          delBtn.onclick = () => deleteEntry(entry.id);
+          tdAction.appendChild(delBtn);
+
+          tr.append(tdDate, tdArousal, tdPleasure, tdMood, tdStress, tdSleep, tdTech, tdAction);
+          tbody.appendChild(tr);
+        });
+      }
+
+      function calculateInsights() {
+        if (trackerData.length === 0) {
+          document.getElementById('avg-arousal').textContent = '--';
+          document.getElementById('avg-pleasure').textContent = '--';
+          document.getElementById('top-mood').textContent = '--';
+          document.getElementById('top-technique').textContent = '--';
+          document.getElementById('insights-list').innerHTML = '<li>Log more days to see personalized insights about your patterns.</li>';
+          return;
+        }
+
+        let totalArousal = 0;
+        let totalPleasure = 0;
+        const moodStats = {};
+        const techStats = {};
+
+        trackerData.forEach(entry => {
+          totalArousal += entry.arousal;
+          totalPleasure += entry.pleasure;
+
+          // Track mood vs pleasure
+          if (!moodStats[entry.mood]) moodStats[entry.mood] = { count: 0, totalPleasure: 0 };
+          moodStats[entry.mood].count++;
+          moodStats[entry.mood].totalPleasure += entry.pleasure;
+
+          // Track techniques vs pleasure
+          entry.techniques.forEach(tech => {
+            if (!techStats[tech]) techStats[tech] = { count: 0, totalPleasure: 0 };
+            techStats[tech].count++;
+            techStats[tech].totalPleasure += entry.pleasure;
+          });
+        });
+
+        const avgArousal = (totalArousal / trackerData.length).toFixed(1);
+        const avgPleasure = (totalPleasure / trackerData.length).toFixed(1);
+
+        document.getElementById('avg-arousal').textContent = avgArousal;
+        document.getElementById('avg-pleasure').textContent = avgPleasure;
+
+        // Find top mood (min 2 entries if possible)
+        let topMood = '--';
+        let highestMoodScore = 0;
+        Object.entries(moodStats).forEach(([mood, stats]) => {
+          const avg = stats.totalPleasure / stats.count;
+          if (avg > highestMoodScore) {
+            highestMoodScore = avg;
+            topMood = mood;
+          }
+        });
+        document.getElementById('top-mood').textContent = formatValue(topMood);
+
+        // Find top technique
+        let topTech = '--';
+        let highestTechScore = 0;
+        Object.entries(techStats).forEach(([tech, stats]) => {
+          const avg = stats.totalPleasure / stats.count;
+          if (avg > highestTechScore) {
+            highestTechScore = avg;
+            topTech = tech;
+          }
+        });
+        document.getElementById('top-technique').textContent = formatValue(topTech);
+
+        // Generate text insights
+        const insightsList = document.getElementById('insights-list');
+        insightsList.innerHTML = '';
+
+        if (trackerData.length < 3) {
+          const li = document.createElement('li');
+          li.textContent = "You've started tracking! Log a few more days to unlock pattern correlations.";
+          insightsList.appendChild(li);
+        } else {
+          // Insight 1: Arousal vs Pleasure gap
+          const li1 = document.createElement('li');
+          const gap = parseFloat(avgPleasure) - parseFloat(avgArousal);
+          if (gap > 1.5) {
+            li1.textContent = "Your pleasure levels are often higher than your initial arousal. This suggests responsive desire—where arousal builds after stimulation begins.";
+          } else if (gap < -1.5) {
+            li1.textContent = "You often experience high arousal but lower pleasure. Consider exploring new techniques or addressing potential mental distractions during play.";
+          } else {
+            li1.textContent = "Your arousal and pleasure levels are closely aligned, suggesting you have a good sense of when to engage in sexual activity.";
+          }
+          insightsList.appendChild(li1);
+
+          // Insight 2: Stress impact
+          const stressStats = { low: [], medium: [], high: [] };
+          trackerData.forEach(d => {
+            if (stressStats[d.stress]) stressStats[d.stress].push(d.pleasure);
+          });
+
+          const getAvg = arr => arr.length ? (arr.reduce((a,b)=>a+b,0)/arr.length) : 0;
+          const highStressAvg = getAvg(stressStats.high);
+          const lowStressAvg = getAvg(stressStats.low);
+
+          if (stressStats.high.length > 0 && stressStats.low.length > 0) {
+            const li2 = document.createElement('li');
+            if (lowStressAvg > highStressAvg + 1) {
+              li2.textContent = "Stress significantly acts as a 'brake' for you. Prioritizing relaxation and aftercare might boost your pleasure levels.";
+            } else {
+              li2.textContent = "Interestingly, high stress hasn't heavily impacted your pleasure levels. Play might be a stress-relief mechanism for you.";
+            }
+            insightsList.appendChild(li2);
+          }
+        }
+      }
+
+      function renderCharts() {
+        if (!window.Chart) {
+          setTimeout(renderCharts, 100);
+          return;
+        }
+
+        if (trackerData.length === 0) return;
+
+        // 1. Trends Chart
+        const dates = trackerData.map(d => d.date);
+        const arousalData = trackerData.map(d => d.arousal);
+        const pleasureData = trackerData.map(d => d.pleasure);
+
+        const ctxTrends = document.getElementById('trendsChart').getContext('2d');
+        if (trendsChartInstance) trendsChartInstance.destroy();
+
+        trendsChartInstance = new Chart(ctxTrends, {
+          type: 'line',
+          data: {
+            labels: dates,
+            datasets: [
+              {
+                label: 'Arousal',
+                data: arousalData,
+                borderColor: '#2E3E24',
+                backgroundColor: 'rgba(46,62,36,0.1)',
+                tension: 0.3,
+                fill: true
+              },
+              {
+                label: 'Pleasure',
+                data: pleasureData,
+                borderColor: '#AD9846',
+                backgroundColor: 'rgba(173,152,70,0.1)',
+                tension: 0.3,
+                fill: true
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { min: 0, max: 10 }
+            }
+          }
+        });
+
+        // 2. Factors Chart (Average Pleasure by Mood)
+        const moodMap = {};
+        trackerData.forEach(d => {
+          if (!moodMap[d.mood]) moodMap[d.mood] = { total: 0, count: 0 };
+          moodMap[d.mood].total += d.pleasure;
+          moodMap[d.mood].count++;
+        });
+
+        const moodLabels = Object.keys(moodMap).map(formatValue);
+        const moodData = Object.values(moodMap).map(v => v.total / v.count);
+
+        const ctxFactors = document.getElementById('factorsChart').getContext('2d');
+        if (factorsChartInstance) factorsChartInstance.destroy();
+
+        factorsChartInstance = new Chart(ctxFactors, {
+          type: 'bar',
+          data: {
+            labels: moodLabels,
+            datasets: [{
+              label: 'Average Pleasure Score',
+              data: moodData,
+              backgroundColor: '#AD9846',
+              borderRadius: 4
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { min: 0, max: 10 }
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
