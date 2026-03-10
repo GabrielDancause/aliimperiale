@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kink Curiosity Explorer | Ali Imperiale</title>
+  <meta name="description" content="An educational, non-judgmental tool for exploring interests in Power Play, Sensory, Role Play, Exhibition, and Novelty. Discover what you're curious about.">
+  <meta property="og:title" content="Kink Curiosity Explorer | Ali Imperiale">
+  <meta property="og:description" content="An educational, non-judgmental tool for exploring interests in Power Play, Sensory, Role Play, Exhibition, and Novelty. Discover what you're curious about.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/kink-curiosity-explorer.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kink Curiosity Explorer">
+  <meta name="twitter:description" content="An educational, non-judgmental tool for exploring interests. Discover what you're curious about.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/kink-curiosity-explorer.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Kink Curiosity Explorer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Kink Curiosity Explorer is a free, educational, and judgment-free tool designed to help you discover and articulate your interests in various areas of intimate exploration, such as Power Play, Sensory play, Role Play, Exhibition, and Novelty."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data saved or shared?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, all processing happens entirely in your browser. No data leaves your device, ensuring complete privacy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does being curious mean I have to try it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely not. Curiosity does not equal commitment. Exploring your interests conceptually is a healthy part of self-discovery, and you never have to do anything you're not comfortable with."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do SSC and RACK mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SSC stands for Safe, Sane, Consensual, and RACK stands for Risk-Aware Consensual Kink. Both are frameworks used to ensure that all exploration and play are conducted safely and with clear, enthusiastic consent from everyone involved."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I talk to my partner about my results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tool provides specific tips for discussing each item with a partner. Generally, it's best to start the conversation outside of the bedroom, in a relaxed setting, framing it as an area of curiosity rather than an immediate demand."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Page Header */
+    .page-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+    .page-header h1 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #C6C8BB;
+      line-height: 1.6;
+    }
+
+    /* Tool Container */
+    .tool-container {
+      max-width: 800px;
+      margin: -20px auto 60px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 4px 15px rgba(46, 62, 36, 0.08);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .progress-text {
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #2E3E24;
+    }
+    .progress-bar-bg {
+      background-color: #e9e6d3;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      background-color: #AD9846;
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Category Navigation */
+    .category-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .cat-btn {
+      background: #ffffff;
+      border: 1px solid #c4b460;
+      color: #AD9846;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cat-btn.active {
+      background: #AD9846;
+      color: #2E3E24;
+      border-color: #AD9846;
+    }
+
+    /* Item Cards */
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .item-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(46, 62, 36, 0.05);
+      border: 1px solid rgba(46, 62, 36, 0.05);
+      display: none;
+    }
+    .item-card.active-cat {
+      display: block;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .item-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2E3E24;
+    }
+    .item-status {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background: #f0f0f0;
+      color: #777;
+    }
+    .item-status.status-curious {
+      background: #AD9846;
+      color: #2E3E24;
+    }
+    .item-status.status-not-for-me {
+      background: #e0e0e0;
+      color: #555;
+    }
+    .item-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555549;
+      margin-bottom: 20px;
+    }
+
+    /* Action Buttons */
+    .item-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .action-btn {
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .btn-curious {
+      background: #FAF8EB;
+      color: #2E3E24;
+      border-color: #AD9846;
+    }
+    .btn-curious:hover, .btn-curious.selected {
+      background: #AD9846;
+    }
+    .btn-not {
+      background: #f5f5f5;
+      color: #555;
+      border-color: #ddd;
+    }
+    .btn-not:hover, .btn-not.selected {
+      background: #e0e0e0;
+      border-color: #ccc;
+    }
+    .btn-more {
+      background: transparent;
+      color: #AD9846;
+      text-decoration: underline;
+      border: none;
+      padding: 10px 5px;
+      margin-left: auto;
+    }
+    .btn-more:hover {
+      color: #2E3E24;
+    }
+
+    /* Expandable Content */
+    .item-details {
+      display: none;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    .item-details h4 {
+      font-size: 1rem;
+      color: #2E3E24;
+      margin-bottom: 8px;
+      margin-top: 16px;
+    }
+    .item-details h4:first-child {
+      margin-top: 0;
+    }
+    .item-details p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #555549;
+    }
+
+    /* Results Section */
+    .results-section {
+      display: none;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(46, 62, 36, 0.1);
+      text-align: center;
+      margin-top: 40px;
+    }
+    .results-title {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.5rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+    }
+    .results-summary {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #AD9846;
+    }
+    .top-categories {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .top-cat-badge {
+      background: #FAF8EB;
+      border: 1px solid #AD9846;
+      color: #2E3E24;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .share-btn {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .share-btn:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+    .share-feedback {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #AD9846;
+      min-height: 20px;
+    }
+
+    /* Educational Sections */
+    .edu-section {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+    .edu-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(46, 62, 36, 0.05);
+      border: 1px solid rgba(46, 62, 36, 0.05);
+      margin-bottom: 30px;
+    }
+    .edu-card h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .edu-card h3 {
+      font-size: 1.2rem;
+      color: #AD9846;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .edu-card p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #555549;
+      margin-bottom: 16px;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+    .faq-item {
+      margin-bottom: 24px;
+    }
+    .faq-q {
+      font-weight: 700;
+      color: #2E3E24;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .faq-a {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555549;
+    }
+
+    /* Footer styles are in shared.css but we ensure proper padding */
+    .site-footer {
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 {
+        font-size: 2.2rem;
+      }
+      .item-actions {
+        flex-direction: column;
+        align-items:stretch;
+      }
+      .btn-more {
+        margin-left: 0;
+        text-align: center;
+      }
+      .results-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Kink Curiosity Explorer</h1>
+    <p>An educational, judgment-free tool to help you articulate your interests and discover what you might be curious about. All processing happens right here in your browser.</p>
+  </header>
+
+  <!-- Main Content Area where Tool logic will go -->
+  <main id="main-content">
+    <div id="explorer-app" class="tool-container">
+      <div class="progress-container">
+        <div class="progress-text">Items Explored: <span id="progress-count">0</span> / 40</div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="category-nav" id="category-nav">
+        <!-- Buttons injected by JS -->
+      </div>
+
+      <div class="item-list" id="item-list">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <div class="results-section" id="results-section">
+        <div class="results-title">Your Curiosity Summary</div>
+        <div class="results-summary" id="results-summary">You're curious about X out of Y items</div>
+        <p>Top categories of interest:</p>
+        <div class="top-categories" id="top-categories">
+          <!-- Badges injected by JS -->
+        </div>
+        <button class="share-btn" id="share-btn">Copy Shareable Summary</button>
+        <span class="share-feedback" id="share-feedback"></span>
+      </div>
+    </div>
+
+    <div class="edu-section">
+      <div class="edu-card">
+        <h2>Before You Explore: Safety &amp; Frameworks</h2>
+        <p>Exploring intimacy and new interests should always be rooted in safety, communication, and enthusiastic consent. Here are two important frameworks commonly used in the community to guide healthy exploration:</p>
+
+        <h3>SSC (Safe, Sane, Consensual)</h3>
+        <p><strong>Safe:</strong> Taking appropriate precautions to avoid physical or emotional harm.<br>
+        <strong>Sane:</strong> Engaging in activities while sober, of sound mind, and fully understanding the reality of the situation (separating fantasy from reality).<br>
+        <strong>Consensual:</strong> Ensuring all parties have freely and enthusiastically agreed to the specific activities.</p>
+
+        <h3>RACK (Risk-Aware Consensual Kink)</h3>
+        <p>An alternative framework that acknowledges no activity is entirely without risk. <strong>RACK</strong> emphasizes that all participants must be fully informed of the specific risks involved in an activity and still choose to enthusiastically consent. It focuses on informed decision-making and risk mitigation.</p>
+
+        <p><em>Remember: Curiosity does not equal commitment. It is completely healthy to explore your interests conceptually without ever acting on them in real life.</em></p>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 1.8rem; color: #2E3E24; margin-bottom: 24px;">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What is the Kink Curiosity Explorer?</div>
+        <div class="faq-a">The Kink Curiosity Explorer is a free, educational, and judgment-free tool designed to help you discover and articulate your interests in various areas of intimate exploration, such as Power Play, Sensory play, Role Play, Exhibition, and Novelty.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my data saved or shared?</div>
+        <div class="faq-a">No, all processing happens entirely in your browser. No data leaves your device, ensuring complete privacy.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does being curious mean I have to try it?</div>
+        <div class="faq-a">Absolutely not. Curiosity does not equal commitment. Exploring your interests conceptually is a healthy part of self-discovery, and you never have to do anything you're not comfortable with.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What do SSC and RACK mean?</div>
+        <div class="faq-a">SSC stands for Safe, Sane, Consensual, and RACK stands for Risk-Aware Consensual Kink. Both are frameworks used to ensure that all exploration and play are conducted safely and with clear, enthusiastic consent from everyone involved.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How can I talk to my partner about my results?</div>
+        <div class="faq-a">The tool provides specific tips for discussing each item with a partner. Generally, it's best to start the conversation outside of the bedroom, in a relaxed setting, framing it as an area of curiosity rather than an immediate demand.</div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const itemsData = [
+      // POWER PLAY
+      { id: 'pp1', category: 'Power Play', title: 'Light Bondage', desc: 'Using soft restraints like silk ties or cuffs to restrict movement.', what: 'Light bondage involves physically restraining a partner using comfortable, non-damaging materials.', safety: 'Always keep safety shears nearby. Ensure restraints do not cut off circulation.', discuss: 'Ask: "How do you feel about the idea of one of us being tied up?"', tips: 'Start with very loose silk ties or Velcro cuffs for easy release.' },
+      { id: 'pp2', category: 'Power Play', title: 'Blindfolding', desc: 'Removing sight to heighten other senses and surrender control.', what: 'Using a blindfold or mask to temporarily obscure vision during intimacy.', safety: 'Check in frequently verbally, as you cannot read facial expressions.', discuss: 'Ask: "Would you be open to trying a blindfold to see how it changes sensation?"', tips: 'Use a soft, breathable fabric. Touch gently and speak clearly before making contact.' },
+      { id: 'pp3', category: 'Power Play', title: 'Impact Play (Spanking)', desc: 'Consensual striking using hands or soft implements for sensation.', what: 'Spanking or light impact play focuses on creating a warming, stinging sensation on fleshy areas like the buttocks.', safety: 'Avoid joints, the lower back, and the tailbone. Start very light.', discuss: 'Ask: "Do you ever fantasize about light spanking during intimacy?"', tips: 'Warm up the area with light rubbing before any impact. Check in constantly.' },
+      { id: 'pp4', category: 'Power Play', title: 'Commanding / Ordering', desc: 'Giving or receiving explicit verbal instructions during intimacy.', what: 'One partner directs the actions of the other using clear, authoritative verbal commands.', safety: 'Establish clear boundaries beforehand on what types of commands are acceptable.', discuss: 'Ask: "Does the idea of me telling you exactly what to do turn you on?"', tips: 'Start with simple, easily achievable directions.' },
+      { id: 'pp5', category: 'Power Play', title: 'Begging / Pleading', desc: 'Withholding pleasure until requested verbally.', what: 'Creating a dynamic where one partner must ask or beg for stimulation or release.', safety: 'Agree on a safeword to indicate genuine distress versus play-acting.', discuss: 'Ask: "How would you feel if I made you beg for it next time?"', tips: 'Keep it playful and focus on building anticipation.' },
+      { id: 'pp6', category: 'Power Play', title: 'Praising / Good Girl/Boy', desc: 'Using verbal affirmation to reinforce a power dynamic.', what: 'Offering specific, condescendingly sweet or authoritative praise to reward behavior.', safety: 'Ensure the specific terms used (e.g., "good girl") are affirming and not triggering.', discuss: 'Ask: "Do you like being praised or called certain pet names in bed?"', tips: 'Use a firm but warm tone.' },
+      { id: 'pp7', category: 'Power Play', title: 'Overstimulation', desc: 'Continuing stimulation just past the point of comfort or orgasm.', what: 'Sensory overload through continuous stimulation, creating intense physical vulnerability.', safety: 'Requires absolute trust and a clear safeword. Stop immediately when requested.', discuss: 'Ask: "Are you curious about what it feels like to be pushed slightly past your limit?"', tips: 'Proceed very slowly. It is about edge-play, not causing genuine pain.' },
+      { id: 'pp8', category: 'Power Play', title: 'Collar & Lead', desc: 'Wearing a symbolic collar to represent submission or ownership.', what: 'Using a collar to denote a D/s (Dominant/submissive) relationship or dynamic during play.', safety: 'Collars should break away easily if caught. Never pull forcefully on a lead.', discuss: 'Ask: "What does the symbol of wearing a collar mean to you?"', tips: 'Start with a soft, comfortable material like velvet or leather.' },
+
+      // SENSORY
+      { id: 'se1', category: 'Sensory', title: 'Temperature Play (Ice)', desc: 'Using ice cubes on the skin to create intense, contrasting sensations.', what: 'Gliding ice over erogenous zones to awaken nerve endings before applying warmth.', safety: 'Keep the ice moving to prevent ice burns on the skin.', discuss: 'Ask: "What do you think about bringing an ice cube into the bedroom?"', tips: 'Have a warm towel nearby for immediate contrast.' },
+      { id: 'se2', category: 'Sensory', title: 'Temperature Play (Wax)', desc: 'Dripping low-temperature wax onto the body.', what: 'Using specifically designed low-heat massage candles or play wax for sensual dripping.', safety: 'NEVER use standard household or scented candles, as the wax burns too hot.', discuss: 'Ask: "Are you curious about the sensation of warm wax on your skin?"', tips: 'Test the wax on the inside of your own wrist first. Hold the candle high to let the wax cool as it falls.' },
+      { id: 'se3', category: 'Sensory', title: 'Feather Tickling', desc: 'Using soft feathers to trace lightly over the skin.', what: 'Extremely light touch designed to tease and awaken the nervous system.', safety: 'Low risk, but be mindful of ticklish areas that might cause a flinch.', discuss: 'Ask: "Do you like very light, teasing touches?"', tips: 'Combine with a blindfold for maximum effect.' },
+      { id: 'se4', category: 'Sensory', title: 'Audio Deprivation', desc: 'Using noise-canceling headphones or earplugs during play.', what: 'Removing the sense of hearing to intensify physical touch and visual connection.', safety: 'Establish physical safewords (like a double-tap) since verbal safewords cannot be heard.', discuss: 'Ask: "How do you think it would feel to play in complete silence?"', tips: 'Use high-quality earplugs and rely heavily on eye contact.' },
+      { id: 'se5', category: 'Sensory', title: 'Scent Play', desc: 'Introducing specific, strong scents to trigger arousal or memories.', what: 'Using perfumes, oils, or natural body scents as a primary focus of intimacy.', safety: 'Check for allergies to essential oils or synthetic fragrances.', discuss: 'Ask: "Are there certain smells that instantly turn you on?"', tips: 'Less is more. Start with a subtle massage oil.' },
+      { id: 'se6', category: 'Sensory', title: 'Pinwheel / Wartenberg Wheel', desc: 'Tracing a small, spiked wheel over the skin for sharp sensation.', what: 'Using a medical-style pinwheel to create a prickly, electric feeling without piercing the skin.', safety: 'Do not press hard enough to break the skin. Sanitize before and after use.', discuss: 'Ask: "Are you interested in sensations that are slightly sharp or electric?"', tips: 'Run it lightly down the back or the inner thighs.' },
+      { id: 'se7', category: 'Sensory', title: 'Silk & Satin Textures', desc: 'Using incredibly soft fabrics to rub against the body.', what: 'Incorporating texture play by dragging silk scarves or satin sheets across bare skin.', safety: 'Very low risk. Ensure materials are clean.', discuss: 'Ask: "Do you enjoy the feeling of specific luxurious fabrics on your skin?"', tips: 'Drape a silk scarf over a partner while providing a massage.' },
+      { id: 'se8', category: 'Sensory', title: 'Bite / Scratch Play', desc: 'Consensual, light biting or scratching during passionate moments.', what: 'Using teeth or nails to leave temporary marks or intense sensations.', safety: 'Do not break the skin. Be extremely cautious around the neck.', discuss: 'Ask: "Do you like it when things get a little animalistic or rough?"', tips: 'Start with very light nibbling or dragging dull nails across the back.' },
+
+      // ROLE PLAY
+      { id: 'rp1', category: 'Role Play', title: 'Strangers at a Bar', desc: 'Pretending not to know each other and flirting from scratch.', what: 'Meeting at a public place and acting as if it is your first time meeting, leading to "casual" intimacy.', safety: 'Agree on the limits of the public interaction beforehand.', discuss: 'Ask: "Would it be fun to pretend we are strangers picking each other up?"', tips: 'Dress differently than usual and create a fake backstory for your character.' },
+      { id: 'rp2', category: 'Role Play', title: 'Teacher / Student', desc: 'Playing out an authoritative educational dynamic.', what: 'One partner assumes the role of an authority figure dispensing "lessons" or "punishments".', safety: 'Discuss limits regarding the type of "punishment" involved.', discuss: 'Ask: "Does the classic teacher/student dynamic appeal to you?"', tips: 'Use props like glasses or a ruler to help get into character.' },
+      { id: 'rp3', category: 'Role Play', title: 'Boss / Employee', desc: 'Exploring power dynamics within a fictional workplace setting.', what: 'A scenario involving workplace authority, "overtime", or secret office romance.', safety: 'Ensure the scenario stays fun and does not bleed into real-life career anxieties.', discuss: 'Ask: "Have you ever fantasized about an office romance or boss dynamic?"', tips: 'Set the scene with professional attire before transitioning to the bedroom.' },
+      { id: 'rp4', category: 'Role Play', title: 'Medical / Examination', desc: 'A clinical dynamic involving "check-ups" or "treatments".', what: 'One partner acts as a medical professional examining the other.', safety: 'Avoid using real medical equipment improperly. This can trigger real medical anxiety for some.', discuss: 'Ask: "How do you feel about clinical or examination-style roleplay?"', tips: 'Focus on the cold, clinical vulnerability of the scenario.' },
+      { id: 'rp5', category: 'Role Play', title: 'Massage Therapist / Client', desc: 'A scenario starting with a professional massage that turns intimate.', what: 'Setting up a spa-like environment where boundaries are slowly crossed.', safety: 'Ensure the massage itself is safe and comfortable.', discuss: 'Ask: "Would you like me to set up a professional massage session for you?"', tips: 'Commit to the bit: use towels, oils, and dim lighting.' },
+      { id: 'rp6', category: 'Role Play', title: 'Captured / Interrogation', desc: 'A dramatic scenario involving being caught or questioned.', what: 'A slightly darker fantasy involving one person extracting "information" or confessions.', safety: 'Requires high trust and a clear safeword. Discuss the tone beforehand.', discuss: 'Ask: "Are you curious about more dramatic, cinematic roleplay scenarios?"', tips: 'Keep the interrogation playful and flirtatious rather than genuinely scary.' },
+      { id: 'rp7', category: 'Role Play', title: 'Maid / Service', desc: 'A dynamic focused on serving or cleaning for the other partner.', what: 'One partner wears a uniform and performs tasks for the other\'s pleasure.', safety: 'Ensure the tasks are actually fun and not just doing actual household chores.', discuss: 'Ask: "Does the idea of a service-oriented roleplay turn you on?"', tips: 'The focus should be on the visual and the dynamic, not the actual cleaning.' },
+      { id: 'rp8', category: 'Role Play', title: 'Gender Bending', desc: 'Adopting clothing or mannerisms of a different gender.', what: 'Playing with masculine and feminine energy, regardless of your actual gender.', safety: 'Requires a deeply judgment-free environment.', discuss: 'Ask: "How would you feel about playing with different gender roles in bed?"', tips: 'Start by incorporating a specific piece of clothing or adopting a different posture.' },
+
+      // EXHIBITION
+      { id: 'ex1', category: 'Exhibition', title: 'Outdoor Play (Secluded)', desc: 'Intimacy in a private outdoor setting like a tent or remote beach.', what: 'Enjoying the thrill of being outside while still minimizing the risk of being seen.', safety: 'Check local laws. Ensure the area is genuinely secluded.', discuss: 'Ask: "Would you ever want to hook up in the woods or on a quiet beach?"', tips: 'Bring a blanket and bug spray. Comfort is key.' },
+      { id: 'ex2', category: 'Exhibition', title: 'Public Teasing', desc: 'Subtle touches or wearing easily removed clothing in public.', what: 'Building anticipation while out at dinner or a bar, without fully exposing yourselves.', safety: 'Keep it subtle enough that non-consenting bystanders do not notice.', discuss: 'Ask: "Do you like the thrill of me touching you under the table at dinner?"', tips: 'Try wearing a vibrating toy that can be controlled by your partner via an app.' },
+      { id: 'ex3', category: 'Exhibition', title: 'Mirrors & Watching', desc: 'Setting up mirrors to watch yourselves during intimacy.', what: 'The act of witnessing your own pleasure and your partner\'s reactions.', safety: 'Ensure mirrors are securely mounted.', discuss: 'Ask: "How do you feel about watching ourselves in the mirror?"', tips: 'Start with a small mirror if a large one feels too intimidating.' },
+      { id: 'ex4', category: 'Exhibition', title: 'Recording / Photos', desc: 'Taking photos or videos of each other (strictly for yourselves).', what: 'Documenting the experience to watch later or build a private collection.', safety: 'Discuss digital security. Only do this if you implicitly trust your partner.', discuss: 'Ask: "Have you ever wanted to film us so we can watch it later?"', tips: 'Keep faces out of the frame if you are nervous about privacy.' },
+      { id: 'ex5', category: 'Exhibition', title: 'Balcony / Window Play', desc: 'Being intimate near an open window or on a private balcony.', what: 'The thrill of being potentially seen by a neighbor or passerby.', safety: 'Be mindful of local decency laws and the consent of potential viewers.', discuss: 'Ask: "Does the idea of someone accidentally seeing us turn you on?"', tips: 'Use sheer curtains to create a sense of exposure while maintaining some cover.' },
+      { id: 'ex6', category: 'Exhibition', title: 'Car Play', desc: 'Getting intimate in a parked car.', what: 'The classic adolescent thrill brought into adulthood.', safety: 'Park in a legal, safe, and relatively secluded area.', discuss: 'Ask: "When was the last time you hooked up in a car?"', tips: 'Move to the backseat for more room. Be aware of your surroundings.' },
+      { id: 'ex7', category: 'Exhibition', title: 'Dressing Up / Lingerie', desc: 'Putting on a private fashion show for your partner.', what: 'The act of displaying yourself in specific, confidence-boosting outfits.', safety: 'Zero risk. Focus entirely on hyping each other up.', discuss: 'Ask: "Would you like me to put on a show for you before we start?"', tips: 'Make it an event. Dim the lights and put on a playlist.' },
+      { id: 'ex8', category: 'Exhibition', title: 'Phone Sex / Audio Teasing', desc: 'Describing what you are doing or going to do over the phone.', what: 'Verbal exhibitionism, creating vivid mental images through voice alone.', safety: 'Ensure you are in a private space where others cannot hear you.', discuss: 'Ask: "Have you ever tried phone sex?"', tips: 'Focus on describing sensations rather than just actions.' },
+
+      // NOVELTY
+      { id: 'nv1', category: 'Novelty', title: 'Food Play', desc: 'Incorporating edible items like chocolate, whipped cream, or fruit.', what: 'Using food as a sensory tool to lick, taste, and explore the body.', safety: 'Keep sugary foods away from genitals to prevent infections.', discuss: 'Ask: "What do you think about bringing some whipped cream or fruit into bed?"', tips: 'Put a towel down first. Things will get sticky.' },
+      { id: 'nv2', category: 'Novelty', title: 'App-Controlled Toys', desc: 'Using a vibrator controlled by a partner\'s smartphone.', what: 'Handing over control of your pleasure to an app, sometimes from miles away.', safety: 'Ensure the app and connection are secure.', discuss: 'Ask: "Would you be interested in controlling a toy while I am at work?"', tips: 'Test the connection at home before trying it out in the wild.' },
+      { id: 'nv3', category: 'Novelty', title: 'Edging / Orgasm Denial', desc: 'Bringing to the brink of climax and stopping repeatedly.', what: 'Prolonging the buildup to create a more intense final release.', safety: 'Can cause physical frustration; communicate clearly about limits.', discuss: 'Ask: "How do you feel about me teasing you and making you wait for it?"', tips: 'Read your partner\'s body language. Stop denying if it becomes genuinely frustrating.' },
+      { id: 'nv4', category: 'Novelty', title: 'Morning/Sleep Wake-Up', desc: 'Being woken up with intimate touch.', what: 'Initiating physical connection gently while the partner is still half-asleep.', safety: 'Discuss this beforehand! Some people hate being woken up this way. Consent must be given prior.', discuss: 'Ask: "Is it okay if I wake you up with a massage or touch sometime?"', tips: 'Start extremely slow to gauge their sleepy reaction.' },
+      { id: 'nv5', category: 'Novelty', title: 'Tantric / Eye Gazing', desc: 'Prolonged eye contact and synchronized breathing without movement.', what: 'A deeply spiritual or meditative approach to intimacy focusing on connection over climax.', safety: 'Can trigger unexpected emotional releases or crying.', discuss: 'Ask: "Would you be open to just breathing and holding eye contact for a few minutes?"', tips: 'Set a timer for 3 minutes. It feels much longer than it is.' },
+      { id: 'nv6', category: 'Novelty', title: 'Watching Porn Together', desc: 'Using adult content as a mutual tool for arousal.', what: 'Selecting and viewing videos together to find new ideas or simply get turned on.', safety: 'Discuss boundaries around what type of content is acceptable to watch together.', discuss: 'Ask: "Have you ever watched porn with a partner?"', tips: 'Focus on ethical, female-gaze, or couple-created content.' },
+      { id: 'nv7', category: 'Novelty', title: 'Couples Sex Games', desc: 'Using dice, cards, or board games designed for intimacy.', what: 'Adding an element of chance and structure to your bedroom routine.', safety: 'Review the game beforehand to ensure all prompts are acceptable.', discuss: 'Ask: "Should we buy one of those spicy card games for our next date night?"', tips: 'You can always skip a card if it doesn\'t appeal to you.' },
+      { id: 'nv8', category: 'Novelty', title: 'Scheduling Sex', desc: 'Putting a specific date and time on the calendar for intimacy.', what: 'Removing the pressure of spontaneous desire and treating intimacy like an important appointment.', safety: 'Low risk. Helps couples with mismatched libidos.', discuss: 'Ask: "What if we specifically blocked out Friday night just for us?"', tips: 'Build anticipation leading up to the scheduled time with texts or flirting.' }
+    ];
+
+    const categories = [...new Set(itemsData.map(i => i.category))];
+    let userSelections = {}; // item.id -> 'curious' | 'not'
+
+    // Initialize UI
+    function initApp() {
+      renderCategoryNav();
+      renderItems();
+      updateCategory('Power Play');
+
+      document.getElementById('share-btn').addEventListener('click', shareResults);
+    }
+
+    function renderCategoryNav() {
+      const nav = document.getElementById('category-nav');
+      nav.innerHTML = categories.map(cat =>
+        `<button class="cat-btn" data-cat="${cat}">${cat}</button>`
+      ).join('');
+
+      nav.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => updateCategory(e.target.dataset.cat));
+      });
+    }
+
+    function updateCategory(catName) {
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.cat === catName);
+      });
+      document.querySelectorAll('.item-card').forEach(card => {
+        card.classList.toggle('active-cat', card.dataset.cat === catName);
+      });
+    }
+
+    function renderItems() {
+      const list = document.getElementById('item-list');
+      list.innerHTML = itemsData.map(item => `
+        <div class="item-card" data-cat="${item.category}" id="card-${item.id}">
+          <div class="item-header">
+            <div class="item-title">${item.title}</div>
+            <div class="item-status" id="status-${item.id}">Unanswered</div>
+          </div>
+          <div class="item-desc">${item.desc}</div>
+
+          <div class="item-actions">
+            <button class="action-btn btn-curious" onclick="selectOption('${item.id}', 'curious')">Curious</button>
+            <button class="action-btn btn-not" onclick="selectOption('${item.id}', 'not')">Not for me</button>
+            <button class="action-btn btn-more" onclick="toggleDetails('${item.id}')">Tell me more &darr;</button>
+          </div>
+
+          <div class="item-details" id="details-${item.id}">
+            <h4>What it is</h4>
+            <p>${item.what}</p>
+            <h4>Safety Considerations</h4>
+            <p>${item.safety}</p>
+            <h4>How to bring it up</h4>
+            <p>${item.discuss}</p>
+            <h4>Beginner Tip</h4>
+            <p>${item.tips}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.toggleDetails = function(id) {
+      const details = document.getElementById(`details-${id}`);
+      const btn = document.querySelector(`#card-${id} .btn-more`);
+      if (details.style.display === 'block') {
+        details.style.display = 'none';
+        btn.innerHTML = 'Tell me more &darr;';
+      } else {
+        details.style.display = 'block';
+        btn.innerHTML = 'Hide details &uarr;';
+      }
+    };
+
+    window.selectOption = function(id, choice) {
+      userSelections[id] = choice;
+
+      // Update UI for buttons
+      const card = document.getElementById(`card-${id}`);
+      card.querySelector('.btn-curious').classList.toggle('selected', choice === 'curious');
+      card.querySelector('.btn-not').classList.toggle('selected', choice === 'not');
+
+      // Update status badge
+      const statusBadge = document.getElementById(`status-${id}`);
+      if (choice === 'curious') {
+        statusBadge.textContent = 'Curious';
+        statusBadge.className = 'item-status status-curious';
+      } else {
+        statusBadge.textContent = 'Not for me';
+        statusBadge.className = 'item-status status-not-for-me';
+      }
+
+      updateProgress();
+    };
+
+    function updateProgress() {
+      const answered = Object.keys(userSelections).length;
+      const total = itemsData.length;
+
+      document.getElementById('progress-count').textContent = answered;
+      document.getElementById('progress-fill').style.width = `${(answered / total) * 100}%`;
+
+      // Check if finished
+      if (answered === total) {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      const resultsSection = document.getElementById('results-section');
+      const curiousItems = Object.entries(userSelections).filter(([_, val]) => val === 'curious').map(([id, _]) => id);
+
+      document.getElementById('results-summary').textContent = `You're curious about ${curiousItems.length} out of ${itemsData.length} ideas!`;
+
+      // Calculate top categories
+      const catCounts = {};
+      curiousItems.forEach(id => {
+        const item = itemsData.find(i => i.id === id);
+        catCounts[item.category] = (catCounts[item.category] || 0) + 1;
+      });
+
+      const sortedCats = Object.entries(catCounts).sort((a, b) => b[1] - a[1]);
+      const topHtml = sortedCats.length > 0
+        ? sortedCats.map(([cat, count]) => `<span class="top-cat-badge">${cat} (${count})</span>`).join('')
+        : `<span class="top-cat-badge">None selected</span>`;
+
+      document.getElementById('top-categories').innerHTML = topHtml;
+      resultsSection.style.display = 'block';
+      resultsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function shareResults() {
+      const curiousItems = Object.entries(userSelections).filter(([_, val]) => val === 'curious');
+      const count = curiousItems.length;
+
+      let text = `🔍 My Kink Curiosity Explorer Results 🔍\n\nI explored 40 ideas and I'm curious about ${count} of them!\n\n`;
+      text += `Take the judgment-free quiz at: https://aliimperiale.com/kink-curiosity-explorer.html`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        document.getElementById('share-feedback').textContent = "Copied to clipboard!";
+        setTimeout(() => {
+          document.getElementById('share-feedback').textContent = "";
+        }, 3000);
+      }).catch(err => {
+        document.getElementById('share-feedback').textContent = "Failed to copy. Try selecting the text manually.";
+      });
+    }
+
+    // Run
+    document.addEventListener('DOMContentLoaded', initApp);
+  </script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+</body>
+</html>
