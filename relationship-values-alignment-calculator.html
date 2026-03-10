@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+<script src="mobile-nav.js" defer></script>
+<script src="newsletter-bar.js" defer></script>
+<script src="email-capture.js" defer></script>
+<script src="back-to-top.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relationship Values Alignment Calculator | Ali Imperiale</title>
+  <meta name="description" content="An interactive tool for couples to assess how well their core values align across 25+ categories like family, career, money, and lifestyle. Get a detailed compatibility breakdown and expert tips.">
+  <meta property="og:title" content="Relationship Values Alignment Calculator | Ali Imperiale">
+  <meta property="og:description" content="Discover how aligned your core values are with your partner across 25+ essential relationship categories.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/relationship-values-alignment-calculator.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Relationship Values Alignment Calculator | Ali Imperiale">
+  <meta name="twitter:description" content="Discover how aligned your core values are with your partner.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/relationship-values-alignment-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+  /* Base & Navigation Overrides */
+  .site-nav {
+    background: #2E3E24;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-nav .nav-logo {
+    height: 32px;
+    opacity: 0.9;
+  }
+  .site-nav .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  .site-nav .nav-links a {
+    color: #FAF8EB;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s, opacity 0.2s;
+  }
+  .site-nav .nav-links a:hover,
+  .site-nav .nav-links a.active {
+    color: #AD9846;
+  }
+  .site-nav .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #FAF8EB;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+  }
+
+  /* Mobile-First Custom CSS for Tool */
+  body {
+    background-color: #FAF8EB;
+    color: #2E3E24;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .tool-header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .tool-header h1 {
+    font-size: 2rem;
+    color: #2E3E24;
+    margin-bottom: 16px;
+  }
+  .tool-header p {
+    font-size: 1.1rem;
+    color: #4a5c3e;
+    line-height: 1.6;
+  }
+
+  .tool-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(46, 62, 36, 0.08);
+    margin-bottom: 30px;
+    border-top: 5px solid #AD9846;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    color: #2E3E24;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(173, 152, 70, 0.3);
+    padding-bottom: 10px;
+  }
+
+  .btn-primary {
+    background: #AD9846;
+    color: #FAF8EB;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .btn-primary:hover {
+    background: #8e7c35;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #2E3E24;
+    border: 2px solid #2E3E24;
+    padding: 12px 26px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .btn-secondary:hover {
+    background: #2E3E24;
+    color: #FAF8EB;
+  }
+
+  .medical-disclaimer {
+    background: #f4f1e1;
+    border-left: 4px solid #AD9846;
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    color: #4a5c3e;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  .medical-disclaimer strong {
+    color: #2E3E24;
+  }
+
+  /* Responsive breakpoints */
+  @media (max-width: 768px) {
+    .site-nav .hamburger {
+      display: block;
+    }
+    .site-nav .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      background: #2E3E24;
+      padding: 20px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .site-nav .nav-links.active {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .btn-primary, .btn-secondary {
+      width: auto;
+    }
+    .tool-header h1 {
+      font-size: 2.5rem;
+    }
+  }
+  </style>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What happens if we have a low compatibility score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A low score simply means you have different priorities in certain areas. It doesn't mean your relationship is doomed! It's a wonderful opportunity to understand each other better. Use the discussion prompts to talk through your differences gracefully."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is 100% alignment necessary for a healthy relationship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely not. While it's helpful to be aligned on dealbreakers, differences in lifestyle and hobbies can create a beautiful balance. The key is mutual respect for those differences."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can our core values change over time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! As you grow and navigate different life stages, your priorities will naturally shift. We recommend retaking this calculator periodically as a relationship check-in."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <header class="tool-header">
+      <h1>Relationship Values Alignment Calculator</h1>
+      <p>A fun, honest way to see where you and your partner connect on the big stuff—and where you might need to talk things through.</p>
+    </header>
+
+    <div class="tool-container">
+      <div class="medical-disclaimer">
+        <strong>Disclaimer:</strong> This tool is for educational and entertainment purposes only. It is not a substitute for professional couples therapy or relationship counseling. If you are experiencing serious relationship distress or abuse, please seek help from a qualified professional.
+      </div>
+
+      <!-- The form and JS will be injected here -->
+
+      <!-- Introduction Card -->
+      <div id="intro-card" class="card">
+        <h2 class="card-title">How It Works</h2>
+        <p>This calculator breaks down 25 core relationship categories. You’ll rate how important each area is to you on a scale of 1 to 10. Then, pass the device to your partner so they can do the same. We’ll show you where your values align beautifully, and where you might want to start some gentle conversations.</p>
+        <p><strong>Note:</strong> A "10" means "This is absolutely non-negotiable and defines my life." A "1" means "I really couldn't care less."</p>
+
+        <div style="margin-top: 25px;">
+          <label for="partner1Name" style="display:block; font-weight: 600; margin-bottom: 8px;">Your Name (Partner A):</label>
+          <input type="text" id="partner1Name" placeholder="Enter your name" style="width: 100%; max-width: 300px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: 'Montserrat', sans-serif; margin-bottom: 15px;">
+
+          <label for="partner2Name" style="display:block; font-weight: 600; margin-bottom: 8px;">Your Partner's Name (Partner B):</label>
+          <input type="text" id="partner2Name" placeholder="Enter their name" style="width: 100%; max-width: 300px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: 'Montserrat', sans-serif; margin-bottom: 25px;">
+        </div>
+
+        <button class="btn-primary" onclick="startAssessment()">Start Assessment</button>
+      </div>
+
+      <!-- Assessment Card -->
+      <div id="assessment-card" class="card" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h2 class="card-title" id="currentPlayerName" style="border: none; margin: 0; padding: 0;">Partner A's Turn</h2>
+          <span style="font-size: 0.9rem; font-weight: 600; color: #AD9846; background: rgba(173, 152, 70, 0.1); padding: 5px 12px; border-radius: 20px;" id="progress-indicator">Category 1 of 25</span>
+        </div>
+
+        <div id="category-container" style="background: #FAF8EB; padding: 25px; border-radius: 12px; border-left: 4px solid #AD9846;">
+          <h3 id="category-title" style="font-size: 1.3rem; margin-top: 0; color: #2E3E24;">Family</h3>
+          <p id="category-desc" style="font-size: 1rem; color: #4a5c3e; margin-bottom: 20px;">How important is maintaining close ties with extended family?</p>
+
+          <div class="slider-container" style="margin-top: 30px; margin-bottom: 40px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600; color: #2E3E24;">
+              <span>Not Important (1)</span>
+              <span>Crucial (10)</span>
+            </div>
+            <input type="range" id="rating-slider" min="1" max="10" value="5" class="slider" style="width: 100%; -webkit-appearance: none; appearance: none; height: 8px; border-radius: 4px; background: #ddd; outline: none;">
+            <style>
+              .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: #AD9846;
+                cursor: pointer;
+                transition: transform 0.1s;
+              }
+              .slider::-webkit-slider-thumb:hover {
+                transform: scale(1.15);
+              }
+              .slider::-moz-range-thumb {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: #AD9846;
+                cursor: pointer;
+                border: none;
+              }
+            </style>
+            <div style="text-align: center; margin-top: 15px; font-size: 1.5rem; font-weight: 700; color: #AD9846;" id="slider-value">5</div>
+          </div>
+
+          <div style="display: flex; gap: 15px;">
+            <button class="btn-secondary" id="btn-prev" onclick="prevCategory()" style="display: none; flex: 1;">Previous</button>
+            <button class="btn-primary" id="btn-next" onclick="nextCategory()" style="flex: 2; margin-top: 10px;">Next Category</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transition Card (Between Partners) -->
+      <div id="transition-card" class="card" style="display: none; text-align: center;">
+        <h2 class="card-title">Halfway There!</h2>
+        <p>Great job, <span id="p1-transition-name">Partner A</span>.</p>
+        <p>Now, it's time to pass the device to <span id="p2-transition-name">Partner B</span>.</p>
+        <p style="font-style: italic; color: #666; font-size: 0.95rem; margin-top: 20px; margin-bottom: 30px;">Partner B, please answer these questions honestly based on your own perspective. Don't worry about matching your partner's answers!</p>
+        <button class="btn-primary" onclick="startPartnerB()">I'm Ready</button>
+      </div>
+
+      <!-- Results Card -->
+      <div id="results-card" class="card" style="display: none;">
+        <h2 class="card-title">Your Values Alignment</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 30px;">Overall Compatibility Score: <strong id="overall-score" style="color: #AD9846; font-size: 1.4rem;">--%</strong></p>
+
+        <div style="position: relative; height: 350px; width: 100%; margin-bottom: 40px;">
+          <canvas id="alignmentChart"></canvas>
+        </div>
+
+        <div id="breakdown-container" style="margin-top: 40px;">
+          <!-- JS will inject highly aligned and misaligned sections here -->
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+          <h3 style="font-size: 1.3rem; color: #2E3E24; margin-bottom: 15px;">Expert Tips for Navigating Differences</h3>
+          <ul style="line-height: 1.6; color: #4a5c3e; padding-left: 20px;">
+            <li style="margin-bottom: 10px;"><strong>Curiosity over Judgment:</strong> When discussing a misaligned value, approach it with curiosity. Ask "Help me understand why this is so important to you" instead of judging their score.</li>
+            <li style="margin-bottom: 10px;"><strong>Compromise vs. Sacrifice:</strong> A healthy compromise means you both give a little. If one person is constantly sacrificing a core value, resentment will build.</li>
+            <li style="margin-bottom: 10px;"><strong>It's Okay to be Different:</strong> You don't need 100% alignment to have a beautiful, healthy relationship. Sometimes differences create a wonderful balance.</li>
+          </ul>
+        </div>
+
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 30px;">
+          <button class="btn-secondary" onclick="shareResults()">Copy Summary to Clipboard</button>
+          <button class="btn-secondary" onclick="resetCalculator()">Start Over</button>
+        </div>
+        <div id="share-notification" style="display:none; color: green; margin-top: 10px; font-weight: bold; font-size: 0.9rem;">Copied to clipboard!</div>
+      </div>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <div style="max-width: 800px; margin: 60px auto 40px; padding: 0 20px;">
+      <h2 style="font-size: 1.8rem; color: #2E3E24; text-align: center; margin-bottom: 30px;">Frequently Asked Questions</h2>
+
+      <div style="margin-bottom: 25px;">
+        <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">What happens if we have a low compatibility score?</h3>
+        <p style="color: #4a5c3e; line-height: 1.6;">A low score simply means you have different priorities in certain areas. It doesn't mean your relationship is doomed! It's a wonderful opportunity to understand each other better. Use the discussion prompts to talk through your differences gracefully.</p>
+      </div>
+
+      <div style="margin-bottom: 25px;">
+        <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">Is 100% alignment necessary for a healthy relationship?</h3>
+        <p style="color: #4a5c3e; line-height: 1.6;">Absolutely not. While it's helpful to be aligned on dealbreakers (like having kids or financial security), differences in lifestyle, hobbies, and socialization can actually create a beautiful balance in a relationship. The key is mutual respect for those differences.</p>
+      </div>
+
+      <div style="margin-bottom: 25px;">
+        <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">Can our core values change over time?</h3>
+        <p style="color: #4a5c3e; line-height: 1.6;">Yes! As you grow, experience new things, and navigate different life stages, your priorities will naturally shift. We recommend retaking this calculator every year or so as a fun relationship check-in.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  const categories = [
+    { id: 'family', name: 'Family', desc: 'Maintaining close ties and involvement with extended family.' },
+    { id: 'career', name: 'Career Ambition', desc: 'Prioritizing professional growth, success, and status.' },
+    { id: 'money', name: 'Financial Security', desc: 'Saving heavily, budgeting strictly, and building wealth.' },
+    { id: 'religion', name: 'Religion/Spirituality', desc: 'Practicing a specific faith or having shared spiritual beliefs.' },
+    { id: 'lifestyle', name: 'Lifestyle/Standard of Living', desc: 'Enjoying a comfortable, high-quality, or luxurious lifestyle.' },
+    { id: 'adventure', name: 'Travel/Adventure', desc: 'Exploring the world, trying new things, and spontaneous trips.' },
+    { id: 'health', name: 'Health/Fitness', desc: 'Maintaining a healthy diet, exercising, and prioritizing wellness.' },
+    { id: 'politics', name: 'Politics/Social Issues', desc: 'Having shared political views and activism.' },
+    { id: 'communication', name: 'Communication Style', desc: 'Talking openly and frequently about feelings and needs.' },
+    { id: 'conflict', name: 'Conflict Resolution', desc: 'Addressing disagreements immediately and directly.' },
+    { id: 'independence', name: 'Independence/Space', desc: 'Having substantial alone time and personal space.' },
+    { id: 'sex', name: 'Sex & Intimacy', desc: 'Maintaining a frequent, adventurous, and fulfilling sexual connection.' },
+    { id: 'social', name: 'Social Life/Friends', desc: 'Hosting parties, going out often, and having a wide circle.' },
+    { id: 'parenting', name: 'Parenting Style', desc: 'Agreement on discipline, education, and raising kids.' },
+    { id: 'pets', name: 'Pets/Animals', desc: 'Having pets and treating them like part of the family.' },
+    { id: 'home', name: 'Home Environment', desc: 'Keeping a meticulously clean, organized, and beautiful home.' },
+    { id: 'education', name: 'Education/Learning', desc: 'Continuous learning, reading, and self-improvement.' },
+    { id: 'division', name: 'Division of Labor', desc: 'Strictly equal sharing of household chores and mental load.' },
+    { id: 'worklife', name: 'Work-Life Balance', desc: 'Leaving work at work and protecting personal time.' },
+    { id: 'trust', name: 'Trust & Honesty', desc: 'Absolute transparency and zero white lies.' },
+    { id: 'growth', name: 'Personal Growth', desc: 'Actively working on oneself through therapy or coaching.' },
+    { id: 'inlaws', name: 'Extended Family Boundaries', desc: 'Setting firm boundaries with parents and in-laws.' },
+    { id: 'hobbies', name: 'Hobbies/Interests', desc: 'Having shared passions or giving time for individual hobbies.' },
+    { id: 'traditions', name: 'Traditions/Holidays', desc: 'Going all-out for holidays and maintaining rituals.' },
+    { id: 'privacy', name: 'Transparency/Privacy', desc: 'Sharing passwords, locations, and every detail of your day.' }
+  ];
+
+  let currentPartner = 1;
+  let currentCategoryIndex = 0;
+  let p1Name = "Partner A";
+  let p2Name = "Partner B";
+  let p1Scores = {};
+  let p2Scores = {};
+  let chartInstance = null;
+
+  const slider = document.getElementById('rating-slider');
+  const sliderVal = document.getElementById('slider-value');
+
+  slider.addEventListener('input', function() {
+    sliderVal.textContent = this.value;
+  });
+
+  function startAssessment() {
+    p1Name = document.getElementById('partner1Name').value.trim() || "Partner A";
+    p2Name = document.getElementById('partner2Name').value.trim() || "Partner B";
+
+    document.getElementById('intro-card').style.display = 'none';
+    document.getElementById('assessment-card').style.display = 'block';
+
+    currentPartner = 1;
+    currentCategoryIndex = 0;
+    p1Scores = {};
+    p2Scores = {};
+
+    updateUI();
+  }
+
+  function updateUI() {
+    const cat = categories[currentCategoryIndex];
+    document.getElementById('category-title').textContent = cat.name;
+    document.getElementById('category-desc').textContent = cat.desc;
+    document.getElementById('progress-indicator').textContent = `Category ${currentCategoryIndex + 1} of ${categories.length}`;
+
+    document.getElementById('currentPlayerName').textContent = currentPartner === 1 ? `${p1Name}'s Turn` : `${p2Name}'s Turn`;
+
+    // Restore previous value if available, else default to 5
+    let savedVal = currentPartner === 1 ? p1Scores[cat.id] : p2Scores[cat.id];
+    slider.value = savedVal || 5;
+    sliderVal.textContent = slider.value;
+
+    document.getElementById('btn-prev').style.display = currentCategoryIndex > 0 ? 'block' : 'none';
+
+    const btnNext = document.getElementById('btn-next');
+    if (currentCategoryIndex === categories.length - 1) {
+      btnNext.textContent = currentPartner === 1 ? "Finish Turn" : "See Results";
+    } else {
+      btnNext.textContent = "Next Category";
+    }
+  }
+
+  function nextCategory() {
+    // Save current rating
+    const catId = categories[currentCategoryIndex].id;
+    const val = parseInt(slider.value, 10);
+
+    if (currentPartner === 1) {
+      p1Scores[catId] = val;
+    } else {
+      p2Scores[catId] = val;
+    }
+
+    if (currentCategoryIndex < categories.length - 1) {
+      currentCategoryIndex++;
+      updateUI();
+    } else {
+      // Finished all categories
+      if (currentPartner === 1) {
+        document.getElementById('assessment-card').style.display = 'none';
+        document.getElementById('transition-card').style.display = 'block';
+        document.getElementById('p1-transition-name').textContent = p1Name;
+        document.getElementById('p2-transition-name').textContent = p2Name;
+      } else {
+        // Partner 2 finished, show results
+        calculateAndShowResults();
+      }
+    }
+  }
+
+  function prevCategory() {
+    if (currentCategoryIndex > 0) {
+      currentCategoryIndex--;
+      updateUI();
+    }
+  }
+
+  function startPartnerB() {
+    document.getElementById('transition-card').style.display = 'none';
+    document.getElementById('assessment-card').style.display = 'block';
+    currentPartner = 2;
+    currentCategoryIndex = 0;
+    updateUI();
+  }
+
+  function calculateAndShowResults() {
+    document.getElementById('assessment-card').style.display = 'none';
+    document.getElementById('results-card').style.display = 'block';
+
+    let totalPossibleDiff = categories.length * 9; // Max difference per cat is 9 (10-1)
+    let totalDiff = 0;
+    let details = [];
+
+    categories.forEach(cat => {
+      let diff = Math.abs(p1Scores[cat.id] - p2Scores[cat.id]);
+      totalDiff += diff;
+      details.push({
+        name: cat.name,
+        p1: p1Scores[cat.id],
+        p2: p2Scores[cat.id],
+        diff: diff
+      });
+    });
+
+    let compatibilityScore = Math.max(0, 100 - ((totalDiff / totalPossibleDiff) * 100));
+    document.getElementById('overall-score').textContent = compatibilityScore.toFixed(0) + "%";
+
+    // Sort by difference to find highest/lowest alignment
+    details.sort((a, b) => a.diff - b.diff);
+
+    let highlyAligned = details.filter(d => d.diff <= 2);
+    let misaligned = details.filter(d => d.diff >= 4);
+
+    // Sort misaligned by highest diff first
+    misaligned.sort((a, b) => b.diff - a.diff);
+
+    // Sanitize names for HTML injection
+    const escapeHTML = str => str.replace(/[&<>'"]/g,
+      tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+    );
+
+    const safeP1Name = escapeHTML(p1Name);
+    const safeP2Name = escapeHTML(p2Name);
+
+    let html = '';
+
+    if (highlyAligned.length > 0) {
+      html += `<h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 15px;">Where You're Highly Aligned:</h3>`;
+      html += `<div style="background: rgba(173, 152, 70, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 30px;">`;
+      highlyAligned.forEach(d => {
+        html += `<p style="margin-bottom: 8px; font-size: 0.95rem;"><strong>${d.name}</strong> - ${safeP1Name}: ${d.p1}, ${safeP2Name}: ${d.p2}</p>`;
+      });
+      html += `</div>`;
+    }
+
+    if (misaligned.length > 0) {
+      html += `<h3 style="color: #8c2a2a; font-size: 1.2rem; margin-bottom: 15px;">Areas for Gentle Discussion:</h3>`;
+      html += `<div style="background: rgba(140, 42, 42, 0.05); border-left: 4px solid #8c2a2a; padding: 15px; border-radius: 0 8px 8px 0; margin-bottom: 30px;">`;
+      misaligned.forEach(d => {
+        html += `<p style="margin-bottom: 8px; font-size: 0.95rem;"><strong>${d.name}</strong> - ${safeP1Name}: ${d.p1}, ${safeP2Name}: ${d.p2}</p>`;
+      });
+      html += `<div style="margin-top: 15px; font-size: 0.9rem; font-style: italic; color: #555;"><strong>Discussion Prompt:</strong> "I noticed we ranked [Category] quite differently. Can you share what a ${misaligned[0]?.p2 || 'score'} looks like or means to you in a relationship?"</div>`;
+      html += `</div>`;
+    } else {
+      html += `<p style="font-size: 1.1rem; color: #2E3E24; font-weight: bold; margin-bottom: 30px;">Wow! You two are exceptionally aligned across all major categories.</p>`;
+    }
+
+    document.getElementById('breakdown-container').innerHTML = html;
+
+    renderChart();
+
+    // Save to localStorage
+    const resultsObj = {
+        p1Name, p2Name, p1Scores, p2Scores, timestamp: new Date().toISOString()
+    };
+    localStorage.setItem('values_alignment_results', JSON.stringify(resultsObj));
+  }
+
+  function renderChart() {
+    const ctx = document.getElementById('alignmentChart').getContext('2d');
+
+    if (chartInstance) {
+      chartInstance.destroy();
+    }
+
+    // Prepare data (Top 8 categories to keep radar readable)
+    const displayCats = categories.slice(0, 8);
+    const labels = displayCats.map(c => c.name);
+    const p1Data = displayCats.map(c => p1Scores[c.id]);
+    const p2Data = displayCats.map(c => p2Scores[c.id]);
+
+    chartInstance = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: p1Name,
+            data: p1Data,
+            backgroundColor: 'rgba(173, 152, 70, 0.2)',
+            borderColor: '#AD9846',
+            pointBackgroundColor: '#AD9846'
+          },
+          {
+            label: p2Name,
+            data: p2Data,
+            backgroundColor: 'rgba(46, 62, 36, 0.2)',
+            borderColor: '#2E3E24',
+            pointBackgroundColor: '#2E3E24'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          r: {
+            angleLines: { color: 'rgba(46, 62, 36, 0.1)' },
+            grid: { color: 'rgba(46, 62, 36, 0.1)' },
+            pointLabels: {
+              font: { family: "'Montserrat', sans-serif", size: 10 },
+              color: '#2E3E24'
+            },
+            min: 0,
+            max: 10,
+            ticks: {
+              stepSize: 2,
+              display: false
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: { font: { family: "'Montserrat', sans-serif" } }
+          }
+        }
+      }
+    });
+  }
+
+  function resetCalculator() {
+    p1Scores = {};
+    p2Scores = {};
+    currentPartner = 1;
+    currentCategoryIndex = 0;
+    localStorage.removeItem('values_alignment_results');
+    document.getElementById('results-card').style.display = 'none';
+    document.getElementById('intro-card').style.display = 'block';
+  }
+
+  function shareResults() {
+    let score = document.getElementById('overall-score').textContent;
+    let textToShare = `My partner and I took the Relationship Values Alignment Calculator and got a ${score} Compatibility Score!
+
+Check out how aligned your core values are here: https://aliimperiale.com/relationship-values-alignment-calculator.html`;
+
+    navigator.clipboard.writeText(textToShare).then(() => {
+      let notif = document.getElementById('share-notification');
+      notif.style.display = 'block';
+      setTimeout(() => { notif.style.display = 'none'; }, 3000);
+    }).catch(err => {
+      console.error('Failed to copy text: ', err);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('values_alignment_results');
+    if (saved) {
+      try {
+        const data = JSON.parse(saved);
+        p1Name = data.p1Name;
+        p2Name = data.p2Name;
+        p1Scores = data.p1Scores;
+        p2Scores = data.p2Scores;
+
+        document.getElementById('intro-card').style.display = 'none';
+        calculateAndShowResults();
+      } catch(e) {
+        console.error("Failed to parse saved results.");
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
