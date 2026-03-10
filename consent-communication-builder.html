@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consent Communication Builder | Ali Imperiale</title>
+  <meta name="description" content="An interactive tool to help you create personalized consent conversations for various relationship scenarios.">
+  <meta property="og:title" content="Consent Communication Builder | Ali Imperiale">
+  <meta property="og:description" content="An interactive tool to help you create personalized consent conversations for various relationship scenarios.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/consent-communication-builder.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Consent Communication Builder">
+  <meta name="twitter:description" content="An interactive tool to help you create personalized consent conversations for various relationship scenarios.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/consent-communication-builder.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How do I bring up safe words if we aren't doing hardcore BDSM?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Safe words aren't just for BDSM! They are a great tool for any sexual encounter to easily communicate 'stop' without having to explain why in the moment. You can simply say, 'Hey, just so you know, if I ever say 'red', it means I need to pause or stop.'"
+    }
+  }, {
+    "@type": "Question",
+    "name": "What if I change my mind in the middle of sex?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You have the absolute right to change your mind at any point, even if you are already naked or in the middle of the act. A healthy partner will immediately stop and check in with you without making you feel guilty."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Does silence mean yes?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No, silence does not mean yes. A lack of a 'no' is not consent. Look for enthusiastic participation, verbal confirmation, and positive body language. If you aren't sure, ask: 'Are you into this?'"
+    }
+  }, {
+    "@type": "Question",
+    "name": "Is it awkward to ask for consent?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It can feel awkward at first if you aren't used to it, but it actually builds trust and intimacy. Asking 'Can I kiss you?' or 'Do you like this?' shows respect and often turns partners on because it shows you care about their pleasure."
+    }
+  }]
+}
+</script>
+  <style>
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Page Header */
+    .page-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: #FAF8EB;
+    }
+    .page-header p {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.15rem;
+      color: #C6C8BB;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .tracker-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    @media (max-width: 860px) {
+      .tracker-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left Side: Builder */
+    .builder-section {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.08);
+    }
+
+    /* Progress Steps */
+    .step-indicator {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .step-indicator::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #e0e2d5;
+      z-index: 1;
+      transform: translateY(-50%);
+    }
+    .step-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #e0e2d5;
+      color: #8a8a7a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    .step-dot.active {
+      background: #AD9846;
+      color: #FAF8EB;
+    }
+    .step-dot.completed {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .step-content {
+      display: none;
+    }
+    .step-content.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .step-desc {
+      color: #555549;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+
+    /* Custom Radio/Checkbox */
+    .option-card {
+      display: block;
+      padding: 16px;
+      border: 1.5px solid #e0e2d5;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: #fafbfc;
+    }
+    .option-card:hover {
+      border-color: #AD9846;
+      background: #fff;
+    }
+    .option-card input[type="radio"],
+    .option-card input[type="checkbox"] {
+      display: none;
+    }
+    .option-card input:checked + .option-content {
+      color: #2E3E24;
+    }
+    .option-card.selected {
+      border-color: #AD9846;
+      background: rgba(173, 152, 70, 0.05);
+      box-shadow: 0 2px 8px rgba(173, 152, 70, 0.1);
+    }
+    .option-title {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+      color: #2E3E24;
+    }
+    .option-desc {
+      font-size: 0.85rem;
+      color: #555549;
+      line-height: 1.4;
+    }
+
+    textarea.custom-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #e0e2d5;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      background: #fafbfc;
+      color: #2E3E24;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+      min-height: 100px;
+    }
+    textarea.custom-input:focus {
+      border-color: #AD9846;
+      background: #fff;
+    }
+
+    /* Navigation Buttons */
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e0e2d5;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-prev {
+      background: #e0e2d5;
+      color: #555549;
+    }
+    .btn-prev:hover {
+      background: #d1d3c4;
+    }
+    .btn-next {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    .btn-next:hover {
+      background: #3a5030;
+      transform: translateY(-1px);
+    }
+
+    /* Right Side: Preview */
+    .preview-section {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+    .document-preview {
+      background: #FAF8EB;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
+      border: 1px solid rgba(173, 152, 70, 0.4);
+      min-height: 500px;
+    }
+    .document-preview h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.2rem;
+      color: #2E3E24;
+      margin-bottom: 24px;
+      text-align: center;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 16px;
+    }
+
+    .preview-block {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .preview-block.active {
+      display: block;
+    }
+    .preview-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #AD9846;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .preview-text {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.05rem;
+      color: #2E3E24;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      font-style: italic;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: #8a8a7a;
+      font-style: italic;
+      font-size: 0.95rem;
+      margin-top: 60px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      justify-content: center;
+    }
+    .btn-action {
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary { background: #2E3E24; color: #FAF8EB; }
+    .btn-primary:hover { background: #3a5030; }
+    .btn-secondary { background: #AD9846; color: #2E3E24; }
+    .btn-secondary:hover { background: #c4b460; }
+
+    /* Educational Sections */
+    .info-container {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+    }
+    .info-section {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 16px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.08);
+      margin-bottom: 40px;
+    }
+    .info-section h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .info-section p {
+      font-size: 0.95rem;
+      color: #555549;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .info-section ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: #555549;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .info-section li { margin-bottom: 8px; }
+    .warning-box {
+      background: #fff5f5;
+      border-left: 4px solid #e53e3e;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 20px;
+    }
+    .warning-box strong { color: #c53030; }
+
+    /* Print Styles */
+    @media print {
+      body * { visibility: hidden; }
+      .preview-section, .preview-section * { visibility: visible; }
+      .preview-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .document-preview {
+        box-shadow: none;
+        border: none;
+        background: white;
+      }
+      .action-buttons { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle Navigation" onclick="this.classList.toggle('active'); this.previousElementSibling.classList.toggle('nav-open');">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+  </nav>
+
+  <main id="main-content">
+    <header class="page-header">
+      <h1>Consent Communication Builder</h1>
+      <p>An interactive tool to help you articulate your boundaries, desires, and limits confidently in any relationship.</p>
+    </header>
+
+    <div class="tracker-container">
+
+      <!-- Left Column: Builder -->
+      <div class="builder-section">
+
+        <div class="step-indicator" id="step-indicator">
+          <!-- Dots injected via JS -->
+        </div>
+
+        <form id="consent-form">
+
+          <!-- Step 1: Initial Relationship Discussions -->
+          <div class="step-content active" data-step="1">
+            <h2 class="step-title">Initial Conversations</h2>
+            <p class="step-desc">How do you want to initiate a conversation about consent and boundaries with a new partner?</p>
+
+            <div class="form-group">
+              <label class="form-label">Select a starting approach:</label>
+
+              <label class="option-card">
+                <input type="radio" name="initial_approach" value="casual">
+                <div class="option-content">
+                  <span class="option-title">Casual & Direct</span>
+                  <span class="option-desc">"I really like where this is going. Before we go further, what are your hard limits?"</span>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="initial_approach" value="structured">
+                <div class="option-content">
+                  <span class="option-title">Structured Check-in</span>
+                  <span class="option-desc">"I'm big on communication. Let's talk about what we're both comfortable with tonight."</span>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="initial_approach" value="custom">
+                <div class="option-content">
+                  <span class="option-title">Write my own</span>
+                </div>
+              </label>
+              <textarea class="custom-input" id="initial_custom" placeholder="Type your own approach here..." style="display:none; margin-top:10px;"></textarea>
+            </div>
+          </div>
+
+          <!-- Step 2: Ongoing Check-ins -->
+          <div class="step-content" data-step="2">
+            <h2 class="step-title">Ongoing Check-ins</h2>
+            <p class="step-desc">Consent isn't a one-time thing. How will you check in during intimacy?</p>
+
+            <div class="form-group">
+              <label class="form-label">Select your preferred phrases (choose multiple):</label>
+
+              <label class="option-card">
+                <input type="checkbox" name="checkins" value="verbal_direct">
+                <div class="option-content">
+                  <span class="option-title">Verbal Direct</span>
+                  <span class="option-desc">"Does this feel good?" / "Do you want me to keep going?"</span>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" name="checkins" value="scale">
+                <div class="option-content">
+                  <span class="option-title">The 1-10 Scale</span>
+                  <span class="option-desc">"On a scale of 1-10, how is this pressure?"</span>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" name="checkins" value="nonverbal">
+                <div class="option-content">
+                  <span class="option-title">Non-verbal Cues</span>
+                  <span class="option-desc">"Squeeze my hand twice if you need me to slow down."</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 3: Safe Words & Kink -->
+          <div class="step-content" data-step="3">
+            <h2 class="step-title">Safe Words & Kink</h2>
+            <p class="step-desc">Establishing a clear system for pausing or stopping activity.</p>
+
+            <div class="form-group">
+              <label class="form-label">What safe word system works for you?</label>
+
+              <label class="option-card">
+                <input type="radio" name="safeword" value="traffic_light">
+                <div class="option-content">
+                  <span class="option-title">Traffic Light System</span>
+                  <span class="option-desc">Green (Go), Yellow (Slow down/Check in), Red (Stop immediately).</span>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="safeword" value="specific_word">
+                <div class="option-content">
+                  <span class="option-title">Specific Word</span>
+                  <span class="option-desc">Choosing a word that wouldn't normally be said during sex (e.g., "Pineapple").</span>
+                </div>
+              </label>
+
+              <textarea class="custom-input" id="safeword_custom" placeholder="Specify your word or system here..." style="margin-top:10px;"></textarea>
+            </div>
+          </div>
+
+          <!-- Step 4: Digital Consent & Aftercare -->
+          <div class="step-content" data-step="4">
+            <h2 class="step-title">Digital Consent & Aftercare</h2>
+            <p class="step-desc">Setting rules for sexting/photos and post-intimacy needs.</p>
+
+            <div class="form-group">
+              <label class="form-label">Digital Boundaries (Photos/Sexting):</label>
+              <textarea class="custom-input" id="digital_boundaries" placeholder="E.g., No face in photos, ask before sending explicit texts..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Aftercare Needs:</label>
+              <textarea class="custom-input" id="aftercare_needs" placeholder="E.g., I need to cuddle for 10 mins, I prefer to wash up alone..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Withdrawal of Consent:</label>
+              <label class="option-card selected">
+                <input type="checkbox" name="withdrawal" value="agreed" checked disabled>
+                <div class="option-content">
+                  <span class="option-title">Non-Negotiable Standard</span>
+                  <span class="option-desc">"I have the right to withdraw my consent at any time, for any reason. If I say stop, everything stops immediately."</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-prev" id="btn-prev" style="visibility: hidden;">Back</button>
+            <button type="button" class="btn btn-next" id="btn-next">Next Step</button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Right Column: Preview -->
+      <div class="preview-section">
+        <div class="document-preview" id="document-preview">
+          <h2>My Consent Guide</h2>
+
+          <div id="preview-empty" class="empty-state">
+            Start filling out the builder to generate your personalized consent and communication script.
+          </div>
+
+          <div id="preview-content">
+
+            <div class="preview-block" id="block-initial">
+              <div class="preview-title">Initiating the Conversation</div>
+              <div class="preview-text" id="text-initial"></div>
+            </div>
+
+            <div class="preview-block" id="block-checkins">
+              <div class="preview-title">Ongoing Check-ins</div>
+              <div class="preview-text" id="text-checkins"></div>
+            </div>
+
+            <div class="preview-block" id="block-safeword">
+              <div class="preview-title">Safe Word System</div>
+              <div class="preview-text" id="text-safeword"></div>
+            </div>
+
+            <div class="preview-block" id="block-digital">
+              <div class="preview-title">Digital Boundaries</div>
+              <div class="preview-text" id="text-digital"></div>
+            </div>
+
+            <div class="preview-block" id="block-aftercare">
+              <div class="preview-title">Aftercare Preferences</div>
+              <div class="preview-text" id="text-aftercare"></div>
+            </div>
+
+            <div class="preview-block" id="block-withdrawal" style="display:block;">
+              <div class="preview-title">Withdrawal of Consent</div>
+              <div class="preview-text">I have the right to withdraw my consent at any time, for any reason. If I say stop, everything stops immediately.</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-action btn-primary" id="btn-copy">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy Script
+          </button>
+          <button class="btn-action btn-secondary" id="btn-print">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            Save PDF
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Educational Content -->
+    <div class="info-container">
+
+      <div class="info-section">
+        <h2>What is Enthusiastic Consent?</h2>
+        <p>Consent isn't just the absence of a "no"; it's the presence of an enthusiastic "yes." It's about ongoing, mutual agreement to engage in sexual activity. Healthy consent involves active communication, checking in with your partner, and respecting their boundaries at all times.</p>
+        <ul>
+          <li><strong>Freely Given:</strong> Consent is given without pressure, manipulation, or coercion.</li>
+          <li><strong>Reversible:</strong> Anyone can change their mind about what they want to do, at any time.</li>
+          <li><strong>Informed:</strong> You can only consent to what you know about. If you say yes to sex with a condom, you haven't consented to sex without one (stealthing).</li>
+          <li><strong>Enthusiastic:</strong> When it comes to sex, you should only do stuff you actually want to do, not things you feel like you are expected to do.</li>
+          <li><strong>Specific:</strong> Saying yes to one thing (like making out) doesn't mean you've said yes to others (like having sex).</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h2>Red Flags & Warning Signs</h2>
+        <p>It's crucial to recognize when a partner is not respecting your boundaries or is displaying coercive behavior. Pay attention to these warning signs:</p>
+        <div class="warning-box">
+          <p><strong>Ignoring a "No":</strong> If they keep pushing, nagging, or asking after you've set a boundary.</p>
+          <p><strong>Guilt-Tripping:</strong> "If you really loved me, you would..." or "I'm so sexually frustrated, you're ruining the night."</p>
+          <p><strong>Pouting or Anger:</strong> Punishing you with silence, coldness, or anger when you decline intimacy.</p>
+          <p><strong>Coercion while Intoxicated:</strong> Attempting to initiate or escalate sexual activity when you are clearly under the influence of alcohol or drugs.</p>
+          <p><strong>Removing Protection:</strong> Taking off a condom without your knowledge or consent (stealthing) is sexual assault.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="info-section">
+        <h2>Frequently Asked Questions About Consent</h2>
+
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #AD9846; margin-bottom: 8px;">How do I bring up safe words if we aren't doing hardcore BDSM?</h3>
+          <p>Safe words aren't just for BDSM! They are a great tool for any sexual encounter to easily communicate "stop" without having to explain why in the moment. You can simply say, "Hey, just so you know, if I ever say 'red', it means I need to pause or stop."</p>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #AD9846; margin-bottom: 8px;">What if I change my mind in the middle of sex?</h3>
+          <p>You have the absolute right to change your mind at any point, even if you are already naked or in the middle of the act. A healthy partner will immediately stop and check in with you without making you feel guilty.</p>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #AD9846; margin-bottom: 8px;">Does silence mean yes?</h3>
+          <p>No, silence does not mean yes. A lack of a "no" is not consent. Look for enthusiastic participation, verbal confirmation, and positive body language. If you aren't sure, ask: "Are you into this?"</p>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #AD9846; margin-bottom: 8px;">Is it awkward to ask for consent?</h3>
+          <p>It can feel awkward at first if you aren't used to it, but it actually builds trust and intimacy. Asking "Can I kiss you?" or "Do you like this?" shows respect and often turns partners on because it shows you care about their pleasure.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script src="back-to-top.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const steps = document.querySelectorAll('.step-content');
+  const btnPrev = document.getElementById('btn-prev');
+  const btnNext = document.getElementById('btn-next');
+  const stepIndicator = document.getElementById('step-indicator');
+  const form = document.getElementById('consent-form');
+
+  const previewEmpty = document.getElementById('preview-empty');
+  const previewContent = document.getElementById('preview-content');
+
+  let currentStep = 1;
+  const totalSteps = steps.length;
+
+  // Initialize dots
+  for (let i = 1; i <= totalSteps; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'step-dot';
+    if (i === 1) dot.classList.add('active');
+    dot.textContent = i;
+    stepIndicator.appendChild(dot);
+  }
+  const dots = document.querySelectorAll('.step-dot');
+
+  // Load from local storage
+  const savedData = localStorage.getItem('consentBuilderData');
+  if (savedData) {
+    try {
+      const parsedData = JSON.parse(savedData);
+
+      // Radios
+      if (parsedData.initial_approach) {
+        const r = form.querySelector(`input[name="initial_approach"][value="${parsedData.initial_approach}"]`);
+        if (r) { r.checked = true; updateOptionStyles(r); }
+      }
+      if (parsedData.safeword) {
+        const r = form.querySelector(`input[name="safeword"][value="${parsedData.safeword}"]`);
+        if (r) { r.checked = true; updateOptionStyles(r); }
+      }
+
+      // Checkboxes
+      if (parsedData.checkins) {
+        parsedData.checkins.forEach(val => {
+          const cb = form.querySelector(`input[name="checkins"][value="${val}"]`);
+          if (cb) { cb.checked = true; updateOptionStyles(cb); }
+        });
+      }
+
+      // Textareas
+      if (parsedData.initial_custom) document.getElementById('initial_custom').value = parsedData.initial_custom;
+      if (parsedData.safeword_custom) document.getElementById('safeword_custom').value = parsedData.safeword_custom;
+      if (parsedData.digital_boundaries) document.getElementById('digital_boundaries').value = parsedData.digital_boundaries;
+      if (parsedData.aftercare_needs) document.getElementById('aftercare_needs').value = parsedData.aftercare_needs;
+
+      updatePreview();
+    } catch (e) {
+      console.error('Error loading saved data', e);
+    }
+  }
+
+  function saveToLocalStorage() {
+    const data = {
+      initial_approach: form.querySelector('input[name="initial_approach"]:checked')?.value || '',
+      checkins: Array.from(form.querySelectorAll('input[name="checkins"]:checked')).map(cb => cb.value),
+      safeword: form.querySelector('input[name="safeword"]:checked')?.value || '',
+      initial_custom: document.getElementById('initial_custom').value,
+      safeword_custom: document.getElementById('safeword_custom').value,
+      digital_boundaries: document.getElementById('digital_boundaries').value,
+      aftercare_needs: document.getElementById('aftercare_needs').value
+    };
+    localStorage.setItem('consentBuilderData', JSON.stringify(data));
+  }
+
+  function updateSteps() {
+    steps.forEach(step => {
+      step.classList.remove('active');
+      if (parseInt(step.getAttribute('data-step')) === currentStep) {
+        step.classList.add('active');
+      }
+    });
+
+    dots.forEach((dot, index) => {
+      dot.classList.remove('active', 'completed');
+      if (index + 1 < currentStep) {
+        dot.classList.add('completed');
+      } else if (index + 1 === currentStep) {
+        dot.classList.add('active');
+      }
+    });
+
+    btnPrev.style.visibility = currentStep === 1 ? 'hidden' : 'visible';
+    btnNext.textContent = currentStep === totalSteps ? 'Finish' : 'Next Step';
+  }
+
+  btnNext.addEventListener('click', () => {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      updateSteps();
+      window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+    } else {
+      alert("You've completed the builder! You can now copy or save your document.");
+    }
+  });
+
+  btnPrev.addEventListener('click', () => {
+    if (currentStep > 1) {
+      currentStep--;
+      updateSteps();
+      window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+    }
+  });
+
+  // Handle Option Card selection styles & custom input visibility
+  function updateOptionStyles(inputElement) {
+    if (inputElement.type === 'radio') {
+      const name = inputElement.name;
+      document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+        radio.closest('.option-card').classList.toggle('selected', radio.checked);
+      });
+    } else if (inputElement.type === 'checkbox') {
+      inputElement.closest('.option-card').classList.toggle('selected', inputElement.checked);
+    }
+  }
+
+  form.addEventListener('change', (e) => {
+    if (e.target.tagName === 'INPUT') {
+      updateOptionStyles(e.target);
+    }
+
+    // Show/hide custom initial approach
+    if (e.target.name === 'initial_approach') {
+      const customEl = document.getElementById('initial_custom');
+      customEl.style.display = e.target.value === 'custom' ? 'block' : 'none';
+      if (e.target.value === 'custom') customEl.focus();
+    }
+
+    // Auto-focus safe word custom
+    if (e.target.name === 'safeword' && e.target.value === 'specific_word') {
+      document.getElementById('safeword_custom').focus();
+    }
+
+    saveToLocalStorage();
+    updatePreview();
+  });
+
+  form.addEventListener('input', (e) => {
+    if (e.target.tagName === 'TEXTAREA') {
+      saveToLocalStorage();
+      updatePreview();
+    }
+  });
+
+  // Update Preview logic
+  function updatePreview() {
+    let hasContent = false;
+
+    // Initial
+    const initialApproach = form.querySelector('input[name="initial_approach"]:checked');
+    const blockInitial = document.getElementById('block-initial');
+    const textInitial = document.getElementById('text-initial');
+    if (initialApproach) {
+      let text = '';
+      if (initialApproach.value === 'casual') text = "I really like where this is going. Before we go further, what are your hard limits?";
+      if (initialApproach.value === 'structured') text = "I'm big on communication. Let's talk about what we're both comfortable with tonight.";
+      if (initialApproach.value === 'custom') {
+        const customText = document.getElementById('initial_custom').value.trim();
+        text = customText ? customText : "[Your custom approach here]";
+      }
+      textInitial.textContent = `"${text}"`;
+      blockInitial.style.display = 'block';
+      hasContent = true;
+    } else {
+      blockInitial.style.display = 'none';
+    }
+
+    // Check-ins
+    const checkins = form.querySelectorAll('input[name="checkins"]:checked');
+    const blockCheckins = document.getElementById('block-checkins');
+    const textCheckins = document.getElementById('text-checkins');
+    if (checkins.length > 0) {
+      let phrases = [];
+      checkins.forEach(cb => {
+        if (cb.value === 'verbal_direct') phrases.push('"Does this feel good?" / "Do you want me to keep going?"');
+        if (cb.value === 'scale') phrases.push('"On a scale of 1-10, how is this pressure?"');
+        if (cb.value === 'nonverbal') phrases.push('"Squeeze my hand twice if you need me to slow down."');
+      });
+      textCheckins.innerHTML = phrases.join('<br>');
+      blockCheckins.style.display = 'block';
+      hasContent = true;
+    } else {
+      blockCheckins.style.display = 'none';
+    }
+
+    // Safe words
+    const safeword = form.querySelector('input[name="safeword"]:checked');
+    const blockSafeword = document.getElementById('block-safeword');
+    const textSafeword = document.getElementById('text-safeword');
+    const customSafeword = document.getElementById('safeword_custom').value.trim();
+
+    if (safeword || customSafeword) {
+      let swText = '';
+      if (safeword && safeword.value === 'traffic_light') swText = "Traffic Light System: Green (Go), Yellow (Slow down), Red (Stop).";
+      if (safeword && safeword.value === 'specific_word') swText = "Specific Safe Word: ";
+
+      if (customSafeword) {
+        swText += (safeword && safeword.value === 'specific_word') ? `"${customSafeword}"` : `\nNotes: ${customSafeword}`;
+      } else if (safeword && safeword.value === 'specific_word') {
+         swText += "[Word not specified]";
+      }
+
+      textSafeword.textContent = swText;
+      blockSafeword.style.display = 'block';
+      hasContent = true;
+    } else {
+      blockSafeword.style.display = 'none';
+    }
+
+    // Digital
+    const digital = document.getElementById('digital_boundaries').value.trim();
+    const blockDigital = document.getElementById('block-digital');
+    const textDigital = document.getElementById('text-digital');
+    if (digital) {
+      textDigital.textContent = digital;
+      blockDigital.style.display = 'block';
+      hasContent = true;
+    } else {
+      blockDigital.style.display = 'none';
+    }
+
+    // Aftercare
+    const aftercare = document.getElementById('aftercare_needs').value.trim();
+    const blockAftercare = document.getElementById('block-aftercare');
+    const textAftercare = document.getElementById('text-aftercare');
+    if (aftercare) {
+      textAftercare.textContent = aftercare;
+      blockAftercare.style.display = 'block';
+      hasContent = true;
+    } else {
+      blockAftercare.style.display = 'none';
+    }
+
+    // Always show withdrawal block once any content is added
+    if (hasContent) {
+      previewEmpty.style.display = 'none';
+      previewContent.style.display = 'block';
+    } else {
+      previewEmpty.style.display = 'block';
+      previewContent.style.display = 'none';
+    }
+  }
+
+  // Trigger initial update to set styles correctly if loaded from storage
+  document.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked').forEach(el => {
+    updateOptionStyles(el);
+  });
+  const customInit = form.querySelector('input[name="initial_approach"][value="custom"]');
+  if (customInit && customInit.checked) document.getElementById('initial_custom').style.display = 'block';
+
+  updatePreview();
+
+  // Print Functionality
+  document.getElementById('btn-print').addEventListener('click', () => {
+    if (previewEmpty.style.display !== 'none') {
+      alert('Please build your consent guide before printing or saving to PDF.');
+      return;
+    }
+    window.print();
+  });
+
+  // Copy/Share Functionality
+  document.getElementById('btn-copy').addEventListener('click', async () => {
+    if (previewEmpty.style.display !== 'none') {
+      alert('Please build your consent guide before copying.');
+      return;
+    }
+
+    let textToCopy = "MY CONSENT & COMMUNICATION GUIDE\n\n";
+
+    const blocks = [
+      { id: 'block-initial', title: 'Initiating the Conversation', textId: 'text-initial' },
+      { id: 'block-checkins', title: 'Ongoing Check-ins', textId: 'text-checkins' },
+      { id: 'block-safeword', title: 'Safe Word System', textId: 'text-safeword' },
+      { id: 'block-digital', title: 'Digital Boundaries', textId: 'text-digital' },
+      { id: 'block-aftercare', title: 'Aftercare Preferences', textId: 'text-aftercare' }
+    ];
+
+    blocks.forEach(block => {
+      const el = document.getElementById(block.id);
+      if (el && el.style.display !== 'none') {
+        const textContent = document.getElementById(block.textId).innerText;
+        textToCopy += `${block.title.toUpperCase()}\n${textContent}\n\n`;
+      }
+    });
+
+    textToCopy += `WITHDRAWAL OF CONSENT\nI have the right to withdraw my consent at any time, for any reason. If I say stop, everything stops immediately.\n\n`;
+
+    try {
+      await navigator.clipboard.writeText(textToCopy);
+      const btn = document.getElementById('btn-copy');
+      const originalHtml = btn.innerHTML;
+      btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+      setTimeout(() => { btn.innerHTML = originalHtml; }, 2000);
+    } catch (err) {
+      console.error('Failed to copy', err);
+      alert('Failed to copy to clipboard.');
+    }
+  });
+
+});
+</script>
+</body>
+</html>
