@@ -7,8 +7,8 @@
 <script src="consent.js" defer></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sexual Health & Wellness Tracker | Ali Imperiale</title>
-<meta name="description" content="A private, judgment-free tracker to log periods, symptoms, mood, and energy levels. Better understand your body's patterns. All data stored locally.">
+<title>Sexual Health Tracker, Contraception & Reproductive Health Log | Ali Imperiale</title>
+<meta name="description" content="A comprehensive sexual health tracker and contraception tracker for logging periods, reproductive health, mood, and partner communication. All data stored locally.">
 <meta property="og:title" content="Sexual Health & Wellness Tracker | Ali Imperiale">
 <meta property="og:description" content="A private, judgment-free tracker to log periods, symptoms, mood, and energy levels. Better understand your body's patterns. All data stored locally.">
 <meta property="og:type" content="website">
@@ -363,38 +363,38 @@
   "@type": "FAQPage",
   "mainEntity": [{
     "@type": "Question",
-    "name": "Why is it important to track my sexual health?",
+    "name": "How does tracking my cycle help my sexual health?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Tracking your sexual health, including periods, mood, energy levels, and symptoms, helps you understand your body's unique patterns. It empowers you to anticipate changes, identify potential issues early, and have more informed conversations with healthcare providers."
+      "text": "Cycle tracking allows you to anticipate hormonal fluctuations that directly impact your mood, energy levels, and libido. By understanding these patterns, you can optimize your sexual experiences and identify any irregular symptoms early on."
     }
   }, {
     "@type": "Question",
-    "name": "What should I track for my sexual wellness?",
+    "name": "How often should I get tested for STIs?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "It's beneficial to track menstruation dates, physical symptoms like cramps or bloating, mood fluctuations, energy levels, and even changes in libido. Tracking these can reveal how your cycle affects your overall well-being."
+      "text": "For sexually active adults, testing every 6 to 12 months is generally recommended. However, if you have multiple partners, or are starting a new relationship, more frequent testing (every 3 to 6 months) is a best practice. Always consult your healthcare provider for personalized advice."
     }
   }, {
     "@type": "Question",
-    "name": "When should I see a doctor about my period or symptoms?",
+    "name": "Is my tracking data safe and private?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "You should consult a healthcare professional if you experience sudden changes in your cycle, abnormally heavy bleeding, severe pain that disrupts daily activities, bleeding between periods, or if you have concerns about unusual discharge or persistent mood changes."
+      "text": "Yes, absolutely. This tracker is built with a privacy-first approach. All your data—including your logs, contraception reminders, and communication notes—is stored locally in your browser and never leaves your device."
     }
   }, {
     "@type": "Question",
-    "name": "Is my data safe in this tracker?",
+    "name": "What is a partner communication log used for?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. This tracker is privacy-focused. All your logged data is stored locally on your device (in your browser's local storage). No information is sent to or stored on any external servers."
+      "text": "A partner communication log provides a space to document important conversations about boundaries, desires, and health statuses. Tracking these discussions helps ensure mutual understanding and builds a healthier, more transparent sexual relationship."
     }
   }, {
     "@type": "Question",
-    "name": "How do mood and energy levels relate to my cycle?",
+    "name": "Can this tracker replace my doctor's advice?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Hormonal fluctuations throughout your menstrual cycle can significantly impact brain chemistry. For example, rising estrogen before ovulation can boost energy and mood, while dropping progesterone before a period might lead to fatigue or irritability."
+      "text": "No. This tool is designed strictly for personal tracking and educational insights. It is not a substitute for professional medical diagnosis, advice, or treatment. Always speak with a healthcare provider regarding contraception, abnormal symptoms, or medical concerns."
     }
   }]
 }
@@ -414,8 +414,9 @@
       <li><a href="/">Home</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/blog/">Blog</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
       <li><a href="/open-and-honest.html">Course</a></li>
-      <li><a href="/reads.html">Reads</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
     </ul>
   </nav>
 
@@ -428,7 +429,12 @@
   <!-- Main Content -->
   <main class="tracker-container">
     <section class="card">
-      <h2>Wellness Calendar</h2>
+      <h2>Wellness Calendar & Cycle Tracking</h2>
+      <div style="margin-bottom: 20px; background: #FAF8EB; padding: 15px; border-radius: 8px; border: 1px dashed #C6C8BB;">
+        <label for="cycle-length" style="font-weight:600; font-size: 0.95rem;">Average Cycle Length (days): </label>
+        <input type="number" id="cycle-length" value="28" min="20" max="45" style="width: 60px; padding: 5px; border-radius: 4px; border: 1px solid #C6C8BB;">
+        <p style="font-size: 0.85rem; color: #555549; margin-top: 5px;">We use this to estimate your next ovulation window (typically ~14 days before your next period).</p>
+      </div>
 
       <div class="calendar-container">
         <div class="calendar-controls">
@@ -450,6 +456,7 @@
 
         <div class="calendar-legend">
           <div class="legend-item"><div class="legend-color day-period"></div> Period</div>
+          <div class="legend-item"><div class="legend-color" style="background:#d4e157; border-radius:50%;"></div> Ovulation (Est.)</div>
           <div class="legend-item"><div class="legend-dot"></div> Data Logged</div>
         </div>
 
@@ -459,7 +466,6 @@
             <span class="logging-date" id="log-date-display">Select a date</span>
             <button class="btn-close-log" id="btn-close-log">&times;</button>
           </div>
-          <p style="font-size: 0.85rem; margin-bottom: 15px; color: #555549;">Log your symptoms and feelings for this day.</p>
 
           <div class="checkbox-group">
             <input type="checkbox" id="log-period">
@@ -476,8 +482,16 @@
                 <option value="anxious">Anxious / Stressed</option>
                 <option value="sad">Sad / Tearful</option>
                 <option value="irritable">Irritable / Moody</option>
-                <option value="horny">High Libido</option>
-                <option value="low_libido">Low Libido</option>
+              </select>
+            </div>
+            <div class="log-group">
+              <label for="log-libido">Libido</label>
+              <select id="log-libido">
+                <option value="">-- Select --</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+                <option value="none">None</option>
               </select>
             </div>
             <div class="log-group">
@@ -502,69 +516,139 @@
                 <option value="discharge">Unusual Discharge</option>
               </select>
             </div>
-            <div class="log-group">
+            <div class="log-group" style="grid-column: 1 / -1;">
               <label for="log-notes">Personal Notes</label>
               <input type="text" id="log-notes" placeholder="Any specific details?">
             </div>
           </div>
           <button class="btn-save-log" id="btn-save-log">Save Log</button>
-          <span id="log-save-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-top: 10px; text-align: center;">Saved to your browser!</span>
+          <span id="log-save-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-top: 10px; text-align: center; display:block;"></span>
         </div>
-
-        <div class="actions-container">
-          <button class="btn-action" id="btn-export-csv">Export as CSV</button>
-          <button class="btn-action" id="btn-share">Share Results (Copy to Clipboard)</button>
-        </div>
-        <p class="privacy-note">Your data is stored securely in your browser's local storage and never leaves your device.</p>
-        <div style="text-align: center;"><span id="share-msg" style="display:none; font-size: 0.85rem; color: #2E3E24;">Copied!</span></div>
-
       </div>
     </section>
 
+    <!-- Contraception Reminder Section -->
+    <section class="card">
+      <h2>Contraception Reminder</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+        <div class="log-group">
+          <label for="contra-type">Method</label>
+          <select id="contra-type">
+            <option value="none">None</option>
+            <option value="pill">The Pill (Daily)</option>
+            <option value="patch">Patch (Weekly)</option>
+            <option value="ring">Ring (Monthly)</option>
+            <option value="shot">Shot (Every 3 months)</option>
+            <option value="iud">IUD (Long-term)</option>
+            <option value="implant">Implant (Long-term)</option>
+          </select>
+        </div>
+        <div class="log-group">
+          <label for="contra-time">Reminder Time / Next Due Date</label>
+          <input type="text" id="contra-time" placeholder="e.g. 9:00 PM or 2026-05-01">
+        </div>
+      </div>
+      <button class="btn-save-log" id="btn-save-contra" style="width:auto; padding: 10px 20px;">Set Reminder</button>
+      <span id="contra-save-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-left: 10px;">Saved!</span>
+    </section>
+
+    <!-- STI Testing Tracker -->
+    <section class="card">
+      <h2>STI Testing Schedule</h2>
+      <p style="font-size: 0.9rem; color: #555549; margin-bottom: 15px;">Regular testing is a vital part of sexual health. Log your last test to calculate your next recommended check-up.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+        <div class="log-group">
+          <label for="sti-last-test">Last Test Date</label>
+          <input type="date" id="sti-last-test">
+        </div>
+        <div class="log-group">
+          <label for="sti-frequency">Testing Frequency</label>
+          <select id="sti-frequency">
+            <option value="3">Every 3 months</option>
+            <option value="6" selected>Every 6 months</option>
+            <option value="12">Every 12 months</option>
+          </select>
+        </div>
+      </div>
+      <div style="background: #FAF8EB; padding: 15px; border-radius: 8px; border: 1px solid #C6C8BB;">
+        <strong>Next Recommended Test: </strong> <span id="sti-next-test" style="color: #AD9846; font-weight: bold;">Not calculated yet</span>
+      </div>
+      <button class="btn-save-log" id="btn-save-sti" style="width:auto; padding: 10px 20px; margin-top: 15px;">Save Schedule</button>
+      <span id="sti-save-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-left: 10px;">Saved!</span>
+    </section>
+
+    <!-- Partner Communication Log -->
+    <section class="card">
+      <h2>Partner Communication Log</h2>
+      <p style="font-size: 0.9rem; color: #555549; margin-bottom: 15px;">Track important conversations about boundaries, desires, or sexual health with your partner(s).</p>
+      <div class="log-group" style="margin-bottom: 15px;">
+        <label for="partner-log-entry">New Entry</label>
+        <textarea id="partner-log-entry" rows="3" placeholder="e.g. Discussed getting tested together next week..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #C6C8BB; font-family: 'Montserrat', sans-serif; resize: vertical;"></textarea>
+      </div>
+      <button class="btn-save-log" id="btn-add-partner-log" style="width:auto; padding: 10px 20px;">Add Entry</button>
+
+      <div id="partner-log-history" style="margin-top: 20px; max-height: 200px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;">
+        <!-- Logs injected here -->
+      </div>
+    </section>
+
+    <div class="actions-container">
+      <button class="btn-action" id="btn-export-csv">Export Data as CSV</button>
+      <button class="btn-action" id="btn-share">Share Results (Copy to Clipboard)</button>
+    </div>
+    <p class="privacy-note">Your data is stored securely in your browser's local storage and never leaves your device.</p>
+    <div style="text-align: center;"><span id="share-msg" style="display:none; font-size: 0.85rem; color: #2E3E24;">Copied!</span></div>
+
     <!-- Education Section -->
-    <section class="card edu-section">
-      <h2>Why You Should Track Your Cycle (And Your Feels)</h2>
-      <p style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6;">Look, we're complicated, magical creatures. Our bodies aren't machines that operate at 100% capacity every single day, and that's totally okay. Tracking your cycle, your energy, and your mood isn't about being perfectly organized—it's about gathering data on <em>you</em>.</p>
+    <section class="card edu-section" style="margin-top: 30px;">
+      <h2>Sexual Health Milestones & Regular Check-ups</h2>
+      <p style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6;">Your sexual health is an ongoing journey, not a one-time destination. As our bodies, relationships, and life stages evolve, so do our sexual health needs. Regular tracking and check-ups are essential tools for staying attuned to those changes.</p>
 
       <div style="margin-bottom: 24px;">
-        <h3 style="font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">The Magic of Patterns</h3>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: #555549;">When you log how you feel every day, you start noticing trends. Maybe you always get a little teary-eyed three days before your period. Maybe your sex drive skyrockets mid-month when you're ovulating. Once you spot these patterns, you stop judging yourself for "random" moods and start anticipating what your body needs. It's the ultimate self-care hack.</p>
+        <h3 style="font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">The Power of Regular STI Testing</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #555549;">STI testing isn't just for when you have symptoms—in fact, many common STIs are entirely asymptomatic. Making testing a regular part of your health routine (every 6-12 months, or before new partners) removes the stigma and empowers you to take control of your wellness. It's a proactive act of self-care and mutual respect for your partners.</p>
       </div>
 
       <div style="margin-bottom: 24px;">
-        <h3 style="font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">What to Look Out For</h3>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: #555549;">Keep an eye out for extreme shifts. If your period pain suddenly goes from "annoying" to "I need to stay in bed all day," or if your energy levels drop off a cliff and stay there for weeks, that's your body waving a red flag. Tracking gives you the receipts you need when you go to the doctor, so you don't just have to say "I feel weird" — you can show them exactly when and how.</p>
+        <h3 style="font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">Tracking Your Cycle & Libido</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #555549;">Understanding your natural hormonal rhythms can profoundly impact how you view your desire. Libido naturally fluctuates throughout your cycle, often peaking around ovulation due to estrogen and testosterone surges. By tracking these shifts alongside your mood and energy, you can stop judging yourself for "low" days and lean into your natural peaks.</p>
       </div>
 
       <div style="background: rgba(173, 152, 70, 0.1); border-left: 4px solid #AD9846; padding: 16px; border-radius: 0 8px 8px 0; margin-top: 24px;">
-        <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">When to See a Doctor</h3>
-        <p style="font-size: 0.9rem; line-height: 1.5; color: #555549; margin-bottom: 0;">This tool is for your personal insight and is definitely <strong>not medical advice</strong>. You should book an appointment with a healthcare professional if you experience: bleeding between periods, pain during sex, consistently irregular cycles, abnormally heavy bleeding, or severe pain that regular over-the-counter meds can't touch. You know your body best—if something feels off, get it checked out!</p>
+        <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Important Disclaimer</h3>
+        <p style="font-size: 0.9rem; line-height: 1.5; color: #555549; margin-bottom: 0;">This tool is for educational and personal tracking purposes only and is <strong>not medical advice</strong>. If you experience sudden changes in your cycle, severe pain, unusual discharge, or any concerning symptoms, please consult a healthcare professional. Always speak with a doctor to determine the best contraception methods and testing schedules for your unique body.</p>
       </div>
     </section>
   </main>
 
   <!-- FAQ Section -->
+
   <section style="max-width: 900px; margin: 40px auto; padding: 0 20px;">
     <h2 style="font-family: 'New Standard', Georgia, serif; text-align: center; font-size: 2rem; margin-bottom: 30px;">Frequently Asked Questions</h2>
 
     <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">Why is it important to track my sexual health?</div>
-      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Tracking your sexual health, including periods, mood, energy levels, and symptoms, helps you understand your body's unique patterns. It empowers you to anticipate changes, identify potential issues early, and have more informed conversations with healthcare providers.</div>
+      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">How does tracking my cycle help my sexual health?</div>
+      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Cycle tracking allows you to anticipate hormonal fluctuations that directly impact your mood, energy levels, and libido. By understanding these patterns, you can optimize your sexual experiences and identify any irregular symptoms early on.</div>
     </div>
 
     <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">What should I track for my sexual wellness?</div>
-      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">It's beneficial to track menstruation dates, physical symptoms like cramps or bloating, mood fluctuations, energy levels, and even changes in libido. Tracking these can reveal how your cycle affects your overall well-being.</div>
+      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">How often should I get tested for STIs?</div>
+      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">For sexually active adults, testing every 6 to 12 months is generally recommended. However, if you have multiple partners, or are starting a new relationship, more frequent testing (every 3 to 6 months) is a best practice. Always consult your healthcare provider for personalized advice.</div>
     </div>
 
     <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">When should I see a doctor about my period or symptoms?</div>
-      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">You should consult a healthcare professional if you experience sudden changes in your cycle, abnormally heavy bleeding, severe pain that disrupts daily activities, bleeding between periods, or if you have concerns about unusual discharge or persistent mood changes.</div>
+      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">Is my tracking data safe and private?</div>
+      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Yes, absolutely. This tracker is built with a privacy-first approach. All your data—including your logs, contraception reminders, and communication notes—is stored locally in your browser and never leaves your device.</div>
     </div>
 
     <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">Is my data safe in this tracker?</div>
-      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Yes. This tracker is privacy-focused. All your logged data is stored locally on your device (in your browser's local storage). No information is sent to or stored on any external servers.</div>
+      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">What is a partner communication log used for?</div>
+      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">A partner communication log provides a space to document important conversations about boundaries, desires, and health statuses. Tracking these discussions helps ensure mutual understanding and builds a healthier, more transparent sexual relationship.</div>
+    </div>
+
+    <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">Can this tracker replace my doctor's advice?</div>
+      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">No. This tool is designed strictly for personal tracking and educational insights. It is not a substitute for professional medical diagnosis, advice, or treatment. Always speak with a healthcare provider regarding contraception, abnormal symptoms, or medical concerns.</div>
     </div>
   </section>
 
@@ -616,9 +700,68 @@
     let currentDisplayMonth = new Date();
     let selectedLogDateStr = null;
 
-    // Load logs from local storage
+    // Local Storage Helpers
     const getLogs = () => JSON.parse(localStorage.getItem('sexualHealthLogs')) || {};
     const saveLogs = (logs) => localStorage.setItem('sexualHealthLogs', JSON.stringify(logs));
+
+    const getSettings = () => JSON.parse(localStorage.getItem('sexualHealthSettings')) || { cycleLength: 28 };
+    const saveSettings = (settings) => localStorage.setItem('sexualHealthSettings', JSON.stringify(settings));
+
+    const getContra = () => JSON.parse(localStorage.getItem('sexualHealthContra')) || { type: 'none', time: '' };
+    const saveContra = (contra) => localStorage.setItem('sexualHealthContra', JSON.stringify(contra));
+
+    const getSTI = () => JSON.parse(localStorage.getItem('sexualHealthSTI')) || { lastTest: '', freq: '6' };
+    const saveSTI = (sti) => localStorage.setItem('sexualHealthSTI', JSON.stringify(sti));
+
+    const getPartnerLogs = () => JSON.parse(localStorage.getItem('sexualHealthPartner')) || [];
+    const savePartnerLogs = (logs) => localStorage.setItem('sexualHealthPartner', JSON.stringify(logs));
+
+    // Cycle length initialization
+    const cycleLengthInput = document.getElementById('cycle-length');
+    cycleLengthInput.value = getSettings().cycleLength || 28;
+
+    cycleLengthInput.addEventListener('change', (e) => {
+        const val = parseInt(e.target.value);
+        if (val >= 20 && val <= 45) {
+            saveSettings({ cycleLength: val });
+            renderCalendar();
+        }
+    });
+
+    const calculateOvulation = (logs, cycleLen) => {
+      // Find all period start dates (days with period:true where previous day was false)
+      const dates = Object.keys(logs).sort();
+      let startDates = [];
+
+      for(let i = 0; i < dates.length; i++) {
+        if(logs[dates[i]].period) {
+          // check if day before was logged as period
+          const curr = new Date(dates[i]);
+          const prev = new Date(curr);
+          prev.setDate(prev.getDate() - 1);
+          const prevStr = prev.toISOString().split('T')[0];
+
+          if(!logs[prevStr] || !logs[prevStr].period) {
+            startDates.push(dates[i]);
+          }
+        }
+      }
+
+      if(startDates.length === 0) return null;
+
+      // Use the most recent start date
+      const lastStart = new Date(startDates[startDates.length - 1]);
+
+      // Expected next period
+      const nextPeriod = new Date(lastStart);
+      nextPeriod.setDate(nextPeriod.getDate() + cycleLen);
+
+      // Ovulation is roughly 14 days before next period
+      const ovulation = new Date(nextPeriod);
+      ovulation.setDate(ovulation.getDate() - 14);
+
+      return ovulation.toISOString().split('T')[0];
+    };
 
     const renderCalendar = () => {
       const grid = document.getElementById('calendar-grid');
@@ -637,7 +780,10 @@
       const firstDayOfMonth = new Date(year, month, 1).getDay();
       const daysInMonth = new Date(year, month + 1, 0).getDate();
       const todayStr = new Date().toISOString().split('T')[0];
+
       const logs = getLogs();
+      const cycleLen = getSettings().cycleLength;
+      const ovulationStr = calculateOvulation(logs, cycleLen);
 
       // Empty slots for start of month
       for (let i = 0; i < firstDayOfMonth; i++) {
@@ -655,24 +801,22 @@
         dayDiv.className = 'calendar-day';
         dayDiv.textContent = i;
 
-        // Highlight today
-        if (dateStr === todayStr) {
-          dayDiv.classList.add('day-today');
+        if (dateStr === todayStr) dayDiv.classList.add('day-today');
+
+        // Check ovulation
+        if (dateStr === ovulationStr) {
+           dayDiv.style.background = '#d4e157';
         }
 
         const dayLog = logs[dateStr];
         if (dayLog) {
-          if (dayLog.period) {
-            dayDiv.classList.add('day-period');
-          }
-          if (dayLog.mood || dayLog.energy || dayLog.symptoms || dayLog.notes) {
+          if (dayLog.period) dayDiv.classList.add('day-period');
+          if (dayLog.mood || dayLog.libido || dayLog.energy || dayLog.symptoms || dayLog.notes) {
              dayDiv.classList.add('day-has-log');
           }
         }
 
-        // Click to log
         dayDiv.addEventListener('click', () => openLog(dateStr));
-
         grid.appendChild(dayDiv);
       }
     };
@@ -682,17 +826,17 @@
       const logSect = document.getElementById('logging-section');
       const dateDisplay = document.getElementById('log-date-display');
 
-      // Parse date for display avoiding timezone issues
       const dParts = dateStr.split('-');
       const d = new Date(dParts[0], dParts[1]-1, dParts[2]);
       dateDisplay.textContent = d.toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: 'numeric', year: 'numeric'});
 
       const logs = getLogs();
-      const dayLog = logs[dateStr] || { period: false, mood: '', energy: '', symptoms: '', notes: '' };
+      const dayLog = logs[dateStr] || { period: false, mood: '', libido: '', energy: '', symptoms: '', notes: '' };
 
       document.getElementById('log-period').checked = dayLog.period;
-      document.getElementById('log-mood').value = dayLog.mood;
-      document.getElementById('log-energy').value = dayLog.energy;
+      document.getElementById('log-mood').value = dayLog.mood || '';
+      document.getElementById('log-libido').value = dayLog.libido || '';
+      document.getElementById('log-energy').value = dayLog.energy || '';
       document.getElementById('log-symptoms').value = dayLog.symptoms || '';
       document.getElementById('log-notes').value = dayLog.notes || '';
 
@@ -700,7 +844,7 @@
       logSect.style.display = 'block';
     };
 
-    // Event Listeners
+    // Calendar Navigation
     document.getElementById('btn-prev-month').addEventListener('click', () => {
       currentDisplayMonth.setMonth(currentDisplayMonth.getMonth() - 1);
       renderCalendar();
@@ -715,6 +859,7 @@
       document.getElementById('logging-section').style.display = 'none';
     });
 
+    // Save Daily Log
     document.getElementById('btn-save-log').addEventListener('click', () => {
       if(!selectedLogDateStr) return;
 
@@ -722,13 +867,13 @@
       const newLog = {
         period: document.getElementById('log-period').checked,
         mood: document.getElementById('log-mood').value,
+        libido: document.getElementById('log-libido').value,
         energy: document.getElementById('log-energy').value,
         symptoms: document.getElementById('log-symptoms').value,
         notes: document.getElementById('log-notes').value.trim(),
       };
 
-      // Clear empty logs entirely to save space
-      if(!newLog.period && !newLog.mood && !newLog.energy && !newLog.symptoms && !newLog.notes) {
+      if(!newLog.period && !newLog.mood && !newLog.libido && !newLog.energy && !newLog.symptoms && !newLog.notes) {
         delete logs[selectedLogDateStr];
       } else {
         logs[selectedLogDateStr] = newLog;
@@ -737,28 +882,140 @@
       saveLogs(logs);
 
       const msg = document.getElementById('log-save-msg');
+      msg.textContent = "Saved to your browser!";
       msg.style.display = 'block';
       setTimeout(() => { msg.style.display = 'none'; }, 3000);
 
-      renderCalendar(); // re-render to update indicator dots
+      renderCalendar();
     });
 
+    // Contraception Logic
+    const initContra = () => {
+        const contra = getContra();
+        document.getElementById('contra-type').value = contra.type || 'none';
+        document.getElementById('contra-time').value = contra.time || '';
+    };
+
+    document.getElementById('btn-save-contra').addEventListener('click', () => {
+        saveContra({
+            type: document.getElementById('contra-type').value,
+            time: document.getElementById('contra-time').value
+        });
+        const msg = document.getElementById('contra-save-msg');
+        msg.style.display = 'inline';
+        setTimeout(() => msg.style.display = 'none', 3000);
+    });
+
+    // STI Logic
+    const updateSTIDisplay = () => {
+        const sti = getSTI();
+        document.getElementById('sti-last-test').value = sti.lastTest || '';
+        document.getElementById('sti-frequency').value = sti.freq || '6';
+
+        const display = document.getElementById('sti-next-test');
+        if(sti.lastTest) {
+            const d = new Date(sti.lastTest);
+            d.setMonth(d.getMonth() + parseInt(sti.freq));
+            display.textContent = d.toLocaleDateString('en-US', {month: 'long', year: 'numeric'});
+        } else {
+            display.textContent = "Not calculated yet";
+        }
+    };
+
+    document.getElementById('btn-save-sti').addEventListener('click', () => {
+        saveSTI({
+            lastTest: document.getElementById('sti-last-test').value,
+            freq: document.getElementById('sti-frequency').value
+        });
+        updateSTIDisplay();
+        const msg = document.getElementById('sti-save-msg');
+        msg.style.display = 'inline';
+        setTimeout(() => msg.style.display = 'none', 3000);
+    });
+
+    // Partner Communication Log
+    const renderPartnerLogs = () => {
+        const logs = getPartnerLogs();
+        const container = document.getElementById('partner-log-history');
+        container.innerHTML = '';
+
+        if(logs.length === 0) {
+            container.innerHTML = '<p style="color:#8a8a7a; font-size:0.9rem;">No entries yet.</p>';
+            return;
+        }
+
+        // Sort newest first
+        [...logs].reverse().forEach((log, index) => {
+            const div = document.createElement('div');
+            div.style.padding = '10px';
+            div.style.background = '#FAF8EB';
+            div.style.borderRadius = '8px';
+            div.style.border = '1px solid #C6C8BB';
+
+            const header = document.createElement('div');
+            header.style.display = 'flex';
+            header.style.justifyContent = 'space-between';
+            header.style.marginBottom = '5px';
+            header.innerHTML = `<span style="font-weight:bold; font-size:0.85rem;">${log.date}</span>`;
+
+            const btnDelete = document.createElement('button');
+            btnDelete.innerHTML = '&times;';
+            btnDelete.style.background = 'none';
+            btnDelete.style.border = 'none';
+            btnDelete.style.cursor = 'pointer';
+            btnDelete.style.color = '#8a8a7a';
+
+            // Need actual index from original array to delete
+            const origIndex = logs.length - 1 - index;
+            btnDelete.onclick = () => {
+                logs.splice(origIndex, 1);
+                savePartnerLogs(logs);
+                renderPartnerLogs();
+            };
+            header.appendChild(btnDelete);
+
+            const text = document.createElement('p');
+            text.style.margin = '0';
+            text.style.fontSize = '0.9rem';
+            text.textContent = log.text;
+
+            div.appendChild(header);
+            div.appendChild(text);
+            container.appendChild(div);
+        });
+    };
+
+    document.getElementById('btn-add-partner-log').addEventListener('click', () => {
+        const text = document.getElementById('partner-log-entry').value.trim();
+        if(!text) return;
+
+        const logs = getPartnerLogs();
+        logs.push({
+            date: new Date().toLocaleDateString('en-US'),
+            text: text
+        });
+        savePartnerLogs(logs);
+        document.getElementById('partner-log-entry').value = '';
+        renderPartnerLogs();
+    });
+
+    // Export Logic
     document.getElementById('btn-export-csv').addEventListener('click', () => {
       const logs = getLogs();
       const dates = Object.keys(logs).sort();
 
       if (dates.length === 0) {
-        alert("You haven't logged any data yet.");
+        alert("You haven't logged any daily data yet.");
         return;
       }
 
-      let csvContent = "Date,Period,Mood,Energy,Symptoms,Notes\n";
+      let csvContent = "Date,Period,Mood,Libido,Energy,Symptoms,Notes\n";
 
       dates.forEach(date => {
         const d = logs[date];
-        // Escape quotes in notes
         const notes = d.notes ? `"${d.notes.replace(/"/g, '""')}"` : "";
-        csvContent += `${date},${d.period},${d.mood},${d.energy},${d.symptoms},${notes}\n`;
+        csvContent += `${date},${d.period},${d.mood || ''},${d.libido || ''},${d.energy || ''},${d.symptoms || ''},${notes}
+`;
       });
 
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
@@ -792,9 +1049,17 @@
       }
     });
 
-    // Initial render
+    // Init
     renderCalendar();
+    initContra();
+    updateSTIDisplay();
+    renderPartnerLogs();
   });
 </script>
+
+<script src="newsletter-bar.js" defer></script>
+<script src="email-capture.js" defer></script>
+<script src="back-to-top.js" defer></script>
+
 </body>
 </html>
