@@ -247,16 +247,21 @@
       border-color: #2E3E24;
     }
 
-    .likert-option input[type="radio"]:checked::after {
+    .likert-option input[type="radio"]::before {
       content: '';
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) scale(0);
       width: 10px;
       height: 10px;
       background: #2E3E24;
       border-radius: 50%;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .likert-option input[type="radio"]:checked::before {
+      transform: translate(-50%, -50%) scale(1);
     }
 
     .likert-label {
@@ -454,11 +459,10 @@
     </button>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
-      <li><a href="/blog/">Blog</a></li>
       <li><a href="/about.html">About</a></li>
-      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/blog/">Blog</a></li>
       <li><a href="/open-and-honest.html">Course</a></li>
-      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+      <li><a href="/reads.html">Reads</a></li>
     </ul>
   </nav>
 
@@ -599,33 +603,35 @@
         { id: 'c2', text: 'I can easily tell my partner when something doesn\'t feel good during sex.' },
         { id: 'c3', text: 'I enjoy giving and receiving feedback about our sex life outside of the bedroom.' },
         { id: 'c4', text: 'I feel safe sharing my deepest sexual fantasies without fear of judgment.' },
-        { id: 'c5', text: 'During sex, I am vocal about what feels good (e.g., moaning, giving directions).' }
+        { id: 'c5', text: 'I am clear about my hard boundaries and feel confident enforcing them.' }
       ],
       libido: [
         { id: 'l1', text: 'I generally desire sexual intimacy several times a week.' },
         { id: 'l2', text: 'If my partner initiates, I can usually get in the mood even if I didn\'t start out feeling sexual.' },
         { id: 'l3', text: 'I consider myself to have a high sex drive.' },
-        { id: 'l4', text: 'I am satisfied with quickies as a form of sexual connection when time is short.' }
+        { id: 'l4', text: 'I am satisfied with quickies as a form of sexual connection when time is short.' },
+        { id: 'l5', text: 'I prefer to have a predictable routine or schedule for sexual intimacy.' }
       ],
       intimacy: [
         { id: 'i1', text: 'I need extensive foreplay (more than 15 mins) before intercourse.' },
         { id: 'i2', text: 'Physical affection outside of the bedroom (cuddling, kissing) is essential to my sexual arousal.' },
         { id: 'i3', text: 'I prefer sex to be a deeply romantic, slow, and passionate experience.' },
         { id: 'i4', text: 'Eye contact during sex is very important to me.' },
-        { id: 'i5', text: 'I consider non-penetrative acts (oral, mutual masturbation) to be "real" sex.' },
-        { id: 'i6', text: 'Aftercare (cuddling, talking after sex) is just as important as the act itself.' }
+        { id: 'i5', text: 'Aftercare (cuddling, talking after sex) is just as important as the act itself.' }
       ],
       adventure: [
         { id: 'a1', text: 'I am highly interested in trying new positions, toys, or locations for sex.' },
         { id: 'a2', text: 'I enjoy incorporating power dynamics (dominance/submission) into our play.' },
         { id: 'a3', text: 'I would be open to exploring mild BDSM or kink elements.' },
-        { id: 'a4', text: 'Watching porn or reading erotica together sounds appealing to me.' }
+        { id: 'a4', text: 'Watching porn or reading erotica together sounds appealing to me.' },
+        { id: 'a5', text: 'I frequently fantasize about engaging in group sex, non-monogamy, or swinging.' }
       ],
       emotional: [
         { id: 'e1', text: 'I need to feel emotionally connected and secure with my partner to enjoy sex.' },
         { id: 'e2', text: 'An argument or tension in the relationship significantly lowers my sex drive.' },
         { id: 'e3', text: 'For me, sex is the primary way I feel loved and emotionally close to my partner.' },
-        { id: 'e4', text: 'I find it difficult to separate my emotional feelings from physical arousal.' }
+        { id: 'e4', text: 'I find it difficult to separate my emotional feelings from physical arousal.' },
+        { id: 'e5', text: 'I feel most connected to my partner after we share a deeply vulnerable conversation.' }
       ]
     };
 
@@ -883,18 +889,45 @@
         document.getElementById('submit-btn').textContent = "Calculate Couples Match";
         window.scrollTo(0, document.getElementById('calculator-form-container').offsetTop - 50);
       } else {
+        // Save to localStorage
+        const resultData = {
+          mode: mode,
+          user1Scores: user1Scores,
+          user2Scores: user2Scores
+        };
+        localStorage.setItem('sexualCompatibilityResults', JSON.stringify(resultData));
+
         // Done, show results
         showResults();
       }
     });
 
+
     function resetCalculator() {
+      localStorage.removeItem('sexualCompatibilityResults');
+      user1Scores = {};
+      user2Scores = {};
       document.getElementById('calculator-results').style.display = 'none';
       document.getElementById('calculator-setup').style.display = 'block';
     }
 
     document.addEventListener('DOMContentLoaded', () => {
       populateQuestions();
+
+      const savedResults = localStorage.getItem('sexualCompatibilityResults');
+      if (savedResults) {
+        try {
+          const parsed = JSON.parse(savedResults);
+          mode = parsed.mode;
+          user1Scores = parsed.user1Scores;
+          user2Scores = parsed.user2Scores || {};
+
+          document.getElementById('calculator-setup').style.display = 'none';
+          showResults();
+        } catch (e) {
+          console.error("Error parsing saved results", e);
+        }
+      }
     });
 
   </script>
@@ -940,5 +973,8 @@
   </footer>
 
   <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
 </body>
 </html>
