@@ -1,0 +1,6 @@
+grep -q '<title>How to Talk to Your Kids About Sex' blog/how-to-talk-to-kids-about-sex.html && echo "Title OK" || echo "Title FAIL"
+grep -q '<meta name="description"' blog/how-to-talk-to-kids-about-sex.html && echo "Meta Description OK" || echo "Meta Description FAIL"
+grep -q '<link rel="canonical"' blog/how-to-talk-to-kids-about-sex.html && echo "Canonical OK" || echo "Canonical FAIL"
+grep -q 'og:title' blog/how-to-talk-to-kids-about-sex.html && echo "OG Title OK" || echo "OG Title FAIL"
+grep -q '@type": "Article"' blog/how-to-talk-to-kids-about-sex.html && echo "Article Schema OK" || echo "Article Schema FAIL"
+grep -q '@type": "FAQPage"' blog/how-to-talk-to-kids-about-sex.html && echo "FAQ Schema OK" || echo "FAQ Schema FAIL"
