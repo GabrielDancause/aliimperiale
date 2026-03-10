@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vulva & Penis Anatomy Quiz | Ali Imperiale</title>
+  <meta name="description" content="Test your knowledge of sexual anatomy with this interactive, educational quiz. Learn about the vulva, penis, their functions, and common myths vs. facts.">
+  <link rel="stylesheet" href="/shared.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .site-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #FAF8EB;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2E3E24;
+      font-weight: 500;
+    }
+    .nav-links a.active {
+      font-weight: 700;
+      border-bottom: 2px solid #AD9846;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      color: #AD9846;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Quiz UI */
+    .quiz-container {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    .setup-screen, .quiz-screen, .result-screen {
+      display: none;
+    }
+
+    .setup-screen.active, .quiz-screen.active, .result-screen.active {
+      display: block;
+    }
+
+    .level-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .level-card {
+      border: 2px solid #e8e4d4;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .level-card:hover, .level-card.selected {
+      border-color: #AD9846;
+      background-color: rgba(173, 152, 70, 0.05);
+    }
+
+    .btn {
+      background-color: #2E3E24;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 1rem;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #1a2414;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid #2E3E24;
+      color: #2E3E24;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(46, 62, 36, 0.05);
+    }
+
+    /* Quiz Screen Elements */
+    .progress-bar {
+      height: 8px;
+      background-color: #e8e4d4;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #AD9846;
+    }
+
+    .question-text {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    /* Options styling */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      border: 2px solid #e8e4d4;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .option-label:hover {
+      background-color: rgba(173, 152, 70, 0.05);
+      border-color: #AD9846;
+    }
+
+    .option-input {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #2E3E24;
+      border-radius: 50%;
+      margin-right: 15px;
+      position: relative;
+    }
+
+    .option-input::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 10px;
+      height: 10px;
+      background-color: #2E3E24;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+
+    .option-input:checked::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .option-label.correct {
+      border-color: #4CAF50;
+      background-color: rgba(76, 175, 80, 0.1);
+    }
+
+    .option-label.incorrect {
+      border-color: #F44336;
+      background-color: rgba(244, 67, 54, 0.1);
+    }
+
+    /* SVG Diagrams */
+    .diagram-container {
+      text-align: center;
+      margin: 20px 0;
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .anatomy-svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .hotspot {
+      cursor: pointer;
+      transition: fill 0.3s;
+    }
+
+    .hotspot:hover {
+      fill: #AD9846 !important;
+      opacity: 0.8;
+    }
+
+    /* Feedback Section */
+    .feedback-box {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .feedback-box.visible {
+      display: block;
+    }
+
+    .feedback-box.success {
+      background-color: rgba(76, 175, 80, 0.1);
+      border-left: 4px solid #4CAF50;
+    }
+
+    .feedback-box.error {
+      background-color: rgba(244, 67, 54, 0.1);
+      border-left: 4px solid #F44336;
+    }
+
+    .hint-btn {
+      background: none;
+      border: none;
+      color: #AD9846;
+      text-decoration: underline;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .hint-box {
+      display: none;
+      margin-top: 10px;
+      padding: 15px;
+      background-color: #fff9e6;
+      border: 1px dashed #AD9846;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    /* Results Screen */
+    .score-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 8px solid #AD9846;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 30px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2E3E24;
+    }
+
+    .score-circle span {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .results-summary {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .certificate-container {
+      margin-top: 30px;
+      text-align: center;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    canvas#certCanvas {
+      display: none;
+    }
+
+    /* Myths vs Facts */
+    .myth-fact-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-left: 4px solid #AD9846;
+    }
+
+    .myth-fact-card h4 {
+      margin-top: 0;
+      color: #2E3E24;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      font-size: 0.85rem;
+      color: #666;
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    /* History Actions */
+    .history-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav { padding: 15px 20px; }
+      .nav-links { display: none; } /* Handled by mobile-nav.js */
+      .header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <header class="header">
+      <h1>Vulva & Penis Anatomy Quiz</h1>
+      <p>Test your knowledge, bust some common myths, and learn about sexual anatomy in a shame-free, educational environment.</p>
+    </header>
+
+    <div class="history-actions" id="historyActions" style="display: none;">
+      <button class="btn btn-secondary" id="resumeBtn">Resume Previous Quiz</button>
+      <button class="btn btn-secondary" id="clearHistoryBtn" style="margin-left: 10px;">Clear Progress</button>
+    </div>
+
+    <div class="quiz-container">
+      <!-- Setup Screen -->
+      <div id="setupScreen" class="setup-screen active">
+        <h2>Choose Your Difficulty Level</h2>
+        <p>Whether you're just starting your educational journey or you're an anatomy nerd, there's a level for you!</p>
+
+        <div class="level-selector">
+          <div class="level-card" data-level="basic">
+            <h3>Basic</h3>
+            <p>External anatomy and fundamental functions.</p>
+          </div>
+          <div class="level-card" data-level="intermediate">
+            <h3>Intermediate</h3>
+            <p>Internal structures and detailed functions.</p>
+          </div>
+          <div class="level-card" data-level="advanced">
+            <h3>Advanced</h3>
+            <p>Deep dive into homologous structures and complex functions.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 30px; display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="learningMode" checked>
+          <label for="learningMode">Enable Learning Mode (Hints & Detailed Explanations)</label>
+        </div>
+
+        <button id="startBtn" class="btn" style="width: 100%; margin-top: 30px;" disabled>Start Quiz</button>
+      </div>
+
+      <!-- Quiz Screen -->
+      <div id="quizScreen" class="quiz-screen">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="question-header">
+          <span id="levelIndicator">Basic Level</span>
+          <span id="questionCounter">Question 1 of 10</span>
+        </div>
+
+        <h3 class="question-text" id="questionText">Loading question...</h3>
+
+        <div id="diagramContainer" class="diagram-container" style="display: none;">
+          <!-- SVG injected via JS -->
+        </div>
+
+        <div class="options-grid" id="optionsGrid">
+          <!-- Options injected via JS -->
+        </div>
+
+        <div id="hintContainer" style="display: none;">
+          <button class="hint-btn" id="showHintBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+            Need a hint?
+          </button>
+          <div class="hint-box" id="hintBox"></div>
+        </div>
+
+        <div class="feedback-box" id="feedbackBox">
+          <h4 id="feedbackTitle" style="margin-top: 0;"></h4>
+          <p id="feedbackText"></p>
+        </div>
+
+        <div class="controls">
+          <button id="submitAnswerBtn" class="btn" disabled>Submit Answer</button>
+          <button id="nextQuestionBtn" class="btn" style="display: none;">Next Question</button>
+        </div>
+      </div>
+
+      <!-- Result Screen -->
+      <div id="resultScreen" class="result-screen">
+        <div class="score-circle">
+          <div id="finalScore">0%</div>
+          <span>Score</span>
+        </div>
+
+        <div class="results-summary">
+          <h2 id="resultTitle">Quiz Complete!</h2>
+          <p id="resultMessage"></p>
+        </div>
+
+        <div class="myth-fact-container">
+          <h3>Myth vs. Fact Takeaways</h3>
+          <p>Based on your quiz, here are some important educational notes:</p>
+          <div id="takeawaysList">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <div class="certificate-container">
+          <h3>Claim Your Certificate</h3>
+          <p>Enter your name to generate an educational certificate of completion.</p>
+          <div style="display: flex; gap: 10px; max-width: 400px; margin: 0 auto; margin-bottom: 20px;">
+            <input type="text" id="certName" placeholder="Your Name" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <button id="generateCertBtn" class="btn" style="margin: 0;">Generate</button>
+          </div>
+          <canvas id="certCanvas" width="800" height="600"></canvas>
+          <a id="downloadCertBtn" class="btn" style="display: none; margin: 0 auto;">Download Certificate</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <button id="retakeBtn" class="btn btn-secondary">Retake Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section with Schema -->
+    <section class="faq-section" style="margin-top: 60px;">
+      <h2>Frequently Asked Questions About Sexual Anatomy</h2>
+
+      <div class="myth-fact-card">
+        <h4>Why is it important to use correct anatomical terms?</h4>
+        <p>Using accurate terms (like vulva instead of vagina when referring to external genitals) helps reduce shame, improves communication with partners and healthcare providers, and promotes a better understanding of our own bodies and pleasure.</p>
+      </div>
+
+      <div class="myth-fact-card">
+        <h4>What is the difference between the vulva and the vagina?</h4>
+        <p>The vulva refers to all the external female genital organs (including the labia, clitoris, vaginal opening, and urethral opening). The vagina is the internal muscular canal that connects the vulva to the cervix.</p>
+      </div>
+
+      <div class="myth-fact-card">
+        <h4>Are male and female sexual anatomies completely different?</h4>
+        <p>Actually, they develop from the same embryonic tissues! Many structures are homologous. For example, the clitoris and the glans penis develop from the same tissue, as do the labia majora and the scrotum.</p>
+      </div>
+    </section>
+
+    <div class="disclaimer">
+      <strong>Educational Disclaimer:</strong> This quiz is for educational purposes only and should not be considered medical advice. If you have specific questions or concerns about your sexual health, anatomy, or experiencing pain, please consult with a qualified healthcare professional.
+    </div>
+  </main>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Why is it important to use correct anatomical terms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Using accurate terms (like vulva instead of vagina when referring to external genitals) helps reduce shame, improves communication with partners and healthcare providers, and promotes a better understanding of our own bodies and pleasure."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the difference between the vulva and the vagina?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The vulva refers to all the external female genital organs (including the labia, clitoris, vaginal opening, and urethral opening). The vagina is the internal muscular canal that connects the vulva to the cervix."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Are male and female sexual anatomies completely different?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Actually, they develop from the same embryonic tissues! Many structures are homologous. For example, the clitoris and the glans penis develop from the same tissue, as do the labia majora and the scrotum."
+        }
+      }]
+    }
+  </script>
+
+  <script src="/consent.js" defer></script>
+  <script src="/mobile-nav.js" defer></script>
+  <script src="/newsletter-bar.js" defer></script>
+  <script src="/email-capture.js" defer></script>
+  <script src="/back-to-top.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const STORAGE_KEY = 'ali_sexual_anatomy_quiz_state';
+
+      // Quiz Data
+      const quizDatabase = {
+        basic: [
+          {
+            id: "b1",
+            question: "Which of the following describes the vulva?",
+            options: [
+              "The internal reproductive organs",
+              "The external female genitalia",
+              "The canal leading to the cervix",
+              "The ovaries and fallopian tubes"
+            ],
+            correctIndex: 1,
+            hint: "Think about what is visible on the outside of the body.",
+            explanation: "The vulva is the collective term for the external female genitals, including the mons pubis, labia majora, labia minora, clitoris, and the vaginal and urethral openings. The vagina is the internal canal.",
+            mythFact: { type: "Myth", text: "Myth: The terms 'vulva' and 'vagina' mean the same thing. Fact: The vulva is external, the vagina is internal." }
+          },
+          {
+            id: "b2",
+            question: "Identify the highlighted structure below.",
+            hasDiagram: true,
+            diagramType: "vulva",
+            highlightArea: "clitoris",
+            options: [
+              "Urethra",
+              "Vaginal Opening",
+              "Clitoris (Glans)",
+              "Labia Minora"
+            ],
+            correctIndex: 2,
+            hint: "It's located at the top where the inner labia meet.",
+            explanation: "The highlighted area is the glans of the clitoris, a highly sensitive organ primarily dedicated to sexual pleasure.",
+            mythFact: { type: "Fact", text: "Fact: The clitoris is much larger than just the visible glans; it has internal 'legs' and 'bulbs' that wrap around the vaginal canal." }
+          },
+          {
+            id: "b3",
+            question: "What is the primary function of the scrotum?",
+            options: [
+              "To produce sperm",
+              "To regulate the temperature of the testicles",
+              "To produce testosterone",
+              "To carry urine"
+            ],
+            correctIndex: 1,
+            hint: "Sperm need a specific temperature to survive.",
+            explanation: "The scrotum is a sac of skin that holds and protects the testicles, moving them closer to or further from the body to maintain an ideal temperature for sperm production (slightly cooler than body temperature).",
+            mythFact: { type: "Myth", text: "Myth: Tight underwear causes permanent infertility. Fact: While it can temporarily reduce sperm count due to heat, it's usually not permanent." }
+          }
+        ],
+        intermediate: [
+          {
+            id: "i1",
+            question: "The clitoris and the glans penis develop from the same embryonic tissue. This means they are:",
+            options: [
+              "Identical structures",
+              "Homologous structures",
+              "Analogous structures",
+              "Unrelated structures"
+            ],
+            correctIndex: 1,
+            hint: "It starts with an 'H'. They have a shared origin.",
+            explanation: "They are homologous structures. Because they develop from the same embryonic tissue, they share many similarities, including high concentrations of nerve endings and erectile tissue.",
+            mythFact: { type: "Fact", text: "Fact: Both the clitoris and the penis become engorged with blood during sexual arousal." }
+          },
+          {
+            id: "i2",
+            question: "Identify the structure responsible for adding fluid to semen, located just below the bladder.",
+            hasDiagram: true,
+            diagramType: "penis_internal",
+            highlightArea: "prostate",
+            options: [
+              "Epididymis",
+              "Prostate Gland",
+              "Seminal Vesicle",
+              "Vas Deferens"
+            ],
+            correctIndex: 1,
+            hint: "It's often referred to as the 'P-spot' when stimulated internally.",
+            explanation: "The prostate gland produces fluid that makes up a significant portion of semen and helps nourish and transport sperm.",
+            mythFact: { type: "Fact", text: "Fact: The prostate can be a source of immense pleasure for many people when stimulated." }
+          },
+          {
+            id: "i3",
+            question: "What is the function of the Bartholin's glands?",
+            options: [
+              "They produce eggs.",
+              "They secrete fluid to help lubricate the vulva/vagina during arousal.",
+              "They regulate menstrual cycles.",
+              "They produce estrogen."
+            ],
+            correctIndex: 1,
+            hint: "Think about natural lubrication.",
+            explanation: "Located slightly below and to the left and right of the vaginal opening, Bartholin's glands secrete mucus to provide vaginal lubrication during sexual arousal.",
+            mythFact: { type: "Myth", text: "Myth: If someone isn't wet, they aren't aroused. Fact: Arousal non-concordance is common; lubrication levels don't always match mental arousal." }
+          }
+        ],
+        advanced: [
+          {
+            id: "a1",
+            question: "Which erectile structures form the 'legs' of the clitoris, extending internally along the pubic bone?",
+            options: [
+              "Corpus spongiosum",
+              "Vestibular bulbs",
+              "Crura (Corpora cavernosa)",
+              "Labia majora"
+            ],
+            correctIndex: 2,
+            hint: "These are also present in the penis.",
+            explanation: "The crura (plural of crus) are the 'legs' of the clitoris, made of corpora cavernosa tissue that engorges with blood during arousal.",
+            mythFact: { type: "Fact", text: "Fact: The entire clitoral structure is roughly the shape and size of a small wishbone or a small orchid." }
+          },
+          {
+            id: "a2",
+            question: "In people with penises, what prevents urine from mixing with semen during ejaculation?",
+            options: [
+              "The prostate swells to block the bladder.",
+              "An internal sphincter muscle at the base of the bladder closes tightly.",
+              "The Cowper's gland neutralizes the urine.",
+              "Urine and semen travel through completely different tubes."
+            ],
+            correctIndex: 1,
+            hint: "It involves a muscle clamping down.",
+            explanation: "During arousal and ejaculation, the internal urethral sphincter closes to prevent urine from entering the urethra and to prevent semen from entering the bladder (retrograde ejaculation).",
+            mythFact: { type: "Fact", text: "Fact: The urethra is a shared pathway for both urine and semen, but not usually at the same time." }
+          },
+          {
+            id: "a3",
+            question: "What is the Skene's gland homologous to?",
+            options: [
+              "Cowper's Gland",
+              "Seminal Vesicles",
+              "Prostate Gland",
+              "Testicles"
+            ],
+            correctIndex: 2,
+            hint: "It's sometimes called the 'female prostate'.",
+            explanation: "The Skene's glands (paraurethral glands) are homologous to the prostate gland. They are located near the urethra and are associated with female ejaculation or 'squirting' in some individuals.",
+            mythFact: { type: "Fact", text: "Fact: The fluid released from Skene's glands during arousal or orgasm is chemically similar to prostate fluid." }
+          }
+        ]
+      };
+
+      // State
+      let state = {
+        level: null,
+        learningMode: true,
+        currentQuestionIndex: 0,
+        score: 0,
+        answers: [], // Stores { questionId, isCorrect, mythFact }
+        completed: false
+      };
+
+      // DOM Elements
+      const setupScreen = document.getElementById('setupScreen');
+      const quizScreen = document.getElementById('quizScreen');
+      const resultScreen = document.getElementById('resultScreen');
+
+      const levelCards = document.querySelectorAll('.level-card');
+      const learningModeCheckbox = document.getElementById('learningMode');
+      const startBtn = document.getElementById('startBtn');
+      const resumeBtn = document.getElementById('resumeBtn');
+      const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+      const historyActions = document.getElementById('historyActions');
+
+      const progressFill = document.getElementById('progressFill');
+      const levelIndicator = document.getElementById('levelIndicator');
+      const questionCounter = document.getElementById('questionCounter');
+      const questionText = document.getElementById('questionText');
+      const diagramContainer = document.getElementById('diagramContainer');
+      const optionsGrid = document.getElementById('optionsGrid');
+      const submitAnswerBtn = document.getElementById('submitAnswerBtn');
+      const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+
+      const hintContainer = document.getElementById('hintContainer');
+      const showHintBtn = document.getElementById('showHintBtn');
+      const hintBox = document.getElementById('hintBox');
+      const feedbackBox = document.getElementById('feedbackBox');
+      const feedbackTitle = document.getElementById('feedbackTitle');
+      const feedbackText = document.getElementById('feedbackText');
+
+      const finalScore = document.getElementById('finalScore');
+      const resultMessage = document.getElementById('resultMessage');
+      const takeawaysList = document.getElementById('takeawaysList');
+      const retakeBtn = document.getElementById('retakeBtn');
+
+      const certNameInput = document.getElementById('certName');
+      const generateCertBtn = document.getElementById('generateCertBtn');
+      const downloadCertBtn = document.getElementById('downloadCertBtn');
+      const certCanvas = document.getElementById('certCanvas');
+
+      // Initialization
+      function init() {
+        checkSavedState();
+
+        // Event Listeners
+        levelCards.forEach(card => {
+          card.addEventListener('click', () => {
+            levelCards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            state.level = card.dataset.level;
+            startBtn.disabled = false;
+          });
+        });
+
+        startBtn.addEventListener('click', startQuiz);
+        resumeBtn.addEventListener('click', resumeQuiz);
+        clearHistoryBtn.addEventListener('click', clearHistory);
+
+        submitAnswerBtn.addEventListener('click', submitAnswer);
+        nextQuestionBtn.addEventListener('click', nextQuestion);
+        showHintBtn.addEventListener('click', () => {
+          hintBox.style.display = 'block';
+          showHintBtn.style.display = 'none';
+        });
+
+        retakeBtn.addEventListener('click', resetQuiz);
+        generateCertBtn.addEventListener('click', generateCertificate);
+      }
+
+      function checkSavedState() {
+        const savedState = localStorage.getItem(STORAGE_KEY);
+        if (savedState) {
+          try {
+            const parsed = JSON.parse(savedState);
+            if (!parsed.completed && parsed.level) {
+              historyActions.style.display = 'flex';
+            }
+          } catch (e) {
+            console.error("Error parsing saved state");
+          }
+        }
+      }
+
+      function saveState() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      }
+
+      function clearHistory() {
+        localStorage.removeItem(STORAGE_KEY);
+        historyActions.style.display = 'none';
+        resetQuiz();
+      }
+
+      function startQuiz() {
+        state.learningMode = learningModeCheckbox.checked;
+        state.currentQuestionIndex = 0;
+        state.score = 0;
+        state.answers = [];
+        state.completed = false;
+
+        saveState();
+        loadQuestionScreen();
+      }
+
+      function resumeQuiz() {
+        const savedState = localStorage.getItem(STORAGE_KEY);
+        if (savedState) {
+          state = JSON.parse(savedState);
+          loadQuestionScreen();
+        }
+      }
+
+      function resetQuiz() {
+        state = { level: null, learningMode: true, currentQuestionIndex: 0, score: 0, answers: [], completed: false };
+        levelCards.forEach(c => c.classList.remove('selected'));
+        startBtn.disabled = true;
+
+        setupScreen.classList.add('active');
+        quizScreen.classList.remove('active');
+        resultScreen.classList.remove('active');
+        historyActions.style.display = 'none';
+
+        certNameInput.value = '';
+        downloadCertBtn.style.display = 'none';
+      }
+
+      function loadQuestionScreen() {
+        setupScreen.classList.remove('active');
+        resultScreen.classList.remove('active');
+        quizScreen.classList.add('active');
+        historyActions.style.display = 'none';
+
+        renderQuestion();
+      }
+
+      // SVG Generation
+      function getDiagramSVG(type, highlightArea) {
+        if (type === 'vulva') {
+          // Geometric abstract vulva representation
+          const clitColor = highlightArea === 'clitoris' ? '#AD9846' : '#2E3E24';
+          const labiaColor = highlightArea === 'labia' ? '#AD9846' : 'none';
+          return `
+            <svg viewBox="0 0 200 250" class="anatomy-svg" width="200" height="250">
+              <!-- Labia Majora -->
+              <path d="M100 20 C60 50, 40 120, 100 220 C160 120, 140 50, 100 20 Z" fill="${labiaColor}" stroke="#2E3E24" stroke-width="3" />
+              <!-- Labia Minora -->
+              <path d="M100 60 C80 90, 75 140, 100 180 C125 140, 120 90, 100 60 Z" fill="none" stroke="#2E3E24" stroke-width="2" />
+              <!-- Clitoris Glans -->
+              <circle cx="100" cy="70" r="8" fill="${clitColor}" />
+              <!-- Urethra -->
+              <circle cx="100" cy="100" r="4" fill="#2E3E24" />
+              <!-- Vaginal Opening -->
+              <ellipse cx="100" cy="135" rx="10" ry="20" fill="#2E3E24" />
+            </svg>
+          `;
+        } else if (type === 'penis_internal') {
+           // Geometric abstract penis/internal representation
+           const prostateColor = highlightArea === 'prostate' ? '#AD9846' : 'none';
+           return `
+            <svg viewBox="0 0 200 250" class="anatomy-svg" width="200" height="250">
+              <!-- Bladder -->
+              <circle cx="100" cy="60" r="30" fill="none" stroke="#2E3E24" stroke-width="3" />
+              <!-- Prostate -->
+              <ellipse cx="100" cy="105" rx="20" ry="15" fill="${prostateColor}" stroke="#2E3E24" stroke-width="3" />
+              <!-- Urethra -->
+              <line x1="100" y1="90" x2="100" y2="200" stroke="#2E3E24" stroke-width="4" />
+              <!-- Seminal Vesicle -->
+              <path d="M130 70 C140 60, 150 80, 120 100" fill="none" stroke="#2E3E24" stroke-width="4" stroke-linecap="round" />
+            </svg>
+          `;
+        }
+        return '';
+      }
+
+      function renderQuestion() {
+        const questions = quizDatabase[state.level];
+        const q = questions[state.currentQuestionIndex];
+
+        // Update Progress & Headers
+        progressFill.style.width = `${((state.currentQuestionIndex) / questions.length) * 100}%`;
+        levelIndicator.textContent = state.level.charAt(0).toUpperCase() + state.level.slice(1) + ' Level';
+        questionCounter.textContent = `Question ${state.currentQuestionIndex + 1} of ${questions.length}`;
+
+        // Reset UI
+        questionText.textContent = q.question;
+        submitAnswerBtn.style.display = 'block';
+        submitAnswerBtn.disabled = true;
+        nextQuestionBtn.style.display = 'none';
+
+        feedbackBox.classList.remove('visible', 'success', 'error');
+        hintBox.style.display = 'none';
+
+        if (state.learningMode && q.hint) {
+          hintContainer.style.display = 'block';
+          showHintBtn.style.display = 'flex';
+          hintBox.textContent = "Hint: " + q.hint;
+        } else {
+          hintContainer.style.display = 'none';
+        }
+
+        // Render Diagram if applicable
+        if (q.hasDiagram) {
+          diagramContainer.style.display = 'block';
+          diagramContainer.innerHTML = getDiagramSVG(q.diagramType, q.highlightArea);
+        } else {
+          diagramContainer.style.display = 'none';
+          diagramContainer.innerHTML = '';
+        }
+
+        // Render Options
+        optionsGrid.innerHTML = '';
+        q.options.forEach((opt, index) => {
+          const label = document.createElement('label');
+          label.className = 'option-label';
+
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = 'quiz-option';
+          input.value = index;
+          input.className = 'option-input';
+
+          input.addEventListener('change', () => {
+            submitAnswerBtn.disabled = false;
+          });
+
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(opt));
+          optionsGrid.appendChild(label);
+        });
+      }
+
+      function submitAnswer() {
+        const questions = quizDatabase[state.level];
+        const q = questions[state.currentQuestionIndex];
+
+        const selectedInput = document.querySelector('input[name="quiz-option"]:checked');
+        if (!selectedInput) return;
+
+        const selectedIndex = parseInt(selectedInput.value);
+        const isCorrect = selectedIndex === q.correctIndex;
+
+        // Style Options
+        const labels = document.querySelectorAll('.option-label');
+        labels.forEach((label, idx) => {
+          label.style.pointerEvents = 'none'; // Disable changing answer
+          const input = label.querySelector('input');
+          input.disabled = true;
+
+          if (idx === q.correctIndex) {
+            label.classList.add('correct');
+          } else if (idx === selectedIndex && !isCorrect) {
+            label.classList.add('incorrect');
+          }
+        });
+
+        // Update State
+        if (isCorrect) state.score++;
+        state.answers.push({
+          questionId: q.id,
+          isCorrect: isCorrect,
+          mythFact: q.mythFact
+        });
+
+        // Show Feedback
+        feedbackBox.classList.remove('success', 'error');
+        feedbackBox.classList.add('visible', isCorrect ? 'success' : 'error');
+        feedbackTitle.textContent = isCorrect ? 'Correct!' : 'Not Quite.';
+
+        let feedbackHtml = '';
+        if (state.learningMode && q.explanation) {
+            feedbackHtml += `<p><strong>Explanation:</strong> ${q.explanation}</p>`;
+        }
+        feedbackText.innerHTML = feedbackHtml;
+
+        // Toggle Buttons
+        submitAnswerBtn.style.display = 'none';
+        nextQuestionBtn.style.display = 'block';
+
+        // If it's the last question, change next button text
+        if (state.currentQuestionIndex === questions.length - 1) {
+          nextQuestionBtn.textContent = 'See Results';
+        }
+
+        saveState();
+      }
+
+      function nextQuestion() {
+        const questions = quizDatabase[state.level];
+        if (state.currentQuestionIndex < questions.length - 1) {
+          state.currentQuestionIndex++;
+          saveState();
+          renderQuestion();
+        } else {
+          showResults();
+        }
+      }
+
+      function showResults() {
+        state.completed = true;
+        saveState();
+
+        quizScreen.classList.remove('active');
+        resultScreen.classList.add('active');
+
+        const questions = quizDatabase[state.level];
+        const percentage = Math.round((state.score / questions.length) * 100);
+
+        finalScore.innerHTML = `${percentage}%<span>Score</span>`;
+
+        if (percentage >= 80) {
+          resultMessage.textContent = "Excellent! You have a strong grasp of sexual anatomy.";
+        } else if (percentage >= 50) {
+          resultMessage.textContent = "Good job! You've learned some key facts, but there's room to grow.";
+        } else {
+          resultMessage.textContent = "Great start on your learning journey! Consider retaking the quiz to reinforce these concepts.";
+        }
+
+        // Render Myth/Fact Takeaways
+        takeawaysList.innerHTML = '';
+        const uniqueTakeaways = [];
+        state.answers.forEach(ans => {
+            if(ans.mythFact && !uniqueTakeaways.some(t => t.text === ans.mythFact.text)){
+                uniqueTakeaways.push(ans.mythFact);
+            }
+        });
+
+        uniqueTakeaways.forEach(mf => {
+            const card = document.createElement('div');
+            card.className = 'myth-fact-card';
+            card.innerHTML = `<h4>${mf.type}</h4><p>${mf.text}</p>`;
+            takeawaysList.appendChild(card);
+        });
+      }
+
+      function generateCertificate() {
+        const name = certNameInput.value.trim() || "Anatomy Scholar";
+        const ctx = certCanvas.getContext('2d');
+        const questions = quizDatabase[state.level];
+        const percentage = Math.round((state.score / questions.length) * 100);
+
+        // Clear
+        ctx.fillStyle = '#FAF8EB';
+        ctx.fillRect(0, 0, certCanvas.width, certCanvas.height);
+
+        // Border
+        ctx.strokeStyle = '#AD9846';
+        ctx.lineWidth = 15;
+        ctx.strokeRect(20, 20, certCanvas.width - 40, certCanvas.height - 40);
+        ctx.lineWidth = 2;
+        ctx.strokeRect(30, 30, certCanvas.width - 60, certCanvas.height - 60);
+
+        // Text styling
+        ctx.textAlign = 'center';
+
+        // Header
+        ctx.fillStyle = '#2E3E24';
+        ctx.font = 'bold 40px Montserrat, sans-serif';
+        ctx.fillText('Certificate of Completion', certCanvas.width / 2, 120);
+
+        ctx.font = '20px Montserrat, sans-serif';
+        ctx.fillText('This certifies that', certCanvas.width / 2, 180);
+
+        // Name
+        ctx.fillStyle = '#AD9846';
+        ctx.font = 'bold 50px Montserrat, sans-serif';
+        ctx.fillText(name, certCanvas.width / 2, 250);
+
+        // Description
+        ctx.fillStyle = '#2E3E24';
+        ctx.font = '20px Montserrat, sans-serif';
+        ctx.fillText('has successfully completed the', certCanvas.width / 2, 320);
+
+        ctx.font = 'bold 24px Montserrat, sans-serif';
+        ctx.fillText(`Vulva & Penis Anatomy Quiz (${state.level.charAt(0).toUpperCase() + state.level.slice(1)} Level)`, certCanvas.width / 2, 360);
+
+        ctx.font = '20px Montserrat, sans-serif';
+        ctx.fillText(`with a score of ${percentage}%`, certCanvas.width / 2, 400);
+
+        // Footer / Brand
+        ctx.font = 'italic 18px Montserrat, sans-serif';
+        ctx.fillStyle = '#666';
+        ctx.fillText('Ali Imperiale - Sex Educator & Content Creator', certCanvas.width / 2, 500);
+
+        // Date
+        const today = new Date().toLocaleDateString();
+        ctx.font = '16px Montserrat, sans-serif';
+        ctx.fillText(`Date: ${today}`, certCanvas.width / 2, 540);
+
+        // Create Blob and Download Link
+        certCanvas.toBlob(function(blob) {
+          const url = URL.createObjectURL(blob);
+          downloadCertBtn.href = url;
+          downloadCertBtn.download = 'Anatomy_Quiz_Certificate.png';
+          downloadCertBtn.style.display = 'inline-block';
+        }, 'image/png');
+      }
+
+      init();
+    });
+  </script>
+
+</body>
+</html>
