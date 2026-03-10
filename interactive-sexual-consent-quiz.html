@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Sexual Consent Quiz - Ali Imperiale</title>
+  <meta name="description" content="Test your knowledge on enthusiastic consent, boundaries, and communication with this educational Interactive Sexual Consent Quiz.">
+  <meta property="og:title" content="Interactive Sexual Consent Quiz - Ali Imperiale">
+  <meta property="og:description" content="Test your knowledge on enthusiastic consent, boundaries, and communication with this educational Interactive Sexual Consent Quiz.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/interactive-sexual-consent-quiz.html">
+  <meta property="og:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interactive Sexual Consent Quiz - Ali Imperiale">
+  <meta name="twitter:description" content="Test your knowledge on enthusiastic consent, boundaries, and communication with this educational Interactive Sexual Consent Quiz.">
+  <meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/interactive-sexual-consent-quiz.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    :root {
+      --bg-color: #FAF8EB;
+      --text-color: #2E3E24;
+      --accent-color: #AD9846;
+      --accent-hover: #96833b;
+      --card-bg: #FFFFFF;
+      --border-color: #E2DFD0;
+      --error-color: #D32F2F;
+      --success-color: #388E3C;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif !important;
+      color: var(--text-color);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .quiz-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      margin-bottom: 30px;
+    }
+
+    .intro-section {
+      text-align: center;
+    }
+
+    .intro-section h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
+
+    .intro-section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      color: #4a5d3f;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Quiz Area */
+    .quiz-area {
+      display: none;
+    }
+
+    .progress-container {
+      margin-bottom: 20px;
+    }
+
+    .progress-text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .progress-bar-bg {
+      background-color: var(--border-color);
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      background-color: var(--accent-color);
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .question-text {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .option-label {
+      display: block;
+      padding: 15px 20px;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .option-label:hover {
+      background-color: #f9f9f9;
+      border-color: #c9c5ab;
+    }
+
+    .option-label.selected {
+      border-color: var(--accent-color);
+      background-color: rgba(173, 152, 70, 0.05);
+    }
+
+    .option-label.correct {
+      border-color: var(--success-color);
+      background-color: rgba(56, 142, 60, 0.05);
+    }
+
+    .option-label.incorrect {
+      border-color: var(--error-color);
+      background-color: rgba(211, 47, 47, 0.05);
+    }
+
+    .option-label input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .option-label:focus-within {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+
+    /* Feedback Area */
+    .feedback-area {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .feedback-area.correct-feedback {
+      border-left-color: var(--success-color);
+      background-color: #f0f8f1;
+    }
+
+    .feedback-area.incorrect-feedback {
+      border-left-color: var(--error-color);
+      background-color: #fcf1f1;
+    }
+
+    .feedback-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feedback-text {
+      line-height: 1.5;
+    }
+
+    .next-btn-container {
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    /* Results Area */
+    .results-area {
+      display: none;
+      text-align: center;
+    }
+
+    .score-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: var(--bg-color);
+      border: 8px solid var(--accent-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-color);
+    }
+
+    .result-title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .result-message {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .breakdown-section {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .breakdown-section h3 {
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .resources-section {
+      text-align: left;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .resources-list {
+      list-style: none;
+    }
+
+    .resources-list li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .resources-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+    }
+
+    .certificate {
+      border: 2px dashed var(--accent-color);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      background-color: #fff9e6;
+    }
+
+    .certificate-title {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 10px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .action-buttons {
+        flex-direction: column;
+      }
+    }
+
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main class="container">
+    <div class="quiz-card" id="intro-section">
+      <div class="intro-section">
+        <h1>Interactive Sexual Consent Quiz</h1>
+        <p>Test your knowledge on enthusiastic consent, navigating boundaries, digital intimacy, and effective communication. This 15-question educational assessment will provide personalized feedback, bust common myths, and guide you toward healthier relationship dynamics.</p>
+        <button id="start-btn" class="btn">Start the Quiz</button>
+      </div>
+    </div>
+
+    <div class="quiz-card quiz-area" id="quiz-area">
+      <div class="progress-container">
+        <div class="progress-text">
+          <span>Question <span id="current-question-num">1</span> of 15</span>
+          <span id="score-text">Score: 0</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <h2 class="question-text" id="question-text">Loading question...</h2>
+        <div class="options-grid" id="options-container">
+          <!-- Options injected by JS -->
+        </div>
+      </div>
+
+      <div class="feedback-area" id="feedback-area">
+        <div class="feedback-title" id="feedback-title">Feedback</div>
+        <div class="feedback-text" id="feedback-text"></div>
+        <div class="next-btn-container">
+          <button id="next-btn" class="btn" style="display: none;">Next Question</button>
+          <button id="results-btn" class="btn" style="display: none;">See Results</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-card results-area" id="results-area">
+      <div class="score-circle">
+        <span id="final-score">0</span>%
+      </div>
+      <h2 class="result-title" id="result-title">Quiz Completed!</h2>
+      <p class="result-message" id="result-message">Analyzing your results...</p>
+
+      <div class="certificate" id="certificate-container" style="display: none;">
+        <div class="certificate-title">Certificate of Completion</div>
+        <p>This certifies that you have completed the Interactive Sexual Consent Educational Module.</p>
+        <p><small>Commitment to continuous learning and enthusiastic consent.</small></p>
+      </div>
+
+      <div class="breakdown-section" id="breakdown-section">
+        <h3>Knowledge Breakdown</h3>
+        <p id="breakdown-text">Loading insights...</p>
+      </div>
+
+      <div class="resources-section">
+        <h3>Recommended Resources</h3>
+        <ul class="resources-list" id="resources-list">
+          <li><a href="/guides.html">Educational Guides on Communication</a></li>
+          <li><a href="/sexual-communication-scripts-builder.html">Sexual Communication Scripts Builder</a></li>
+          <li><a href="/open-and-honest.html">Open & Honest Course</a></li>
+        </ul>
+      </div>
+
+      <div class="action-buttons">
+        <button id="retake-btn" class="btn">Retake Quiz</button>
+        <a href="/tools.html" class="btn" style="background-color: transparent; color: var(--text-color); border: 2px solid var(--accent-color);">More Tools</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  const quizData = [
+    {
+      question: `What best describes "enthusiastic consent"?`,
+      options: [
+        `Saying "I guess so" when asked multiple times.`,
+        `Staying silent when a partner initiates physical contact.`,
+        `A clear, excited, and voluntary "Yes!" to a specific activity.`,
+        `Assuming it's okay because you've done it before.`
+      ],
+      correctAnswer: 2,
+      explanation: `<strong>Enthusiastic consent</strong> means a clear, excited, and voluntary agreement to engage in sexual activity. It's an ongoing, mutual process, not a reluctant "fine" or silence. Never assume consent based on past encounters.`
+    },
+    {
+      question: `Can someone withdraw consent after an encounter has already started?`,
+      options: [
+        `No, once they say yes, they are committed to finishing.`,
+        `Yes, consent can be withdrawn at any time, for any reason.`,
+        `Only if they have a medical emergency.`,
+        `Yes, but they must provide a valid excuse to their partner.`
+      ],
+      correctAnswer: 1,
+      explanation: `<strong>Yes, absolutely.</strong> Consent is ongoing and can be withdrawn at any moment. If someone changes their mind, all activity should stop immediately without pressure, guilt-tripping, or requiring an "excuse."`
+    },
+    {
+      question: `How does alcohol or drug use affect sexual consent?`,
+      options: [
+        `It doesn't; if they say yes, it counts.`,
+        `It makes people more honest about what they want.`,
+        `If someone is heavily intoxicated, they cannot legally or ethically give consent.`,
+        `Only illegal drugs invalidate consent, not alcohol.`
+      ],
+      correctAnswer: 2,
+      explanation: `<strong>Intoxication impairs judgment.</strong> If someone is visibly drunk, high, or unable to fully understand the situation, they cannot legally or ethically consent to sex. "Yes" doesn't count if it's influenced by heavy substances.`
+    },
+    {
+      question: `When sending intimate photos or texts (digital consent), which rule applies?`,
+      options: [
+        `Once sent, the receiver can share it with anyone.`,
+        `Consent to receive a photo implies consent to share it.`,
+        `You need explicit permission to share, show, or forward intimate content.`,
+        `It's fine to show close friends as long as you don't post it online.`
+      ],
+      correctAnswer: 2,
+      explanation: `<strong>Digital consent is real consent.</strong> Sharing someone's intimate photos or texts without their explicit permission is a severe violation of trust and, in many places, illegal (revenge porn).`
+    },
+    {
+      question: `In a long-term relationship or marriage, how does consent work?`,
+      options: [
+        `Consent is implied by the relationship status.`,
+        `You still need to communicate and ensure mutual ongoing consent for each encounter.`,
+        `You only need consent for new activities you haven't tried before.`,
+        `Refusing sex is a violation of the relationship commitment.`
+      ],
+      correctAnswer: 1,
+      explanation: `<strong>Marriage or relationship status is not a blank check for sex.</strong> Mutual, ongoing consent is required every single time. Respecting boundaries is a core part of a healthy, loving partnership.`
+    },
+    {
+      question: `Which of the following is a non-verbal cue that someone might NOT be consenting?`,
+      options: [
+        `Pulling you closer and making eager eye contact.`,
+        `Stiffening up, pulling away, or avoiding eye contact.`,
+        `Mirroring your physical movements.`,
+        `Helping remove clothing.`
+      ],
+      correctAnswer: 1,
+      explanation: `<strong>Watch body language.</strong> Stiffening, pulling away, silence, or lack of active participation are non-verbal cues that they may be uncomfortable. If you see this, pause and ask, "Are you okay with this?"`
+    },
+    {
+      question: `What is sexual coercion?`,
+      options: [
+        `Asking someone on a date multiple times.`,
+        `Flirting through text messages.`,
+        `Using pressure, guilt, manipulation, or threats to get someone to agree to sex.`,
+        `Negotiating boundaries before trying a new kink.`
+      ],
+      correctAnswer: 2,
+      explanation: `<strong>Coercion invalidates consent.</strong> If someone says yes only because they were worn down, guilt-tripped ("if you really loved me..."), or threatened, it is not consent. It is assault.`
+    },
+    {
+      question: `Myth or Fact: If someone doesn't fight back or say "no," it means they consented.`,
+      options: [
+        `Fact, silence implies agreement.`,
+        `Fact, resistance is required to prove lack of consent.`,
+        `Myth, people can experience a "freeze" response during trauma.`,
+        `Myth, but only if they were asleep.`
+      ],
+      correctAnswer: 2,
+      explanation: `<strong>Myth.</strong> During a traumatic event, the brain can trigger a "freeze" or "fawn" response, rendering the person unable to speak or move. The absence of a "no" is not a "yes."`
+    },
+    {
+      question: `What is the "age of consent"?`,
+      options: [
+        `A universal global age limit for sexual activity.`,
+        `The legal age at which a person is considered capable of agreeing to sexual activity.`,
+        `A suggested guideline that varies by household.`,
+        `The age someone can buy alcohol.`
+      ],
+      correctAnswer: 1,
+      explanation: `<strong>Age of consent is legal law.</strong> It is the age at which an individual is legally capable of giving consent to sexual acts. This age varies by state, province, and country.`
+    },
+    {
+      question: `In BDSM dynamics, what is the purpose of a "safe word"?`,
+      options: [
+        `To make the scene more exciting.`,
+        `A clear, pre-negotiated word to immediately pause or stop the activity.`,
+        `A word used only to start the session.`,
+        `A secret password to enter a dungeon.`
+      ],
+      correctAnswer: 1,
+      explanation: `<strong>Safe words ensure safety.</strong> In BDSM or kink play, a safe word (like "Red") is a pre-negotiated, unambiguous signal to immediately halt all activity, overriding any roleplay resistance.`
+    },
+    {
+      question: `If someone consents to making out, does that mean they consent to sex?`,
+      options: [
+        `Yes, one act naturally leads to the other.`,
+        `No, consent to one act is not consent to all acts.`,
+        `Yes, unless they explicitly stop you.`,
+        `Only if they take their shirt off.`
+      ],
+      correctAnswer: 1,
+      explanation: `<strong>Consent is specific.</strong> Agreeing to kiss or cuddle does not equal agreement to oral sex or intercourse. You must establish consent for each new level of intimacy.`
+    },
+    {
+      question: `Why might written consent documentation or apps be used?`,
+      options: [
+        `They guarantee that no one will change their mind.`,
+        `As an icebreaker at parties.`,
+        `To explicitly outline boundaries and pre-negotiate desires (often in kink), though consent can still be withdrawn anytime.`,
+        `To replace the need for communication during sex.`
+      ],
+      correctAnswer: 2,
+      explanation: `<strong>Documentation aids negotiation.</strong> Consent apps or written contracts (often used in BDSM) help partners clearly outline hard limits and desires beforehand. However, they do not waive the right to withdraw consent at any time during the act.`
+    },
+    {
+      question: `When engaging with a partner who is a survivor of sexual trauma, what is especially important?`,
+      options: [
+        `Avoiding physical touch entirely.`,
+        `Forcing them to talk about their trauma to heal.`,
+        `Frequent check-ins, moving slowly, and strictly honoring their boundaries.`,
+        `Treating them exactly the same as anyone else and ignoring the trauma.`
+      ],
+      correctAnswer: 2,
+      explanation: `<strong>Patience and communication are vital.</strong> Survivors may have specific triggers or need more reassurance. Frequent, gentle check-ins ("How does this feel?") and respecting boundaries help build a safe environment.`
+    },
+    {
+      question: `What is an ongoing consent "check-in"?`,
+      options: [
+        `Texting them the next day to ask how it was.`,
+        `Pausing during intimacy to ask "Does this feel good?" or "Are you still okay with this?".`,
+        `Making sure they clocked in at work.`,
+        `A yearly relationship review.`
+      ],
+      correctAnswer: 1,
+      explanation: `<strong>Check-ins keep things safe and pleasurable.</strong> Asking questions like "Do you like this?", "Should I go slower?", or "Are we still good?" ensures that both partners are actively enjoying the experience.`
+    },
+    {
+      question: `Which scenario represents true consent?`,
+      options: [
+        `"Come on, just this once. I promise it'll be quick."`,
+        `"I guess we can, I'm just really tired."`,
+        `"I really want to do this, let's go to the bedroom."`,
+        `"If you don't sleep with me, I'll find someone else who will."`
+      ],
+      correctAnswer: 2,
+      explanation: `<strong>Clear and enthusiastic.</strong> True consent is freely given without pressure, manipulation, or reluctance. It should feel mutual, positive, and safe for everyone involved.`
+    }
+  ];
+
+  // Quiz State
+  let currentQuestionIndex = 0;
+  let score = 0;
+  let userAnswers = [];
+
+  // DOM Elements
+  const introSection = document.getElementById('intro-section');
+  const quizArea = document.getElementById('quiz-area');
+  const resultsArea = document.getElementById('results-area');
+  const startBtn = document.getElementById('start-btn');
+  const questionText = document.getElementById('question-text');
+  const optionsContainer = document.getElementById('options-container');
+  const currentQuestionNum = document.getElementById('current-question-num');
+  const scoreText = document.getElementById('score-text');
+  const progressBar = document.getElementById('progress-bar');
+  const feedbackArea = document.getElementById('feedback-area');
+  const feedbackTitle = document.getElementById('feedback-title');
+  const feedbackText = document.getElementById('feedback-text');
+  const nextBtn = document.getElementById('next-btn');
+  const resultsBtn = document.getElementById('results-btn');
+  const finalScoreEl = document.getElementById('final-score');
+  const resultTitle = document.getElementById('result-title');
+  const resultMessage = document.getElementById('result-message');
+  const breakdownText = document.getElementById('breakdown-text');
+  const certificateContainer = document.getElementById('certificate-container');
+  const retakeBtn = document.getElementById('retake-btn');
+
+  // Initialization
+  document.addEventListener('DOMContentLoaded', () => {
+    // Check for saved progress
+    const savedProgress = localStorage.getItem('consentQuizProgress');
+    if (savedProgress) {
+      try {
+        const state = JSON.parse(savedProgress);
+        // Only restore if not finished
+        if (state.currentQuestionIndex > 0 && state.currentQuestionIndex < quizData.length) {
+          if (confirm('You have an unfinished quiz. Would you like to resume?')) {
+            currentQuestionIndex = state.currentQuestionIndex;
+            score = state.score;
+            userAnswers = state.userAnswers;
+            startQuiz(true);
+            return;
+          } else {
+            localStorage.removeItem('consentQuizProgress');
+          }
+        }
+      } catch (e) {
+        localStorage.removeItem('consentQuizProgress');
+      }
+    }
+  });
+
+  startBtn.addEventListener('click', () => startQuiz());
+  nextBtn.addEventListener('click', loadNextQuestion);
+  resultsBtn.addEventListener('click', showResults);
+  retakeBtn.addEventListener('click', () => {
+    currentQuestionIndex = 0;
+    score = 0;
+    userAnswers = [];
+    localStorage.removeItem('consentQuizProgress');
+    resultsArea.style.display = 'none';
+    startQuiz();
+  });
+
+  function startQuiz(resume = false) {
+    introSection.style.display = 'none';
+    quizArea.style.display = 'block';
+    if (!resume) {
+      currentQuestionIndex = 0;
+      score = 0;
+      userAnswers = [];
+    }
+    loadQuestion();
+  }
+
+  function loadQuestion() {
+    const currentQuizData = quizData[currentQuestionIndex];
+
+    // Update Progress
+    currentQuestionNum.innerText = currentQuestionIndex + 1;
+    scoreText.innerText = `Score: ${score}`;
+    progressBar.style.width = `${((currentQuestionIndex) / quizData.length) * 100}%`;
+
+    // Reset UI
+    feedbackArea.style.display = 'none';
+    nextBtn.style.display = 'none';
+    resultsBtn.style.display = 'none';
+
+    // Set Question
+    questionText.innerText = currentQuizData.question;
+
+    // Set Options
+    optionsContainer.innerHTML = '';
+    currentQuizData.options.forEach((option, index) => {
+      const label = document.createElement('label');
+      label.className = 'option-label';
+      label.setAttribute('for', `option-${index}`);
+
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'quiz-option';
+      input.id = `option-${index}`;
+      input.value = index;
+
+      input.addEventListener('change', () => selectAnswer(index));
+
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(option));
+      optionsContainer.appendChild(label);
+    });
+  }
+
+  function selectAnswer(selectedIndex) {
+    const currentQuizData = quizData[currentQuestionIndex];
+    const isCorrect = selectedIndex === currentQuizData.correctAnswer;
+
+    // Disable inputs
+    const inputs = document.querySelectorAll('input[name="quiz-option"]');
+    inputs.forEach(input => input.disabled = true);
+
+    // Highlight labels
+    const labels = document.querySelectorAll('.option-label');
+    labels.forEach((label, index) => {
+      if (index === currentQuizData.correctAnswer) {
+        label.classList.add('correct');
+      } else if (index === selectedIndex) {
+        label.classList.add('incorrect');
+      }
+    });
+
+    // Record answer
+    userAnswers.push({
+      question: currentQuestionIndex,
+      isCorrect: isCorrect
+    });
+
+    if (isCorrect) score++;
+
+    scoreText.innerText = `Score: ${score}`;
+
+    // Show Feedback
+    feedbackArea.className = `feedback-area ${isCorrect ? 'correct-feedback' : 'incorrect-feedback'}`;
+    feedbackTitle.innerHTML = isCorrect ? '✅ Correct!' : '❌ Incorrect';
+    feedbackText.innerHTML = currentQuizData.explanation;
+    feedbackArea.style.display = 'block';
+
+    // Save state
+    localStorage.setItem('consentQuizProgress', JSON.stringify({
+      currentQuestionIndex: currentQuestionIndex + 1,
+      score: score,
+      userAnswers: userAnswers
+    }));
+
+    // Show next action
+    if (currentQuestionIndex < quizData.length - 1) {
+      nextBtn.style.display = 'inline-block';
+    } else {
+      resultsBtn.style.display = 'inline-block';
+      progressBar.style.width = '100%';
+    }
+  }
+
+  function loadNextQuestion() {
+    currentQuestionIndex++;
+    loadQuestion();
+  }
+
+  function showResults() {
+    quizArea.style.display = 'none';
+    resultsArea.style.display = 'block';
+    localStorage.removeItem('consentQuizProgress');
+
+    const percentage = Math.round((score / quizData.length) * 100);
+
+    // Animate score counter
+    let currentScore = 0;
+    const scoreInterval = setInterval(() => {
+      if (currentScore >= percentage) {
+        clearInterval(scoreInterval);
+        finalScoreEl.innerText = percentage;
+      } else {
+        currentScore++;
+        finalScoreEl.innerText = currentScore;
+      }
+    }, 20);
+
+    // Set Message
+    if (percentage === 100) {
+      resultTitle.innerText = "Exceptional Understanding!";
+      resultMessage.innerText = "You have a perfect grasp of consent, boundaries, and communication. Thank you for making the world a safer, more respectful place.";
+      certificateContainer.style.display = 'block';
+    } else if (percentage >= 80) {
+      resultTitle.innerText = "Great Job!";
+      resultMessage.innerText = "You have a solid understanding of consent and healthy relationship dynamics. Review the questions you missed to fine-tune your knowledge.";
+      certificateContainer.style.display = 'block';
+    } else if (percentage >= 60) {
+      resultTitle.innerText = "Good Start!";
+      resultMessage.innerText = "You understand the basics, but there are some important nuances to review regarding boundaries, intoxication, or communication.";
+    } else {
+      resultTitle.innerText = "Learning Opportunity";
+      resultMessage.innerText = "Consent is complex, and many of us weren't taught these vital skills. Please review the recommended resources to build a stronger foundation in sexual ethics and communication.";
+    }
+
+    // Breakdown
+    let breakdownHtml = `<p>You answered <strong>${score}</strong> out of <strong>${quizData.length}</strong> questions correctly.</p>`;
+
+    const missedQuestions = userAnswers.filter(ans => !ans.isCorrect);
+    if (missedQuestions.length > 0) {
+      breakdownHtml += `<h4>Areas for Review:</h4><ul style="margin-left: 20px; margin-top: 10px;">`;
+      missedQuestions.forEach(ans => {
+        const q = quizData[ans.question];
+        breakdownHtml += `<li style="margin-bottom: 10px;">
+          <strong>Question:</strong> ${q.question}<br>
+          <span style="color: var(--text-color); font-size: 0.9em;"><em>${q.explanation}</em></span>
+        </li>`;
+      });
+      breakdownHtml += `</ul>`;
+    } else {
+      breakdownHtml += `<p>Flawless victory! You correctly answered every scenario.</p>`;
+    }
+
+    breakdownText.innerHTML = breakdownHtml;
+  }
+
+</script>
+
+  <script src="mobile-nav.js"></script>
+</body>
+</html>
