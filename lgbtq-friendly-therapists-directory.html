@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LGBTQ+ Friendly Therapists Directory | Ali Imperiale</title>
+  <meta name="description" content="A comprehensive directory of LGBTQ+ affirming therapists, counselors, and mental health professionals. Find support that understands you.">
+  <meta property="og:title" content="LGBTQ+ Friendly Therapists Directory | Ali Imperiale">
+  <meta property="og:description" content="A comprehensive directory of LGBTQ+ affirming therapists, counselors, and mental health professionals. Find support that understands you.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/lgbtq-friendly-therapists-directory.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://aliimperiale.com/lgbtq-friendly-therapists-directory.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I know if a therapist is truly LGBTQ+ affirming?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An affirming therapist goes beyond just being 'friendly' or 'accepting.' They actively understand LGBTQ+ identities, use inclusive language, and do not treat your identity as a pathology or something that needs 'fixing.' Look for therapists who explicitly state they are affirming, list relevant specialties (like gender transition support or polyamory), and have ongoing training in LGBTQ+ mental health."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between an LCSW, LMFT, and PsyD?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An LCSW (Licensed Clinical Social Worker) focuses on how your environment and social systems impact your mental health. An LMFT (Licensed Marriage and Family Therapist) specializes in relationship dynamics, whether for couples or families. A PsyD (Doctor of Psychology) has a doctoral degree and often focuses heavily on clinical practice and psychological testing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I do therapy online if there are no affirming therapists near me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Teletherapy has become incredibly common. Many therapists offer online sessions that are secure and HIPAA-compliant. When filtering our directory, you can select 'Online / Teletherapy Only' to find professionals who can support you virtually, as long as they are licensed to practice in your state or country."
+          }
+        }
+      ]
+    }
+  </script>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Navigation Styles */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+      .site-nav .nav-links {
+        display: none;
+      }
+    }
+
+    /* Page specific styles will go here */
+    .filter-section {
+      background: #fff;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.05);
+      margin-bottom: 40px;
+      border: 1px solid rgba(46, 62, 36, 0.05);
+    }
+    .filter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .filter-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2E3E24;
+    }
+    .filter-group select, .filter-group input[type="text"] {
+      padding: 12px 16px;
+      border: 1px solid #C6C8BB;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      background: #FAF8EB;
+      color: #2E3E24;
+      outline: none;
+      transition: border-color 0.15s;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .filter-group select:focus, .filter-group input[type="text"]:focus {
+      border-color: #AD9846;
+    }
+    .search-btn {
+      padding: 14px 30px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.15s;
+      width: 100%;
+    }
+    .search-btn:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+    .therapist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .therapist-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.05);
+      border: 1px solid rgba(46, 62, 36, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .therapist-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(46, 62, 36, 0.1);
+    }
+    .therapist-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .therapist-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #FAF8EB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #AD9846;
+      flex-shrink: 0;
+    }
+    .therapist-info h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.3rem;
+      color: #2E3E24;
+      margin-bottom: 4px;
+    }
+    .therapist-info p {
+      font-size: 0.85rem;
+      color: #777;
+      margin: 0;
+    }
+    .therapist-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag-specialty {
+      background: rgba(173, 152, 70, 0.15);
+      color: #2E3E24;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+    .tag-credential {
+      background: rgba(46, 62, 36, 0.1);
+      color: #2E3E24;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+    .therapist-details {
+      font-size: 0.9rem;
+      color: #555549;
+      line-height: 1.5;
+    }
+    .therapist-details strong {
+      color: #2E3E24;
+    }
+    .therapist-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+    }
+    .btn-contact {
+      flex: 1;
+      padding: 10px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-contact:hover {
+      background: #3a5030;
+    }
+    .btn-website {
+      flex: 1;
+      padding: 10px;
+      background: transparent;
+      color: #2E3E24;
+      border: 1.5px solid #2E3E24;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-website:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      background: #fff;
+      border-radius: 18px;
+      color: #555549;
+      font-size: 1.1rem;
+      grid-column: 1 / -1;
+    }
+
+    /* Educational Content Styles */
+    .edu-section {
+      background: #fff;
+      border-radius: 18px;
+      padding: 40px;
+      margin-top: 60px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.05);
+      border: 1px solid rgba(46, 62, 36, 0.05);
+    }
+    .edu-section h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.2rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    .edu-section h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.4rem;
+      color: #2E3E24;
+      margin-top: 30px;
+      margin-bottom: 12px;
+    }
+    .edu-section p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: #555549;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .edu-section ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    .edu-section li {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: #555549;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .faq-container {
+      margin-top: 30px;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #C6C8BB;
+      padding-bottom: 20px;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .faq-item h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 10px;
+    }
+    .faq-item p {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header" style="background-color: #2E3E24; color: #FAF8EB; padding: 60px 20px; text-align: center;">
+    <h1 style="font-family: 'The Bloomington', cursive; font-size: 3.5rem; margin-bottom: 20px; font-weight: 400;">LGBTQ+ Affirming Therapists</h1>
+    <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; color: #C6C8BB; max-width: 600px; margin: 0 auto; line-height: 1.6;">Find a mental health professional who truly gets it. Filter by location, specialties, and insurance to connect with the right support.</p>
+  </header>
+
+  <!-- Main Container -->
+  <main class="tracker-container" style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
+
+    <div class="filter-section">
+      <div class="filter-grid">
+        <div class="filter-group">
+          <label for="location">Location</label>
+          <select id="location">
+            <option value="">Any Location</option>
+            <option value="Online">Online / Teletherapy Only</option>
+            <option value="New York, NY">New York, NY</option>
+            <option value="Los Angeles, CA">Los Angeles, CA</option>
+            <option value="Chicago, IL">Chicago, IL</option>
+            <option value="Toronto, ON">Toronto, ON</option>
+            <option value="London, UK">London, UK</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="specialty">Specialty</label>
+          <select id="specialty">
+            <option value="">Any Specialty</option>
+            <option value="Couples Therapy">Couples / Polyamory Therapy</option>
+            <option value="Trauma">Trauma & PTSD</option>
+            <option value="Transition Support">Gender Transition Support</option>
+            <option value="Coming Out">Coming Out Support</option>
+            <option value="Sex Therapy">Sex Therapy</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="credential">Credential</label>
+          <select id="credential">
+            <option value="">Any Credential</option>
+            <option value="LCSW">LCSW (Licensed Clinical Social Worker)</option>
+            <option value="LMFT">LMFT (Marriage & Family Therapist)</option>
+            <option value="PsyD">PsyD / PhD (Psychologist)</option>
+            <option value="LPC">LPC (Licensed Professional Counselor)</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+         <div class="filter-group" style="grid-column: span 2;">
+            <label for="search">Search Name or Keyword</label>
+            <input type="text" id="search" placeholder="e.g. EMDR, sliding scale...">
+         </div>
+         <div class="filter-group" style="justify-content: flex-end;">
+            <button class="search-btn" id="search-btn">Find Therapists</button>
+         </div>
+      </div>
+    </div>
+
+    <div class="therapist-grid" id="directory-results">
+      <!-- Therapist cards will be generated here by JS -->
+    </div>
+
+    <!-- Educational Content & FAQ -->
+    <div class="edu-section">
+      <h2>Finding the Right Support</h2>
+      <p>Finding a therapist is hard enough, but finding one who truly understands the nuances of LGBTQ+ identities, non-monogamy, or gender transitions shouldn't feel impossible. An affirming therapist goes beyond just being "accepting"—they actively validate your lived experience without pathologizing who you are.</p>
+
+      <h3>What to Expect from an Affirming Therapist</h3>
+      <ul>
+        <li><strong>Judgment-Free Space:</strong> They will not treat your sexual orientation or gender identity as a symptom of a mental health issue.</li>
+        <li><strong>Inclusive Language:</strong> They will ask for and respect your pronouns and chosen name from day one.</li>
+        <li><strong>Curiosity Over Assumptions:</strong> They won't assume your relationship structure (like assuming you are strictly monogamous) or that your identity is the root cause of your anxiety or depression.</li>
+        <li><strong>Advocacy:</strong> Many affirming therapists act as advocates, providing necessary letters for gender-affirming medical care when needed.</li>
+      </ul>
+
+      <h3>A Note on Inclusivity</h3>
+      <p>This directory is designed to be inclusive of all sexualities, gender identities, and relationship styles. Whether you are navigating coming out, exploring polyamory, or seeking support for trauma, the professionals listed here are committed to providing a safe, empowering environment for you to heal and grow.</p>
+
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-container">
+        <div class="faq-item">
+          <h4>How do I know if a therapist is truly LGBTQ+ affirming?</h4>
+          <p>An affirming therapist actively understands LGBTQ+ identities and uses inclusive language. Look for therapists who explicitly state they are affirming, list relevant specialties (like gender transition support or polyamory), and have ongoing training in LGBTQ+ mental health.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What is the difference between an LCSW, LMFT, and PsyD?</h4>
+          <p>An LCSW (Licensed Clinical Social Worker) focuses on how your environment impacts your mental health. An LMFT (Licensed Marriage and Family Therapist) specializes in relationship dynamics. A PsyD (Doctor of Psychology) has a doctoral degree and often focuses on clinical practice and psychological testing.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I do therapy online if there are no affirming therapists near me?</h4>
+          <p>Yes! Teletherapy has become incredibly common. Many therapists offer online sessions that are secure and HIPAA-compliant. Use our "Online" location filter to find professionals who can support you virtually.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mock data representing organizations or generalized entries to avoid fabricating real individuals
+      const therapists = [
+        {
+          name: "Dr. Alex Rivera",
+          credentials: "PsyD",
+          location: "New York, NY",
+          teletherapy: true,
+          specialties: ["Transition Support", "Trauma", "Coming Out"],
+          insurance: "Aetna, BlueCross, Out-of-Network",
+          description: "Specializing in gender-affirming care and complex trauma for the LGBTQ+ community.",
+          avatar: "A"
+        },
+        {
+          name: "Jamie Chen Counseling",
+          credentials: "LCSW",
+          location: "Los Angeles, CA",
+          teletherapy: true,
+          specialties: ["Couples Therapy", "Sex Therapy"],
+          insurance: "Kaiser, Out-of-Network (Sliding Scale)",
+          description: "Focuses on ethically non-monogamous relationships, polyamory, and kink-aware therapy.",
+          avatar: "J"
+        },
+        {
+          name: "Midwest Affirming Care",
+          credentials: "LMFT",
+          location: "Chicago, IL",
+          teletherapy: false,
+          specialties: ["Couples Therapy", "Coming Out"],
+          insurance: "BlueCross, UnitedHealthcare",
+          description: "A group practice dedicated to supporting couples and individuals navigating coming out later in life.",
+          avatar: "M"
+        },
+        {
+          name: "Sam Taylor, LPC",
+          credentials: "LPC",
+          location: "Online",
+          teletherapy: true,
+          specialties: ["Trauma", "Coming Out"],
+          insurance: "Out-of-Network Only",
+          description: "Integrative approach including EMDR for religious trauma and coming out support.",
+          avatar: "S"
+        },
+        {
+          name: "Toronto Queer Therapy Collective",
+          credentials: "PsyD",
+          location: "Toronto, ON",
+          teletherapy: true,
+          specialties: ["Transition Support", "Sex Therapy", "Couples Therapy"],
+          insurance: "OON / Private Pay",
+          description: "Holistic mental health support focusing on gender diversity and sex-positive therapy.",
+          avatar: "T"
+        },
+        {
+          name: "London Inclusive Wellness",
+          credentials: "LMFT",
+          location: "London, UK",
+          teletherapy: true,
+          specialties: ["Trauma", "Couples Therapy"],
+          insurance: "Private Health / Sliding Scale",
+          description: "UK-based counseling center providing systemic family and couples therapy for LGBTQ+ folks.",
+          avatar: "L"
+        }
+      ];
+
+      const resultsContainer = document.getElementById('directory-results');
+      const locationFilter = document.getElementById('location');
+      const specialtyFilter = document.getElementById('specialty');
+      const credentialFilter = document.getElementById('credential');
+      const searchInput = document.getElementById('search');
+      const searchBtn = document.getElementById('search-btn');
+
+      function renderTherapists(data) {
+        resultsContainer.innerHTML = '';
+        if (data.length === 0) {
+          resultsContainer.innerHTML = '<div class="no-results">No therapists found matching your criteria. Try adjusting your filters.</div>';
+          return;
+        }
+
+        data.forEach(t => {
+          const card = document.createElement('div');
+          card.className = 'therapist-card';
+
+          let tagsHtml = t.specialties.map(s => `<span class="tag-specialty">${s}</span>`).join('');
+          tagsHtml += `<span class="tag-credential">${t.credentials}</span>`;
+
+          card.innerHTML = `
+            <div class="therapist-header">
+              <div class="therapist-avatar">${t.avatar}</div>
+              <div class="therapist-info">
+                <h3>${t.name}</h3>
+                <p>${t.location} ${t.teletherapy ? '• Teletherapy Available' : ''}</p>
+              </div>
+            </div>
+            <div class="therapist-tags">
+              ${tagsHtml}
+            </div>
+            <div class="therapist-details">
+              <p><strong>Focus:</strong> ${t.description}</p>
+              <p style="margin-top: 8px;"><strong>Insurance:</strong> ${t.insurance}</p>
+            </div>
+            <div class="therapist-actions">
+              <a href="#" class="btn-contact" onclick="event.preventDefault(); alert('This is a directory demonstration. Contact feature disabled.');">Contact</a>
+              <a href="#" class="btn-website" onclick="event.preventDefault(); alert('This is a directory demonstration. Website link disabled.');">Website</a>
+            </div>
+          `;
+          resultsContainer.appendChild(card);
+        });
+      }
+
+      function filterTherapists() {
+        const locVal = locationFilter.value;
+        const specVal = specialtyFilter.value;
+        const credVal = credentialFilter.value;
+        const searchVal = searchInput.value.toLowerCase();
+
+        const filtered = therapists.filter(t => {
+          let locMatch = true;
+          if (locVal) {
+            if (locVal === 'Online') {
+              locMatch = t.teletherapy;
+            } else {
+              locMatch = t.location === locVal;
+            }
+          }
+
+          let specMatch = true;
+          if (specVal) {
+            specMatch = t.specialties.includes(specVal);
+          }
+
+          let credMatch = true;
+          if (credVal) {
+            credMatch = t.credentials === credVal;
+          }
+
+          let searchMatch = true;
+          if (searchVal) {
+            const searchableText = `${t.name} ${t.description} ${t.insurance} ${t.specialties.join(' ')}`.toLowerCase();
+            searchMatch = searchableText.includes(searchVal);
+          }
+
+          return locMatch && specMatch && credMatch && searchMatch;
+        });
+
+        renderTherapists(filtered);
+      }
+
+      // Initial render
+      renderTherapists(therapists);
+
+      // Event listeners
+      searchBtn.addEventListener('click', filterTherapists);
+      [locationFilter, specialtyFilter, credentialFilter].forEach(el => {
+        el.addEventListener('change', filterTherapists);
+      });
+      searchInput.addEventListener('keyup', (e) => {
+        if(e.key === 'Enter') filterTherapists();
+      });
+    });
+  </script>
+</body>
+</html>
