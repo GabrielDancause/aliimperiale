@@ -1,0 +1,7 @@
+127.0.0.1 - - [10/Mar/2026 11:04:13] "GET /safer-sex-complete-guide.html HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 11:04:13] "GET /shared.css HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 11:04:13] "GET /consent.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 11:04:14] "GET /logo-beige.webp HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 11:04:14] "GET /mobile-nav.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 11:04:14] "GET /fonts/TheBloomington-Script.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 11:04:14] "GET /fonts/NewStandard-Regular.woff2 HTTP/1.1" 200 -
