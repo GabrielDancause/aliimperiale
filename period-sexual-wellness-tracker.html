@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Period & Sexual Wellness Tracker | Ali Imperiale</title>
+  <meta name="description" content="A comprehensive, privacy-first period tracker to log cycles, symptoms, libido, and mood. Understand how your menstrual cycle affects your sexual desire.">
+  <meta property="og:title" content="Period & Sexual Wellness Tracker | Ali Imperiale">
+  <meta property="og:description" content="A comprehensive, privacy-first period tracker to log cycles, symptoms, libido, and mood. Understand how your menstrual cycle affects your sexual desire.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/period-sexual-wellness-tracker.html">
+  <meta property="og:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Period & Sexual Wellness Tracker | Ali Imperiale">
+  <meta name="twitter:description" content="A comprehensive, privacy-first period tracker to log cycles, symptoms, libido, and mood. Understand how your menstrual cycle affects your sexual desire.">
+  <meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/period-sexual-wellness-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How does the menstrual cycle affect libido?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Hormonal shifts throughout the menstrual cycle significantly impact libido. Many women experience a peak in sexual desire around ovulation due to a surge in estrogen and testosterone. Conversely, the luteal phase (before your period) often sees a drop in libido as progesterone increases."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Why is my libido high during my period?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "While common to feel a dip in libido during menstruation, many experience an increase. This can be due to increased pelvic blood flow, changing estrogen and testosterone levels, or simply the relaxation that comes with knowing pregnancy risk is lower. Orgasms can also relieve menstrual cramps."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How is the fertile window calculated?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The fertile window typically spans the five days leading up to ovulation and the day of ovulation itself. This tracker estimates it based on your average cycle length, assuming a typical 14-day luteal phase before your next expected period."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Is this tracker safe and private?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes! All your data is stored locally in your browser using local storage. No data is sent to external servers, ensuring your intimate health information remains completely private and under your control."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Can I use this for birth control?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. This tool provides estimates based on historical averages and is NOT a clinically reliable method for birth control or preventing pregnancy. Please consult a healthcare professional for effective contraceptive options."
+    }
+  }]
+}
+  </script>
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+    }
+
+    /* Page Header */
+    .page-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .page-header p {
+      font-size: 1.05rem;
+      color: #C6C8BB;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Main Container */
+    .tracker-container {
+      max-width: 1000px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Card Style */
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      border: 1px solid rgba(46, 62, 36, 0.04);
+    }
+    .card h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+      color: #2E3E24;
+      text-align: center;
+    }
+
+    /* Input Section */
+    .input-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #2E3E24;
+    }
+    .form-group input {
+      padding: 14px;
+      border: 1px solid #C6C8BB;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      background: #FAF8EB;
+      color: #2E3E24;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #AD9846;
+    }
+
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #2E3E24;
+      border: 1.5px solid #2E3E24;
+      padding: 12.5px 28px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    /* Calendar Grid */
+    .calendar-container {
+      display: none;
+      margin-top: 20px;
+    }
+    .calendar-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .calendar-month {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2E3E24;
+    }
+    .btn-nav {
+      background: none;
+      border: 1px solid #C6C8BB;
+      color: #2E3E24;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .btn-nav:hover {
+      background: #AD9846;
+      border-color: #AD9846;
+      color: #fff;
+    }
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .calendar-day-header {
+      font-weight: 600;
+      color: #8a8a7a;
+      font-size: 0.85rem;
+      padding-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .calendar-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: #f5f5f5;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+      border: 2px solid transparent;
+    }
+    .calendar-day:hover {
+      transform: scale(1.05);
+      border-color: #AD9846;
+      z-index: 10;
+    }
+    .calendar-day.empty {
+      background: none;
+      cursor: default;
+    }
+    .calendar-day.empty:hover {
+      transform: none;
+      border-color: transparent;
+    }
+
+    /* Phase Styling */
+    .phase-menstrual { background-color: #fce8e8; color: #d9534f; border-color: #f5c6c6; }
+    .phase-follicular { background-color: #e8f5e9; color: #2E3E24; border-color: #c8e6c9; }
+    .phase-ovulation { background-color: #fff8e1; color: #b08d00; border-color: #ffe082; font-weight: 700; }
+    .phase-luteal { background-color: #f3e5f5; color: #6a1b9a; border-color: #e1bee7; }
+    .day-today { border: 2px solid #2E3E24 !important; font-weight: 700; }
+
+    .has-log::after {
+      content: '';
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background-color: #AD9846;
+      border-radius: 50%;
+    }
+
+    .calendar-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #555549;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .legend-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+    }
+
+    /* Modals & Logging */
+    .logging-panel {
+      display: none;
+      background: #FAF8EB;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 24px;
+      border: 1px solid rgba(46, 62, 36, 0.1);
+    }
+    .logging-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+    }
+    .logging-date {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.4rem;
+      color: #2E3E24;
+      font-weight: 600;
+    }
+    .btn-close-log {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #8a8a7a;
+      transition: color 0.2s;
+    }
+    .btn-close-log:hover { color: #2E3E24; }
+
+    .log-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .log-section h4 {
+      font-size: 1rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    /* Custom Range Sliders */
+    .slider-group {
+      margin-bottom: 16px;
+    }
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: #555549;
+      font-weight: 500;
+    }
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #e2e0d5;
+      outline: none;
+    }
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #AD9846;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    .slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #AD9846;
+      cursor: pointer;
+      border: none;
+    }
+    .slider::-webkit-slider-thumb:hover, .slider::-moz-range-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .checkbox-label {
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #C6C8BB;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .checkbox-label input {
+      display: none;
+    }
+    .checkbox-label input:checked + span {
+      font-weight: 600;
+    }
+    .checkbox-label:has(input:checked) {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border-color: #2E3E24;
+    }
+
+    .log-notes {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #C6C8BB;
+      border-radius: 8px;
+      background: #fff;
+      font-family: 'Montserrat', sans-serif;
+      resize: vertical;
+      min-height: 80px;
+      margin-top: 10px;
+    }
+
+    /* Visualizations */
+    .chart-container {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      margin-top: 20px;
+      display: none;
+    }
+
+    /* Actions */
+    .actions-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    /* Insights Box */
+    .insight-box {
+      background: rgba(173, 152, 70, 0.1);
+      border-left: 4px solid #AD9846;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      display: none;
+    }
+    .insight-box h4 {
+      color: #2E3E24;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    /* Education & FAQ Content */
+    .content-section {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+    .content-section h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.6rem;
+      color: #2E3E24;
+      margin-bottom: 16px;
+      margin-top: 32px;
+    }
+    .content-section p {
+      line-height: 1.7;
+      color: #3a4a30;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+    .phase-breakdown {
+      display: grid;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .phase-card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(46,62,36,0.1);
+    }
+    .phase-card h4 {
+      color: #2E3E24;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+      padding-bottom: 24px;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+
+    /* Messages */
+    .msg {
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .msg.success { background: #e6f2e6; color: #2a5a2a; border: 1px solid #c2e0c2; }
+    .msg.info { background: #e8f4f8; color: #31708f; border: 1px solid #bce8f1; }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 2.5rem; }
+      .card { padding: 24px 16px; }
+      .calendar-day { font-size: 0.85rem; border-radius: 8px; }
+      .log-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav" style="background: #2E3E24; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32" style="height: 32px; opacity: 0.9;"></a>
+    <ul class="nav-links" style="display: flex; gap: 24px; list-style: none;">
+      <li><a href="/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Home</a></li>
+      <li><a href="/blog/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Blog</a></li>
+      <li><a href="/about.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">YouTube</a></li>
+      <li><a href="/open-and-honest.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Course</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <header class="page-header">
+    <h1>Period &amp; Sexual Wellness Tracker</h1>
+    <p>A private space to understand your body's rhythms. Log cycles, symptoms, mood, and libido to discover how your hormones influence your sexual desire.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="tracker-container">
+
+    <!-- Setup Card -->
+    <section class="card" id="setup-card">
+      <h2>Your Cycle Details</h2>
+      <div id="status-msg" class="msg"></div>
+      <form id="cycle-form">
+        <div class="input-group">
+          <div class="form-group">
+            <label for="last-period">First Day of Last Period</label>
+            <input type="date" id="last-period" required>
+          </div>
+          <div class="form-group">
+            <label for="cycle-length">Average Cycle Length (Days)</label>
+            <input type="number" id="cycle-length" value="28" min="20" max="45" required>
+          </div>
+          <div class="form-group">
+            <label for="period-length">Average Period Length (Days)</label>
+            <input type="number" id="period-length" value="5" min="2" max="10" required>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <button type="submit" class="btn-primary">Calculate &amp; View Calendar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Calendar View -->
+    <section class="card calendar-container" id="calendar-view">
+      <h2>Cycle Calendar</h2>
+
+      <div class="calendar-controls">
+        <button class="btn-nav" id="btn-prev-month">&larr; Previous</button>
+        <div class="calendar-month" id="calendar-month-display">Month Year</div>
+        <button class="btn-nav" id="btn-next-month">Next &rarr;</button>
+      </div>
+
+      <div class="calendar-grid" id="calendar-grid">
+        <div class="calendar-day-header">Sun</div>
+        <div class="calendar-day-header">Mon</div>
+        <div class="calendar-day-header">Tue</div>
+        <div class="calendar-day-header">Wed</div>
+        <div class="calendar-day-header">Thu</div>
+        <div class="calendar-day-header">Fri</div>
+        <div class="calendar-day-header">Sat</div>
+        <!-- Days injected here -->
+      </div>
+
+      <div class="calendar-legend">
+        <div class="legend-item"><div class="legend-color phase-menstrual"></div> Menstruation</div>
+        <div class="legend-item"><div class="legend-color phase-follicular"></div> Follicular</div>
+        <div class="legend-item"><div class="legend-color phase-ovulation"></div> Ovulation (Fertile)</div>
+        <div class="legend-item"><div class="legend-color phase-luteal"></div> Luteal</div>
+      </div>
+
+      <div class="insight-box" id="daily-insight">
+        <h4 id="insight-title">Phase Insight</h4>
+        <p id="insight-text">Select a day to see phase-specific sexual wellness tips.</p>
+      </div>
+
+      <!-- Logging Panel -->
+      <div class="logging-panel" id="logging-panel">
+        <div class="logging-header">
+          <div class="logging-date" id="log-date-display">Select a Date</div>
+          <button class="btn-close-log" id="btn-close-log">&times;</button>
+        </div>
+
+        <div class="log-grid">
+          <!-- Sexual Wellness Logs -->
+          <div class="log-section">
+            <h4>Sexual Wellness &amp; Desire</h4>
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Libido / Sex Drive</span>
+                <span id="libido-val" style="color: #AD9846; font-weight: 700;">3</span>
+              </div>
+              <input type="range" id="log-libido" class="slider" min="1" max="5" value="3">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #8a8a7a; margin-top: 4px;">
+                <span>Low</span><span>High</span>
+              </div>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Arousal / Sensitivity</span>
+                <span id="arousal-val" style="color: #AD9846; font-weight: 700;">3</span>
+              </div>
+              <input type="range" id="log-arousal" class="slider" min="1" max="5" value="3">
+            </div>
+
+            <div style="margin-top: 16px;">
+              <span style="display: block; font-size: 0.9rem; color: #555549; font-weight: 500; margin-bottom: 8px;">Activity / Notes:</span>
+              <div class="checkbox-group">
+                <label class="checkbox-label"><input type="checkbox" name="sex_act" value="solo"><span>Solo Play</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="sex_act" value="partnered"><span>Partnered</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="sex_act" value="cuddling"><span>Cuddling/Intimacy</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="sex_act" value="orgasm"><span>Orgasm</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Symptoms & Mood Logs -->
+          <div class="log-section">
+            <h4>Symptoms &amp; Mood</h4>
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Energy Level</span>
+                <span id="energy-val" style="color: #AD9846; font-weight: 700;">3</span>
+              </div>
+              <input type="range" id="log-energy" class="slider" min="1" max="5" value="3">
+            </div>
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Mood (1=Low, 5=Great)</span>
+                <span id="mood-val" style="color: #AD9846; font-weight: 700;">3</span>
+              </div>
+              <input type="range" id="log-mood" class="slider" min="1" max="5" value="3">
+            </div>
+
+            <div style="margin-top: 16px;">
+              <span style="display: block; font-size: 0.9rem; color: #555549; font-weight: 500; margin-bottom: 8px;">Physical Symptoms:</span>
+              <div class="checkbox-group">
+                <label class="checkbox-label"><input type="checkbox" name="symptom" value="cramps"><span>Cramps</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="symptom" value="bloating"><span>Bloating</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="symptom" value="tender_breasts"><span>Tender Breasts</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="symptom" value="headache"><span>Headache</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <textarea id="log-notes" class="log-notes" placeholder="Any extra notes or journal thoughts for today?"></textarea>
+
+        <div style="margin-top: 20px; text-align: right;">
+          <button id="btn-save-log" class="btn-primary" style="padding: 10px 24px;">Save Log</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Data Visualization -->
+    <section class="card" id="data-view" style="display: none;">
+      <h2>Your Patterns</h2>
+      <p style="text-align: center; color: #555549; margin-bottom: 24px;">See how your libido, mood, and energy fluctuate throughout your cycle.</p>
+
+      <div class="chart-container" id="chart-container">
+        <canvas id="wellnessChart"></canvas>
+      </div>
+
+      <div class="actions-row">
+        <button id="btn-share" class="btn-primary">Copy Cycle Summary</button>
+        <button id="btn-export" class="btn-secondary">Export Data (.json)</button>
+        <button id="btn-clear" class="btn-secondary" style="border-color: #d9534f; color: #d9534f;">Clear All Data</button>
+      </div>
+    </section>
+
+    <!-- Educational Content -->
+    <div class="content-section">
+      <h3>The Cycle &amp; Sexuality Connection</h3>
+      <p>Your menstrual cycle is essentially an intricate hormonal dance. Estrogen, progesterone, and testosterone are constantly shifting, and these shifts heavily influence not just your reproductive system, but your mood, energy, and sexual desire. Tracking these changes empowers you to understand your body instead of fighting it.</p>
+
+      <div class="phase-breakdown">
+        <div class="phase-card">
+          <h4><span class="legend-color phase-menstrual" style="display:inline-block"></span> Menstrual Phase (Days 1-5)</h4>
+          <p><strong>The Vibe:</strong> Rest and recharge. Estrogen and progesterone are at their lowest.<br>
+          <strong>Sexual Wellness:</strong> Libido can vary wildly here. Some feel zero desire, while others experience a spike due to increased pelvic blood flow and lower pregnancy risks. If you're dealing with cramps, orgasms (solo or partnered) can actually be a fantastic natural pain reliever, releasing endorphins and oxytocin.</p>
+        </div>
+
+        <div class="phase-card">
+          <h4><span class="legend-color phase-follicular" style="display:inline-block"></span> Follicular Phase (Days 6-13)</h4>
+          <p><strong>The Vibe:</strong> Rising energy. Estrogen begins its climb.<br>
+          <strong>Sexual Wellness:</strong> You'll likely notice your energy and sociability bouncing back. You might feel more confident in your body, and your sex drive usually starts to build during this phase. It's a great time to initiate intimacy or explore new fantasies.</p>
+        </div>
+
+        <div class="phase-card">
+          <h4><span class="legend-color phase-ovulation" style="display:inline-block"></span> Ovulation Phase (Around Day 14)</h4>
+          <p><strong>The Vibe:</strong> Peak vitality. Estrogen peaks, and testosterone gets a slight boost.<br>
+          <strong>Sexual Wellness:</strong> Hello, peak libido! Biologically, your body is primed for reproduction, making you feel more aroused, sensitive to touch, and naturally lubricated. Your pheromones may even shift to be more attractive to partners. Enjoy the natural high, but remember this is also your fertile window.</p>
+        </div>
+
+        <div class="phase-card">
+          <h4><span class="legend-color phase-luteal" style="display:inline-block"></span> Luteal Phase (Days 15-28)</h4>
+          <p><strong>The Vibe:</strong> Winding down. Progesterone takes the wheel.<br>
+          <strong>Sexual Wellness:</strong> Progesterone has a calming, sometimes sedating effect. In the first half, you might enjoy slower, more sensual, and deeply emotional intimacy. As you approach your period, hormones drop (hello, PMS), and desire often plummets. Focus on comfort, cuddling, and non-demanding touch.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="content-section">
+      <h3 style="text-align: center;">Frequently Asked Questions</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">How does the menstrual cycle affect libido?</div>
+        <div class="faq-answer">Hormonal shifts throughout the menstrual cycle significantly impact libido. Many women experience a peak in sexual desire around ovulation due to a surge in estrogen and testosterone. Conversely, the luteal phase (before your period) often sees a drop in libido as progesterone increases.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Why is my libido high during my period?</div>
+        <div class="faq-answer">While common to feel a dip in libido during menstruation, many experience an increase. This can be due to increased pelvic blood flow, changing estrogen and testosterone levels, or simply the relaxation that comes with knowing pregnancy risk is lower. Orgasms can also relieve menstrual cramps.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How is the fertile window calculated?</div>
+        <div class="faq-answer">The fertile window typically spans the five days leading up to ovulation and the day of ovulation itself. This tracker estimates it based on your average cycle length, assuming a typical 14-day luteal phase before your next expected period.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is this tracker safe and private?</div>
+        <div class="faq-answer">Yes! All your data is stored locally in your browser using local storage. No data is sent to external servers, ensuring your intimate health information remains completely private and under your control.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I use this for birth control?</div>
+        <div class="faq-answer">No. This tool provides estimates based on historical averages and is NOT a clinically reliable method for birth control or preventing pregnancy. Please consult a healthcare professional for effective contraceptive options.</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const STORAGE_KEY_SETUP = 'ali_period_setup';
+      const STORAGE_KEY_LOGS = 'ali_period_logs';
+
+      // Elements
+      const setupForm = document.getElementById('cycle-form');
+      const calendarView = document.getElementById('calendar-view');
+      const dataView = document.getElementById('data-view');
+      const msgBox = document.getElementById('status-msg');
+      const grid = document.getElementById('calendar-grid');
+      const monthDisplay = document.getElementById('calendar-month-display');
+
+      const logPanel = document.getElementById('logging-panel');
+      const logDateDisplay = document.getElementById('log-date-display');
+      const btnSaveLog = document.getElementById('btn-save-log');
+      const btnCloseLog = document.getElementById('btn-close-log');
+
+      const insightBox = document.getElementById('daily-insight');
+      const insightTitle = document.getElementById('insight-title');
+      const insightText = document.getElementById('insight-text');
+
+      let currentDisplayMonth = new Date();
+      let selectedDateStr = null;
+      let cycleMap = {}; // Maps date string to phase
+      let chartInstance = null;
+
+      // Initialize
+      const savedSetup = JSON.parse(localStorage.getItem(STORAGE_KEY_SETUP));
+      if (savedSetup) {
+        document.getElementById('last-period').value = savedSetup.lastPeriod;
+        document.getElementById('cycle-length').value = savedSetup.cycleLength;
+        document.getElementById('period-length').value = savedSetup.periodLength;
+        generateCycleMap(savedSetup.lastPeriod, savedSetup.cycleLength, savedSetup.periodLength);
+        currentDisplayMonth = new Date(savedSetup.lastPeriod + 'T12:00:00');
+        renderCalendar();
+      } else {
+        document.getElementById('last-period').value = new Date().toISOString().split('T')[0];
+      }
+
+      // Sync sliders
+      ['libido', 'arousal', 'energy', 'mood'].forEach(type => {
+        const slider = document.getElementById(`log-${type}`);
+        const valSpan = document.getElementById(`${type}-val`);
+        slider.addEventListener('input', () => { valSpan.textContent = slider.value; });
+      });
+
+      // Events
+      setupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const lp = document.getElementById('last-period').value;
+        const cl = parseInt(document.getElementById('cycle-length').value, 10);
+        const pl = parseInt(document.getElementById('period-length').value, 10);
+
+        localStorage.setItem(STORAGE_KEY_SETUP, JSON.stringify({ lastPeriod: lp, cycleLength: cl, periodLength: pl }));
+        showMsg('Cycle details saved! Calendar updated.', 'success');
+
+        generateCycleMap(lp, cl, pl);
+        currentDisplayMonth = new Date(lp + 'T12:00:00');
+        renderCalendar();
+      });
+
+      document.getElementById('btn-prev-month').addEventListener('click', () => {
+        currentDisplayMonth.setMonth(currentDisplayMonth.getMonth() - 1);
+        renderCalendar();
+      });
+
+      document.getElementById('btn-next-month').addEventListener('click', () => {
+        currentDisplayMonth.setMonth(currentDisplayMonth.getMonth() + 1);
+        renderCalendar();
+      });
+
+      btnCloseLog.addEventListener('click', () => {
+        logPanel.style.display = 'none';
+      });
+
+      btnSaveLog.addEventListener('click', () => {
+        if (!selectedDateStr) return;
+        const logs = JSON.parse(localStorage.getItem(STORAGE_KEY_LOGS) || '{}');
+
+        // Collect checkboxes
+        const acts = Array.from(document.querySelectorAll('input[name="sex_act"]:checked')).map(el => el.value);
+        const symps = Array.from(document.querySelectorAll('input[name="symptom"]:checked')).map(el => el.value);
+
+        logs[selectedDateStr] = {
+          libido: parseInt(document.getElementById('log-libido').value, 10),
+          arousal: parseInt(document.getElementById('log-arousal').value, 10),
+          energy: parseInt(document.getElementById('log-energy').value, 10),
+          mood: parseInt(document.getElementById('log-mood').value, 10),
+          acts: acts,
+          symptoms: symps,
+          notes: document.getElementById('log-notes').value
+        };
+
+        localStorage.setItem(STORAGE_KEY_LOGS, JSON.stringify(logs));
+        showMsg('Log saved successfully!', 'success');
+        logPanel.style.display = 'none';
+        renderCalendar(); // Re-render to show dot
+      });
+
+      // Share/Export/Clear
+      document.getElementById('btn-share').addEventListener('click', () => {
+        const lpDate = new Date(document.getElementById('last-period').value + 'T12:00:00');
+        const cl = parseInt(document.getElementById('cycle-length').value, 10);
+
+        const nextPeriod = new Date(lpDate);
+        nextPeriod.setDate(nextPeriod.getDate() + cl);
+
+        const ovulation = new Date(nextPeriod);
+        ovulation.setDate(ovulation.getDate() - 14);
+
+        const text = `🌸 My Cycle Summary 🌸\n\nNext Expected Period: ${nextPeriod.toLocaleDateString(undefined, {month:'short', day:'numeric'})}\nEstimated Ovulation: ${ovulation.toLocaleDateString(undefined, {month:'short', day:'numeric'})}\n\nTracked via Ali Imperiale's Wellness Tracker (aliimperiale.com/period-sexual-wellness-tracker.html)`;
+
+        navigator.clipboard.writeText(text).then(() => {
+          showMsg('Summary copied to clipboard!', 'success');
+        });
+      });
+
+      document.getElementById('btn-export').addEventListener('click', () => {
+        const setup = localStorage.getItem(STORAGE_KEY_SETUP) || '{}';
+        const logs = localStorage.getItem(STORAGE_KEY_LOGS) || '{}';
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({setup: JSON.parse(setup), logs: JSON.parse(logs)}, null, 2));
+        const dlAnchorElem = document.createElement('a');
+        dlAnchorElem.setAttribute("href", dataStr);
+        dlAnchorElem.setAttribute("download", `cycle-wellness-export-${new Date().toISOString().split('T')[0]}.json`);
+        dlAnchorElem.click();
+      });
+
+      document.getElementById('btn-clear').addEventListener('click', () => {
+        if(confirm("Are you sure you want to clear all your tracker data? This cannot be undone.")) {
+          localStorage.removeItem(STORAGE_KEY_SETUP);
+          localStorage.removeItem(STORAGE_KEY_LOGS);
+          location.reload();
+        }
+      });
+
+      // --- Functions --- //
+
+      function showMsg(text, type) {
+        msgBox.textContent = text;
+        msgBox.className = `msg ${type}`;
+        msgBox.style.display = 'block';
+        setTimeout(() => msgBox.style.display = 'none', 3000);
+      }
+
+      function generateCycleMap(lastPeriodStr, cycleLen, periodLen) {
+        cycleMap = {};
+        const baseDate = new Date(lastPeriodStr + 'T12:00:00');
+        let nextStart = new Date(baseDate);
+
+        // Generate map for past 2 and future 4 cycles
+        nextStart.setDate(nextStart.getDate() - (cycleLen * 2));
+
+        for (let i = 0; i < 6; i++) {
+          const pStart = new Date(nextStart);
+          const pEnd = new Date(pStart);
+          pEnd.setDate(pEnd.getDate() + periodLen - 1);
+
+          const nextP = new Date(pStart);
+          nextP.setDate(nextP.getDate() + cycleLen);
+
+          const ovulation = new Date(nextP);
+          ovulation.setDate(ovulation.getDate() - 14);
+
+          const fertStart = new Date(ovulation);
+          fertStart.setDate(fertStart.getDate() - 5);
+          const fertEnd = new Date(ovulation);
+          fertEnd.setDate(fertEnd.getDate() + 1);
+
+          let curr = new Date(pStart);
+          while (curr < nextP) {
+            const dStr = curr.toISOString().split('T')[0];
+            if (curr >= pStart && curr <= pEnd) cycleMap[dStr] = 'menstrual';
+            else if (curr > pEnd && curr < fertStart) cycleMap[dStr] = 'follicular';
+            else if (curr >= fertStart && curr <= fertEnd) cycleMap[dStr] = 'ovulation';
+            else cycleMap[dStr] = 'luteal';
+            curr.setDate(curr.getDate() + 1);
+          }
+          nextStart = new Date(nextP);
+        }
+      }
+
+      function renderCalendar() {
+        calendarView.style.display = 'block';
+        dataView.style.display = 'block';
+
+        // Keep headers, clear days
+        while (grid.children.length > 7) { grid.removeChild(grid.lastChild); }
+
+        const year = currentDisplayMonth.getFullYear();
+        const month = currentDisplayMonth.getMonth();
+        monthDisplay.textContent = currentDisplayMonth.toLocaleDateString(undefined, { month: 'long', year: 'numeric' });
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const todayStr = new Date().toISOString().split('T')[0];
+        const logs = JSON.parse(localStorage.getItem(STORAGE_KEY_LOGS) || '{}');
+
+        // Pad start
+        for (let i = 0; i < firstDay; i++) {
+          const d = document.createElement('div');
+          d.className = 'calendar-day empty';
+          grid.appendChild(d);
+        }
+
+        // Days
+        for (let i = 1; i <= daysInMonth; i++) {
+          const dayDate = new Date(year, month, i, 12, 0, 0);
+          const dStr = dayDate.toISOString().split('T')[0];
+
+          const d = document.createElement('div');
+          d.className = 'calendar-day';
+          d.textContent = i;
+
+          if (cycleMap[dStr]) d.classList.add(`phase-${cycleMap[dStr]}`);
+          if (dStr === todayStr) d.classList.add('day-today');
+          if (logs[dStr]) d.classList.add('has-log');
+
+          d.addEventListener('click', () => handleDayClick(dStr, dayDate));
+          grid.appendChild(d);
+        }
+
+        renderChart();
+      }
+
+      function handleDayClick(dStr, dateObj) {
+        selectedDateStr = dStr;
+        const phase = cycleMap[dStr];
+
+        // Update insight
+        insightBox.style.display = 'block';
+        if (phase === 'menstrual') {
+          insightTitle.innerHTML = `<span class="legend-color phase-menstrual" style="display:inline-block; vertical-align:middle; margin-right:8px"></span> Menstrual Phase`;
+          insightText.textContent = "Energy and libido might be low. Rest up, and if you're dealing with cramps, orgasms can act as a natural painkiller.";
+        } else if (phase === 'follicular') {
+          insightTitle.innerHTML = `<span class="legend-color phase-follicular" style="display:inline-block; vertical-align:middle; margin-right:8px"></span> Follicular Phase`;
+          insightText.textContent = "Estrogen is rising! Your energy and confidence are coming back, and libido starts to climb. Great time to initiate intimacy.";
+        } else if (phase === 'ovulation') {
+          insightTitle.innerHTML = `<span class="legend-color phase-ovulation" style="display:inline-block; vertical-align:middle; margin-right:8px"></span> Ovulation / Fertile Window`;
+          insightText.textContent = "Peak estrogen and testosterone mean peak desire. You're biologically primed for sex. Enjoy the high libido (but remember this is your fertile window!).";
+        } else if (phase === 'luteal') {
+          insightTitle.innerHTML = `<span class="legend-color phase-luteal" style="display:inline-block; vertical-align:middle; margin-right:8px"></span> Luteal Phase`;
+          insightText.textContent = "Progesterone is high, making you feel nesting and calm, followed by a potential drop causing PMS. Libido usually drops; focus on sensual, comforting touch.";
+        } else {
+          insightBox.style.display = 'none';
+        }
+
+        // Open Log Panel
+        logDateDisplay.textContent = dateObj.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+
+        // Populate existing log if any
+        const logs = JSON.parse(localStorage.getItem(STORAGE_KEY_LOGS) || '{}');
+        const dayLog = logs[dStr] || { libido: 3, arousal: 3, energy: 3, mood: 3, acts: [], symptoms: [], notes: '' };
+
+        document.getElementById('log-libido').value = dayLog.libido;
+        document.getElementById('libido-val').textContent = dayLog.libido;
+        document.getElementById('log-arousal').value = dayLog.arousal;
+        document.getElementById('arousal-val').textContent = dayLog.arousal;
+        document.getElementById('log-energy').value = dayLog.energy;
+        document.getElementById('energy-val').textContent = dayLog.energy;
+        document.getElementById('log-mood').value = dayLog.mood;
+        document.getElementById('mood-val').textContent = dayLog.mood;
+        document.getElementById('log-notes').value = dayLog.notes || '';
+
+        // Reset checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+        dayLog.acts.forEach(act => {
+          const cb = document.querySelector(`input[name="sex_act"][value="${act}"]`);
+          if(cb) cb.checked = true;
+        });
+        dayLog.symptoms.forEach(sym => {
+          const cb = document.querySelector(`input[name="symptom"][value="${sym}"]`);
+          if(cb) cb.checked = true;
+        });
+
+        logPanel.style.display = 'block';
+        logPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      function renderChart() {
+        const logs = JSON.parse(localStorage.getItem(STORAGE_KEY_LOGS) || '{}');
+        const dates = Object.keys(logs).sort();
+
+        if (dates.length < 2) {
+          document.getElementById('chart-container').style.display = 'none';
+          return;
+        }
+
+        document.getElementById('chart-container').style.display = 'block';
+
+        const labels = dates.map(d => {
+          const dt = new Date(d + 'T12:00:00');
+          return dt.toLocaleDateString(undefined, {month:'short', day:'numeric'});
+        });
+        const libidoData = dates.map(d => logs[d].libido);
+        const moodData = dates.map(d => logs[d].mood);
+        const energyData = dates.map(d => logs[d].energy);
+
+        const ctx = document.getElementById('wellnessChart').getContext('2d');
+
+        if (chartInstance) {
+          chartInstance.destroy();
+        }
+
+        Chart.defaults.font.family = "'Montserrat', sans-serif";
+        Chart.defaults.color = '#555549';
+
+        chartInstance = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'Libido',
+                data: libidoData,
+                borderColor: '#d9534f',
+                backgroundColor: 'rgba(217, 83, 79, 0.1)',
+                tension: 0.3,
+                borderWidth: 2,
+                pointRadius: 4,
+                pointBackgroundColor: '#d9534f'
+              },
+              {
+                label: 'Mood',
+                data: moodData,
+                borderColor: '#2E3E24',
+                backgroundColor: 'rgba(46, 62, 36, 0.1)',
+                tension: 0.3,
+                borderWidth: 2,
+                pointRadius: 4,
+                pointBackgroundColor: '#2E3E24'
+              },
+              {
+                label: 'Energy',
+                data: energyData,
+                borderColor: '#AD9846',
+                backgroundColor: 'rgba(173, 152, 70, 0.1)',
+                tension: 0.3,
+                borderWidth: 2,
+                borderDash: [5, 5],
+                pointRadius: 4,
+                pointBackgroundColor: '#AD9846'
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                min: 1,
+                max: 5,
+                ticks: { stepSize: 1 }
+              }
+            },
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: { boxWidth: 12, usePointStyle: true }
+              },
+              tooltip: {
+                backgroundColor: '#2E3E24',
+                titleColor: '#FAF8EB',
+                bodyColor: '#FAF8EB',
+                padding: 10,
+                cornerRadius: 8
+              }
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
