@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libido Fluctuation Tracker — Ali Imperiale</title>
+  <meta name="description" content="Monitor libido patterns over time and identify influencing factors like stress, sleep, and cycle tracking with this interactive, privacy-focused tool.">
+  <meta property="og:title" content="Libido Fluctuation Tracker — Ali Imperiale">
+  <meta property="og:description" content="Monitor libido patterns over time and identify influencing factors like stress, sleep, and cycle tracking with this interactive, privacy-focused tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/libido-fluctuation-tracker.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/libido-fluctuation-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    /* Tool Styles */
+    .tool-header {
+      background: #2E3E24;
+      color: #FAF8EB;
+      text-align: center;
+      padding: 64px 24px;
+    }
+    .header-inner h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .header-inner p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #C6C8BB;
+    }
+
+    .tool-container {
+      max-width: 1200px;
+      margin: 48px auto;
+      padding: 0 24px;
+    }
+
+    .disclaimer {
+      background: #fdfae8;
+      border-left: 4px solid #AD9846;
+      padding: 16px;
+      margin-bottom: 32px;
+      font-size: 0.9rem;
+      color: #4a5c3e;
+      line-height: 1.5;
+    }
+
+    .tracker-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 768px) {
+      .tracker-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .input-section, .dashboard-section {
+      background: white;
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(46,62,36,0.05);
+    }
+    .input-section h2, .dashboard-section h2 {
+      margin-bottom: 24px;
+      font-size: 1.5rem;
+      color: #2E3E24;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #2E3E24;
+    }
+    .form-group input[type="date"],
+    .form-group input[type="text"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .slider {
+      flex: 1;
+      appearance: none;
+      height: 6px;
+      background: #e0e0e0;
+      border-radius: 3px;
+      outline: none;
+    }
+    .slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #AD9846;
+      cursor: pointer;
+    }
+    .slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #AD9846;
+      cursor: pointer;
+    }
+    .slider-value {
+      width: 32px;
+      text-align: center;
+      font-weight: bold;
+      color: #2E3E24;
+      background: #f0f0f0;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      width: 100%;
+      padding: 14px 24px;
+      background: #AD9846;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-align: center;
+    }
+    .btn-primary:hover {
+      background: #8e7a33;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 300px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .insights-panel {
+      background: #FAF8EB;
+      padding: 24px;
+      border-radius: 8px;
+      margin-bottom: 32px;
+    }
+    .insights-panel h3 {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+    .insights-panel .empty-state {
+      color: #666;
+      font-style: italic;
+    }
+    .insight-item {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e0e0e0;
+      line-height: 1.5;
+    }
+    .insight-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .logs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .action-buttons {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-secondary {
+      background: #e0e0e0;
+      color: #333;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .btn-danger {
+      background: #d9534f;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+    #logsTable {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    #logsTable th, #logsTable td {
+      padding: 12px 8px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    #logsTable th {
+      font-weight: 600;
+      color: #2E3E24;
+      background: #fafafa;
+    }
+    #logsTable tr:hover {
+      background: #fafafa;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .delete-log {
+      color: #d9534f;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* FAQ section */
+    .faq-section {
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid #ddd;
+    }
+    .faq-section h2 {
+      font-size: 2rem;
+      margin-bottom: 32px;
+      text-align: center;
+      color: #2E3E24;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(46,62,36,0.05);
+    }
+    .faq-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #2E3E24;
+    }
+    .faq-item p {
+      color: #4a5c3e;
+      line-height: 1.6;
+    }
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 480px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header class="tool-header">
+      <div class="header-inner">
+        <h1>Libido Fluctuation Tracker</h1>
+        <p>Monitor your libido patterns over time and identify influencing factors. This interactive, privacy-focused tool helps you understand your unique rhythm.</p>
+      </div>
+    </header>
+
+    <div class="tool-container">
+      <div class="disclaimer">
+        <p><strong>Medical Disclaimer:</strong> This tool is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+      </div>
+
+      <div class="tracker-layout">
+        <!-- Input Section -->
+        <div class="input-section">
+          <h2>Log Your Day</h2>
+          <form id="trackerForm">
+            <div class="form-group">
+              <label for="logDate">Date</label>
+              <input type="date" id="logDate" required>
+            </div>
+
+            <div class="form-group">
+              <label for="libidoLevel">Libido Level (1-10)</label>
+              <div class="slider-container">
+                <input type="range" id="libidoLevel" min="1" max="10" value="5" class="slider">
+                <span id="libidoValue" class="slider-value">5</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="stressLevel">Stress Level (1-10)</label>
+              <div class="slider-container">
+                <input type="range" id="stressLevel" min="1" max="10" value="5" class="slider">
+                <span id="stressValue" class="slider-value">5</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="sleepQuality">Sleep Quality</label>
+              <select id="sleepQuality">
+                <option value="poor">Poor</option>
+                <option value="fair" selected>Fair</option>
+                <option value="good">Good</option>
+                <option value="excellent">Excellent</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="exercise">Exercise Today</label>
+              <select id="exercise">
+                <option value="none" selected>None</option>
+                <option value="light">Light</option>
+                <option value="moderate">Moderate</option>
+                <option value="intense">Intense</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="medications">Medications / Supplements (Optional)</label>
+              <input type="text" id="medications" placeholder="e.g., SSRI, vitamins, birth control">
+            </div>
+
+            <div class="form-group">
+              <label for="cyclePhase">Cycle Phase (If applicable)</label>
+              <select id="cyclePhase">
+                <option value="none" selected>Not Tracking/N/A</option>
+                <option value="menstrual">Menstrual</option>
+                <option value="follicular">Follicular</option>
+                <option value="ovulatory">Ovulatory</option>
+                <option value="luteal">Luteal</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="relationshipSat">Relationship Satisfaction (1-10)</label>
+              <div class="slider-container">
+                <input type="range" id="relationshipSat" min="1" max="10" value="7" class="slider">
+                <span id="relationshipSatValue" class="slider-value">7</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lifeEvents">Significant Life Events (Optional)</label>
+              <textarea id="lifeEvents" rows="2" placeholder="e.g., Argument with partner, started new job, traveling"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Save Entry</button>
+          </form>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div class="dashboard-section">
+          <h2>Your Trends & Insights</h2>
+
+          <div class="chart-container">
+            <canvas id="trendChart"></canvas>
+          </div>
+
+          <div class="insights-panel" id="insightsPanel">
+            <h3>Pattern Analysis</h3>
+            <p class="empty-state" id="emptyInsights">Log more days to see personalized insights.</p>
+            <div id="insightContent" style="display: none;">
+              <!-- Insights injected here -->
+            </div>
+          </div>
+
+          <div class="logs-panel">
+            <div class="logs-header">
+              <h3>Recent Logs</h3>
+              <div class="action-buttons">
+                <button id="exportBtn" class="btn-secondary btn-sm">Export Data</button>
+                <button id="clearBtn" class="btn-danger btn-sm">Clear All</button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table id="logsTable">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Libido</th>
+                    <th>Stress</th>
+                    <th>Sleep</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="logsBody">
+                  <tr><td colspan="5" class="text-center">No logs yet.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Is my data private?</h3>
+            <p>Yes. All data entered into this tracker is stored locally on your device using your browser's local storage. It is not sent to any external servers or shared with anyone. If you clear your browser data or use a different device, your logs will not be available.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Why track stress and sleep along with libido?</h3>
+            <p>Libido is highly sensitive to our overall well-being. High stress levels increase cortisol, which can suppress sex hormones, while poor sleep can leave you too fatigued for intimacy. Tracking these together helps identify if lifestyle factors are causing your fluctuations.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How does the menstrual cycle affect libido?</h3>
+            <p>For those who menstruate, hormonal fluctuations significantly impact desire. Many experience a peak in libido during the ovulatory phase when estrogen and testosterone are highest, and a dip during the luteal phase due to rising progesterone.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is a "normal" libido?</h3>
+            <p>There is no single "normal" libido. Desire varies wildly from person to person and fluctuates throughout your life due to age, relationship dynamics, health, and stress. Normal is simply what is typical and comfortable for you.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How do I use my tracked data?</h3>
+            <p>You can use the Export button to save your data as a CSV file. This can be incredibly helpful to bring to a therapist, doctor, or gynecologist to show them documented patterns, especially if you are concerned about sudden drops in desire or the effects of a new medication.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Elements
+      const form = document.getElementById("trackerForm");
+      const logDateInput = document.getElementById("logDate");
+      const libidoSlider = document.getElementById("libidoLevel");
+      const stressSlider = document.getElementById("stressLevel");
+      const relSlider = document.getElementById("relationshipSat");
+      const libidoValue = document.getElementById("libidoValue");
+      const stressValue = document.getElementById("stressValue");
+      const relValue = document.getElementById("relationshipSatValue");
+
+      const sleepSelect = document.getElementById("sleepQuality");
+      const exerciseSelect = document.getElementById("exercise");
+      const medsInput = document.getElementById("medications");
+      const cycleSelect = document.getElementById("cyclePhase");
+      const lifeEventsInput = document.getElementById("lifeEvents");
+
+      const logsBody = document.getElementById("logsBody");
+      const exportBtn = document.getElementById("exportBtn");
+      const clearBtn = document.getElementById("clearBtn");
+
+      const emptyInsights = document.getElementById("emptyInsights");
+      const insightContent = document.getElementById("insightContent");
+
+      const canvas = document.getElementById("trendChart");
+      const ctx = canvas.getContext("2d");
+
+      // State
+      const STORAGE_KEY = "ali_libido_tracker_logs";
+      let logs = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+      // Set default date to today
+      const today = new Date();
+      logDateInput.value = today.toISOString().split('T')[0];
+
+      // Sync sliders
+      function syncSlider(slider, display) {
+        slider.addEventListener("input", (e) => {
+          display.textContent = e.target.value;
+        });
+      }
+      syncSlider(libidoSlider, libidoValue);
+      syncSlider(stressSlider, stressValue);
+      syncSlider(relSlider, relValue);
+
+      // Core functions
+      function saveLog(e) {
+        e.preventDefault();
+
+        const date = logDateInput.value;
+        const entry = {
+          id: Date.now().toString(),
+          date: date,
+          timestamp: new Date(date).getTime(),
+          libido: parseInt(libidoSlider.value, 10),
+          stress: parseInt(stressSlider.value, 10),
+          sleep: sleepSelect.value,
+          exercise: exerciseSelect.value,
+          medications: medsInput.value.trim(),
+          cycle: cycleSelect.value,
+          relationship: parseInt(relSlider.value, 10),
+          lifeEvents: lifeEventsInput.value.trim()
+        };
+
+        // Check if date already exists, replace it if so
+        const existingIndex = logs.findIndex(log => log.date === date);
+        if (existingIndex >= 0) {
+          if(!confirm(`An entry for ${date} already exists. Do you want to overwrite it?`)) {
+            return;
+          }
+          logs[existingIndex] = entry;
+        } else {
+          logs.push(entry);
+        }
+
+        // Sort chronologically
+        logs.sort((a, b) => a.timestamp - b.timestamp);
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(logs));
+        renderApp();
+
+        // Reset non-date/slider fields
+        lifeEventsInput.value = "";
+        medsInput.value = "";
+      }
+
+      function deleteLog(id) {
+        if(confirm("Are you sure you want to delete this log?")) {
+          logs = logs.filter(log => log.id !== id);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(logs));
+          renderApp();
+        }
+      }
+
+      function clearLogs() {
+        if(logs.length === 0) return;
+        if(confirm("Are you sure you want to clear ALL data? This cannot be undone.")) {
+          logs = [];
+          localStorage.removeItem(STORAGE_KEY);
+          renderApp();
+        }
+      }
+
+      function exportData() {
+        if(logs.length === 0) {
+          alert("No data to export.");
+          return;
+        }
+
+        const headers = ["Date", "Libido", "Stress", "Sleep", "Exercise", "Cycle Phase", "Relationship", "Medications", "Life Events"];
+        const rows = logs.map(log => [
+          log.date,
+          log.libido,
+          log.stress,
+          log.sleep,
+          log.exercise,
+          log.cycle,
+          log.relationship,
+          `"${log.medications.replace(/"/g, '""')}"`,
+          `"${log.lifeEvents.replace(/"/g, '""')}"`
+        ]);
+
+        const csvContent = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute("download", `libido_tracker_export_${new Date().toISOString().split('T')[0]}.csv`);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      // Render Table
+      function renderTable() {
+        logsBody.innerHTML = "";
+        if (logs.length === 0) {
+          logsBody.innerHTML = '<tr><td colspan="5" class="text-center">No logs yet. Fill out the form to begin tracking.</td></tr>';
+          return;
+        }
+
+        // Show newest first in table
+        const displayLogs = [...logs].reverse().slice(0, 10); // Show last 10
+
+        displayLogs.forEach(log => {
+          const tr = document.createElement("tr");
+
+          const tdDate = document.createElement("td");
+          tdDate.textContent = log.date;
+
+          const tdLibido = document.createElement("td");
+          tdLibido.textContent = log.libido;
+
+          const tdStress = document.createElement("td");
+          tdStress.textContent = log.stress;
+
+          const tdSleep = document.createElement("td");
+          tdSleep.textContent = log.sleep.charAt(0).toUpperCase() + log.sleep.slice(1);
+
+          const tdActions = document.createElement("td");
+          const delBtn = document.createElement("button");
+          delBtn.textContent = "Delete";
+          delBtn.className = "delete-log";
+          delBtn.onclick = () => deleteLog(log.id);
+          tdActions.appendChild(delBtn);
+
+          tr.appendChild(tdDate);
+          tr.appendChild(tdLibido);
+          tr.appendChild(tdStress);
+          tr.appendChild(tdSleep);
+          tr.appendChild(tdActions);
+
+          logsBody.appendChild(tr);
+        });
+      }
+
+      // Render Chart (HTML5 Canvas)
+      function renderChart() {
+        // Fix for HDPI screens
+        const dpr = window.devicePixelRatio || 1;
+        const rect = canvas.parentNode.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        ctx.scale(dpr, dpr);
+        canvas.style.width = `${rect.width}px`;
+        canvas.style.height = `${rect.height}px`;
+
+        const width = rect.width;
+        const height = rect.height;
+
+        ctx.clearRect(0, 0, width, height);
+
+        if (logs.length < 2) {
+          ctx.fillStyle = "#666";
+          ctx.font = "14px Montserrat";
+          ctx.textAlign = "center";
+          ctx.fillText("Log at least 2 days to see your trend chart.", width/2, height/2);
+          return;
+        }
+
+        const padding = { top: 20, right: 20, bottom: 40, left: 40 };
+        const graphWidth = width - padding.left - padding.right;
+        const graphHeight = height - padding.top - padding.bottom;
+
+        // Draw axes
+        ctx.beginPath();
+        ctx.strokeStyle = "#e0e0e0";
+        ctx.lineWidth = 1;
+
+        // Horizontal grid lines (0 to 10)
+        for(let i=0; i<=10; i+=2) {
+          const y = padding.top + graphHeight - (i/10 * graphHeight);
+          ctx.moveTo(padding.left, y);
+          ctx.lineTo(width - padding.right, y);
+          ctx.fillStyle = "#666";
+          ctx.font = "10px sans-serif";
+          ctx.textAlign = "right";
+          ctx.textBaseline = "middle";
+          ctx.fillText(i.toString(), padding.left - 10, y);
+        }
+        ctx.stroke();
+
+        const xStep = graphWidth / Math.max(logs.length - 1, 1);
+
+        // Draw Stress Line
+        ctx.beginPath();
+        ctx.strokeStyle = "rgba(217, 83, 79, 0.4)"; // Faded red for stress
+        ctx.lineWidth = 2;
+        logs.forEach((log, index) => {
+          const x = padding.left + (index * xStep);
+          const y = padding.top + graphHeight - (log.stress / 10 * graphHeight);
+          if (index === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // Draw Libido Line
+        ctx.beginPath();
+        ctx.strokeStyle = "#AD9846"; // Gold for libido
+        ctx.lineWidth = 3;
+        logs.forEach((log, index) => {
+          const x = padding.left + (index * xStep);
+          const y = padding.top + graphHeight - (log.libido / 10 * graphHeight);
+          if (index === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // Draw Libido Points and Dates
+        ctx.fillStyle = "#2E3E24";
+        ctx.textAlign = "center";
+        logs.forEach((log, index) => {
+          const x = padding.left + (index * xStep);
+          const y = padding.top + graphHeight - (log.libido / 10 * graphHeight);
+
+          ctx.beginPath();
+          ctx.arc(x, y, 4, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Only draw a few dates to prevent crowding
+          if (logs.length <= 14 || index % Math.ceil(logs.length/7) === 0 || index === logs.length -1) {
+             ctx.fillStyle = "#666";
+             const dateObj = new Date(log.date);
+             const dateStr = `${dateObj.getMonth()+1}/${dateObj.getDate()}`;
+             ctx.fillText(dateStr, x, height - 15);
+             ctx.fillStyle = "#2E3E24";
+          }
+        });
+
+        // Legend
+        ctx.fillStyle = "#AD9846";
+        ctx.fillRect(width/2 - 50, 0, 10, 10);
+        ctx.fillStyle = "#333";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+        ctx.fillText("Libido", width/2 - 35, 5);
+
+        ctx.fillStyle = "rgba(217, 83, 79, 0.6)";
+        ctx.fillRect(width/2 + 20, 0, 10, 10);
+        ctx.fillStyle = "#333";
+        ctx.fillText("Stress", width/2 + 35, 5);
+      }
+
+      // Generate Insights
+      function generateInsights() {
+        if (logs.length < 3) {
+          emptyInsights.style.display = "block";
+          insightContent.style.display = "none";
+          return;
+        }
+
+        emptyInsights.style.display = "none";
+        insightContent.style.display = "block";
+        insightContent.innerHTML = "";
+
+        const insights = [];
+
+        // Avg Libido
+        const avgLibido = (logs.reduce((acc, log) => acc + log.libido, 0) / logs.length).toFixed(1);
+        insights.push(`Your average libido level is <strong>${avgLibido}/10</strong> over the last ${logs.length} logged days.`);
+
+        // Stress Correlation
+        let highStressLogs = logs.filter(l => l.stress >= 7);
+        if (highStressLogs.length > 0) {
+          const avgLibidoHighStress = (highStressLogs.reduce((acc, log) => acc + log.libido, 0) / highStressLogs.length).toFixed(1);
+          insights.push(`On high stress days (7+), your average libido is <strong>${avgLibidoHighStress}</strong>.`);
+        }
+
+        // Sleep Correlation
+        let poorSleepLogs = logs.filter(l => l.sleep === "poor");
+        if (poorSleepLogs.length > 0) {
+          const avgLibidoPoorSleep = (poorSleepLogs.reduce((acc, log) => acc + log.libido, 0) / poorSleepLogs.length).toFixed(1);
+          insights.push(`When reporting poor sleep, your average libido is <strong>${avgLibidoPoorSleep}</strong>.`);
+        }
+
+        // Cycle Correlation (if used)
+        let ovulatoryLogs = logs.filter(l => l.cycle === "ovulatory");
+        let lutealLogs = logs.filter(l => l.cycle === "luteal");
+        if (ovulatoryLogs.length > 0 && lutealLogs.length > 0) {
+          const avgOv = (ovulatoryLogs.reduce((acc, log) => acc + log.libido, 0) / ovulatoryLogs.length).toFixed(1);
+          const avgLu = (lutealLogs.reduce((acc, log) => acc + log.libido, 0) / lutealLogs.length).toFixed(1);
+          insights.push(`Cycle tracking indicates average desire is <strong>${avgOv}</strong> during ovulation and <strong>${avgLu}</strong> during luteal phase.`);
+        }
+
+        // Build HTML
+        insights.forEach(text => {
+          const p = document.createElement("p");
+          p.className = "insight-item";
+          p.innerHTML = text;
+          insightContent.appendChild(p);
+        });
+      }
+
+      function renderApp() {
+        renderTable();
+        renderChart();
+        generateInsights();
+      }
+
+      // Event Listeners
+      form.addEventListener("submit", saveLog);
+      exportBtn.addEventListener("click", exportData);
+      clearBtn.addEventListener("click", clearLogs);
+
+      // Handle resize for canvas
+      window.addEventListener('resize', renderChart);
+
+      // Initial Render
+      renderApp();
+    });
+  </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Is my data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All data entered into this tracker is stored locally on your device using your browser's local storage. It is not sent to any external servers or shared with anyone. If you clear your browser data or use a different device, your logs will not be available."
+        }
+      },{
+        "@type": "Question",
+        "name": "Why track stress and sleep along with libido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Libido is highly sensitive to our overall well-being. High stress levels increase cortisol, which can suppress sex hormones, while poor sleep can leave you too fatigued for intimacy. Tracking these together helps identify if lifestyle factors are causing your fluctuations."
+        }
+      },{
+        "@type": "Question",
+        "name": "How does the menstrual cycle affect libido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For those who menstruate, hormonal fluctuations significantly impact desire. Many experience a peak in libido during the ovulatory phase when estrogen and testosterone are highest, and a dip during the luteal phase due to rising progesterone."
+        }
+      },{
+        "@type": "Question",
+        "name": "What is a 'normal' libido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no single 'normal' libido. Desire varies wildly from person to person and fluctuates throughout your life due to age, relationship dynamics, health, and stress. Normal is simply what is typical and comfortable for you."
+        }
+      },{
+        "@type": "Question",
+        "name": "How do I use my tracked data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use the Export button to save your data as a CSV file. This can be incredibly helpful to bring to a therapist, doctor, or gynecologist to show them documented patterns, especially if you are concerned about sudden drops in desire or the effects of a new medication."
+        }
+      }]
+    }
+    </script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+</body>
+</html>
