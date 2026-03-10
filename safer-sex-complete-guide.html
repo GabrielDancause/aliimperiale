@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Complete Guide to Safer Sex — Ali Imperiale</title>
+  <meta name="description" content="A comprehensive, judgment-free guide to safer sex. Explore risk assessment charts, testing timeline calculators, local resource finders, and educational information on barrier methods, STIs, PrEP, PEP, and vaccinations.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Complete Guide to Safer Sex — Ali Imperiale">
+  <meta property="og:description" content="A comprehensive, judgment-free guide to safer sex. Explore risk assessment charts, testing timeline calculators, local resource finders, and educational information on barrier methods, STIs, PrEP, PEP, and vaccinations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/safer-sex-complete-guide.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Complete Guide to Safer Sex — Ali Imperiale">
+  <meta name="twitter:description" content="A comprehensive, judgment-free guide to safer sex. Explore risk assessment charts, testing timeline calculators, local resource finders, and educational information on barrier methods, STIs, PrEP, PEP, and vaccinations.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+
+  <link rel="canonical" href="https://aliimperiale.com/safer-sex-complete-guide.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    /* Navigation Styles (from shared CSS / index.html) */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Page Specific Styles */
+    .page-header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background-color: #FAF8EB;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3rem;
+      font-weight: 400;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .page-header p {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.1rem;
+      color: #555549;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      border: 1px solid rgba(46, 62, 36, 0.06);
+      margin-bottom: 40px;
+    }
+    .card h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    .educational-section h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      color: #2E3E24;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .educational-section p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555549;
+      margin-bottom: 16px;
+    }
+    .educational-section ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: #555549;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .educational-section li {
+      margin-bottom: 8px;
+    }
+
+    .share-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .share-btn {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 12px 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .share-btn:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+    .share-feedback {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #AD9846;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="nav-hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header" id="main-content">
+    <h1>The Complete Guide to Safer Sex</h1>
+    <p>Honest, practical, and judgment-free tools and information to help you navigate intimacy safely and confidently.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Tools Section -->
+    <div id="tools-section">
+
+      <!-- Risk Assessment Chart -->
+      <section class="card" id="risk-assessment">
+        <h2>STI Risk Assessment Chart</h2>
+        <p style="margin-bottom: 24px; color: #555549; line-height: 1.6;">Select an activity and the barrier method used to see the general risk level for STIs (like HIV, Chlamydia, Gonorrhea, Syphilis, HPV, Herpes). <em>Note: This is a general guide. Risk varies based on viral load, open sores, and individual health.</em></p>
+
+        <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; border: 1px solid #e0dfd5; margin-bottom: 24px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            <div style="flex: 1; min-width: 200px;">
+              <label for="activity-select" style="display: block; font-weight: 600; margin-bottom: 8px; color: #2E3E24; font-size: 0.95rem;">Activity:</label>
+              <select id="activity-select" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #C6C8BB; background: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: #2E3E24; outline: none;">
+                <option value="insertive_vaginal">Insertive Vaginal Sex (Penis to Vagina)</option>
+                <option value="receptive_vaginal">Receptive Vaginal Sex (Vagina to Penis)</option>
+                <option value="insertive_anal">Insertive Anal Sex (Penis to Anus)</option>
+                <option value="receptive_anal">Receptive Anal Sex (Anus to Penis)</option>
+                <option value="giving_oral_penis">Giving Oral Sex (Mouth to Penis)</option>
+                <option value="receiving_oral_penis">Receiving Oral Sex (Penis to Mouth)</option>
+                <option value="giving_oral_vulva">Giving Oral Sex (Mouth to Vulva/Vagina)</option>
+                <option value="receiving_oral_vulva">Receiving Oral Sex (Vulva/Vagina to Mouth)</option>
+                <option value="giving_oral_anus">Giving Oral Sex (Rimming - Mouth to Anus)</option>
+                <option value="receiving_oral_anus">Receiving Oral Sex (Anus to Mouth)</option>
+                <option value="fingering_fisting">Fingering / Fisting</option>
+                <option value="mutual_masturbation">Mutual Masturbation (Hand to Genitals)</option>
+                <option value="kissing">Kissing (Deep/French)</option>
+              </select>
+            </div>
+
+            <div style="flex: 1; min-width: 200px;">
+              <label for="barrier-select" style="display: block; font-weight: 600; margin-bottom: 8px; color: #2E3E24; font-size: 0.95rem;">Barrier / Protection:</label>
+              <select id="barrier-select" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #C6C8BB; background: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: #2E3E24; outline: none;">
+                <option value="none">None (Skin-to-Skin / Fluid Exchange)</option>
+                <option value="condom">External/Internal Condom used correctly</option>
+                <option value="dental_dam">Dental Dam / Saran Wrap</option>
+                <option value="gloves">Latex/Nitrile Gloves</option>
+                <option value="prep">PrEP (Protects against HIV only)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="risk-result" style="text-align: center; padding: 24px; border-radius: 12px; background: #f9f9f9; border: 2px solid #e0e0e0; transition: all 0.3s ease;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; color: #2E3E24;">Estimated Risk Level:</h3>
+          <div id="risk-badge" style="display: inline-block; padding: 8px 24px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; color: #fff; background-color: #9e9e9e; margin-bottom: 16px;">Select Options Above</div>
+          <p id="risk-description" style="font-size: 0.95rem; color: #555549; line-height: 1.5; max-width: 600px; margin: 0 auto;">Choose an activity and barrier method to see general risk information.</p>
+        </div>
+      </section>
+
+      <!-- Testing Timeline Calculator -->
+      <section class="card" id="testing-timeline">
+        <h2>STI Testing Timeline Calculator</h2>
+        <p style="margin-bottom: 24px; color: #555549; line-height: 1.6;">If you've had a potential exposure, testing too early can result in a false negative. Select the date of your exposure to see when you should get tested. <em>Always consult a healthcare provider for personalized advice.</em></p>
+
+        <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; border: 1px solid #e0dfd5; margin-bottom: 24px;">
+          <label for="exposure-date" style="display: block; font-weight: 600; margin-bottom: 8px; color: #2E3E24; font-size: 0.95rem;">Date of Potential Exposure:</label>
+          <input type="date" id="exposure-date" style="width: 100%; max-width: 300px; padding: 12px; border-radius: 8px; border: 1px solid #C6C8BB; background: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: #2E3E24; outline: none;">
+        </div>
+
+        <div id="timeline-results" style="display: none;">
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: #2E3E24; font-size: 1.05rem;">Chlamydia & Gonorrhea</strong>
+                <span id="date-ctgc" style="background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;"></span>
+              </div>
+              <span style="font-size: 0.85rem; color: #777;">Incubation period: 1-2 weeks. (Throat and rectal swabs may be needed).</span>
+            </li>
+
+            <li style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: #2E3E24; font-size: 1.05rem;">HIV (RNA/Early Detection)</strong>
+                <span id="date-hiv-early" style="background: #e3f2fd; color: #1565c0; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;"></span>
+              </div>
+              <span style="font-size: 0.85rem; color: #777;">Incubation period: 10-33 days. (This test is not standard everywhere).</span>
+            </li>
+
+            <li style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: #2E3E24; font-size: 1.05rem;">HIV (Standard 4th Gen) & Syphilis</strong>
+                <span id="date-hiv-std" style="background: #fff3e0; color: #e65100; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;"></span>
+              </div>
+              <span style="font-size: 0.85rem; color: #777;">Incubation period: ~4 weeks for preliminary, up to 3 months for conclusive results.</span>
+            </li>
+
+            <li style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: #2E3E24; font-size: 1.05rem;">Herpes (HSV) & HPV</strong>
+                <span style="background: #f5f5f5; color: #616161; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Varies / Visual</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #777;">Usually tested via swab if a physical sore/lesion appears. Blood tests for Herpes exist but aren't standard. Routine Pap smears check for cervical HPV.</span>
+            </li>
+          </ul>
+          <p style="margin-top: 16px; font-size: 0.85rem; color: #b71c1c; font-weight: 500;">If you suspect HIV exposure, seek PEP (Post-Exposure Prophylaxis) immediately. It must be started within 72 hours of exposure.</p>
+        </div>
+      </section>
+
+      <!-- Local Resource Finder -->
+      <section class="card" id="resource-finder">
+        <h2>Local Resource Finder</h2>
+        <p style="margin-bottom: 24px; color: #555549; line-height: 1.6;">Enter your zip code or city to find the nearest sexual health clinics, testing centers, and PrEP/PEP providers. <em>(For demo purposes, searches will link to the CDC testing locator).</em></p>
+
+        <div style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;">
+          <input type="text" id="location-input" placeholder="Enter Zip Code or City" style="flex: 1; min-width: 200px; padding: 14px; border-radius: 8px; border: 1px solid #C6C8BB; background: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #2E3E24; outline: none;">
+          <button id="search-resources-btn" style="background: #2E3E24; color: #FAF8EB; border: none; padding: 14px 28px; font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: background 0.2s;">Find Clinics</button>
+        </div>
+
+        <div id="resource-links" style="background: #f9f9f9; padding: 20px; border-radius: 12px; border: 1px solid #e0dfd5;">
+          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 12px;">Global Resources:</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 12px;"><a href="https://npin.cdc.gov/disease/stis" target="_blank" rel="noopener" style="color: #AD9846; font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">CDC NPIN STI Resources (USA) &rarr;</a></li>
+            <li style="margin-bottom: 12px;"><a href="https://www.plannedparenthood.org/health-center" target="_blank" rel="noopener" style="color: #AD9846; font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Planned Parenthood Health Centers &rarr;</a></li>
+            <li><a href="https://preplocator.org/" target="_blank" rel="noopener" style="color: #AD9846; font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">PrEP Locator Directory &rarr;</a></li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Educational Section -->
+    <section class="card educational-section">
+      <h2>Safer Sex Essentials</h2>
+      <p>Understanding the basics of safer sex empowers you to make informed decisions about your sexual health and the health of your partners. Here is a breakdown of the key elements of safer sex.</p>
+
+      <h3>Barrier Methods</h3>
+      <p>Barrier methods physically block bodily fluids (and sometimes skin-to-skin contact) to reduce the risk of Sexually Transmitted Infections (STIs) and pregnancy.</p>
+      <ul>
+        <li><strong>External Condoms:</strong> Worn over the penis or a sex toy. Usually made of latex, polyurethane, or polyisoprene.</li>
+        <li><strong>Internal Condoms:</strong> Inserted into the vagina or anus before sex. Offers slightly more protection for the outer genital area.</li>
+        <li><strong>Dental Dams:</strong> A thin, square piece of latex or silicone placed over the vulva or anus during oral sex.</li>
+        <li><strong>Gloves:</strong> Latex or nitrile gloves can be used during manual stimulation (fingering/fisting) to prevent the spread of STIs and keep fingernails from causing small tears.</li>
+      </ul>
+      <p><em>Pro-Tip:</em> Always use a compatible lubricant. Water-based or silicone-based lube is safe for most barriers, but never use oil-based lube (like coconut oil or Vaseline) with latex condoms, as it can cause them to break.</p>
+
+      <h3>STI Testing Schedules</h3>
+      <p>Regular testing is a normal, healthy part of an active sex life.</p>
+      <ul>
+        <li><strong>General Rule:</strong> Test at least once a year, or before starting a relationship with a new partner.</li>
+        <li><strong>High-Risk or Multiple Partners:</strong> If you have multiple partners, casual encounters, or engage in higher-risk activities, consider testing every 3 to 6 months.</li>
+        <li><strong>After a Specific Incident:</strong> If a condom breaks, or you have an unprotected encounter with a partner of unknown status, consult a healthcare provider for testing timelines (some STIs take weeks to show up on tests).</li>
+      </ul>
+
+      <h3>PrEP (Pre-Exposure Prophylaxis)</h3>
+      <p>PrEP is a daily pill (or long-acting injection) taken by people who do not have HIV to prevent getting HIV from sex or injection drug use. When taken as prescribed, PrEP is highly effective for preventing HIV. It does not protect against other STIs, so barrier methods are still recommended.</p>
+
+      <h3>PEP (Post-Exposure Prophylaxis)</h3>
+      <p>PEP is an emergency medication taken to prevent HIV after a possible exposure. It must be started within 72 hours (3 days) of the potential exposure to be effective, and it is taken daily for 28 days. If you think you've been exposed to HIV, seek medical attention immediately.</p>
+
+      <h3>Vaccination Recommendations</h3>
+      <p>Vaccines are a powerful tool for preventing certain viral STIs.</p>
+      <ul>
+        <li><strong>HPV (Human Papillomavirus):</strong> The HPV vaccine (like Gardasil 9) protects against the strains of HPV most likely to cause genital warts and certain cancers (cervical, anal, throat). It's recommended for people of all genders, ideally before becoming sexually active, but can still be beneficial for adults.</li>
+        <li><strong>Hepatitis A and B:</strong> These viruses can be transmitted through sexual contact (especially anal play or exposure to bodily fluids). Vaccines are safe, effective, and widely available.</li>
+        <li><strong>Mpox (Monkeypox):</strong> Depending on current outbreaks and your risk factors, the Mpox vaccine may be recommended for certain individuals.</li>
+      </ul>
+
+      <p><em>Disclaimer: The information provided here is for educational purposes and should not replace professional medical advice. Always consult with a healthcare provider for personalized guidance.</em></p>
+    </section>
+
+    <!-- Share Section -->
+    <div class="share-container">
+      <button class="share-btn" id="share-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+        Share This Guide
+      </button>
+      <span class="share-feedback" id="share-feedback">Link copied to clipboard!</span>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script>
+    // Risk Assessment Logic
+    const riskData = {
+      // Structure: activity: { barrier: { level: 'High'|'Moderate'|'Low'|'No Risk', desc: '...' } }
+      'insertive_vaginal': {
+        'none': { level: 'High', color: '#d32f2f', desc: 'High risk for HIV, Chlamydia, Gonorrhea, Syphilis, HPV, and Herpes. Fluid exchange and skin-to-skin contact occur.' },
+        'condom': { level: 'Low', color: '#4caf50', desc: 'Low risk for most STIs. Condoms are highly effective at preventing fluid exchange, though skin-to-skin infections (HPV, Herpes, Syphilis) can still pass if sores are present outside the condom.' },
+        'dental_dam': { level: 'N/A', color: '#9e9e9e', desc: 'Dental dams are not used for this activity.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Gloves are not used for this activity.' },
+        'prep': { level: 'Moderate', color: '#ff9800', desc: 'Highly effective against HIV, but offers NO protection against other STIs (Chlamydia, Gonorrhea, Syphilis, HPV, Herpes).' }
+      },
+      'receptive_vaginal': {
+        'none': { level: 'High', color: '#d32f2f', desc: 'High risk for HIV, Chlamydia, Gonorrhea, Syphilis, HPV, and Herpes. The vagina is highly absorbent to fluids.' },
+        'condom': { level: 'Low', color: '#4caf50', desc: 'Low risk. Condoms block fluid transfer. Skin-to-skin infections can still occur if unprotected areas touch.' },
+        'dental_dam': { level: 'N/A', color: '#9e9e9e', desc: 'Dental dams are not used for this activity.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Gloves are not used for this activity.' },
+        'prep': { level: 'Moderate', color: '#ff9800', desc: 'Protects against HIV. Does not protect against other STIs.' }
+      },
+      'insertive_anal': {
+        'none': { level: 'High', color: '#d32f2f', desc: 'High risk for HIV, Chlamydia, Gonorrhea, Syphilis, HPV, and Herpes. Anal tissue is delicate and prone to micro-tears.' },
+        'condom': { level: 'Low', color: '#4caf50', desc: 'Low risk. Use plenty of water-based or silicone lube to prevent condom breakage.' },
+        'dental_dam': { level: 'N/A', color: '#9e9e9e', desc: 'Dental dams are not used for this activity.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Gloves are not used for this activity.' },
+        'prep': { level: 'Moderate', color: '#ff9800', desc: 'Protects against HIV, which has a higher transmission rate in anal sex. Does not protect against other STIs.' }
+      },
+      'receptive_anal': {
+        'none': { level: 'Very High', color: '#b71c1c', desc: 'Highest risk for HIV transmission, plus high risk for Chlamydia, Gonorrhea, Syphilis, HPV, and Herpes due to delicate rectal tissue.' },
+        'condom': { level: 'Low', color: '#4caf50', desc: 'Low risk when used correctly with plenty of compatible lube.' },
+        'dental_dam': { level: 'N/A', color: '#9e9e9e', desc: 'Dental dams are not used for this activity.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Gloves are not used for this activity.' },
+        'prep': { level: 'Moderate', color: '#ff9800', desc: 'Highly effective for HIV prevention. Does not prevent other STIs.' }
+      },
+      'giving_oral_penis': {
+        'none': { level: 'Moderate', color: '#ff9800', desc: 'Low risk for HIV, but moderate to high risk for throat infections of Gonorrhea, Chlamydia, Syphilis, and Herpes.' },
+        'condom': { level: 'Low', color: '#4caf50', desc: 'Low risk. Flavored condoms are a great option here (do not use flavored condoms for vaginal/anal sex as the sugar can cause yeast infections).' },
+        'dental_dam': { level: 'N/A', color: '#9e9e9e', desc: 'Dental dams are typically for vulvas or anuses, not penises.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Gloves are not used for this activity.' },
+        'prep': { level: 'Moderate', color: '#ff9800', desc: 'Protects against HIV (which is already low risk here), but offers zero protection for throat STIs.' }
+      },
+      'receiving_oral_penis': {
+        'none': { level: 'Low to Moderate', color: '#ffb74d', desc: 'Very low risk for HIV. Moderate risk for getting Herpes or Syphilis from a partner with mouth sores.' },
+        'condom': { level: 'Low', color: '#4caf50', desc: 'Low risk for all STIs.' },
+        'dental_dam': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'prep': { level: 'Low to Moderate', color: '#ffb74d', desc: 'HIV risk is already very low. Does not protect against other STIs.' }
+      },
+      'giving_oral_vulva': {
+        'none': { level: 'Moderate', color: '#ff9800', desc: 'Low risk for HIV. Moderate risk for Herpes, HPV, and Syphilis. Lower risk for Chlamydia/Gonorrhea compared to penile oral.' },
+        'condom': { level: 'N/A', color: '#9e9e9e', desc: 'Condoms are for penises/toys.' },
+        'dental_dam': { level: 'Low', color: '#4caf50', desc: 'Low risk. Dental dams (or a cut-open condom/plastic wrap) provide an effective barrier.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Gloves are not used for mouth-to-vulva.' },
+        'prep': { level: 'Moderate', color: '#ff9800', desc: 'HIV risk is already very low. Does not protect against Herpes, HPV, etc.' }
+      },
+      'receiving_oral_vulva': {
+        'none': { level: 'Low', color: '#81c784', desc: 'Very low risk for HIV. Can get Herpes (HSV-1) if the partner has a cold sore.' },
+        'condom': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'dental_dam': { level: 'Low', color: '#4caf50', desc: 'Low risk.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'prep': { level: 'Low', color: '#81c784', desc: 'HIV risk is already very low.' }
+      },
+      'giving_oral_anus': {
+        'none': { level: 'Moderate to High', color: '#e64a19', desc: 'Risk for intestinal parasites (like Giardia or Amoebas), Hepatitis A, Shigella, and Syphilis/Herpes/HPV.' },
+        'condom': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'dental_dam': { level: 'Low', color: '#4caf50', desc: 'Low risk. Highly recommended for rimming with new partners.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'prep': { level: 'Moderate to High', color: '#e64a19', desc: 'Does not protect against Hep A or parasites.' }
+      },
+      'receiving_oral_anus': {
+        'none': { level: 'Low', color: '#81c784', desc: 'Low risk for the receiving partner, though Herpes/Syphilis could be transmitted from a partner with mouth sores.' },
+        'condom': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'dental_dam': { level: 'Low', color: '#4caf50', desc: 'Low risk.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'prep': { level: 'Low', color: '#81c784', desc: 'Low risk.' }
+      },
+      'fingering_fisting': {
+        'none': { level: 'Low to Moderate', color: '#ffb74d', desc: 'Low risk for fluid-borne STIs (HIV, Chlamydia). Moderate risk for skin-to-skin (HPV, Herpes). Can cause tears, increasing vulnerability to other infections.' },
+        'condom': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'dental_dam': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'gloves': { level: 'Low', color: '#4caf50', desc: 'Very low risk. Protects against skin-to-skin infections and prevents fingernails from causing micro-tears.' },
+        'prep': { level: 'Low to Moderate', color: '#ffb74d', desc: 'HIV risk from fingering is negligible.' }
+      },
+      'mutual_masturbation': {
+        'none': { level: 'Low', color: '#81c784', desc: 'Very low risk if fluids are not shared. If touching genitals and then touching your own, there is a small risk of transferring fluids or skin infections.' },
+        'condom': { level: 'Low', color: '#4caf50', desc: 'Low risk. Prevents fluid transfer on the penis.' },
+        'dental_dam': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'gloves': { level: 'Low', color: '#4caf50', desc: 'Zero/Very low risk.' },
+        'prep': { level: 'Low', color: '#81c784', desc: 'HIV risk is negligible.' }
+      },
+      'kissing': {
+        'none': { level: 'Low', color: '#81c784', desc: 'Zero risk for HIV. Can transmit Herpes (HSV-1) if cold sores are present, and Syphilis if a sore is in the mouth. Mono and colds can also spread.' },
+        'condom': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'dental_dam': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'gloves': { level: 'N/A', color: '#9e9e9e', desc: 'Not applicable.' },
+        'prep': { level: 'Low', color: '#81c784', desc: 'Zero risk for HIV via kissing.' }
+      }
+    };
+
+    function updateRisk() {
+      const activity = document.getElementById('activity-select').value;
+      const barrier = document.getElementById('barrier-select').value;
+      const resultBox = document.getElementById('risk-result');
+      const badge = document.getElementById('risk-badge');
+      const desc = document.getElementById('risk-description');
+
+      if (riskData[activity] && riskData[activity][barrier]) {
+        const data = riskData[activity][barrier];
+        badge.textContent = data.level;
+        badge.style.backgroundColor = data.color;
+        desc.textContent = data.desc;
+
+        if(data.level === 'N/A') {
+           resultBox.style.borderColor = '#e0e0e0';
+           resultBox.style.backgroundColor = '#f9f9f9';
+        } else {
+           // Lighten the badge color for the background
+           resultBox.style.borderColor = data.color;
+           // Hacky way to add transparency to hex color
+           resultBox.style.backgroundColor = data.color + '15';
+        }
+      }
+    }
+
+    document.getElementById('activity-select').addEventListener('change', updateRisk);
+    document.getElementById('barrier-select').addEventListener('change', updateRisk);
+
+    // Initialize
+    updateRisk();
+
+    // Testing Timeline Logic
+    function calculateTimeline() {
+      const dateInput = document.getElementById('exposure-date').value;
+      const resultsDiv = document.getElementById('timeline-results');
+
+      if (!dateInput) {
+        resultsDiv.style.display = 'none';
+        return;
+      }
+
+      const exposureDate = new Date(dateInput);
+      // Need to adjust for timezone offset if the date is read weirdly
+      exposureDate.setMinutes(exposureDate.getMinutes() + exposureDate.getTimezoneOffset());
+
+      resultsDiv.style.display = 'block';
+
+      // Formatting helper
+      const formatDate = (dateObj) => {
+        return dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      };
+
+      // Calculate dates
+      const ctgcDate = new Date(exposureDate);
+      ctgcDate.setDate(exposureDate.getDate() + 14); // 2 weeks
+      document.getElementById('date-ctgc').textContent = 'Test after: ' + formatDate(ctgcDate);
+
+      const hivEarlyDate = new Date(exposureDate);
+      hivEarlyDate.setDate(exposureDate.getDate() + 14); // 2 weeks
+      document.getElementById('date-hiv-early').textContent = 'Test after: ' + formatDate(hivEarlyDate);
+
+      const hivStdDate = new Date(exposureDate);
+      hivStdDate.setDate(exposureDate.getDate() + 28); // 4 weeks
+      document.getElementById('date-hiv-std').textContent = 'Test after: ' + formatDate(hivStdDate);
+    }
+
+    document.getElementById('exposure-date').addEventListener('change', calculateTimeline);
+
+    // Resource Finder Logic
+    document.getElementById('search-resources-btn').addEventListener('click', function() {
+      const loc = document.getElementById('location-input').value.trim();
+      if (loc) {
+        // Direct to CDC NPIN search
+        const searchUrl = `https://npin.cdc.gov/search/organization/testing/location/${encodeURIComponent(loc)}`;
+        window.open(searchUrl, '_blank');
+      } else {
+        alert("Please enter a Zip Code or City.");
+      }
+    });
+
+    // Allow 'Enter' key to trigger search
+    document.getElementById('location-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        document.getElementById('search-resources-btn').click();
+      }
+    });
+
+    // Share functionality
+    document.getElementById('share-btn').addEventListener('click', function() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        const feedback = document.getElementById('share-feedback');
+        feedback.style.opacity = '1';
+        setTimeout(() => {
+          feedback.style.opacity = '0';
+        }, 3000);
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    });
+  </script>
+</body>
+</html>
