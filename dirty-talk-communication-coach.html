@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dirty Talk Generator & Communication Coach | Ali Imperiale</title>
+  <meta name="description" content="Develop confident intimate communication skills with this interactive dirty talk generator and bedroom communication coach. Explore ideas, build phrases, and practice scenarios.">
+  <meta name="keywords" content="dirty talk ideas, intimate communication skills, bedroom talk confidence, how to talk dirty, sexual communication coach, consent and communication">
+  <meta name="author" content="Ali Imperiale">
+
+  <meta property="og:title" content="Dirty Talk Generator & Communication Coach">
+  <meta property="og:description" content="Develop confident intimate communication skills with this interactive dirty talk generator and bedroom communication coach.">
+  <meta property="og:url" content="https://aliimperiale.com/dirty-talk-communication-coach.html">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 4rem 1rem;
+      background-color: #f1eddb;
+      border-bottom: 2px solid #AD9846;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      color: #2E3E24;
+      margin-bottom: 1rem;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #4a5c3d;
+    }
+
+    .tool-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .disclaimer-banner {
+      background-color: #fffaf0;
+      border-left: 4px solid #AD9846;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .tool-section {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border: 1px solid #e0dfd5;
+    }
+
+    .tool-section h2 {
+      color: #AD9846;
+      margin-top: 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: 1px solid #2E3E24;
+      color: #2E3E24;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      background: #f4f1e1;
+    }
+
+    .tab-btn.active {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .generator-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .generator-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .phrase-card {
+      background: #FAF8EB;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #AD9846;
+      position: relative;
+    }
+
+    .phrase-card h4 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #2E3E24;
+    }
+
+    .phrase-text {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .phrase-meta {
+      font-size: 0.85rem;
+      color: #666;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .copy-btn, .save-btn, .generate-btn {
+      padding: 0.5rem 1rem;
+      background: #AD9846;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .copy-btn:hover, .save-btn:hover, .generate-btn:hover {
+      background: #8e7d38;
+    }
+
+    .generate-btn {
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      display: block;
+      margin: 2rem auto;
+      background: #2E3E24;
+    }
+
+    .generate-btn:hover {
+      background: #1a2414;
+    }
+
+    .build-section {
+      background: #FAF8EB;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .select-group {
+      margin-bottom: 1rem;
+    }
+
+    .select-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .select-group select, .select-group input[type="text"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      background: white;
+    }
+
+    .result-box {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: white;
+      border: 2px dashed #AD9846;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tips-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .tips-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .tips-list li::before {
+      content: "✨";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .history-section {
+      margin-top: 2rem;
+    }
+
+    .history-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .clear-btn {
+      background: transparent;
+      border: 1px solid #dc3545;
+      color: #dc3545;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .clear-btn:hover {
+      background: #dc3545;
+      color: white;
+    }
+
+    .history-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .history-item {
+      background: #FAF8EB;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2E3E24;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* FAQ Schema Styles */
+    .faq-section {
+      margin-top: 3rem;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1.2rem;
+      color: #2E3E24;
+      margin-bottom: 0.5rem;
+    }
+    .faq-item p {
+      color: #444;
+      line-height: 1.6;
+    }
+
+  </style>
+
+  <script src="consent.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <header class="hero-section">
+      <h1>Dirty Talk Generator & Communication Coach</h1>
+      <p>Hey there, beautiful! Ready to find your voice in the bedroom? This tool is designed to help you build confidence, discover what feels good to say, and practice intimate communication in a fun, judgment-free space.</p>
+    </header>
+
+    <div class="tool-container">
+      <div class="disclaimer-banner">
+        <strong>Important:</strong> This tool provides educational ideas and communication exercises. It is not medical or psychological advice. Always prioritize enthusiastic, ongoing consent. What works for one partner might not work for another—communication is key!
+      </div>
+
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="generator">Idea Generator</button>
+        <button class="tab-btn" data-tab="builder">Phrase Builder</button>
+        <button class="tab-btn" data-tab="coach">Confidence Coach</button>
+        <button class="tab-btn" data-tab="saved">Saved & History</button>
+      </div>
+
+      <!-- Generator Tab -->
+      <div id="generator" class="tab-content active">
+        <div class="tool-section">
+          <h2>Dirty Talk Idea Generator</h2>
+          <p>Click below to discover new phrases. Don't worry if a phrase feels "too much"—the goal is just to explore what exists. You can always tone it down or change it to suit your style!</p>
+
+          <div class="select-group" style="max-width: 300px; margin: 0 auto 2rem;">
+            <label for="category-select">Select a Category:</label>
+            <select id="category-select">
+              <option value="romantic">Romantic & Sweet</option>
+              <option value="playful">Playful & Teasing</option>
+              <option value="passionate">Passionate Intensity</option>
+              <option value="dominant">Dominant Energy</option>
+              <option value="submissive">Submissive Energy</option>
+              <option value="fantasy">Fantasy & Roleplay</option>
+            </select>
+          </div>
+
+          <div class="result-box" id="generator-result">
+            "I love the way you look at me right now."
+          </div>
+
+          <button class="generate-btn" id="generate-btn">Give me another idea ✨</button>
+
+          <div style="text-align: center; margin-top: 1rem;">
+             <button class="save-btn" id="save-generated-btn">Save to Favorites ❤️</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Builder Tab -->
+      <div id="builder" class="tab-content">
+         <div class="tool-section">
+          <h2>Build Your Own Phrase</h2>
+          <p>Not sure how to structure a sentence? Use this mad-libs style builder to create something that feels authentic to your voice.</p>
+
+          <div class="build-section">
+            <div class="generator-grid">
+              <div class="select-group">
+                <label for="build-start">Start with an observation or feeling:</label>
+                <select id="build-start">
+                  <option value="I love it when">I love it when...</option>
+                  <option value="It drives me crazy when">It drives me crazy when...</option>
+                  <option value="You look so good when">You look so good when...</option>
+                  <option value="I can't stop thinking about">I can't stop thinking about...</option>
+                  <option value="I need you to">I need you to...</option>
+                </select>
+              </div>
+
+              <div class="select-group">
+                <label for="build-action">Add a specific action or detail:</label>
+                <select id="build-action">
+                  <option value="you touch me right there">you touch me right there</option>
+                  <option value="you look at me like that">you look at me like that</option>
+                  <option value="you say my name">you say my name</option>
+                  <option value="we get this close">we get this close</option>
+                  <option value="you take control">you take control</option>
+                </select>
+              </div>
+
+              <div class="select-group" style="grid-column: 1 / -1;">
+                <label for="build-custom">Add your own ending (optional):</label>
+                <input type="text" id="build-custom" placeholder="e.g., ...don't stop.">
+              </div>
+            </div>
+
+            <div class="result-box" id="builder-result">
+              I love it when you touch me right there.
+            </div>
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+               <button class="save-btn" id="save-built-btn">Save This Phrase ❤️</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coach Tab -->
+      <div id="coach" class="tab-content">
+        <div class="tool-section">
+          <h2>Communication Confidence Coach</h2>
+
+          <h3>Beginner Tips for Finding Your Voice</h3>
+          <ul class="tips-list">
+            <li><strong>Start with sounds:</strong> Moans, sighs, and heavy breathing are a valid form of dirty talk! They communicate pleasure without needing words.</li>
+            <li><strong>State the obvious:</strong> Simply saying what is happening or what you see ("You feel so good," "It's so wet") is highly effective.</li>
+            <li><strong>Use the "Volume Knob":</strong> Start in a whisper. Whispering lowers the stakes and feels intimate.</li>
+            <li><strong>Texting practice:</strong> Sexting is a great way to practice dirty talk because it gives you time to think and removes the pressure of saying it out loud.</li>
+          </ul>
+
+          <h3 style="margin-top: 2rem;">Personality-Based Suggestions</h3>
+          <ul class="tips-list">
+            <li><strong>If you're naturally shy:</strong> Focus on sensory descriptions rather than demands. ("Your skin feels amazing," "It's so warm.")</li>
+            <li><strong>If you're playful:</strong> Incorporate teasing and gentle challenges. ("Is that all you've got?", "You're going to have to try harder than that.")</li>
+            <li><strong>If you're analytical/thoughtful:</strong> Narrate the experience and the emotional connection. ("I love watching how my touch affects you," "I feel so safe when we do this.")</li>
+          </ul>
+
+          <h3 style="margin-top: 2rem;">Advanced Level: Comfort Zone Expansion</h3>
+          <p>Ready to level up? Try these techniques to push your boundaries safely:</p>
+          <ul class="tips-list">
+            <li><strong>The "What If" Game:</strong> Start describing hypothetical scenarios. "What if we were caught right now?" or "What if I told you to..." This allows for fantasy exploration without the pressure of immediate action.</li>
+            <li><strong>Sensory Deprivation:</strong> Try blindfolding your partner and exclusively using your voice to guide their experience and anticipate your touches.</li>
+            <li><strong>Mirroring & Escalation:</strong> Repeat what your partner says but turn up the intensity by 10%. If they say "That feels good," you respond with, "It feels incredible when you..."</li>
+          </ul>
+
+          <h3 style="margin-top: 2rem;">Safety & Consent Guidelines</h3>
+          <div style="background: #eef2eb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #2E3E24;">
+            <p>Dirty talk often involves crossing everyday polite boundaries, which is why consent is crucial.</p>
+            <ul>
+              <li><strong>Have a safe word:</strong> Especially if exploring dominant/submissive language or name-calling.</li>
+              <li><strong>Check-in beforehand:</strong> "I'd love to try talking more during sex, are you open to that?"</li>
+              <li><strong>Discuss "No-Go" words:</strong> Everyone has words that turn them off or make them uncomfortable. Talk about them outside the bedroom!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saved Tab -->
+      <div id="saved" class="tab-content">
+        <div class="tool-section">
+          <div class="history-header">
+            <h2>Your Saved Phrases</h2>
+            <button class="clear-btn" id="clear-history-btn">Clear All History</button>
+          </div>
+          <p>These are saved locally to your device.</p>
+
+          <ul class="history-list" id="history-list">
+            <!-- Saved items will appear here -->
+            <li class="history-item" style="color: #666; font-style: italic;">No saved phrases yet. Generate or build some ideas!</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ & Schema Section -->
+      <div class="tool-section faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3>Why is dirty talk so difficult for some people?</h3>
+          <p>Many people find dirty talk challenging because it requires vulnerability and stepping outside of our everyday "polite" communication norms. We often worry about sounding silly or saying the wrong thing. It's completely normal to feel awkward at first!</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I start talking dirty if I've never done it before?</h3>
+          <p>Start small! Begin with non-verbal sounds (sighs, moans), then progress to simple affirmations ("Yes," "Right there," "That feels good"). You don't need to jump into elaborate roleplay immediately. Whispering in your partner's ear is also a great, low-pressure way to start.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What if I accidentally say something that ruins the mood?</h3>
+          <p>It happens to everyone! The best approach is to laugh it off together. Intimacy should have room for humor and mistakes. You can simply say, "Wow, that sounded better in my head!" and redirect the focus back to the physical sensation.</p>
+        </div>
+      </div>
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Why is dirty talk so difficult for some people?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many people find dirty talk challenging because it requires vulnerability and stepping outside of our everyday 'polite' communication norms. We often worry about sounding silly or saying the wrong thing. It's completely normal to feel awkward at first!"
+          }
+        }, {
+          "@type": "Question",
+          "name": "How do I start talking dirty if I've never done it before?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start small! Begin with non-verbal sounds (sighs, moans), then progress to simple affirmations ('Yes', 'Right there', 'That feels good'). You don't need to jump into elaborate roleplay immediately. Whispering in your partner's ear is also a great, low-pressure way to start."
+          }
+        }, {
+          "@type": "Question",
+          "name": "What if I accidentally say something that ruins the mood?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It happens to everyone! The best approach is to laugh it off together. Intimacy should have room for humor and mistakes. You can simply say, 'Wow, that sounded better in my head!' and redirect the focus back to the physical sensation."
+          }
+        }]
+      }
+      </script>
+
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Empowering your intimate life through education, research, and practical tools.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/tools.html">Interactive Tools</a></li>
+          <li><a href="/guides.html">Guides</a></li>
+          <li><a href="/studies.html">Studies</a></li>
+          <li><a href="/lists.html">Lists</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="/open-and-honest.html">Course</a></li>
+          <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+          <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ali Imperiale</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast">Saved to your favorites!</div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Tab Switching Logic
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons and contents
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+
+          // Add active class to clicked button and corresponding content
+          btn.classList.add('active');
+          const targetId = btn.getAttribute('data-tab');
+          document.getElementById(targetId).classList.add('active');
+        });
+      });
+
+      // Generator Logic
+      const generatorData = {
+        romantic: [
+          "I feel so close to you right now.",
+          "You look so beautiful/handsome in this light.",
+          "I love how your body feels against mine.",
+          "Making love to you is incredible.",
+          "I'm so lucky you're mine."
+        ],
+        playful: [
+          "Are you trying to turn me on? Because it's working.",
+          "You're making it very hard for me to concentrate on anything else.",
+          "I have a secret I want to whisper to you later...",
+          "You're going to be in so much trouble later.",
+          "Keep looking at me like that and see what happens."
+        ],
+        passionate: [
+          "I need you right now.",
+          "Don't stop, that feels amazing.",
+          "I want to feel you everywhere.",
+          "You're driving me crazy.",
+          "I've been thinking about this all day."
+        ],
+        dominant: [
+          "Look at me.",
+          "You're doing exactly what I want.",
+          "Good boy/girl.",
+          "Tell me how much you want it.",
+          "You belong to me right now."
+        ],
+        submissive: [
+          "Whatever you want.",
+          "Tell me what to do.",
+          "Please don't stop.",
+          "I'm yours.",
+          "You feel so big/strong."
+        ],
+        fantasy: [
+          "Pretend we just met...",
+          "What if we get caught?",
+          "Imagine I'm a stranger...",
+          "Tell me your deepest secret...",
+          "Let's try something new tonight."
+        ]
+      };
+
+      const categorySelect = document.getElementById('category-select');
+      const generatorResult = document.getElementById('generator-result');
+      const generateBtn = document.getElementById('generate-btn');
+      const saveGeneratedBtn = document.getElementById('save-generated-btn');
+
+      // Helper function to get random item from array
+      const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+      const updateGeneratorResult = () => {
+        const category = categorySelect.value;
+        const options = generatorData[category];
+
+        // Prevent showing the exact same phrase twice in a row if possible
+        let currentPhrase = generatorResult.textContent.replace(/"/g, '').trim();
+        let newPhrase = getRandomItem(options);
+
+        if (options.length > 1) {
+            while (newPhrase === currentPhrase) {
+                newPhrase = getRandomItem(options);
+            }
+        }
+
+        generatorResult.textContent = `"${newPhrase}"`;
+      };
+
+      // Initial generation
+      updateGeneratorResult();
+
+      categorySelect.addEventListener('change', updateGeneratorResult);
+      generateBtn.addEventListener('click', updateGeneratorResult);
+
+      // Builder Logic
+      const buildStart = document.getElementById('build-start');
+      const buildAction = document.getElementById('build-action');
+      const buildCustom = document.getElementById('build-custom');
+      const builderResult = document.getElementById('builder-result');
+      const saveBuiltBtn = document.getElementById('save-built-btn');
+
+      const updateBuilderResult = () => {
+        const start = buildStart.value;
+        const action = buildAction.options[buildAction.selectedIndex].text;
+        const custom = buildCustom.value.trim();
+
+        let sentence = `${start} ${action}`;
+        if (custom) {
+             // Handle punctuation nicely
+             if (custom.startsWith('...')) {
+                 sentence += custom;
+             } else if (custom.startsWith('.') || custom.startsWith(',')) {
+                 sentence += custom;
+             } else {
+                 sentence += ` ${custom}`;
+             }
+        } else {
+             sentence += '.';
+        }
+
+        builderResult.textContent = sentence;
+      };
+
+      // Initial builder setup
+      updateBuilderResult();
+
+      buildStart.addEventListener('change', updateBuilderResult);
+      buildAction.addEventListener('change', updateBuilderResult);
+      buildCustom.addEventListener('input', updateBuilderResult);
+
+      // Local Storage and History Logic
+      const historyList = document.getElementById('history-list');
+      const clearHistoryBtn = document.getElementById('clear-history-btn');
+      const STORAGE_KEY = 'ali_dirty_talk_saved';
+      const toast = document.getElementById('toast');
+
+      let savedPhrases = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+      const showToast = (message) => {
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3000);
+      };
+
+      const renderHistory = () => {
+        historyList.innerHTML = '';
+
+        if (savedPhrases.length === 0) {
+          historyList.innerHTML = '<li class="history-item" style="color: #666; font-style: italic;">No saved phrases yet. Generate or build some ideas!</li>';
+          return;
+        }
+
+        savedPhrases.forEach((phrase, index) => {
+          const li = document.createElement('li');
+          li.className = 'history-item';
+
+          const textSpan = document.createElement('span');
+          textSpan.textContent = phrase;
+          textSpan.style.flex = '1';
+          textSpan.style.marginRight = '1rem';
+
+          const deleteBtn = document.createElement('button');
+          deleteBtn.className = 'clear-btn';
+          deleteBtn.textContent = 'Remove';
+          deleteBtn.style.padding = '0.2rem 0.5rem';
+          deleteBtn.onclick = () => removePhrase(index);
+
+          li.appendChild(textSpan);
+          li.appendChild(deleteBtn);
+          historyList.appendChild(li);
+        });
+      };
+
+      const savePhrase = (phrase) => {
+          // Clean up quotes if present from generator
+          const cleanPhrase = phrase.replace(/^"|"$/g, '').trim();
+
+          if (!savedPhrases.includes(cleanPhrase)) {
+              savedPhrases.push(cleanPhrase);
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(savedPhrases));
+              renderHistory();
+              showToast('Saved to your favorites! ❤️');
+          } else {
+              showToast('Already saved! ✨');
+          }
+      };
+
+      const removePhrase = (index) => {
+          savedPhrases.splice(index, 1);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(savedPhrases));
+          renderHistory();
+      };
+
+      saveGeneratedBtn.addEventListener('click', () => {
+          savePhrase(generatorResult.textContent);
+      });
+
+      saveBuiltBtn.addEventListener('click', () => {
+          savePhrase(builderResult.textContent);
+      });
+
+      clearHistoryBtn.addEventListener('click', () => {
+          if (confirm('Are you sure you want to clear all your saved phrases? This cannot be undone.')) {
+              savedPhrases = [];
+              localStorage.removeItem(STORAGE_KEY);
+              renderHistory();
+              showToast('History cleared. 🧹');
+          }
+      });
+
+      // Initial render
+      renderHistory();
+    });
+  </script>
+
+
+</body>
+</html>
