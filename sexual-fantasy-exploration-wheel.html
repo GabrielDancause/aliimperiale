@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Fantasy Exploration Wheel | Ali Imperiale</title>
+  <meta name="description" content="Discover and categorize your sexual desires safely with our interactive Sexual Fantasy Exploration Wheel. A desire discovery tool and sexual imagination guide.">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+
+  <style>
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    body {
+      background-color: #FAF8EB;
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      line-height: 1.6;
+    }
+
+    .tool-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .tool-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .tool-header h1 {
+      color: #2E3E24;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .tool-header p {
+      color: #556B48;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .medical-disclaimer {
+      background-color: #f1ebd7;
+      border-left: 4px solid #AD9846;
+      padding: 15px;
+      margin-bottom: 30px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+
+    /* Wheel Container */
+    .wheel-wrapper {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: 0 auto 40px;
+    }
+
+    .wheel-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      border: 8px solid #2E3E24;
+    }
+
+    .wheel-pointer {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 40px solid #AD9846;
+      z-index: 10;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+
+    /* Spin Button */
+    .spin-btn-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .spin-btn {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.1s;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 4px 6px rgba(46, 62, 36, 0.2);
+    }
+
+    .spin-btn:hover {
+      background-color: #3f5532;
+    }
+
+    .spin-btn:active {
+      transform: translateY(2px);
+    }
+
+    .spin-btn:disabled {
+      background-color: #8c9b83;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Results Section */
+    .result-section {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      display: none;
+      border-top: 5px solid #AD9846;
+    }
+
+    .result-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fantasy-title {
+      color: #2E3E24;
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .fantasy-category-badge {
+      display: inline-block;
+      background-color: #f1ebd7;
+      color: #556B48;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .result-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .result-card {
+      background-color: #fbfaf5;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #e8e3cf;
+    }
+
+    .result-card h3 {
+      color: #AD9846;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      border-bottom: 1px solid #e8e3cf;
+      padding-bottom: 8px;
+    }
+
+    .script-box {
+      background-color: #f1ebd7;
+      padding: 15px;
+      border-radius: 8px;
+      font-style: italic;
+      margin-top: 10px;
+      border-left: 3px solid #AD9846;
+    }
+
+    /* Form within results */
+    .intensity-form {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #e8e3cf;
+    }
+
+    .intensity-form h4 {
+      margin-top: 0;
+      color: #2E3E24;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .radio-label input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 10px;
+      position: relative;
+      outline: none;
+    }
+
+    .radio-label input[type="radio"]:checked::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      width: 10px;
+      height: 10px;
+      background-color: #2E3E24;
+      border-radius: 50%;
+    }
+
+    .save-btn {
+      background-color: #AD9846;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .save-btn:hover {
+      background-color: #96833c;
+    }
+
+    /* History Section */
+    .history-section {
+      margin-top: 50px;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .history-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e8e3cf;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .history-header h2 {
+      margin: 0;
+      color: #2E3E24;
+    }
+
+    .clear-btn {
+      background-color: transparent;
+      color: #d32f2f;
+      border: 1px solid #d32f2f;
+      padding: 5px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .clear-btn:hover {
+      background-color: #ffebee;
+    }
+
+    .history-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .history-item {
+      padding: 15px;
+      border: 1px solid #e8e3cf;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background-color: #fbfaf5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .history-item-details h4 {
+      margin: 0 0 5px 0;
+      color: #2E3E24;
+    }
+
+    .history-item-details p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #556B48;
+    }
+
+    .history-tag {
+      background-color: #AD9846;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .empty-history {
+      text-align: center;
+      color: #8c9b83;
+      font-style: italic;
+      padding: 20px;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      margin-top: 60px;
+    }
+
+    .faq-item {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .faq-item h3 {
+      color: #2E3E24;
+      margin-top: 0;
+    }
+
+    .faq-item p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is the Sexual Fantasy Exploration Wheel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Sexual Fantasy Exploration Wheel is an interactive desire discovery tool designed to help you safely explore, categorize, and understand your sexual imagination. It provides randomized categories, detailed descriptions, and communication scripts to guide you."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How can this fantasy wheel improve my intimate life?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Using a sexual imagination guide like this wheel helps normalize your desires, provides structured ways to differentiate between what you want in reality versus fantasy, and offers practical scripts for discussing fantasies with partners, ultimately improving communication and intimacy."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Do I have to act out the fantasies I discover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely not. A key part of sexual fantasy exploration is understanding the difference between enjoying a scenario in your imagination versus wanting to experience it in reality. The tool explicitly helps you categorize desires as 'fantasy only' or 'reality potential'."
+      }
+    }]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main class="tool-container">
+    <div class="tool-header">
+      <h1>Sexual Fantasy Exploration Wheel</h1>
+      <p>A safe, structured desire discovery tool to explore your sexual imagination, understand your boundaries, and find the words to communicate with your partner.</p>
+    </div>
+
+    <div class="medical-disclaimer">
+      <strong>Educational Tool:</strong> This Sexual Fantasy Exploration Wheel is an educational guide for self-discovery and communication. It is not a substitute for professional sex therapy or counseling. Always prioritize enthusiastic consent, safety, and mutual agreement in any sexual interaction.
+    </div>
+
+    <div class="wheel-wrapper">
+      <div class="wheel-pointer"></div>
+      <canvas id="fantasyCanvas" class="wheel-container" width="400" height="400"></canvas>
+    </div>
+
+    <div class="spin-btn-container">
+      <button id="spinBtn" class="spin-btn">Spin to Explore a Fantasy</button>
+    </div>
+
+    <div id="resultSection" class="result-section">
+      <div class="fantasy-category-badge" id="resCategory">Category</div>
+      <h2 class="fantasy-title" id="resTitle">Fantasy Title</h2>
+
+      <div class="result-grid">
+        <div class="result-card">
+          <h3>The Core Desire</h3>
+          <p id="resDescription">Description of the fantasy.</p>
+
+          <h3>Why We Like It</h3>
+          <p id="resPsychology">Psychological background.</p>
+        </div>
+
+        <div class="result-card">
+          <h3>Reality vs. Fantasy</h3>
+          <p id="resRealityCheck">Guidelines on keeping it safe or recognizing it as strictly imagination.</p>
+
+          <h3>Safety & Boundaries</h3>
+          <p id="resSafety">Important safety notes.</p>
+        </div>
+      </div>
+
+      <div class="result-card" style="margin-top: 20px;">
+        <h3>Communication Scripts</h3>
+        <p>How to bring this up to a partner:</p>
+        <div class="script-box" id="resScript">
+          "I was reading about..."
+        </div>
+      </div>
+
+      <div class="intensity-form">
+        <h4>How do you feel about this fantasy?</h4>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="fantasyLevel" value="Strictly Fantasy (Never in Reality)"> Strictly Fantasy (I only want this in my imagination)
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="fantasyLevel" value="Curious (Maybe Someday)"> Curious (I might want to try a mild version someday)
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="fantasyLevel" value="Active Desire (Want to Try)"> Active Desire (I would love to explore this in reality safely)
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="fantasyLevel" value="Not For Me"> Not For Me (Pass on this one)
+          </label>
+        </div>
+        <button id="saveResultBtn" class="save-btn">Save to My Exploration History</button>
+      </div>
+    </div>
+
+    <div class="history-section">
+      <div class="history-header">
+        <h2>My Explored Fantasies</h2>
+        <button id="clearHistoryBtn" class="clear-btn">Clear All History</button>
+      </div>
+      <ul id="historyList" class="history-list">
+        <!-- History items will be populated here -->
+      </ul>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What is the Sexual Fantasy Exploration Wheel?</h3>
+        <p>The Sexual Fantasy Exploration Wheel is an interactive desire discovery tool designed to help you safely explore, categorize, and understand your sexual imagination. It provides randomized categories, detailed descriptions, and communication scripts to guide you through various themes.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can this fantasy wheel improve my intimate life?</h3>
+        <p>Using a sexual imagination guide like this wheel helps normalize your desires. Many people feel shame around their fantasies simply because they don't understand them. This tool provides structured ways to differentiate between what you want in reality versus fantasy, and offers practical scripts for discussing fantasies with partners, ultimately improving communication and intimacy.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do I have to act out the fantasies I discover?</h3>
+        <p>Absolutely not. A key part of sexual fantasy exploration is understanding the difference between enjoying a scenario in your imagination versus wanting to experience it in reality. The tool explicitly helps you categorize desires as "fantasy only" or "reality potential," reinforcing that our minds are a safe playground.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is my exploration history private?</h3>
+        <p>Yes. Your exploration history is saved using your browser's local storage (`localStorage`). This means the data never leaves your device and is not sent to any servers. If you share a device, you can use the "Clear All History" button to remove your saved results.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="consent.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('fantasyCanvas');
+      const ctx = canvas.getContext('2d');
+      const spinBtn = document.getElementById('spinBtn');
+      const resultSection = document.getElementById('resultSection');
+      const saveResultBtn = document.getElementById('saveResultBtn');
+      const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+      const historyList = document.getElementById('historyList');
+
+      const fantasies = [
+        {
+          id: 'power-exchange',
+          title: 'Power Exchange',
+          category: 'BDSM & Dynamics',
+          description: 'Exploring consensual scenarios where one partner takes control and the other surrenders it. This could involve gentle guidance, strict rules, or elaborate roleplay.',
+          psychology: 'Power exchange allows us to take a break from our daily responsibilities (surrendering control) or safely explore leadership and dominance in a trusted environment.',
+          realityCheck: 'In reality, power exchange requires extensive communication, safe words, and clear boundaries. In fantasy, you can explore extremes without consequences.',
+          safety: 'If exploring in reality, use a traffic light system (Red/Yellow/Green) and always discuss hard limits beforehand. Aftercare is essential.',
+          script: 'I read about power dynamics recently, and I’m curious about trying something mild. What if, just for one evening, you made all the decisions about what we do?'
+        },
+        {
+          id: 'exhibitionism',
+          title: 'Being Watched',
+          category: 'Thrill & Taboo',
+          description: 'The thrill of being seen or the risk of being caught during intimate moments. This might involve semi-public spaces, windows left slightly open, or recording yourselves.',
+          psychology: 'The forbidden nature of being caught triggers adrenaline, which heightens physical arousal. It also validates our desirability to be "caught" being sexual.',
+          realityCheck: 'True public sex carries legal risks and violates the consent of non-participating observers. Safe reality exploration involves controlled environments or roleplaying the risk.',
+          safety: 'To explore safely in reality, use secluded private property, keep curtains slightly open where only each other can see, or visit a private lifestyle club.',
+          script: 'The idea of someone almost catching us really turns me on. How would you feel about leaving the bedroom door open while others are in the house, just to feel the thrill?'
+        },
+        {
+          id: 'voyeurism',
+          title: 'Watching Others',
+          category: 'Thrill & Taboo',
+          description: 'Finding arousal in observing others being intimate. This can range from watching ethical pornography together to visiting spaces where consensual observation is permitted.',
+          psychology: 'Watching removes the pressure of performance while allowing you to focus entirely on visual stimulation and the raw arousal of the participants.',
+          realityCheck: 'Non-consensual voyeurism is harmful and illegal. In fantasy, you can watch anyone. In reality, you must only watch those who have explicitly consented.',
+          safety: 'Explore via ethical adult films, mutually agreed-upon mirrors in the bedroom, or consensual group environments.',
+          script: 'I sometimes get turned on thinking about watching you pleasure yourself. Would you be open to me just watching you sometime?'
+        },
+        {
+          id: 'threesome',
+          title: 'Group Dynamics',
+          category: 'Exploration',
+          description: 'Introducing a third (or more) person into your intimate dynamic, whether MFF, MMF, or other configurations.',
+          psychology: 'Group scenarios offer novelty, the excitement of shared pleasure, and the diffusion of attention across multiple participants.',
+          realityCheck: 'While wildly popular in fantasy, real threesomes require immense communication, emotional regulation, and managing jealousy. It changes the relationship dynamic.',
+          safety: 'Establish clear "messy lists" (who is off-limits), discuss exact physical boundaries with the guest, and agree on a safe word to pause or stop immediately.',
+          script: 'I had a dream about us being with another person, and it was really hot. Is that something you’ve ever fantasized about, even just theoretically?'
+        },
+        {
+          id: 'sensory-deprivation',
+          title: 'Sensory Deprivation',
+          category: 'Sensuality',
+          description: 'Enhancing certain senses by removing others, most commonly through blindfolds, earplugs, or light restraints to limit movement.',
+          psychology: 'Removing sight or hearing forces your brain to hyper-focus on touch. It also requires immense trust in your partner, deepening the emotional connection.',
+          realityCheck: 'This is highly achievable in reality and often a great "entry-level" exploration into new dynamics.',
+          safety: 'Check in frequently. Because visual cues are gone, verbal communication becomes your primary safety tool. Ensure the environment is physically safe from hazards.',
+          script: 'I want to try focusing completely on how your touch feels. What if we tried using a blindfold next time so I can’t see what’s coming?'
+        },
+        {
+          id: 'roleplay',
+          title: 'Character Roleplay',
+          category: 'Imagination',
+          description: 'Stepping out of your everyday identities and adopting personas. This could be strangers meeting at a bar, classic tropes (teacher/student), or entirely fictional characters.',
+          psychology: 'Roleplay allows you to express traits you might normally suppress (like being extra assertive or extra submissive) without feeling like "yourself."',
+          realityCheck: 'It can feel silly at first! In fantasy, it flows perfectly. In reality, expect to laugh and break character—that’s part of the fun.',
+          safety: 'Discuss character boundaries beforehand. If a scenario touches on sensitive topics, ensure both partners enthusiastically consent to that specific narrative.',
+          script: 'I thought it might be fun to pretend we are strangers meeting for the first time at the hotel bar tonight. Want to play along?'
+        },
+        {
+          id: 'rough-play',
+          title: 'Rough Play',
+          category: 'Physical Sensation',
+          description: 'Consensual physical intensity, such as hair pulling, spanking, scratching, or impact play. The focus is on the specific sensation blending with arousal.',
+          psychology: 'The body releases endorphins and adrenaline in response to intense sensation, which can profoundly enhance sexual pleasure and climax.',
+          realityCheck: 'Safety is paramount. What feels good in the heat of the moment might bruise later. Communication is required.',
+          safety: 'Never mix rough play with anger. Always negotiate target areas (e.g., "thighs and butt are okay, no face"). Establish a firm safe word.',
+          script: 'I’ve been noticing I really enjoy it when you grab me a bit harder. Could we try turning up the physical intensity a little bit next time and see how it feels?'
+        },
+        {
+          id: 'gender-bending',
+          title: 'Gender Exploration',
+          category: 'Identity & Expression',
+          description: 'Playing with gender roles, clothing, or dynamics that differ from your everyday expression or the traditional expectations of your relationship.',
+          psychology: 'Allows individuals to break free from societal expectations and explore all facets of their identity and energy, both masculine and feminine.',
+          realityCheck: 'This is highly personal. For some, it is a fun temporary game; for others, it is a meaningful exploration of their core identity.',
+          safety: 'Approach with absolute non-judgment. Create a space where vulnerability is met with acceptance and enthusiasm.',
+          script: 'I’m curious about exploring different kinds of energy in bed. How would you feel about me taking on a more [masculine/feminine] role tonight?'
+        }
+      ];
+
+      // Wheel Configuration
+      const colors = ['#2E3E24', '#556B48', '#8c9b83', '#AD9846', '#c4b370', '#FAF8EB', '#e8e3cf', '#d1c7a3'];
+      const numSegments = fantasies.length;
+      const arc = Math.PI * 2 / numSegments;
+      let currentAngle = 0;
+      let isSpinning = false;
+      let currentResult = null;
+
+      function drawWheel() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const radius = canvas.width / 2;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        for (let i = 0; i < numSegments; i++) {
+          const angle = currentAngle + i * arc;
+
+          ctx.beginPath();
+          ctx.arc(centerX, centerY, radius, angle, angle + arc, false);
+          ctx.lineTo(centerX, centerY);
+          ctx.fillStyle = colors[i % colors.length];
+          ctx.fill();
+
+          // Border
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = '#FAF8EB';
+          ctx.stroke();
+
+          // Text
+          ctx.save();
+          ctx.translate(
+            centerX + Math.cos(angle + arc / 2) * (radius * 0.65),
+            centerY + Math.sin(angle + arc / 2) * (radius * 0.65)
+          );
+          ctx.rotate(angle + arc / 2);
+
+          // Choose text color based on background
+          const isDarkBg = ['#2E3E24', '#556B48', '#8c9b83', '#AD9846'].includes(colors[i % colors.length]);
+          ctx.fillStyle = isDarkBg ? '#FAF8EB' : '#2E3E24';
+
+          ctx.font = 'bold 14px Montserrat, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+
+          // Simple wrap text logic for canvas
+          const words = fantasies[i].title.split(' ');
+          let line = '';
+          let y = words.length > 1 ? -10 : 0;
+
+          for(let n = 0; n < words.length; n++) {
+            ctx.fillText(words[n], 0, y);
+            y += 20;
+          }
+
+          ctx.restore();
+        }
+      }
+
+      function spinWheel() {
+        if (isSpinning) return;
+        isSpinning = true;
+        spinBtn.disabled = true;
+        spinBtn.textContent = 'Spinning...';
+        resultSection.classList.remove('active');
+
+        // Reset radio buttons
+        const radios = document.querySelectorAll('input[name="fantasyLevel"]');
+        radios.forEach(r => r.checked = false);
+
+        const spinTime = 3000 + Math.random() * 2000;
+        const spinAngle = (Math.random() * 10 + 10) * Math.PI * 2;
+
+        canvas.style.transition = `transform ${spinTime/1000}s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+        canvas.style.transform = `rotate(${spinAngle}rad)`;
+
+        setTimeout(() => {
+          isSpinning = false;
+          spinBtn.disabled = false;
+          spinBtn.textContent = 'Spin Again';
+
+          // Calculate the total rotation including the current angle
+          const totalRotation = (currentAngle + spinAngle) % (Math.PI * 2);
+
+          // The pointer is exactly at the top (270 degrees or 3*PI/2)
+          // The wheel is drawn starting from 0 (right side), going clockwise.
+          // To find the winning segment, we calculate how far back from the top we need to look.
+          // The top is at 3*PI/2. The wheel has rotated by totalRotation.
+          // We want the segment i where (i * arc + totalRotation) % 2*PI encompasses 3*PI/2.
+          let offset = (3 * Math.PI / 2) - totalRotation;
+
+          // Normalize offset to be positive
+          if (offset < 0) {
+            offset += Math.PI * 2;
+          }
+
+          const winningIndex = Math.floor(offset / arc) % numSegments;
+          showResult(fantasies[winningIndex]);
+
+          // Update currentAngle to the new resting position
+          currentAngle = totalRotation;
+
+          // Reset the CSS transform but redraw the canvas at the new currentAngle
+          // This creates a seamless visual state without CSS rotation accumulation
+          canvas.style.transition = 'none';
+          canvas.style.transform = `rotate(0rad)`;
+          drawWheel();
+
+        }, spinTime);
+      }
+
+      function showResult(fantasy) {
+        currentResult = fantasy;
+        document.getElementById('resCategory').textContent = fantasy.category;
+        document.getElementById('resTitle').textContent = fantasy.title;
+        document.getElementById('resDescription').textContent = fantasy.description;
+        document.getElementById('resPsychology').textContent = fantasy.psychology;
+        document.getElementById('resRealityCheck').textContent = fantasy.realityCheck;
+        document.getElementById('resSafety').textContent = fantasy.safety;
+        document.getElementById('resScript').textContent = `"${fantasy.script}"`;
+
+        resultSection.classList.add('active');
+        resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      // History Management
+      function saveResult() {
+        if (!currentResult) return;
+
+        const selectedLevel = document.querySelector('input[name="fantasyLevel"]:checked');
+        if (!selectedLevel) {
+          alert("Please select how you feel about this fantasy before saving.");
+          return;
+        }
+
+        const history = JSON.parse(localStorage.getItem('aliFantasyHistory') || '[]');
+
+        // Check if already exists, remove to add updated version to top
+        const existingIndex = history.findIndex(h => h.id === currentResult.id);
+        if (existingIndex > -1) {
+          history.splice(existingIndex, 1);
+        }
+
+        const newEntry = {
+          id: currentResult.id,
+          title: currentResult.title,
+          category: currentResult.category,
+          level: selectedLevel.value,
+          date: new Date().toISOString()
+        };
+
+        history.unshift(newEntry);
+        localStorage.setItem('aliFantasyHistory', JSON.stringify(history));
+
+        renderHistory();
+        alert("Saved to your exploration history!");
+      }
+
+      function renderHistory() {
+        const history = JSON.parse(localStorage.getItem('aliFantasyHistory') || '[]');
+
+        if (history.length === 0) {
+          historyList.innerHTML = '<li class="empty-history">You haven\'t explored any fantasies yet. Spin the wheel to start!</li>';
+          return;
+        }
+
+        historyList.innerHTML = '';
+        history.forEach(item => {
+          const dateStr = new Date(item.date).toLocaleDateString();
+          const li = document.createElement('li');
+          li.className = 'history-item';
+          li.innerHTML = `
+            <div class="history-item-details">
+              <h4>${item.title} <span style="font-size: 0.8rem; font-weight: normal; color: #8c9b83;">(${dateStr})</span></h4>
+              <p>${item.category}</p>
+            </div>
+            <div class="history-tag">${item.level}</div>
+          `;
+          historyList.appendChild(li);
+        });
+      }
+
+      function clearHistory() {
+        if (confirm("Are you sure you want to clear your exploration history? This cannot be undone.")) {
+          localStorage.removeItem('aliFantasyHistory');
+          renderHistory();
+        }
+      }
+
+      // Initialization
+      drawWheel();
+      renderHistory();
+
+      // Event Listeners
+      spinBtn.addEventListener('click', spinWheel);
+      saveResultBtn.addEventListener('click', saveResult);
+      clearHistoryBtn.addEventListener('click', clearHistory);
+    });
+  </script>
+</body>
+</html>
