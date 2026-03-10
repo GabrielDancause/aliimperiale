@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erectile Dysfunction Recovery Tracker — Ali Imperiale</title>
+  <meta name="description" content="Track your erectile dysfunction recovery with this free interactive tool. Monitor lifestyle factors, performance, and identify patterns over time.">
+  <meta property="og:title" content="Erectile Dysfunction Recovery Tracker — Ali Imperiale">
+  <meta property="og:description" content="Track your erectile dysfunction recovery with this free interactive tool. Monitor lifestyle factors, performance, and identify patterns over time.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/ed-recovery-tracker.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/ed-recovery-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <style>
+    body { background-color: #FAF8EB; }
+
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 768px) {
+      .site-nav { padding: 12px 16px; }
+      .site-nav .nav-links { display: none; }
+    }
+
+    /* Option Input Styles for Radio/Checkbox */
+    .option-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: #2E3E24;
+      transition: all 0.2s ease;
+    }
+    .option-label:hover {
+      border-color: #AD9846;
+      background: #fdfcfa;
+    }
+    .option-label.selected {
+      border-color: #AD9846;
+      background: #fdfcfa;
+      font-weight: 600;
+    }
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ddd;
+      border-radius: 50%;
+      margin-right: 12px;
+      display: grid;
+      place-content: center;
+      transition: all 0.2s ease;
+    }
+    .option-input::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em #AD9846;
+    }
+    .option-input:checked {
+      border-color: #AD9846;
+    }
+    .option-input:checked::before {
+      transform: scale(1);
+    }
+    input[type="checkbox"].option-input {
+      border-radius: 4px;
+    }
+    input[type="checkbox"].option-input::before {
+      border-radius: 2px;
+    }
+
+    .tracker-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .tracker-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .tracker-header h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+    .tracker-header p {
+      color: #5a6b50;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      font-size: 1.5rem;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 8px;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: #2E3E24;
+      box-sizing: border-box;
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: #AD9846;
+      box-shadow: 0 0 0 2px rgba(173,152,70,0.2);
+    }
+
+    .scale-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fdfcfa;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+    .scale-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #AD9846;
+      width: 40px;
+      text-align: center;
+    }
+    .scale-slider {
+      flex-grow: 1;
+      margin: 0 20px;
+    }
+
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s, transform 0.1s;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .btn-primary:hover {
+      background: #1a2414;
+    }
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .btn-secondary:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .actions-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .results-section {
+      margin-top: 48px;
+      display: none;
+    }
+    .results-section.active {
+      display: block;
+    }
+
+    .chart-container {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      margin-bottom: 32px;
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+
+    .history-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .history-item {
+      background: #fdfcfa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .history-date {
+      font-weight: 700;
+      color: #AD9846;
+      margin-bottom: 8px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .history-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+    .history-details div strong {
+      color: #2E3E24;
+    }
+
+    .disclaimer {
+      background: #fff8e1;
+      border-left: 4px solid #fbc02d;
+      padding: 16px;
+      margin: 32px 0;
+      font-size: 0.95rem;
+      color: #333;
+      border-radius: 4px;
+    }
+    .disclaimer strong {
+      color: #f57f17;
+    }
+
+    .educational-content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 24px;
+      color: #2E3E24;
+      line-height: 1.7;
+    }
+    .educational-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #AD9846;
+    }
+    .educational-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .educational-content ul {
+      margin-left: 24px;
+      margin-bottom: 24px;
+    }
+    .educational-content li {
+      margin-bottom: 8px;
+    }
+    .faq-section {
+      margin-top: 48px;
+    }
+    .faq-item {
+      margin-bottom: 24px;
+    }
+    .faq-question {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools.html" class="active">Tools</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+  </nav>
+
+
+  <main class="tracker-container">
+    <div class="tracker-header">
+      <h1>Erectile Dysfunction Recovery Tracker</h1>
+      <p>A daily log to help you monitor lifestyle factors, track your performance, and identify patterns that affect your erectile function.</p>
+
+      <div class="disclaimer">
+        <strong>Medical Disclaimer:</strong> This tool is designed for educational and self-tracking purposes only. It does not provide medical advice or diagnoses. If you are experiencing persistent erectile dysfunction, sudden changes, or pain, please seek professional medical help immediately.
+      </div>
+    </div>
+
+    <div class="actions-row">
+      <button class="btn-secondary" id="btn-view-tracker">Daily Tracker</button>
+      <button class="btn-secondary" id="btn-view-results">Saved Results & Charts</button>
+    </div>
+
+    <!-- Tracker View -->
+    <div id="tracker-view">
+      <form id="ed-tracker-form">
+
+        <h2 class="section-title">1. Daily Log</h2>
+
+        <div class="form-group">
+          <label class="form-label" for="log-date">Date</label>
+          <input type="date" id="log-date" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Sleep Quality</label>
+          <div class="option-group">
+            <label class="option-label">
+              <input type="radio" name="sleep" value="Poor" class="option-input" required> Poor (Less than 5 hours, or very interrupted)
+            </label>
+            <label class="option-label">
+              <input type="radio" name="sleep" value="Fair" class="option-input"> Fair (5-6 hours, somewhat restless)
+            </label>
+            <label class="option-label">
+              <input type="radio" name="sleep" value="Good" class="option-input"> Good (7-8 hours, mostly uninterrupted)
+            </label>
+            <label class="option-label">
+              <input type="radio" name="sleep" value="Excellent" class="option-input"> Excellent (8+ hours, deeply restful)
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Stress Levels</label>
+          <div class="option-group">
+            <label class="option-label">
+              <input type="radio" name="stress" value="Low" class="option-input" required> Low (Relaxed, manageable day)
+            </label>
+            <label class="option-label">
+              <input type="radio" name="stress" value="Moderate" class="option-input"> Moderate (Some tension, but manageable)
+            </label>
+            <label class="option-label">
+              <input type="radio" name="stress" value="High" class="option-input"> High (Overwhelmed, anxious, highly demanding day)
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Exercise Today</label>
+          <div class="option-group">
+            <label class="option-label">
+              <input type="radio" name="exercise" value="None" class="option-input" required> None
+            </label>
+            <label class="option-label">
+              <input type="radio" name="exercise" value="Light" class="option-input"> Light (Walking, stretching, yoga)
+            </label>
+            <label class="option-label">
+              <input type="radio" name="exercise" value="Moderate" class="option-input"> Moderate (Jogging, cycling, swimming)
+            </label>
+            <label class="option-label">
+              <input type="radio" name="exercise" value="Intense" class="option-input"> Intense (Heavy lifting, HIIT, intense cardio)
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Diet Quality</label>
+          <div class="option-group">
+            <label class="option-label">
+              <input type="radio" name="diet" value="Poor" class="option-input" required> Poor (Mostly processed foods, high sugar/fat)
+            </label>
+            <label class="option-label">
+              <input type="radio" name="diet" value="Average" class="option-input"> Average (Mixed, some healthy, some processed)
+            </label>
+            <label class="option-label">
+              <input type="radio" name="diet" value="Healthy" class="option-input"> Healthy (Mostly whole foods, balanced meals)
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Alcohol & Smoking (Check all that apply today)</label>
+          <div class="option-group">
+            <label class="option-label">
+              <input type="checkbox" name="substances" value="Alcohol (1-2 drinks)" class="option-input"> Alcohol (1-2 drinks)
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="substances" value="Alcohol (3+ drinks)" class="option-input"> Alcohol (3+ drinks)
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="substances" value="Smoking/Vaping" class="option-input"> Smoking / Vaping / Nicotine
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="substances" value="Recreational Drugs" class="option-input"> Recreational Drugs
+            </label>
+          </div>
+        </div>
+
+        <h2 class="section-title">2. Performance & Function</h2>
+
+        <div class="form-group">
+          <label class="form-label">Morning Erections</label>
+          <div class="option-group">
+            <label class="option-label">
+              <input type="radio" name="morning_erection" value="Yes" class="option-input" required> Yes (Present and firm)
+            </label>
+            <label class="option-label">
+              <input type="radio" name="morning_erection" value="Weak" class="option-input"> Yes, but weak/brief
+            </label>
+            <label class="option-label">
+              <input type="radio" name="morning_erection" value="No" class="option-input"> No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Overall Sexual Satisfaction / Erectile Function (1-10)</label>
+          <p style="font-size: 0.9rem; color: #5a6b50; margin-bottom: 8px;">Rate your ability to achieve and maintain an erection today, and overall satisfaction (1 = Very Poor, 10 = Excellent).</p>
+          <div class="scale-container">
+            <span style="font-size: 0.9rem; font-weight: 600; color: #2E3E24;">1</span>
+            <input type="range" id="satisfaction-slider" min="1" max="10" value="5" class="scale-slider">
+            <span style="font-size: 0.9rem; font-weight: 600; color: #2E3E24;">10</span>
+            <div class="scale-value" id="satisfaction-display">5</div>
+          </div>
+        </div>
+
+        <h2 class="section-title">3. Medications & Supplements</h2>
+        <div class="form-group">
+          <label class="form-label" for="meds-notes">List any medications, PDE5 inhibitors (like Viagra/Cialis), or supplements taken today.</label>
+          <textarea id="meds-notes" class="form-textarea" placeholder="E.g., Cialis 5mg, Maca root, Vitamin D..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" id="save-btn">Save Daily Log</button>
+        <p id="save-msg" style="color: #2E3E24; font-weight: 600; text-align: center; margin-top: 16px; display: none;">Log saved successfully!</p>
+      </form>
+    </div>
+
+    <!-- Results View -->
+    <div id="results-view" class="results-section">
+      <h2 class="section-title">Your Progress & Trends</h2>
+
+      <div class="actions-row">
+        <button class="btn-secondary" id="export-csv-btn">Export Data (CSV)</button>
+        <button class="btn-secondary" id="clear-history-btn" style="color: #d32f2f; border-color: #d32f2f;">Clear All History</button>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="satisfactionChart"></canvas>
+      </div>
+
+      <h3 style="font-family: 'Montserrat', sans-serif; color: #2E3E24; margin-bottom: 16px;">History Log</h3>
+      <div id="history-container" class="history-list">
+        <!-- History items will be injected here -->
+      </div>
+    </div>
+  </main>
+
+  <section class="educational-content">
+    <h2>Understanding Erectile Dysfunction (ED)</h2>
+    <p>Hey there, friends! It's Ali. Let's talk about something incredibly common but often swept under the rug: erectile dysfunction. If you're experiencing changes in your erections, I want you to take a deep breath. You are so far from alone in this. ED affects millions of men of all ages, and it's not a reflection of your masculinity or your worth as a partner.</p>
+
+    <p>Erectile function is essentially a complex dance involving your brain, hormones, emotions, nerves, muscles, and blood vessels. When everything is perfectly aligned, it works effortlessly. But if even one of those systems is slightly off—due to stress, fatigue, a physical health issue, or even just feeling disconnected from your partner—the whole process can be disrupted.</p>
+
+    <h3>Common Causes to Look Out For</h3>
+    <p>ED rarely has a single cause. It's often a combination of physical and psychological factors. Here are some of the most common culprits:</p>
+    <ul>
+      <li><strong>Physical Health:</strong> Cardiovascular issues (like high blood pressure or heart disease), diabetes, obesity, or hormonal imbalances (like low testosterone). Because erections rely on blood flow, your heart health is directly linked to your erectile health!</li>
+      <li><strong>Psychological Factors:</strong> Stress, anxiety, depression, and "performance anxiety" (getting stuck in your head worrying about losing an erection, which ironically causes you to lose it).</li>
+      <li><strong>Lifestyle Choices:</strong> Lack of sleep, poor diet, smoking, excessive alcohol consumption, and lack of exercise.</li>
+      <li><strong>Medications:</strong> Certain prescription drugs, particularly antidepressants or blood pressure medications, can have ED as a side effect.</li>
+    </ul>
+
+    <h3>Why Track Your Factors?</h3>
+    <p>That's exactly why this tracker exists! By logging your daily habits—like how well you slept, your stress levels, what you ate, and whether you exercised—you might start to notice patterns. Maybe your erections are weaker on days when your stress is through the roof, or maybe cutting back on alcohol improves your morning erections. Having this data empowers you and gives you tangible information to discuss with your healthcare provider.</p>
+
+    <h3>When to Seek Medical Help</h3>
+    <p>While occasional difficulty getting or keeping an erection is totally normal (especially when you're tired, stressed, or had a few too many drinks), there are times when you should definitely bring in a professional:</p>
+    <ul>
+      <li>If the issue is persistent and happens more often than not over a period of a few months.</li>
+      <li>If you stop having morning erections (this can sometimes indicate a physical issue rather than a psychological one).</li>
+      <li>If your ED is accompanied by pain, a sudden loss of libido, or delayed ejaculation.</li>
+      <li>If you suspect it's related to a new medication or an underlying health condition like heart disease or diabetes.</li>
+    </ul>
+    <p>Never feel embarrassed to talk to a doctor. They literally hear about this every single day. A doctor can help rule out underlying health conditions and discuss treatment options, which range from lifestyle changes and therapy to medications like PDE5 inhibitors (e.g., Viagra or Cialis).</p>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3 class="faq-question">Can lifestyle changes really improve erectile dysfunction?</h3>
+        <p>Absolutely. Because erections rely heavily on healthy blood flow and a relaxed nervous system, lifestyle changes can make a massive difference. Regular cardiovascular exercise, a balanced diet, adequate sleep, and stress management are foundational to erectile health.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">Why are morning erections important to track?</h3>
+        <p>Morning erections (nocturnal penile tumescence) are an automatic physiological response. If you are still getting strong morning erections but struggle to maintain an erection during partnered sex, the root cause is often psychological (like performance anxiety or stress). If morning erections have stopped completely, it's more likely to be a physical or circulatory issue that warrants a doctor's visit.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">Is it safe to use this data to self-diagnose?</h3>
+        <p>No. This tracker is an educational tool designed to help you spot patterns and gather data. It should never replace professional medical advice. Always use this information as a starting point for a conversation with your healthcare provider.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Can lifestyle changes really improve erectile dysfunction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Because erections rely heavily on healthy blood flow and a relaxed nervous system, lifestyle changes can make a massive difference. Regular cardiovascular exercise, a balanced diet, adequate sleep, and stress management are foundational to erectile health."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Why are morning erections important to track?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Morning erections (nocturnal penile tumescence) are an automatic physiological response. If you are still getting strong morning erections but struggle to maintain an erection during partnered sex, the root cause is often psychological (like performance anxiety or stress). If morning erections have stopped completely, it's more likely to be a physical or circulatory issue that warrants a doctor's visit."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Is it safe to use this data to self-diagnose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This tracker is an educational tool designed to help you spot patterns and gather data. It should never replace professional medical advice. Always use this information as a starting point for a conversation with your healthcare provider."
+      }
+    }]
+  }
+  </script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const STORAGE_KEY = 'edTrackerHistory';
+      const form = document.getElementById('ed-tracker-form');
+      const dateInput = document.getElementById('log-date');
+      const satisfactionSlider = document.getElementById('satisfaction-slider');
+      const satisfactionDisplay = document.getElementById('satisfaction-display');
+
+      const btnViewTracker = document.getElementById('btn-view-tracker');
+      const btnViewResults = document.getElementById('btn-view-results');
+      const trackerView = document.getElementById('tracker-view');
+      const resultsView = document.getElementById('results-view');
+      const saveMsg = document.getElementById('save-msg');
+
+      let satisfactionChartInstance = null;
+
+      // Set today's date adjusted for local timezone offset
+      const today = new Date();
+      today.setTime(today.getTime() - (today.getTimezoneOffset() * 60000));
+      dateInput.value = today.toISOString().split('T')[0];
+
+      // Setup custom option-input selection visuals
+      const optionInputs = document.querySelectorAll('.option-input');
+      optionInputs.forEach(input => {
+        input.addEventListener('change', updateOptionVisuals);
+      });
+
+      function updateOptionVisuals() {
+        document.querySelectorAll('.option-label').forEach(label => {
+          const input = label.querySelector('.option-input');
+          if (input.checked) {
+            label.classList.add('selected');
+          } else {
+            label.classList.remove('selected');
+          }
+        });
+      }
+      // Initialize visuals
+      updateOptionVisuals();
+
+      // Slider visual update
+      satisfactionSlider.addEventListener('input', (e) => {
+        satisfactionDisplay.textContent = e.target.value;
+      });
+
+      // View switching
+      btnViewTracker.addEventListener('click', () => {
+        trackerView.style.display = 'block';
+        resultsView.classList.remove('active');
+        btnViewTracker.style.background = '#2E3E24';
+        btnViewTracker.style.color = '#FAF8EB';
+        btnViewResults.style.background = 'transparent';
+        btnViewResults.style.color = '#2E3E24';
+      });
+
+      btnViewResults.addEventListener('click', () => {
+        trackerView.style.display = 'none';
+        resultsView.classList.add('active');
+        btnViewResults.style.background = '#2E3E24';
+        btnViewResults.style.color = '#FAF8EB';
+        btnViewTracker.style.background = 'transparent';
+        btnViewTracker.style.color = '#2E3E24';
+        renderHistory();
+      });
+
+      // Initialize view button state
+      btnViewTracker.style.background = '#2E3E24';
+      btnViewTracker.style.color = '#FAF8EB';
+
+      // Handle form submission
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const date = dateInput.value;
+        const sleep = document.querySelector('input[name="sleep"]:checked')?.value;
+        const stress = document.querySelector('input[name="stress"]:checked')?.value;
+        const exercise = document.querySelector('input[name="exercise"]:checked')?.value;
+        const diet = document.querySelector('input[name="diet"]:checked')?.value;
+
+        const substances = Array.from(document.querySelectorAll('input[name="substances"]:checked')).map(cb => cb.value);
+        const morningErection = document.querySelector('input[name="morning_erection"]:checked')?.value;
+        const satisfaction = parseInt(satisfactionSlider.value, 10);
+        const medsNotes = document.getElementById('meds-notes').value.trim();
+
+        const logEntry = {
+          id: Date.now().toString(),
+          date,
+          sleep,
+          stress,
+          exercise,
+          diet,
+          substances,
+          morningErection,
+          satisfaction,
+          medsNotes
+        };
+
+        saveLog(logEntry);
+
+        saveMsg.style.display = 'block';
+        setTimeout(() => { saveMsg.style.display = 'none'; }, 3000);
+      });
+
+      function saveLog(entry) {
+        let history = getHistory();
+        // Overwrite if same date exists
+        history = history.filter(h => h.date !== entry.date);
+        history.push(entry);
+        // Sort descending by date
+        history.sort((a, b) => new Date(b.date) - new Date(a.date));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+      }
+
+      function getHistory() {
+        const data = localStorage.getItem(STORAGE_KEY);
+        return data ? JSON.parse(data) : [];
+      }
+
+      function renderHistory() {
+        const history = getHistory();
+        const container = document.getElementById('history-container');
+        container.innerHTML = '';
+
+        if (history.length === 0) {
+          container.innerHTML = '<p style="color: #5a6b50;">No daily logs found. Start tracking today to see your history!</p>';
+          if (satisfactionChartInstance) {
+            satisfactionChartInstance.destroy();
+          }
+          return;
+        }
+
+        history.forEach(log => {
+          const item = document.createElement('div');
+          item.className = 'history-item';
+
+          const dateEl = document.createElement('div');
+          dateEl.className = 'history-date';
+          dateEl.textContent = log.date;
+
+          const details = document.createElement('div');
+          details.className = 'history-details';
+
+          const fields = [
+            { label: 'Satisfaction', val: `${log.satisfaction}/10` },
+            { label: 'Morning Wood', val: log.morningErection },
+            { label: 'Sleep', val: log.sleep },
+            { label: 'Stress', val: log.stress },
+            { label: 'Exercise', val: log.exercise },
+            { label: 'Diet', val: log.diet }
+          ];
+
+          fields.forEach(f => {
+            const div = document.createElement('div');
+            const strong = document.createElement('strong');
+            strong.textContent = `${f.label}: `;
+            div.appendChild(strong);
+            div.appendChild(document.createTextNode(f.val || 'N/A'));
+            details.appendChild(div);
+          });
+
+          if (log.substances && log.substances.length > 0) {
+            const subDiv = document.createElement('div');
+            const subStrong = document.createElement('strong');
+            subStrong.textContent = 'Substances: ';
+            subDiv.appendChild(subStrong);
+            subDiv.appendChild(document.createTextNode(log.substances.join(', ')));
+            subDiv.style.gridColumn = "1 / -1";
+            details.appendChild(subDiv);
+          }
+
+          if (log.medsNotes) {
+            const medDiv = document.createElement('div');
+            const medStrong = document.createElement('strong');
+            medStrong.textContent = 'Notes/Meds: ';
+            medDiv.appendChild(medStrong);
+            medDiv.appendChild(document.createTextNode(log.medsNotes));
+            medDiv.style.gridColumn = "1 / -1";
+            details.appendChild(medDiv);
+          }
+
+          item.appendChild(dateEl);
+          item.appendChild(details);
+          container.appendChild(item);
+        });
+
+        renderCharts(history);
+      }
+
+      function renderCharts(history) {
+        // Sort chronological for charts
+        const sortedHistory = [...history].sort((a, b) => new Date(a.date) - new Date(b.date));
+
+        const labels = sortedHistory.map(h => h.date);
+        const satisfactionData = sortedHistory.map(h => h.satisfaction);
+
+        const ctx = document.getElementById('satisfactionChart').getContext('2d');
+
+        if (satisfactionChartInstance) {
+          satisfactionChartInstance.destroy();
+        }
+
+        satisfactionChartInstance = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Overall Satisfaction (1-10)',
+              data: satisfactionData,
+              borderColor: '#AD9846',
+              backgroundColor: 'rgba(173,152,70,0.1)',
+              borderWidth: 2,
+              pointBackgroundColor: '#2E3E24',
+              fill: true,
+              tension: 0.3
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 10,
+                ticks: { stepSize: 1 }
+              }
+            },
+            plugins: {
+              legend: { position: 'top' }
+            }
+          }
+        });
+      }
+
+      // Handle Clear All History
+      document.getElementById('clear-history-btn').addEventListener('click', () => {
+        if (confirm('Are you sure you want to permanently delete all your tracking history?')) {
+          localStorage.removeItem(STORAGE_KEY);
+          renderHistory();
+        }
+      });
+
+      // Handle CSV Export using Blob
+      document.getElementById('export-csv-btn').addEventListener('click', () => {
+        const history = getHistory();
+        if (history.length === 0) {
+          alert("No data available to export.");
+          return;
+        }
+
+        const headers = ['Date', 'Sleep', 'Stress', 'Exercise', 'Diet', 'Morning Erection', 'Satisfaction', 'Substances', 'Notes'];
+        let csvContent = headers.join(',') + '\n';
+
+        history.forEach(row => {
+          const escapedNotes = row.medsNotes ? `"${row.medsNotes.replace(/"/g, '""')}"` : '""';
+          const escapedSubstances = row.substances && row.substances.length > 0 ? `"${row.substances.join('; ')}"` : '""';
+
+          const rowData = [
+            row.date,
+            row.sleep || '',
+            row.stress || '',
+            row.exercise || '',
+            row.diet || '',
+            row.morningErection || '',
+            row.satisfaction || '',
+            escapedSubstances,
+            escapedNotes
+          ];
+          csvContent += rowData.join(',') + '\n';
+        });
+
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute("download", "ed_recovery_tracker_data.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      // Attempt to mid-session restore today's form if exists
+      function loadTodayForm() {
+        const history = getHistory();
+        const todayData = history.find(h => h.date === dateInput.value);
+        if (todayData) {
+          if (todayData.sleep) {
+            const el = document.querySelector(`input[name="sleep"][value="${todayData.sleep}"]`);
+            if(el) el.checked = true;
+          }
+          if (todayData.stress) {
+            const el = document.querySelector(`input[name="stress"][value="${todayData.stress}"]`);
+            if(el) el.checked = true;
+          }
+          if (todayData.exercise) {
+            const el = document.querySelector(`input[name="exercise"][value="${todayData.exercise}"]`);
+            if(el) el.checked = true;
+          }
+          if (todayData.diet) {
+            const el = document.querySelector(`input[name="diet"][value="${todayData.diet}"]`);
+            if(el) el.checked = true;
+          }
+          if (todayData.morningErection) {
+            const el = document.querySelector(`input[name="morning_erection"][value="${todayData.morningErection}"]`);
+            if(el) el.checked = true;
+          }
+          if (todayData.substances && Array.isArray(todayData.substances)) {
+            todayData.substances.forEach(sub => {
+              const el = document.querySelector(`input[name="substances"][value="${sub}"]`);
+              if(el) el.checked = true;
+            });
+          }
+          if (todayData.satisfaction) {
+            satisfactionSlider.value = todayData.satisfaction;
+            satisfactionDisplay.textContent = todayData.satisfaction;
+          }
+          if (todayData.medsNotes) {
+            document.getElementById('meds-notes').value = todayData.medsNotes;
+          }
+          updateOptionVisuals();
+        }
+      }
+
+      // Load today's data if navigating to standard date
+      loadTodayForm();
+
+      // Re-load if date changes manually
+      dateInput.addEventListener('change', () => {
+        form.reset(); // clear
+        updateOptionVisuals();
+        satisfactionSlider.value = 5;
+        satisfactionDisplay.textContent = "5";
+        loadTodayForm();
+      });
+
+    });
+  </script>
+</body>
+</html>
