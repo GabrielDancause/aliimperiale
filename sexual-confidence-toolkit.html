@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Confidence Building Toolkit — Ali Imperiale</title>
+  <meta name="description" content="An interactive program to help you develop healthy sexual self-esteem, explore pleasure, and build confidence in your relationships.">
+  <meta property="og:title" content="Sexual Confidence Building Toolkit — Ali Imperiale">
+  <meta property="og:description" content="An interactive program to help you develop healthy sexual self-esteem, explore pleasure, and build confidence in your relationships.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-confidence-toolkit.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-confidence-toolkit.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background-color: #FAF8EB;
+    }
+    .page-header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 1.1rem;
+      color: #555549;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .tracker-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      border: 1px solid rgba(46, 62, 36, 0.06);
+      margin-bottom: 40px;
+    }
+    .card h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    .question-group {
+      margin-bottom: 30px;
+    }
+    .question-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+    .options-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background: #FAF8EB;
+      border: 2px solid #e8e4d4;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .option-label:hover {
+      border-color: #AD9846;
+      background: #fdfdf9;
+    }
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 16px;
+      position: relative;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .option-input::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 10px;
+      height: 10px;
+      background-color: #AD9846;
+      border-radius: 50%;
+      transition: transform 0.2s ease-in-out;
+    }
+    .option-input:checked::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .option-label:has(.option-input:checked) {
+      border-color: #AD9846;
+      background: #fcfbf5;
+    }
+
+    .btn-submit {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 16px 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-submit:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+
+    #results-view {
+      display: none;
+    }
+
+    .score-chart-container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto 30px;
+      aspect-ratio: 1;
+    }
+
+    .plan-section {
+      margin-top: 30px;
+    }
+    .plan-card {
+      background: #FAF8EB;
+      border-left: 4px solid #AD9846;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 0 8px 8px 0;
+    }
+    .plan-card h3 {
+      color: #2E3E24;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+      padding: 12px 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex: 1;
+      text-align: center;
+      min-width: 200px;
+    }
+    .btn-secondary:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    @media (min-width: 768px) {
+      .page-header h1 {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Sexual Confidence Toolkit</h1>
+    <p>A gentle, interactive program to help you explore your desires, build healthy self-esteem, and communicate with confidence.</p>
+  </header>
+
+  <main class="tracker-container">
+
+    <section class="card" id="quiz-view">
+      <h2>Confidence Assessment</h2>
+      <p style="margin-bottom: 24px; color: #555549; line-height: 1.6;">Take this gentle, judgment-free assessment to help us build your personalized confidence plan. Answer honestly—this is just for you.</p>
+
+      <form id="assessment-form">
+        <!-- Body Image -->
+        <div class="question-group">
+          <div class="question-title">1. How comfortable do you feel in your own body during intimate moments?</div>
+          <div class="options-grid">
+            <label class="option-label"><input type="radio" name="bodyImage" value="4" class="option-input" required> Very comfortable, I appreciate my body</label>
+            <label class="option-label"><input type="radio" name="bodyImage" value="3" class="option-input"> Mostly comfortable, with occasional insecurities</label>
+            <label class="option-label"><input type="radio" name="bodyImage" value="2" class="option-input"> Often uncomfortable, it distracts me</label>
+            <label class="option-label"><input type="radio" name="bodyImage" value="1" class="option-input"> Very uncomfortable, I struggle to be present</label>
+          </div>
+        </div>
+
+        <!-- Communication -->
+        <div class="question-group">
+          <div class="question-title">2. How easy is it for you to tell a partner what feels good and what doesn't?</div>
+          <div class="options-grid">
+            <label class="option-label"><input type="radio" name="communication" value="4" class="option-input" required> Very easy, I communicate openly</label>
+            <label class="option-label"><input type="radio" name="communication" value="3" class="option-input"> Somewhat easy, though sometimes I hesitate</label>
+            <label class="option-label"><input type="radio" name="communication" value="2" class="option-input"> Difficult, I usually hope they figure it out</label>
+            <label class="option-label"><input type="radio" name="communication" value="1" class="option-input"> Very difficult, I often stay silent</label>
+          </div>
+        </div>
+
+        <!-- Pleasure Exploration -->
+        <div class="question-group">
+          <div class="question-title">3. How ready are you to explore your own pleasure and new desires?</div>
+          <div class="options-grid">
+            <label class="option-label"><input type="radio" name="exploration" value="4" class="option-input" required> Very ready, I love discovering new things</label>
+            <label class="option-label"><input type="radio" name="exploration" value="3" class="option-input"> Curious, but taking it slow</label>
+            <label class="option-label"><input type="radio" name="exploration" value="2" class="option-input"> Hesitant, I stick to what I know</label>
+            <label class="option-label"><input type="radio" name="exploration" value="1" class="option-input"> Not ready, the idea makes me anxious</label>
+          </div>
+        </div>
+
+        <!-- Partner Interaction -->
+        <div class="question-group">
+          <div class="question-title">4. How confident do you feel taking the lead or initiating intimacy?</div>
+          <div class="options-grid">
+            <label class="option-label"><input type="radio" name="partner" value="4" class="option-input" required> Very confident, I initiate often</label>
+            <label class="option-label"><input type="radio" name="partner" value="3" class="option-input"> Somewhat confident, depending on the mood</label>
+            <label class="option-label"><input type="radio" name="partner" value="2" class="option-input"> Rarely confident, I prefer they initiate</label>
+            <label class="option-label"><input type="radio" name="partner" value="1" class="option-input"> Not confident at all</label>
+          </div>
+        </div>
+
+        <!-- Assertiveness -->
+        <div class="question-group">
+          <div class="question-title">5. When a boundary is crossed or you want to stop, how easily can you assert yourself?</div>
+          <div class="options-grid">
+            <label class="option-label"><input type="radio" name="assertiveness" value="4" class="option-input" required> Easily and without guilt</label>
+            <label class="option-label"><input type="radio" name="assertiveness" value="3" class="option-input"> I can do it, but it feels awkward</label>
+            <label class="option-label"><input type="radio" name="assertiveness" value="2" class="option-input"> I struggle and might go along with things</label>
+            <label class="option-label"><input type="radio" name="assertiveness" value="1" class="option-input"> I usually freeze or can't speak up</label>
+          </div>
+        </div>
+
+        <!-- Past Experience -->
+        <div class="question-group">
+          <div class="question-title">6. How much do negative past experiences impact your current sexual confidence?</div>
+          <div class="options-grid">
+            <label class="option-label"><input type="radio" name="pastExp" value="4" class="option-input" required> Rarely, I have processed them</label>
+            <label class="option-label"><input type="radio" name="pastExp" value="3" class="option-input"> Sometimes, but I know how to manage it</label>
+            <label class="option-label"><input type="radio" name="pastExp" value="2" class="option-input"> Often, they frequently hold me back</label>
+            <label class="option-label"><input type="radio" name="pastExp" value="1" class="option-input"> Significantly, they define my current experience</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Generate My Confidence Plan</button>
+      </form>
+    </section>
+
+    <section class="card" id="results-view">
+      <h2>Your Confidence Profile</h2>
+      <div class="score-chart-container">
+        <canvas id="scoreChart"></canvas>
+      </div>
+
+      <div id="plan-container" class="plan-section">
+        <!-- Plan will be injected here -->
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn-submit" id="btn-share" onclick="shareResults()">Share Results Link</button>
+        <button class="btn-secondary" id="btn-retake" onclick="resetQuiz()">Retake Assessment</button>
+      </div>
+    </section>
+
+
+    <section class="card educational-section" style="margin-top: 60px;">
+      <h2>Understanding Sexual Confidence</h2>
+      <p style="margin-bottom: 16px; color: #555549; line-height: 1.6;">Let's clear something up right away: there's a huge difference between sexual <em>confidence</em> and sexual <em>performance</em>.</p>
+
+      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Confidence vs. Performance</h3>
+      <ul style="margin-left: 20px; margin-bottom: 16px; color: #555549; font-size: 0.95rem; line-height: 1.7;">
+        <li style="margin-bottom: 8px;"><strong>Sexual Performance:</strong> Focuses on the external. It's about trying to impress a partner, worrying about how you look, and treating sex like a routine to be perfectly executed.</li>
+        <li style="margin-bottom: 8px;"><strong>Sexual Confidence:</strong> Focuses on the internal experience. It's about being present in your body, focusing on pleasure, laughing when things get awkward, and trusting your worth.</li>
+      </ul>
+
+      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Cultural Influences on Sexual Self-Worth</h3>
+      <p style="margin-bottom: 16px; color: #555549; line-height: 1.6;">We are bombarded with heavily edited, unrealistic images of what a "sexy" body is supposed to look like. Diet culture and the beauty industry profit off your insecurity. Reclaiming your body image is a radical act of self-love.</p>
+
+      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Overcoming Sexual Shame and Anxiety</h3>
+      <p style="margin-bottom: 16px; color: #555549; line-height: 1.6;">None of us are born feeling insecure about our bodies or our desires. Those insecurities are learned. Negative experiences, shame-based sex education, or trauma can leave lasting scars. Acknowledge what's been tearing your confidence down. Saying, "I'm feeling a little nervous right now," takes the power away from the anxiety.</p>
+
+      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Building Positive Sexual Identity</h3>
+      <p style="margin-bottom: 16px; color: #555549; line-height: 1.6;">Building sexual confidence starts with building sexual self-awareness. Taking the time to explore your own body, without the pressure of a partner, teaches you how you like to be touched. Define your boundaries and interests.</p>
+
+      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Maintaining Confidence in Relationships</h3>
+      <p style="margin-bottom: 16px; color: #555549; line-height: 1.6;">Your sexual confidence will look different depending on the context. You might feel incredibly confident with a long-term partner but nervous on a first date. The goal is to develop an internal baseline of self-worth that you carry with you into any situation. Practice assertiveness outside the bedroom to build muscle memory for inside the bedroom.</p>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <!-- Chart.js for the radar chart -->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('assessment-form');
+      const quizView = document.getElementById('quiz-view');
+      const resultsView = document.getElementById('results-view');
+      const planContainer = document.getElementById('plan-container');
+      let scoreChart = null;
+
+      const savedData = localStorage.getItem('ali_sexual_confidence_data');
+      if (savedData) {
+        showResults(JSON.parse(savedData));
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const results = {
+          bodyImage: parseInt(formData.get('bodyImage')),
+          communication: parseInt(formData.get('communication')),
+          exploration: parseInt(formData.get('exploration')),
+          partner: parseInt(formData.get('partner')),
+          assertiveness: parseInt(formData.get('assertiveness')),
+          pastExp: parseInt(formData.get('pastExp'))
+        };
+
+        localStorage.setItem('ali_sexual_confidence_data', JSON.stringify(results));
+        showResults(results);
+      });
+
+      window.resetQuiz = function() {
+        localStorage.removeItem('ali_sexual_confidence_data');
+        form.reset();
+        quizView.style.display = 'block';
+        resultsView.style.display = 'none';
+        if (scoreChart) {
+          scoreChart.destroy();
+          scoreChart = null;
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      window.shareResults = function() {
+        const url = window.location.href.split('?')[0];
+        navigator.clipboard.writeText(url).then(() => {
+          const btn = document.getElementById('btn-share');
+          const originalText = btn.textContent;
+          btn.textContent = 'Copied to clipboard!';
+          setTimeout(() => { btn.textContent = originalText; }, 2000);
+        });
+      };
+
+      function showResults(scores) {
+        quizView.style.display = 'none';
+        resultsView.style.display = 'block';
+
+        generateChart(scores);
+        generatePlan(scores);
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function generateChart(scores) {
+        const ctx = document.getElementById('scoreChart').getContext('2d');
+
+        if (scoreChart) {
+          scoreChart.destroy();
+        }
+
+        const data = [
+          scores.bodyImage,
+          scores.communication,
+          scores.exploration,
+          scores.partner,
+          scores.assertiveness,
+          scores.pastExp
+        ];
+
+        scoreChart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: [
+              'Body Image',
+              'Communication',
+              'Exploration',
+              'Partner Interaction',
+              'Assertiveness',
+              'Processing Past'
+            ],
+            datasets: [{
+              label: 'Your Confidence Profile',
+              data: data,
+              backgroundColor: 'rgba(173, 152, 70, 0.2)',
+              borderColor: 'rgba(173, 152, 70, 1)',
+              pointBackgroundColor: 'rgba(46, 62, 36, 1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(46, 62, 36, 1)'
+            }]
+          },
+          options: {
+            scales: {
+              r: {
+                angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                pointLabels: {
+                  font: { family: 'Montserrat', size: 12 },
+                  color: '#2E3E24'
+                },
+                ticks: {
+                  min: 0,
+                  max: 4,
+                  stepSize: 1,
+                  display: false
+                }
+              }
+            },
+            plugins: {
+              legend: { display: false }
+            }
+          }
+        });
+      }
+
+      function generatePlan(scores) {
+        let planHTML = `
+          <h3 style="color: #2E3E24; font-size: 1.4rem; margin-bottom: 20px;">Your Personalized Confidence Plan</h3>
+          <p style="margin-bottom: 24px; color: #555549; line-height: 1.6;">I've put together some guided exercises and coaching tips based on your answers. Remember, building confidence is a practice. Be gentle with yourself.</p>
+        `;
+
+        if (scores.bodyImage <= 2) {
+          planHTML += createPlanCard('Body Appreciation Practice', 'Body Image', `
+            <p><strong>Ali's Tip:</strong> Our bodies are instruments of pleasure, not ornaments to be looked at.</p>
+            <p><strong>Exercise:</strong> Spend 5 minutes daily in front of a mirror focusing only on functional appreciation. Instead of evaluating how your body looks, say out loud what it <em>does</em> for you (e.g., "I appreciate my legs for carrying me," "I appreciate my skin for feeling the warmth of the sun").</p>
+          `);
+        }
+
+        if (scores.communication <= 2) {
+          planHTML += createPlanCard('Communication Skill Builder', 'Communication', `
+            <p><strong>Ali's Tip:</strong> Asking for what you want doesn't ruin the mood; it makes the mood better because you actually get what you want!</p>
+            <p><strong>Exercise:</strong> Practice the "Feedback Sandwich." Start with a positive ("I really love it when you..."), add your request ("Could we try doing it a bit slower?"), and end with affirmation ("That feels so good with you.").</p>
+          `);
+        }
+
+        if (scores.exploration <= 2) {
+          planHTML += createPlanCard('Pleasure Exploration Guidance', 'Exploration', `
+            <p><strong>Ali's Tip:</strong> You are the leading expert on your own body. Take time to study your favorite subject.</p>
+            <p><strong>Exercise:</strong> Dedicate 15 minutes of solo time this week to "mindful touch." Focus purely on sensation without the goal of orgasm. Notice what different types of pressure, speeds, and touches feel like on different parts of your body.</p>
+          `);
+        }
+
+        if (scores.partner <= 2) {
+          planHTML += createPlanCard('Partner Interaction Confidence', 'Initiation', `
+            <p><strong>Ali's Tip:</strong> Rejection of a sexual advance isn't a rejection of you as a person.</p>
+            <p><strong>Exercise:</strong> Try low-stakes initiation. Initiate physical affection outside the bedroom without the expectation of sex—a long hug, a massage, or cuddling on the couch. This builds physical connection and lowers the pressure.</p>
+          `);
+        }
+
+        if (scores.assertiveness <= 2) {
+          planHTML += createPlanCard('Boundary Setting Practice', 'Assertiveness', `
+            <p><strong>Ali's Tip:</strong> A clear "no" is what makes a "yes" mean anything.</p>
+            <p><strong>Exercise:</strong> Practice using a "Safeword" or a "Pause Button." Agree with your partner on a neutral word that means "stop and reset" immediately. Knowing you have an emergency brake makes it easier to drive.</p>
+          `);
+        }
+
+        if (scores.pastExp <= 2) {
+          planHTML += createPlanCard('Processing & Self-Advocacy', 'Healing', `
+            <p><strong>Ali's Tip:</strong> Your past informs you, but it doesn't have to define your present pleasure. Healing isn't linear.</p>
+            <p><strong>Exercise:</strong> Create a "Safe Space Checklist." Before intimacy, what do you need to feel completely safe? (e.g., locked door, dim lighting, verbal check-ins). Communicate this checklist to your partner.</p>
+          `);
+        }
+
+        if (scores.bodyImage > 2 && scores.communication > 2 && scores.exploration > 2 && scores.partner > 2 && scores.assertiveness > 2 && scores.pastExp > 2) {
+           planHTML += createPlanCard('Confidence Maintenance', 'Growth', `
+            <p><strong>Ali's Tip:</strong> You've built a solid foundation of sexual confidence! Now it's about expanding your horizons.</p>
+            <p><strong>Exercise:</strong> Try the "Yes/No/Maybe" list with a partner to explore new frontiers, or focus on daily affirmations to maintain your positive relationship with your sexuality.</p>
+          `);
+        }
+
+        planContainer.innerHTML = planHTML;
+      }
+
+      function createPlanCard(title, category, content) {
+        return `
+          <div class="plan-card">
+            <span style="font-size: 0.8rem; font-weight: 700; color: #AD9846; text-transform: uppercase; letter-spacing: 0.5px;">${category}</span>
+            <h3>${title}</h3>
+            <div style="color: #555549; font-size: 0.95rem; line-height: 1.6;">${content}</div>
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+
+</html>
