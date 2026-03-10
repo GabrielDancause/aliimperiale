@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fertility & Family Planning Calculator | Ali Imperiale</title>
+<meta name="description" content="A comprehensive, judgment-free fertility and family planning tool. Calculate your fertile window, ovulation, conception probability, and explore alternative family planning options.">
+<meta property="og:title" content="Fertility & Family Planning Calculator | Ali Imperiale">
+<meta property="og:description" content="A comprehensive, judgment-free fertility and family planning tool. Calculate your fertile window, ovulation, conception probability, and explore alternative family planning options.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aliimperiale.com/fertility-family-planning-calculator.html">
+<meta property="og:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+<meta property="og:image:width" content="768">
+<meta property="og:image:height" content="960">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fertility & Family Planning Calculator | Ali Imperiale">
+<meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+<link rel="canonical" href="https://aliimperiale.com/fertility-family-planning-calculator.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  body {
+    background-color: #FAF8EB;
+    color: #2E3E24;
+  }
+
+  /* Navigation */
+  .site-nav {
+    background: #2E3E24;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+  }
+  .nav-logo {
+    height: 36px;
+    opacity: 0.95;
+    transition: opacity 0.2s;
+  }
+  .nav-logo:hover {
+    opacity: 1;
+  }
+  .site-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .site-nav .nav-links a {
+    color: #C6C8BB;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.15s ease;
+  }
+  .site-nav .nav-links a:hover, .site-nav .nav-links a.active {
+    color: #FAF8EB;
+  }
+
+  /* Page Header */
+  .page-header {
+    background-color: #2E3E24;
+    color: #FAF8EB;
+    text-align: center;
+    padding: 40px 20px 60px;
+    position: relative;
+  }
+  .page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #FAF8EB;
+    border-radius: 30px 30px 0 0;
+  }
+  .page-header h1 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .page-header p {
+    font-size: 1.05rem;
+    color: #C6C8BB;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Main Container */
+  .tracker-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Card Style */
+  .card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
+    border: 1px solid rgba(46, 62, 36, 0.06);
+  }
+
+  .card h2 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2E3E24;
+    text-align: center;
+  }
+
+  /* Form Elements */
+  .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 220px;
+  }
+  .input-field label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #555549;
+  }
+  .input-field input, .input-field select {
+    padding: 12px 16px;
+    border: 1px solid #C6C8BB;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    background: #FAF8EB;
+    color: #2E3E24;
+    width: 100%;
+  }
+  .input-field input:focus, .input-field select:focus {
+    outline: none;
+    border-color: #AD9846;
+    box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
+  }
+
+  .lifestyle-checklist {
+    background: #FAF8EB;
+    border: 1px solid #C6C8BB;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .lifestyle-checklist h3 {
+    font-size: 1.1rem;
+    color: #2E3E24;
+    margin-bottom: 12px;
+  }
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #2E3E24;
+    cursor: pointer;
+    line-height: 1.4;
+  }
+  .checkbox-label input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: #2E3E24;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Buttons */
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .btn-calculate {
+    background: #2E3E24;
+    color: #FAF8EB;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-calculate:hover {
+    background: #3a5030;
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: #2E3E24;
+    border: 2px solid #2E3E24;
+    padding: 12px 28px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover {
+    background: #2E3E24;
+    color: #FAF8EB;
+  }
+  .btn-share {
+    background: #FAF8EB;
+    color: #AD9846;
+    border: 2px solid #AD9846;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-share:hover {
+    background: #AD9846;
+    color: #fff;
+  }
+
+  /* Results Grid */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  .result-box {
+    background: #FAF8EB;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(173, 152, 70, 0.3);
+  }
+  .result-box h3 {
+    font-size: 1rem;
+    color: #555549;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .result-box p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2E3E24;
+  }
+  .result-box.highlight {
+    background: rgba(173, 152, 70, 0.1);
+    border-color: #AD9846;
+  }
+
+  .assessment-box {
+    background: #fdfdfd;
+    border-left: 4px solid #AD9846;
+    padding: 20px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .assessment-box h3 {
+    font-size: 1.15rem;
+    color: #2E3E24;
+    margin-bottom: 10px;
+  }
+
+  /* Edu Section */
+  .edu-section .phase-info {
+    margin-bottom: 24px;
+  }
+  .edu-section .phase-info h3 {
+    font-size: 1.2rem;
+    color: #2E3E24;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .edu-section .phase-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555549;
+  }
+
+  /* FAQ */
+  .faq-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .faq-section h2 {
+    font-family: 'New Standard', Georgia, serif;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .faq-question {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #2E3E24;
+    margin-bottom: 10px;
+  }
+  .faq-answer {
+    font-size: 0.95rem;
+    color: #555549;
+    line-height: 1.6;
+  }
+
+  /* Print Styles */
+  @media print {
+    body * { visibility: hidden; }
+    #results-section, #results-section * { visibility: visible; }
+    #results-section { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none; border: none; }
+    .btn-container, .site-nav, .site-footer, .page-header { display: none !important; }
+  }
+
+  @media (max-width: 600px) {
+    .page-header h1 { font-size: 2rem; }
+    .input-field { min-width: 100%; }
+    .btn-container { flex-direction: column; }
+    .btn-container button { width: 100%; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How accurately can this calculator predict my ovulation day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This calculator uses standard medical formulas based on your cycle length to estimate ovulation. However, every body is different, and natural variations occur due to stress, diet, or health conditions. For precise ovulation tracking, consider combining calendar tracking with basal body temperature (BBT) monitoring or ovulation predictor kits (OPKs)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "At what age does fertility significantly decline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally, fertility begins to gradually decline in the early 30s, with a more significant drop after age 35. However, many people successfully conceive naturally or with assistance in their late 30s and 40s. Age is just one of many factors impacting fertility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are my options if I am a single parent by choice or in a same-sex relationship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are many paths to parenthood! Options include intrauterine insemination (IUI) with donor sperm, in vitro fertilization (IVF), reciprocal IVF (for lesbian couples), surrogacy, and various forms of adoption. Consulting with an LGBTQ+-friendly fertility specialist or adoption agency is a great first step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does lifestyle affect my chances of conceiving?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lifestyle factors play a substantial role in fertility. Maintaining a balanced diet, regular moderate exercise, reducing stress, limiting alcohol and caffeine intake, and avoiding smoking can positively impact both egg and sperm quality and overall reproductive health."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I consider seeing a fertility specialist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A general guideline is to see a fertility specialist if you have been trying to conceive for 12 months (if under age 35) or 6 months (if age 35 or older). You should also consult a doctor sooner if you have a history of irregular periods, PCOS, endometriosis, or known reproductive issues."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/">
+      <img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale">
+    </a>
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Fertility & Family Planning Calculator</h1>
+    <p>A comprehensive, judgment-free tool to help you understand your fertility, explore your options, and plan your family timeline.</p>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="tracker-container">
+
+    <!-- Step 1: Basic Cycle Details -->
+    <section class="card" id="step-1">
+      <h2>Let's Start with Your Cycle</h2>
+      <div class="input-group">
+        <div class="input-field">
+          <label for="last-period">First day of last period</label>
+          <input type="date" id="last-period" required>
+        </div>
+        <div class="input-field">
+          <label for="cycle-length">Average cycle length (days)</label>
+          <input type="number" id="cycle-length" value="28" min="20" max="45" required>
+        </div>
+        <div class="input-field">
+          <label for="age">Your Age</label>
+          <input type="number" id="age" value="30" min="18" max="55" required>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="btn-calculate" id="btn-next-2">Next: Lifestyle Factors</button>
+      </div>
+    </section>
+
+    <!-- Step 2: Lifestyle & Planning -->
+    <section class="card" id="step-2" style="display: none;">
+      <h2>Lifestyle & Planning Factors</h2>
+      <div class="input-group">
+        <div class="input-field" style="width: 100%;">
+          <label for="planning-goal">What is your current goal?</label>
+          <select id="planning-goal">
+            <option value="conceive-now">Trying to conceive now</option>
+            <option value="conceive-later">Planning for the future (1-3 years)</option>
+            <option value="preserve">Exploring fertility preservation (egg/embryo freezing)</option>
+            <option value="alternative">Exploring alternative options (donor, surrogacy, adoption)</option>
+            <option value="prevent">Tracking to prevent pregnancy (Not reliable as primary birth control)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="lifestyle-checklist">
+        <h3>Pre-conception Checklist</h3>
+        <p style="font-size: 0.9rem; color: #555549; margin-bottom: 10px;">Select all that apply to you. This helps give a more personalized overview.</p>
+        <label class="checkbox-label"><input type="checkbox" id="lf-vitamins"> I take a daily prenatal vitamin or folic acid supplement.</label>
+        <label class="checkbox-label"><input type="checkbox" id="lf-smoke"> I currently smoke or vape.</label>
+        <label class="checkbox-label"><input type="checkbox" id="lf-alcohol"> I consume more than 4 alcoholic drinks per week.</label>
+        <label class="checkbox-label"><input type="checkbox" id="lf-stress"> I experience high levels of daily stress.</label>
+        <label class="checkbox-label"><input type="checkbox" id="lf-conditions"> I have been diagnosed with PCOS, endometriosis, or a thyroid condition.</label>
+      </div>
+
+      <div class="btn-container">
+        <button class="btn-secondary" id="btn-back-1">Back</button>
+        <button class="btn-calculate" id="btn-calculate-final">Calculate My Profile</button>
+      </div>
+    </section>
+
+    <!-- Results Overview -->
+    <section class="card" id="results-section" style="display: none;">
+      <h2>Your Fertility Profile & Timeline</h2>
+
+      <!-- Timeline and Calendar -->
+      <div class="results-grid" id="cycle-results-grid">
+        <div class="result-box">
+          <h3>Next Period Estimated</h3>
+          <p id="res-next-period">--</p>
+        </div>
+        <div class="result-box highlight">
+          <h3>Estimated Ovulation</h3>
+          <p id="res-ovulation">--</p>
+        </div>
+        <div class="result-box highlight">
+          <h3>Peak Fertile Window</h3>
+          <p id="res-fertile">--</p>
+        </div>
+      </div>
+
+      <!-- Probability and Factors -->
+      <div class="assessment-box" id="probability-box">
+        <h3>Conception Probability Estimates</h3>
+        <p id="res-probability-text">Based on your age and entered factors, your estimated chance of conceiving naturally per cycle is approximately <strong id="res-prob-number" style="color:#2E3E24; font-size: 1.2rem;">--%</strong>.</p>
+        <p style="font-size: 0.85rem; color: #555549; margin-top: 8px;"><em>*This is a statistical estimate for educational purposes, not a medical diagnosis.</em></p>
+      </div>
+
+      <!-- Lifestyle Feedback -->
+      <div class="assessment-box" id="lifestyle-feedback-box" style="display: none;">
+        <h3>Lifestyle Impact</h3>
+        <ul id="res-lifestyle-list" style="margin-left: 20px; font-size: 0.95rem; color: #2E3E24; line-height: 1.6;">
+          <!-- Injected via JS -->
+        </ul>
+      </div>
+
+      <div class="btn-container">
+        <button class="btn-share" id="btn-print">Print / Save as PDF</button>
+        <button class="btn-share" id="btn-share-link">Copy Summary to Clipboard</button>
+      </div>
+      <div id="share-msg" style="display:none; text-align: center; font-size: 0.85rem; color: #2E3E24; margin-top: 10px;">Copied!</div>
+    </section>
+
+    <!-- Educational Content: Alternative & Special Options -->
+    <section class="card edu-section" id="alternative-options">
+      <h2>Exploring All Paths to Parenthood</h2>
+      <p style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6;">Family planning isn't one-size-fits-all. Whether you are in a same-sex relationship, planning to parent solo, facing fertility challenges, or simply exploring your options, there are many beautiful ways to build a family.</p>
+
+      <div class="phase-info">
+        <h3>Same-Sex Couples & Solo Parents</h3>
+        <p>If natural conception isn't possible, options like Intrauterine Insemination (IUI) with donor sperm or In Vitro Fertilization (IVF) are common paths. For lesbian couples, reciprocal IVF allows one partner to provide the egg while the other carries the pregnancy. For gay men, egg donation combined with a gestational carrier (surrogacy) is a common route.</p>
+      </div>
+
+      <div class="phase-info">
+        <h3>Fertility Preservation</h3>
+        <p>Not ready right now? Egg or embryo freezing is a proactive way to preserve fertility. The process involves hormone stimulation to retrieve multiple eggs, which are then flash-frozen for future use. Success rates are generally higher when eggs are frozen before age 35.</p>
+      </div>
+
+      <div class="phase-info">
+        <h3>Adoption & Surrogacy</h3>
+        <p>Adoption can take many forms: domestic infant adoption, foster care adoption, or international adoption. Surrogacy involves a gestational carrier who carries a pregnancy for the intended parents. Both paths require careful emotional, legal, and financial planning, but result in incredibly loving families.</p>
+      </div>
+
+      <div class="phase-info">
+        <h3>Financial Planning & Genetic Counseling</h3>
+        <p>Fertility treatments, adoption, and surrogacy can be significant investments. It's crucial to review health insurance coverage for fertility testing and treatments. Additionally, genetic carrier screening before conceiving can provide peace of mind by identifying potential inherited conditions.</p>
+      </div>
+    </section>
+
+    <!-- Visual FAQ Section matching schema -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">How accurately can this calculator predict my ovulation day?</div>
+        <div class="faq-answer">This calculator uses standard medical formulas based on your cycle length to estimate ovulation. However, every body is different, and natural variations occur due to stress, diet, or health conditions. For precise ovulation tracking, consider combining calendar tracking with basal body temperature (BBT) monitoring or ovulation predictor kits (OPKs).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">At what age does fertility significantly decline?</div>
+        <div class="faq-answer">Generally, fertility begins to gradually decline in the early 30s, with a more significant drop after age 35. However, many people successfully conceive naturally or with assistance in their late 30s and 40s. Age is just one of many factors impacting fertility.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What are my options if I am a single parent by choice or in a same-sex relationship?</div>
+        <div class="faq-answer">There are many paths to parenthood! Options include intrauterine insemination (IUI) with donor sperm, in vitro fertilization (IVF), reciprocal IVF (for lesbian couples), surrogacy, and various forms of adoption. Consulting with an LGBTQ+-friendly fertility specialist or adoption agency is a great first step.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How does lifestyle affect my chances of conceiving?</div>
+        <div class="faq-answer">Lifestyle factors play a substantial role in fertility. Maintaining a balanced diet, regular moderate exercise, reducing stress, limiting alcohol and caffeine intake, and avoiding smoking can positively impact both egg and sperm quality and overall reproductive health.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">When should I consider seeing a fertility specialist?</div>
+        <div class="faq-answer">A general guideline is to see a fertility specialist if you have been trying to conceive for 12 months (if under age 35) or 6 months (if age 35 or older). You should also consult a doctor sooner if you have a history of irregular periods, PCOS, endometriosis, or known reproductive issues.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const step1 = document.getElementById('step-1');
+    const step2 = document.getElementById('step-2');
+    const resultsSection = document.getElementById('results-section');
+
+    // Set default date to today
+    const dateInput = document.getElementById('last-period');
+    const today = new Date();
+    dateInput.value = today.toISOString().split('T')[0];
+
+    // Navigation Buttons
+    document.getElementById('btn-next-2').addEventListener('click', () => {
+      if(!document.getElementById('last-period').value || !document.getElementById('cycle-length').value || !document.getElementById('age').value) {
+        alert("Please fill out all cycle details first.");
+        return;
+      }
+      step1.style.display = 'none';
+      step2.style.display = 'block';
+      window.scrollTo({ top: step2.offsetTop - 50, behavior: 'smooth' });
+    });
+
+    document.getElementById('btn-back-1').addEventListener('click', () => {
+      step2.style.display = 'none';
+      step1.style.display = 'block';
+    });
+
+    // Calculate Logic
+    document.getElementById('btn-calculate-final').addEventListener('click', () => {
+      calculateProfile();
+    });
+
+    function calculateProfile() {
+      // Inputs
+      const lastPeriodStr = document.getElementById('last-period').value;
+      const cycleLen = parseInt(document.getElementById('cycle-length').value, 10);
+      const age = parseInt(document.getElementById('age').value, 10);
+      const goal = document.getElementById('planning-goal').value;
+
+      // Lifestyle checkboxes
+      const takesVitamins = document.getElementById('lf-vitamins').checked;
+      const smokes = document.getElementById('lf-smoke').checked;
+      const drinks = document.getElementById('lf-alcohol').checked;
+      const stress = document.getElementById('lf-stress').checked;
+      const conditions = document.getElementById('lf-conditions').checked;
+
+      // 1. Calculate Cycle Dates
+      const baseDate = new Date(lastPeriodStr + 'T12:00:00'); // Noon to avoid tz issues
+      const nextP = new Date(baseDate);
+      nextP.setDate(nextP.getDate() + cycleLen);
+
+      const ovulation = new Date(nextP);
+      ovulation.setDate(ovulation.getDate() - 14);
+
+      const fertileStart = new Date(ovulation);
+      fertileStart.setDate(fertileStart.getDate() - 5);
+
+      const fertileEnd = new Date(ovulation);
+      fertileEnd.setDate(fertileEnd.getDate() + 1);
+
+      document.getElementById('res-next-period').textContent = nextP.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'});
+      document.getElementById('res-ovulation').textContent = ovulation.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+      document.getElementById('res-fertile').textContent = `${fertileStart.toLocaleDateString('en-US', {month: 'short', day: 'numeric'})} - ${fertileEnd.toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}`;
+
+      // Show/Hide cycle grid based on goal
+      if (goal === 'alternative' || goal === 'preserve') {
+        document.getElementById('cycle-results-grid').style.display = 'none';
+      } else {
+        document.getElementById('cycle-results-grid').style.display = 'grid';
+      }
+
+      // 2. Calculate Base Probability based on Age
+      let baseProb = 0;
+      if (age < 30) baseProb = 25;
+      else if (age >= 30 && age < 35) baseProb = 20;
+      else if (age >= 35 && age < 40) baseProb = 15;
+      else if (age >= 40 && age < 45) baseProb = 5;
+      else if (age >= 45) baseProb = 1;
+
+      // Adjust probability based on lifestyle factors (rough estimates for educational purposes)
+      if (smokes) baseProb -= Math.round(baseProb * 0.2);
+      if (conditions) baseProb -= Math.round(baseProb * 0.3);
+      if (takesVitamins) baseProb += 2; // Slight bump
+
+      // Keep within bounds
+      baseProb = Math.max(1, Math.min(baseProb, 30));
+
+      if (goal === 'alternative' || goal === 'prevent') {
+        document.getElementById('probability-box').style.display = 'none';
+      } else {
+        document.getElementById('probability-box').style.display = 'block';
+        document.getElementById('res-prob-number').textContent = `${baseProb}%`;
+      }
+
+      // 3. Generate Lifestyle Feedback
+      const lifestyleList = document.getElementById('res-lifestyle-list');
+      lifestyleList.innerHTML = '';
+      let feedbackItems = [];
+
+      if (takesVitamins) {
+        feedbackItems.push("<strong>Great job on the vitamins!</strong> Taking folic acid before conception reduces the risk of neural tube defects.");
+      } else if (goal === 'conceive-now' || goal === 'conceive-later') {
+        feedbackItems.push("<strong>Consider prenatal vitamins:</strong> It's recommended to start folic acid supplements at least 3 months before trying to conceive.");
+      }
+
+      if (smokes) {
+        feedbackItems.push("<strong>Smoking:</strong> Quitting smoking can significantly improve egg and sperm quality, as well as overall pregnancy health.");
+      }
+      if (drinks) {
+        feedbackItems.push("<strong>Alcohol:</strong> Moderating alcohol intake is advised while trying to conceive. No amount of alcohol is proven safe during pregnancy.");
+      }
+      if (stress) {
+        feedbackItems.push("<strong>Stress Management:</strong> Chronic stress can interfere with ovulation. Consider incorporating mindfulness, yoga, or therapy into your routine.");
+      }
+      if (conditions) {
+        feedbackItems.push("<strong>Medical Conditions:</strong> Conditions like PCOS or endometriosis can make conception harder. A fertility specialist can offer tailored treatments like medication to induce ovulation.");
+      }
+
+      if (age >= 35 && goal === 'conceive-now') {
+         feedbackItems.push("<strong>Age Factor:</strong> Because you are 35 or older, consider consulting a fertility specialist if you don't conceive after 6 months of trying.");
+      }
+
+      if (goal === 'preserve') {
+        feedbackItems.push("<strong>Preservation Timing:</strong> Egg freezing is generally most successful when done before age 35, but a consultation with a reproductive endocrinologist will give you personalized insights into your ovarian reserve.");
+      }
+
+      if (feedbackItems.length > 0) {
+        feedbackItems.forEach(text => {
+          let li = document.createElement('li');
+          li.innerHTML = text;
+          li.style.marginBottom = "8px";
+          lifestyleList.appendChild(li);
+        });
+        document.getElementById('lifestyle-feedback-box').style.display = 'block';
+      } else {
+        document.getElementById('lifestyle-feedback-box').style.display = 'none';
+      }
+
+      // Show Results
+      step2.style.display = 'none';
+      resultsSection.style.display = 'block';
+      window.scrollTo({ top: resultsSection.offsetTop - 20, behavior: 'smooth' });
+    }
+
+    // Print functionality
+    document.getElementById('btn-print').addEventListener('click', () => {
+      window.print();
+    });
+
+    // Share link functionality
+    document.getElementById('btn-share-link').addEventListener('click', async () => {
+      const goal = document.getElementById('planning-goal').value;
+      let text = "🌸 My Fertility Profile 🌸\n\n";
+
+      if (goal !== 'alternative' && goal !== 'preserve') {
+        const ov = document.getElementById('res-ovulation').textContent;
+        const fert = document.getElementById('res-fertile').textContent;
+        text += `✨ Estimated Ovulation: ${ov}\n🌿 Fertile Window: ${fert}\n\n`;
+      }
+
+      text += "Explore your options and plan your timeline at: https://aliimperiale.com/fertility-family-planning-calculator.html";
+
+      try {
+        await navigator.clipboard.writeText(text);
+        const msg = document.getElementById('share-msg');
+        msg.style.display = 'block';
+        setTimeout(() => msg.style.display = 'none', 3000);
+      } catch (err) {
+        console.error('Failed to copy', err);
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
