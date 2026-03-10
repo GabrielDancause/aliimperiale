@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+  <script src="consent.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intimacy Goal Planner | Ali Imperiale</title>
+  <meta name="description" content="A comprehensive goal-setting tool for couples to plan and track relationship intimacy goals. Set SMART goals, create action plans, track progress, and celebrate milestones together.">
+
+  <meta property="og:title" content="Intimacy Goal Planner | Ali Imperiale">
+  <meta property="og:description" content="A comprehensive goal-setting tool for couples to plan and track relationship intimacy goals. Set SMART goals, create action plans, track progress, and celebrate milestones together.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/intimacy-goal-planner.html">
+  <meta property="og:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Intimacy Goal Planner">
+  <meta name="twitter:description" content="A comprehensive goal-setting tool for couples to plan and track relationship intimacy goals. Set SMART goals, create action plans, track progress, and celebrate milestones together.">
+  <meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+
+  <link rel="canonical" href="https://aliimperiale.com/intimacy-goal-planner.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="shared.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Why set intimacy goals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Setting intimacy goals helps couples stay intentional about their connection. In long-term relationships, passion and closeness don't always happen spontaneously—they require planning, communication, and shared effort."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What are the different types of intimacy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Intimacy isn't just physical! It spans emotional intimacy (sharing feelings safely), physical touch (non-sexual affection), sexual exploration, communication, quality time, and shared experiences."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How often should we review our goals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We recommend a monthly check-in. It's a low-pressure way to celebrate what's working, adjust what isn't, and set new intentions for the weeks ahead."
+      }
+    }]
+  }
+  </script>
+
+  <style>
+    :root {
+      --cream: #FAF8EB;
+      --olive: #2E3E24;
+      --gold: #AD9846;
+      --olive-light: #4A5E3D;
+      --gold-light: #C4B271;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--cream);
+      color: var(--olive);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navigation - inline for specific tools/pages */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      background-color: #FAF8EB;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+    }
+    .nav-logo {
+      height: 32px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2E3E24;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: #AD9846;
+    }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #2E3E24;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #FAF8EB;
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+        text-align: center;
+        gap: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    .tracker-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      background-color: var(--olive);
+      color: var(--cream);
+      padding: 4rem 1rem;
+      border-radius: 0 0 40px 40px;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    .page-header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #C6C8BB;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: #ffffff;
+      color: var(--olive);
+      border: 1px solid rgba(46, 62, 36, 0.1);
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: var(--olive);
+      color: var(--cream);
+      border-color: var(--olive);
+    }
+    .tab-btn:hover:not(.active) {
+      background: #f0eedf;
+    }
+
+    .view-section {
+      display: none;
+    }
+    .view-section.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.05);
+      border: 1px solid rgba(173, 152, 70, 0.2);
+    }
+    .card h2 {
+      color: var(--olive);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+    }
+
+    /* Forms */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--olive);
+    }
+    .form-hint {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid rgba(46, 62, 36, 0.2);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      background-color: var(--cream);
+      box-sizing: border-box;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
+    }
+    textarea.form-input {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .expert-tip {
+      background-color: rgba(173, 152, 70, 0.1);
+      border-left: 4px solid var(--gold);
+      padding: 1rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .expert-tip strong {
+      color: var(--olive);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background-color: var(--olive);
+      color: var(--cream);
+    }
+    .btn-primary:hover {
+      background-color: var(--olive-light);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--olive);
+      border: 1.5px solid var(--olive);
+    }
+    .btn-secondary:hover {
+      background-color: var(--olive);
+      color: var(--cream);
+    }
+    .btn-block {
+      display: block;
+      width: 100%;
+    }
+    .btn-danger {
+      background-color: #d9534f;
+      color: white;
+    }
+    .btn-danger:hover {
+      background-color: #c9302c;
+    }
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      justify-content: flex-end;
+    }
+
+    /* Goal List Display */
+    .goal-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .goal-card {
+      background: var(--cream);
+      border: 1px solid rgba(46, 62, 36, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .goal-card.completed {
+      background: rgba(173, 152, 70, 0.05);
+      border-color: rgba(173, 152, 70, 0.3);
+    }
+    .goal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+      padding-bottom: 1rem;
+    }
+    .goal-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--olive);
+      margin: 0 0 0.5rem 0;
+    }
+    .goal-category {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      background-color: rgba(173, 152, 70, 0.15);
+      color: var(--olive);
+      border-radius: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .goal-date {
+      font-size: 0.85rem;
+      color: #666;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .goal-details {
+      margin-bottom: 1.5rem;
+    }
+    .goal-section {
+      margin-bottom: 1rem;
+    }
+    .goal-section strong {
+      display: block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .goal-section p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      margin-bottom: 1.5rem;
+    }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .progress-bar-bg {
+      height: 8px;
+      background-color: rgba(46, 62, 36, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background-color: var(--gold);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .goal-actions {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: flex-end;
+      border-top: 1px solid rgba(46, 62, 36, 0.1);
+      padding-top: 1rem;
+    }
+    .btn-sm {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+      border-radius: 20px;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #666;
+    }
+    .empty-state h3 {
+      color: var(--olive);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Monthly Check-in Section */
+    .checkin-log {
+      margin-top: 1rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px dashed rgba(46, 62, 36, 0.2);
+    }
+    .checkin-item {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.05);
+      font-size: 0.9rem;
+    }
+    .checkin-item:last-child {
+      border-bottom: none;
+    }
+    .checkin-date {
+      font-weight: 600;
+      color: var(--gold);
+      margin-right: 0.5rem;
+    }
+
+    /* Print Styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #print-area, #print-area * {
+        visibility: visible;
+      }
+      #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+      .goal-actions, .action-buttons, .site-nav, .tabs, .expert-tip {
+        display: none !important;
+      }
+      .goal-card {
+        page-break-inside: avoid;
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+      }
+    }
+
+    /* Content & FAQ */
+    .educational-section {
+      margin-top: 3rem;
+    }
+    .educational-section h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--olive);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .educational-section p {
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+      padding-bottom: 1.5rem;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--olive);
+    }
+    .faq-item p {
+      margin: 0;
+      color: #555;
+    }
+  </style>
+
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Intimacy Goal Planner</h1>
+    <p>A safe, structured space to set SMART goals, create actionable plans, and celebrate your growth as a couple.</p>
+  </header>
+
+  <main id="main-content" class="tracker-container">
+
+    <div class="tabs">
+      <button class="tab-btn active" data-target="view-goals">Our Goals</button>
+      <button class="tab-btn" data-target="add-goal">Add New Goal</button>
+    </div>
+
+    <!-- VIEW GOALS TAB -->
+    <div id="view-goals" class="view-section active">
+      <div class="action-buttons">
+        <button id="btn-print" class="btn btn-secondary">Print / Export Summary</button>
+        <button id="btn-clear" class="btn btn-secondary btn-danger">Clear All History</button>
+      </div>
+
+      <div id="print-area">
+        <div id="goals-container" class="goal-list">
+          <!-- Goals injected by JS -->
+        </div>
+
+        <div id="empty-state" class="empty-state">
+          <h3>No goals set yet!</h3>
+          <p>It's time to dream a little. Head over to "Add New Goal" to get started.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD GOAL TAB -->
+    <div id="add-goal" class="view-section">
+      <div class="card">
+        <h2>Set a New Intimacy Goal</h2>
+
+        <div class="expert-tip">
+          <strong>💡 Ali's Tip: Make it SMART</strong>
+          Instead of saying "We want to communicate better," try "We will have a 15-minute distraction-free check-in every Sunday evening." Make it <em>Specific, Measurable, Achievable, Relevant, and Time-bound.</em>
+        </div>
+
+        <form id="goal-form">
+          <input type="hidden" id="goal-id">
+
+          <div class="form-group">
+            <label for="goal-title">Goal Title</label>
+            <input type="text" id="goal-title" class="form-input" placeholder="e.g., Weekly Screen-Free Date Night" required>
+          </div>
+
+          <div class="form-group">
+            <label for="goal-category">Category</label>
+            <select id="goal-category" class="form-input" required>
+              <option value="" disabled selected>Select a category...</option>
+              <option value="emotional">Emotional Intimacy</option>
+              <option value="physical">Physical Touch</option>
+              <option value="sexual">Sexual Exploration</option>
+              <option value="communication">Communication</option>
+              <option value="quality-time">Quality Time</option>
+              <option value="shared">Shared Experiences</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="goal-action-plan">Action Plan</label>
+            <span class="form-hint">What exact steps will you take to achieve this? Who is responsible for what?</span>
+            <textarea id="goal-action-plan" class="form-input" placeholder="e.g., We will leave our phones in the bedroom from 7 PM to 9 PM every Thursday." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="goal-target-date">Target Date / Timeline</label>
+            <input type="date" id="goal-target-date" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label for="goal-celebration">Milestone Celebration</label>
+            <span class="form-hint">How will you reward yourselves when you reach this goal?</span>
+            <input type="text" id="goal-celebration" class="form-input" placeholder="e.g., Dinner at that new Italian place, a fancy bottle of wine..." required>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Save Goal</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- CHECK-IN MODAL (Simulated with a hidden section that JS manipulates) -->
+    <div id="checkin-modal" class="card" style="display: none; border-color: var(--olive); border-width: 2px;">
+      <h2 id="checkin-title">Monthly Check-in</h2>
+      <p>How are you progressing with this goal? Be honest, zero judgment!</p>
+
+      <form id="checkin-form">
+        <input type="hidden" id="checkin-goal-id">
+
+        <div class="form-group">
+          <label>Progress Level (0-100%)</label>
+          <input type="range" id="checkin-progress" min="0" max="100" step="10" value="50" style="width: 100%;">
+          <div style="text-align: center; font-weight: bold; color: var(--gold);" id="checkin-progress-display">50%</div>
+        </div>
+
+        <div class="form-group">
+          <label for="checkin-notes">Reflection Notes</label>
+          <textarea id="checkin-notes" class="form-input" placeholder="What's working? What needs adjusting?"></textarea>
+        </div>
+
+        <div class="action-buttons" style="justify-content: flex-start;">
+          <button type="submit" class="btn btn-primary">Save Check-in</button>
+          <button type="button" id="btn-cancel-checkin" class="btn btn-secondary">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <section class="educational-section card">
+      <h2>Why We Need Intimacy Goals</h2>
+      <p>Hey, I'm Ali! Let's be real—when you first start dating, intimacy feels effortless. You're constantly curious about each other, you can't keep your hands off each other, and you'll stay up until 3 AM just talking. But as relationships mature, life gets in the way. Work, stress, kids, or just the comfort of routine can put intimacy on the back burner.</p>
+      <p>Setting intimacy goals isn't about making your relationship feel like a corporate project. It's about being <em>intentional</em>. It's saying, "Our connection is important enough to plan for." Whether it's carving out 15 minutes of uninterrupted conversation, exploring a new kink, or just committing to a weekly hug that lasts longer than 10 seconds—planning creates the space for passion to thrive.</p>
+
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <h4>Why set intimacy goals?</h4>
+        <p>Setting intimacy goals helps couples stay intentional about their connection. In long-term relationships, passion and closeness don't always happen spontaneously—they require planning, communication, and shared effort.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What are the different types of intimacy?</h4>
+        <p>Intimacy isn't just physical! It spans emotional intimacy (sharing feelings safely), physical touch (non-sexual affection), sexual exploration, communication, quality time, and shared experiences.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How often should we review our goals?</h4>
+        <p>We recommend a monthly check-in. It's a low-pressure way to celebrate what's working, adjust what isn't, and set new intentions for the weeks ahead.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section brand-section">
+        <a href="/"><img src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32" loading="lazy"></a>
+        <p>Casual chats about sex, relationships & other fun stuff. Empowering you to explore your desires without judgment.</p>
+        <div class="social-links">
+          <a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+          <a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+          <a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener" aria-label="Patreon">PT</a>
+        </div>
+      </div>
+
+      <div class="footer-section links-section">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="/blog/" style="color: inherit; text-decoration: none;">Blog</a></li>
+          <li><a href="/tools.html" style="color: inherit; text-decoration: none;">Tools</a></li>
+          <li><a href="/guides.html" style="color: inherit; text-decoration: none;">Guides</a></li>
+          <li><a href="/studies.html" style="color: inherit; text-decoration: none;">Studies</a></li>
+          <li><a href="/lists.html" style="color: inherit; text-decoration: none;">Lists</a></li>
+          <li><a href="/reads.html" style="color: inherit; text-decoration: none;">Reads</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section links-section">
+        <h3>About</h3>
+        <ul>
+          <li><a href="/about.html" style="color: inherit; text-decoration: none;">My Story</a></li>
+          <li><a href="/open-and-honest.html" style="color: inherit; text-decoration: none;">Course</a></li>
+          <li><a href="/newsletter.html" style="color: inherit; text-decoration: none;">Newsletter</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section disclaimer-section">
+        <h3>Disclaimer</h3>
+        <p>The content on this site is for educational and entertainment purposes only. I am a sex educator in training, not a licensed therapist or medical professional. Please consult a qualified healthcare provider for medical advice.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ali Imperiale. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const STORAGE_KEY = 'ali_intimacy_goals_data';
+      let goals = [];
+
+      // Elements
+      const tabs = document.querySelectorAll('.tab-btn');
+      const viewSections = document.querySelectorAll('.view-section');
+      const goalForm = document.getElementById('goal-form');
+      const goalsContainer = document.getElementById('goals-container');
+      const emptyState = document.getElementById('empty-state');
+
+      const checkinModal = document.getElementById('checkin-modal');
+      const checkinForm = document.getElementById('checkin-form');
+      const btnCancelCheckin = document.getElementById('btn-cancel-checkin');
+      const checkinProgressDisplay = document.getElementById('checkin-progress-display');
+      const checkinProgressInput = document.getElementById('checkin-progress');
+
+      const btnClear = document.getElementById('btn-clear');
+      const btnPrint = document.getElementById('btn-print');
+
+      const categoryNames = {
+        'emotional': 'Emotional Intimacy',
+        'physical': 'Physical Touch',
+        'sexual': 'Sexual Exploration',
+        'communication': 'Communication',
+        'quality-time': 'Quality Time',
+        'shared': 'Shared Experiences'
+      };
+
+      // Load data
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          goals = JSON.parse(stored);
+        }
+      } catch(e) {
+        console.error("Could not parse local storage goals");
+      }
+
+      renderGoals();
+
+      // Tab switching
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          viewSections.forEach(s => s.classList.remove('active'));
+
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.target).classList.add('active');
+
+          if(tab.dataset.target === 'add-goal') {
+            goalForm.reset();
+            document.getElementById('goal-id').value = '';
+          }
+        });
+      });
+
+      // Goal Form Submit
+      goalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const idInput = document.getElementById('goal-id').value;
+        const newGoal = {
+          id: idInput ? parseInt(idInput) : Date.now(),
+          title: document.getElementById('goal-title').value.trim(),
+          category: document.getElementById('goal-category').value,
+          actionPlan: document.getElementById('goal-action-plan').value.trim(),
+          targetDate: document.getElementById('goal-target-date').value,
+          celebration: document.getElementById('goal-celebration').value.trim(),
+          progress: idInput ? goals.find(g => g.id === parseInt(idInput)).progress : 0,
+          completed: idInput ? goals.find(g => g.id === parseInt(idInput)).completed : false,
+          checkins: idInput ? goals.find(g => g.id === parseInt(idInput)).checkins : []
+        };
+
+        if (idInput) {
+          const index = goals.findIndex(g => g.id === parseInt(idInput));
+          goals[index] = newGoal;
+        } else {
+          goals.push(newGoal);
+        }
+
+        saveData();
+        renderGoals();
+
+        // Switch back to view tab
+        document.querySelector('[data-target="view-goals"]').click();
+        window.scrollTo(0, 0);
+      });
+
+      // Action Buttons
+      btnClear.addEventListener('click', () => {
+        if(confirm("Are you sure you want to clear all your goals and history? This cannot be undone.")) {
+          goals = [];
+          saveData();
+          renderGoals();
+        }
+      });
+
+      btnPrint.addEventListener('click', () => {
+        window.print();
+      });
+
+      // Check-in Modal Handlers
+      checkinProgressInput.addEventListener('input', (e) => {
+        checkinProgressDisplay.textContent = e.target.value + '%';
+      });
+
+      btnCancelCheckin.addEventListener('click', () => {
+        checkinModal.style.display = 'none';
+        checkinForm.reset();
+      });
+
+      checkinForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const goalId = parseInt(document.getElementById('checkin-goal-id').value);
+        const progress = parseInt(checkinProgressInput.value);
+        const notes = document.getElementById('checkin-notes').value.trim();
+
+        const goalIndex = goals.findIndex(g => g.id === goalId);
+        if(goalIndex !== -1) {
+          goals[goalIndex].progress = progress;
+
+          if (progress === 100) {
+            goals[goalIndex].completed = true;
+          } else {
+            goals[goalIndex].completed = false;
+          }
+
+          if(notes) {
+            goals[goalIndex].checkins.unshift({
+              date: new Date().toISOString(),
+              progress: progress,
+              notes: notes
+            });
+          }
+
+          saveData();
+          renderGoals();
+          checkinModal.style.display = 'none';
+          checkinForm.reset();
+
+          if(progress === 100) {
+            alert(`Congratulations! You reached 100% on "${goals[goalIndex].title}". Time for your celebration: ${goals[goalIndex].celebration}`);
+          }
+        }
+      });
+
+      // Global Handlers for Edit/Delete/Check-in buttons inside the list
+      window.editGoal = function(id) {
+        const goal = goals.find(g => g.id === id);
+        if(goal) {
+          document.getElementById('goal-id').value = goal.id;
+          document.getElementById('goal-title').value = goal.title;
+          document.getElementById('goal-category').value = goal.category;
+          document.getElementById('goal-action-plan').value = goal.actionPlan;
+          document.getElementById('goal-target-date').value = goal.targetDate;
+          document.getElementById('goal-celebration').value = goal.celebration;
+
+          document.querySelector('[data-target="add-goal"]').click();
+          window.scrollTo(0, 0);
+        }
+      };
+
+      window.deleteGoal = function(id) {
+        if(confirm("Delete this goal?")) {
+          goals = goals.filter(g => g.id !== id);
+          saveData();
+          renderGoals();
+        }
+      };
+
+      window.openCheckin = function(id) {
+        const goal = goals.find(g => g.id === id);
+        if(goal) {
+          document.getElementById('checkin-goal-id').value = goal.id;
+          document.getElementById('checkin-title').innerHTML = `Monthly Check-in: <span style="color:var(--gold);">${sanitizeHTML(goal.title)}</span>`;
+          checkinProgressInput.value = goal.progress;
+          checkinProgressDisplay.textContent = goal.progress + '%';
+
+          checkinModal.style.display = 'block';
+          checkinModal.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
+      function saveData() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(goals));
+      }
+
+      function renderGoals() {
+        if (goals.length === 0) {
+          goalsContainer.style.display = 'none';
+          emptyState.style.display = 'block';
+          btnClear.style.display = 'none';
+          btnPrint.style.display = 'none';
+          return;
+        }
+
+        goalsContainer.style.display = 'grid';
+        emptyState.style.display = 'none';
+        btnClear.style.display = 'inline-flex';
+        btnPrint.style.display = 'inline-flex';
+
+        goalsContainer.innerHTML = '';
+
+        // Sort: Incomplete first (by target date), then Complete
+        const sortedGoals = [...goals].sort((a, b) => {
+          if (a.completed !== b.completed) return a.completed ? 1 : -1;
+          return new Date(a.targetDate) - new Date(b.targetDate);
+        });
+
+        sortedGoals.forEach(goal => {
+          const card = document.createElement('div');
+          card.className = `goal-card ${goal.completed ? 'completed' : ''}`;
+
+          // Format Date correctly ignoring timezone offsets
+          let dateStr = '';
+          if(goal.targetDate) {
+             const parts = goal.targetDate.split('-');
+             const d = new Date(parts[0], parts[1]-1, parts[2]);
+             dateStr = d.toLocaleDateString(undefined, {month: 'long', year: 'numeric', day: 'numeric'});
+          }
+
+          let checkinsHTML = '';
+          if (goal.checkins && goal.checkins.length > 0) {
+            const historyList = goal.checkins.slice(0, 3).map(c => {
+               const checkDate = new Date(c.date).toLocaleDateString();
+               return `<div class="checkin-item"><span class="checkin-date">${checkDate}:</span> [${c.progress}%] ${sanitizeHTML(c.notes)}</div>`;
+            }).join('');
+
+            checkinsHTML = `
+              <div class="goal-section" style="margin-top: 1rem;">
+                <strong>Recent Check-in Notes</strong>
+                <div class="checkin-log">
+                  ${historyList}
+                </div>
+              </div>
+            `;
+          }
+
+          card.innerHTML = `
+            <div class="goal-header">
+              <div>
+                <h3 class="goal-title">${sanitizeHTML(goal.title)}</h3>
+                <span class="goal-category">${categoryNames[goal.category] || 'Other'}</span>
+              </div>
+              <div class="goal-date">Target: ${dateStr}</div>
+            </div>
+
+            <div class="progress-container">
+              <div class="progress-label">
+                <span>Progress</span>
+                <span>${goal.progress}% ${goal.completed ? '🎉' : ''}</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" style="width: ${goal.progress}%;"></div>
+              </div>
+            </div>
+
+            <div class="goal-details">
+              <div class="goal-section">
+                <strong>Action Plan</strong>
+                <p>${sanitizeHTML(goal.actionPlan)}</p>
+              </div>
+              <div class="goal-section">
+                <strong>Milestone Celebration</strong>
+                <p>🍾 ${sanitizeHTML(goal.celebration)}</p>
+              </div>
+              ${checkinsHTML}
+            </div>
+
+            <div class="goal-actions">
+              <button class="btn btn-primary btn-sm" onclick="openCheckin(${goal.id})">Monthly Check-in</button>
+              <button class="btn btn-secondary btn-sm" onclick="editGoal(${goal.id})">Edit</button>
+              <button class="btn btn-secondary btn-sm" style="color:#d9534f; border-color:#d9534f;" onclick="deleteGoal(${goal.id})">Delete</button>
+            </div>
+          `;
+          goalsContainer.appendChild(card);
+        });
+      }
+
+      function sanitizeHTML(str) {
+        const temp = document.createElement('div');
+        temp.textContent = str;
+        return temp.innerHTML;
+      }
+    });
+  </script>
+
+</body>
+</html>
