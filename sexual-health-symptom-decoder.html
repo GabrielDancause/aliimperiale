@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Health Symptom Decoder | Ali Imperiale</title>
+  <meta name="description" content="An educational tool to help you understand common sexual health symptoms and when to seek medical advice.">
+  <link rel="stylesheet" href="/shared.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Site Nav - Copied from index.html */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    body {
+      background-color: #FAF8EB;
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      margin: 0;
+    }
+
+    /* Page specific styles */
+    .page-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      color: #2E3E24;
+    }
+
+    .tool-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .tool-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .tool-header p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .medical-disclaimer {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      font-size: 0.9rem;
+      border: 1px solid #f5c6cb;
+    }
+
+    .decoder-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    .step-container {
+      display: none;
+    }
+
+    .step-container.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+    }
+
+    .btn {
+      background-color: #AD9846;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #8A7A38;
+    }
+
+    .btn-secondary {
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    .btn-secondary:hover {
+      background-color: #ccc;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    /* Results */
+    #results-section {
+      display: none;
+    }
+
+    .risk-indicator {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .risk-low { background-color: #28a745; }
+    .risk-moderate { background-color: #ffc107; color: #333; }
+    .risk-high { background-color: #dc3545; }
+
+    .result-box {
+      background: #FAF8EB;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 4px solid #AD9846;
+    }
+
+    .faq-section {
+      margin-top: 50px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this symptom decoder a medical diagnosis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This tool is purely for educational purposes and should not be used as a substitute for professional medical advice, diagnosis, or treatment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I see a doctor for sexual health symptoms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You should see a healthcare provider if you experience severe pain, unexplained bleeding, unusual discharge, or if symptoms persist for more than a few days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I get tested for STIs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's generally recommended to get tested for STIs annually if you are sexually active, or more frequently if you have multiple partners or new partners."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-container">
+    <div class="tool-header">
+      <h1>Sexual Health Symptom Decoder</h1>
+      <p>Understanding your body is empowering. Use this educational tool to explore common symptoms.</p>
+    </div>
+
+    <div class="medical-disclaimer">
+      <strong>Important Medical Disclaimer:</strong> This tool provides educational information only. It does not provide medical advice or diagnosis. If you are experiencing pain, bleeding, or other concerning symptoms, please consult a qualified healthcare professional immediately.
+    </div>
+
+    <div class="decoder-card" id="decoder-app">
+      <!-- Step 1: Location & Biology -->
+      <div class="step-container active" id="step-1">
+        <h2>Step 1: Basic Information</h2>
+        <div class="form-group">
+          <label for="biological-sex">Biological sex / Anatomy</label>
+          <select id="biological-sex">
+            <option value="">Select anatomy type...</option>
+            <option value="vulva">People with Vulvas / Vaginas</option>
+            <option value="penis">People with Penises</option>
+            <option value="all">Any / General</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="symptom-category">Primary Symptom Category</label>
+          <select id="symptom-category">
+            <option value="">Select a category...</option>
+            <option value="discharge">Unusual Discharge</option>
+            <option value="pain">Pain or Discomfort</option>
+            <option value="skin">Skin Changes (Bumps, Rashes, Sores)</option>
+            <option value="bleeding">Unexpected Bleeding</option>
+            <option value="urination">Urination Issues (Burning, Frequency)</option>
+          </select>
+        </div>
+        <div class="btn-group">
+          <button class="btn" id="btn-next-1">Next Step</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Duration & Severity -->
+      <div class="step-container" id="step-2">
+        <h2>Step 2: Details</h2>
+        <div class="form-group">
+          <label for="duration">How long have you had these symptoms?</label>
+          <select id="duration">
+            <option value="">Select duration...</option>
+            <option value="1-2-days">1-2 Days</option>
+            <option value="1-week">About a week</option>
+            <option value="weeks">Multiple weeks</option>
+            <option value="months">Months or longer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="severity">Symptom Severity</label>
+          <select id="severity">
+            <option value="">Select severity...</option>
+            <option value="mild">Mild (Noticeable but not bothersome)</option>
+            <option value="moderate">Moderate (Uncomfortable, somewhat disruptive)</option>
+            <option value="severe">Severe (Very painful, highly disruptive)</option>
+          </select>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-secondary" id="btn-prev-2">Previous</button>
+          <button class="btn" id="btn-next-2">Next Step</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Associated Symptoms -->
+      <div class="step-container" id="step-3">
+        <h2>Step 3: Associated Symptoms</h2>
+        <p>Are you experiencing any of these alongside your primary symptom? (Select all that apply)</p>
+        <div class="form-group">
+          <div><label><input type="checkbox" class="assoc-symptom" value="fever"> Fever or chills</label></div>
+          <div><label><input type="checkbox" class="assoc-symptom" value="odor"> Strong or foul odor</label></div>
+          <div><label><input type="checkbox" class="assoc-symptom" value="itching"> Severe itching</label></div>
+          <div><label><input type="checkbox" class="assoc-symptom" value="pelvic-pain"> Lower abdominal or pelvic pain</label></div>
+          <div><label><input type="checkbox" class="assoc-symptom" value="pain-sex"> Pain during sex</label></div>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-secondary" id="btn-prev-3">Previous</button>
+          <button class="btn" id="btn-submit">Analyze Symptoms</button>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div id="results-section">
+        <h2>Your Symptom Analysis</h2>
+        <p><em>Remember, this is not a diagnosis.</em></p>
+
+        <div id="risk-level-container">
+          <!-- Dynamic Risk Indicator -->
+        </div>
+
+        <div class="result-box">
+          <h3>Potential Causes (Educational Only)</h3>
+          <p id="potential-causes">Loading...</p>
+        </div>
+
+                <div class="result-box">
+          <h3>Typical Treatment Overview (Educational Only)</h3>
+          <p id="treatment-overview">Loading...</p>
+        </div>
+
+        <div class="result-box">
+          <h3>When to See a Doctor</h3>
+          <p id="doctor-guidance">Loading...</p>
+        </div>
+
+        <div class="result-box">
+          <h3>General Prevention Tips</h3>
+          <p id="prevention-tips">Loading...</p>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn" id="btn-restart">Start Over</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Is this symptom decoder a medical diagnosis?</h3>
+        <p>No. This tool is purely for educational purposes and should not be used as a substitute for professional medical advice, diagnosis, or treatment.</p>
+      </div>
+      <div class="faq-item">
+        <h3>When should I see a doctor for sexual health symptoms?</h3>
+        <p>You should see a healthcare provider if you experience severe pain, unexplained bleeding, unusual discharge, or if symptoms persist for more than a few days. If in doubt, it is always best to consult a professional.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How often should I get tested for STIs?</h3>
+        <p>It's generally recommended to get tested for STIs annually if you are sexually active, or more frequently (every 3-6 months) if you have multiple partners or new partners.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/consent.js" defer></script>
+  <script src="/mobile-nav.js" defer></script>
+  <script src="/newsletter-bar.js" defer></script>
+  <script src="/email-capture.js" defer></script>
+  <script src="/back-to-top.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const steps = [
+        document.getElementById('step-1'),
+        document.getElementById('step-2'),
+        document.getElementById('step-3'),
+        document.getElementById('results-section')
+    ];
+    let currentStepIndex = 0;
+
+    const bioSexEl = document.getElementById('biological-sex');
+    const symptomCatEl = document.getElementById('symptom-category');
+    const durationEl = document.getElementById('duration');
+    const severityEl = document.getElementById('severity');
+
+    const updateUI = () => {
+        steps.forEach((step, index) => {
+            if (index === currentStepIndex) {
+                step.classList.add('active');
+                if(step.id === 'results-section') step.style.display = 'block';
+            } else {
+                step.classList.remove('active');
+                if(step.id === 'results-section') step.style.display = 'none';
+            }
+        });
+        saveState();
+    };
+
+    const validateStep1 = () => {
+        if (!bioSexEl.value || !symptomCatEl.value) {
+            alert('Please select both biological sex and a primary symptom category.');
+            return false;
+        }
+        return true;
+    };
+
+    const validateStep2 = () => {
+        if (!durationEl.value || !severityEl.value) {
+            alert('Please select both duration and severity.');
+            return false;
+        }
+        return true;
+    };
+
+    document.getElementById('btn-next-1').addEventListener('click', () => {
+        if (validateStep1()) {
+            currentStepIndex = 1;
+            updateUI();
+        }
+    });
+
+    document.getElementById('btn-prev-2').addEventListener('click', () => {
+        currentStepIndex = 0;
+        updateUI();
+    });
+
+    document.getElementById('btn-next-2').addEventListener('click', () => {
+        if (validateStep2()) {
+            currentStepIndex = 2;
+            updateUI();
+        }
+    });
+
+    document.getElementById('btn-prev-3').addEventListener('click', () => {
+        currentStepIndex = 1;
+        updateUI();
+    });
+
+    document.getElementById('btn-submit').addEventListener('click', () => {
+        analyzeSymptoms();
+        currentStepIndex = 3;
+        updateUI();
+    });
+
+    document.getElementById('btn-restart').addEventListener('click', () => {
+        currentStepIndex = 0;
+        bioSexEl.value = '';
+        symptomCatEl.value = '';
+        durationEl.value = '';
+        severityEl.value = '';
+        document.querySelectorAll('.assoc-symptom').forEach(cb => cb.checked = false);
+        localStorage.removeItem('symptomDecoderState');
+        updateUI();
+    });
+
+    const analyzeSymptoms = () => {
+        const cat = symptomCatEl.value;
+        const dur = durationEl.value;
+        const sev = severityEl.value;
+        const assocs = Array.from(document.querySelectorAll('.assoc-symptom:checked')).map(cb => cb.value);
+
+        let riskLevel = 'low';
+        if (sev === 'moderate' || dur === 'weeks') riskLevel = 'moderate';
+        if (sev === 'severe' || dur === 'months' || assocs.includes('fever') || assocs.includes('pelvic-pain')) riskLevel = 'high';
+
+                let causes = "Various common infections or irritations.";
+        let treatment = "Treatment varies widely based on the exact cause. It may involve watchful waiting, over-the-counter creams, or prescription antibiotics/antivirals.";
+        let doctor = "Monitor your symptoms for a few days. If they don't improve, consider a routine checkup.";
+        let prev = "Practice safe sex, maintain good hygiene, and communicate with partners.";
+
+        if (cat === 'discharge') {
+            causes = "Could indicate a yeast infection, bacterial vaginosis (BV), or an STI like chlamydia or gonorrhea.";
+            treatment = "Yeast infections are often treated with over-the-counter or prescription antifungals. BV and bacterial STIs require prescription antibiotics from a doctor.";
+            if (assocs.includes('odor')) causes += " A strong odor often points towards BV or an STI.";
+        } else if (cat === 'pain') {
+            causes = "May be related to muscle tension, a urinary tract infection (UTI), or an STI.";
+            treatment = "Muscle tension might respond to relaxation exercises or pelvic floor therapy. UTIs and many STIs require specific prescription antibiotics. Do not use leftover antibiotics.";
+            if (assocs.includes('pain-sex')) causes += " Pain during sex could be due to lack of lubrication, vaginismus, or an underlying infection.";
+        } else if (cat === 'skin') {
+            causes = "Could be razor bumps, herpes, HPV (warts), or syphilis sores.";
+            treatment = "Razor bumps usually heal on their own. Viral infections like herpes or HPV are managed with prescription antivirals or topical treatments. Syphilis requires antibiotics.";
+        } else if (cat === 'bleeding') {
+            causes = "Might be spotting from hormonal changes, rough sex, or an infection.";
+            treatment = "Minor spotting from minor irritation may resolve on its own. If caused by an infection, prescription medication is necessary. Hormonal causes may require adjusting birth control.";
+            if (sev === 'severe') doctor = "Seek medical attention promptly, as severe unexpected bleeding needs evaluation.";
+        } else if (cat === 'urination') {
+            causes = "Often points to a UTI, but could also be an STI.";
+            treatment = "UTIs are typically treated with a short course of prescription antibiotics. Drinking plenty of water can help alleviate symptoms while waiting for a doctor's appointment.";
+        }
+
+        if (riskLevel === 'moderate') {
+            doctor = "It is advisable to schedule an appointment with a healthcare provider soon to get checked.";
+        } else if (riskLevel === 'high') {
+            doctor = "Please seek medical attention as soon as possible for evaluation and treatment.";
+        }
+
+        const riskContainer = document.getElementById('risk-level-container');
+        riskContainer.innerHTML = '';
+        const riskSpan = document.createElement('span');
+        riskSpan.className = `risk-indicator risk-${riskLevel}`;
+        riskSpan.textContent = `Risk Level: ${riskLevel.charAt(0).toUpperCase() + riskLevel.slice(1)} Concern`;
+        riskContainer.appendChild(riskSpan);
+
+                document.getElementById('potential-causes').textContent = causes;
+        document.getElementById('treatment-overview').textContent = treatment;
+        document.getElementById('doctor-guidance').textContent = doctor;
+        document.getElementById('prevention-tips').textContent = prev;
+    };
+
+    const saveState = () => {
+        const state = {
+            step: currentStepIndex,
+            bio: bioSexEl.value,
+            cat: symptomCatEl.value,
+            dur: durationEl.value,
+            sev: severityEl.value,
+            assocs: Array.from(document.querySelectorAll('.assoc-symptom')).map(cb => ({val: cb.value, checked: cb.checked}))
+        };
+        localStorage.setItem('symptomDecoderState', JSON.stringify(state));
+    };
+
+    const loadState = () => {
+        const stateStr = localStorage.getItem('symptomDecoderState');
+        if (stateStr) {
+            try {
+                const state = JSON.parse(stateStr);
+                bioSexEl.value = state.bio || '';
+                symptomCatEl.value = state.cat || '';
+                durationEl.value = state.dur || '';
+                severityEl.value = state.sev || '';
+                if(state.assocs) {
+                    state.assocs.forEach(a => {
+                        const cb = document.querySelector(`.assoc-symptom[value="${a.val}"]`);
+                        if(cb) cb.checked = a.checked;
+                    });
+                }
+                currentStepIndex = state.step;
+                if (currentStepIndex === 3) analyzeSymptoms();
+                updateUI();
+            } catch(e) {
+                console.error("Could not parse saved state.");
+            }
+        }
+    };
+
+    loadState();
+});
+</script>
+
+</body>
+</html>
