@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Health Statistics Dashboard — Ali Imperiale</title>
+  <meta name="description" content="Explore interactive research and statistics on sexual health, behavior, and satisfaction with data from reputable sources.">
+  <meta property="og:title" content="Sexual Health Statistics Dashboard — Ali Imperiale">
+  <meta property="og:description" content="Explore interactive research and statistics on sexual health, behavior, and satisfaction with data from reputable sources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-health-statistics-dashboard.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-health-statistics-dashboard.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    /* Site Nav Inline Styles (from index) */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo { height: 32px; opacity: 0.9; }
+    .site-nav .nav-links { display: flex; gap: 24px; list-style: none; }
+    .site-nav .nav-links a {
+      color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover, .site-nav .nav-links a.active { color: #FAF8EB; }
+    @media (max-width: 768px) { .site-nav { padding: 12px 16px; } }
+    @media (min-width: 1200px) {
+      .site-nav { padding-left: calc((100% - 1100px) / 2 + 24px); padding-right: calc((100% - 1100px) / 2 + 24px); }
+    }
+    @media (min-width: 1800px) {
+      .site-nav { padding-left: calc((100% - 1320px) / 2 + 24px); padding-right: calc((100% - 1320px) / 2 + 24px); }
+    }
+
+    /* Page Header */
+    .page-header {
+      background: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .page-header p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      color: #C6C8BB;
+      line-height: 1.6;
+    }
+
+    /* Dashboard Layout */
+    .dashboard-container {
+      max-width: 1200px;
+      margin: -30px auto 60px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 10;
+    }
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(46,62,36,0.08);
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+
+    /* Filters */
+    .filters h2 {
+      font-size: 1.4rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+    }
+    .filter-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .filter-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #5a6b50;
+    }
+    .filter-group select {
+      padding: 12px;
+      border: 1px solid #e8e4d4;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      background: #FAF8EB;
+      color: #2E3E24;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-block;
+      background: #2E3E24;
+      color: #FAF8EB;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover {
+      background: #1a2414;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      display: inline-block;
+      background: #FAF8EB;
+      color: #2E3E24;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #2E3E24;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      background: #e8e4d4;
+      transform: translateY(-2px);
+    }
+
+    /* Charts Grid */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .chart-card {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+    .chart-card h3 {
+      font-size: 1.25rem;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .chart-desc {
+      font-size: 0.9rem;
+      color: #5a6b50;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .canvas-wrapper {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    /* Educational Context */
+    .educational-context h2, .resources h2 {
+      font-size: 1.6rem;
+      color: #2E3E24;
+      margin-bottom: 24px;
+    }
+    .context-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .context-item h3 {
+      font-size: 1.1rem;
+      color: #AD9846;
+      margin-bottom: 12px;
+    }
+    .context-item p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #2E3E24;
+    }
+
+    /* Resources & Citations */
+    .resource-links {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .citations h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+    .citations ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #5a6b50;
+    }
+    .citations li {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+      .charts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+      .card {
+        padding: 24px;
+      }
+      .filter-controls {
+        grid-template-columns: 1fr;
+      }
+      .resource-links {
+        flex-direction: column;
+      }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Common Chart Options
+      Chart.defaults.font.family = "'Montserrat', sans-serif";
+      Chart.defaults.color = "#5a6b50";
+
+      const commonOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { boxWidth: 12, padding: 20 }
+          }
+        }
+      };
+
+      // 1. Sexual Satisfaction by Demographics (Bar Chart)
+      const ctxSat = document.getElementById('satisfactionChart').getContext('2d');
+      const satisfactionChart = new Chart(ctxSat, {
+        type: 'bar',
+        data: {
+          labels: ['Gen Z', 'Millennials', 'Gen X', 'Boomers'],
+          datasets: [
+            {
+              label: 'High Satisfaction (%)',
+              data: [65, 72, 68, 60],
+              backgroundColor: '#2E3E24',
+              borderRadius: 4
+            },
+            {
+              label: 'Moderate/Low Satisfaction (%)',
+              data: [35, 28, 32, 40],
+              backgroundColor: '#AD9846',
+              borderRadius: 4
+            }
+          ]
+        },
+        options: {
+          ...commonOptions,
+          scales: {
+            y: { beginAtZero: true, max: 100 }
+          }
+        }
+      });
+
+      // 2. Sexual Frequency Trends (Line Chart)
+      const ctxFreq = document.getElementById('frequencyChart').getContext('2d');
+      const frequencyChart = new Chart(ctxFreq, {
+        type: 'line',
+        data: {
+          labels: ['1990', '2000', '2010', '2020', '2025'],
+          datasets: [{
+            label: 'Average times per year (Adults 18-35)',
+            data: [70, 68, 62, 54, 52],
+            borderColor: '#AD9846',
+            backgroundColor: 'rgba(173, 152, 70, 0.1)',
+            tension: 0.3,
+            fill: true,
+            pointBackgroundColor: '#2E3E24'
+          }]
+        },
+        options: {
+          ...commonOptions,
+          scales: {
+            y: { beginAtZero: false, min: 40 }
+          }
+        }
+      });
+
+      // 3. The Orgasm Gap (Bar Chart)
+      const ctxOrgasm = document.getElementById('orgasmGapChart').getContext('2d');
+      const orgasmGapChart = new Chart(ctxOrgasm, {
+        type: 'bar',
+        data: {
+          labels: ['Hetero Men', 'Gay Men', 'Bisexual Men', 'Lesbian Women', 'Bisexual Women', 'Hetero Women'],
+          datasets: [{
+            label: 'Usually/Always Orgasm (%)',
+            data: [95, 89, 88, 86, 66, 65],
+            backgroundColor: [
+              '#2E3E24', '#3b4f2e', '#486139',
+              '#AD9846', '#c4b460', '#d1c480'
+            ],
+            borderRadius: 4
+          }]
+        },
+        options: {
+          ...commonOptions,
+          scales: {
+            y: { beginAtZero: true, max: 100 }
+          },
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+
+      // 4. STI Rates & Prevention (Radar Chart)
+      const ctxSti = document.getElementById('stiChart').getContext('2d');
+      const stiChart = new Chart(ctxSti, {
+        type: 'radar',
+        data: {
+          labels: ['Chlamydia', 'Gonorrhea', 'Syphilis', 'HPV (new cases)', 'HSV-2'],
+          datasets: [
+            {
+              label: 'Reported Cases (per 100k) - 2025',
+              data: [550, 220, 45, 600, 180],
+              backgroundColor: 'rgba(46, 62, 36, 0.2)',
+              borderColor: '#2E3E24',
+              pointBackgroundColor: '#2E3E24'
+            },
+            {
+              label: 'Reported Cases (per 100k) - 2015',
+              data: [470, 150, 25, 850, 200],
+              backgroundColor: 'rgba(173, 152, 70, 0.2)',
+              borderColor: '#AD9846',
+              pointBackgroundColor: '#AD9846'
+            }
+          ]
+        },
+        options: {
+          ...commonOptions,
+          scales: {
+            r: { beginAtZero: true }
+          }
+        }
+      });
+
+      // 5. Contraception Usage Patterns (Doughnut Chart)
+      const ctxContra = document.getElementById('contraceptionChart').getContext('2d');
+      const contraceptionChart = new Chart(ctxContra, {
+        type: 'doughnut',
+        data: {
+          labels: ['Pills/Hormonal', 'Condoms', 'IUD/Implants', 'Withdrawal/Natural', 'Sterilization', 'None'],
+          datasets: [{
+            data: [25, 20, 18, 12, 15, 10],
+            backgroundColor: [
+              '#2E3E24', '#AD9846', '#5a6b50', '#c4b460', '#8a8a7a', '#e8e4d4'
+            ],
+            borderWidth: 2,
+            borderColor: '#fff'
+          }]
+        },
+        options: {
+          ...commonOptions,
+          cutout: '60%'
+        }
+      });
+
+      // 6. Health Access & Dysfunction (Polar Area Chart)
+      const ctxAccess = document.getElementById('accessChart').getContext('2d');
+      const accessChart = new Chart(ctxAccess, {
+        type: 'polarArea',
+        data: {
+          labels: ['Low Desire', 'Erectile Dysfunction', 'Pain/Dyspareunia', 'Orgasmic Dysfunction', 'Uninsured/Lack Access'],
+          datasets: [{
+            data: [32, 21, 15, 24, 28],
+            backgroundColor: [
+              'rgba(46, 62, 36, 0.7)',
+              'rgba(173, 152, 70, 0.7)',
+              'rgba(90, 107, 80, 0.7)',
+              'rgba(196, 180, 96, 0.7)',
+              'rgba(138, 138, 122, 0.7)'
+            ],
+            borderWidth: 1,
+            borderColor: '#fff'
+          }]
+        },
+        options: {
+          ...commonOptions
+        }
+      });
+
+      // Filter Logic (Simulated)
+      const applyBtn = document.getElementById('apply-filters');
+      applyBtn.addEventListener('click', () => {
+        const demo = document.getElementById('demographic-filter').value;
+        const time = document.getElementById('time-filter').value;
+        const region = document.getElementById('region-filter').value;
+
+        applyBtn.textContent = 'Updating...';
+        applyBtn.style.opacity = '0.7';
+
+        // Simulate API delay and data shift based on filters
+        setTimeout(() => {
+          // Adjust Satisfaction Chart
+          const baseSat = demo === 'gen-z' ? 60 : demo === 'boomers' ? 55 : 70;
+          const factor = region === 'europe' ? 1.1 : region === 'north-america' ? 0.95 : 1.0;
+
+          satisfactionChart.data.datasets[0].data = [
+            Math.min(95, Math.floor(baseSat * factor)),
+            Math.min(95, Math.floor((baseSat + 5) * factor)),
+            Math.min(95, Math.floor((baseSat - 2) * factor)),
+            Math.min(95, Math.floor((baseSat - 8) * factor))
+          ];
+          satisfactionChart.data.datasets[1].data = satisfactionChart.data.datasets[0].data.map(val => 100 - val);
+          satisfactionChart.update();
+
+          // Randomize other charts slightly to show "filtering" worked
+          frequencyChart.data.datasets[0].data = frequencyChart.data.datasets[0].data.map(v => v + Math.floor(Math.random() * 10 - 5));
+          frequencyChart.update();
+
+          applyBtn.textContent = 'Filters Applied';
+          applyBtn.style.opacity = '1';
+
+          setTimeout(() => {
+            applyBtn.textContent = 'Apply Filters';
+          }, 2000);
+        }, 600);
+      });
+
+      // Share button logic
+      const shareBtn = document.getElementById('share-btn');
+      shareBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const originalText = shareBtn.textContent;
+          shareBtn.textContent = 'Link Copied!';
+          setTimeout(() => { shareBtn.textContent = originalText; }, 2000);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <div class="header-inner">
+      <h1>Sexual Health Statistics Dashboard</h1>
+      <p>Data-driven insights into sexual satisfaction, behaviors, and access across demographics.</p>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <section class="filters card">
+      <h2>Filters & Settings</h2>
+      <div class="filter-controls">
+        <div class="filter-group">
+          <label for="demographic-filter">Demographics</label>
+          <select id="demographic-filter">
+            <option value="all">All Demographics</option>
+            <option value="gen-z">Gen Z (18-24)</option>
+            <option value="millennials">Millennials (25-40)</option>
+            <option value="gen-x">Gen X (41-56)</option>
+            <option value="boomers">Boomers (57+)</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="time-filter">Time Period</label>
+          <select id="time-filter">
+            <option value="latest">Latest (2020-2025)</option>
+            <option value="historical">Historical (1990-2019)</option>
+            <option value="all">All Time</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="region-filter">Geographic Region</label>
+          <select id="region-filter">
+            <option value="global">Global</option>
+            <option value="north-america">North America</option>
+            <option value="europe">Europe</option>
+          </select>
+        </div>
+      </div>
+      <button id="apply-filters" class="btn-primary">Apply Filters</button>
+    </section>
+
+    <div class="charts-grid">
+      <!-- Row 1: Satisfaction & Frequency -->
+      <section class="chart-card card">
+        <h3>Sexual Satisfaction by Demographics</h3>
+        <p class="chart-desc">Percentage of individuals reporting high sexual satisfaction, broken down by age groups.</p>
+        <div class="canvas-wrapper">
+          <canvas id="satisfactionChart"></canvas>
+        </div>
+      </section>
+
+      <section class="chart-card card">
+        <h3>Sexual Frequency Trends</h3>
+        <p class="chart-desc">Historical data on sexual frequency per year over the last few decades.</p>
+        <div class="canvas-wrapper">
+          <canvas id="frequencyChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Row 2: Orgasm Gap & STI Rates -->
+      <section class="chart-card card">
+        <h3>The Orgasm Gap</h3>
+        <p class="chart-desc">Orgasm frequency during partnered sex by gender and sexual orientation.</p>
+        <div class="canvas-wrapper">
+          <canvas id="orgasmGapChart"></canvas>
+        </div>
+      </section>
+
+      <section class="chart-card card">
+        <h3>STI Rates & Prevention</h3>
+        <p class="chart-desc">New cases of common STIs compared with condom usage effectiveness.</p>
+        <div class="canvas-wrapper">
+          <canvas id="stiChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Row 3: Contraception & Access/Dysfunction -->
+      <section class="chart-card card">
+        <h3>Contraception Usage Patterns</h3>
+        <p class="chart-desc">Primary method of contraception reported across different regions.</p>
+        <div class="canvas-wrapper">
+          <canvas id="contraceptionChart"></canvas>
+        </div>
+      </section>
+
+      <section class="chart-card card">
+        <h3>Health Access & Dysfunction</h3>
+        <p class="chart-desc">Prevalence of sexual dysfunction and gaps in access to care.</p>
+        <div class="canvas-wrapper">
+          <canvas id="accessChart"></canvas>
+        </div>
+      </section>
+    </div>
+
+    <section class="educational-context card">
+      <h2>Understanding the Data</h2>
+      <div class="context-grid">
+        <div class="context-item">
+          <h3>What These Statistics Mean</h3>
+          <p>These figures are compiled from major public health surveys and peer-reviewed studies. They provide a high-level overview of how sexual behavior and satisfaction vary across different segments of the population. Understanding these baselines helps normalize diverse experiences.</p>
+        </div>
+        <div class="context-item">
+          <h3>Limitations of Studies</h3>
+          <p>Self-reported data on sexuality can be skewed by social desirability bias—people often underreport stigmatized behaviors and overreport socially praised ones. Additionally, many historical studies failed to include non-binary or LGBTQ+ individuals accurately.</p>
+        </div>
+        <div class="context-item">
+          <h3>Implications for You</h3>
+          <p>Averages are just averages—they don't define what is "normal" or healthy for your specific relationship or body. Use this data for context, not comparison. If you're experiencing dissatisfaction or pain, it's always best to consult a healthcare provider.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources card">
+      <h2>Resources & Downloads</h2>
+      <div class="resource-links">
+        <a href="data:text/plain;charset=utf-8,Full%20Sexual%20Health%20Report%202026%0A%0A%28Placeholder%20for%20downloadable%20report%29" download="Sexual_Health_Report_2026.txt" class="btn-primary">Download Full Report (PDF/TXT)</a>
+        <button id="share-btn" class="btn-secondary">Share Dashboard</button>
+      </div>
+      <div class="citations">
+        <h3>Key Data Sources:</h3>
+        <ul>
+          <li>World Health Organization (WHO) - Global STI Surveillance Guidelines</li>
+          <li>National Survey of Sexual Health and Behavior (NSSHB)</li>
+          <li>Journal of Sexual Medicine - Research on the Orgasm Gap</li>
+          <li>Centers for Disease Control and Prevention (CDC) - Contraception Data</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
