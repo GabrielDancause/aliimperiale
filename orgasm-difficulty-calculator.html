@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orgasm Difficulty Calculator — Ali Imperiale</title>
+  <meta name="description" content="A free, interactive Orgasm Difficulty Calculator to help you track patterns, understand contributing factors, and get personalized insights and educational recommendations.">
+  <meta property="og:title" content="Orgasm Difficulty Calculator — Ali Imperiale">
+  <meta property="og:description" content="A free, interactive Orgasm Difficulty Calculator to help you track patterns, understand contributing factors, and get personalized insights and educational recommendations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/orgasm-difficulty-calculator.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/orgasm-difficulty-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+        .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 480px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+.tool-hero {
+      text-align: center;
+      padding: 60px 24px 40px;
+    }
+    .tool-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .tool-hero p {
+      font-size: 1.05rem;
+      color: #5a6b50;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .disclaimer {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding: 16px 20px;
+      background: #f4f1e1;
+      border-left: 4px solid #AD9846;
+      border-radius: 4px 8px 8px 4px;
+      font-size: 0.85rem;
+      color: #5a6b50;
+      line-height: 1.5;
+    }
+    .calculator-container {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(46,62,36,0.08);
+      border: 1px solid #e8e4d4;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #2E3E24;
+      font-size: 0.95rem;
+    }
+    .form-group select, .form-group input[type="number"] {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #C6C8BB;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      background: #FAF8EB;
+      color: #2E3E24;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group select:focus, .form-group input[type="number"]:focus {
+      border-color: #AD9846;
+    }
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 10px;
+    }
+    .btn-submit:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+    .results-section {
+      display: none;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 2px dashed #e8e4d4;
+    }
+    .results-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .result-card {
+      background: #FAF8EB;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border-left: 4px solid #AD9846;
+    }
+    .result-card h3 {
+      font-size: 1.2rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+    .result-card p, .result-card ul {
+      font-size: 0.95rem;
+      color: #5a6b50;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .result-card ul {
+      padding-left: 20px;
+    }
+    .score-display {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .score-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #AD9846;
+      color: #FAF8EB;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .score-label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2E3E24;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+    .faq-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2E3E24;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid #e8e4d4;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 18px 24px;
+      background: none;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #2E3E24;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: #AD9846;
+      transition: transform 0.3s ease;
+    }
+    .faq-question[aria-expanded="true"]::after {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      padding: 0 24px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-answer p {
+      font-size: 0.95rem;
+      color: #5a6b50;
+      line-height: 1.6;
+      padding-bottom: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .calculator-container { padding: 20px; }
+      .tool-hero h1 { font-size: 1.8rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it normal to have difficulty reaching orgasm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Difficulty reaching orgasm (anorgasmia or delayed orgasm) is incredibly common and can affect anyone regardless of gender or age. It is often influenced by a combination of physical, psychological, and relational factors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does stress affect my ability to climax?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stress activates your sympathetic nervous system (fight or flight), which directly competes with the parasympathetic nervous system (rest and digest) needed for sexual arousal and orgasm. High cortisol levels can significantly dampen physical responsiveness."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can medications cause orgasm difficulty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Many medications, particularly antidepressants (like SSRIs), blood pressure medications, and some hormonal contraceptives, have side effects that can delay or prevent orgasm. Always consult a healthcare provider if you suspect your medication is impacting your sexual function."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my relationship dynamic impact my orgasms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Significantly. Emotional safety, trust, communication quality, and unresolved conflicts all play major roles in sexual satisfaction. If you feel disconnected or unsafe (emotionally) with your partner, your body may struggle to let go enough to reach climax."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I see a professional about orgasm difficulties?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consider seeing a healthcare provider or a certified sex therapist if the difficulty is causing you personal distress, negatively impacting your relationship, or if it represents a sudden, unexplained change in your sexual functioning."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+
+  <section class="tool-hero">
+    <h1>Orgasm Difficulty Calculator</h1>
+    <p>Track patterns, explore potential contributing factors, and gain insights into your experiences with reaching climax. This tool is designed to provide non-judgmental, educational perspectives.</p>
+  </section>
+
+  <div class="disclaimer">
+    <strong>Medical Disclaimer:</strong> This tool is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or therapy. If you are experiencing distress related to your sexual health, please consult a qualified healthcare provider or certified sex therapist.
+  </div>
+
+  <div class="calculator-container">
+    <form id="calculator-form">
+
+      <div class="form-group">
+        <label for="frequency">How often do you experience difficulty reaching orgasm?</label>
+        <select id="frequency" required>
+          <option value="">Select an option...</option>
+          <option value="1">Rarely (It happens occasionally but isn't a pattern)</option>
+          <option value="2">Sometimes (In specific situations or with specific partners)</option>
+          <option value="3">Often (More than half the time)</option>
+          <option value="4">Always (I consistently cannot reach orgasm)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="duration">How long has this been a concern?</label>
+        <select id="duration" required>
+          <option value="">Select an option...</option>
+          <option value="1">Lifelong (I have always experienced this)</option>
+          <option value="2">Acquired (This started recently after a period of normal functioning)</option>
+          <option value="3">Situational (It fluctuates based on the context or partner)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="stress">What is your current general stress level?</label>
+        <select id="stress" required>
+          <option value="">Select an option...</option>
+          <option value="1">Low (Generally relaxed and calm)</option>
+          <option value="2">Moderate (Some daily stress but manageable)</option>
+          <option value="3">High (Feeling frequently overwhelmed or anxious)</option>
+          <option value="4">Severe (Chronic stress, burnout, or significant life events)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="relationship">How would you describe the emotional connection in your current relationship? (If applicable)</label>
+        <select id="relationship" required>
+          <option value="0">Not applicable / Single</option>
+          <option value="1">Very connected and secure</option>
+          <option value="2">Somewhat connected, but there's room for improvement</option>
+          <option value="3">Disconnected, tense, or experiencing conflict</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="communication">How comfortable are you communicating your sexual desires and boundaries?</label>
+        <select id="communication" required>
+          <option value="">Select an option...</option>
+          <option value="1">Very comfortable (I can easily ask for what I want)</option>
+          <option value="2">Somewhat comfortable (I try, but it can be awkward)</option>
+          <option value="3">Uncomfortable (I rarely speak up about my needs)</option>
+          <option value="4">Very uncomfortable (I avoid the topic entirely)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="health">Are there any potential physical/health factors? (e.g., new medications, fatigue, pain, hormonal changes)</label>
+        <select id="health" required>
+          <option value="">Select an option...</option>
+          <option value="1">No, I feel physically well and take no relevant medications</option>
+          <option value="2">Minor fatigue or occasional discomfort</option>
+          <option value="3">Yes, I am on medications (like SSRIs) or experiencing ongoing health issues</option>
+          <option value="4">Yes, I experience pain during sex or significant physical symptoms</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-submit">Analyze My Patterns</button>
+    </form>
+
+    <div id="results" class="results-section">
+      <div class="score-display">
+        <div class="score-circle" id="score-circle"></div>
+        <div class="score-label" id="score-label">Analysis Complete</div>
+      </div>
+
+      <div class="result-card">
+        <h3>Pattern Insights</h3>
+        <p id="insight-text"></p>
+      </div>
+
+      <div class="result-card">
+        <h3>Key Contributing Factors Identified</h3>
+        <ul id="factors-list"></ul>
+      </div>
+
+      <div class="result-card">
+        <h3>Educational Recommendations</h3>
+        <ul id="recommendations-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">Is it normal to have difficulty reaching orgasm?</button>
+      <div class="faq-answer">
+        <p>Absolutely. Difficulty reaching orgasm (anorgasmia or delayed orgasm) is incredibly common and can affect anyone regardless of gender or age. It is often influenced by a combination of physical, psychological, and relational factors.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">How does stress affect my ability to climax?</button>
+      <div class="faq-answer">
+        <p>Stress activates your sympathetic nervous system (fight or flight), which directly competes with the parasympathetic nervous system (rest and digest) needed for sexual arousal and orgasm. High cortisol levels can significantly dampen physical responsiveness.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">Can medications cause orgasm difficulty?</button>
+      <div class="faq-answer">
+        <p>Yes. Many medications, particularly antidepressants (like SSRIs), blood pressure medications, and some hormonal contraceptives, have side effects that can delay or prevent orgasm. Always consult a healthcare provider if you suspect your medication is impacting your sexual function.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">Does my relationship dynamic impact my orgasms?</button>
+      <div class="faq-answer">
+        <p>Significantly. Emotional safety, trust, communication quality, and unresolved conflicts all play major roles in sexual satisfaction. If you feel disconnected or unsafe (emotionally) with your partner, your body may struggle to let go enough to reach climax.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">When should I see a professional about orgasm difficulties?</button>
+      <div class="faq-answer">
+        <p>Consider seeing a healthcare provider or a certified sex therapist if the difficulty is causing you personal distress, negatively impacting your relationship, or if it represents a sudden, unexplained change in your sexual functioning.</p>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+
+<script src="mobile-nav.js" defer></script>
+<script src="back-to-top.js" defer></script>
+<script src="newsletter-bar.js" defer></script>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', !isExpanded);
+      const answer = button.nextElementSibling;
+      if (!isExpanded) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.style.paddingTop = "10px";
+        answer.style.paddingBottom = "18px";
+      } else {
+        answer.style.maxHeight = null;
+        answer.style.paddingTop = "0";
+        answer.style.paddingBottom = "0";
+      }
+    });
+  });
+
+  document.getElementById('calculator-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const freq = parseInt(document.getElementById('frequency').value, 10);
+    const duration = parseInt(document.getElementById('duration').value, 10);
+    const stress = parseInt(document.getElementById('stress').value, 10);
+    const relationship = parseInt(document.getElementById('relationship').value, 10);
+    const comm = parseInt(document.getElementById('communication').value, 10);
+    const health = parseInt(document.getElementById('health').value, 10);
+
+    let insight = "";
+    let factors = [];
+    let recs = [];
+
+    // Pattern Insights
+    if (duration === 1) {
+      insight = "Your responses indicate a lifelong pattern, which is known as primary anorgasmia. This is very common, especially in women, and often relates to a lack of sufficient stimulation, body knowledge, or long-held psychological barriers rather than a new medical issue.";
+    } else if (duration === 2) {
+      insight = "Since this is an acquired difficulty (meaning things used to be different), it strongly suggests a specific change has occurred. This could be a new medication, a shift in relationship dynamics, new stressors, or hormonal changes.";
+    } else {
+      insight = "Your situational pattern suggests that your physical ability to climax is intact, but contextual factors (like specific partners, environments, or stress levels) are heavily influencing your experience.";
+    }
+
+    // Factors
+    if (stress >= 3) factors.push("High stress levels are likely shifting your nervous system into 'fight or flight' mode, making the relaxation required for orgasm very difficult.");
+    if (relationship === 3) factors.push("Relationship disconnection or tension can create emotional unsafety, which serves as a major roadblock to sexual release.");
+    if (comm >= 3) factors.push("Difficulty communicating sexual needs means you may not be receiving the specific type of stimulation required for your body to reach climax.");
+    if (health >= 3) factors.push("Physical health factors or medications have been identified as potential biological barriers to your sexual response cycle.");
+
+    if (factors.length === 0) factors.push("Your responses don't indicate severe external blocks, suggesting the focus might simply need to be on exploring new types of physical stimulation or mindfulness.");
+
+    // Recommendations
+    if (duration === 1 || comm >= 3) recs.push("Consider engaging in solo exploration (masturbation) without the goal of orgasm, simply to learn what feels good to your body.");
+    if (stress >= 3) recs.push("Incorporate grounding exercises or deep breathing before intimacy to help shift your nervous system into a relaxed state.");
+    if (relationship === 3 || comm >= 3) recs.push("Try out the 'Sexual Communication Scripts Builder' or 'Conversation Starters' tools to help articulate your needs to your partner.");
+    if (health === 4) recs.push("Since you mentioned pain, it is highly recommended to consult a gynecologist or pelvic floor physical therapist.");
+    if (health === 3) recs.push("Discuss potential side effects of any current medications with your prescribing doctor—sometimes alternative dosages or medications are available.");
+    recs.push("Remove the pressure. Focus on pleasure and intimacy rather than making orgasm the ultimate goal.");
+
+    // Display Score Level (Visual indicator based on sum of stress + comm + health)
+    let severityScore = stress + comm + health;
+    let label = "";
+    let color = "";
+
+    if (severityScore <= 5) { label = "Low Barrier"; color = "#7b9e66"; }
+    else if (severityScore <= 8) { label = "Moderate Block"; color = "#AD9846"; }
+    else { label = "High Impact"; color = "#a65c5c"; }
+
+    const circle = document.getElementById('score-circle');
+    circle.textContent = "!";
+    circle.style.backgroundColor = color;
+    document.getElementById('score-label').textContent = label + " Profile";
+
+    document.getElementById('insight-text').textContent = insight;
+
+    const factorsList = document.getElementById('factors-list');
+    factorsList.innerHTML = '';
+    factors.forEach(f => {
+      const li = document.createElement('li');
+      li.textContent = f;
+      factorsList.appendChild(li);
+    });
+
+    const recsList = document.getElementById('recommendations-list');
+    recsList.innerHTML = '';
+    recs.forEach(r => {
+      const li = document.createElement('li');
+      li.textContent = r;
+      recsList.appendChild(li);
+    });
+
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.classList.add('active');
+    resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
+</body>
+</html>
