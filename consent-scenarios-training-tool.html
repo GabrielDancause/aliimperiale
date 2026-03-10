@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consent Scenarios Training Tool — Ali Imperiale</title>
+  <meta name="description" content="Interactive consent education tool and enthusiastic consent guide featuring realistic training scenarios across dating, workplace, and intimate relationships.">
+  <meta property="og:title" content="Consent Scenarios Training Tool — Ali Imperiale">
+  <meta property="og:description" content="Interactive consent education tool and enthusiastic consent guide featuring realistic training scenarios across dating, workplace, and intimate relationships.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/consent-scenarios-training-tool.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/consent-scenarios-training-tool.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-color: #FAF8EB;
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Site nav — desktop styles inline */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (min-width: 769px) {
+      .site-nav {
+        padding-left: calc((100% - 1100px) / 2 + 24px);
+        padding-right: calc((100% - 1100px) / 2 + 24px);
+      }
+    }
+
+    /* Tool Specific Styles */
+    .tool-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e8e4d4;
+    }
+
+    .tool-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .tool-header h1 {
+      font-size: 2.2rem;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+
+    .tool-header p {
+      font-size: 1.1rem;
+      color: #5a6b50;
+      line-height: 1.6;
+    }
+
+    .scenario-card {
+      background: #FAF8EB;
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 30px;
+      border: 1px solid #e8e4d4;
+    }
+
+    .scenario-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #2E3E24;
+    }
+
+    .scenario-context {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .option-btn {
+      background: #ffffff;
+      border: 2px solid #e8e4d4;
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: #2E3E24;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .option-btn:hover {
+      border-color: #AD9846;
+      background: #fdfcf7;
+    }
+
+    .option-btn.selected {
+      border-color: #AD9846;
+      background: #FAF8EB;
+      font-weight: 500;
+    }
+
+    .feedback-box {
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 8px;
+      display: none;
+      line-height: 1.6;
+    }
+
+    .feedback-box.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .feedback-correct {
+      background: #eef5e9;
+      border-left: 4px solid #4caf50;
+    }
+
+    .feedback-incorrect {
+      background: #fdf3f2;
+      border-left: 4px solid #f44336;
+    }
+
+    .feedback-nuanced {
+      background: #fff8e6;
+      border-left: 4px solid #AD9846;
+    }
+
+    .feedback-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .expert-commentary {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .progress-text {
+      font-size: 0.9rem;
+      color: #5a6b50;
+      font-weight: 500;
+    }
+
+    .btn-primary {
+      background: #AD9846;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #96833a;
+    }
+
+    .btn-primary:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #2E3E24;
+      border: 1px solid #2E3E24;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: #2E3E24;
+      color: #ffffff;
+    }
+
+    .results-screen {
+      text-align: center;
+      display: none;
+    }
+
+    .certificate-container {
+      margin: 30px auto;
+      max-width: 600px;
+      border: 1px solid #e8e4d4;
+      padding: 10px;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    #certificate-canvas {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .resources-section {
+      margin-top: 50px;
+      padding: 30px;
+      background: #FAF8EB;
+      border-radius: 8px;
+      border: 1px solid #e8e4d4;
+    }
+
+    .resources-section h3 {
+      color: #2E3E24;
+      margin-bottom: 15px;
+    }
+
+    .resources-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .resources-list li {
+      margin-bottom: 12px;
+    }
+
+    .resources-list a {
+      color: #AD9846;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .resources-list a:hover {
+      text-decoration: underline;
+    }
+
+    .medical-disclaimer {
+      font-size: 0.85rem;
+      color: #5a6b50;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #e8e4d4;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .intro-screen {
+      text-align: center;
+    }
+
+    #scenario-container {
+      display: none;
+    }
+
+    .faq-section {
+      margin-top: 60px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .tool-container {
+        margin: 20px;
+        padding: 20px;
+      }
+      .action-row {
+        flex-direction: column-reverse;
+        gap: 15px;
+      }
+      .btn-primary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <div class="tool-container">
+    <div class="tool-header">
+      <h1>Consent Scenarios Training Tool</h1>
+      <p>An interactive, judgment-free guide to navigating enthusiastic consent, setting boundaries, and communicating clearly in the real world.</p>
+    </div>
+
+    <!-- Intro Screen -->
+    <div id="intro-screen" class="intro-screen">
+      <p style="margin-bottom: 24px; line-height: 1.6; text-align: left;">Hey, it's Ali! Consent isn't just a legal checkbox or a buzzkill—it's the foundation of incredible, trusting, and fun experiences. But let's be real, real-life situations can be messy, nuanced, and totally confusing.</p>
+
+      <p style="margin-bottom: 32px; line-height: 1.6; text-align: left;">I built this training tool to help you practice navigating tricky scenarios across dating, the workplace, and intimate relationships. We'll explore what enthusiastic consent actually looks like, how to set boundaries like a pro, and how to communicate when things get awkward. Your progress is saved automatically, so feel free to take your time.</p>
+
+      <button id="start-btn" class="btn-primary" style="font-size: 1.1rem; padding: 14px 32px;">Start the Scenarios</button>
+      <button id="resume-btn" class="btn-secondary" style="font-size: 1.1rem; padding: 14px 32px; margin-left: 10px; display: none;">Resume Saved Session</button>
+    </div>
+
+    <!-- Scenario Container -->
+    <div id="scenario-container">
+      <div class="progress-text" id="progress-indicator" style="margin-bottom: 15px; text-align: right;">Scenario 1 of 5</div>
+
+      <div class="scenario-card">
+        <div class="scenario-title" id="scenario-category">Category</div>
+        <div class="scenario-context" id="scenario-text">Scenario context goes here.</div>
+
+        <div class="options-list" id="options-container">
+          <!-- Options injected by JS -->
+        </div>
+
+        <div id="feedback-container" class="feedback-box">
+          <div class="feedback-title" id="feedback-title">Feedback Title</div>
+          <div id="feedback-text">Feedback text goes here.</div>
+          <div class="expert-commentary" id="expert-commentary">Expert commentary goes here.</div>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button id="reset-btn" class="btn-secondary" style="font-size: 0.9rem; padding: 8px 16px;">Reset Progress</button>
+        <button id="next-btn" class="btn-primary" disabled>Next Scenario</button>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="results-screen">
+      <h2>You Did It! 🎉</h2>
+      <p style="margin-bottom: 24px;">Amazing job navigating those scenarios! Consent is an ongoing practice, and taking the time to reflect on these situations is a huge step toward better, more empathetic communication.</p>
+
+      <div class="certificate-container">
+        <canvas id="certificate-canvas" width="800" height="600"></canvas>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <button id="download-cert-btn" class="btn-primary">Download Certificate</button>
+        <button id="restart-btn" class="btn-secondary" style="margin-left: 10px;">Try Again</button>
+      </div>
+    </div>
+
+    <!-- Resources Section -->
+    <div class="resources-section">
+      <h3>Support & Resources</h3>
+      <p style="font-size: 0.95rem; margin-bottom: 15px; line-height: 1.5;">If any of these scenarios brought up difficult feelings, or if you need professional support, you are not alone. Please reach out to these resources:</p>
+      <ul class="resources-list">
+        <li><a href="https://www.rainn.org/" target="_blank" rel="noopener">RAINN (Rape, Abuse & Incest National Network)</a> - 800-656-HOPE</li>
+        <li><a href="https://www.thehotline.org/" target="_blank" rel="noopener">National Domestic Violence Hotline</a> - 800-799-SAFE</li>
+        <li><a href="https://nsvrc.org/" target="_blank" rel="noopener">National Sexual Violence Resource Center</a></li>
+      </ul>
+    </div>
+
+    <!-- FAQ Section Placeholder -->
+    <div id="faq-container"></div>
+
+    <div class="medical-disclaimer">
+      <strong>Disclaimer:</strong> This tool is for educational purposes only. It does not constitute legal or professional psychological advice. Laws regarding consent vary by jurisdiction. If you have experienced boundary violations or assault, please prioritize your safety and contact local authorities or professional support services.
+    </div>
+  </div>
+
+  <script src="mobile-nav.js"></script>
+  <script src="newsletter-bar.js"></script>
+  <script src="email-capture.js"></script>
+  <script src="back-to-top.js"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const scenarios = [
+    {
+      category: "Dating Context",
+      context: "You've been chatting with someone online and things have been flirty. You meet up for a drink, and halfway through, they suggest going back to your place to watch a movie. You're attracted to them but feel you're not ready for anything physical tonight.",
+      options: [
+        {
+          text: "Say sure, hoping they just mean watch a movie, but feel anxious about what might happen.",
+          feedback: "Nuance: It's totally okay to want to hang out without pressure! However, avoiding clear communication here can lead to awkward or uncomfortable moments later. Ambiguity often leaves room for assumptions.",
+          type: "nuanced",
+          expert: "Consent isn't just about saying yes or no; it's about actively setting the pace you're comfortable with. If you're feeling anxious, it's a good sign a boundary needs to be communicated."
+        },
+        {
+          text: `"I'm having a great time and I'd love to hang out more, but I want to be upfront that I'm not looking for anything physical tonight. Still want to watch that movie?"`,
+          feedback: "Nailed it! This is clear, enthusiastic communication. It validates the connection while setting a firm boundary, giving them the chance to give their own enthusiastic consent to the new terms.",
+          type: "correct",
+          expert: "This is a textbook example of setting an affirmative boundary. You're expressing what you *do* want while clearly outlining what you *don't*."
+        },
+        {
+          text: "Make up an excuse about having to work early tomorrow to end the date.",
+          feedback: "Nuance: We've all been there! Sometimes safety or intense discomfort means an excuse is the easiest way out. But if you actually like this person, avoiding the real reason might miss an opportunity to build trust through honesty.",
+          type: "nuanced",
+          expert: "While prioritizing your immediate safety and comfort is paramount, practicing honest communication in low-stakes situations builds the muscle for harder conversations down the line."
+        }
+      ]
+    },
+    {
+      category: "Workplace Scenario",
+      context: "A senior colleague constantly touches your shoulder or stands extremely close when looking at your screen. It makes you uncomfortable, but you're worried about seeming 'difficult' or hurting your career.",
+      options: [
+        {
+          text: "Ignore it and try to physically lean away when they do it, hoping they get the hint.",
+          feedback: "Nuance: It's completely understandable to want to avoid conflict, especially with power dynamics involved. Unfortunately, relying on non-verbal hints often doesn't work, especially if the person isn't perceptive (or is willfully ignoring them).",
+          type: "nuanced",
+          expert: "In professional settings, power imbalances complicate consent. It's crucial to remember that you have the right to bodily autonomy at work, regardless of hierarchy."
+        },
+        {
+          text: `"Wait until the next time they do it and yell, \"Don't touch me!\""`,
+          feedback: "Nuance: Your anger and discomfort are 100% valid. However, an explosive reaction might escalate the situation unproductively or be used against you in a workplace setting.",
+          type: "nuanced",
+          expert: "While your feelings are justified, a more effective first step is usually a firm, direct, and professional boundary setting, followed by documentation if the behavior continues."
+        },
+        {
+          text: `"I find it distracting when people touch my shoulder or stand this close while I'm working. I'd appreciate it if you could give me a bit more space."`,
+          feedback: "Excellent. This is professional, direct, and focuses on the behavior and your boundary without necessarily making it a personal attack. It sets a clear expectation moving forward.",
+          type: "correct",
+          expert: "This approach uses 'I' statements to express a boundary professionally. If the behavior continues after this clear communication, it becomes a documented HR issue rather than an 'unspoken misunderstanding'."
+        }
+      ]
+    },
+    {
+      category: "Intimate Relationship",
+      context: "You and your long-term partner are in the middle of being intimate. It started off great, but suddenly you're just not feeling it anymore. Your mind is wandering and you feel disconnected.",
+      options: [
+        {
+          text: "Fake it till you make it. Just push through so you don't ruin the mood or hurt their feelings.",
+          feedback: "Hold up! This is a very common reaction, but it's detrimental to your own sexual wellness and the trust in your relationship. Consent can be withdrawn at any time, even right in the middle.",
+          type: "incorrect",
+          expert: "Ongoing enthusiastic consent means you both want to be there the entire time. Pushing through discomfort or dissociation can lead to resentment and associate sex with negative feelings."
+        },
+        {
+          text: `"Hey, I'm sorry, but my head just isn't in it right now. Can we pause and just cuddle instead?"`,
+          feedback: "Perfect! You're communicating honestly, validating that the connection is still there (by offering to cuddle), but firmly stopping the activity that isn't working for you.",
+          type: "correct",
+          expert: "This response beautifully demonstrates that changing your mind is normal and okay. A loving partner will prioritize your comfort over continuing the act."
+        },
+        {
+          text: "Suddenly pull away and leave the room without saying anything.",
+          feedback: "Nuance: If you are triggered or feeling unsafe, leaving immediately is absolutely valid. However, in a trusting relationship, abrupt withdrawal without communication can cause confusion and hurt.",
+          type: "nuanced",
+          expert: "Communication, even brief, is key in established relationships to prevent misunderstandings, unless immediate safety is a concern."
+        }
+      ]
+    },
+    {
+      category: "Communication Context",
+      context: "Your partner asks to try a new kink or sexual activity that you've never done before. You're curious, but also a bit nervous and unsure if you'll actually like it.",
+      options: [
+        {
+          text: `"I'm definitely curious, but also a bit nervous. Can we talk more about what exactly it entails and agree on a safeword before we try a very light version of it?"`,
+          feedback: "Absolutely brilliant! This is enthusiastic, informed consent in action. You're expressing interest while also requesting more information and setting up safety parameters.",
+          type: "correct",
+          expert: "Consent isn't always an immediate, resounding 'yes'. Often, it's 'yes, but...' or 'yes, if...'. Negotiating boundaries and establishing safewords are foundational to exploring new intimacy safely."
+        },
+        {
+          text: `"Sure, whatever you want."`,
+          feedback: "Nuance: While you might truly be willing, this lacks the 'enthusiastic' and 'informed' parts of consent. It places all the responsibility on your partner and doesn't address your nervousness.",
+          type: "nuanced",
+          expert: "Passive consent can be a slippery slope. It's crucial that both partners are actively engaged and communicative, especially when exploring new territory."
+        },
+        {
+          text: `"No, I don't know anything about that."`,
+          feedback: "Nuance: A 'no' is a complete sentence, and if you're not interested, this is fine! But if you *are* actually curious, this shuts down communication completely.",
+          type: "nuanced",
+          expert: "If you have curiosity alongside hesitation, it's healthier to voice both rather than shutting down the conversation preemptively out of fear of the unknown."
+        }
+      ]
+    },
+    {
+      category: "Boundary Setting",
+      context: "A friend always texts you late at night to vent about their problems. You want to be supportive, but the lack of sleep is affecting your mental health.",
+      options: [
+        {
+          text: "Put your phone on 'Do Not Disturb' and ignore them until morning, then apologize profusely.",
+          feedback: "Nuance: Protecting your sleep is great! But the profuse apologizing reinforces the idea that you *should* be available 24/7, undermining your own boundary.",
+          type: "nuanced",
+          expert: "Actions need to align with words. If you set a silent boundary (Do Not Disturb), you don't need to apologize for it. You can be supportive during your waking hours."
+        },
+        {
+          text: `"I love you and want to support you, but I can't do late-night texts anymore. My sleep is taking a hit. Can we chat about this tomorrow afternoon instead?"`,
+          feedback: "Yes! This is compassionate boundary setting. You affirm the friendship while clearly stating your limit and offering an alternative time to connect.",
+          type: "correct",
+          expert: "Consent and boundaries apply to emotional labor, too. You have the right to dictate when and how you are available to support others."
+        },
+        {
+          text: "Tell them they are being selfish and draining your energy.",
+          feedback: "Nuance: You might be feeling this way, but attacking them will likely make them defensive rather than helping them understand your boundary.",
+          type: "nuanced",
+          expert: "Effective boundary setting focuses on *your* needs and limits, rather than judging or criticizing the other person's behavior."
+        }
+      ]
+    }
+  ];
+
+  let currentScenarioIndex = 0;
+  let score = 0; // Not really for grading, just tracking "correct" choices
+  let hasAnsweredCurrent = false;
+
+  const introScreen = document.getElementById("intro-screen");
+  const scenarioContainer = document.getElementById("scenario-container");
+  const resultsScreen = document.getElementById("results-screen");
+  const startBtn = document.getElementById("start-btn");
+  const resumeBtn = document.getElementById("resume-btn");
+  const resetBtn = document.getElementById("reset-btn");
+  const nextBtn = document.getElementById("next-btn");
+  const restartBtn = document.getElementById("restart-btn");
+
+  const scenarioCategory = document.getElementById("scenario-category");
+  const scenarioText = document.getElementById("scenario-text");
+  const optionsContainer = document.getElementById("options-container");
+  const progressIndicator = document.getElementById("progress-indicator");
+
+  const feedbackContainer = document.getElementById("feedback-container");
+  const feedbackTitle = document.getElementById("feedback-title");
+  const feedbackText = document.getElementById("feedback-text");
+  const expertCommentary = document.getElementById("expert-commentary");
+
+  // Load from localStorage
+  const savedIndex = localStorage.getItem("consentToolProgress");
+  const savedScore = localStorage.getItem("consentToolScore");
+
+  if (savedIndex !== null && parseInt(savedIndex) < scenarios.length) {
+    resumeBtn.style.display = "inline-block";
+  }
+
+  function startTool(resume = false) {
+    if (resume && savedIndex !== null) {
+      currentScenarioIndex = parseInt(savedIndex);
+      score = savedScore !== null ? parseInt(savedScore) : 0;
+    } else {
+      currentScenarioIndex = 0;
+      score = 0;
+      localStorage.setItem("consentToolProgress", 0);
+      localStorage.setItem("consentToolScore", 0);
+    }
+
+    introScreen.style.display = "none";
+    resultsScreen.style.display = "none";
+    scenarioContainer.style.display = "block";
+
+    loadScenario();
+  }
+
+  function loadScenario() {
+    const scenario = scenarios[currentScenarioIndex];
+    hasAnsweredCurrent = false;
+
+    progressIndicator.textContent = `Scenario ${currentScenarioIndex + 1} of ${scenarios.length}`;
+    scenarioCategory.textContent = scenario.category;
+    scenarioText.textContent = scenario.context;
+
+    optionsContainer.innerHTML = '';
+    feedbackContainer.className = 'feedback-box';
+    feedbackContainer.style.display = 'none';
+    nextBtn.disabled = true;
+
+    // Shuffle options for variety
+    const shuffledOptions = [...scenario.options].sort(() => Math.random() - 0.5);
+
+    shuffledOptions.forEach((option, index) => {
+      const btn = document.createElement("button");
+      btn.className = "option-btn";
+      btn.textContent = option.text;
+      btn.onclick = () => handleOptionSelect(btn, option);
+      optionsContainer.appendChild(btn);
+    });
+
+    localStorage.setItem("consentToolProgress", currentScenarioIndex);
+  }
+
+  function handleOptionSelect(selectedBtn, option) {
+    if (hasAnsweredCurrent) return; // Prevent multiple selections
+    hasAnsweredCurrent = true;
+
+    // UI updates
+    const allBtns = optionsContainer.querySelectorAll(".option-btn");
+    allBtns.forEach(btn => {
+      btn.disabled = true;
+      btn.style.opacity = "0.7";
+      btn.style.cursor = "default";
+    });
+
+    selectedBtn.classList.add("selected");
+    selectedBtn.style.opacity = "1";
+
+    // Feedback logic
+    feedbackTitle.textContent = option.type === 'correct' ? "Spot On!" : (option.type === 'incorrect' ? "Let's Rethink That" : "Nuanced Perspective");
+    feedbackText.textContent = option.feedback;
+    expertCommentary.textContent = `Expert Note: ${option.expert}`;
+
+    feedbackContainer.className = `feedback-box show feedback-${option.type}`;
+
+    if (option.type === 'correct') {
+      score++;
+      localStorage.setItem("consentToolScore", score);
+    }
+
+    // Update button states
+    nextBtn.disabled = false;
+
+    // If it's the last scenario, change button text
+    if (currentScenarioIndex === scenarios.length - 1) {
+      nextBtn.textContent = "See Results & Certificate";
+    } else {
+      nextBtn.textContent = "Next Scenario";
+    }
+  }
+
+  function showResults() {
+    scenarioContainer.style.display = "none";
+    resultsScreen.style.display = "block";
+
+    // Clear progress so next time starts fresh
+    localStorage.removeItem("consentToolProgress");
+    localStorage.removeItem("consentToolScore");
+
+    drawCertificate();
+  }
+
+  startBtn.addEventListener("click", () => startTool(false));
+  resumeBtn.addEventListener("click", () => startTool(true));
+
+  resetBtn.addEventListener("click", () => {
+    if (confirm("Are you sure you want to reset your progress?")) {
+      startTool(false);
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentScenarioIndex < scenarios.length - 1) {
+      currentScenarioIndex++;
+      loadScenario();
+    } else {
+      showResults();
+    }
+  });
+
+  restartBtn.addEventListener("click", () => startTool(false));
+
+  // FAQ Data and Rendering
+  const faqs = [
+    {
+      question: "What exactly is 'enthusiastic consent'?",
+      answer: "Enthusiastic consent goes beyond just a 'yes' or the absence of a 'no'. It's about an active, mutual, and ongoing agreement where all parties are genuinely excited and comfortable with what's happening. It involves clear communication, paying attention to body language, and creating space where a 'no' is respected without guilt."
+    },
+    {
+      question: "Can consent be withdrawn after it's been given?",
+      answer: "Absolutely. Consent is an ongoing process, not a one-time contract. You can withdraw consent at any time, even in the middle of an act, and your partner should immediately stop and check in with you."
+    },
+    {
+      question: "How do I say 'no' without ruining the mood?",
+      answer: "It's a common fear, but prioritizing your comfort over 'the mood' is essential! You can use 'sandwich' techniques: validate the person/connection, state your boundary, and offer an alternative. For example: 'I really enjoy being with you, but I'm not feeling this activity right now. Could we just cuddle instead?'"
+    },
+    {
+      question: "What if I freeze up and can't say no?",
+      answer: "Freezing is a very common physiological trauma response, not a sign of consent. If you find yourself freezing, a compassionate partner should notice your lack of active engagement and pause. If you struggle with freezing, communicating your boundaries beforehand and establishing non-verbal check-ins or safewords can be very helpful."
+    }
+  ];
+
+  function renderFAQs() {
+    const faqContainer = document.getElementById("faq-container");
+    faqContainer.innerHTML = '<h3>Frequently Asked Questions</h3>';
+
+    // Generate JSON-LD Schema
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+
+    schemaScript.text = JSON.stringify(schemaData);
+    document.head.appendChild(schemaScript);
+
+    // Generate HTML
+    faqs.forEach(faq => {
+      const faqItem = document.createElement("div");
+      faqItem.className = "faq-item";
+      faqItem.innerHTML = `
+        <div class="faq-question">${faq.question}</div>
+        <div class="faq-answer" style="font-size: 0.95rem; line-height: 1.6; color: #5a6b50;">${faq.answer}</div>
+      `;
+      faqContainer.appendChild(faqItem);
+    });
+  }
+
+  // Certificate generation
+  function drawCertificate() {
+    const canvas = document.getElementById("certificate-canvas");
+    const ctx = canvas.getContext("2d");
+
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Background
+    ctx.fillStyle = "#FAF8EB";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Border
+    ctx.strokeStyle = "#AD9846";
+    ctx.lineWidth = 10;
+    ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+    // Inner Border
+    ctx.strokeStyle = "#2E3E24";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(35, 35, canvas.width - 70, canvas.height - 70);
+
+    // Text Content
+    ctx.fillStyle = "#2E3E24";
+    ctx.textAlign = "center";
+
+    ctx.font = "bold 40px Arial, sans-serif";
+    ctx.fillText("Certificate of Completion", canvas.width / 2, 120);
+
+    ctx.font = "italic 24px Arial, sans-serif";
+    ctx.fillStyle = "#5a6b50";
+    ctx.fillText("This certifies that you have completed the", canvas.width / 2, 180);
+
+    ctx.font = "bold 32px Arial, sans-serif";
+    ctx.fillStyle = "#AD9846";
+    ctx.fillText("Consent Scenarios Training", canvas.width / 2, 230);
+
+    ctx.font = "20px Arial, sans-serif";
+    ctx.fillStyle = "#2E3E24";
+    ctx.fillText("You've demonstrated a commitment to understanding", canvas.width / 2, 300);
+    ctx.fillText("enthusiastic consent, healthy boundaries, and", canvas.width / 2, 330);
+    ctx.fillText("clear communication in diverse relationships.", canvas.width / 2, 360);
+
+    // Score
+    ctx.font = "bold 24px Arial, sans-serif";
+    ctx.fillStyle = "#2E3E24";
+    ctx.fillText(`Empowerment Score: ${score} / ${scenarios.length}`, canvas.width / 2, 430);
+
+    // Signature area
+    ctx.strokeStyle = "#2E3E24";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(canvas.width / 2 - 100, 520);
+    ctx.lineTo(canvas.width / 2 + 100, 520);
+    ctx.stroke();
+
+    ctx.font = "italic 18px Arial, sans-serif";
+    ctx.fillText("Ali Imperiale", canvas.width / 2, 545);
+    ctx.font = "14px Arial, sans-serif";
+    ctx.fillText("Sex Educator & Content Creator", canvas.width / 2, 565);
+
+    // Logo placeholder / decorative element
+    ctx.fillStyle = "#AD9846";
+    ctx.beginPath();
+    ctx.arc(120, 520, 30, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#FAF8EB";
+    ctx.font = "bold 24px Arial, sans-serif";
+    ctx.fillText("★", 120, 528);
+  }
+
+  document.getElementById("download-cert-btn").addEventListener("click", () => {
+    const canvas = document.getElementById("certificate-canvas");
+    canvas.toBlob((blob) => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Consent_Training_Certificate.png";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, "image/png");
+  });
+
+  // Init
+  renderFAQs();
+
+});
+</script>
+
+
+</body>
+</html>
