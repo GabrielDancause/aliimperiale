@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Compatibility Calculator — Ali Imperiale</title>
+  <meta name="description" content="Discover your sexual compatibility with our interactive calculator. Assess communication, libido, intimacy, and more.">
+  <meta property="og:title" content="Sexual Compatibility Calculator — Ali Imperiale">
+  <meta property="og:description" content="Discover your sexual compatibility with our interactive calculator. Assess communication, libido, intimacy, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-compatibility-calculator.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sexual Compatibility Calculator">
+  <meta name="twitter:description" content="Discover your sexual compatibility with our interactive calculator.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-compatibility-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is sexual compatibility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sexual compatibility goes beyond just having good sex; it's about how well partners' sexual desires, communication styles, and intimacy needs align. It involves mutual respect, the ability to negotiate differences, and finding shared pleasure in a way that satisfies both partners."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you fix sexual incompatibility in a relationship?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In many cases, yes. What feels like 'incompatibility' is often just a breakdown in communication or unexpressed needs. By openly discussing your desires, being willing to compromise, and creating a safe space for exploration without judgment, many couples can bridge their differences and build a highly satisfying sex life."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is mismatched libido so common?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mismatched libidos are extremely common because desire is fluid and affected by countless factors: stress, hormones, relationship dynamics, and individual baselines. It's rare for two people to have the exact same level of desire at all times. Learning to navigate these fluctuations with empathy rather than taking them personally is key to long-term satisfaction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How important is emotional connection for good sex?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The importance varies widely from person to person. For some, a deep emotional bond is a strict prerequisite for sexual arousal and satisfaction (this is often called responsive desire tied to emotional safety). For others, physical intimacy is the primary way they build and feel emotional connection. Understanding your own and your partner's 'wiring' prevents a lot of misunderstandings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it normal to want to try new things in bed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! It's completely normal to crave novelty, adventure, or to have fantasies. The key is communicating these desires to your partner in a low-pressure way. It's also equally normal if you prefer a consistent, familiar sexual routine. Compatibility here means finding a balance where one partner's need for novelty and the other's need for comfort are both respected."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3rem;
+      font-weight: 400;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: #555549;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .tracker-container {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(46, 62, 36, 0.08);
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #FAF8EB;
+      color: #2E3E24;
+      border: 1px solid rgba(46, 62, 36, 0.2);
+    }
+
+    .btn-secondary:hover {
+      background: #edeadb;
+    }
+
+    /* Calculator specific styles */
+    .calculator-intro {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .question-section {
+      margin-bottom: 40px;
+    }
+
+    .question-section h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.5rem;
+      color: #AD9846;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .question-item {
+      margin-bottom: 24px;
+    }
+
+    .question-item p {
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #2E3E24;
+      line-height: 1.4;
+    }
+
+    .likert-scale {
+      display: flex;
+      justify-content: space-between;
+      background: #FAF8EB;
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(46, 62, 36, 0.1);
+    }
+
+    .likert-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .likert-option input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #C6C8BB;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+
+    .likert-option input[type="radio"]:checked {
+      border-color: #2E3E24;
+    }
+
+    .likert-option input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background: #2E3E24;
+      border-radius: 50%;
+    }
+
+    .likert-label {
+      font-size: 0.75rem;
+      color: #555549;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    /* Results styles */
+    #calculator-results {
+      display: none;
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .results-header h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.5rem;
+      color: #2E3E24;
+      margin-bottom: 10px;
+    }
+
+    .overall-score {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #AD9846;
+      margin-bottom: 10px;
+    }
+
+    .overall-desc {
+      font-weight: 500;
+      color: #555549;
+    }
+
+    .category-result {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+    }
+
+    .category-result:last-child {
+      border-bottom: none;
+    }
+
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .category-title {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.3rem;
+      color: #2E3E24;
+      font-weight: 600;
+    }
+
+    .category-score {
+      font-weight: 700;
+      color: #AD9846;
+    }
+
+    .bar-container {
+      width: 100%;
+      height: 12px;
+      background: #FAF8EB;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: #AD9846;
+      border-radius: 6px;
+      transition: width 0.5s ease;
+    }
+
+    .category-advice {
+      background: #FAF8EB;
+      padding: 16px;
+      border-radius: 8px;
+      border-left: 4px solid #AD9846;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .score-comparison {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .score-u1 { color: #AD9846; }
+    .score-u2 { color: #2E3E24; }
+
+    /* Educational Section */
+    .edu-section {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .edu-content {
+      background: #fff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(46, 62, 36, 0.08);
+    }
+
+    .edu-content h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.2rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .edu-content h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.4rem;
+      color: #2E3E24;
+      margin: 30px 0 15px;
+    }
+
+    .edu-content p {
+      line-height: 1.7;
+      margin-bottom: 16px;
+      color: #422626;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(46, 62, 36, 0.05);
+    }
+
+    .faq-item h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+
+    .faq-item p {
+      color: #555549;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* Mobile adjustments for Likert scale */
+    @media (max-width: 600px) {
+      .card, .edu-content {
+        padding: 24px;
+      }
+      .likert-scale {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+      }
+      .likert-option {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 12px;
+      }
+      .likert-label {
+        font-size: 0.85rem;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Sexual Compatibility Calculator</h1>
+    <p>Understand your dynamics in communication, libido, intimacy, and more.</p>
+  </header>
+
+  <main id="main-content" class="tracker-container">
+    <section class="card" id="calculator-setup">
+      <div class="calculator-intro">
+        <h2 style="font-family: 'The Bloomington', cursive; font-size: 2.2rem; margin-bottom: 12px;">Let's get started</h2>
+        <p>This calculator measures compatibility across 5 key areas of intimacy. You can take this alone to reflect on your own needs, or use Couples Mode to compare results with a partner.</p>
+      </div>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <button class="btn btn-primary" onclick="startCalculator('solo')" style="margin-right: 10px;">Take Solo</button>
+        <button class="btn btn-secondary" onclick="startCalculator('couples')">Couples Mode</button>
+      </div>
+    </section>
+
+    <section class="card" id="calculator-form-container" style="display: none;">
+      <div id="user-indicator" style="text-align: center; margin-bottom: 20px; font-weight: 600; color: #AD9846; display: none;">User 1's Turn</div>
+
+      <form id="compatibility-form">
+        <!-- Communication (5) -->
+        <div class="question-section" id="section-communication">
+          <h2>1. Sexual Communication</h2>
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Libido (4) -->
+        <div class="question-section" id="section-libido">
+          <h2>2. Libido Matching</h2>
+           <!-- Populated by JS -->
+        </div>
+
+        <!-- Intimacy (6) -->
+        <div class="question-section" id="section-intimacy">
+          <h2>3. Intimacy Preferences</h2>
+           <!-- Populated by JS -->
+        </div>
+
+        <!-- Adventure (4) -->
+        <div class="question-section" id="section-adventure">
+          <h2>4. Adventure Levels</h2>
+           <!-- Populated by JS -->
+        </div>
+
+        <!-- Emotional (4) -->
+        <div class="question-section" id="section-emotional">
+          <h2>5. Emotional Connection Needs</h2>
+           <!-- Populated by JS -->
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <button type="submit" class="btn btn-primary" id="submit-btn" style="padding: 16px 40px; font-size: 1.1rem;">Calculate Results</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card" id="calculator-results">
+      <div class="results-header">
+        <h2>Compatibility Results</h2>
+        <div class="overall-score" id="overall-score-display">--%</div>
+        <div class="overall-desc" id="overall-desc-display">Based on your responses</div>
+      </div>
+
+      <div id="results-breakdown">
+        <!-- Breakdown populated by JS -->
+      </div>
+
+      <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="shareResults()">Share Results (Copy to Clipboard)</button>
+        <button class="btn btn-secondary" onclick="resetCalculator()">Start Over</button>
+      </div>
+      <p id="share-toast" style="display:none; color: #2E3E24; margin-top: 10px; font-weight: 500; text-align: center;">Copied to clipboard!</p>
+    </section>
+
+    <!-- Educational Section -->
+    <section class="edu-section">
+      <div class="edu-content">
+        <h2>Understanding Sexual Compatibility</h2>
+        <p>Sexual compatibility is often misunderstood as simply having the exact same desires or seamlessly matching libidos from day one. In reality, it's a dynamic, evolving aspect of a relationship that involves negotiation, empathy, and open communication.</p>
+
+        <p>True compatibility isn't about being identical; it's about how you navigate your differences. It requires a willingness to understand your partner's perspective, to create a safe space for vulnerability, and to continuously explore what brings both of you pleasure and connection.</p>
+
+        <h3>The Five Pillars</h3>
+
+        <p><strong>1. Sexual Communication:</strong> This is the bedrock. It's the ability to articulate your desires, boundaries, and fantasies without shame, and to listen to your partner's without judgment. Good communication turns awkward moments into opportunities for connection.</p>
+
+        <p><strong>2. Libido Matching:</strong> It's incredibly common for partners to have different levels of spontaneous desire. Compatibility here means understanding the difference between spontaneous desire (being "in the mood" out of nowhere) and responsive desire (getting "in the mood" once physical intimacy begins), and finding rhythms that work for both.</p>
+
+        <p><strong>3. Intimacy Preferences:</strong> How do you define sex? For some, it strictly means intercourse. For others, it's a broad spectrum of sensual touch, extended foreplay, or deep emotional connection during the act. Aligning these definitions prevents feelings of rejection or inadequacy.</p>
+
+        <p><strong>4. Adventure Levels:</strong> This measures your appetite for novelty—whether that means trying new positions, incorporating toys, exploring power dynamics, or delving into kink. Being compatible doesn't mean you have the same kinks, but rather that you can negotiate boundaries respectfully.</p>
+
+        <p><strong>5. Emotional Connection Needs:</strong> Some people require a strong, secure emotional bond to feel sexually aroused. Others use physical intimacy as the primary tool to build that emotional connection. Understanding this dynamic is crucial for preventing one partner from feeling used and the other from feeling rejected.</p>
+
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2 style="text-align: center; font-family: 'New Standard', Georgia, serif; margin-bottom: 30px; font-size: 1.8rem;">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What is sexual compatibility?</h3>
+        <p>Sexual compatibility goes beyond just having good sex; it's about how well partners' sexual desires, communication styles, and intimacy needs align. It involves mutual respect, the ability to negotiate differences, and finding shared pleasure in a way that satisfies both partners.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can you fix sexual incompatibility in a relationship?</h3>
+        <p>In many cases, yes. What feels like "incompatibility" is often just a breakdown in communication or unexpressed needs. By openly discussing your desires, being willing to compromise, and creating a safe space for exploration without judgment, many couples can bridge their differences and build a highly satisfying sex life.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why is mismatched libido so common?</h3>
+        <p>Mismatched libidos are extremely common because desire is fluid and affected by countless factors: stress, hormones, relationship dynamics, and individual baselines. It's rare for two people to have the exact same level of desire at all times. Learning to navigate these fluctuations with empathy rather than taking them personally is key to long-term satisfaction.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How important is emotional connection for good sex?</h3>
+        <p>The importance varies widely from person to person. For some, a deep emotional bond is a strict prerequisite for sexual arousal and satisfaction (this is often called responsive desire tied to emotional safety). For others, physical intimacy is the primary way they build and feel emotional connection. Understanding your own and your partner's "wiring" prevents a lot of misunderstandings.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is it normal to want to try new things in bed?</h3>
+        <p>Absolutely! It's completely normal to crave novelty, adventure, or to have fantasies. The key is communicating these desires to your partner in a low-pressure way. It's also equally normal if you prefer a consistent, familiar sexual routine. Compatibility here means finding a balance where one partner's need for novelty and the other's need for comfort are both respected.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const questions = {
+      communication: [
+        { id: 'c1', text: 'I feel comfortable initiating conversations about what I want in bed.' },
+        { id: 'c2', text: 'I can easily tell my partner when something doesn\'t feel good during sex.' },
+        { id: 'c3', text: 'I enjoy giving and receiving feedback about our sex life outside of the bedroom.' },
+        { id: 'c4', text: 'I feel safe sharing my deepest sexual fantasies without fear of judgment.' },
+        { id: 'c5', text: 'During sex, I am vocal about what feels good (e.g., moaning, giving directions).' }
+      ],
+      libido: [
+        { id: 'l1', text: 'I generally desire sexual intimacy several times a week.' },
+        { id: 'l2', text: 'If my partner initiates, I can usually get in the mood even if I didn\'t start out feeling sexual.' },
+        { id: 'l3', text: 'I consider myself to have a high sex drive.' },
+        { id: 'l4', text: 'I am satisfied with quickies as a form of sexual connection when time is short.' }
+      ],
+      intimacy: [
+        { id: 'i1', text: 'I need extensive foreplay (more than 15 mins) before intercourse.' },
+        { id: 'i2', text: 'Physical affection outside of the bedroom (cuddling, kissing) is essential to my sexual arousal.' },
+        { id: 'i3', text: 'I prefer sex to be a deeply romantic, slow, and passionate experience.' },
+        { id: 'i4', text: 'Eye contact during sex is very important to me.' },
+        { id: 'i5', text: 'I consider non-penetrative acts (oral, mutual masturbation) to be "real" sex.' },
+        { id: 'i6', text: 'Aftercare (cuddling, talking after sex) is just as important as the act itself.' }
+      ],
+      adventure: [
+        { id: 'a1', text: 'I am highly interested in trying new positions, toys, or locations for sex.' },
+        { id: 'a2', text: 'I enjoy incorporating power dynamics (dominance/submission) into our play.' },
+        { id: 'a3', text: 'I would be open to exploring mild BDSM or kink elements.' },
+        { id: 'a4', text: 'Watching porn or reading erotica together sounds appealing to me.' }
+      ],
+      emotional: [
+        { id: 'e1', text: 'I need to feel emotionally connected and secure with my partner to enjoy sex.' },
+        { id: 'e2', text: 'An argument or tension in the relationship significantly lowers my sex drive.' },
+        { id: 'e3', text: 'For me, sex is the primary way I feel loved and emotionally close to my partner.' },
+        { id: 'e4', text: 'I find it difficult to separate my emotional feelings from physical arousal.' }
+      ]
+    };
+
+    const likertLabels = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
+
+    function generateQuestionHTML(q, index) {
+      let optionsHTML = '';
+      for (let i = 1; i <= 5; i++) {
+        optionsHTML += `
+          <label class="likert-option">
+            <input type="radio" name="${q.id}" value="${i}" required>
+            <span class="likert-label">${likertLabels[i-1]}</span>
+          </label>
+        `;
+      }
+
+      return `
+        <div class="question-item">
+          <p>${index}. ${q.text}</p>
+          <div class="likert-scale">
+            ${optionsHTML}
+          </div>
+        </div>
+      `;
+    }
+
+    function populateQuestions() {
+      let counter = 1;
+
+      const sections = ['communication', 'libido', 'intimacy', 'adventure', 'emotional'];
+      sections.forEach(category => {
+        const container = document.getElementById(`section-${category}`);
+        let html = container.innerHTML; // Keep the h2
+        questions[category].forEach(q => {
+          html += generateQuestionHTML(q, counter);
+          counter++;
+        });
+        container.innerHTML = html;
+      });
+    }
+
+    // State
+    let mode = 'solo'; // 'solo' or 'couples'
+    let currentUser = 1; // 1 or 2
+    let user1Scores = {}; // Stores raw scores per category
+    let user2Scores = {};
+
+    const adviceDatabase = {
+      communication: {
+        high: "Excellent communication flow. Keep being vocal about your desires and checking in with each other.",
+        med: "Good foundation, but there's room to grow. Try introducing 'check-ins' outside the bedroom to discuss fantasies without pressure.",
+        low: "Communication seems to be a hurdle. Start small by sharing one thing you enjoyed after sex. Vulnerability takes practice."
+      },
+      libido: {
+        high: "Your drives are well-matched or you adapt easily. Enjoy the mutual enthusiasm!",
+        med: "There might be occasional mismatches. Focus on responsive desire—sometimes appetite comes with eating. Non-sexual touch helps bridge the gap.",
+        low: "Mismatched libidos can cause friction. Remember desire fluctuates. Focus on connection without the pressure of it leading to sex."
+      },
+      intimacy: {
+        high: "You have a strong shared understanding of intimacy and romance in the bedroom.",
+        med: "You value intimacy but might express it differently. Discuss what specific actions (like eye contact or aftercare) make you feel most connected.",
+        low: "Your intimacy needs differ significantly. One may need slow romance while the other prefers quick passion. Finding a middle ground is key."
+      },
+      adventure: {
+        high: "High sense of adventure! You're both open to exploring the wild side. Keep experimenting safely.",
+        med: "You're open to some spice but have boundaries. Introduce new things slowly and ensure enthusiastic consent for every step.",
+        low: "You prefer the tried-and-true. That's perfectly fine! Focus on deepening the connection in the acts you already know you love."
+      },
+      emotional: {
+        high: "Strong emotional connection is vital for you. Your physical intimacy is deeply tied to your emotional bond.",
+        med: "Emotions play a role, but you can sometimes separate the two. Be mindful of how arguments outside the bedroom might affect the mood inside.",
+        low: "You can easily separate physical from emotional intimacy. If a partner needs more emotional reassurance, try offering verbal affirmations."
+      }
+    };
+
+    function startCalculator(selectedMode) {
+      mode = selectedMode;
+      currentUser = 1;
+      user1Scores = {};
+      user2Scores = {};
+
+      document.getElementById('calculator-setup').style.display = 'none';
+      document.getElementById('calculator-form-container').style.display = 'block';
+      document.getElementById('calculator-results').style.display = 'none';
+
+      if (mode === 'couples') {
+        document.getElementById('user-indicator').style.display = 'block';
+        document.getElementById('user-indicator').textContent = "User 1's Turn";
+        document.getElementById('submit-btn').textContent = "Save User 1 Responses";
+      } else {
+        document.getElementById('user-indicator').style.display = 'none';
+        document.getElementById('submit-btn').textContent = "Calculate Results";
+      }
+
+      document.getElementById('compatibility-form').reset();
+      window.scrollTo(0, document.getElementById('calculator-form-container').offsetTop - 50);
+    }
+
+    function calculateCategoryScore(category, formData) {
+      let total = 0;
+      let maxTotal = questions[category].length * 5;
+
+      questions[category].forEach(q => {
+        total += parseInt(formData.get(q.id) || 0);
+      });
+
+      // Calculate percentage (based on 1-5 scale, so min is length*1, max is length*5)
+      // Normalizing so that all 1s = 0%, all 5s = 100%
+      let minTotal = questions[category].length * 1;
+      let normalizedScore = ((total - minTotal) / (maxTotal - minTotal)) * 100;
+
+      return {
+        raw: total,
+        normalized: Math.round(normalizedScore)
+      };
+    }
+
+    function generateAdvice(category, score1, score2 = null) {
+      let level;
+
+      if (mode === 'solo') {
+        if (score1.normalized >= 75) level = 'high';
+        else if (score1.normalized >= 40) level = 'med';
+        else level = 'low';
+        return adviceDatabase[category][level];
+      } else {
+        // Couples mode logic - advice based on the difference
+        let diff = Math.abs(score1.normalized - score2.normalized);
+        if (diff <= 20) {
+          return `You are highly aligned here! ${adviceDatabase[category].high}`;
+        } else if (diff <= 50) {
+          return `You have some differences in this area. ${adviceDatabase[category].med}`;
+        } else {
+          return `Significant differences detected. ${adviceDatabase[category].low}`;
+        }
+      }
+    }
+
+    function showResults() {
+      document.getElementById('calculator-form-container').style.display = 'none';
+      document.getElementById('calculator-results').style.display = 'block';
+
+      const breakdownEl = document.getElementById('results-breakdown');
+      breakdownEl.innerHTML = '';
+
+      let totalDiff = 0;
+      let totalCategories = Object.keys(questions).length;
+      let overallScoreSolo = 0;
+
+      Object.keys(questions).forEach(category => {
+        const title = category.charAt(0).toUpperCase() + category.slice(1);
+
+        let scoreHTML = '';
+        let barHTML = '';
+        let adviceText = '';
+
+        if (mode === 'solo') {
+          const s1 = user1Scores[category].normalized;
+          overallScoreSolo += s1;
+
+          scoreHTML = `<div class="category-score">${s1}%</div>`;
+          barHTML = `
+            <div class="bar-container">
+              <div class="bar-fill" style="width: ${s1}%;"></div>
+            </div>
+          `;
+          adviceText = generateAdvice(category, user1Scores[category]);
+
+        } else {
+          // Couples
+          const s1 = user1Scores[category].normalized;
+          const s2 = user2Scores[category].normalized;
+
+          // Compatibility is based on how close the scores are
+          let diff = Math.abs(s1 - s2);
+          totalDiff += diff;
+          let matchPercent = 100 - diff;
+
+          scoreHTML = `<div class="category-score">${matchPercent}% Match</div>`;
+          barHTML = `
+            <div class="score-comparison">
+              <span class="score-u1">U1: ${s1}%</span> | <span class="score-u2">U2: ${s2}%</span>
+            </div>
+            <div class="bar-container">
+              <div class="bar-fill" style="width: ${s1}%; background: #AD9846; height: 6px; border-radius: 6px 6px 0 0;"></div>
+              <div class="bar-fill" style="width: ${s2}%; background: #2E3E24; height: 6px; border-radius: 0 0 6px 6px;"></div>
+            </div>
+          `;
+          adviceText = generateAdvice(category, user1Scores[category], user2Scores[category]);
+        }
+
+        const html = `
+          <div class="category-result">
+            <div class="category-header">
+              <div class="category-title">${title}</div>
+              ${scoreHTML}
+            </div>
+            ${barHTML}
+            <div class="category-advice">${adviceText}</div>
+          </div>
+        `;
+        breakdownEl.insertAdjacentHTML('beforeend', html);
+      });
+
+      // Calculate overall
+      const overallEl = document.getElementById('overall-score-display');
+      const descEl = document.getElementById('overall-desc-display');
+
+      if (mode === 'solo') {
+        let finalScore = Math.round(overallScoreSolo / totalCategories);
+        overallEl.textContent = `${finalScore}%`;
+        descEl.textContent = "Your Self-Awareness & Openness Profile";
+        shareText = `I took the Sexual Compatibility Calculator on Ali Imperiale's website and my Self-Awareness score is ${finalScore}%!\n\nTake the test: https://aliimperiale.com/sexual-compatibility-calculator.html`;
+      } else {
+        let avgDiff = totalDiff / totalCategories;
+        let finalMatch = Math.round(100 - avgDiff);
+        overallEl.textContent = `${finalMatch}%`;
+        descEl.textContent = "Overall Couples Compatibility Match";
+        shareText = `We took the Couples Sexual Compatibility Calculator on Ali Imperiale's website and got an overall match of ${finalMatch}%!\n\nTake the test: https://aliimperiale.com/sexual-compatibility-calculator.html`;
+      }
+
+      window.scrollTo(0, document.getElementById('calculator-results').offsetTop - 50);
+    }
+
+    let shareText = "";
+
+    function shareResults() {
+      navigator.clipboard.writeText(shareText).then(() => {
+        const toast = document.getElementById('share-toast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 3000);
+      });
+    }
+
+    document.getElementById('compatibility-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+
+      // Process current user's scores
+      Object.keys(questions).forEach(category => {
+        const score = calculateCategoryScore(category, formData);
+        if (currentUser === 1) {
+          user1Scores[category] = score;
+        } else {
+          user2Scores[category] = score;
+        }
+      });
+
+      if (mode === 'couples' && currentUser === 1) {
+        // Switch to User 2
+        currentUser = 2;
+        this.reset();
+        document.getElementById('user-indicator').textContent = "User 2's Turn";
+        document.getElementById('submit-btn').textContent = "Calculate Couples Match";
+        window.scrollTo(0, document.getElementById('calculator-form-container').offsetTop - 50);
+      } else {
+        // Done, show results
+        showResults();
+      }
+    });
+
+    function resetCalculator() {
+      document.getElementById('calculator-results').style.display = 'none';
+      document.getElementById('calculator-setup').style.display = 'block';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      populateQuestions();
+    });
+
+  </script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+</body>
+</html>
