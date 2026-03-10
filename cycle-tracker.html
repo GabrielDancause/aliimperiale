@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fertility & Cycle Tracker | Ali Imperiale</title>
+<meta name="description" content="A simple, judgment-free fertility and cycle tracker to help you understand your body, predict your next period, and track your phases.">
+<meta property="og:title" content="Fertility & Cycle Tracker | Ali Imperiale">
+<meta property="og:description" content="A simple, judgment-free fertility and cycle tracker to help you understand your body, predict your next period, and track your phases.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aliimperiale.com/cycle-tracker.html">
+<meta property="og:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+<meta property="og:image:width" content="768">
+<meta property="og:image:height" content="960">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fertility & Cycle Tracker | Ali Imperiale">
+<meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+<link rel="canonical" href="https://aliimperiale.com/cycle-tracker.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  body {
+    background-color: #FAF8EB;
+    color: #2E3E24;
+  }
+
+  /* Navigation (copied from index) */
+  .site-nav {
+    background: #2E3E24;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+  }
+  .nav-logo {
+    height: 36px;
+    opacity: 0.95;
+    transition: opacity 0.2s;
+  }
+  .nav-logo:hover {
+    opacity: 1;
+  }
+  .site-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .site-nav .nav-links a {
+    color: #C6C8BB;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.15s ease;
+  }
+  .site-nav .nav-links a:hover, .site-nav .nav-links a.active {
+    color: #FAF8EB;
+  }
+
+  /* Page Header */
+  .page-header {
+    background-color: #2E3E24;
+    color: #FAF8EB;
+    text-align: center;
+    padding: 40px 20px 60px;
+    position: relative;
+  }
+  .page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #FAF8EB;
+    border-radius: 30px 30px 0 0;
+  }
+  .page-header h1 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .page-header p {
+    font-size: 1.05rem;
+    color: #C6C8BB;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Main Container */
+  .tracker-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Card Style */
+  .card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
+    border: 1px solid rgba(46, 62, 36, 0.06);
+  }
+
+  .card h2 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2E3E24;
+    text-align: center;
+  }
+
+  /* Input Section */
+  .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 200px;
+  }
+  .input-field label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #555549;
+  }
+  .input-field input {
+    padding: 12px 16px;
+    border: 1px solid #C6C8BB;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    background: #FAF8EB;
+    color: #2E3E24;
+  }
+  .input-field input:focus {
+    outline: none;
+    border-color: #AD9846;
+    box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
+  }
+  .btn-calculate {
+    background: #2E3E24;
+    color: #FAF8EB;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    align-self: center;
+    margin-top: 10px;
+  }
+  .btn-calculate:hover {
+    background: #3a5030;
+    transform: translateY(-1px);
+  }
+
+  /* Results Section */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    display: none; /* Hidden until calculated */
+  }
+  .result-box {
+    background: #FAF8EB;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(173, 152, 70, 0.3);
+  }
+  .result-box h3 {
+    font-size: 1rem;
+    color: #555549;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .result-box p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2E3E24;
+  }
+  .result-box.highlight {
+    background: rgba(173, 152, 70, 0.1);
+    border-color: #AD9846;
+  }
+
+  /* Calendar Section */
+  .calendar-container {
+    margin-top: 30px;
+    display: none;
+  }
+  .calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .btn-nav {
+    background: none;
+    border: 1px solid #AD9846;
+    color: #2E3E24;
+    padding: 6px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .btn-nav:hover {
+    background: #AD9846;
+    color: #fff;
+  }
+  .calendar-month {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
+  .calendar-day-header {
+    font-weight: 600;
+    color: #8a8a7a;
+    font-size: 0.85rem;
+    padding-bottom: 8px;
+  }
+  .calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f5f5f5;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.1s;
+    position: relative;
+  }
+  .calendar-day:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+  .calendar-day.empty {
+    background: none;
+    cursor: default;
+  }
+  .calendar-day.empty:hover {
+    transform: none;
+  }
+
+  /* Phase Colors */
+  .phase-menstrual { background-color: #e5b3b3; color: #5a2a2a; }
+  .phase-follicular { background-color: #d1e2c4; color: #2E3E24; }
+  .phase-ovulation { background-color: #f2e2a9; color: #6b5a15; font-weight: bold; border: 2px solid #AD9846; }
+  .phase-luteal { background-color: #e2d1e2; color: #4a2a4a; }
+  .day-today { border: 2px solid #2E3E24; font-weight: bold; }
+
+  /* Legend */
+  .calendar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  /* Logging Modal/Section */
+  .logging-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #FAF8EB;
+    border-radius: 12px;
+    border: 1px dashed #C6C8BB;
+    display: none;
+  }
+  .logging-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .logging-date {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2E3E24;
+  }
+  .btn-close-log {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #8a8a7a;
+  }
+  .log-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  .log-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .log-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #C6C8BB;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .btn-save-log {
+    background: #2E3E24;
+    color: #FAF8EB;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  /* Share button */
+  .share-container {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+  }
+  .btn-share {
+    background: #FAF8EB;
+    color: #AD9846;
+    border: 2px solid #AD9846;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-share:hover {
+    background: #AD9846;
+    color: #fff;
+  }
+
+  /* Educational Section */
+  .edu-section {
+    margin-top: 20px;
+  }
+  .phase-info {
+    margin-bottom: 24px;
+  }
+  .phase-info h3 {
+    font-size: 1.2rem;
+    color: #2E3E24;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .phase-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555549;
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    background: #fdf5f5;
+    border-left: 4px solid #d9534f;
+    padding: 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #5a2a2a;
+    margin-top: 10px;
+  }
+
+  /* FAQ */
+  .faq-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .faq-section h2 {
+    font-family: 'New Standard', Georgia, serif;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .faq-question {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #2E3E24;
+    margin-bottom: 10px;
+  }
+  .faq-answer {
+    font-size: 0.95rem;
+    color: #555549;
+    line-height: 1.6;
+  }
+
+  /* Indicator dot on calendar day for logs */
+  .has-log::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: #2E3E24;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 600px) {
+    .page-header h1 { font-size: 2rem; }
+    .input-group { flex-direction: column; align-items: stretch; }
+    .input-field { min-width: 100%; }
+    .calendar-day { font-size: 0.85rem; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How is the fertile window calculated?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The fertile window is generally calculated as the 5 days leading up to ovulation, plus the day of ovulation itself. Ovulation usually happens about 14 days before your next expected period."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is a normal menstrual cycle length?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A normal menstrual cycle length typically ranges from 21 to 35 days, with the average being about 28 days. Every body is different, and slight variations from month to month are normal."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Can I use a cycle tracker for birth control?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Simple calendar-based cycle trackers are estimates and are NOT a reliable form of birth control. Cycle lengths and ovulation dates can vary due to stress, illness, or natural fluctuations."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What happens during the luteal phase?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The luteal phase occurs after ovulation and before your next period. The body produces progesterone to prepare the uterine lining for a potential pregnancy. If pregnancy doesn't occur, hormone levels drop, leading to menstruation. Many people experience PMS symptoms during this phase."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Why track my menstrual cycle?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tracking your cycle helps you understand your body's natural rhythms, predict your next period, anticipate mood or energy changes linked to hormonal shifts, and estimate your fertile window if you are trying to conceive."
+    }
+  }]
+}
+</script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/">
+      <img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale">
+    </a>
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Fertility & Cycle Tracker</h1>
+    <p>A simple, judgment-free tool to understand your body's natural rhythms, predict your phases, and track how you feel.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="tracker-container">
+
+    <!-- Input Card -->
+    <section class="card">
+      <h2>Let's Figure Out Your Cycle</h2>
+      <div class="input-group">
+        <div class="input-field">
+          <label for="last-period">First Day of Last Period</label>
+          <input type="date" id="last-period" required>
+        </div>
+        <div class="input-field">
+          <label for="cycle-length">Average Cycle Length (Days)</label>
+          <input type="number" id="cycle-length" value="28" min="20" max="45" required>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <button class="btn-calculate" id="btn-calculate">Calculate My Phases</button>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> This tool provides estimates based on averages. It is <strong>NOT a reliable method for birth control</strong>. If you are trying to prevent pregnancy, please use clinically approved contraceptives.
+      </div>
+    </section>
+
+    <!-- Results Overview -->
+    <section class="card" id="results-section" style="display: none;">
+      <h2>Your Upcoming Cycle</h2>
+      <div class="results-grid" id="results-grid">
+        <div class="result-box">
+          <h3>Next Period</h3>
+          <p id="res-next-period">--</p>
+        </div>
+        <div class="result-box highlight">
+          <h3>Estimated Ovulation</h3>
+          <p id="res-ovulation">--</p>
+        </div>
+        <div class="result-box highlight">
+          <h3>Fertile Window</h3>
+          <p id="res-fertile">--</p>
+        </div>
+      </div>
+
+      <div class="share-container" id="share-container">
+        <button class="btn-share" id="btn-share">Share Results (Copy to Clipboard)</button>
+        <span id="share-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-left: 10px;">Copied!</span>
+      </div>
+    </section>
+
+    <!-- Calendar View -->
+    <section class="card" id="calendar-section" style="display: none;">
+      <h2>Cycle Calendar</h2>
+      <div class="calendar-controls">
+        <button class="btn-nav" id="btn-prev-month">&larr; Prev</button>
+        <div class="calendar-month" id="calendar-month-display">Month Year</div>
+        <button class="btn-nav" id="btn-next-month">Next &rarr;</button>
+      </div>
+
+      <div class="calendar-grid" id="calendar-grid">
+        <!-- Days of week -->
+        <div class="calendar-day-header">Sun</div>
+        <div class="calendar-day-header">Mon</div>
+        <div class="calendar-day-header">Tue</div>
+        <div class="calendar-day-header">Wed</div>
+        <div class="calendar-day-header">Thu</div>
+        <div class="calendar-day-header">Fri</div>
+        <div class="calendar-day-header">Sat</div>
+        <!-- Calendar days injected via JS -->
+      </div>
+
+      <div class="calendar-legend">
+        <div class="legend-item"><div class="legend-color phase-menstrual"></div> Menstruation</div>
+        <div class="legend-item"><div class="legend-color phase-follicular"></div> Follicular</div>
+        <div class="legend-item"><div class="legend-color phase-ovulation"></div> Ovulation (Fertile)</div>
+        <div class="legend-item"><div class="legend-color phase-luteal"></div> Luteal</div>
+      </div>
+
+      <!-- Logging UI -->
+      <div class="logging-section" id="logging-section">
+        <div class="logging-header">
+          <span class="logging-date" id="log-date-display">Select a date</span>
+          <button class="btn-close-log" id="btn-close-log">&times;</button>
+        </div>
+        <p style="font-size: 0.85rem; margin-bottom: 15px; color: #555549;">Log how you're feeling to spot patterns across your phases.</p>
+        <div class="log-options">
+          <div class="log-group">
+            <label for="log-mood">Mood</label>
+            <select id="log-mood">
+              <option value="">-- Select --</option>
+              <option value="happy">Happy / Cheerful</option>
+              <option value="calm">Calm / Balanced</option>
+              <option value="anxious">Anxious / Stressed</option>
+              <option value="sad">Sad / Tearful</option>
+              <option value="irritable">Irritable / Moody</option>
+              <option value="horny">High Libido</option>
+            </select>
+          </div>
+          <div class="log-group">
+            <label for="log-energy">Energy Level</label>
+            <select id="log-energy">
+              <option value="">-- Select --</option>
+              <option value="high">High / Energetic</option>
+              <option value="normal">Normal</option>
+              <option value="low">Low / Exhausted</option>
+            </select>
+          </div>
+          <div class="log-group">
+            <label for="log-physical">Physical</label>
+            <select id="log-physical">
+              <option value="">-- Select --</option>
+              <option value="none">Feeling good</option>
+              <option value="cramps">Cramps / Pain</option>
+              <option value="bloating">Bloating</option>
+              <option value="headache">Headache</option>
+              <option value="tender">Tender Breasts</option>
+              <option value="spotting">Spotting</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-save-log" id="btn-save-log">Save Log for this Day</button>
+        <span id="log-save-msg" style="display:none; font-size: 0.8rem; color: #2E3E24; margin-top: 8px; text-align: center; display: block;">Saved to your browser!</span>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="card edu-section">
+      <h2>Understanding Your Phases</h2>
+      <p style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6;">Your cycle is so much more than just your period. Hormonal shifts affect your mood, energy, libido, and even your metabolism throughout the month. Here's a quick guide to what's happening under the hood.</p>
+
+      <div class="phase-info">
+        <h3><div class="legend-color phase-menstrual"></div> Menstrual Phase (Days 1-5)</h3>
+        <p>This is when you bleed. Your estrogen and progesterone levels drop, triggering the shedding of your uterine lining. Energy is usually at its lowest here. It's a great time for rest, gentle movement, and being kind to yourself.</p>
+      </div>
+
+      <div class="phase-info">
+        <h3><div class="legend-color phase-follicular"></div> Follicular Phase (Days 6-13)</h3>
+        <p>Estrogen begins to rise as your body prepares to release an egg. You might notice your energy levels bouncing back, feeling more social, creative, and physically strong. Libido often starts creeping up during this time.</p>
+      </div>
+
+      <div class="phase-info">
+        <h3><div class="legend-color phase-ovulation"></div> Ovulation Phase (Around Day 14)</h3>
+        <p>An egg is released! Estrogen peaks and testosterone gets a little boost. You'll likely feel your most energetic, confident, and have your highest sex drive. This is your fertile window — the time you are most likely to get pregnant.</p>
+      </div>
+
+      <div class="phase-info">
+        <h3><div class="legend-color phase-luteal"></div> Luteal Phase (Days 15-28)</h3>
+        <p>Progesterone takes over to prep your body for a potential pregnancy. In the first half, you might feel calm and focused. In the second half (if no pregnancy occurs), hormones drop, which can cause PMS symptoms like bloating, mood swings, and cravings. Your body naturally wants to slow down and nest.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">How is the fertile window calculated?</div>
+      <div class="faq-answer">The fertile window is generally calculated as the 5 days leading up to ovulation, plus the day of ovulation itself. Ovulation usually happens about 14 days before your next expected period.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What is a normal menstrual cycle length?</div>
+      <div class="faq-answer">A normal menstrual cycle length typically ranges from 21 to 35 days, with the average being about 28 days. Every body is different, and slight variations from month to month are normal.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I use a cycle tracker for birth control?</div>
+      <div class="faq-answer">No. Simple calendar-based cycle trackers are estimates and are NOT a reliable form of birth control. Cycle lengths and ovulation dates can vary due to stress, illness, or natural fluctuations.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What happens during the luteal phase?</div>
+      <div class="faq-answer">The luteal phase occurs after ovulation and before your next period. The body produces progesterone to prepare the uterine lining for a potential pregnancy. If pregnancy doesn't occur, hormone levels drop, leading to menstruation. Many people experience PMS symptoms during this phase.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Why track my menstrual cycle?</div>
+      <div class="faq-answer">Tracking your cycle helps you understand your body's natural rhythms, predict your next period, anticipate mood or energy changes linked to hormonal shifts, and estimate your fertile window if you are trying to conceive.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script>
+  // Tool Logic
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Set default date to today
+    const dateInput = document.getElementById('last-period');
+    const today = new Date();
+    dateInput.value = today.toISOString().split('T')[0];
+
+    let cycleData = {}; // Stores calculated cycles
+    let currentDisplayMonth = new Date();
+    let selectedLogDateStr = null;
+
+    // Load logs from local storage
+    const getLogs = () => JSON.parse(localStorage.getItem('cycleLogs')) || {};
+    const saveLogs = (logs) => localStorage.setItem('cycleLogs', JSON.stringify(logs));
+
+    const calculateCycles = () => {
+      const lastPeriodStr = document.getElementById('last-period').value;
+      const cycleLen = parseInt(document.getElementById('cycle-length').value, 10);
+
+      if(!lastPeriodStr || isNaN(cycleLen)) return;
+
+      const baseDate = new Date(lastPeriodStr + 'T12:00:00'); // Use noon to avoid timezone shift
+
+      // Generate 4 cycles worth of data
+      cycleData = {};
+
+      let nextPeriodStart = new Date(baseDate);
+
+      for(let i=0; i<4; i++) {
+        const pStart = new Date(nextPeriodStart);
+        const pEnd = new Date(pStart);
+        pEnd.setDate(pEnd.getDate() + 4); // Menstrual = 5 days
+
+        const nextP = new Date(pStart);
+        nextP.setDate(nextP.getDate() + cycleLen);
+
+        const ovulation = new Date(nextP);
+        ovulation.setDate(ovulation.getDate() - 14); // Ovulation typically 14 days before next period
+
+        const fertileStart = new Date(ovulation);
+        fertileStart.setDate(fertileStart.getDate() - 5);
+
+        const fertileEnd = new Date(ovulation);
+        fertileEnd.setDate(fertileEnd.getDate() + 1);
+
+        // Assign phases to dates for quick lookup
+        let curr = new Date(pStart);
+        while(curr < nextP) {
+          const dateStr = curr.toISOString().split('T')[0];
+
+          if (curr >= pStart && curr <= pEnd) {
+            cycleData[dateStr] = 'menstrual';
+          } else if (curr > pEnd && curr < fertileStart) {
+            cycleData[dateStr] = 'follicular';
+          } else if (curr >= fertileStart && curr <= fertileEnd) {
+            cycleData[dateStr] = (curr.getTime() === ovulation.getTime()) ? 'ovulation' : 'ovulation'; // Group fertile window visually
+          } else {
+            cycleData[dateStr] = 'luteal';
+          }
+          curr.setDate(curr.getDate() + 1);
+        }
+
+        // Save highlights for first cycle to display in text
+        if (i === 0) {
+          document.getElementById('res-next-period').textContent = nextP.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+          document.getElementById('res-ovulation').textContent = ovulation.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+          document.getElementById('res-fertile').textContent = `${fertileStart.toLocaleDateString('en-US', {month: 'short', day: 'numeric'})} - ${fertileEnd.toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}`;
+        }
+
+        nextPeriodStart = new Date(nextP);
+      }
+
+      document.getElementById('results-section').style.display = 'block';
+      document.getElementById('results-grid').style.display = 'grid';
+      document.getElementById('calendar-section').style.display = 'block';
+      document.getElementById('share-container').style.display = 'block';
+
+      currentDisplayMonth = new Date(baseDate);
+      renderCalendar();
+    };
+
+    const renderCalendar = () => {
+      const grid = document.getElementById('calendar-grid');
+      const monthDisplay = document.getElementById('calendar-month-display');
+
+      // Clear previous days (keep headers)
+      while (grid.children.length > 7) {
+        grid.removeChild(grid.lastChild);
+      }
+
+      const year = currentDisplayMonth.getFullYear();
+      const month = currentDisplayMonth.getMonth();
+
+      monthDisplay.textContent = currentDisplayMonth.toLocaleDateString('en-US', {month: 'long', year: 'numeric'});
+
+      const firstDayOfMonth = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const todayStr = new Date().toISOString().split('T')[0];
+      const logs = getLogs();
+
+      // Empty slots for start of month
+      for (let i = 0; i < firstDayOfMonth; i++) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.className = 'calendar-day empty';
+        grid.appendChild(emptyDiv);
+      }
+
+      // Days
+      for (let i = 1; i <= daysInMonth; i++) {
+        const dayDate = new Date(year, month, i, 12, 0, 0);
+        const dateStr = dayDate.toISOString().split('T')[0];
+
+        const dayDiv = document.createElement('div');
+        dayDiv.className = 'calendar-day';
+        dayDiv.textContent = i;
+
+        // Add phase classes
+        if (cycleData[dateStr]) {
+          dayDiv.classList.add(`phase-${cycleData[dateStr]}`);
+        }
+
+        // Highlight today
+        if (dateStr === todayStr) {
+          dayDiv.classList.add('day-today');
+        }
+
+        // Indicator for logs
+        if (logs[dateStr]) {
+          dayDiv.classList.add('has-log');
+        }
+
+        // Click to log
+        dayDiv.addEventListener('click', () => openLog(dateStr));
+
+        grid.appendChild(dayDiv);
+      }
+    };
+
+    const openLog = (dateStr) => {
+      selectedLogDateStr = dateStr;
+      const logSect = document.getElementById('logging-section');
+      const dateDisplay = document.getElementById('log-date-display');
+
+      // Parse date for display avoiding timezone issues
+      const dParts = dateStr.split('-');
+      const d = new Date(dParts[0], dParts[1]-1, dParts[2]);
+      dateDisplay.textContent = d.toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: 'numeric'});
+
+      const logs = getLogs();
+      const dayLog = logs[dateStr] || { mood: '', energy: '', physical: '' };
+
+      document.getElementById('log-mood').value = dayLog.mood;
+      document.getElementById('log-energy').value = dayLog.energy;
+      document.getElementById('log-physical').value = dayLog.physical;
+
+      document.getElementById('log-save-msg').style.display = 'none';
+      logSect.style.display = 'block';
+    };
+
+    // Event Listeners
+    document.getElementById('btn-calculate').addEventListener('click', calculateCycles);
+
+    document.getElementById('btn-prev-month').addEventListener('click', () => {
+      currentDisplayMonth.setMonth(currentDisplayMonth.getMonth() - 1);
+      renderCalendar();
+    });
+
+    document.getElementById('btn-next-month').addEventListener('click', () => {
+      currentDisplayMonth.setMonth(currentDisplayMonth.getMonth() + 1);
+      renderCalendar();
+    });
+
+    document.getElementById('btn-close-log').addEventListener('click', () => {
+      document.getElementById('logging-section').style.display = 'none';
+    });
+
+    document.getElementById('btn-save-log').addEventListener('click', () => {
+      if(!selectedLogDateStr) return;
+      const logs = getLogs();
+      logs[selectedLogDateStr] = {
+        mood: document.getElementById('log-mood').value,
+        energy: document.getElementById('log-energy').value,
+        physical: document.getElementById('log-physical').value,
+      };
+
+      // Clear empty logs
+      if(!logs[selectedLogDateStr].mood && !logs[selectedLogDateStr].energy && !logs[selectedLogDateStr].physical) {
+        delete logs[selectedLogDateStr];
+      }
+
+      saveLogs(logs);
+      document.getElementById('log-save-msg').style.display = 'block';
+      renderCalendar(); // re-render to show/hide indicator dot
+    });
+
+    document.getElementById('btn-share').addEventListener('click', async () => {
+      const nextP = document.getElementById('res-next-period').textContent;
+      const ov = document.getElementById('res-ovulation').textContent;
+      const fert = document.getElementById('res-fertile').textContent;
+
+      const text = `🌸 My Cycle Summary from Ali Imperiale's Tracker 🌸\n\n🩸 Next Period: ${nextP}\n✨ Estimated Ovulation: ${ov}\n🌿 Fertile Window: ${fert}\n\nTrack yours at: https://aliimperiale.com/cycle-tracker.html`;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        const msg = document.getElementById('share-msg');
+        msg.style.display = 'inline';
+        setTimeout(() => msg.style.display = 'none', 3000);
+      } catch (err) {
+        console.error('Failed to copy', err);
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
