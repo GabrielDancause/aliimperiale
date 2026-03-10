@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Language Quiz | Ali Imperiale</title>
+  <meta name="description" content="Take this interactive Love Language quiz to discover how you give and receive love based on Gary Chapman's 5 Love Languages framework. Great for individuals and couples.">
+  <meta property="og:title" content="Love Language Quiz | Ali Imperiale">
+  <meta property="og:description" content="Discover your primary and secondary love languages with this interactive quiz. Uncover how to better connect with your partner through Words of Affirmation, Acts of Service, Receiving Gifts, Quality Time, and Physical Touch.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aliimperiale.com/love-language-quiz.html">
+  <meta property="og:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+  <meta property="og:image:width" content="768">
+  <meta property="og:image:height" content="960">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Love Language Quiz | Ali Imperiale">
+  <meta name="twitter:description" content="Take this interactive Love Language quiz to discover how you give and receive love. Great for individuals and couples.">
+  <meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/love-language-quiz.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Base Styles */
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Navigation - Match Index */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Quiz Layout */
+    .page-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .page-header p {
+      font-size: 1.1rem;
+      color: #C6C8BB;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(46, 62, 36, 0.08);
+      border: 1px solid rgba(46, 62, 36, 0.05);
+      margin-bottom: 40px;
+    }
+
+    /* Start Screen */
+    #start-screen {
+      text-align: center;
+    }
+    .mode-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 30px 0;
+    }
+    .mode-btn {
+      background: transparent;
+      border: 2px solid #AD9846;
+      color: #2E3E24;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mode-btn.active {
+      background: #AD9846;
+      color: #FAF8EB;
+    }
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 16px 36px;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.5px;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+
+    /* Question Screen */
+    #quiz-screen {
+      display: none;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e9e6d3;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .question-counter {
+      font-size: 0.9rem;
+      color: #AD9846;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .turn-indicator {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .question-text {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.6rem;
+      text-align: center;
+      color: #2E3E24;
+      margin-bottom: 40px;
+      line-height: 1.4;
+    }
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .option-btn {
+      background: #FAF8EB;
+      border: 2px solid #e9e6d3;
+      padding: 20px 24px;
+      border-radius: 14px;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      color: #2E3E24;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+    }
+    .option-btn:hover {
+      border-color: #AD9846;
+      background: #fff;
+      transform: translateY(-1px);
+    }
+    .option-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Results Screen */
+    #results-screen {
+      display: none;
+    }
+    .results-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .results-header h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.8rem;
+      color: #2E3E24;
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+
+    .chart-container {
+      margin-bottom: 40px;
+    }
+    .chart-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .chart-label {
+      width: 140px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #2E3E24;
+      text-align: right;
+      padding-right: 16px;
+    }
+    .chart-bar-wrap {
+      flex: 1;
+      height: 24px;
+      background: #e9e6d3;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+    .chart-bar {
+      height: 100%;
+      background: #AD9846;
+      width: 0%;
+      transition: width 1s ease-out;
+      border-radius: 12px;
+    }
+    .chart-bar.primary {
+      background: #2E3E24;
+    }
+    .chart-percent {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #FAF8EB;
+      z-index: 10;
+    }
+    .chart-bar-wrap[data-percent="0"] .chart-percent {
+      color: #8a8a7a;
+      left: 12px;
+      right: auto;
+    }
+
+    /* Couples Results Layout */
+    .couples-results {
+      display: none;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .couples-col {
+      flex: 1;
+    }
+    .couples-col h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'New Standard', Georgia, serif;
+      color: #AD9846;
+    }
+    .couples-chart .chart-row {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .couples-chart .chart-label {
+      width: 100%;
+      text-align: left;
+      padding: 0;
+      margin-bottom: 4px;
+      font-size: 0.85rem;
+    }
+
+    /* Analysis Sections */
+    .analysis-box {
+      background: #FAF8EB;
+      padding: 24px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+      border-left: 4px solid #AD9846;
+    }
+    .analysis-box h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: #2E3E24;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    /* Educational Section */
+    .educational-section {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    .educational-section h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.5rem;
+      color: #2E3E24;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .language-breakdown {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .lang-card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px rgba(46,62,36,0.05);
+    }
+    .lang-card h3 {
+      color: #AD9846;
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    /* Footer - Match Index */
+    .site-footer {
+      background: #2E3E24;
+      color: #C6C8BB;
+      padding: 60px 20px 40px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-brand {
+      margin-bottom: 40px;
+    }
+    .footer-brand p {
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: #FAF8EB;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col li {
+      margin-bottom: 12px;
+    }
+    .footer-col a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover {
+      color: #AD9846;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(198, 200, 187, 0.2);
+      padding-top: 24px;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .language-breakdown {
+        grid-template-columns: 1fr 1fr;
+      }
+      .couples-results {
+        display: flex;
+      }
+    }
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 2.5rem; }
+      .card { padding: 24px; }
+      .question-text { font-size: 1.3rem; }
+      .chart-row { flex-direction: column; align-items: flex-start; }
+      .chart-label { width: 100%; text-align: left; padding: 0; margin-bottom: 6px; }
+      .site-nav { padding: 12px 16px; }
+      .site-nav .nav-links { display: none; } /* Simplified mobile nav for tool */
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What are the 5 love languages?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The 5 love languages, a concept created by Dr. Gary Chapman, are Words of Affirmation, Acts of Service, Receiving Gifts, Quality Time, and Physical Touch. They represent the different ways people prefer to express and receive love."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How do I find out my love language?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can find out your love language by taking a love language quiz that asks you to choose between different scenarios, revealing which actions make you feel most loved and appreciated."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Can my love language change over time?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes! While many people have a dominant love language that stays consistent, your secondary languages or even your primary language can shift depending on your life stage, relationship dynamics, or current emotional needs."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What if my partner and I have different love languages?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is very common for partners to have different love languages. The key is to learn and intentionally speak your partner's love language, even if it doesn't come naturally to you, so they feel loved in the way they understand best."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Is physical touch just about sex?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No, if your love language is physical touch, it means you feel loved through physical presence and accessibility. This includes holding hands, hugging, cuddling, a hand on the shoulder, as well as sexual intimacy."
+    }
+  }]
+}
+</script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>The Love Language Quiz</h1>
+    <p>Discover how you and your partner naturally give and receive love. Take it solo or try Couples Mode to compare results.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" id="main-content">
+
+    <!-- Quiz Card -->
+    <div class="card" id="quiz-container">
+
+      <!-- Start Screen -->
+      <div id="start-screen">
+        <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 1.8rem; margin-bottom: 16px;">Ready to find out?</h2>
+        <p>This quick 20-question quiz is based on Dr. Gary Chapman's 5 Love Languages framework. For each scenario, pick the option that resonates most with you.</p>
+
+        <div class="mode-toggle">
+          <button class="mode-btn active" id="btn-solo-mode">Solo Mode</button>
+          <button class="mode-btn" id="btn-couples-mode">Couples Mode</button>
+        </div>
+
+        <p id="couples-instructions" style="display:none; font-size: 0.9rem; color: #8a8a7a; margin-bottom: 20px; font-style: italic;">
+          Partner 1 will take the quiz first, followed by Partner 2. You'll see your results compared at the end.
+        </p>
+
+        <button class="btn-primary" id="btn-start">Start Quiz</button>
+      </div>
+
+      <!-- Question Screen -->
+      <div id="quiz-screen">
+        <div class="turn-indicator" id="turn-indicator">Partner 1's Turn</div>
+        <div class="question-counter"><span id="current-q">1</span> / 20</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <h2 class="question-text">It's more meaningful to me when...</h2>
+
+        <div class="options-grid">
+          <button class="option-btn" id="option-a">
+            <span id="text-a">Option A text goes here</span>
+          </button>
+          <button class="option-btn" id="option-b">
+            <span id="text-b">Option B text goes here</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Screen -->
+      <div id="results-screen">
+        <div class="results-header">
+          <h2 id="result-title">Your Love Profile</h2>
+          <p>Here's a breakdown of how you receive love.</p>
+        </div>
+
+        <!-- Solo Chart -->
+        <div class="chart-container" id="solo-chart">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Couples Charts -->
+        <div class="couples-results" id="couples-charts">
+          <div class="couples-col" id="chart-p1">
+            <h3>Partner 1</h3>
+            <div class="couples-chart"></div>
+          </div>
+          <div class="couples-col" id="chart-p2">
+            <h3>Partner 2</h3>
+            <div class="couples-chart"></div>
+          </div>
+        </div>
+
+        <!-- Primary Language Analysis -->
+        <div id="primary-analysis" class="analysis-box">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Secondary Language Analysis -->
+        <div id="secondary-analysis" class="analysis-box" style="border-left-color: #C6C8BB; background: #fff; border: 1px solid #e9e6d3; border-left-width: 4px;">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="actions">
+          <button class="btn-primary" id="btn-share" style="margin-right: 10px;">Share Results</button>
+          <button class="btn-secondary" id="btn-restart">Retake Quiz</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Educational Section -->
+    <section class="educational-section">
+      <h2>Understanding the 5 Languages</h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 40px; color: #555549;">
+        We all experience love differently. Understanding these frameworks doesn't put you in a box—it gives you a vocabulary to ask for what you need and love your partner the way they actually want to be loved.
+      </p>
+
+      <div class="language-breakdown">
+        <div class="lang-card">
+          <h3>Words of Affirmation</h3>
+          <p>This language uses words to build up the other person. Compliments, "I love you," notes, and encouragement are the main currency. <strong>How to love them:</strong> Send an unexpected text, acknowledge their efforts, and verbalize your appreciation.</p>
+        </div>
+        <div class="lang-card">
+          <h3>Acts of Service</h3>
+          <p>For these people, actions speak louder than words. Doing the dishes, running errands, or taking a burden off their shoulders means the world. <strong>How to love them:</strong> Ask "How can I help?", follow through on promises, and look for ways to make their day easier.</p>
+        </div>
+        <div class="lang-card">
+          <h3>Receiving Gifts</h3>
+          <p>It's not about materialism; it's about the thought, effort, and visual symbol of love. A picked flower or a coffee can mean as much as a diamond. <strong>How to love them:</strong> Bring back a small souvenir, remember their favorite treats, and put thought into holiday gifts.</p>
+        </div>
+        <div class="lang-card">
+          <h3>Quality Time</h3>
+          <p>This language is all about undivided attention. No phones, no distractions—just being truly present with each other. <strong>How to love them:</strong> Plan date nights, maintain eye contact, actively listen, and create shared experiences.</p>
+        </div>
+        <div class="lang-card">
+          <h3>Physical Touch</h3>
+          <p>This goes beyond just sex. It's about physical presence and accessibility—holding hands, hugs, a hand on the leg, or a back rub. <strong>How to love them:</strong> Initiate non-sexual touch, prioritize physical closeness, and be responsive to their physical affection.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" style="margin-top: 60px; margin-bottom: 60px;">
+      <h2 style="font-family: 'The Bloomington', cursive; font-size: 2.5rem; color: #2E3E24; text-align: center; margin-bottom: 30px;">Frequently Asked Questions</h2>
+      <div style="max-width: 680px; margin: 0 auto;">
+
+        <div class="faq-item" style="background: #fff; padding: 24px; border-radius: 14px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(46,62,36,0.05);">
+          <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">What are the 5 love languages?</h3>
+          <p style="color: #555549; margin: 0;">The 5 love languages, a concept created by Dr. Gary Chapman, are Words of Affirmation, Acts of Service, Receiving Gifts, Quality Time, and Physical Touch. They represent the different ways people prefer to express and receive love.</p>
+        </div>
+
+        <div class="faq-item" style="background: #fff; padding: 24px; border-radius: 14px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(46,62,36,0.05);">
+          <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">How do I find out my love language?</h3>
+          <p style="color: #555549; margin: 0;">You can find out your love language by taking a love language quiz that asks you to choose between different scenarios, revealing which actions make you feel most loved and appreciated.</p>
+        </div>
+
+        <div class="faq-item" style="background: #fff; padding: 24px; border-radius: 14px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(46,62,36,0.05);">
+          <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">Can my love language change over time?</h3>
+          <p style="color: #555549; margin: 0;">Yes! While many people have a dominant love language that stays consistent, your secondary languages or even your primary language can shift depending on your life stage, relationship dynamics, or current emotional needs.</p>
+        </div>
+
+        <div class="faq-item" style="background: #fff; padding: 24px; border-radius: 14px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(46,62,36,0.05);">
+          <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">What if my partner and I have different love languages?</h3>
+          <p style="color: #555549; margin: 0;">It is very common for partners to have different love languages. The key is to learn and intentionally speak your partner's love language, even if it doesn't come naturally to you, so they feel loved in the way they understand best.</p>
+        </div>
+
+        <div class="faq-item" style="background: #fff; padding: 24px; border-radius: 14px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(46,62,36,0.05);">
+          <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">Is physical touch just about sex?</h3>
+          <p style="color: #555549; margin: 0;">No, if your love language is physical touch, it means you feel loved through physical presence and accessibility. This includes holding hands, hugging, cuddling, a hand on the shoulder, as well as sexual intimacy.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script>
+    // Constants
+    const LANGS = {
+      WORDS: "Words of Affirmation",
+      ACTS: "Acts of Service",
+      GIFTS: "Receiving Gifts",
+      TIME: "Quality Time",
+      TOUCH: "Physical Touch"
+    };
+
+    // 20 Scenario-based Questions
+    const questions = [
+      { text: "It's more meaningful to me when...",
+        optA: { text: "Someone I love sends me a loving text out of the blue.", type: LANGS.WORDS },
+        optB: { text: "Someone I love hugs me when I'm feeling stressed.", type: LANGS.TOUCH } },
+      { text: "I feel more loved when...",
+        optA: { text: "My partner helps me with a chore I've been dreading.", type: LANGS.ACTS },
+        optB: { text: "My partner brings me a small gift from their travels.", type: LANGS.GIFTS } },
+      { text: "A great date night involves...",
+        optA: { text: "Deep, uninterrupted conversation without phones.", type: LANGS.TIME },
+        optB: { text: "Holding hands and sitting close together.", type: LANGS.TOUCH } },
+      { text: "I know my partner cares when...",
+        optA: { text: "They leave me a sweet note on the counter.", type: LANGS.WORDS },
+        optB: { text: "They take care of dinner because they know I'm tired.", type: LANGS.ACTS } },
+      { text: "It makes me feel special when my partner...",
+        optA: { text: "Remembers my favorite snack and surprises me with it.", type: LANGS.GIFTS },
+        optB: { text: "Sets aside a whole weekend just for us to hang out.", type: LANGS.TIME } },
+      { text: "When we're apart, I love it most when...",
+        optA: { text: "My partner texts me to say they miss me.", type: LANGS.WORDS },
+        optB: { text: "My partner sends me a little care package in the mail.", type: LANGS.GIFTS } },
+      { text: "I feel most secure in my relationship when...",
+        optA: { text: "We cuddle on the couch while watching a movie.", type: LANGS.TOUCH },
+        optB: { text: "My partner runs an errand so I don't have to.", type: LANGS.ACTS } },
+      { text: "I prefer when my partner...",
+        optA: { text: "Actively listens to me talk about my day.", type: LANGS.TIME },
+        optB: { text: "Gives me a back rub after a long day.", type: LANGS.TOUCH } },
+      { text: "To celebrate an anniversary, I would want...",
+        optA: { text: "A heartfelt card expressing their love.", type: LANGS.WORDS },
+        optB: { text: "A thoughtful, meaningful gift they picked out.", type: LANGS.GIFTS } },
+      { text: "When I'm upset, the best way to comfort me is...",
+        optA: { text: "Taking care of my responsibilities for the day.", type: LANGS.ACTS },
+        optB: { text: "Just being present with me, giving me their full attention.", type: LANGS.TIME } },
+      { text: "I feel appreciated when my partner...",
+        optA: { text: "Tells me I look great today.", type: LANGS.WORDS },
+        optB: { text: "Fixes something around the house that was broken.", type: LANGS.ACTS } },
+      { text: "I feel deeply loved when my partner...",
+        optA: { text: "Surprises me with a small token of their affection.", type: LANGS.GIFTS },
+        optB: { text: "Kisses me passionately just because.", type: LANGS.TOUCH } },
+      { text: "A perfect weekend morning looks like...",
+        optA: { text: "My partner bringing me coffee in bed.", type: LANGS.ACTS },
+        optB: { text: "Spending a lazy hour just talking in bed.", type: LANGS.TIME } },
+      { text: "I feel seen when my partner...",
+        optA: { text: "Compliments me on something I worked hard on.", type: LANGS.WORDS },
+        optB: { text: "Plans an entire date night without me having to organize anything.", type: LANGS.TIME } },
+      { text: "I feel the strongest connection when...",
+        optA: { text: "We are physically close, even if we're not talking.", type: LANGS.TOUCH },
+        optB: { text: "They give me a gift that shows they really know my taste.", type: LANGS.GIFTS } },
+      { text: "It means a lot to me if my partner...",
+        optA: { text: "Praises me in front of other people.", type: LANGS.WORDS },
+        optB: { text: "Helps me finish a project I'm stressed about.", type: LANGS.ACTS } },
+      { text: "I feel loved when my partner...",
+        optA: { text: "Drops everything to spend time with me when I need them.", type: LANGS.TIME },
+        optB: { text: "Puts an arm around me when we're walking.", type: LANGS.TOUCH } },
+      { text: "I appreciate it most when my partner...",
+        optA: { text: "Buys me something I mentioned wanting months ago.", type: LANGS.GIFTS },
+        optB: { text: "Says 'I'm so proud of you'.", type: LANGS.WORDS } },
+      { text: "If my partner wants to show they care, they should...",
+        optA: { text: "Do the laundry so I can relax.", type: LANGS.ACTS },
+        optB: { text: "Take me out for a 1-on-1 lunch date.", type: LANGS.TIME } },
+      { text: "The best physical demonstration of love is...",
+        optA: { text: "A long, tight hug.", type: LANGS.TOUCH },
+        optB: { text: "A surprise gift waiting for me.", type: LANGS.GIFTS } }
+    ];
+
+    const langDescriptions = {
+      [LANGS.WORDS]: "You feel most loved when people express their affection verbally. Compliments, words of appreciation, and hearing 'I love you' fill your tank. Insults or harsh words can be particularly devastating to you.",
+      [LANGS.ACTS]: "For you, actions speak louder than words. You feel most loved when a partner eases your burden, helps out with chores, or does something to make your day easier. Broken commitments or laziness signal a lack of care to you.",
+      [LANGS.GIFTS]: "You feel loved through the thoughtfulness and effort behind a gift. It's not about the cost; it's about the visual symbol that your partner was thinking of you. A missed anniversary or a thoughtless gift hurts deeply.",
+      [LANGS.TIME]: "You feel most loved when you receive someone's undivided attention. Being fully present, putting the phone down, and engaging in deep conversation or shared activities is crucial. Distractions or canceled dates are hurtful.",
+      [LANGS.TOUCH]: "You feel most secure and loved through physical closeness. This isn't just about sex; it includes holding hands, hugs, back rubs, and sitting close. Physical neglect or a lack of spontaneous affection can make you feel unloved."
+    };
+
+    // State
+    let isCouplesMode = false;
+    let currentPlayer = 1;
+    let currentQuestionIndex = 0;
+
+    // Scores
+    let p1Scores = { [LANGS.WORDS]: 0, [LANGS.ACTS]: 0, [LANGS.GIFTS]: 0, [LANGS.TIME]: 0, [LANGS.TOUCH]: 0 };
+    let p2Scores = { [LANGS.WORDS]: 0, [LANGS.ACTS]: 0, [LANGS.GIFTS]: 0, [LANGS.TIME]: 0, [LANGS.TOUCH]: 0 };
+
+    // Elements
+    const elStartScreen = document.getElementById('start-screen');
+    const elQuizScreen = document.getElementById('quiz-screen');
+    const elResultsScreen = document.getElementById('results-screen');
+    const btnSolo = document.getElementById('btn-solo-mode');
+    const btnCouples = document.getElementById('btn-couples-mode');
+    const couplesInstructions = document.getElementById('couples-instructions');
+    const turnIndicator = document.getElementById('turn-indicator');
+
+    // Init
+    btnSolo.addEventListener('click', () => {
+      isCouplesMode = false;
+      btnSolo.classList.add('active');
+      btnCouples.classList.remove('active');
+      couplesInstructions.style.display = 'none';
+    });
+
+    btnCouples.addEventListener('click', () => {
+      isCouplesMode = true;
+      btnCouples.classList.add('active');
+      btnSolo.classList.remove('active');
+      couplesInstructions.style.display = 'block';
+    });
+
+    document.getElementById('btn-start').addEventListener('click', startQuiz);
+    document.getElementById('btn-restart').addEventListener('click', resetQuiz);
+    document.getElementById('btn-share').addEventListener('click', shareResults);
+
+    document.getElementById('option-a').addEventListener('click', () => handleAnswer('optA'));
+    document.getElementById('option-b').addEventListener('click', () => handleAnswer('optB'));
+
+    function startQuiz() {
+      elStartScreen.style.display = 'none';
+      elQuizScreen.style.display = 'block';
+      turnIndicator.style.display = isCouplesMode ? 'block' : 'none';
+      turnIndicator.textContent = "Partner 1's Turn";
+      loadQuestion();
+    }
+
+    function resetQuiz() {
+      currentPlayer = 1;
+      currentQuestionIndex = 0;
+      p1Scores = { [LANGS.WORDS]: 0, [LANGS.ACTS]: 0, [LANGS.GIFTS]: 0, [LANGS.TIME]: 0, [LANGS.TOUCH]: 0 };
+      p2Scores = { [LANGS.WORDS]: 0, [LANGS.ACTS]: 0, [LANGS.GIFTS]: 0, [LANGS.TIME]: 0, [LANGS.TOUCH]: 0 };
+
+      elResultsScreen.style.display = 'none';
+      document.getElementById('solo-chart').innerHTML = '';
+      document.querySelector('#chart-p1 .couples-chart').innerHTML = '';
+      document.querySelector('#chart-p2 .couples-chart').innerHTML = '';
+
+      elStartScreen.style.display = 'block';
+    }
+
+    function loadQuestion() {
+      const q = questions[currentQuestionIndex];
+      document.querySelector('.question-text').textContent = q.text;
+      document.getElementById('text-a').textContent = q.optA.text;
+      document.getElementById('text-b').textContent = q.optB.text;
+
+      document.getElementById('current-q').textContent = currentQuestionIndex + 1;
+      const progress = ((currentQuestionIndex) / questions.length) * 100;
+      document.getElementById('progress').style.width = `${progress}%`;
+    }
+
+    function handleAnswer(optKey) {
+      const q = questions[currentQuestionIndex];
+      const lang = q[optKey].type;
+
+      if (currentPlayer === 1) {
+        p1Scores[lang]++;
+      } else {
+        p2Scores[lang]++;
+      }
+
+      currentQuestionIndex++;
+
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        if (isCouplesMode && currentPlayer === 1) {
+          // Switch to Partner 2
+          currentPlayer = 2;
+          currentQuestionIndex = 0;
+          turnIndicator.textContent = "Partner 2's Turn";
+          document.getElementById('progress').style.width = "0%";
+          window.scrollTo({ top: document.getElementById('quiz-container').offsetTop - 100, behavior: 'smooth' });
+          loadQuestion();
+        } else {
+          // Show Results
+          showResults();
+        }
+      }
+    }
+
+    function calculateResults(scores) {
+      const total = questions.length;
+      let results = [];
+      for (const [lang, score] of Object.entries(scores)) {
+        results.push({
+          lang: lang,
+          score: score,
+          percent: Math.round((score / total) * 100)
+        });
+      }
+      return results.sort((a, b) => b.score - a.score);
+    }
+
+    function renderChart(resultsData, containerElement) {
+      let html = '';
+      resultsData.forEach((res, index) => {
+        const isPrimary = index === 0;
+        const barClass = isPrimary ? 'chart-bar primary' : 'chart-bar';
+        html += `
+          <div class="chart-row">
+            <div class="chart-label">${res.lang}</div>
+            <div class="chart-bar-wrap" data-percent="${res.percent}">
+              <div class="${barClass}" style="width: ${res.percent}%;"></div>
+              <div class="chart-percent">${res.percent}%</div>
+            </div>
+          </div>
+        `;
+      });
+      containerElement.innerHTML = html;
+    }
+
+    function showResults() {
+      elQuizScreen.style.display = 'none';
+      elResultsScreen.style.display = 'block';
+      window.scrollTo({ top: document.getElementById('quiz-container').offsetTop - 100, behavior: 'smooth' });
+
+      const p1Results = calculateResults(p1Scores);
+
+      if (!isCouplesMode) {
+        document.getElementById('result-title').textContent = "Your Love Profile";
+        document.getElementById('solo-chart').style.display = 'block';
+        document.getElementById('couples-charts').style.display = 'none';
+        renderChart(p1Results, document.getElementById('solo-chart'));
+        renderAnalysis(p1Results);
+      } else {
+        const p2Results = calculateResults(p2Scores);
+        document.getElementById('result-title').textContent = "Couples Comparison";
+        document.getElementById('solo-chart').style.display = 'none';
+        document.getElementById('couples-charts').style.display = 'flex';
+        renderChart(p1Results, document.querySelector('#chart-p1 .couples-chart'));
+        renderChart(p2Results, document.querySelector('#chart-p2 .couples-chart'));
+        renderCouplesAnalysis(p1Results, p2Results);
+      }
+    }
+
+    function renderAnalysis(results) {
+      const primary = results[0];
+      const secondary = results[1];
+
+      document.getElementById('primary-analysis').innerHTML = `
+        <h3>Primary: ${primary.lang}</h3>
+        <p>${langDescriptions[primary.lang]}</p>
+      `;
+
+      document.getElementById('secondary-analysis').innerHTML = `
+        <h3 style="color: #AD9846;">Secondary: ${secondary.lang}</h3>
+        <p>${langDescriptions[secondary.lang]}</p>
+      `;
+      document.getElementById('secondary-analysis').style.display = 'block';
+    }
+
+    function renderCouplesAnalysis(p1Results, p2Results) {
+      const p1Primary = p1Results[0].lang;
+      const p2Primary = p2Results[0].lang;
+
+      let analysisHtml = '';
+      if (p1Primary === p2Primary) {
+        analysisHtml = `
+          <h3>You share the same Primary Language! (${p1Primary})</h3>
+          <p>This makes things easy! You both naturally express and receive love in the same way. Make sure to keep intentionally speaking this language to each other.</p>
+          <p><em>Just don't forget your secondary languages:</em> Partner 1's is ${p1Results[1].lang}, and Partner 2's is ${p2Results[1].lang}. Mixing these in keeps things fresh.</p>
+        `;
+      } else {
+        analysisHtml = `
+          <h3>Different Languages, Different Needs</h3>
+          <p>Partner 1 feels most loved through <strong>${p1Primary}</strong>, while Partner 2 feels most loved through <strong>${p2Primary}</strong>.</p>
+          <p><strong>The Challenge:</strong> We often express love the way we want to receive it. Partner 1 might be giving ${p1Primary} when Partner 2 actually needs ${p2Primary}.</p>
+          <p><strong>The Fix:</strong> Be bilingual! Intentionally choose to do things in your partner's primary language, even if it doesn't feel natural to you at first.</p>
+        `;
+      }
+
+      document.getElementById('primary-analysis').innerHTML = analysisHtml;
+      document.getElementById('secondary-analysis').style.display = 'none';
+    }
+
+    function shareResults() {
+      const btn = document.getElementById('btn-share');
+      let textToShare = "";
+
+      if (!isCouplesMode) {
+        const results = calculateResults(p1Scores);
+        textToShare = `My Love Languages:\n1. ${results[0].lang} (${results[0].percent}%)\n2. ${results[1].lang} (${results[1].percent}%)\n\nTake the quiz at: https://aliimperiale.com/love-language-quiz.html`;
+      } else {
+        const p1Results = calculateResults(p1Scores);
+        const p2Results = calculateResults(p2Scores);
+        textToShare = `Our Love Languages:\nPartner 1: ${p1Results[0].lang}\nPartner 2: ${p2Results[0].lang}\n\nTake the Couples Quiz at: https://aliimperiale.com/love-language-quiz.html`;
+      }
+
+      navigator.clipboard.writeText(textToShare).then(() => {
+        const originalText = btn.textContent;
+        btn.textContent = "Copied to Clipboard!";
+        btn.style.background = "#AD9846";
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = "";
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+        alert("Failed to copy to clipboard. You can select and copy your results manually!");
+      });
+    }
+  </script>
+</body>
+</html>
