@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Fertility & Ovulation Tracker | Ali Imperiale</title>
+<meta name="description" content="Advanced fertility tracker and ovulation calculator. Track your cycle, basal body temperature, cervical mucus, and estimate pregnancy probability with the Fertility Awareness Method.">
+<meta property="og:title" content="Advanced Fertility & Ovulation Tracker | Ali Imperiale">
+<meta property="og:description" content="Advanced fertility tracker and ovulation calculator. Track your cycle, basal body temperature, cervical mucus, and estimate pregnancy probability with the Fertility Awareness Method.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aliimperiale.com/fertility-tracking-calculator.html">
+<meta property="og:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+<meta property="og:image:width" content="768">
+<meta property="og:image:height" content="960">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Advanced Fertility & Ovulation Tracker | Ali Imperiale">
+<meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+<link rel="canonical" href="https://aliimperiale.com/fertility-tracking-calculator.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How does the Fertility Awareness Method (FAM) work?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Fertility Awareness Method involves tracking daily signs of fertility, primarily basal body temperature (BBT) and cervical mucus. By observing these signs, you can estimate when you are ovulating and identify your fertile window, allowing you to either plan for or avoid pregnancy naturally."
+    }
+  }, {
+    "@type": "Question",
+    "name": "When is the best time to check my basal body temperature?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You should check your basal body temperature (BBT) first thing in the morning, immediately after waking up and before getting out of bed, talking, or drinking water. You need at least 3-4 hours of uninterrupted sleep for an accurate reading. A slight temperature shift (usually 0.5 to 1 degree Fahrenheit) typically occurs after ovulation due to an increase in progesterone."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What does fertile cervical mucus look like?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Fertile cervical mucus typically resembles raw egg whites—it is clear, slippery, and stretchy. This type of mucus is the most hospitable to sperm, helping them survive and travel through the cervix to fertilize an egg. It usually appears a few days before and during ovulation."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Can I use natural family planning to avoid pregnancy?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, natural family planning (NFP) can be used to avoid pregnancy, but it requires diligent tracking, consistency, and a deep understanding of your cycle and fertility signs. It is most effective when combining multiple tracking methods, like symptothermal tracking (BBT and cervical mucus). It does not protect against STIs."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How is the pregnancy probability calculated?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pregnancy probability is highest during your fertile window, which includes the 5 days leading up to ovulation and the day of ovulation itself. The chances of conception peak 1-2 days before ovulation. Having unprotected sex outside of this window significantly reduces the probability of getting pregnant."
+    }
+  }]
+}
+</script>
+
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  body {
+    background-color: #FAF8EB;
+    color: #2E3E24;
+  }
+
+  /* Navigation (copied from index) */
+  .site-nav {
+    background: #2E3E24;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+  }
+  .nav-logo {
+    height: 36px;
+    opacity: 0.95;
+    transition: opacity 0.2s;
+  }
+  .nav-logo:hover {
+    opacity: 1;
+  }
+  .site-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .site-nav .nav-links a {
+    color: #C6C8BB;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.15s ease;
+  }
+  .site-nav .nav-links a:hover, .site-nav .nav-links a.active {
+    color: #FAF8EB;
+  }
+
+  /* Page Header */
+  .page-header {
+    background-color: #2E3E24;
+    color: #FAF8EB;
+    text-align: center;
+    padding: 40px 20px 60px;
+    position: relative;
+  }
+  .page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #FAF8EB;
+    border-radius: 30px 30px 0 0;
+  }
+  .page-header h1 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .page-header p {
+    font-size: 1.05rem;
+    color: #C6C8BB;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Main Container */
+  .tracker-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Card Style */
+  .card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
+    border: 1px solid rgba(46, 62, 36, 0.06);
+  }
+
+  .card h2 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2E3E24;
+    text-align: center;
+  }
+
+  /* Educational Section */
+  .edu-section {
+    margin-top: 20px;
+  }
+  .phase-info {
+    margin-bottom: 24px;
+  }
+  .phase-info h3 {
+    font-size: 1.2rem;
+    color: #2E3E24;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .phase-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555549;
+  }
+
+  /* FAQ */
+  .faq-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .faq-section h2 {
+    font-family: 'New Standard', Georgia, serif;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .faq-question {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #2E3E24;
+    margin-bottom: 10px;
+  }
+  .faq-answer {
+    font-size: 0.95rem;
+    color: #555549;
+    line-height: 1.6;
+  }
+
+  /* Input Section */
+  .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 200px;
+  }
+  .input-field label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #555549;
+  }
+  .input-field input {
+    padding: 12px 16px;
+    border: 1px solid #C6C8BB;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    background: #FAF8EB;
+    color: #2E3E24;
+  }
+  .input-field input:focus {
+    outline: none;
+    border-color: #AD9846;
+    box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
+  }
+  .btn-calculate {
+    background: #2E3E24;
+    color: #FAF8EB;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    align-self: center;
+    margin-top: 10px;
+  }
+  .btn-calculate:hover {
+    background: #3a5030;
+    transform: translateY(-1px);
+  }
+
+  /* Results Section */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    display: none;
+  }
+  .result-box {
+    background: #FAF8EB;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(173, 152, 70, 0.3);
+  }
+  .result-box h3 {
+    font-size: 1rem;
+    color: #555549;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .result-box p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2E3E24;
+  }
+  .result-box.highlight {
+    background: rgba(173, 152, 70, 0.1);
+    border-color: #AD9846;
+  }
+
+  /* Calendar Section */
+  .calendar-container {
+    margin-top: 30px;
+    display: none;
+  }
+  .calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .btn-nav {
+    background: none;
+    border: 1px solid #AD9846;
+    color: #2E3E24;
+    padding: 6px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .btn-nav:hover {
+    background: #AD9846;
+    color: #fff;
+  }
+  .calendar-month {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
+  .calendar-day-header {
+    font-weight: 600;
+    color: #8a8a7a;
+    font-size: 0.85rem;
+    padding-bottom: 8px;
+  }
+  .calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f5f5f5;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.1s;
+    position: relative;
+  }
+  .calendar-day:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+  .calendar-day.empty {
+    background: none;
+    cursor: default;
+  }
+  .calendar-day.empty:hover {
+    transform: none;
+  }
+
+  /* Phase Colors */
+  .phase-menstrual { background-color: #e5b3b3; color: #5a2a2a; }
+  .phase-follicular { background-color: #d1e2c4; color: #2E3E24; }
+  .phase-ovulation { background-color: #f2e2a9; color: #6b5a15; font-weight: bold; border: 2px solid #AD9846; }
+  .phase-luteal { background-color: #e2d1e2; color: #4a2a4a; }
+  .day-today { border: 2px solid #2E3E24; font-weight: bold; }
+
+  /* Legend */
+  .calendar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  /* Indicator dot on calendar day for logs */
+  .has-log::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: #2E3E24;
+    border-radius: 50%;
+  }
+
+  /* Logging Modal/Section */
+  .logging-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #FAF8EB;
+    border-radius: 12px;
+    border: 1px dashed #C6C8BB;
+    display: none;
+  }
+  .logging-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .logging-date {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2E3E24;
+  }
+  .btn-close-log {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #8a8a7a;
+  }
+  .log-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  .log-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .log-group select, .log-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #C6C8BB;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .btn-save-log {
+    background: #2E3E24;
+    color: #FAF8EB;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  /* Chart Section */
+  .chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-top: 30px;
+    display: none;
+  }
+
+  /* Share button */
+  .share-container {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+  }
+  .btn-share {
+    background: #FAF8EB;
+    color: #AD9846;
+    border: 2px solid #AD9846;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-share:hover {
+    background: #AD9846;
+    color: #fff;
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .page-header h1 { font-size: 2rem; }
+    .input-group { flex-direction: column; align-items: stretch; }
+    .input-field { min-width: 100%; }
+    .calendar-day { font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/">
+      <img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale">
+    </a>
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Advanced Fertility Tracker</h1>
+    <p>A deeper dive into your cycle. Track basal body temperature, cervical mucus, and understand your true fertile window with the Fertility Awareness Method.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="tracker-container" id="tracker-app">
+
+    <!-- Input Card -->
+    <section class="card">
+      <h2>Calculate Your Cycle & Fertile Window</h2>
+      <div class="input-group">
+        <div class="input-field">
+          <label for="last-period">First Day of Last Period</label>
+          <input type="date" id="last-period" required>
+        </div>
+        <div class="input-field">
+          <label for="cycle-length">Average Cycle Length (Days)</label>
+          <input type="number" id="cycle-length" value="28" min="20" max="45" required>
+        </div>
+        <div class="input-field">
+          <label for="luteal-length">Luteal Phase Length (Optional)</label>
+          <input type="number" id="luteal-length" value="14" min="10" max="16" placeholder="Usually 14 days" title="The number of days between ovulation and your next period.">
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <button class="btn-calculate" id="btn-calculate">Calculate My Phases</button>
+      </div>
+
+      <div style="background: #fdf5f5; border-left: 4px solid #d9534f; padding: 16px; border-radius: 0 8px 8px 0; font-size: 0.9rem; line-height: 1.5; color: #5a2a2a; margin-top: 20px;">
+        <strong>Disclaimer:</strong> This tool provides estimates based on averages and your inputs. It is <strong>NOT a reliable method for birth control on its own</strong> without diligent tracking of daily physiological signs.
+      </div>
+    </section>
+
+    <!-- Results Overview -->
+    <section class="card" id="results-section" style="display: none;">
+      <h2>Your Cycle Overview</h2>
+      <div class="results-grid" id="results-grid">
+        <div class="result-box">
+          <h3>Next Period</h3>
+          <p id="res-next-period">--</p>
+        </div>
+        <div class="result-box highlight">
+          <h3>Estimated Ovulation</h3>
+          <p id="res-ovulation">--</p>
+        </div>
+        <div class="result-box highlight">
+          <h3>Fertile Window</h3>
+          <p id="res-fertile">--</p>
+        </div>
+        <div class="result-box">
+          <h3>Current Pregnancy Probability</h3>
+          <p id="res-probability">--</p>
+        </div>
+      </div>
+
+      <div class="share-container" id="share-container">
+        <button class="btn-share" id="btn-share">Share Results (Copy to Clipboard)</button>
+        <span id="share-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-left: 10px;">Copied!</span>
+      </div>
+    </section>
+
+    <!-- Calendar View -->
+    <section class="card" id="calendar-section" style="display: none;">
+      <h2>Interactive Cycle Calendar</h2>
+      <p style="text-align: center; font-size: 0.9rem; margin-bottom: 20px; color: #555549;">Click on any day to log your Basal Body Temperature (BBT) and Cervical Mucus to track your actual ovulation shift.</p>
+
+      <div class="calendar-controls">
+        <button class="btn-nav" id="btn-prev-month">&larr; Prev</button>
+        <div class="calendar-month" id="calendar-month-display">Month Year</div>
+        <button class="btn-nav" id="btn-next-month">Next &rarr;</button>
+      </div>
+
+      <div class="calendar-grid" id="calendar-grid">
+        <!-- Days of week -->
+        <div class="calendar-day-header">Sun</div>
+        <div class="calendar-day-header">Mon</div>
+        <div class="calendar-day-header">Tue</div>
+        <div class="calendar-day-header">Wed</div>
+        <div class="calendar-day-header">Thu</div>
+        <div class="calendar-day-header">Fri</div>
+        <div class="calendar-day-header">Sat</div>
+        <!-- Calendar days injected via JS -->
+      </div>
+
+      <div class="calendar-legend">
+        <div class="legend-item"><div class="legend-color phase-menstrual"></div> Menstruation</div>
+        <div class="legend-item"><div class="legend-color phase-follicular"></div> Follicular</div>
+        <div class="legend-item"><div class="legend-color phase-ovulation"></div> Ovulation / Fertile Window</div>
+        <div class="legend-item"><div class="legend-color phase-luteal"></div> Luteal</div>
+      </div>
+
+      <!-- Logging UI -->
+      <div class="logging-section" id="logging-section">
+        <div class="logging-header">
+          <span class="logging-date" id="log-date-display">Select a date</span>
+          <button class="btn-close-log" id="btn-close-log">&times;</button>
+        </div>
+        <div class="log-options">
+          <div class="log-group">
+            <label for="log-bbt">Basal Body Temperature (°F)</label>
+            <input type="number" id="log-bbt" step="0.01" min="95.00" max="102.00" placeholder="e.g. 97.65">
+          </div>
+          <div class="log-group">
+            <label for="log-mucus">Cervical Mucus</label>
+            <select id="log-mucus">
+              <option value="">-- Select --</option>
+              <option value="dry">Dry / None</option>
+              <option value="sticky">Sticky / Tacky</option>
+              <option value="creamy">Creamy / Lotion-like</option>
+              <option value="eggwhite">Egg White / Stretchy (Peak Fertile)</option>
+              <option value="watery">Watery (Peak Fertile)</option>
+            </select>
+          </div>
+          <div class="log-group">
+            <label for="log-symptom">Other Symptom</label>
+            <select id="log-symptom">
+              <option value="">-- Select --</option>
+              <option value="cramps">Cramps / Ovulation Pain</option>
+              <option value="spotting">Spotting</option>
+              <option value="tender">Tender Breasts</option>
+              <option value="libido">High Libido</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-save-log" id="btn-save-log">Save Log for this Day</button>
+        <span id="log-save-msg" style="display:none; font-size: 0.8rem; color: #2E3E24; margin-top: 8px; text-align: center; display: block;">Saved to your browser!</span>
+      </div>
+
+      <!-- Chart Container -->
+      <div class="chart-container" id="chart-container">
+        <canvas id="bbtChart"></canvas>
+      </div>
+
+    </section>
+
+    <!-- Education Section -->
+    <section class="card edu-section">
+      <h2>Understanding the Fertility Awareness Method (FAM)</h2>
+      <p style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6;">The Fertility Awareness Method (FAM) is a natural way to track your cycle, understand your body, and pinpoint ovulation. By observing physiological signs—specifically basal body temperature (BBT) and cervical mucus—you can identify your fertile window with high accuracy. Whether you want to achieve pregnancy or avoid it (Natural Family Planning), knowledge is power.</p>
+
+      <div class="phase-info">
+        <h3>🌡️ Basal Body Temperature (BBT)</h3>
+        <p>Your BBT is your body's temperature fully at rest. To track it, you need a highly sensitive basal thermometer and must take your temperature immediately upon waking, before moving or talking. You are looking for a sustained temperature shift (about 0.5 to 1°F higher) that occurs right <em>after</em> you ovulate, caused by the hormone progesterone. This shift confirms ovulation has happened.</p>
+      </div>
+
+      <div class="phase-info">
+        <h3>💧 Cervical Mucus</h3>
+        <p>Cervical mucus changes throughout your cycle in response to estrogen. Right after your period, it's typically dry or sticky. As ovulation approaches, it becomes creamy, then clear, slippery, and stretchy—often described as looking like raw egg whites. This "egg white" mucus is peak fertile fluid, acting as a slip-and-slide for sperm to survive and swim to the egg.</p>
+      </div>
+
+      <div class="phase-info">
+        <h3>🎯 The Fertile Window & Conception Timing</h3>
+        <p>An egg only survives for 12-24 hours after ovulation. However, sperm can live in fertile cervical mucus for up to 5 days! Your "fertile window" includes the 5 days leading up to ovulation and the day of ovulation itself. The highest probability of conception occurs if you have sex 1 to 2 days <em>before</em> ovulation, ensuring sperm are waiting when the egg is released.</p>
+      </div>
+
+      <div class="phase-info">
+        <h3>🛡️ Natural Family Planning (NFP)</h3>
+        <p>When used to avoid pregnancy, FAM requires discipline. You must accurately track your signs and avoid unprotected sex during your entire fertile window. It takes several months of charting to learn your unique patterns. FAM does not protect against STIs.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">How does the Fertility Awareness Method (FAM) work?</div>
+      <div class="faq-answer">The Fertility Awareness Method involves tracking daily signs of fertility, primarily basal body temperature (BBT) and cervical mucus. By observing these signs, you can estimate when you are ovulating and identify your fertile window, allowing you to either plan for or avoid pregnancy naturally.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">When is the best time to check my basal body temperature?</div>
+      <div class="faq-answer">You should check your basal body temperature (BBT) first thing in the morning, immediately after waking up and before getting out of bed, talking, or drinking water. You need at least 3-4 hours of uninterrupted sleep for an accurate reading. A slight temperature shift (usually 0.5 to 1 degree Fahrenheit) typically occurs after ovulation due to an increase in progesterone.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What does fertile cervical mucus look like?</div>
+      <div class="faq-answer">Fertile cervical mucus typically resembles raw egg whites—it is clear, slippery, and stretchy. This type of mucus is the most hospitable to sperm, helping them survive and travel through the cervix to fertilize an egg. It usually appears a few days before and during ovulation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I use natural family planning to avoid pregnancy?</div>
+      <div class="faq-answer">Yes, natural family planning (NFP) can be used to avoid pregnancy, but it requires diligent tracking, consistency, and a deep understanding of your cycle and fertility signs. It is most effective when combining multiple tracking methods, like symptothermal tracking (BBT and cervical mucus). It does not protect against STIs.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How is the pregnancy probability calculated?</div>
+      <div class="faq-answer">Pregnancy probability is highest during your fertile window, which includes the 5 days leading up to ovulation and the day of ovulation itself. The chances of conception peak 1-2 days before ovulation. Having unprotected sex outside of this window significantly reduces the probability of getting pregnant.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script src="newsletter-bar.js" defer></script>
+<script src="email-capture.js" defer></script>
+<script src="back-to-top.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Set default date to today
+    const dateInput = document.getElementById('last-period');
+    const cycleLengthInput = document.getElementById('cycle-length');
+    const lutealLengthInput = document.getElementById('luteal-length');
+
+    const today = new Date();
+    dateInput.value = today.toISOString().split('T')[0];
+
+    let cycleData = {}; // Maps date string to phase
+    let currentDisplayMonth = new Date();
+    let selectedLogDateStr = null;
+    let bbtChartInstance = null;
+
+    // Local Storage helpers
+    const getLogs = () => JSON.parse(localStorage.getItem('famLogs')) || {};
+    const saveLogs = (logs) => localStorage.setItem('famLogs', JSON.stringify(logs));
+
+    // Load saved settings
+    const savedSettings = JSON.parse(localStorage.getItem('famSettings')) || null;
+    if (savedSettings) {
+      if (savedSettings.lastPeriod) dateInput.value = savedSettings.lastPeriod;
+      if (savedSettings.cycleLength) cycleLengthInput.value = savedSettings.cycleLength;
+      if (savedSettings.lutealLength) lutealLengthInput.value = savedSettings.lutealLength;
+    }
+
+    const calculateCycles = () => {
+      const lastPeriodStr = document.getElementById('last-period').value;
+      const cycleLen = parseInt(document.getElementById('cycle-length').value, 10);
+      let lutealLen = parseInt(document.getElementById('luteal-length').value, 10);
+
+      if(!lastPeriodStr || isNaN(cycleLen)) return;
+      if(isNaN(lutealLen)) lutealLen = 14; // Default luteal phase
+
+      const baseDate = new Date(lastPeriodStr + 'T12:00:00'); // Use noon to avoid timezone shift
+
+      cycleData = {};
+
+      let nextPeriodStart = new Date(baseDate);
+      let currentCycleOvulation = null;
+      let currentCycleFertileStart = null;
+      let currentCycleFertileEnd = null;
+      let currentCycleNextPeriod = null;
+
+      // Generate 4 cycles worth of data for calendar
+      for(let i=0; i<4; i++) {
+        const pStart = new Date(nextPeriodStart);
+        const pEnd = new Date(pStart);
+        pEnd.setDate(pEnd.getDate() + 4); // Assume 5 days menstruation
+
+        const nextP = new Date(pStart);
+        nextP.setDate(nextP.getDate() + cycleLen);
+
+        const ovulation = new Date(nextP);
+        ovulation.setDate(ovulation.getDate() - lutealLen); // Ovulation depends on luteal length
+
+        const fertileStart = new Date(ovulation);
+        fertileStart.setDate(fertileStart.getDate() - 5);
+
+        const fertileEnd = new Date(ovulation);
+        fertileEnd.setDate(fertileEnd.getDate() + 1);
+
+        // Assign phases to dates for calendar lookup
+        let curr = new Date(pStart);
+        while(curr < nextP) {
+          const dateStr = curr.toISOString().split('T')[0];
+
+          if (curr >= pStart && curr <= pEnd) {
+            cycleData[dateStr] = 'menstrual';
+          } else if (curr > pEnd && curr < fertileStart) {
+            cycleData[dateStr] = 'follicular';
+          } else if (curr >= fertileStart && curr <= fertileEnd) {
+            cycleData[dateStr] = 'ovulation';
+          } else {
+            cycleData[dateStr] = 'luteal';
+          }
+          curr.setDate(curr.getDate() + 1);
+        }
+
+        // Save highlights for first cycle to display in overview
+        if (i === 0) {
+          currentCycleNextPeriod = new Date(nextP);
+          currentCycleOvulation = new Date(ovulation);
+          currentCycleFertileStart = new Date(fertileStart);
+          currentCycleFertileEnd = new Date(fertileEnd);
+
+          document.getElementById('res-next-period').textContent = nextP.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+          document.getElementById('res-ovulation').textContent = ovulation.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+          document.getElementById('res-fertile').textContent = `${fertileStart.toLocaleDateString('en-US', {month: 'short', day: 'numeric'})} - ${fertileEnd.toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}`;
+        }
+
+        nextPeriodStart = new Date(nextP);
+      }
+
+      // Calculate Pregnancy Probability based on TODAY
+      const now = new Date();
+      let probability = "Low";
+
+      // Normalize 'now' to noon for comparison
+      const todayNoon = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0);
+
+      if (todayNoon >= currentCycleFertileStart && todayNoon <= currentCycleFertileEnd) {
+        if (todayNoon.getTime() === currentCycleOvulation.getTime() ||
+            todayNoon.getTime() === (currentCycleOvulation.getTime() - (24 * 60 * 60 * 1000))) {
+          probability = "High (Peak)";
+        } else {
+          probability = "High";
+        }
+      }
+      document.getElementById('res-probability').textContent = probability;
+
+      // Save to local storage
+      localStorage.setItem('famSettings', JSON.stringify({
+        lastPeriod: lastPeriodStr,
+        cycleLength: cycleLen,
+        lutealLength: lutealLen
+      }));
+
+      document.getElementById('results-section').style.display = 'block';
+      document.getElementById('results-grid').style.display = 'grid';
+      document.getElementById('calendar-section').style.display = 'block';
+      document.getElementById('share-container').style.display = 'block';
+
+      currentDisplayMonth = new Date(baseDate);
+      renderCalendar();
+      updateChart();
+    };
+
+    const renderCalendar = () => {
+      const grid = document.getElementById('calendar-grid');
+      const monthDisplay = document.getElementById('calendar-month-display');
+
+      while (grid.children.length > 7) {
+        grid.removeChild(grid.lastChild);
+      }
+
+      const year = currentDisplayMonth.getFullYear();
+      const month = currentDisplayMonth.getMonth();
+
+      monthDisplay.textContent = currentDisplayMonth.toLocaleDateString('en-US', {month: 'long', year: 'numeric'});
+
+      const firstDayOfMonth = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const todayStr = new Date().toISOString().split('T')[0];
+      const logs = getLogs();
+
+      for (let i = 0; i < firstDayOfMonth; i++) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.className = 'calendar-day empty';
+        grid.appendChild(emptyDiv);
+      }
+
+      for (let i = 1; i <= daysInMonth; i++) {
+        const dayDate = new Date(year, month, i, 12, 0, 0);
+        const dateStr = dayDate.toISOString().split('T')[0];
+
+        const dayDiv = document.createElement('div');
+        dayDiv.className = 'calendar-day';
+        dayDiv.textContent = i;
+
+        if (cycleData[dateStr]) {
+          dayDiv.classList.add(`phase-${cycleData[dateStr]}`);
+        }
+
+        if (dateStr === todayStr) {
+          dayDiv.classList.add('day-today');
+        }
+
+        if (logs[dateStr]) {
+          dayDiv.classList.add('has-log');
+        }
+
+        dayDiv.addEventListener('click', () => openLog(dateStr));
+
+        grid.appendChild(dayDiv);
+      }
+    };
+
+    const openLog = (dateStr) => {
+      selectedLogDateStr = dateStr;
+      const logSect = document.getElementById('logging-section');
+      const dateDisplay = document.getElementById('log-date-display');
+
+      const dParts = dateStr.split('-');
+      const d = new Date(dParts[0], dParts[1]-1, dParts[2]);
+      dateDisplay.textContent = d.toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: 'numeric'});
+
+      const logs = getLogs();
+      const dayLog = logs[dateStr] || { bbt: '', mucus: '', symptom: '' };
+
+      document.getElementById('log-bbt').value = dayLog.bbt;
+      document.getElementById('log-mucus').value = dayLog.mucus;
+      document.getElementById('log-symptom').value = dayLog.symptom;
+
+      document.getElementById('log-save-msg').style.display = 'none';
+      logSect.style.display = 'block';
+    };
+
+    const updateChart = () => {
+      document.getElementById('chart-container').style.display = 'block';
+      const ctx = document.getElementById('bbtChart').getContext('2d');
+      const logs = getLogs();
+
+      // Get dates for current displayed month
+      const year = currentDisplayMonth.getFullYear();
+      const month = currentDisplayMonth.getMonth();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      const labels = [];
+      const data = [];
+      const pointColors = [];
+
+      for (let i = 1; i <= daysInMonth; i++) {
+        const dayDate = new Date(year, month, i, 12, 0, 0);
+        const dateStr = dayDate.toISOString().split('T')[0];
+
+        labels.push(i.toString());
+
+        if (logs[dateStr] && logs[dateStr].bbt) {
+          data.push(parseFloat(logs[dateStr].bbt));
+
+          // Color points based on cervical mucus
+          let color = '#2E3E24'; // default
+          if(logs[dateStr].mucus === 'eggwhite' || logs[dateStr].mucus === 'watery') color = '#AD9846';
+          pointColors.push(color);
+        } else {
+          data.push(null);
+          pointColors.push('transparent');
+        }
+      }
+
+      if (bbtChartInstance) {
+        bbtChartInstance.destroy();
+      }
+
+      bbtChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Basal Body Temperature (°F)',
+            data: data,
+            borderColor: '#2E3E24',
+            backgroundColor: 'rgba(46, 62, 36, 0.1)',
+            borderWidth: 2,
+            pointBackgroundColor: pointColors,
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            spanGaps: true,
+            fill: true
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              labels: { font: { family: 'Montserrat' } }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return `BBT: ${context.parsed.y}°F`;
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              title: { display: true, text: 'Temperature (°F)' },
+              // Standard BBT range roughly 97.0 to 99.0, auto-scales if needed
+              suggestedMin: 97.0,
+              suggestedMax: 99.0
+            },
+            x: {
+              title: { display: true, text: 'Day of Month' }
+            }
+          }
+        }
+      });
+    };
+
+    // Event Listeners
+    document.getElementById('btn-calculate').addEventListener('click', calculateCycles);
+
+    document.getElementById('btn-prev-month').addEventListener('click', () => {
+      currentDisplayMonth.setMonth(currentDisplayMonth.getMonth() - 1);
+      renderCalendar();
+      updateChart();
+    });
+
+    document.getElementById('btn-next-month').addEventListener('click', () => {
+      currentDisplayMonth.setMonth(currentDisplayMonth.getMonth() + 1);
+      renderCalendar();
+      updateChart();
+    });
+
+    document.getElementById('btn-close-log').addEventListener('click', () => {
+      document.getElementById('logging-section').style.display = 'none';
+    });
+
+    document.getElementById('btn-save-log').addEventListener('click', () => {
+      if(!selectedLogDateStr) return;
+      const logs = getLogs();
+      logs[selectedLogDateStr] = {
+        bbt: document.getElementById('log-bbt').value,
+        mucus: document.getElementById('log-mucus').value,
+        symptom: document.getElementById('log-symptom').value,
+      };
+
+      if(!logs[selectedLogDateStr].bbt && !logs[selectedLogDateStr].mucus && !logs[selectedLogDateStr].symptom) {
+        delete logs[selectedLogDateStr];
+      }
+
+      saveLogs(logs);
+      document.getElementById('log-save-msg').style.display = 'block';
+      renderCalendar();
+      updateChart();
+    });
+
+    document.getElementById('btn-share').addEventListener('click', async () => {
+      const nextP = document.getElementById('res-next-period').textContent;
+      const ov = document.getElementById('res-ovulation').textContent;
+      const fert = document.getElementById('res-fertile').textContent;
+
+      const text = `🌸 My Cycle Summary from Ali Imperiale's Tracker 🌸\n\n🩸 Next Period: ${nextP}\n✨ Estimated Ovulation: ${ov}\n🌿 Fertile Window: ${fert}\n\nTrack yours at: https://aliimperiale.com/fertility-tracking-calculator.html`;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        const msg = document.getElementById('share-msg');
+        msg.style.display = 'inline';
+        setTimeout(() => msg.style.display = 'none', 3000);
+      } catch (err) {
+        console.error('Failed to copy', err);
+      }
+    });
+
+    // Auto-calculate if settings exist
+    if (savedSettings) {
+      calculateCycles();
+    }
+
+  });
+</script>
+</body>
+</html>
