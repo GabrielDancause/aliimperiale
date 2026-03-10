@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consent Communication Scripts Generator | Ali Imperiale</title>
+  <meta name="description" content="Generate personalized consent scripts and practice conversations with our interactive role-play tool. Learn effective communication for intimacy and boundaries.">
+  <meta property="og:title" content="Consent Communication Scripts Generator | Ali Imperiale">
+  <meta property="og:description" content="Generate personalized consent scripts and practice conversations with our interactive role-play tool. Learn effective communication for intimacy and boundaries.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/consent-scripts-generator.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/consent-scripts-generator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .site-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      background: #2E3E24;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-logo { height: 32px; width: auto; display: block; }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      color: #FAF8EB;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #AD9846; }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #2E3E24;
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 16px;
+        border-top: 1px solid rgba(250, 248, 235, 0.1);
+      }
+      .nav-links.mobile-active { display: flex; }
+    }
+
+    /* Tool Styles */
+    .tool-tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: #fff;
+      border: 2px solid #2E3E24;
+      color: #2E3E24;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 1rem;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .tool-section { display: none; }
+    .tool-section.active { display: block; }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(46,62,36,0.06);
+      margin-bottom: 24px;
+      border: 1px solid #e8e4d4;
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      color: #2E3E24;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #FAF8EB;
+      padding-bottom: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .option-card {
+      position: relative;
+      border: 2px solid #e8e4d4;
+      border-radius: 12px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      background: #fff;
+    }
+    .option-card:hover { border-color: #AD9846; }
+    .option-card.selected {
+      border-color: #2E3E24;
+      background: #FAF8EB;
+    }
+
+    .option-input {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 12px;
+      position: relative;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .option-input::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background: #2E3E24;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.2s;
+    }
+    .option-input:checked::before { transform: translate(-50%, -50%) scale(1); }
+
+    .option-text {
+      font-weight: 500;
+      color: #5a6b50;
+      font-size: 0.95rem;
+    }
+    .option-card.selected .option-text { color: #2E3E24; }
+
+    .btn-submit {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-family: 'Montserrat', sans-serif;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: #3a4f2d; }
+
+    .results-area {
+      margin-top: 32px;
+      display: none;
+    }
+    .script-box {
+      background: #FAF8EB;
+      border-left: 4px solid #AD9846;
+      padding: 24px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2E3E24;
+      position: relative;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .btn-action {
+      flex: 1;
+      padding: 14px;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.2s;
+      background: #fff;
+      border: 2px solid #2E3E24;
+      color: #2E3E24;
+    }
+    .btn-action:hover {
+      background: #FAF8EB;
+    }
+    .btn-action.primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    .btn-action.primary:hover {
+      background: #3a4f2d;
+    }
+
+    .scenario-box {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      color: #2E3E24;
+    }
+    .feedback-box {
+      display: none;
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    .feedback-box.success {
+      background: #e8f5e9;
+      border: 1px solid #c8e6c9;
+      color: #2e7d32;
+    }
+    .feedback-box.warning {
+      background: #fff3e0;
+      border: 1px solid #ffe0b2;
+      color: #e65100;
+    }
+    .rp-progress {
+      text-align: center;
+      font-weight: 600;
+      color: #AD9846;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      .card { padding: 24px; }
+      .options-grid { grid-template-columns: 1fr; }
+      .action-buttons { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header" style="text-align:center; padding: 60px 20px 40px;">
+    <h1 style="font-family:'Montserrat',sans-serif; color:#2E3E24; font-size: 2.5rem; margin-bottom: 16px; font-weight:700;">Consent Communication Scripts Generator</h1>
+    <p style="color:#5a6b50; max-width:600px; margin:0 auto; line-height:1.6; font-size:1.1rem;">
+      Practice effective consent conversations. Generate personalized scripts or try the interactive role-play tool to build your confidence in setting boundaries and checking in.
+    </p>
+  </header>
+
+  <main class="tracker-container" style="max-width: 900px; margin: 0 auto 80px; padding: 0 20px;">
+    <div class="tool-tabs">
+      <button class="tab-btn active" data-tab="generator">Script Generator</button>
+      <button class="tab-btn" data-tab="roleplay">Role-Play Practice</button>
+    </div>
+
+    <!-- Script Generator Section -->
+    <section id="generator" class="tool-section active card">
+      <h2>Generate Your Custom Script</h2>
+      <form id="script-form" onsubmit="event.preventDefault();">
+
+        <div class="form-group">
+          <label>1. What conversation do you want to have?</label>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="category" value="initiating" class="option-input" required>
+              <span class="option-text">Initiating intimacy</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="category" value="checkin" class="option-input">
+              <span class="option-text">Checking in during sex</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="category" value="boundaries" class="option-input">
+              <span class="option-text">Setting a boundary</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="category" value="kink" class="option-input">
+              <span class="option-text">Discussing kinks/fantasies</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="category" value="declining" class="option-input">
+              <span class="option-text">Declining gracefully</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="category" value="violation" class="option-input">
+              <span class="option-text">Addressing a boundary crossed</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>2. What's the relationship dynamic?</label>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="dynamic" value="new" class="option-input" required>
+              <span class="option-text">First-time / New partner</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="dynamic" value="established" class="option-input">
+              <span class="option-text">Established relationship</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="dynamic" value="casual" class="option-input">
+              <span class="option-text">Casual encounter</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="dynamic" value="long_distance" class="option-input">
+              <span class="option-text">Long-distance / Digital</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>3. How direct do you want to be?</label>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="comfort" value="direct" class="option-input" required>
+              <span class="option-text">Direct & Straightforward</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="comfort" value="gentle" class="option-input">
+              <span class="option-text">Gentle & Reassuring</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="comfort" value="playful" class="option-input">
+              <span class="option-text">Playful & Flirty</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 32px;">
+          <label for="specific_activity">4. (Optional) Name a specific activity or boundary:</label>
+          <input type="text" id="specific_activity" placeholder="e.g., trying a new toy, choking, keeping the lights on" style="width: 100%; padding: 14px; border: 2px solid #e8e4d4; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #2E3E24; outline: none;">
+        </div>
+
+        <button type="button" id="btn-generate" class="btn-submit">Generate Scripts</button>
+      </form>
+
+      <div id="results-area" class="results-area">
+        <h3 style="margin-bottom: 20px; color: #2E3E24;">Your Personalized Scripts:</h3>
+        <div id="scripts-container">
+          <!-- Scripts will be injected here -->
+        </div>
+
+        <div class="action-buttons">
+          <button id="btn-copy" class="btn-action primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy Scripts
+          </button>
+          <button id="btn-reset-gen" class="btn-action">Start Over</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Role-Play Practice Section -->
+    <section id="roleplay" class="tool-section card">
+      <div class="rp-progress">Scenario <span id="rp-current">1</span> of <span id="rp-total">5</span></div>
+      <div id="rp-scenario" class="scenario-box">
+        <!-- Scenario text injected here -->
+      </div>
+
+      <div id="rp-options" class="options-grid" style="grid-template-columns: 1fr; gap: 12px; margin-bottom: 20px;">
+        <!-- Option cards injected here -->
+      </div>
+
+      <div id="rp-feedback" class="feedback-box">
+        <!-- Feedback text injected here -->
+      </div>
+
+      <div class="action-buttons" style="margin-top: 32px; display: none;" id="rp-next-container">
+        <button id="btn-rp-next" class="btn-submit">Next Scenario</button>
+      </div>
+
+      <div class="action-buttons" style="margin-top: 32px; display: none;" id="rp-restart-container">
+        <button id="btn-rp-restart" class="btn-action primary">Practice Again</button>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top: 48px;">
+      <h2>Understanding Enthusiastic Consent</h2>
+      <div style="font-size: 1.05rem; line-height: 1.6; color: #5a6b50;">
+        <p style="margin-bottom: 16px;">Consent is more than just the absence of a "no." It's an ongoing, mutual, and enthusiastic agreement to engage in sexual activity. Here's what healthy consent looks like:</p>
+
+        <ul style="margin-bottom: 24px; padding-left: 20px;">
+          <li style="margin-bottom: 12px;"><strong>It's Enthusiastic:</strong> Look for a "hell yes!" If someone is hesitating, unsure, or silent, that is not consent.</li>
+          <li style="margin-bottom: 12px;"><strong>It's Ongoing:</strong> Consent to one activity doesn't mean consent to another. Consent can also be withdrawn at any time during an encounter.</li>
+          <li style="margin-bottom: 12px;"><strong>It's Freely Given:</strong> Consent cannot be valid if it's obtained through pressure, guilt, manipulation, or fear.</li>
+          <li style="margin-bottom: 12px;"><strong>It's Clear-Headed:</strong> Someone who is heavily intoxicated, asleep, or otherwise incapacitated cannot legally or ethically give consent.</li>
+        </ul>
+
+        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 12px; margin-top: 24px;">Non-Verbal Cues</h3>
+        <p style="margin-bottom: 16px;">While verbal check-ins are the gold standard, pay close attention to body language. Pulling away, tensing up, avoiding eye contact, or going silent are signs to pause and check in immediately. Nodding, leaning in, actively participating, and relaxed breathing are positive cues.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Navigating Consent in Different Contexts</h2>
+      <div style="font-size: 1.05rem; line-height: 1.6; color: #5a6b50;">
+        <p style="margin-bottom: 16px;">Consent isn't a one-size-fits-all script. It adapts to the people involved, the relationship dynamic, and the specific situation.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px;">
+          <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; border-left: 4px solid #AD9846;">
+            <h4 style="color: #2E3E24; font-size: 1.1rem; margin-bottom: 8px;">Substances & Alcohol</h4>
+            <p style="font-size: 0.95rem;">Alcohol and drugs impair judgment and the ability to gauge a partner's enthusiasm. If someone is visibly intoxicated, slurring, stumbling, or not fully present, they <strong>cannot</strong> legally or ethically consent. It's always best to wait until everyone is sober.</p>
+          </div>
+
+          <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; border-left: 4px solid #AD9846;">
+            <h4 style="color: #2E3E24; font-size: 1.1rem; margin-bottom: 8px;">Power Dynamics</h4>
+            <p style="font-size: 0.95rem;">Consent can be compromised when there is an imbalance of power (e.g., age differences, professional relationships, or financial dependence). The person with less power may feel pressured to say yes. Extra care and explicit communication are required.</p>
+          </div>
+
+          <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; border-left: 4px solid #AD9846;">
+            <h4 style="color: #2E3E24; font-size: 1.1rem; margin-bottom: 8px;">Cultural Differences</h4>
+            <p style="font-size: 0.95rem;">Different cultures have varying norms around physical touch, direct communication, and gender roles. What might seem like a straightforward check-in to one person could feel overly blunt to another. Take time to understand your partner's communication style.</p>
+          </div>
+
+          <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; border-left: 4px solid #AD9846;">
+            <h4 style="color: #2E3E24; font-size: 1.1rem; margin-bottom: 8px;">Long-Term Relationships</h4>
+            <p style="font-size: 0.95rem;">Even if you've been together for years and have had sex hundreds of times, consent is still required. While it might look more fluid or non-verbal over time, neither partner should ever assume sex is an obligation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>When Boundaries Are Crossed</h2>
+      <div style="font-size: 1.05rem; line-height: 1.6; color: #5a6b50;">
+        <p style="margin-bottom: 16px;">Sometimes, despite our best efforts, a boundary is crossed or miscommunication happens. How you handle these moments is crucial for the health of the relationship.</p>
+
+        <ul style="margin-bottom: 24px; padding-left: 20px;">
+          <li style="margin-bottom: 12px;"><strong>If you crossed a boundary:</strong> Stop immediately. Do not get defensive. Apologize clearly ("I'm sorry, I misunderstood. I'm stopping right now."), and center their feelings, not your own guilt. Check in on what they need (space, comfort, etc.).</li>
+          <li style="margin-bottom: 12px;"><strong>If your boundary was crossed:</strong> You have the right to feel upset, even if it was an accident. Use clear, direct language ("Hey, I said no to that," or "Stop, that hurts.") You are never obligated to continue the encounter or comfort the other person if they feel guilty.</li>
+          <li style="margin-bottom: 12px;"><strong>Seeking Support:</strong> If a boundary violation felt intentional or coercive, that is a serious red flag. You deserve to feel safe. Consider reaching out to a trusted friend or a professional resource.</li>
+        </ul>
+
+        <div style="background: #fff3e0; border: 1px solid #ffe0b2; padding: 20px; border-radius: 12px; margin-top: 24px;">
+          <h4 style="color: #e65100; margin-bottom: 8px; font-size: 1.1rem;">Crisis Resources</h4>
+          <p style="font-size: 0.95rem; color: #e65100; margin-bottom: 0;">If you or someone you know has experienced sexual assault or coercion, help is available. You can call the National Sexual Assault Hotline at <strong>800-656-HOPE</strong> or chat online at <a href="https://www.rainn.org" target="_blank" rel="noopener" style="color: #e65100; text-decoration: underline; font-weight: 600;">RAINN.org</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Tabs
+      const tabs = document.querySelectorAll('.tab-btn');
+      const sections = document.querySelectorAll('.tool-section');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          sections.forEach(s => s.classList.remove('active'));
+
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+      });
+
+      // Generator
+      const form = document.getElementById('script-form');
+      const btnGenerate = document.getElementById('btn-generate');
+      const resultsArea = document.getElementById('results-area');
+      const scriptsContainer = document.getElementById('scripts-container');
+      const btnCopy = document.getElementById('btn-copy');
+      const btnResetGen = document.getElementById('btn-reset-gen');
+
+      const optionCards = form.querySelectorAll('.option-card');
+      optionCards.forEach(card => {
+        const input = card.querySelector('input');
+        input.addEventListener('change', () => {
+          const group = form.querySelectorAll(`input[name="${input.name}"]`);
+          group.forEach(r => r.closest('.option-card').classList.remove('selected'));
+          if(input.checked) card.classList.add('selected');
+        });
+      });
+
+      const scriptDB = {
+        initiating: {
+          new: {
+            direct: ["I'd love to kiss you right now, is that okay?", "I'm really attracted to you. Would you like to go to the bedroom?", "Can I take your shirt off {activity}?"],
+            gentle: ["I'm having a really great time with you. Would it be alright if I kissed you?", "I'd really like to get closer to you tonight, if you're open to it.", "Are you comfortable moving this to the bedroom {activity}?"],
+            playful: ["I've been thinking about kissing you all night. Should we do something about that?", "Tell me what you'd like me to do to you right now.", "I'm ready for round two {activity}. Are you?"]
+          },
+          established: {
+            direct: ["I want you so bad right now. Let's go.", "I've been thinking about you all day. Come here.", "Let's try {activity} tonight."],
+            gentle: ["I missed you today. I'd love to connect intimately tonight.", "Are you in the mood to cuddle and see where things go?", "Would you be up for trying {activity}?"],
+            playful: ["You're looking way too good right now. What are we going to do about it?", "Race you to the bedroom?", "I have a surprise for you tonight involving {activity}."]
+          },
+          casual: {
+            direct: ["Do you want to come back to my place?", "I'm looking to hook up tonight. Are you on the same page?", "Are you down for {activity}?"],
+            gentle: ["I'd love to invite you inside, if you're comfortable with that.", "I'm having fun, what are you looking for tonight?", "I'm open to {activity}, how do you feel about that?"],
+            playful: ["My place or yours?", "What's your stance on sleepovers?", "I was hoping we could try {activity}."]
+          },
+          long_distance: {
+            direct: ["Can we hop on video? I want to see you.", "I'm in the mood to play. Are you free?", "Let's do {activity} together over the phone."],
+            gentle: ["I'm missing your touch tonight. Would you be open to some mutual play?", "Are you feeling up for a spicy call?", "Would you feel comfortable trying {activity} virtually?"],
+            playful: ["What are you wearing right now? Because I want to take it off you.", "I have a fun idea for our FaceTime date tonight.", "Tell me exactly how you'd do {activity} to me right now."]
+          }
+        },
+        checkin: {
+          new: {
+            direct: ["Does this feel good?", "Do you want me to keep going?", "How is the pressure {activity}?"],
+            gentle: ["Just checking in, are you still comfortable?", "Let me know if you need me to slow down or stop.", "Are you liking {activity}?"],
+            playful: ["Tell me what feels the best.", "Do you want harder or softer?", "More of {activity}?"]
+          },
+          established: {
+            direct: ["Is this hitting the spot?", "Do you want to switch positions?", "Are we still good to do {activity}?"],
+            gentle: ["I love doing this with you. Are you feeling okay?", "Are you comfortable if I keep going?", "Is {activity} working for you today?"],
+            playful: ["I can tell you like that. Want me to keep going?", "Tell me exactly what you want me to do next.", "Ready for {activity}?"]
+          },
+          casual: {
+             direct: ["You good?", "Still enjoying this?", "Is {activity} cool?"],
+             gentle: ["Just making sure you're comfortable.", "Let me know if anything hurts or if you want to stop.", "Checking in on {activity}."],
+             playful: ["Having fun yet?", "You're doing great. Keep going?", "Thoughts on {activity}?"]
+          },
+          long_distance: {
+             direct: ["Can you see me okay?", "Are you still enjoying this?", "Are we good to keep doing {activity}?"],
+             gentle: ["I want to make sure you're feeling good on your end.", "Just checking in, are you comfortable?", "Are you enjoying {activity}?"],
+             playful: ["Show me how good that feels.", "Tell me what you're imagining right now.", "More of {activity}?"]
+          }
+        },
+        boundaries: {
+          new: {
+            direct: ["I'm not comfortable with that.", "I'd prefer not to do that tonight.", "I have a hard limit around {activity}."],
+            gentle: ["I'd rather stick to what we were just doing.", "I'm not quite ready for that yet.", "I need a little more time before we try {activity}."],
+            playful: ["Let's save that for another time.", "I'm having too much fun doing this to switch things up.", "Maybe we can work up to {activity} later."]
+          },
+          established: {
+             direct: ["I'm not in the mood for that tonight.", "Can we try something else instead?", "I'm still a no on {activity}."],
+             gentle: ["I know we usually do that, but I'm feeling differently today. Can we stick to kissing?", "My body needs something a bit gentler right now.", "I'm not up for {activity} right now, but I still want to be close to you."],
+             playful: ["Let's try a different flavor tonight.", "I've got a better idea.", "I'm putting a raincheck on {activity}."]
+          },
+          casual: {
+            direct: ["That's a hard no for me.", "I don't do that.", "I don't do {activity}."],
+            gentle: ["I appreciate you asking, but I'm not comfortable with that.", "Let's stick to what we discussed.", "I'm going to pass on {activity}."],
+            playful: ["Not tonight!", "I'm good with just this, thanks.", "Let's skip {activity} for now."]
+          },
+          long_distance: {
+            direct: ["I'm not comfortable doing that on camera.", "I'd rather not talk about that.", "I don't want to do {activity}."],
+            gentle: ["I feel a little exposed doing that. Can we try something else?", "I'm not quite comfortable sharing that yet.", "I'm not ready for {activity} digitally."],
+            playful: ["I have to keep some mystery, don't I?", "Let's stick to audio for a bit.", "I think we should save {activity} for when we see each other."]
+          }
+        },
+        kink: {
+           new: {
+             direct: ["What are your hard limits?", "Do you have any kinks you want to explore?", "Are you interested in {activity}?"],
+             gentle: ["I'm curious about what you enjoy in bed. What feels good for you?", "Is there anything you've always wanted to try but haven't yet?", "Would you ever be open to discussing {activity}?"],
+             playful: ["What's your biggest fantasy?", "Tell me a secret about what turns you on.", "Have you ever thought about {activity}?"]
+           },
+           established: {
+              direct: ["I want to try something new tonight. I've been thinking about...", "Let's go through the Yes/No/Maybe list together.", "I want to do {activity} with you."],
+              gentle: ["I've been reading about some new things and I'd love to share them with you to see what you think.", "I really trust you, and there's something vulnerable I'd like to share about my desires.", "I've been curious about {activity}. How do you feel about it?"],
+              playful: ["If we could do absolutely anything tonight, what would you choose?", "I have a fun game we can play to explore some new things.", "I bet I know what you'd think about {activity}."]
+           },
+           casual: {
+              direct: ["What kind of scenes are you into?", "Are you dominant or submissive?", "Do you play with {activity}?"],
+              gentle: ["I like to know what people are into before we play. What are your favorites?", "Let's chat about our boundaries and interests so we're on the same page.", "I'm interested in {activity}. Is that something you enjoy?"],
+              playful: ["What's the wildest thing you've done recently?", "Tell me what gets you going.", "Are you brave enough for {activity}?"]
+           },
+           long_distance: {
+             direct: ["Let's talk fantasies. What are yours?", "I want to hear about what you'd do to me if you were here.", "Tell me your thoughts on {activity}."],
+             gentle: ["I love hearing about what turns you on. Would you share a fantasy with me?", "I've been daydreaming about us. Can I tell you what I'm imagining?", "Have you ever thought about {activity}?"],
+             playful: ["I dare you to tell me your dirtiest thought today.", "Let's write a story together. You start.", "Describe exactly how you'd use {activity} on me."]
+           }
+        },
+        declining: {
+            new: {
+               direct: ["I'm not feeling it tonight.", "I think I'm going to head home.", "I don't want to do {activity} tonight."],
+               gentle: ["I've had a really nice time, but I'm ready to call it a night.", "I'm just looking to cuddle tonight.", "I'm feeling a bit overwhelmed and need to take a break from {activity}."],
+               playful: ["I'm turning into a pumpkin, it's time for bed.", "My social battery is empty, let's just snuggle.", "Let's pause on {activity} and just relax."]
+            },
+            established: {
+               direct: ["I'm too tired tonight.", "Not tonight, let's just go to sleep.", "I'm going to pass on {activity} right now."],
+               gentle: ["I love you, but my body just needs rest tonight.", "Can we just hold each other tonight? I'm not in the headspace for sex.", "I'm not feeling {activity} tonight, but I'd love a massage instead."],
+               playful: ["Raincheck for tomorrow morning?", "I'm tapped out! Let's just cuddle.", "I'll trade you {activity} for a back rub."]
+            },
+            casual: {
+                direct: ["I'm heading out.", "Thanks for hanging out, I'm going to go to sleep now.", "I'm not up for {activity}."],
+                gentle: ["I had fun, but I think it's time for me to go.", "I'm really tired, so I'm going to call it.", "I'm good for now, thanks. Let's chill instead of {activity}."],
+                playful: ["Alright, time for me to bounce.", "I've gotta go get my beauty sleep.", "I think we've done enough {activity} for one night."]
+            },
+            long_distance: {
+                direct: ["I'm going to log off now.", "I'm too tired for a sexy call tonight.", "I don't want to do {activity} tonight."],
+                gentle: ["I loved seeing your face, but I really need to get to sleep.", "I'm not really in the right headspace tonight. Can we just chat normally?", "I'm not feeling up for {activity} tonight, let's just talk."],
+                playful: ["My eyes are closing! Goodnight.", "I'm logging off before I fall asleep on you.", "Let's save {activity} for when I have more energy."]
+            }
+        },
+        violation: {
+            new: {
+                 direct: ["Stop.", "That crossed a line for me.", "I said no to {activity}."],
+                 gentle: ["Hey, I need us to stop. I wasn't comfortable with that.", "I know things are heated, but I really need to stick to the boundary I set.", "I need to pause. That {activity} wasn't working for me."],
+                 playful: ["Woah, slow down there cowboy.", "Let's stick to the script.", "Red light on {activity}!"]
+            },
+            established: {
+                 direct: ["Stop right now. I didn't consent to that.", "We need to talk about what just happened.", "Why did you do {activity} when I said no?"],
+                 gentle: ["Hey, please stop. That didn't feel good and it pushed a boundary.", "I feel hurt that you did that after I said I wasn't comfortable.", "I need us to pause and talk about {activity}."],
+                 playful: ["Hey, that wasn't on the menu tonight.", "You're getting ahead of yourself.", "Let's rewind, {activity} is a no-go."]
+            },
+            casual: {
+                 direct: ["Stop.", "Don't do that.", "I'm leaving because you did {activity}."],
+                 gentle: ["I need you to stop. I'm not comfortable with how this is going.", "I'm going to head out. This isn't working for me.", "I asked you not to do {activity}."],
+                 playful: ["Hey, boundaries!", "Let's keep it to what we agreed on.", "That {activity} is off-limits."]
+            },
+            long_distance: {
+                 direct: ["I'm ending the call.", "Don't ask me to do that again.", "I said no to {activity}."],
+                 gentle: ["I need to stop the call. I felt uncomfortable when you asked for that.", "Please respect my boundaries around what I share.", "I'm logging off because I'm not comfortable with {activity}."],
+                 playful: ["You're pushing your luck!", "Let's change the subject.", "No means no on {activity}!"]
+            }
+        }
+      };
+
+      const fallbackScripts = [
+        "I'd like to talk about our comfort levels and boundaries. What's on your mind?",
+        "I want to make sure we're always on the same page. How are you feeling about things lately?"
+      ];
+
+      btnGenerate.addEventListener('click', () => {
+        const category = form.querySelector('input[name="category"]:checked')?.value;
+        const dynamic = form.querySelector('input[name="dynamic"]:checked')?.value;
+        const comfort = form.querySelector('input[name="comfort"]:checked')?.value;
+        const activity = document.getElementById('specific_activity').value.trim();
+
+        if (!category || !dynamic || !comfort) {
+          alert('Please select all options to generate your script.');
+          return;
+        }
+
+        let generated = [];
+        if (scriptDB[category] && scriptDB[category][dynamic] && scriptDB[category][dynamic][comfort]) {
+          generated = scriptDB[category][dynamic][comfort];
+        } else {
+          generated = fallbackScripts;
+        }
+
+        generated = generated.map(script => {
+          if (activity) {
+             return script.replace('{activity}', activity);
+          } else {
+             let cleaned = script.replace('do {activity}', 'do that')
+                                 .replace('with {activity}', 'with that')
+                                 .replace('on {activity}', 'on that')
+                                 .replace('about {activity}', 'about that')
+                                 .replace('pressure {activity}', 'pressure')
+                                 .replace('{activity}', 'that');
+             return cleaned.replace('  ', ' ').trim();
+          }
+        });
+
+        displayScripts(generated, category, dynamic, comfort, activity);
+      });
+
+      function displayScripts(scripts, category, dynamic, comfort, activity) {
+        scriptsContainer.innerHTML = '';
+        scripts.forEach(script => {
+          const div = document.createElement('div');
+          div.className = 'script-box';
+          div.textContent = script;
+          scriptsContainer.appendChild(div);
+        });
+
+        resultsArea.style.display = 'block';
+
+        try {
+           resultsArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } catch(e){}
+
+        const state = { scripts, category, dynamic, comfort, activity };
+        localStorage.setItem('consentGeneratorData', JSON.stringify(state));
+      }
+
+      btnCopy.addEventListener('click', () => {
+        const scripts = Array.from(scriptsContainer.children)
+                             .map(div => div.textContent)
+                             .join('\n\n');
+
+        const fullText = "My Consent Communication Scripts:\n\n" + scripts;
+
+        navigator.clipboard.writeText(fullText).then(() => {
+          const originalHTML = btnCopy.innerHTML;
+          btnCopy.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+          btnCopy.classList.add('success-state');
+          setTimeout(() => {
+            btnCopy.innerHTML = originalHTML;
+            btnCopy.classList.remove('success-state');
+          }, 2000);
+        }).catch(err => {
+          alert('Failed to copy scripts.');
+        });
+      });
+
+      btnResetGen.addEventListener('click', () => {
+        localStorage.removeItem('consentGeneratorData');
+        form.reset();
+        form.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+        resultsArea.style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Load saved Gen State
+      const savedGen = localStorage.getItem('consentGeneratorData');
+      if (savedGen) {
+        try {
+          const data = JSON.parse(savedGen);
+          if (data.category) {
+            const el = form.querySelector(`input[name="category"][value="${data.category}"]`);
+            if (el) { el.checked = true; el.closest('.option-card').classList.add('selected'); }
+          }
+          if (data.dynamic) {
+            const el = form.querySelector(`input[name="dynamic"][value="${data.dynamic}"]`);
+            if (el) { el.checked = true; el.closest('.option-card').classList.add('selected'); }
+          }
+          if (data.comfort) {
+            const el = form.querySelector(`input[name="comfort"][value="${data.comfort}"]`);
+            if (el) { el.checked = true; el.closest('.option-card').classList.add('selected'); }
+          }
+          if (data.activity) {
+            document.getElementById('specific_activity').value = data.activity;
+          }
+          if (data.scripts && data.scripts.length > 0) {
+            displayScripts(data.scripts, data.category, data.dynamic, data.comfort, data.activity);
+          }
+        } catch(e) {}
+      }
+
+      // Roleplay Logic
+      const roleplayScenarios = [
+        {
+          scenario: "You're hooking up with a new partner. Things are heating up, and they start moving towards taking off your pants, but you only want to stick to making out tonight.",
+          options: [
+            { text: "Say nothing and hope they realize you aren't reciprocating as much.", isCorrect: false, feedback: "Silence is easily misinterpreted in the heat of the moment. Your partner cannot read your mind, and it's always best to be explicit." },
+            { text: "Push their hands away abruptly without saying anything.", isCorrect: false, feedback: "While this communicates a 'no', it can be confusing without context. Verbalizing your boundary is clearer and more helpful." },
+            { text: "\"I'm having a lot of fun, but I just want to stick to kissing tonight.\"", isCorrect: true, feedback: "Excellent! This is clear, direct, and sets a positive tone while firmly establishing your boundary." }
+          ]
+        },
+        {
+          scenario: "You and your long-term partner are trying a new activity. You're starting to feel some pain and discomfort, and you're no longer enjoying it.",
+          options: [
+            { text: "\"Hey, let's pause. That's starting to hurt.\"", isCorrect: true, feedback: "Perfect. It's direct, stops the action immediately, and communicates exactly why without blame." },
+            { text: "\"Ouch! What are you doing?\"", isCorrect: false, feedback: "While this stops the action, it sounds accusatory and might make your partner defensive. It's better to focus on your physical sensation." },
+            { text: "Try to endure it for a few more minutes to see if it gets better.", isCorrect: false, feedback: "Never endure pain during sex unless it's a pre-negotiated part of consensual kink play. Always speak up immediately if your comfort changes." }
+          ]
+        },
+        {
+          scenario: "You asked your partner to try a new kink you're curious about, and they seem hesitant and say, \"Umm, I don't know, maybe later.\"",
+          options: [
+            { text: "\"Come on, just try it for five minutes!\"", isCorrect: false, feedback: "This is coercion. 'Maybe later' is a soft no, and pushing past hesitation invalidates their enthusiastic consent." },
+            { text: "\"No problem at all. Let's just stick to what we were doing.\"", isCorrect: true, feedback: "Great! You respected their hesitation as a 'no' and immediately redirected to an activity you both enthusiastically enjoy." },
+            { text: "Act visibly disappointed and quiet.", isCorrect: false, feedback: "This is a form of guilt-tripping and emotional manipulation, which ruins the safe space needed for open communication." }
+          ]
+        },
+        {
+          scenario: "You've had a few drinks and go back to someone's place. They start initiating sex.",
+          options: [
+            { text: "Go along with it since you went to their place.", isCorrect: false, feedback: "Going to someone's place is not consent to sex. Additionally, alcohol impairs your ability to give clear, legally binding consent." },
+            { text: "\"I've been drinking and I'm not in a clear headspace for this tonight. Can we just hang out or I can call a car?\"", isCorrect: true, feedback: "Excellent. You recognized that intoxication impacts consent and clearly communicated your boundary." },
+            { text: "Just say \"Okay\" even though you feel a bit dizzy.", isCorrect: false, feedback: "If you are dizzy or intoxicated, you cannot enthusiastically consent. A partner who respects you will prioritize your safety over sex." }
+          ]
+        },
+        {
+          scenario: "During sex, you notice your partner has gone completely silent, their body has gone rigid, and they aren't making eye contact.",
+          options: [
+            { text: "Keep going, they probably just really like it.", isCorrect: false, feedback: "Silence and rigidity are often signs of freezing or dissociation, not pleasure. Always stop and check in." },
+            { text: "Ask them a question but keep moving.", isCorrect: false, feedback: "If you notice concerning body language, you need to completely pause the physical action before checking in verbally." },
+            { text: "Stop completely. \"Hey, are you okay? Do you want to take a break?\"", isCorrect: true, feedback: "Perfect. You noticed the non-verbal cues, stopped the action, and initiated a supportive check-in." }
+          ]
+        }
+      ];
+
+      let currentScenarioIndex = 0;
+      const rpScenarioEl = document.getElementById('rp-scenario');
+      const rpOptionsEl = document.getElementById('rp-options');
+      const rpFeedbackEl = document.getElementById('rp-feedback');
+      const rpCurrentEl = document.getElementById('rp-current');
+      const rpTotalEl = document.getElementById('rp-total');
+      const btnRpNext = document.getElementById('btn-rp-next');
+      const btnRpRestart = document.getElementById('btn-rp-restart');
+      const nextContainer = document.getElementById('rp-next-container');
+      const restartContainer = document.getElementById('rp-restart-container');
+
+      rpTotalEl.textContent = roleplayScenarios.length;
+
+      function loadScenario() {
+        const data = roleplayScenarios[currentScenarioIndex];
+        rpCurrentEl.textContent = currentScenarioIndex + 1;
+        rpScenarioEl.textContent = data.scenario;
+        rpFeedbackEl.style.display = 'none';
+        nextContainer.style.display = 'none';
+        restartContainer.style.display = 'none';
+
+        rpOptionsEl.innerHTML = '';
+        data.options.forEach((opt, idx) => {
+          const lbl = document.createElement('label');
+          lbl.className = 'option-card';
+          lbl.style.padding = '20px';
+
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = 'rp_option';
+          input.value = idx;
+          input.className = 'option-input';
+
+          const span = document.createElement('span');
+          span.className = 'option-text';
+          span.textContent = opt.text;
+          span.style.fontSize = '1.05rem';
+
+          lbl.appendChild(input);
+          lbl.appendChild(span);
+
+          input.addEventListener('change', () => {
+             const allInputs = rpOptionsEl.querySelectorAll('input');
+             allInputs.forEach(i => i.disabled = true);
+             lbl.classList.add('selected');
+
+             rpFeedbackEl.style.display = 'block';
+             rpFeedbackEl.textContent = opt.feedback;
+
+             if(opt.isCorrect) {
+               rpFeedbackEl.className = 'feedback-box success';
+               if (currentScenarioIndex < roleplayScenarios.length - 1) {
+                  nextContainer.style.display = 'block';
+               } else {
+                  restartContainer.style.display = 'block';
+               }
+             } else {
+               rpFeedbackEl.className = 'feedback-box warning';
+               setTimeout(() => {
+                 allInputs.forEach(i => i.disabled = false);
+                 lbl.classList.remove('selected');
+                 input.checked = false;
+               }, 3000);
+             }
+          });
+
+          rpOptionsEl.appendChild(lbl);
+        });
+      }
+
+      btnRpNext.addEventListener('click', () => {
+        currentScenarioIndex++;
+        loadScenario();
+      });
+
+      btnRpRestart.addEventListener('click', () => {
+        currentScenarioIndex = 0;
+        loadScenario();
+      });
+
+      loadScenario();
+
+    });
+  </script>
+</body>
+</html>
