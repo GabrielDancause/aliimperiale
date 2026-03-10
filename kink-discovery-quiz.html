@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kink Discovery Quiz — Ali Imperiale</title>
+  <meta name="description" content="Discover your kink and BDSM preferences with this comprehensive, safety-focused exploration quiz. Learn about your power dynamics, sensation play, and more.">
+  <meta property="og:title" content="Kink Discovery Quiz — Ali Imperiale">
+  <meta property="og:description" content="Discover your kink and BDSM preferences with this comprehensive, safety-focused exploration quiz. Learn about your power dynamics, sensation play, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/kink-discovery-quiz.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Kink Discovery Quiz">
+  <meta name="twitter:description" content="Discover your kink and BDSM preferences with this comprehensive, safety-focused exploration quiz.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/kink-discovery-quiz.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is BDSM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BDSM is an acronym that stands for Bondage and Discipline, Dominance and Submission, and Sadism and Masochism. It encompasses a wide range of erotic practices and roleplay involving consensual power exchange, sensation play, and physical restraint."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I communicate my boundaries in kink?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Clear communication and enthusiastic consent are the foundation of healthy kink. Using tools like safewords, traffic light systems (Red/Yellow/Green), and discussing hard and soft limits before playing is crucial."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is SSC and RACK?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SSC stands for 'Safe, Sane, and Consensual', an older framework for kink safety. RACK stands for 'Risk-Aware Consensual Kink', which acknowledges that all activities carry some risk, and focuses on informed consent and understanding those risks beforehand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is aftercare really necessary?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Aftercare is the time immediately following a scene where partners reconnect, soothe each other, and emotionally process the experience. Depending on the intensity of the scene, it can involve cuddling, hydration, quiet time, or debriefing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I explore kink safely if I'm a beginner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start small and slow. Educate yourself using books and reliable online resources. Communicate openly with your partner, establish a safeword, and prioritize trust and consent. Consider joining local munch events (casual, vanilla meetups for kinky people) to learn from the community."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Quiz Specific Styles */
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    .tool-header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .tool-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3rem;
+      font-weight: 400;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+
+    .tool-header p {
+      font-size: 1.1rem;
+      color: #555549;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(46, 62, 36, 0.08);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background-color: #edeadb;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .question-counter {
+      font-size: 0.9rem;
+      color: #AD9846;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .question-text {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #2E3E24;
+      margin-bottom: 30px;
+      line-height: 1.4;
+      min-height: 80px;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-btn {
+      background: #FAF8EB;
+      border: 1px solid rgba(46, 62, 36, 0.1);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: #2E3E24;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .option-btn:hover {
+      background: #edeadb;
+      border-color: rgba(46, 62, 36, 0.2);
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(46, 62, 36, 0.1);
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: #FAF8EB;
+      color: #2E3E24;
+      border: 1px solid rgba(46, 62, 36, 0.2);
+    }
+
+    .btn-secondary:hover {
+      background: #edeadb;
+    }
+
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-1px);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Results Screen */
+    #results-screen {
+      display: none;
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .results-header h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.5rem;
+      color: #2E3E24;
+      margin-bottom: 10px;
+    }
+
+    .primary-style {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #AD9846;
+      margin-bottom: 20px;
+    }
+
+    .breakdown-chart {
+      margin: 30px 0;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .bar-label {
+      width: 150px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .bar-container {
+      flex-grow: 1;
+      height: 12px;
+      background: #FAF8EB;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 0 15px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: #AD9846;
+      border-radius: 6px;
+    }
+
+    .bar-percent {
+      width: 50px;
+      text-align: right;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .style-description {
+      background: #FAF8EB;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      border-left: 4px solid #AD9846;
+    }
+
+    .style-description h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .style-description p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .style-description ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .share-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn-share {
+      background: #AD9846;
+      color: #2E3E24;
+    }
+
+    .btn-share:hover {
+      background: #c4b460;
+    }
+
+    .disclaimer {
+      font-size: 0.8rem;
+      color: #8a8a7a;
+      text-align: center;
+      margin-top: 30px;
+      font-style: italic;
+    }
+
+    /* Educational Section */
+    .edu-section {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .edu-content {
+      background: #fff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(46, 62, 36, 0.08);
+    }
+
+    .edu-content h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.2rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .edu-content h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.4rem;
+      color: #2E3E24;
+      margin: 30px 0 15px;
+    }
+
+    .edu-content p {
+      line-height: 1.7;
+      margin-bottom: 16px;
+      color: #422626;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(46, 62, 36, 0.05);
+    }
+
+    .faq-item h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+
+    .faq-item p {
+      color: #555549;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* Intro Screen */
+    #intro-screen {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .intro-features {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 24px;
+      }
+      .question-text {
+        font-size: 1.1rem;
+      }
+      .bar-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .bar-container {
+        width: 100%;
+        margin: 8px 0;
+      }
+      .bar-percent {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <header class="tool-header">
+    <h1>Kink Discovery Quiz</h1>
+    <p>Discover your kink and BDSM preferences with this comprehensive, safety-focused exploration quiz.</p>
+  </header>
+
+  <main id="main-content">
+    <div class="quiz-container">
+      <div class="card" id="quiz-card">
+
+        <!-- Intro Screen -->
+        <div id="intro-screen">
+          <h2 style="font-size: 1.8rem; margin-bottom: 16px;">Ready to explore your kinky side?</h2>
+          <p style="line-height: 1.6; color: #555549;">Whether you're curious about trying something new or you want to map out your existing desires, this quiz will help you understand your interests in power dynamics, sensation play, roleplay, and more.</p>
+
+          <div class="intro-features">
+            <div class="feature"><span>⏱️</span> 5-8 minutes</div>
+            <div class="feature"><span>📝</span> 28 questions</div>
+            <div class="feature"><span>🔒</span> 100% private</div>
+          </div>
+
+          <button class="btn btn-primary" onclick="startQuiz()" style="font-size: 1.1rem; padding: 16px 40px;">Start Quiz</button>
+        </div>
+
+        <!-- Question Screen -->
+        <div id="question-screen" style="display: none;">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+
+          <div class="question-counter" id="question-counter">Question 1 of 28</div>
+
+          <h2 class="question-text" id="question-text">Loading question...</h2>
+
+          <div class="options-grid" id="options-grid">
+            <!-- Options generated by JS -->
+          </div>
+
+          <div class="nav-buttons">
+            <button class="btn btn-secondary" id="btn-prev" onclick="prevQuestion()" disabled>Previous</button>
+            <button class="btn btn-primary" id="btn-next" onclick="nextQuestion()" disabled>Next</button>
+          </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen">
+          <div class="results-header">
+            <h2>Your Kink Profile</h2>
+            <div class="primary-style" id="result-title">Calculating...</div>
+            <p>Here is your unique breakdown of kink interests.</p>
+          </div>
+
+          <div class="breakdown-chart" id="breakdown-chart">
+            <!-- Bars generated by JS -->
+          </div>
+
+          <div id="result-description" class="style-description">
+            <!-- Description generated by JS -->
+          </div>
+
+          <div id="tips-section" class="style-description" style="background: #fff; border: 1px solid rgba(46, 62, 36, 0.1); border-left: 4px solid #2E3E24;">
+             <!-- Tips generated by JS -->
+          </div>
+
+          <div class="share-container">
+            <button class="btn btn-share" onclick="copyResults()" id="share-btn">Share Results (Copy to Clipboard)</button>
+            <p id="share-toast" style="display:none; color: #2E3E24; margin-top: 10px; font-weight: 500;">Copied to clipboard!</p>
+          </div>
+
+          <div class="nav-buttons" style="justify-content: center;">
+             <button class="btn btn-secondary" onclick="resetQuiz()">Retake Quiz</button>
+          </div>
+
+          <p class="disclaimer">Disclaimer: This quiz is for educational purposes only. Always practice SSC (Safe, Sane, Consensual) or RACK (Risk-Aware Consensual Kink).</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Educational Section -->
+    <section class="edu-section">
+      <div class="edu-content">
+        <h2>A Beginner's Guide to Exploring Kink</h2>
+        <p>Exploring BDSM and kink can be an incredibly rewarding way to deepen intimacy, build trust, and experience new kinds of pleasure. However, because kink often involves pushing physical or emotional boundaries, it requires a higher level of communication and safety awareness than vanilla sex.</p>
+
+        <h3>The Golden Rules: SSC and RACK</h3>
+        <p>There are two main frameworks the kink community uses to approach safety:</p>
+        <p><strong>SSC (Safe, Sane, Consensual):</strong> An older but widely used acronym emphasizing that all play should happen between consenting adults of sound mind, and in a physically safe manner.</p>
+        <p><strong>RACK (Risk-Aware Consensual Kink):</strong> A more modern framework that acknowledges that <em>no</em> physical activity is 100% "safe" (e.g., bondage carries inherent risks). RACK emphasizes that all participants must be educated about the risks involved and consent to them beforehand.</p>
+
+        <h3>Communication is Your Best Tool</h3>
+        <p>Before bringing out any toys or ropes, the most important step is negotiation. Discuss your <strong>hard limits</strong> (things you absolutely will not do under any circumstances) and <strong>soft limits</strong> (things you are hesitant about or only want to try under specific conditions). A "Yes/No/Maybe" list is a great tool for this conversation.</p>
+
+        <p>During play, always use a <strong>Safeword</strong>. The traffic light system is highly recommended:</p>
+        <ul>
+            <li><strong>Red:</strong> Stop everything immediately. Check in.</li>
+            <li><strong>Yellow:</strong> Slow down, lighten up, or I'm approaching my limit.</li>
+            <li><strong>Green:</strong> This feels great, keep going (or go harder).</li>
+        </ul>
+
+        <h3>The Importance of Aftercare</h3>
+        <p>Kink can trigger massive dumps of adrenaline, endorphins, and dopamine. When a scene ends, these hormone levels crash. This phenomenon is known as "Sub Drop" (or "Dom Drop").</p>
+        <p>Aftercare is the deliberate process of coming down from that high together. It can look like bringing your partner a glass of water, wrapping them in a warm blanket, holding them, or just quietly watching a show together. Never skip aftercare, even if the scene was short or light.</p>
+
+        <h3>Community and Resources</h3>
+        <p>You don't have to figure this out alone! The kink community is generally very welcoming to respectful beginners. Look for local "Munches" on FetLife—these are casual, vanilla (no play) meetups at restaurants or cafes where you can meet kinky people, ask questions, and learn from experienced educators.</p>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2 style="text-align: center; font-family: 'New Standard', Georgia, serif; margin-bottom: 30px; font-size: 1.8rem;">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What is BDSM?</h3>
+        <p>BDSM is an acronym that stands for Bondage and Discipline, Dominance and Submission, and Sadism and Masochism. It encompasses a wide range of erotic practices and roleplay involving consensual power exchange, sensation play, and physical restraint.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I communicate my boundaries in kink?</h3>
+        <p>Clear communication and enthusiastic consent are the foundation of healthy kink. Using tools like safewords, traffic light systems (Red/Yellow/Green), and discussing hard and soft limits before playing is crucial.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is SSC and RACK?</h3>
+        <p>SSC stands for "Safe, Sane, and Consensual", an older framework for kink safety. RACK stands for "Risk-Aware Consensual Kink", which acknowledges that all activities carry some risk, and focuses on informed consent and understanding those risks beforehand.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is aftercare really necessary?</h3>
+        <p>Yes! Aftercare is the time immediately following a scene where partners reconnect, soothe each other, and emotionally process the experience. Depending on the intensity of the scene, it can involve cuddling, hydration, quiet time, or debriefing.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can I explore kink safely if I'm a beginner?</h3>
+        <p>Start small and slow. Educate yourself using books and reliable online resources. Communicate openly with your partner, establish a safeword, and prioritize trust and consent. Consider joining local munch events (casual, vanilla meetups for kinky people) to learn from the community.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+
+  <script>
+    const questions = [
+      // Dom / Power Dynamics
+      { text: "I enjoy the idea of taking complete control of my partner's pleasure and actions in the bedroom.", category: "Dom" },
+      { text: "Giving commands and seeing my partner obey them turns me on.", category: "Dom" },
+      { text: "I like the idea of structuring a scene, deciding what we do and when.", category: "Dom" },
+      { text: "I get excited thinking about 'claiming' my partner or leaving temporary marks (bites, hickeys).", category: "Dom" },
+
+      // Sub / Power Dynamics
+      { text: "I find relief in giving up control and letting someone else make all the decisions.", category: "Sub" },
+      { text: "Being told what to do or 'put in my place' during sex is highly arousing to me.", category: "Sub" },
+      { text: "I enjoy the feeling of belonging to my partner or serving their pleasure.", category: "Sub" },
+      { text: "I like the idea of earning praise or being 'punished' (consensually) for misbehaving.", category: "Sub" },
+
+      // Switch
+      { text: "Depending on my mood or my partner, I could easily enjoy being either the one in charge or the one surrendering control.", category: "Switch" },
+      { text: "I enjoy a dynamic where power fluctuates back and forth during a sexual encounter.", category: "Switch" },
+      { text: "I am equally turned on by giving instructions as I am by following them.", category: "Switch" },
+
+      // Sensation Play (Impact, Temp, etc.)
+      { text: "I am intrigued by the idea of using light impact, like spanking or using a paddle or crop.", category: "Sensation" },
+      { text: "The mix of pleasure and a little bit of pain (like biting or scratching) is a major turn-on.", category: "Sensation" },
+      { text: "I am curious about using temperature play, like ice cubes or warm wax, during intimacy.", category: "Sensation" },
+      { text: "The idea of sensory deprivation, like using a blindfold or noise-canceling headphones, excites me.", category: "Sensation" },
+
+      // Roleplay & Fantasy
+      { text: "I frequently fantasize about specific scenarios or power dynamics (e.g., boss/employee, stranger encounters).", category: "Roleplay" },
+      { text: "Dressing up in specific costumes or lingerie to fit a character sounds like a lot of fun.", category: "Roleplay" },
+      { text: "I enjoy dirty talk that involves pretending we are in a different situation than reality.", category: "Roleplay" },
+      { text: "I would be interested in acting out a scene with a script or a predetermined storyline.", category: "Roleplay" },
+
+      // Bondage & Restraint
+      { text: "The idea of physically restraining my partner (using ropes, cuffs, or ties) is very appealing.", category: "Bondage" },
+      { text: "I like the feeling of being physically restrained and unable to move my arms or legs.", category: "Bondage" },
+      { text: "I am interested in learning the artistic or aesthetic side of bondage, like Shibari.", category: "Bondage" },
+      { text: "The restriction of movement combined with teasing feels like a perfect combination.", category: "Bondage" },
+
+      // Safety, Communication & Aftercare (These gauge readiness/mindset, not a kink itself, but contribute to the "Safety & Communication" score)
+      { text: "I always discuss hard and soft limits with a partner before trying something new.", category: "Safety" },
+      { text: "I understand the importance of establishing a safeword and stopping immediately if it's used.", category: "Safety" },
+      { text: "After an intense scene or emotional encounter, taking time for cuddling, hydrating, and reconnecting (aftercare) is essential to me.", category: "Safety" },
+      { text: "I feel confident checking in with my partner mid-scene to ensure they are still enjoying it.", category: "Safety" },
+      { text: "I believe educating myself about the physical risks of an activity (like impact or bondage) is necessary before trying it.", category: "Safety" }
+    ];
+
+    const stylesData = {
+      Dom: {
+        title: "Dominant Tendencies",
+        desc: "You show a strong inclination towards taking the lead. You likely enjoy structuring scenes, making decisions, and guiding your partner's pleasure. Dominance isn't just about ordering people around; it's about holding the space, providing a framework for the scene, and caring for your submissive.",
+        tips: "Always remember that dominance requires immense responsibility. Check in frequently, learn about the physical and emotional risks of the play you enjoy, and prioritize robust aftercare. Your control is a gift given by your partner."
+      },
+      Sub: {
+        title: "Submissive Tendencies",
+        desc: "You find deep pleasure and often psychological relief in surrendering control. Whether you enjoy serving, following instructions, or being physically restrained, submission allows you to quiet your mind and experience intense sensation and emotional release.",
+        tips: "Submission does not mean you have no power. In fact, the submissive holds the ultimate power through their consent and their safeword. Always advocate for your limits beforehand, and never feel guilty for needing to stop a scene."
+      },
+      Switch: {
+        title: "Switch",
+        desc: "You are a chameleon of desire! You enjoy both taking control and surrendering it. Being a switch means you can adapt to different partners or moods, finding pleasure on both sides of the slash (Dom/Sub).",
+        tips: "Communication is key when you are a switch. Be clear with your partner about which 'mode' you are in on any given day, as your needs for aftercare and your triggers may change depending on the role you are playing."
+      },
+      Sensation: {
+        title: "Sensation Seeker",
+        desc: "Your kink is deeply rooted in physical sensation. Whether it's the sting of a crop, the chill of ice, the warmth of wax, or the mystery of a blindfold, you love exploring the edges of what your body can feel.",
+        tips: "Sensation play, especially impact or temperature, carries physical risks. Educate yourself on anatomy (e.g., where is safe to strike, what type of wax is safe to use). Always warm up slowly before moving to more intense sensations."
+      },
+      Roleplay: {
+        title: "Roleplay Enthusiast",
+        desc: "The theater of the mind is your ultimate playground. You love escaping reality, taking on new personas, and exploring different dynamics through fantasy and dirty talk. For you, the psychological buildup is just as important as the physical act.",
+        tips: "Detailed pre-negotiation is vital for roleplay. Discuss the scenario, the characters, and what words or actions are off-limits. Establish a clear way to 'break character' if needed without stopping the whole scene."
+      },
+      Bondage: {
+        title: "Bondage & Restraint",
+        desc: "You are drawn to the physical restriction of movement, whether you are the one tying or the one being tied. This could range from quick-release cuffs for a sense of helplessness, to intricate rope work like Shibari for aesthetic and meditative experiences.",
+        tips: "Safety is paramount in bondage. Always have safety shears (never a knife) nearby. Learn about nerve damage risks, ensure your partner has good circulation, and never leave a restrained person alone."
+      },
+      Safety: {
+        title: "Safety & Communication Focus",
+        desc: "You show a strong commitment to the ethical and safe practice of kink. You understand that consent, negotiation, and aftercare are the foundation that makes BDSM possible and enjoyable.",
+        tips: "Keep up the great work! Continue educating yourself and modeling healthy communication. Your focus on safety makes you an excellent and trustworthy partner."
+      }
+    };
+
+    let currentQuestionIndex = 0;
+    let answers = [];
+
+    const introScreen = document.getElementById('intro-screen');
+    const questionScreen = document.getElementById('question-screen');
+    const resultsScreen = document.getElementById('results-screen');
+    const questionText = document.getElementById('question-text');
+    const optionsGrid = document.getElementById('options-grid');
+    const questionCounter = document.getElementById('question-counter');
+    const btnNext = document.getElementById('btn-next');
+    const btnPrev = document.getElementById('btn-prev');
+    const progressFill = document.getElementById('progress-fill');
+
+    // For sharing results later
+    let shareText = "";
+
+    function startQuiz() {
+      answers = new Array(questions.length).fill(null);
+      currentQuestionIndex = 0;
+      introScreen.style.display = 'none';
+      questionScreen.style.display = 'block';
+      resultsScreen.style.display = 'none';
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const q = questions[currentQuestionIndex];
+      questionText.textContent = q.text;
+      questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+
+      const progress = ((currentQuestionIndex) / questions.length) * 100;
+      progressFill.style.width = `${progress}%`;
+
+      optionsGrid.innerHTML = '';
+
+      const options = [
+        { label: "Not at all my thing", value: 1 },
+        { label: "A little curious", value: 2 },
+        { label: "Neutral / Unsure", value: 3 },
+        { label: "Sounds fun", value: 4 },
+        { label: "Absolutely yes", value: 5 }
+      ];
+
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = opt.label;
+        if (answers[currentQuestionIndex] === opt.value) {
+          btn.style.background = '#2E3E24';
+          btn.style.color = '#FAF8EB';
+        }
+        btn.onclick = () => selectOption(opt.value);
+        optionsGrid.appendChild(btn);
+      });
+
+      btnPrev.disabled = currentQuestionIndex === 0;
+      btnNext.disabled = answers[currentQuestionIndex] === null;
+
+      if (currentQuestionIndex === questions.length - 1) {
+        btnNext.textContent = 'See Results';
+      } else {
+        btnNext.textContent = 'Next';
+      }
+
+      window.scrollTo(0, document.getElementById('quiz-card').offsetTop - 100);
+    }
+
+    function selectOption(value) {
+      answers[currentQuestionIndex] = value;
+      renderQuestion();
+
+      // Auto-advance after short delay if not last question
+      if (currentQuestionIndex < questions.length - 1) {
+        setTimeout(() => nextQuestion(), 300);
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        renderQuestion();
+      } else {
+        calculateResults();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderQuestion();
+      }
+    }
+
+    function calculateResults() {
+      const scores = { Dom: 0, Sub: 0, Switch: 0, Sensation: 0, Roleplay: 0, Bondage: 0, Safety: 0 };
+      const maxScores = { Dom: 0, Sub: 0, Switch: 0, Sensation: 0, Roleplay: 0, Bondage: 0, Safety: 0 };
+
+      for (let i = 0; i < questions.length; i++) {
+        const cat = questions[i].category;
+        scores[cat] += answers[i];
+        maxScores[cat] += 5; // Max score per question is 5
+      }
+
+      const percentages = {};
+      let primaryKinks = [];
+
+      for (const cat in scores) {
+        if (maxScores[cat] > 0) {
+          percentages[cat] = Math.round((scores[cat] / maxScores[cat]) * 100);
+        }
+      }
+
+      showResults(percentages);
+    }
+
+    function showResults(percentages) {
+      questionScreen.style.display = 'none';
+      resultsScreen.style.display = 'block';
+
+      const titleEl = document.getElementById('result-title');
+      const chartEl = document.getElementById('breakdown-chart');
+      const descEl = document.getElementById('result-description');
+      const tipsEl = document.getElementById('tips-section');
+
+      chartEl.innerHTML = '';
+      descEl.innerHTML = `<h3>Your Kink Breakdown</h3><p>Below is a breakdown of your interest levels across different categories of kink and BDSM. The higher the percentage, the stronger your interest or alignment with that category.</p>`;
+      tipsEl.innerHTML = `<h3>Important Notes on Safe Exploration</h3><p>Regardless of your specific interests, always remember the foundation of kink: <strong>Enthusiastic Consent, Clear Communication, and Aftercare.</strong></p>`;
+
+      // Sort for chart display (excluding safety from the main kink bar chart)
+      const kinkCategories = ["Dom", "Sub", "Switch", "Sensation", "Roleplay", "Bondage"];
+      const sortedStyles = kinkCategories.sort((a, b) => percentages[b] - percentages[a]);
+
+      // Determine primary title based on highest score among core kinks
+      let highestCat = sortedStyles[0];
+      titleEl.textContent = "Explorer"; // Default
+      if (percentages[highestCat] >= 75) {
+          titleEl.textContent = stylesData[highestCat].title;
+      }
+
+      // Add descriptions for top 2 categories if they score above 60%
+      let addedDescs = 0;
+      sortedStyles.forEach(style => {
+          if (percentages[style] >= 60 && addedDescs < 2) {
+              descEl.innerHTML += `<h4>${stylesData[style].title}</h4><p>${stylesData[style].desc}</p>`;
+              tipsEl.innerHTML += `<h4>Tips for ${stylesData[style].title}</h4><p>${stylesData[style].tips}</p>`;
+              addedDescs++;
+          }
+      });
+
+      // Safety Score Feedback
+      let safetyScore = percentages["Safety"];
+      if(safetyScore < 70) {
+          tipsEl.innerHTML += `<h4>Safety Knowledge Check</h4><p style="color: #a84232; font-weight: 600;">Your safety awareness score is a bit low. Before exploring physically, we highly recommend reading up on BDSM safety, negotiation, and SSC/RACK principles. Check out the educational resources below!</p>`;
+      } else {
+           tipsEl.innerHTML += `<h4>Safety Knowledge Check</h4><p>Excellent! Your responses show a strong foundation in safety, consent, and communication—the most important parts of any kink dynamic.</p>`;
+      }
+
+
+      sortedStyles.forEach(style => {
+        const row = document.createElement('div');
+        row.className = 'bar-row';
+
+        const label = document.createElement('div');
+        label.className = 'bar-label';
+        label.textContent = stylesData[style].title;
+
+        const barContainer = document.createElement('div');
+        barContainer.className = 'bar-container';
+
+        const barFill = document.createElement('div');
+        barFill.className = 'bar-fill';
+        barFill.style.width = `${percentages[style]}%`;
+
+        // Highlight the top bar
+        if (style === highestCat && percentages[highestCat] >= 60) {
+           barFill.style.background = '#2E3E24';
+        }
+
+        const percent = document.createElement('div');
+        percent.className = 'bar-percent';
+        percent.textContent = `${percentages[style]}%`;
+
+        barContainer.appendChild(barFill);
+        row.appendChild(label);
+        row.appendChild(barContainer);
+        row.appendChild(percent);
+
+        chartEl.appendChild(row);
+      });
+
+      // Prepare share text
+      let topKinkText = (percentages[highestCat] >= 60) ? stylesData[highestCat].title : "Kink Explorer";
+      shareText = `I took the Kink Discovery Quiz on Ali Imperiale's website and my primary interest is ${topKinkText}!\n\nFind out yours: https://aliimperiale.com/kink-discovery-quiz.html`;
+
+      window.scrollTo(0, document.getElementById('quiz-card').offsetTop - 50);
+    }
+
+    function copyResults() {
+      navigator.clipboard.writeText(shareText).then(() => {
+        const toast = document.getElementById('share-toast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 3000);
+      });
+    }
+
+    function resetQuiz() {
+      resultsScreen.style.display = 'none';
+      introScreen.style.display = 'block';
+      window.scrollTo(0, document.getElementById('quiz-card').offsetTop - 50);
+    }
+  </script>
+</body>
+</html>
