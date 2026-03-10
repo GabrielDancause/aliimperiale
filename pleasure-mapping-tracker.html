@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pleasure Mapping Tracker | Ali Imperiale</title>
+  <meta name="description" content="An interactive body map tool to explore and track what feels good. Map your erogenous zones, note sensitivities, and discover your unique pleasure pathways.">
+  <meta property="og:title" content="Pleasure Mapping Tracker | Ali Imperiale">
+  <meta property="og:description" content="An interactive body map tool to explore and track what feels good. Map your erogenous zones and discover your unique pleasure pathways.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/pleasure-mapping-tracker.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pleasure Mapping Tracker | Ali Imperiale">
+  <meta name="twitter:description" content="An interactive body map tool to explore and track what feels good. Map your erogenous zones and discover your unique pleasure pathways.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/pleasure-mapping-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is pleasure mapping?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pleasure mapping is the intentional practice of exploring your body to discover what kinds of touch feel good, neutral, or uncomfortable in different areas. It helps you understand your unique erogenous zones without the immediate pressure or goal of orgasm."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Why are erogenous zones different for everyone?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Erogenous zones vary wildly from person to person because pleasure is subjective and tied to both biology and psychology. Differences in nerve endings, past experiences, and how your brain interprets touch all play a role. What feels amazing to one person might feel ticklish or overwhelming to another."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How do nerve pathways affect pleasure?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nerve pathways are the communication highways between your skin and your brain. When a nerve ending is stimulated, it sends a signal to your brain, which then interprets that signal as pleasure, pain, or neutral sensation. Areas with a higher density of nerve endings, like the lips, nipples, or genitals, tend to be more sensitive, but the brain ultimately decides how that sensation feels."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Can my pleasure map change over time?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Absolutely. Your body and preferences are not static. Hormonal changes, stress, new experiences, and even just getting older can alter how you experience touch. Exploring your body regularly can help you stay connected to what feels good right now."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How should I use this tool?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Take some time in a relaxed, comfortable environment to explore different types of touch—light, firm, teasing, massaging—across your body. When you discover something interesting, click on the map to add a point, categorize it, and leave a note. You can revisit and update your map anytime."
+    }
+  }]
+}
+</script>
+  <style>
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Page Header */
+    .page-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: #FAF8EB;
+    }
+    .page-header p {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.15rem;
+      color: #C6C8BB;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Layout Containers */
+    .tracker-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+    }
+    .workspace {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    @media (max-width: 860px) {
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Cards */
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.08);
+    }
+    .card h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Body Map Styling (CSS Components) */
+    .map-controls {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .view-btn {
+      padding: 8px 16px;
+      background: #FAF8EB;
+      border: 1.5px solid #C6C8BB;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #555549;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .view-btn.active {
+      background: #2E3E24;
+      border-color: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .body-map-container {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      background: #FAF8EB;
+      border-radius: 16px;
+      padding: 20px;
+      overflow: hidden;
+      cursor: crosshair;
+      min-height: 500px;
+      border: 1px dashed rgba(46, 62, 36, 0.2);
+    }
+
+    /* Abstract Body Shapes */
+    .body-canvas {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 420px;
+      pointer-events: none; /* Let clicks pass through to container */
+      opacity: 0.15;
+      transition: opacity 0.3s;
+    }
+    .body-canvas.hidden {
+      display: none;
+    }
+
+    /* Vulva owner general outline */
+    .body-outline-f .head { position: absolute; top: 10px; left: 60px; width: 80px; height: 90px; border-radius: 40px 40px 60px 60px; background: #2E3E24; }
+    .body-outline-f .neck { position: absolute; top: 90px; left: 85px; width: 30px; height: 30px; background: #2E3E24; }
+    .body-outline-f .torso { position: absolute; top: 110px; left: 40px; width: 120px; height: 160px; border-radius: 40px 40px 50px 50px; background: #2E3E24; }
+    .body-outline-f .chest { position: absolute; top: 130px; left: 50px; width: 100px; height: 40px; border-radius: 20px; background: #FAF8EB; opacity: 0.5; }
+    .body-outline-f .arm-l { position: absolute; top: 110px; left: 10px; width: 30px; height: 160px; border-radius: 15px; background: #2E3E24; transform: rotate(10deg); }
+    .body-outline-f .arm-r { position: absolute; top: 110px; left: 160px; width: 30px; height: 160px; border-radius: 15px; background: #2E3E24; transform: rotate(-10deg); }
+    .body-outline-f .hip { position: absolute; top: 250px; left: 35px; width: 130px; height: 70px; border-radius: 30px; background: #2E3E24; }
+    .body-outline-f .leg-l { position: absolute; top: 280px; left: 45px; width: 45px; height: 130px; border-radius: 20px; background: #2E3E24; }
+    .body-outline-f .leg-r { position: absolute; top: 280px; left: 110px; width: 45px; height: 130px; border-radius: 20px; background: #2E3E24; }
+
+    /* Penis owner general outline */
+    .body-outline-m .head { position: absolute; top: 10px; left: 60px; width: 80px; height: 90px; border-radius: 40px 40px 50px 50px; background: #2E3E24; }
+    .body-outline-m .neck { position: absolute; top: 90px; left: 80px; width: 40px; height: 30px; background: #2E3E24; }
+    .body-outline-m .torso { position: absolute; top: 110px; left: 30px; width: 140px; height: 160px; border-radius: 30px 30px 40px 40px; background: #2E3E24; }
+    .body-outline-m .chest { position: absolute; top: 125px; left: 40px; width: 120px; height: 45px; border-radius: 10px; background: #FAF8EB; opacity: 0.5; }
+    .body-outline-m .arm-l { position: absolute; top: 115px; left: -5px; width: 35px; height: 160px; border-radius: 15px; background: #2E3E24; transform: rotate(15deg); }
+    .body-outline-m .arm-r { position: absolute; top: 115px; left: 170px; width: 35px; height: 160px; border-radius: 15px; background: #2E3E24; transform: rotate(-15deg); }
+    .body-outline-m .hip { position: absolute; top: 250px; left: 40px; width: 120px; height: 60px; border-radius: 20px; background: #2E3E24; }
+    .body-outline-m .leg-l { position: absolute; top: 280px; left: 45px; width: 45px; height: 130px; border-radius: 15px; background: #2E3E24; }
+    .body-outline-m .leg-r { position: absolute; top: 280px; left: 110px; width: 45px; height: 130px; border-radius: 15px; background: #2E3E24; }
+
+    /* Map Markers */
+    .map-marker {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+      z-index: 10;
+      border: 2px solid #fff;
+    }
+    .map-marker:hover {
+      transform: translate(-50%, -50%) scale(1.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .marker-good { background: #AD9846; } /* Gold */
+    .marker-explore { background: #4a90e2; } /* Blue */
+    .marker-sensitive { background: #e24a4a; } /* Red */
+    .marker-neutral { background: #C6C8BB; } /* Grey */
+
+    /* Pulse animation for new points */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(173, 152, 70, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(173, 152, 70, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(173, 152, 70, 0); }
+    }
+    .map-marker.new-marker {
+      animation: pulse 1.5s infinite;
+    }
+
+    /* Modal / Form */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(46, 62, 36, 0.4);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+      backdrop-filter: blur(2px);
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #8a8a7a;
+    }
+    .modal-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .radio-option input[type="radio"] {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #C6C8BB;
+      border-radius: 50%;
+      margin: 0;
+      display: grid;
+      place-content: center;
+      cursor: pointer;
+    }
+    .radio-option input[type="radio"]::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      background-color: #AD9846;
+    }
+    .radio-option input[type="radio"]:checked {
+      border-color: #AD9846;
+    }
+    .radio-option input[type="radio"]:checked::before {
+      transform: scale(1);
+    }
+    .radio-label {
+      font-size: 0.9rem;
+      color: #555549;
+    }
+
+    .range-slider-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    input[type="range"] {
+      flex-grow: 1;
+      accent-color: #AD9846;
+      height: 6px;
+      border-radius: 3px;
+      background: #e6e4d9;
+      outline: none;
+    }
+    .range-value {
+      font-weight: 700;
+      color: #2E3E24;
+      width: 24px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .text-input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #C6C8BB;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .text-input:focus {
+      border-color: #AD9846;
+    }
+
+    /* Sidebar / List */
+    .sidebar-card {
+      padding: 24px;
+    }
+    .sidebar-card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .points-list {
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+    .points-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    .points-list::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 3px;
+    }
+    .points-list::-webkit-scrollbar-thumb {
+      background: #C6C8BB;
+      border-radius: 3px;
+    }
+    .point-item {
+      background: #FAF8EB;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+      border-left: 4px solid #ccc;
+      position: relative;
+    }
+    .point-item.type-good { border-left-color: #AD9846; }
+    .point-item.type-explore { border-left-color: #4a90e2; }
+    .point-item.type-sensitive { border-left-color: #e24a4a; }
+    .point-item.type-neutral { border-left-color: #C6C8BB; }
+
+    .point-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      align-items: center;
+    }
+    .point-type {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #2E3E24;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .point-delete {
+      background: none;
+      border: none;
+      color: #8a8a7a;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: color 0.2s;
+    }
+    .point-delete:hover {
+      color: #e24a4a;
+    }
+    .point-notes {
+      font-size: 0.85rem;
+      color: #555549;
+      line-height: 1.5;
+    }
+    .point-sensitivity {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      background: #e6e4d9;
+      padding: 2px 8px;
+      border-radius: 10px;
+      color: #555549;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: #8a8a7a;
+      font-style: italic;
+      font-size: 0.9rem;
+      padding: 20px 0;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      text-align: center;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+      width: 100%;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #AD9846;
+      color: #2E3E24;
+      width: 100%;
+      margin-top: 12px;
+    }
+    .btn-secondary:hover {
+      background: #c4b460;
+      transform: translateY(-1px);
+    }
+    .btn-danger {
+      background: #e6e4d9;
+      color: #e24a4a;
+      margin-top: 16px;
+      width: 100%;
+      font-size: 0.85rem;
+    }
+    .btn-danger:hover {
+      background: #d8d6cb;
+    }
+
+    /* Educational Section */
+    .education-content p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555549;
+      margin-bottom: 16px;
+    }
+    .education-content h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.3rem;
+      color: #2E3E24;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .education-content ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .education-content li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #555549;
+    }
+    .education-content li::before {
+      content: '✨';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.9rem;
+    }
+
+    /* FAQ Section */
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e6e4d9;
+      padding-bottom: 16px;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: #2E3E24;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #555549;
+      display: none;
+    }
+    .faq-answer.open {
+      display: block;
+      margin-top: 8px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #2E3E24;
+      color: #FAF8EB;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 2000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle Navigation" onclick="this.classList.toggle('active'); this.previousElementSibling.classList.toggle('nav-open');">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Pleasure Mapping Tracker</h1>
+    <p>A judgment-free tool to explore your body, discover your erogenous zones, and track what types of touch feel best to you.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="tracker-container" id="main-content">
+
+    <div class="workspace">
+      <!-- Left: Interactive Map Area -->
+      <section class="card" style="padding-top: 24px;">
+        <div class="map-controls">
+          <button class="view-btn active" data-view="vulva">Vulva Owner</button>
+          <button class="view-btn" data-view="penis">Penis Owner</button>
+        </div>
+
+        <div class="body-map-container" id="map-container" title="Click anywhere to add a pleasure point">
+          <!-- Vulva Owner Canvas -->
+          <div class="body-canvas body-outline-f" id="canvas-vulva">
+            <div class="head"></div>
+            <div class="neck"></div>
+            <div class="arm-l"></div>
+            <div class="arm-r"></div>
+            <div class="leg-l"></div>
+            <div class="leg-r"></div>
+            <div class="torso"></div>
+            <div class="chest"></div>
+            <div class="hip"></div>
+          </div>
+
+          <!-- Penis Owner Canvas -->
+          <div class="body-canvas body-outline-m hidden" id="canvas-penis">
+            <div class="head"></div>
+            <div class="neck"></div>
+            <div class="arm-l"></div>
+            <div class="arm-r"></div>
+            <div class="leg-l"></div>
+            <div class="leg-r"></div>
+            <div class="torso"></div>
+            <div class="chest"></div>
+            <div class="hip"></div>
+          </div>
+
+          <!-- Markers will be injected here via JS -->
+          <div id="markers-layer"></div>
+        </div>
+        <p style="text-align: center; font-size: 0.85rem; color: #8a8a7a; margin-top: 16px;">Click anywhere on the map to add a point.</p>
+      </section>
+
+      <!-- Right: Sidebar / List -->
+      <aside>
+        <div class="card sidebar-card">
+          <h2>My Pleasure Points</h2>
+          <div class="points-list" id="points-list">
+            <!-- Points injected via JS -->
+          </div>
+          <div id="points-empty" class="empty-state">
+            Your map is empty. Click on the body map to start tracking what feels good!
+          </div>
+
+          <div style="margin-top: 24px;">
+            <button id="btn-share" class="btn btn-primary">Share My Results</button>
+            <button id="btn-clear" class="btn btn-danger">Reset Map</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Educational Content -->
+    <section class="card education-content" style="margin-bottom: 40px;">
+      <h2>Understanding Your Pleasure Map</h2>
+      <p>Pleasure mapping is the practice of intentionally exploring your body to discover what kinds of touch feel good, without the immediate goal or pressure of reaching orgasm. It's about curiosity and mindfulness.</p>
+
+      <h3>Erogenous Zones & Nerve Pathways</h3>
+      <p>An erogenous zone is simply an area of the human body that has heightened sensitivity, which can elicit a sexual response or feelings of pleasure when stimulated. This happens because these areas often have a higher concentration of nerve endings.</p>
+      <p>When you touch a sensitive area, the nerve endings send electrical signals along nerve pathways (like the pudendal nerve, pelvic nerve, or vagus nerve) up the spinal cord and into the brain. The brain—specifically areas like the somatosensory cortex and the reward center—interprets these signals and decides if the sensation is pleasurable.</p>
+
+      <h3>Why It's Different for Everyone</h3>
+      <ul>
+        <li><strong>Anatomy:</strong> While we share basic nerve structures, the exact distribution and density of nerve endings vary from person to person.</li>
+        <li><strong>The Brain's Role:</strong> Your brain is your biggest sex organ. How it interprets a signal depends heavily on your current mood, stress levels, and emotional connection to the person touching you (or yourself!).</li>
+        <li><strong>Past Experiences:</strong> Our bodies hold memories. An area that was associated with a negative experience might feel numb or uncomfortable, while an area associated with deep intimacy might become highly sensitized.</li>
+        <li><strong>Types of Touch:</strong> A light tickle might feel annoying on your side but incredible on your neck. Firm pressure might feel good on your thighs but painful elsewhere. It's not just <em>where</em> you touch, but <em>how</em>.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">What is pleasure mapping? <span>▼</span></div>
+          <div class="faq-answer">Pleasure mapping is the intentional practice of exploring your body to discover what kinds of touch feel good, neutral, or uncomfortable in different areas. It helps you understand your unique erogenous zones without the immediate pressure or goal of orgasm.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Why are erogenous zones different for everyone? <span>▼</span></div>
+          <div class="faq-answer">Erogenous zones vary wildly from person to person because pleasure is subjective and tied to both biology and psychology. Differences in nerve endings, past experiences, and how your brain interprets touch all play a role. What feels amazing to one person might feel ticklish or overwhelming to another.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do nerve pathways affect pleasure? <span>▼</span></div>
+          <div class="faq-answer">Nerve pathways are the communication highways between your skin and your brain. When a nerve ending is stimulated, it sends a signal to your brain, which then interprets that signal as pleasure, pain, or neutral sensation. Areas with a higher density of nerve endings, like the lips, nipples, or genitals, tend to be more sensitive, but the brain ultimately decides how that sensation feels.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can my pleasure map change over time? <span>▼</span></div>
+          <div class="faq-answer">Absolutely. Your body and preferences are not static. Hormonal changes, stress, new experiences, and even just getting older can alter how you experience touch. Exploring your body regularly can help you stay connected to what feels good right now.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How should I use this tool? <span>▼</span></div>
+          <div class="faq-answer">Take some time in a relaxed, comfortable environment to explore different types of touch—light, firm, teasing, massaging—across your body. When you discover something interesting, click on the map to add a point, categorize it, and leave a note. You can revisit and update your map anytime.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add Point Modal -->
+  <div class="modal-overlay" id="add-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="close-modal" aria-label="Close modal">&times;</button>
+      <h3>Add Pleasure Point</h3>
+      <form id="point-form">
+
+        <div class="form-group">
+          <label>How does it feel?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="point_type" value="good" checked>
+              <span class="radio-label">Feels Good (Pleasurable)</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="point_type" value="explore">
+              <span class="radio-label">Want to Explore More</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="point_type" value="sensitive">
+              <span class="radio-label">Highly Sensitive (Ticklish/Intense)</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="point_type" value="neutral">
+              <span class="radio-label">Neutral / Unsure</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="sensitivity-level">Sensitivity Rating (1-10)</label>
+          <div class="range-slider-container">
+            <input type="range" id="sensitivity-level" min="1" max="10" value="5">
+            <div class="range-value" id="sensitivity-display">5</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="point-notes">Notes (Type of touch, context, etc.)</label>
+          <input type="text" id="point-notes" class="text-input" placeholder="e.g., Light teasing feels best here..." autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Point</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">Action successful!</div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script src="back-to-top.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Constants & State ---
+  const STORAGE_KEY = 'ali_pleasure_map_data';
+  let mapData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  let currentView = 'vulva'; // 'vulva' or 'penis'
+  let pendingPoint = null; // Stores coordinates before modal saves
+
+  // --- DOM Elements ---
+  const viewBtns = document.querySelectorAll('.view-btn');
+  const canvasVulva = document.getElementById('canvas-vulva');
+  const canvasPenis = document.getElementById('canvas-penis');
+  const mapContainer = document.getElementById('map-container');
+  const markersLayer = document.getElementById('markers-layer');
+
+  const pointsList = document.getElementById('points-list');
+  const pointsEmpty = document.getElementById('points-empty');
+  const btnShare = document.getElementById('btn-share');
+  const btnClear = document.getElementById('btn-clear');
+  const toast = document.getElementById('toast');
+
+  // Modal Elements
+  const modal = document.getElementById('add-modal');
+  const closeModalBtn = document.getElementById('close-modal');
+  const pointForm = document.getElementById('point-form');
+  const sensitivitySlider = document.getElementById('sensitivity-level');
+  const sensitivityDisplay = document.getElementById('sensitivity-display');
+  const pointNotes = document.getElementById('point-notes');
+
+  // --- Initialization ---
+  renderApp();
+
+  // --- View Switching ---
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      viewBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentView = btn.dataset.view;
+      if (currentView === 'vulva') {
+        canvasVulva.classList.remove('hidden');
+        canvasPenis.classList.add('hidden');
+      } else {
+        canvasVulva.classList.add('hidden');
+        canvasPenis.classList.remove('hidden');
+      }
+      renderMarkers(); // Re-render markers to filter by view
+    });
+  });
+
+  // --- Map Interaction ---
+  mapContainer.addEventListener('click', (e) => {
+    // Ignore clicks on existing markers
+    if (e.target.classList.contains('map-marker') || e.target.closest('.map-marker')) return;
+
+    // Calculate relative percentages for responsive positioning
+    const rect = mapContainer.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    pendingPoint = { x, y, view: currentView };
+
+    // Reset and open modal
+    pointForm.reset();
+    sensitivitySlider.value = 5;
+    sensitivityDisplay.textContent = '5';
+    modal.classList.add('active');
+    setTimeout(() => pointNotes.focus(), 100);
+  });
+
+  // --- Modal Logic ---
+  sensitivitySlider.addEventListener('input', () => {
+    sensitivityDisplay.textContent = sensitivitySlider.value;
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+    pendingPoint = null;
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      pendingPoint = null;
+    }
+  });
+
+  pointForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!pendingPoint) return;
+
+    const newPoint = {
+      id: Date.now().toString(),
+      x: pendingPoint.x,
+      y: pendingPoint.y,
+      view: pendingPoint.view,
+      type: document.querySelector('input[name="point_type"]:checked').value,
+      sensitivity: parseInt(sensitivitySlider.value, 10),
+      notes: pointNotes.value.trim()
+    };
+
+    mapData.push(newPoint);
+    saveData();
+
+    modal.classList.remove('active');
+    pendingPoint = null;
+
+    renderApp();
+    showToast('Pleasure point added!');
+  });
+
+  // --- Rendering ---
+  function renderApp() {
+    renderMarkers();
+    renderList();
+  }
+
+  function renderMarkers() {
+    markersLayer.innerHTML = '';
+
+    mapData.forEach(point => {
+      // Only show markers for the current body view
+      if (point.view !== currentView) return;
+
+      const marker = document.createElement('div');
+      marker.className = `map-marker marker-${point.type}`;
+      marker.style.left = `${point.x}%`;
+      marker.style.top = `${point.y}%`;
+      marker.title = point.notes ? `${getTypeLabel(point.type)}: ${point.notes}` : getTypeLabel(point.type);
+
+      // Simple pulse animation for the newest point
+      if (point.id === mapData[mapData.length - 1]?.id && (Date.now() - parseInt(point.id)) < 5000) {
+        marker.classList.add('new-marker');
+      }
+
+      markersLayer.appendChild(marker);
+    });
+  }
+
+  function renderList() {
+    pointsList.innerHTML = '';
+
+    if (mapData.length === 0) {
+      pointsEmpty.style.display = 'block';
+      pointsList.style.display = 'none';
+      return;
+    }
+
+    pointsEmpty.style.display = 'none';
+    pointsList.style.display = 'block';
+
+    // Sort newest first
+    const sortedData = [...mapData].sort((a, b) => parseInt(b.id) - parseInt(a.id));
+
+    sortedData.forEach(point => {
+      const item = document.createElement('div');
+      item.className = `point-item type-${point.type}`;
+
+      item.innerHTML = `
+        <div class="point-header">
+          <span class="point-type">${getTypeLabel(point.type)}</span>
+          <button class="point-delete" data-id="${point.id}" aria-label="Delete point">✖</button>
+        </div>
+        ${point.notes ? `<div class="point-notes"></div>` : ''}
+        <div class="point-sensitivity">Sensitivity: ${point.sensitivity}/10</div>
+        <div style="font-size: 0.7rem; color: #a3a598; margin-top: 4px;">Map: ${point.view === 'vulva' ? 'Vulva Owner' : 'Penis Owner'}</div>
+      `;
+
+      // Safely insert user-provided notes to prevent Self-XSS
+      if (point.notes) {
+        item.querySelector('.point-notes').textContent = point.notes;
+      }
+
+      pointsList.appendChild(item);
+    });
+
+    // Bind delete buttons
+    document.querySelectorAll('.point-delete').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idToDelete = e.target.dataset.id;
+        mapData = mapData.filter(p => p.id !== idToDelete);
+        saveData();
+        renderApp();
+        showToast('Point deleted.');
+      });
+    });
+  }
+
+  // --- Utilities ---
+  function getTypeLabel(type) {
+    const labels = {
+      'good': 'Feels Good',
+      'explore': 'Want to Explore',
+      'sensitive': 'Highly Sensitive',
+      'neutral': 'Neutral / Unsure'
+    };
+    return labels[type] || 'Point';
+  }
+
+  function saveData() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(mapData));
+  }
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+  }
+
+  // --- Actions ---
+  btnClear.addEventListener('click', () => {
+    if (mapData.length === 0) return;
+    if (confirm('Are you sure you want to clear your entire pleasure map? This cannot be undone.')) {
+      mapData = [];
+      saveData();
+      renderApp();
+      showToast('Map reset successfully.');
+    }
+  });
+
+  btnShare.addEventListener('click', () => {
+    if (mapData.length === 0) {
+      alert("Your map is empty! Add some points before sharing.");
+      return;
+    }
+
+    const goodPoints = mapData.filter(p => p.type === 'good').length;
+    const explorePoints = mapData.filter(p => p.type === 'explore').length;
+    const highSens = mapData.filter(p => p.sensitivity >= 8).length;
+
+    const shareText = `I'm exploring my body with Ali Imperiale's Pleasure Map! ✨\n\nI've mapped ${mapData.length} points:\n🔥 ${goodPoints} things that feel amazing\n👀 ${explorePoints} areas to explore\n⚡ ${highSens} highly sensitive spots\n\nBuild your own map: https://aliimperiale.com/pleasure-mapping-tracker.html`;
+
+    navigator.clipboard.writeText(shareText).then(() => {
+      showToast('Shareable summary copied to clipboard!');
+    }).catch(err => {
+      console.error('Failed to copy text: ', err);
+      alert('Failed to copy to clipboard.');
+    });
+  });
+
+  // --- FAQ Logic ---
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const icon = question.querySelector('span');
+
+      const isOpen = answer.classList.contains('open');
+
+      // Close all others
+      document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.remove('open'));
+      document.querySelectorAll('.faq-question span').forEach(sp => sp.textContent = '▼');
+
+      if (!isOpen) {
+        answer.classList.add('open');
+        icon.textContent = '▲';
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
