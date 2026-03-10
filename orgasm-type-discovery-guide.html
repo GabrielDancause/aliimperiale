@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orgasm Type Discovery Quiz & Guide | Ali Imperiale</title>
+  <meta name="description" content="Discover and understand the 12+ types of orgasms. Take our interactive quiz to learn about your sensitivity zones and get personalized recommendations and techniques.">
+  <meta property="og:title" content="Orgasm Type Discovery Quiz & Guide | Ali Imperiale">
+  <meta property="og:description" content="Discover and understand the 12+ types of orgasms. Take our interactive quiz to learn about your sensitivity zones and get personalized recommendations and techniques.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/orgasm-type-discovery-guide.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Orgasm Type Discovery Quiz & Guide">
+  <link rel="canonical" href="https://aliimperiale.com/orgasm-type-discovery-guide.html">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-color: #FAF8EB;
+    }
+
+    .guide-header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .guide-header h1 {
+      color: #2E3E24;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .guide-header p {
+      font-size: 1.1rem;
+      color: #4A5A3F;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Quiz Section */
+    .quiz-container {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      margin-bottom: 3rem;
+    }
+
+    .question {
+      display: none;
+    }
+    .question.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question h3 {
+      color: #2E3E24;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border: 2px solid #E5E7EB;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1.1rem;
+      color: #2E3E24;
+    }
+
+    .option-label:hover {
+      border-color: #AD9846;
+      background-color: #FDFCF7;
+    }
+
+    .option-input {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 1rem;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .option-input::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #AD9846;
+      transition: transform 0.2s ease;
+    }
+
+    .option-input:checked::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .option-input:checked + .option-text {
+        font-weight: 600;
+    }
+
+    .quiz-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: #2E3E24;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #3f5431;
+    }
+
+    .btn-secondary {
+      background: #E5E7EB;
+      color: #4B5563;
+    }
+
+    .btn-secondary:hover {
+      background: #D1D5DB;
+    }
+
+    /* Results Section */
+    #results-section {
+      display: none;
+    }
+
+    .results-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+      border-top: 5px solid #AD9846;
+    }
+
+    .results-card h2 {
+      color: #2E3E24;
+      margin-bottom: 1rem;
+    }
+
+    .type-recommendation {
+      background: #FDFCF7;
+      border-left: 4px solid #AD9846;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .type-recommendation h3 {
+        color: #2E3E24;
+        margin-top: 0;
+    }
+
+    .techniques-list {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .techniques-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .techniques-list li::before {
+        content: '✨';
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    /* Progress Tracker */
+    .tracker-section {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-top: 3rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .tracker-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .tracker-item {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem;
+        border: 1px solid #E5E7EB;
+        border-radius: 6px;
+    }
+
+    .tracker-item input[type="checkbox"] {
+        margin-right: 0.75rem;
+        width: 18px;
+        height: 18px;
+        accent-color: #AD9846;
+    }
+
+    .disclaimer {
+      font-size: 0.9rem;
+      color: #6B7280;
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+      background: #E5E7EB;
+      border-radius: 8px;
+    }
+
+    /* Progress Bar */
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #E5E7EB;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    .faq-item {
+        margin-bottom: 1.5rem;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .faq-item h3 {
+        color: #2E3E24;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .faq-item p {
+        color: #4A5A3F;
+        margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+      .guide-header h1 {
+        font-size: 3rem;
+      }
+      .quiz-container {
+        padding: 3rem;
+      }
+    }
+
+
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+</style>
+</head>
+<body>
+
+  <!-- Screen Reader Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Primary Site Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <header class="guide-header">
+      <h1>Orgasm Type Discovery Guide</h1>
+      <p>Hey there! Did you know there are over 12 different types of orgasms you can experience? We all have unique bodies and wiring. Take this quiz to explore your sensitivity zones, discover new pleasure potentials, and get a personalized exploration guide.</p>
+    </header>
+
+    <div class="container">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+      </div>
+
+      <!-- Quiz Area -->
+      <div id="quiz-section" class="quiz-container">
+        <!-- Questions injected via JS -->
+      </div>
+
+      <!-- Results Area -->
+      <div id="results-section">
+        <div class="results-card">
+          <h2>Your Pleasure Profile</h2>
+          <p>Based on your responses, here are the orgasm types that align best with your current preferences and sensitivities. Remember, exploration is about the journey, not just the destination!</p>
+          <div id="recommendations-container"></div>
+        </div>
+
+        <div class="tracker-section">
+            <h2>Your Exploration Tracker</h2>
+            <p>Keep track of the different orgasms you've experienced or want to explore. This is saved locally in your browser.</p>
+            <button class="btn btn-secondary" id="clear-history-btn" style="margin-bottom: 1rem;">Clear History</button>
+            <div class="tracker-grid" id="tracker-grid">
+                <!-- Tracker items injected via JS -->
+            </div>
+        </div>
+
+        <button class="btn btn-primary" style="margin-top: 2rem; width: 100%;" onclick="location.reload()">Take Quiz Again</button>
+      </div>
+
+      <!-- Educational Content / FAQ -->
+      <section class="faq-section">
+          <h2>Frequently Asked Questions About Orgasms</h2>
+          <div class="faq-item">
+              <h3>Are all these orgasm types real?</h3>
+              <p>Yes! While the clitoral and vaginal (G-spot) orgasms are the most commonly discussed, many people with vulvas can experience distinct sensations from different anatomical zones. The physiological response might be similar (muscle contractions, release of tension), but the subjective feeling, buildup, and afterglow can vary wildly depending on what nerves are being stimulated.</p>
+          </div>
+          <div class="faq-item">
+              <h3>I've only ever had one type. Is that normal?</h3>
+              <p>Absolutely, 100% normal. Many people only ever experience clitoral orgasms, and that is a perfectly valid and wonderful way to experience pleasure. Our bodies are all wired differently. Some people are multi-orgasmic or experience blended orgasms easily, while others have very specific pathways to climax. There is no right or wrong way to feel pleasure.</p>
+          </div>
+          <div class="faq-item">
+              <h3>What's a "mental" or "energy" orgasm?</h3>
+              <p>These are orgasms achieved with little to no physical touch! Mental orgasms can happen through intense fantasy, breathwork, or viewing erotica. Energy orgasms (often associated with tantric practices) involve moving arousal energy through the body using breath, focus, and sometimes a partner's non-touching energy work. They require high focus and relaxation.</p>
+          </div>
+      </section>
+
+      <div class="disclaimer">
+        <strong>Educational Purpose Only:</strong> This tool is for educational and self-exploration purposes. It is not medical advice. If you experience pain during sexual activity or have concerns about sexual functioning, please consult with a healthcare professional or a certified sex therapist.
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <!-- Keep standard footer minimal for tool pages -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ali Imperiale. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Are all these orgasm types real?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! While the clitoral and vaginal (G-spot) orgasms are the most commonly discussed, many people with vulvas can experience distinct sensations from different anatomical zones. The physiological response might be similar (muscle contractions, release of tension), but the subjective feeling, buildup, and afterglow can vary wildly depending on what nerves are being stimulated."
+      }
+    }, {
+      "@type": "Question",
+      "name": "I've only ever had one type. Is that normal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely, 100% normal. Many people only ever experience clitoral orgasms, and that is a perfectly valid and wonderful way to experience pleasure. Our bodies are all wired differently. Some people are multi-orgasmic or experience blended orgasms easily, while others have very specific pathways to climax. There is no right or wrong way to feel pleasure."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What's a 'mental' or 'energy' orgasm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "These are orgasms achieved with little to no physical touch! Mental orgasms can happen through intense fantasy, breathwork, or viewing erotica. Energy orgasms (often associated with tantric practices) involve moving arousal energy through the body using breath, focus, and sometimes a partner's non-touching energy work. They require high focus and relaxation."
+      }
+    }]
+  }
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Data Definitions
+      const quizQuestions = [
+        {
+          id: 'q1',
+          question: "When exploring touch, which area tends to bring you the most intense, sharp, or immediate peaks of pleasure?",
+          options: [
+            { id: 'q1_a', text: "Direct or indirect touch to the clitoris (external).", type: "clitoral" },
+            { id: 'q1_b', text: "Internal pressure or fullness on the front wall (G-spot area).", type: "g_spot" },
+            { id: 'q1_c', text: "Deep internal stimulation near the cervix.", type: "cervical" },
+            { id: 'q1_d', text: "I enjoy a mix of both internal and external simultaneously.", type: "blended" }
+          ]
+        },
+        {
+          id: 'q2',
+          question: "How do you prefer the buildup to an orgasm?",
+          options: [
+            { id: 'q2_a', text: "Fast, focused, and escalating tension.", type: "clitoral" },
+            { id: 'q2_b', text: "Slow, rhythmic, aching buildup.", type: "vaginal" },
+            { id: 'q2_c', text: "Mental arousal, deep breathing, full-body relaxation before physical touch.", type: "energy" },
+            { id: 'q2_d', text: "Deep pressure or a feeling of 'fullness'.", type: "anal" }
+          ]
+        },
+        {
+          id: 'q3',
+          question: "Which of these non-genital areas do you find most arousing?",
+          options: [
+            { id: 'q3_a', text: "Nipples and breasts.", type: "nipple" },
+            { id: 'q3_b', text: "Mind/Imagination (fantasies, reading erotica, audio).", type: "mental" },
+            { id: 'q3_c', text: "Breathwork and intentional breathing patterns.", type: "breath" },
+            { id: 'q3_d', text: "I mostly focus on genital areas.", type: "clitoral" }
+          ]
+        },
+        {
+          id: 'q4',
+          question: "If you were to explore a 'new' internal zone, which sounds intriguing?",
+          options: [
+            { id: 'q4_a', text: "The deep anterior (front) wall, past the G-spot (A-spot).", type: "a_spot" },
+            { id: 'q4_b', text: "The area just inside the entrance, near the urethra (U-spot).", type: "u_spot" },
+            { id: 'q4_c', text: "Anal play or external perineum pressure.", type: "anal" },
+            { id: 'q4_d', text: "I prefer sticking to what I know works best right now.", type: "clitoral" }
+          ]
+        }
+      ];
+
+      const orgasmTypes = {
+        clitoral: {
+          title: "Clitoral Orgasm",
+          description: "The most common and accessible type of orgasm for people with vulvas. It's often described as sharp, intense, and localized, leading to a quick peak and release.",
+          techniques: ["Use a targeted vibrator or clitoral suction toy.", "Try the 'coital alignment technique' during partnered play.", "Experiment with different patterns of touch (circles, tapping, consistent pressure)."],
+          anatomy: "The clitoris is an iceberg! The glans (head) is visible, but the crura (legs) and bulbs extend deep inside, wrapping around the vaginal canal."
+        },
+        g_spot: {
+          title: "G-Spot Orgasm",
+          description: "A deeper, more aching climax often accompanied by female ejaculation (squirting). It feels more like a full-body wave than a sharp peak.",
+          techniques: ["Use a curved toy designed for G-spot stimulation.", "Use a 'come hither' motion with fingers against the front vaginal wall.", "Stimulate this area while highly aroused from clitoral play."],
+          anatomy: "The Gräfenberg spot isn't a distinct 'button' but a sensitive area of the front vaginal wall, closely linked to the internal clitoral network and urethral sponge."
+        },
+        vaginal: {
+           title: "Vaginal Orgasm",
+           description: "Achieved through penetration and general friction within the vaginal canal. It often feels like deep internal contractions.",
+           techniques: ["Focus on rhythmic, consistent penetration.", "Try positions that allow for deeper penetration or distinct angles.", "Combine with clitoral stimulation for an easier buildup."],
+           anatomy: "The vaginal canal itself has fewer nerve endings past the first third, but deep pressure stimulates surrounding pelvic structures."
+        },
+        cervical: {
+          title: "Cervical Orgasm",
+          description: "Described as a profound, full-body, sometimes spiritual or emotional release. It requires deep relaxation and usually happens after extended periods of arousal.",
+          techniques: ["Requires a partner or long toy for deep penetration.", "Move slowly—bumping the cervix when not fully aroused can be painful.", "Focus heavily on deep belly breathing to relax the pelvic floor."],
+          anatomy: "The cervix is the gateway to the uterus. It's packed with nerve endings that connect via the pelvic and vagus nerves, bypassing the spinal cord pathways of the clitoris."
+        },
+        blended: {
+          title: "Blended Orgasm",
+          description: "The Holy Grail for many—a combination of simultaneous internal (vaginal/G-spot) and external (clitoral) orgasms.",
+          techniques: ["Use a dual-stimulation toy (like a rabbit vibrator).", "Communicate with a partner to maintain external touch during penetration.", "Build up one area to the edge, then stimulate the other."],
+          anatomy: "Simultaneously stimulating the external glans and internal structures of the clitoral network maximizes nerve firing."
+        },
+        a_spot: {
+          title: "A-Spot (AFE Zone) Orgasm",
+          description: "The Anterior Fornix Erogenous zone can produce rapid, intense orgasms and is known for producing significant natural lubrication.",
+          techniques: ["Use a long, curved toy reaching deep past the G-spot.", "Stimulate the front wall deep inside, just before the cervix.", "Often easiest to access in a doggy-style position."],
+          anatomy: "Located deep in the vagina on the anterior wall, between the G-spot and the cervix."
+        },
+        u_spot: {
+          title: "U-Spot Orgasm",
+          description: "A very sensitive, sometimes ticklish orgasm. It's located right at the entrance, stimulating the urethral sponge.",
+          techniques: ["Use gentle, targeted pressure just inside the upper vaginal entrance.", "Stimulate the small patch of tissue directly below/around the urethra.", "Often paired well with external clitoral touch."],
+          anatomy: "The Urethral spot involves the tissue surrounding the urethra, linked to the highly sensitive Skene's glands."
+        },
+        anal: {
+          title: "Anal Orgasm",
+          description: "A deep, powerful, and sometimes overwhelming orgasm caused by stimulating the nerve-rich anal area and surrounding pelvic floor.",
+          techniques: ["Start slow with plenty of lube and external massage.", "Use small, flared anal toys specifically designed for safe play.", "Combine internal vaginal or clitoral play with external anal pressure."],
+          anatomy: "The anus is packed with nerve endings, and deep stimulation can indirecty massage the internal clitoral legs or prostate (in AMAB bodies)."
+        },
+        nipple: {
+          title: "Nipple / Breast Orgasm",
+          description: "An orgasm achieved entirely through breast and nipple stimulation. Yes, it's real, and it lights up the same areas of the brain as genital stimulation!",
+          techniques: ["Spend extended time on breast massage before focusing on nipples.", "Experiment with temperature play (ice cubes or warm hands).", "Use suction toys designed for nipples."],
+          anatomy: "Stimulating the nipples releases oxytocin, which can trigger uterine and pelvic contractions similar to genital orgasms."
+        },
+        mental: {
+           title: "Mental Orgasm",
+           description: "A climax achieved primarily through the mind—using fantasy, reading erotica, or listening to audio porn without direct physical touch.",
+           techniques: ["Find a quiet space and eliminate physical distractions.", "Listen to immersive, high-quality audio erotica (like Dipsea or Quinn).", "Focus entirely on the psychological buildup of a deep fantasy."],
+           anatomy: "The brain is the biggest sex organ. Mental orgasms prove that arousal is heavily neurologically driven."
+        },
+        breath: {
+           title: "Breathwork Orgasm",
+           description: "Using conscious, controlled breathing patterns to build and release sexual energy, leading to a climax without touch.",
+           techniques: ["Try 'circular breathing'—no pause between inhale and exhale.", "Breathe deeply into your pelvic bowl.", "Combine with mental fantasies or pelvic floor squeezes (Kegels)."],
+           anatomy: "Deep breathing shifts the nervous system into a parasympathetic (relaxed) state while simultaneously oxygenating the blood."
+        },
+        energy: {
+           title: "Energy / Tantric Orgasm",
+           description: "A full-body experience focused on moving 'prana' or life force energy. It's often non-localized and feels like waves of pleasure throughout the entire body.",
+           techniques: ["Practice solo or partnered Tantra or orgasmic meditation.", "Focus on relaxing completely rather than building tension.", "Visualize energy moving up from your pelvis through your spine."],
+           anatomy: "Heavily reliant on the vagus nerve and deep nervous system regulation, bypassing localized genital nerve pathways."
+        }
+      };
+
+      const allOrgasmTypesList = Object.keys(orgasmTypes);
+
+      // Quiz State
+      let currentQuestion = 0;
+      let scores = {
+        clitoral: 0, g_spot: 0, vaginal: 0, cervical: 0, blended: 0,
+        a_spot: 0, u_spot: 0, anal: 0, nipple: 0, mental: 0, breath: 0, energy: 0
+      };
+
+      // DOM Elements
+      const quizSection = document.getElementById('quiz-section');
+      const resultsSection = document.getElementById('results-section');
+      const progressBar = document.getElementById('progress');
+      const recommendationsContainer = document.getElementById('recommendations-container');
+      const trackerGrid = document.getElementById('tracker-grid');
+      const clearHistoryBtn = document.getElementById('clear-history-btn');
+
+      // Initialize Tracker
+      function loadTracker() {
+        trackerGrid.innerHTML = '';
+        const savedData = JSON.parse(localStorage.getItem('orgasmTracker')) || {};
+
+        allOrgasmTypesList.forEach(typeKey => {
+          const typeInfo = orgasmTypes[typeKey];
+          const isChecked = savedData[typeKey] ? 'checked' : '';
+
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'tracker-item';
+          itemDiv.innerHTML = `
+            <input type="checkbox" id="track_${typeKey}" data-type="${typeKey}" ${isChecked}>
+            <label for="track_${typeKey}">${typeInfo.title}</label>
+          `;
+          trackerGrid.appendChild(itemDiv);
+        });
+
+        // Add event listeners to checkboxes
+        const checkboxes = trackerGrid.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+          cb.addEventListener('change', (e) => {
+            const type = e.target.dataset.type;
+            const currentData = JSON.parse(localStorage.getItem('orgasmTracker')) || {};
+            currentData[type] = e.target.checked;
+            localStorage.setItem('orgasmTracker', JSON.stringify(currentData));
+          });
+        });
+      }
+
+      clearHistoryBtn.addEventListener('click', () => {
+         if(confirm("Are you sure you want to clear your exploration history?")) {
+             localStorage.removeItem('orgasmTracker');
+             loadTracker();
+         }
+      });
+
+      // Initialize Quiz
+      function initQuiz() {
+        quizSection.innerHTML = '';
+        quizQuestions.forEach((q, index) => {
+          const questionDiv = document.createElement('div');
+          questionDiv.className = `question ${index === 0 ? 'active' : ''}`;
+          questionDiv.id = `q-block-${index}`;
+
+          let optionsHtml = q.options.map((opt, oIndex) => `
+            <label class="option-label" for="opt_${index}_${oIndex}">
+              <input type="radio" name="q${index}" id="opt_${index}_${oIndex}" value="${opt.type}" class="option-input">
+              <span class="option-text">${opt.text}</span>
+            </label>
+          `).join('');
+
+          questionDiv.innerHTML = `
+            <h3>Question ${index + 1} of ${quizQuestions.length}</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #4A5A3F;">${q.question}</p>
+            <div class="options-grid">
+              ${optionsHtml}
+            </div>
+            <div class="quiz-controls">
+              ${index > 0 ? `<button class="btn btn-secondary" onclick="prevQuestion(${index})">Back</button>` : '<div></div>'}
+              ${index < quizQuestions.length - 1
+                ? `<button class="btn btn-primary" onclick="nextQuestion(${index})">Next</button>`
+                : `<button class="btn btn-primary" onclick="showResults()">Get My Results</button>`}
+            </div>
+          `;
+          quizSection.appendChild(questionDiv);
+        });
+        updateProgress();
+        loadTracker();
+      }
+
+      // Quiz Navigation
+      window.nextQuestion = function(index) {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if (!selected) {
+          alert("Please select an option to continue.");
+          return;
+        }
+        document.getElementById(`q-block-${index}`).classList.remove('active');
+        document.getElementById(`q-block-${index + 1}`).classList.add('active');
+        currentQuestion++;
+        updateProgress();
+      };
+
+      window.prevQuestion = function(index) {
+        document.getElementById(`q-block-${index}`).classList.remove('active');
+        document.getElementById(`q-block-${index - 1}`).classList.add('active');
+        currentQuestion--;
+        updateProgress();
+      };
+
+      function updateProgress() {
+        const percent = ((currentQuestion) / quizQuestions.length) * 100;
+        progressBar.style.width = `${percent}%`;
+      }
+
+      // Show Results
+      window.showResults = function() {
+        const lastSelected = document.querySelector(`input[name="q${quizQuestions.length - 1}"]:checked`);
+        if (!lastSelected) {
+          alert("Please select an option to get your results.");
+          return;
+        }
+
+        // Calculate Scores
+        quizQuestions.forEach((q, index) => {
+          const selected = document.querySelector(`input[name="q${index}"]:checked`).value;
+          scores[selected]++;
+        });
+
+        // Determine top types
+        const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+
+        // Pick top 3 or any with a score > 0. If tied or low scores, just provide a good mix based on answers
+        let topTypes = sortedScores.filter(s => s[1] > 0).map(s => s[0]);
+        if (topTypes.length === 0) topTypes = ['clitoral', 'g_spot']; // fallback
+        if (topTypes.length > 3) topTypes = topTypes.slice(0, 3); // Max 3 recommendations
+
+        // Render Recommendations
+        recommendationsContainer.innerHTML = '';
+        topTypes.forEach(typeKey => {
+            const typeInfo = orgasmTypes[typeKey];
+
+            let techniquesHtml = typeInfo.techniques.map(t => `<li>${t}</li>`).join('');
+
+            const recDiv = document.createElement('div');
+            recDiv.className = 'type-recommendation';
+            recDiv.innerHTML = `
+                <h3>${typeInfo.title}</h3>
+                <p><strong>What it feels like:</strong> ${typeInfo.description}</p>
+                <p><strong>Anatomy focus:</strong> ${typeInfo.anatomy}</p>
+                <h4 style="margin-top: 1rem; color: #2E3E24;">Exploration Techniques:</h4>
+                <ul class="techniques-list">
+                    ${techniquesHtml}
+                </ul>
+            `;
+            recommendationsContainer.appendChild(recDiv);
+        });
+
+        progressBar.style.width = '100%';
+        quizSection.style.display = 'none';
+        resultsSection.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      // Start
+      initQuiz();
+    });
+  </script>
+</body>
+</html>
