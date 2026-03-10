@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Sex Drive Compatibility Analyzer — Ali Imperiale</title>
+  <meta name="description" content="Assess libido mismatches, discover solutions for sexual desire compatibility, and get help for mismatched sex drives with this interactive tool.">
+  <meta property="og:title" content="Interactive Sex Drive Compatibility Analyzer — Ali Imperiale">
+  <meta property="og:description" content="Assess libido mismatches, discover solutions for sexual desire compatibility, and get help for mismatched sex drives with this interactive tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sex-drive-compatibility-analyzer.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/sex-drive-compatibility-analyzer.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background-color: #FAF8EB;
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      margin: 0;
+      padding: 0;
+    }
+    .tool-header {
+      text-align: center;
+      padding: 80px 24px 40px;
+      background: #FAF8EB;
+    }
+    .tool-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .tool-header p {
+      font-size: 1.1rem;
+      color: #4a5c40;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .disclaimer-box {
+      background: #fff;
+      border-left: 4px solid #AD9846;
+      padding: 16px 24px;
+      margin: 24px auto;
+      max-width: 800px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #5a6b50;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .disclaimer-box strong {
+      color: #2E3E24;
+    }
+    .tool-container {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .step-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #e0d8c0;
+      transition: background 0.3s ease;
+    }
+    .step-dot.active {
+      background: #AD9846;
+    }
+    .form-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      margin-bottom: 32px;
+      display: none;
+    }
+    .form-section.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .form-section h2 {
+      font-size: 1.6rem;
+      color: #2E3E24;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    .section-desc {
+      color: #5a6b50;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+    .question-group {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+    .question-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .question-text {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .options-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 600px) {
+      .options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .option-label {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: #FAF8EB;
+      border: 2px solid #e0d8c0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .option-label:hover {
+      border-color: #AD9846;
+    }
+    .option-label.selected {
+      border-color: #2E3E24;
+      background: #f0f4eb;
+    }
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 12px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      position: relative;
+      cursor: pointer;
+    }
+    .option-input:checked::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      width: 10px;
+      height: 10px;
+      background: #2E3E24;
+      border-radius: 50%;
+      animation: scaleIn 0.2s ease;
+    }
+    @keyframes scaleIn {
+      from { transform: translate(-50%, -50%) scale(0); }
+      to { transform: translate(-50%, -50%) scale(1); }
+    }
+    .option-text {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+    }
+    .btn {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 30px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    .btn-primary:hover {
+      background: #4a5c40;
+      transform: translateY(-2px);
+    }
+    .btn-primary:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .btn-secondary {
+      background: #FAF8EB;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+    }
+    .btn-secondary:hover {
+      background: #e0d8c0;
+    }
+
+    /* Results Section */
+    .results-section {
+      display: none;
+    }
+    .results-section.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    .score-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      margin-bottom: 32px;
+    }
+    .score-circle {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: #FAF8EB;
+      border: 8px solid #AD9846;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .score-value {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #2E3E24;
+      line-height: 1;
+    }
+    .score-label {
+      font-size: 0.9rem;
+      color: #5a6b50;
+      margin-top: 4px;
+    }
+    .score-title {
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+    .score-desc {
+      color: #4a5c40;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .chart-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      margin-bottom: 32px;
+    }
+    .chart-container h3 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 24px;
+      color: #2E3E24;
+    }
+
+    .analysis-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      margin-bottom: 32px;
+    }
+    .analysis-card h3 {
+      font-size: 1.5rem;
+      color: #2E3E24;
+      margin-top: 0;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .analysis-item {
+      margin-bottom: 24px;
+    }
+    .analysis-item:last-child {
+      margin-bottom: 0;
+    }
+    .analysis-item h4 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .analysis-item p {
+      color: #5a6b50;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .script-box {
+      background: #f9f6e8;
+      border-left: 4px solid #2E3E24;
+      padding: 20px;
+      margin-top: 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .script-box p {
+      font-style: italic;
+      color: #2E3E24;
+      margin-bottom: 0;
+    }
+
+    .history-section {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid #e0d8c0;
+    }
+    .history-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .history-list {
+      display: grid;
+      gap: 16px;
+    }
+    .history-item {
+      background: #fff;
+      padding: 16px 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .history-date {
+      font-weight: 600;
+      color: #2E3E24;
+    }
+    .history-score {
+      color: #AD9846;
+      font-weight: 700;
+    }
+    .btn-small {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+    .btn-clear {
+      background: none;
+      border: 1px solid #ccc;
+      color: #666;
+    }
+    .btn-clear:hover {
+      background: #ffeeee;
+      border-color: #ffcccc;
+      color: #d9534f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Tool Header -->
+    <header class="tool-header">
+      <h1>Interactive Sex Drive Compatibility Analyzer</h1>
+      <p>A private, judgment-free space to assess libido mismatches, discover solutions for sexual desire compatibility, and get help navigating mismatched sex drives with your partner.</p>
+    </header>
+
+    <div class="tool-container">
+      <div class="disclaimer-box">
+        <strong>Educational Purpose Only:</strong> This tool provides educational information and communication frameworks, not medical diagnoses. If you suspect hormonal issues, medication side effects, or severe distress, please seek professional healthcare or a certified sex therapist.
+      </div>
+
+      <!-- Placeholder for Main UI injected in next step -->
+
+      <div id="app-wrapper">
+        <div class="step-indicator" id="step-dots">
+          <!-- Dots generated by JS -->
+        </div>
+
+        <form id="compatibility-form">
+          <!-- Intro Section -->
+          <div class="form-section active" id="section-intro">
+            <h2>Welcome to the Analyzer</h2>
+            <p class="section-desc">Mismatched libidos are incredibly common! This tool helps you and your partner explore your desires, turn-ons, stress factors, and timing preferences so you can find common ground.</p>
+            <p class="section-desc"><strong>How to use this tool:</strong> Partner A will answer the first set of questions, then Partner B will answer the same set. Be honest, there are no right or wrong answers! We use inclusive language for all bodies and relationships.</p>
+            <div class="btn-group" style="justify-content: flex-end;">
+              <button type="button" class="btn btn-primary" onclick="nextSection()">Start Assessment</button>
+            </div>
+
+            <div class="history-section" id="history-container" style="display: none;">
+              <div class="history-header">
+                <h3>Saved Results</h3>
+                <button type="button" class="btn btn-small btn-clear" onclick="clearAllHistory()">Clear All History</button>
+              </div>
+              <div class="history-list" id="history-list">
+                <!-- History items injected here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Sections will be generated dynamically by JS -->
+          <div id="dynamic-sections"></div>
+
+        </form>
+
+        <div class="results-section" id="results-view">
+          <div class="score-card">
+            <h2 class="score-title">Your Compatibility Profile</h2>
+            <div class="score-circle">
+              <span class="score-value" id="score-display">--</span>
+              <span class="score-label">Desire Match Score</span>
+            </div>
+            <p class="score-desc" id="score-text">Calculating your unique dynamic...</p>
+          </div>
+
+          <div class="chart-container">
+            <h3>Desire Mapping</h3>
+            <canvas id="radarChart"></canvas>
+            <p style="text-align:center; font-size:0.9rem; color:#5a6b50; margin-top:16px;">Visualizing how your preferences align across different areas of sexual desire.</p>
+          </div>
+
+          <div class="analysis-card" id="analysis-content">
+            <!-- Analysis and action plans injected here -->
+          </div>
+
+          <div class="btn-group" style="justify-content: center; gap: 16px;">
+            <button type="button" class="btn btn-secondary" onclick="resetApp()">Start Over</button>
+            <button type="button" class="btn btn-primary" onclick="window.print()">Save / Print Results</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+
+
+    <!-- FAQ Section -->
+    <div style="max-width: 800px; margin: 60px auto; padding: 0 24px;">
+      <h2 style="color: #2E3E24; font-size: 1.8rem; margin-bottom: 24px; text-align: center;">Frequently Asked Questions About Libido Mismatches</h2>
+
+      <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #e0d8c0;">
+        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 8px;">Is it normal for couples to have different sex drives?</h3>
+        <p style="color: #5a6b50; line-height: 1.6;">Absolutely! It is incredibly common for partners to have different levels of sexual desire. Libido naturally fluctuates throughout life due to stress, hormones, medication, and relationship dynamics. A mismatch doesn't mean your relationship is doomed; it just means you need good communication to navigate it.</p>
+      </div>
+
+      <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #e0d8c0;">
+        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 8px;">How can we improve our sexual desire compatibility?</h3>
+        <p style="color: #5a6b50; line-height: 1.6;">Improving compatibility starts with removing pressure. Try scheduling intimacy without the expectation of penetrative sex. Explore different forms of touch (like cuddling or massage), communicate your core turn-ons, and prioritize emotional connection outside the bedroom. Often, addressing underlying stress or relationship resentment is the key to unlocking desire.</p>
+      </div>
+
+      <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #e0d8c0;">
+        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 8px;">When should we seek help for mismatched sex drives?</h3>
+        <p style="color: #5a6b50; line-height: 1.6;">If the libido mismatch is causing significant distress, resentment, or impacting your relationship stability, it's time to seek help. A certified sex therapist can provide professional guidance. Additionally, if the sudden drop in libido is linked to physical pain, hormonal changes, or medication, please consult a healthcare provider.</p>
+      </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is it normal for couples to have different sex drives?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! It is incredibly common for partners to have different levels of sexual desire. Libido naturally fluctuates throughout life due to stress, hormones, medication, and relationship dynamics. A mismatch doesn't mean your relationship is doomed; it just means you need good communication to navigate it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can we improve our sexual desire compatibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Improving compatibility starts with removing pressure. Try scheduling intimacy without the expectation of penetrative sex. Explore different forms of touch (like cuddling or massage), communicate your core turn-ons, and prioritize emotional connection outside the bedroom. Often, addressing underlying stress or relationship resentment is the key to unlocking desire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should we seek help for mismatched sex drives?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If the libido mismatch is causing significant distress, resentment, or impacting your relationship stability, it's time to seek help. A certified sex therapist can provide professional guidance. Additionally, if the sudden drop in libido is linked to physical pain, hormonal changes, or medication, please consult a healthcare provider."
+          }
+        }
+      ]
+    }
+    </script>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <script>
+    const questions = [
+      {
+        id: "frequency",
+        text: "Ideal Frequency: In a perfect world where time and energy aren't issues, how often would you prefer to be intimate?",
+        options: [
+          { value: 1, label: "A few times a month or less" },
+          { value: 2, label: "Once a week" },
+          { value: 3, label: "A few times a week" },
+          { value: 4, label: "Once a day or more" }
+        ]
+      },
+      {
+        id: "timing",
+        text: "Timing: When do you typically feel the most desire?",
+        options: [
+          { value: 1, label: "Mornings (waking up energized)" },
+          { value: 2, label: "Afternoons (mid-day breaks)" },
+          { value: 3, label: "Evenings (winding down)" },
+          { value: 4, label: "Late night (before sleep)" },
+          { value: 5, label: "It varies / anytime!" }
+        ]
+      },
+      {
+        id: "initiation",
+        text: "Initiation Style: How do you prefer sex to begin?",
+        options: [
+          { value: 1, label: "Directly asking or scheduling it" },
+          { value: 2, label: "Subtle physical touch or cuddling" },
+          { value: 3, label: "Spontaneous and passionate" },
+          { value: 4, label: "Responsive (I prefer when my partner starts it)" }
+        ]
+      },
+      {
+        id: "turnons",
+        text: "Core Turn-On: What sparks your desire the most?",
+        options: [
+          { value: 1, label: "Emotional connection and deep conversation" },
+          { value: 2, label: "Visual stimulation or seeing my partner aroused" },
+          { value: 3, label: "Physical touch (massage, kissing, touching)" },
+          { value: 4, label: "Novelty, kink, or trying something new" }
+        ]
+      },
+      {
+        id: "stress",
+        text: "Stress Factors: How does stress affect your libido?",
+        options: [
+          { value: 1, label: "It kills it completely" },
+          { value: 2, label: "It lowers it, but I can get there with effort" },
+          { value: 3, label: "It doesn't affect it much" },
+          { value: 4, label: "Sex actually helps relieve my stress" }
+        ]
+      },
+      {
+        id: "hormones_meds",
+        text: "Hormonal & Medication Influences: Do hormones or medications currently impact your desire?",
+        options: [
+          { value: 1, label: "Yes, significantly (e.g., SSRIs, birth control, cycle changes, menopause, HRT)" },
+          { value: 2, label: "Yes, somewhat or occasionally" },
+          { value: 3, label: "No, not that I notice" }
+        ]
+      },
+      {
+        id: "relationship",
+        text: "Relationship Dynamics: How connected do you feel to your partner right now outside the bedroom?",
+        options: [
+          { value: 1, label: "We feel distant or disconnected" },
+          { value: 2, label: "We're okay, but life is busy" },
+          { value: 3, label: "We feel very connected and close" }
+        ]
+      }
+    ];
+
+    let currentSection = 0;
+    let partnerAAnswers = {};
+    let partnerBAnswers = {};
+    let isPartnerA = true;
+    let radarChartInstance = null;
+
+    // Create UI Sections
+    const dynamicSections = document.getElementById('dynamic-sections');
+    const stepDots = document.getElementById('step-dots');
+
+    function buildForm() {
+      let html = '';
+
+      // Partner A
+      html += `<div class="form-section" id="section-partnerA">
+        <h2>Partner A's Profile</h2>
+        <p class="section-desc">Partner A, answer these questions based on your own genuine desires. Don't worry about matching your partner!</p>
+        ${buildQuestions('partnerA')}
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" onclick="prevSection()">Back</button>
+          <button type="button" class="btn btn-primary" onclick="validateAndNext('partnerA')">Next: Partner B</button>
+        </div>
+      </div>`;
+
+      // Partner B
+      html += `<div class="form-section" id="section-partnerB">
+        <h2>Partner B's Profile</h2>
+        <p class="section-desc">Okay Partner B, it's your turn! Answer these questions based on your own genuine desires.</p>
+        ${buildQuestions('partnerB')}
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" onclick="prevSection()">Back</button>
+          <button type="button" class="btn btn-primary" onclick="validateAndSubmit('partnerB')">Calculate Compatibility</button>
+        </div>
+      </div>`;
+
+      dynamicSections.innerHTML = html;
+
+      // Dots (Intro, Partner A, Partner B)
+      stepDots.innerHTML = `
+        <div class="step-dot active" id="dot-0"></div>
+        <div class="step-dot" id="dot-1"></div>
+        <div class="step-dot" id="dot-2"></div>
+      `;
+
+      loadHistory();
+    }
+
+    function buildQuestions(prefix) {
+      let qHtml = '';
+      questions.forEach((q, idx) => {
+        qHtml += `
+          <div class="question-group" id="qgroup-${prefix}-${q.id}">
+            <label class="question-text">${idx + 1}. ${q.text}</label>
+            <div class="options-grid">
+        `;
+        q.options.forEach((opt, oIdx) => {
+          const optId = `${prefix}-${q.id}-${oIdx}`;
+          qHtml += `
+            <label class="option-label" for="${optId}" onclick="selectOption(this, '${prefix}', '${q.id}')">
+              <input type="radio" class="option-input" name="${prefix}-${q.id}" id="${optId}" value="${opt.value}">
+              <span class="option-text">${opt.label}</span>
+            </label>
+          `;
+        });
+        qHtml += `</div></div>`;
+      });
+      return qHtml;
+    }
+
+    function selectOption(labelElement, prefix, qId) {
+      // clear others
+      const group = document.getElementById(`qgroup-${prefix}-${qId}`);
+      const labels = group.querySelectorAll('.option-label');
+      labels.forEach(l => l.classList.remove('selected'));
+      // select this
+      labelElement.classList.add('selected');
+    }
+
+    function showSection(index) {
+      document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+      const sections = ['section-intro', 'section-partnerA', 'section-partnerB'];
+      if(index < sections.length) {
+         document.getElementById(sections[index]).classList.add('active');
+         // update dots
+         document.querySelectorAll('.step-dot').forEach((d, i) => {
+           d.classList.toggle('active', i <= index);
+         });
+      } else {
+         document.getElementById('compatibility-form').style.display = 'none';
+         document.getElementById('step-dots').style.display = 'none';
+         document.getElementById('results-view').classList.add('active');
+         calculateResults();
+      }
+    }
+
+    function nextSection() {
+      currentSection++;
+      showSection(currentSection);
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    function prevSection() {
+      currentSection--;
+      showSection(currentSection);
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    function validateAndNext(prefix) {
+      if(validateSection(prefix)) {
+        saveAnswers(prefix);
+        nextSection();
+      } else {
+        alert("Please answer all questions before moving on!");
+      }
+    }
+
+    function validateAndSubmit(prefix) {
+      if(validateSection(prefix)) {
+        saveAnswers(prefix);
+        nextSection(); // goes to results
+      } else {
+        alert("Please answer all questions before calculating!");
+      }
+    }
+
+    function validateSection(prefix) {
+      for(let i=0; i<questions.length; i++) {
+        const radios = document.getElementsByName(`${prefix}-${questions[i].id}`);
+        let checked = false;
+        for(let r of radios) { if(r.checked) checked = true; }
+        if(!checked) return false;
+      }
+      return true;
+    }
+
+    function saveAnswers(prefix) {
+      const answers = prefix === 'partnerA' ? partnerAAnswers : partnerBAnswers;
+      questions.forEach(q => {
+        const radios = document.getElementsByName(`${prefix}-${q.id}`);
+        for(let r of radios) {
+          if(r.checked) answers[q.id] = parseInt(r.value);
+        }
+      });
+    }
+
+    function calculateResults() {
+      let diffScore = 0;
+      const maxDiff = 18; // approx max difference across questions
+
+      const chartLabels = [];
+      const dataA = [];
+      const dataB = [];
+
+      questions.forEach(q => {
+        const valA = partnerAAnswers[q.id];
+        const valB = partnerBAnswers[q.id];
+
+        // for chart scaling (normalize out of 10)
+        let maxVal = q.options.length;
+        dataA.push((valA / maxVal) * 10);
+        dataB.push((valB / maxVal) * 10);
+        chartLabels.push(q.id.charAt(0).toUpperCase() + q.id.slice(1));
+
+        if(q.id === 'frequency' || q.id === 'stress' || q.id === 'initiation' || q.id === 'turnons') {
+          diffScore += Math.abs(valA - valB);
+        }
+      });
+
+      let compScore = 100 - ((diffScore / maxDiff) * 100);
+      if (compScore < 20) compScore = 20; // floor
+      if (compScore > 99) compScore = 99; // ceil
+
+      compScore = Math.round(compScore);
+
+      document.getElementById('score-display').innerText = `${compScore}%`;
+
+      let scoreText = "";
+      if (compScore > 80) {
+        scoreText = "Amazing alignment! You and your partner have very similar desire profiles, meaning navigating intimacy is likely pretty smooth sailing.";
+      } else if (compScore > 50) {
+        scoreText = "You're in the \"Normal Mismatch\" zone! Like most couples, you have some differing preferences. This is completely okay and workable with some compassionate communication.";
+      } else {
+        scoreText = "You have distinctly different desire styles right now. This can feel frustrating, but remember: difference doesn't mean broken! It just means you need some solid tools to bridge the gap.";
+      }
+      document.getElementById('score-text').innerText = scoreText;
+
+      renderChart(chartLabels, dataA, dataB);
+      generateAnalysis();
+      saveToHistory(compScore);
+    }
+
+    function renderChart(labels, dataA, dataB) {
+      const ctx = document.getElementById('radarChart').getContext('2d');
+      if (radarChartInstance) {
+        radarChartInstance.destroy();
+      }
+
+      radarChartInstance = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Partner A',
+              data: dataA,
+              backgroundColor: 'rgba(173, 152, 70, 0.2)',
+              borderColor: 'rgba(173, 152, 70, 1)',
+              borderWidth: 2,
+              pointBackgroundColor: 'rgba(173, 152, 70, 1)',
+            },
+            {
+              label: 'Partner B',
+              data: dataB,
+              backgroundColor: 'rgba(46, 62, 36, 0.2)',
+              borderColor: 'rgba(46, 62, 36, 1)',
+              borderWidth: 2,
+              pointBackgroundColor: 'rgba(46, 62, 36, 1)',
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              min: 0,
+              max: 10,
+              ticks: { display: false }
+            }
+          },
+          plugins: {
+            legend: { position: 'bottom' }
+          }
+        }
+      });
+    }
+
+    function generateAnalysis() {
+      let analysisHtml = `<h3>Your Personalized Action Plan</h3>`;
+
+      // Frequency Analysis
+      const freqA = partnerAAnswers['frequency'];
+      const freqB = partnerBAnswers['frequency'];
+      if(Math.abs(freqA - freqB) >= 2) {
+        analysisHtml += `
+          <div class="analysis-item">
+            <h4>Navigating Frequency Mismatches</h4>
+            <p>You have different ideal frequencies for sex. The goal here isn't to force the lower-desire partner to have more sex, or make the higher-desire partner feel rejected. <strong>Action step:</strong> Focus on "menu" intimacy. Can you engage in outercourse, mutual masturbation, or passionate kissing without the pressure of it leading to PIV sex?</p>
+            <div class="script-box">
+              <p>"I know we have different rhythms right now. I'd love to find a way to feel physically connected tonight that feels low-pressure for both of us. How about a massage or cuddling naked?"</p>
+            </div>
+          </div>
+        `;
+      }
+
+      // Initiation Analysis
+      const initA = partnerAAnswers['initiation'];
+      const initB = partnerBAnswers['initiation'];
+      if (initA === 4 || initB === 4) { // Responsive desire
+        analysisHtml += `
+          <div class="analysis-item">
+            <h4>Understanding Responsive Desire</h4>
+            <p>One or both of you experiences <em>responsive desire</em>. This means you rarely feel spontaneous horniness out of nowhere; instead, your arousal starts <em>after</em> physical touch or emotional connection begins. <strong>Action step:</strong> Schedule "warm-up" time! Agree to 15 minutes of kissing or touch without the expectation of sex, and see if desire shows up.</p>
+          </div>
+        `;
+      }
+
+      // Stress Analysis
+      const stressA = partnerAAnswers['stress'];
+      const stressB = partnerBAnswers['stress'];
+      if(stressA === 1 || stressB === 1) {
+        analysisHtml += `
+          <div class="analysis-item">
+            <h4>Stress is a Libido Killer</h4>
+            <p>Stress acts as a massive brake pedal on the nervous system for one of you. You literally cannot get aroused if your brain thinks you're being chased by a bear (or a deadline). <strong>Action step:</strong> Prioritize nervous system regulation <em>before</em> attempting intimacy. Take a bath, do deep breathing, or help take a chore off your partner's plate.</p>
+          </div>
+        `;
+      }
+
+      // Hormones & Meds
+      const hormA = partnerAAnswers['hormones_meds'];
+      const hormB = partnerBAnswers['hormones_meds'];
+      if(hormA === 1 || hormB === 1) {
+        analysisHtml += `
+          <div class="analysis-item">
+            <h4>The Biology Factor</h4>
+            <p>Hormones or medications are playing a significant role in your desire right now. Please remember: <strong>this is not a personal failure, and it's not a rejection of your partner.</strong> It's biology. <strong>Expert Recommendation:</strong> If this is distressing, please consult a healthcare provider to explore adjusting dosages, trying alternatives, or checking hormone panels.</p>
+            <div class="script-box">
+              <p>"My body is going through a lot right now with these hormonal shifts/medications, and it's making my sex drive tank. I still love you and find you attractive, my body just isn't cooperating right now."</p>
+            </div>
+          </div>
+        `;
+      }
+
+      // General advice if everything is somewhat aligned
+      if (Math.abs(freqA - freqB) < 2 && stressA > 1 && stressB > 1) {
+        analysisHtml += `
+          <div class="analysis-item">
+            <h4>Keep the Spark Alive</h4>
+            <p>You have a relatively aligned desire profile! To keep things fresh, make sure you don't fall into a rut. Keep dating each other, maintain outside hobbies, and don't be afraid to introduce new fantasies or toys into your play.</p>
+          </div>
+        `;
+      }
+
+      document.getElementById('analysis-content').innerHTML = analysisHtml;
+    }
+
+    // --- Local Storage History ---
+    function saveToHistory(score) {
+      try {
+        let history = JSON.parse(localStorage.getItem('ali_drive_history')) || [];
+        const dateStr = new Date().toLocaleDateString();
+        history.unshift({ date: dateStr, score: score });
+        if(history.length > 5) history = history.slice(0,5); // keep last 5
+        localStorage.setItem('ali_drive_history', JSON.stringify(history));
+      } catch(e) { console.log('LocalStorage error', e); }
+    }
+
+    function loadHistory() {
+      try {
+        let history = JSON.parse(localStorage.getItem('ali_drive_history')) || [];
+        const container = document.getElementById('history-container');
+        const list = document.getElementById('history-list');
+
+        if(history.length > 0) {
+          container.style.display = 'block';
+          list.innerHTML = '';
+          history.forEach(item => {
+            list.innerHTML += `
+              <div class="history-item">
+                <span class="history-date">${item.date}</span>
+                <span class="history-score">${item.score}% Compatibility</span>
+              </div>
+            `;
+          });
+        } else {
+          container.style.display = 'none';
+        }
+      } catch(e) { console.log('LocalStorage error', e); }
+    }
+
+    function clearAllHistory() {
+      if(confirm("Are you sure you want to clear your saved results?")) {
+        localStorage.removeItem('ali_drive_history');
+        loadHistory();
+      }
+    }
+
+    function resetApp() {
+      currentSection = 0;
+      partnerAAnswers = {};
+      partnerBAnswers = {};
+      document.getElementById('compatibility-form').reset();
+
+      document.querySelectorAll('.option-label').forEach(l => l.classList.remove('selected'));
+
+      document.getElementById('compatibility-form').style.display = 'block';
+      document.getElementById('step-dots').style.display = 'flex';
+      document.getElementById('results-view').classList.remove('active');
+
+      if(radarChartInstance) radarChartInstance.destroy();
+
+      showSection(currentSection);
+      loadHistory();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+      buildForm();
+    });
+  </script>
+
+</body>
+</html>
