@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Wellness Assessment Tool - Ali Imperiale</title>
+  <meta name="description" content="A comprehensive self-assessment tool to evaluate your sexual health and wellness across multiple dimensions, including physical health, emotional well-being, and communication skills.">
+  <meta property="og:title" content="Sexual Wellness Assessment Tool - Ali Imperiale">
+  <meta property="og:description" content="A comprehensive self-assessment tool to evaluate your sexual health and wellness across multiple dimensions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-wellness-assessment.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-wellness-assessment.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a sexual wellness assessment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A sexual wellness assessment is a self-reflective tool designed to help you evaluate various aspects of your sexual health, including physical comfort, emotional state, communication skills, and overall relationship satisfaction. It serves as a starting point to identify areas for growth or support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is sexual health important for overall well-being?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sexual health is deeply interconnected with our physical, mental, and emotional health. A fulfilling sex life and positive relationship with your body can lower stress, improve sleep, boost immune function, and enhance emotional intimacy with partners."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I see a sex therapist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You might consider seeing a sex therapist if you are experiencing persistent distress regarding intimacy, such as ongoing mismatched desire with a partner, difficulty communicating boundaries, anxiety surrounding sex, or physical discomfort that doesn't have a clear medical cause."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I improve communication about sex with my partner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start by having conversations outside of the bedroom when both of you are relaxed. Use \"I\" statements to express your feelings and desires rather than focusing on what your partner isn't doing. Tools like the \"Yes/No/Maybe\" list or a boundaries builder can provide a structured, low-pressure way to start the dialogue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the dimensions of sexual wellness?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common dimensions include physical health (function and safety), emotional well-being (feelings and self-esteem), cognitive knowledge (understanding anatomy and consent), relational intimacy (communication and connection), and socio-cultural factors (how your environment influences your sexuality)."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* Navigation inline styling from index.html */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 480px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+
+    /* Page Layout & Container */
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .page-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: #FAF8EB;
+    }
+    .page-header .subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      color: #C6C8BB;
+      line-height: 1.6;
+    }
+    .tracker-container {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(46, 62, 36, 0.08);
+      margin-bottom: 30px;
+    }
+    .card h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: #2E3E24;
+      text-align: center;
+    }
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555549;
+      margin-bottom: 20px;
+    }
+
+    /* Buttons */
+    .btn-primary, .btn-secondary {
+      display: inline-block;
+      padding: 14px 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: background 0.2s, transform 0.15s, border-color 0.2s;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+    }
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+    .btn-primary:disabled {
+      background: #a9b2a5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #2E3E24;
+      border: 1.5px solid #2E3E24;
+    }
+    .btn-secondary:hover {
+      background: rgba(46, 62, 36, 0.05);
+      transform: translateY(-2px);
+    }
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    /* Assessment Specific Styling */
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background-color: #f0ebd8;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background-color: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .progress-text {
+      font-size: 0.85rem;
+      color: #8a8a7a;
+      text-align: right;
+      margin-bottom: 30px;
+    }
+    .question-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    /* Custom Radio Buttons */
+    .options-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 35px;
+    }
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      border: 1.5px solid #e0dfd1;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color 0.2s, background-color 0.2s;
+      font-weight: 500;
+      color: #2E3E24;
+    }
+    .option-label:hover {
+      border-color: #AD9846;
+      background-color: #FAF8EB;
+    }
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border: 2px solid #C6C8BB;
+      border-radius: 50%;
+      margin-right: 15px;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      flex-shrink: 0;
+    }
+    .option-input:checked {
+      border-color: #AD9846;
+    }
+    .option-input::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      background-color: #AD9846;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.2s ease-in-out;
+    }
+    .option-input:checked::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .option-label.selected {
+      border-color: #AD9846;
+      background-color: rgba(173, 152, 70, 0.05);
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .navigation-buttons .btn-primary {
+      margin-left: auto;
+    }
+
+    /* Results Styling */
+    .score-summary {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px 0;
+    }
+    .overall-score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #FAF8EB;
+      border: 8px solid #AD9846;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 15px;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .dimension-scores {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .dimension-card {
+      background: #FAF8EB;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(46, 62, 36, 0.08);
+    }
+    .dimension-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .dimension-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #2E3E24;
+    }
+    .dimension-score-value {
+      font-weight: 700;
+      color: #AD9846;
+    }
+    .dimension-bar-container {
+      width: 100%;
+      height: 6px;
+      background-color: #e0dfd1;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .dimension-bar {
+      height: 100%;
+      background-color: #AD9846;
+    }
+    .dimension-description {
+      font-size: 0.85rem;
+      color: #555549;
+      line-height: 1.5;
+    }
+
+    .recommendations h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.5rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #f0ebd8;
+      padding-bottom: 10px;
+    }
+    .recommendation-item {
+      margin-bottom: 20px;
+      padding-left: 15px;
+      border-left: 3px solid #AD9846;
+    }
+    .recommendation-title {
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .recommendation-text {
+      font-size: 0.9rem;
+      color: #555549;
+    }
+
+    .educational-section {
+      margin-top: 60px;
+    }
+    .educational-section h2 {
+      text-align: left;
+      font-size: 2rem;
+    }
+    .faq-item {
+      margin-bottom: 25px;
+    }
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 10px;
+    }
+    .faq-answer {
+      font-size: 0.95rem;
+      color: #555549;
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+      .card {
+        padding: 25px 20px;
+      }
+      .action-buttons {
+        flex-direction: column;
+      }
+      .action-buttons button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="nav-hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="header-inner">
+      <h1>Sexual Wellness Assessment</h1>
+      <p class="subtitle">A comprehensive self-assessment to help you evaluate your sexual health, intimacy, and relationship satisfaction.</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="tracker-container">
+    <section class="card intro-card" id="intro-section">
+      <h2>Welcome to Your Wellness Check</h2>
+      <p>This assessment is designed to help you reflect on different dimensions of your sexual wellness: physical health, emotional well-being, communication, satisfaction, knowledge, and relationship quality.</p>
+      <p>Your responses are completely private and processed locally in your browser. When you're ready, let's begin.</p>
+      <button class="btn-primary" id="start-btn">Start Assessment</button>
+    </section>
+
+    <section class="card question-card" id="question-section" style="display: none;">
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p class="progress-text" id="progress-text">Question 1 of X</p>
+
+      <h3 id="question-text" class="question-text"></h3>
+
+      <div id="options-container" class="options-container">
+        <!-- Options will be injected here -->
+      </div>
+
+      <div class="navigation-buttons">
+        <button class="btn-secondary" id="prev-btn" style="display: none;">Previous</button>
+        <button class="btn-primary" id="next-btn" disabled>Next</button>
+      </div>
+    </section>
+
+    <section class="card results-card" id="results-section" style="display: none;">
+      <h2>Your Sexual Wellness Profile</h2>
+      <p>Here is a breakdown of your scores across the different dimensions of sexual wellness.</p>
+
+      <div class="score-summary">
+        <div class="overall-score-circle">
+          <span id="overall-score-value">0</span>%
+        </div>
+        <h3>Overall Wellness Score</h3>
+      </div>
+
+      <div id="dimension-scores" class="dimension-scores">
+        <!-- Dimension scores will be injected here -->
+      </div>
+
+      <div class="recommendations">
+        <h3>Personalized Recommendations</h3>
+        <div id="recommendations-container">
+          <!-- Recommendations will be injected here -->
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn-primary" id="retake-btn">Retake Assessment</button>
+        <button class="btn-secondary" id="share-btn">Share Results</button>
+      </div>
+    </section>
+
+    <section class="card educational-section">
+      <h2>Understanding Sexual Wellness</h2>
+      <p>Sexual wellness is about more than just avoiding disease or unplanned pregnancy. It's a holistic, positive approach to sexuality and intimacy. It encompasses your physical ability to enjoy sex, your emotional connection to your body and your partners, and the knowledge required to navigate your desires safely and consensually.</p>
+
+      <p>Regularly checking in with yourself through tools like this assessment can help you identify areas where you might want to learn more, try something new, or seek professional support.</p>
+
+      <div style="margin-top: 40px;">
+        <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.5rem; margin-bottom: 25px;">Frequently Asked Questions</h3>
+
+        <div class="faq-item">
+          <div class="faq-question">What is a sexual wellness assessment?</div>
+          <div class="faq-answer">A sexual wellness assessment is a self-reflective tool designed to help you evaluate various aspects of your sexual health, including physical comfort, emotional state, communication skills, and overall relationship satisfaction. It serves as a starting point to identify areas for growth or support.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Why is sexual health important for overall well-being?</div>
+          <div class="faq-answer">Sexual health is deeply interconnected with our physical, mental, and emotional health. A fulfilling sex life and positive relationship with your body can lower stress, improve sleep, boost immune function, and enhance emotional intimacy with partners.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">When should I see a sex therapist?</div>
+          <div class="faq-answer">You might consider seeing a sex therapist if you are experiencing persistent distress regarding intimacy, such as ongoing mismatched desire with a partner, difficulty communicating boundaries, anxiety surrounding sex, or physical discomfort that doesn't have a clear medical cause.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How can I improve communication about sex with my partner?</div>
+          <div class="faq-answer">Start by having conversations outside of the bedroom when both of you are relaxed. Use "I" statements to express your feelings and desires rather than focusing on what your partner isn't doing. Tools like the "Yes/No/Maybe" list or a boundaries builder can provide a structured, low-pressure way to start the dialogue.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What are the dimensions of sexual wellness?</div>
+          <div class="faq-answer">Common dimensions include physical health (function and safety), emotional well-being (feelings and self-esteem), cognitive knowledge (understanding anatomy and consent), relational intimacy (communication and connection), and socio-cultural factors (how your environment influences your sexuality).</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Define Questions
+      const questions = [
+        // Physical Health
+        {
+          dimension: 'physical',
+          text: 'How often do you experience physical discomfort or pain during intimacy?',
+          options: [
+            { text: 'Frequently', value: 1 },
+            { text: 'Sometimes', value: 2 },
+            { text: 'Rarely', value: 3 },
+            { text: 'Never', value: 4 }
+          ]
+        },
+        {
+          dimension: 'physical',
+          text: 'How confident do you feel about your knowledge of your own physical sexual responses?',
+          options: [
+            { text: 'Not confident at all', value: 1 },
+            { text: 'Slightly confident', value: 2 },
+            { text: 'Moderately confident', value: 3 },
+            { text: 'Very confident', value: 4 }
+          ]
+        },
+        // Emotional Well-being
+        {
+          dimension: 'emotional',
+          text: 'How often do feelings of stress, anxiety, or body image issues interfere with your sexual desire?',
+          options: [
+            { text: 'Always', value: 1 },
+            { text: 'Often', value: 2 },
+            { text: 'Occasionally', value: 3 },
+            { text: 'Never', value: 4 }
+          ]
+        },
+        {
+          dimension: 'emotional',
+          text: 'After a sexual encounter (with a partner or solo), how do you typically feel emotionally?',
+          options: [
+            { text: 'Guilty, anxious, or disconnected', value: 1 },
+            { text: 'Neutral or indifferent', value: 2 },
+            { text: 'Relaxed and content', value: 3 },
+            { text: 'Fulfilled, energized, and positive', value: 4 }
+          ]
+        },
+        // Communication Skills
+        {
+          dimension: 'communication',
+          text: 'How comfortable are you initiating conversations about your sexual boundaries and desires?',
+          options: [
+            { text: 'Very uncomfortable', value: 1 },
+            { text: 'Somewhat uncomfortable', value: 2 },
+            { text: 'Somewhat comfortable', value: 3 },
+            { text: 'Very comfortable', value: 4 }
+          ]
+        },
+        {
+          dimension: 'communication',
+          text: 'When a partner asks for feedback or adjustment during intimacy, how do you usually respond?',
+          options: [
+            { text: 'I avoid giving honest feedback', value: 1 },
+            { text: 'I hint at what I want, but struggle to be direct', value: 2 },
+            { text: 'I can usually tell them what I need', value: 3 },
+            { text: 'I openly and easily guide them', value: 4 }
+          ]
+        },
+        // Satisfaction Levels
+        {
+          dimension: 'satisfaction',
+          text: 'Overall, how satisfied are you with the frequency and quality of your sexual experiences?',
+          options: [
+            { text: 'Very dissatisfied', value: 1 },
+            { text: 'Somewhat dissatisfied', value: 2 },
+            { text: 'Somewhat satisfied', value: 3 },
+            { text: 'Very satisfied', value: 4 }
+          ]
+        },
+        {
+          dimension: 'satisfaction',
+          text: 'How well does your current sex life align with your ideal desires and fantasies?',
+          options: [
+            { text: 'Not at all aligned', value: 1 },
+            { text: 'Slightly aligned', value: 2 },
+            { text: 'Mostly aligned', value: 3 },
+            { text: 'Perfectly aligned', value: 4 }
+          ]
+        },
+        // Knowledge Gaps
+        {
+          dimension: 'knowledge',
+          text: 'How would you rate your understanding of consent, safer sex practices, and sexual anatomy?',
+          options: [
+            { text: 'Poor - I have a lot to learn', value: 1 },
+            { text: 'Fair - I know the basics', value: 2 },
+            { text: 'Good - I feel fairly educated', value: 3 },
+            { text: 'Excellent - I am very knowledgeable', value: 4 }
+          ]
+        },
+        // Relationship Quality
+        {
+          dimension: 'relationship',
+          text: 'How connected and emotionally intimate do you feel with your partner(s) outside of the bedroom?',
+          options: [
+            { text: 'Very disconnected', value: 1 },
+            { text: 'Somewhat disconnected', value: 2 },
+            { text: 'Somewhat connected', value: 3 },
+            { text: 'Deeply connected (or N/A, happily single)', value: 4 }
+          ]
+        }
+      ];
+
+      // State variables
+      let currentQuestionIndex = 0;
+      let answers = new Array(questions.length).fill(null);
+
+      // DOM Elements
+      const introSection = document.getElementById('intro-section');
+      const questionSection = document.getElementById('question-section');
+      const resultsSection = document.getElementById('results-section');
+
+      const startBtn = document.getElementById('start-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const prevBtn = document.getElementById('prev-btn');
+      const retakeBtn = document.getElementById('retake-btn');
+      const shareBtn = document.getElementById('share-btn');
+
+      const questionText = document.getElementById('question-text');
+      const optionsContainer = document.getElementById('options-container');
+      const progressBar = document.getElementById('progress-bar');
+      const progressText = document.getElementById('progress-text');
+
+      // Initialize UI
+      function init() {
+        startBtn.addEventListener('click', startAssessment);
+        nextBtn.addEventListener('click', handleNext);
+        prevBtn.addEventListener('click', handlePrev);
+        retakeBtn.addEventListener('click', retakeAssessment);
+        shareBtn.addEventListener('click', shareResults);
+
+        loadSavedState();
+      }
+
+      function loadSavedState() {
+        const savedAnswers = localStorage.getItem('ali_sexual_wellness_answers');
+        if (savedAnswers) {
+          try {
+            const parsed = JSON.parse(savedAnswers);
+            if (Array.isArray(parsed) && parsed.length === questions.length) {
+              answers = parsed;
+
+              // Only auto-show results if they finished the whole assessment
+              if (answers.every(a => a !== null)) {
+                showResults();
+              }
+            }
+          } catch (e) {
+            console.error('Could not load saved answers');
+          }
+        }
+      }
+
+      function startAssessment() {
+        introSection.style.display = 'none';
+        questionSection.style.display = 'block';
+        currentQuestionIndex = 0;
+        answers = new Array(questions.length).fill(null);
+        renderQuestion();
+      }
+
+      function renderQuestion() {
+        const question = questions[currentQuestionIndex];
+
+        // Update Progress
+        const progressPercentage = ((currentQuestionIndex) / questions.length) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
+        progressText.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+
+        // Render Text safely
+        questionText.textContent = question.text;
+
+        // Render Options
+        optionsContainer.innerHTML = ''; // Clear previous options
+
+        question.options.forEach((option, index) => {
+          const label = document.createElement('label');
+          label.className = 'option-label';
+
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = 'assessment-option';
+          input.className = 'option-input';
+          input.value = option.value;
+
+          // Restore selected answer if returning
+          if (answers[currentQuestionIndex] === option.value) {
+            input.checked = true;
+            label.classList.add('selected');
+            nextBtn.disabled = false;
+          }
+
+          input.addEventListener('change', (e) => {
+            // Remove selected class from all
+            document.querySelectorAll('.option-label').forEach(l => l.classList.remove('selected'));
+            // Add to current
+            label.classList.add('selected');
+            // Save answer
+            answers[currentQuestionIndex] = parseInt(e.target.value, 10);
+            // Persist
+            localStorage.setItem('ali_sexual_wellness_answers', JSON.stringify(answers));
+            // Enable next button
+            nextBtn.disabled = false;
+          });
+
+          const textSpan = document.createElement('span');
+          textSpan.textContent = option.text;
+
+          label.appendChild(input);
+          label.appendChild(textSpan);
+          optionsContainer.appendChild(label);
+        });
+
+        // Update Navigation Buttons
+        prevBtn.style.display = currentQuestionIndex === 0 ? 'none' : 'inline-block';
+
+        if (currentQuestionIndex === questions.length - 1) {
+          nextBtn.textContent = 'See Results';
+        } else {
+          nextBtn.textContent = 'Next';
+        }
+
+        // Disable next button if no answer selected yet
+        if (answers[currentQuestionIndex] === null) {
+          nextBtn.disabled = true;
+        }
+      }
+
+      function handleNext() {
+        if (currentQuestionIndex < questions.length - 1) {
+          currentQuestionIndex++;
+          renderQuestion();
+        } else {
+          showResults();
+        }
+        // Scroll to top of section
+        questionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function handlePrev() {
+        if (currentQuestionIndex > 0) {
+          currentQuestionIndex--;
+          renderQuestion();
+        }
+      }
+
+      function showResults() {
+        questionSection.style.display = 'none';
+        resultsSection.style.display = 'block';
+
+        calculateAndDisplayScores();
+        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function calculateAndDisplayScores() {
+        // Group answers by dimension
+        const dimensionTotals = {};
+        const dimensionMax = {};
+
+        questions.forEach((q, index) => {
+          const dim = q.dimension;
+          const score = answers[index];
+
+          if (!dimensionTotals[dim]) {
+            dimensionTotals[dim] = 0;
+            dimensionMax[dim] = 0;
+          }
+
+          dimensionTotals[dim] += score;
+          dimensionMax[dim] += 4; // Max score per question is 4
+        });
+
+        // Calculate overall score
+        let totalScore = 0;
+        let totalMax = 0;
+
+        for (const dim in dimensionTotals) {
+          totalScore += dimensionTotals[dim];
+          totalMax += dimensionMax[dim];
+        }
+
+        const overallPercentage = Math.round((totalScore / totalMax) * 100);
+        document.getElementById('overall-score-value').textContent = overallPercentage;
+
+        // Render dimension scores
+        const dimensionScoresContainer = document.getElementById('dimension-scores');
+        dimensionScoresContainer.innerHTML = ''; // Clear previous
+
+        const dimensionTitles = {
+          'physical': 'Physical Health',
+          'emotional': 'Emotional Well-being',
+          'communication': 'Communication Skills',
+          'satisfaction': 'Satisfaction Levels',
+          'knowledge': 'Knowledge & Education',
+          'relationship': 'Relationship Quality'
+        };
+
+        for (const dim in dimensionTotals) {
+          const percent = Math.round((dimensionTotals[dim] / dimensionMax[dim]) * 100);
+
+          const card = document.createElement('div');
+          card.className = 'dimension-card';
+
+          const header = document.createElement('div');
+          header.className = 'dimension-header';
+
+          const title = document.createElement('span');
+          title.className = 'dimension-title';
+          title.textContent = dimensionTitles[dim];
+
+          const scoreVal = document.createElement('span');
+          scoreVal.className = 'dimension-score-value';
+          scoreVal.textContent = `${percent}%`;
+
+          header.appendChild(title);
+          header.appendChild(scoreVal);
+
+          const barContainer = document.createElement('div');
+          barContainer.className = 'dimension-bar-container';
+
+          const bar = document.createElement('div');
+          bar.className = 'dimension-bar';
+          bar.style.width = `${percent}%`;
+
+          barContainer.appendChild(bar);
+
+          card.appendChild(header);
+          card.appendChild(barContainer);
+          dimensionScoresContainer.appendChild(card);
+        }
+
+        generateRecommendations(dimensionTotals, dimensionMax);
+      }
+
+      function generateRecommendations(dimensionTotals, dimensionMax) {
+        const recommendationsContainer = document.getElementById('recommendations-container');
+        recommendationsContainer.innerHTML = '';
+
+        const thresholds = {};
+        for (const dim in dimensionTotals) {
+          thresholds[dim] = dimensionTotals[dim] / dimensionMax[dim];
+        }
+
+        const recommendationsList = [];
+
+        // Lowest scores first logic
+        const sortedDimensions = Object.keys(thresholds).sort((a, b) => thresholds[a] - thresholds[b]);
+
+        // Pick the top 2-3 lowest dimensions to give targeted advice
+        const focusAreas = sortedDimensions.slice(0, 3);
+
+        if (focusAreas.includes('physical')) {
+          recommendationsList.push({
+            title: 'Consult a Professional for Physical Discomfort',
+            text: 'It looks like you might be experiencing some physical barriers to pleasure. Remember that pain during intimacy is common but not something you just have to live with. Consider reaching out to a pelvic floor physical therapist or a specialized healthcare provider.',
+            link: '/lgbtq-sexual-health-guide.html',
+            linkText: 'Read our Sexual Health Guide'
+          });
+        }
+
+        if (focusAreas.includes('emotional')) {
+          recommendationsList.push({
+            title: 'Nurture Your Emotional Connection to Sex',
+            text: 'Stress and body image can heavily impact our desire. Try incorporating mindfulness practices or aftercare routines to help ground yourself emotionally before and after intimacy. A sex-positive therapist could also provide great support here.',
+            link: '/lgbtq-friendly-therapists-directory.html',
+            linkText: 'Find a Sex-Positive Therapist'
+          });
+        }
+
+        if (focusAreas.includes('communication')) {
+          recommendationsList.push({
+            title: 'Practice Vocalizing Your Desires',
+            text: 'Talking about sex can be awkward at first, but it gets easier with practice. Start small by sharing fantasies or using a tool to build boundaries together.',
+            link: '/consent-communication-builder.html',
+            linkText: 'Use the Consent & Communication Builder'
+          });
+        }
+
+        if (focusAreas.includes('knowledge')) {
+          recommendationsList.push({
+            title: 'Expand Your Sexual Knowledge',
+            text: 'Knowledge is power, especially in the bedroom. Understanding your own anatomy and safer sex practices is the foundation of a healthy sex life.',
+            link: '/anatomy-quiz.html',
+            linkText: 'Take the Anatomy Quiz'
+          });
+        }
+
+        if (focusAreas.includes('satisfaction') || focusAreas.includes('relationship')) {
+          recommendationsList.push({
+            title: 'Explore New Avenues for Pleasure',
+            text: 'If things are feeling a bit routine or disconnected, it might be time to introduce some novelty into your relationship or solo play.',
+            link: '/better-orgasms-guide.html',
+            linkText: 'Guide to Better Orgasms'
+          });
+        }
+
+        // Always add a general one
+        if (recommendationsList.length < 3) {
+           recommendationsList.push({
+            title: 'Keep Exploring Safely',
+            text: 'You scored highly across the board! Continue maintaining an open dialogue about your desires and exploring new ways to connect with your sexuality.',
+            link: '/sexual-self-discovery-guide.html',
+            linkText: 'Read the Self-Discovery Guide'
+          });
+        }
+
+        recommendationsList.forEach(rec => {
+          const item = document.createElement('div');
+          item.className = 'recommendation-item';
+
+          const title = document.createElement('div');
+          title.className = 'recommendation-title';
+          title.textContent = rec.title;
+
+          const text = document.createElement('div');
+          text.className = 'recommendation-text';
+          text.textContent = rec.text + ' ';
+
+          if (rec.link) {
+            const link = document.createElement('a');
+            link.href = rec.link;
+            link.textContent = rec.linkText;
+            link.style.color = '#AD9846';
+            link.style.fontWeight = '600';
+            link.style.textDecoration = 'none';
+            text.appendChild(link);
+          }
+
+          item.appendChild(title);
+          item.appendChild(text);
+          recommendationsContainer.appendChild(item);
+        });
+      }
+
+      function retakeAssessment() {
+        resultsSection.style.display = 'none';
+        introSection.style.display = 'block';
+        answers = new Array(questions.length).fill(null);
+        localStorage.removeItem('ali_sexual_wellness_answers');
+      }
+
+      function shareResults() {
+        const overallScore = document.getElementById('overall-score-value').textContent;
+        const text = `I just took the Sexual Wellness Assessment on Ali Imperiale and scored ${overallScore}%!\n\nTake the assessment here: https://aliimperiale.com/sexual-wellness-assessment.html`;
+
+        navigator.clipboard.writeText(text).then(() => {
+          const originalText = shareBtn.textContent;
+          shareBtn.textContent = 'Copied to Clipboard!';
+          setTimeout(() => {
+            shareBtn.textContent = originalText;
+          }, 2000);
+        }).catch(err => {
+          console.error('Could not copy text: ', err);
+        });
+      }
+
+      // Start the app
+      init();
+    });
+  </script>
+</body>
+</html>
