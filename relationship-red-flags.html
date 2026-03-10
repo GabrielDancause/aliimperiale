@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relationship Red Flags Checker | Ali Imperiale</title>
+  <meta name="description" content="An interactive, judgment-free checklist to help you assess potential red flags in your relationship. Explore communication, trust, and more.">
+  <meta property="og:title" content="Relationship Red Flags Checker | Ali Imperiale">
+  <meta property="og:description" content="An interactive, judgment-free checklist to help you assess potential red flags in your relationship. Explore communication, trust, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/relationship-red-flags.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Relationship Red Flags Checker">
+  <meta name="twitter:description" content="Interactive checklist to assess red flags.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/relationship-red-flags.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What are common relationship red flags?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common red flags include controlling behavior, constant criticism, lack of communication, disrespect for boundaries, isolation from friends/family, and inconsistent or untrustworthy actions."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How do I know if my relationship is toxic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A toxic relationship consistently drains you rather than supports you. Signs include frequent intense arguments, feeling like you're 'walking on eggshells,' feeling manipulated, or your self-esteem dropping since the relationship began."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Can red flags be fixed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some 'yellow flags' or mild issues can be addressed through open communication and active effort from both partners (like couples therapy). However, severe red flags involving abuse, deep manipulation, or core incompatibility usually mean the relationship is unhealthy and potentially unsafe."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What is gaslighting in a relationship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gaslighting is a form of psychological manipulation where a person makes you doubt your own memories, perception, or sanity. They might deny things that happened, minimize your feelings, or shift the blame entirely onto you."
+      }
+    }, {
+      "@type": "Question",
+      "name": "When should I leave a relationship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You should consider leaving if there is any form of physical, emotional, or verbal abuse. Other reasons include persistent unhappiness, core values clashing, your boundaries repeatedly being ignored, or if the relationship negatively impacts your mental health."
+      }
+    }]
+  }
+  </script>
+
+  <style>
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 480px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+
+    /* Tool Styling */
+    .page-header {
+      background: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 1.1rem;
+      color: #C6C8BB;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .tracker-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(46, 62, 36, 0.08);
+      margin-bottom: 32px;
+    }
+
+    .card h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 24px;
+      border-bottom: 2px solid rgba(173, 152, 70, 0.2);
+      padding-bottom: 12px;
+    }
+
+    .intro-text {
+      font-size: 0.95rem;
+      color: #555549;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    /* Checklist Item Styles */
+    .category-group {
+      margin-bottom: 40px;
+    }
+    .category-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #AD9846;
+      margin-bottom: 16px;
+    }
+    .checklist-item {
+      margin-bottom: 24px;
+      padding: 16px;
+      background: #FAF8EB;
+      border-radius: 12px;
+      border: 1px solid rgba(46, 62, 36, 0.05);
+    }
+    .item-label {
+      display: block;
+      font-weight: 500;
+      color: #2E3E24;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .range-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .range-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #8a8a7a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      min-width: 45px;
+    }
+    .range-slider {
+      flex-grow: 1;
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      background: #ddd;
+      border-radius: 3px;
+      outline: none;
+    }
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #AD9846;
+      cursor: pointer;
+      transition: background .15s ease-in-out;
+    }
+    .range-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #AD9846;
+      cursor: pointer;
+      border: none;
+    }
+    .range-slider::-webkit-slider-thumb:hover {
+      background: #2E3E24;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 32px;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+
+    /* Results Section */
+    #results-section {
+      display: none;
+    }
+    .result-box {
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .result-box h3 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+    .result-green {
+      background: rgba(46, 139, 87, 0.1);
+      border: 2px solid #2e8b57;
+      color: #1e5c3a;
+    }
+    .result-yellow {
+      background: rgba(218, 165, 32, 0.1);
+      border: 2px solid #daa520;
+      color: #8b6914;
+    }
+    .result-red {
+      background: rgba(178, 34, 34, 0.1);
+      border: 2px solid #b22222;
+      color: #7b1818;
+    }
+    .result-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555549;
+      margin-bottom: 24px;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: #AD9846;
+      color: #2E3E24;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #c4b460;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+      .card {
+        padding: 24px 16px;
+      }
+      .result-box h3 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Educational & Emergency Resources Styles */
+    .edu-content h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.4rem;
+      color: #2E3E24;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .edu-content h3:first-child {
+      margin-top: 0;
+    }
+    .edu-content p, .edu-content li {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555549;
+      margin-bottom: 16px;
+    }
+    .edu-content ul {
+      margin-left: 20px;
+      margin-bottom: 24px;
+    }
+
+    .emergency-box {
+      background: rgba(178, 34, 34, 0.05);
+      border-left: 4px solid #b22222;
+      padding: 24px;
+      border-radius: 0 12px 12px 0;
+      margin-top: 40px;
+    }
+    .emergency-box h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      color: #b22222;
+      margin-bottom: 12px;
+      margin-top: 0;
+    }
+    .emergency-box ul {
+      list-style: none;
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+    .emergency-box li {
+      margin-bottom: 8px;
+    }
+    .emergency-box strong {
+      color: #7b1818;
+    }
+    .emergency-box a {
+      color: #b22222;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* FAQ Styles */
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+      padding-bottom: 16px;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: #2E3E24;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      font-size: 0.95rem;
+      color: #555549;
+      line-height: 1.6;
+      display: none;
+      margin-top: 8px;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #AD9846;
+      transition: transform 0.2s;
+    }
+    .faq-item.active .faq-question::after {
+      content: '−';
+      transform: translateY(-2px);
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Relationship Red Flags Checker</h1>
+    <p>An interactive, judgment-free tool to help you reflect on your relationship dynamics and identify areas that might need attention.</p>
+  </header>
+
+  <main class="tracker-container" id="main-content">
+    <section class="card">
+      <p class="intro-text">
+        Welcome to the Relationship Red Flags Checker! Relationships can be complicated, and it's completely normal to have questions about whether certain behaviors are healthy. This tool is designed to help you pause and reflect.
+        <br><br>
+        <strong>How to use:</strong> For each behavior below, use the slider to indicate how often it occurs in your current (or past) relationship. This tool is entirely private; nothing you enter leaves your browser. Be honest with yourself.
+      </p>
+
+      <div id="checklist-form">
+        <!-- Checklist items will be populated by JS -->
+      </div>
+
+      <button type="button" class="btn-primary" id="calculate-btn">Assess My Relationship</button>
+    </section>
+
+    <section class="card" id="results-section">
+      <h2>Your Assessment Results</h2>
+      <div id="result-display" class="result-box">
+        <!-- Result content will be populated by JS -->
+      </div>
+      <p id="result-advice" class="result-description">
+        <!-- Advice text goes here -->
+      </p>
+
+      <div style="text-align: center;">
+        <button type="button" class="btn-secondary" id="share-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Share Summary
+        </button>
+        <span id="share-feedback" style="display:none; margin-left:12px; font-size:0.85rem; color:#2E3E24; font-weight:600;">Copied to clipboard!</span>
+      </div>
+    </section>
+
+    <section class="card edu-content">
+      <h2>Understanding Red Flags</h2>
+
+      <h3>Healthy vs. Unhealthy Dynamics</h3>
+      <p>Look, no relationship is perfect. We all have bad days, say things we shouldn't, or get a little defensive sometimes. But a healthy relationship is built on a foundation of respect, trust, and open communication. When you bring up an issue, your partner should be willing to listen—even if they disagree.</p>
+
+      <p>Unhealthy dynamics (often called "red flags") show up as patterns of behavior. It's not usually just one bad fight; it's a consistent disregard for your boundaries, feelings, or autonomy. Things like excessive jealousy, control over who you see or what you spend, and frequent emotional manipulation are warning signs that shouldn't be ignored.</p>
+
+      <h3>Self-Reflection & Journaling Prompts</h3>
+      <p>If your results left you feeling uncertain, or if you just want to dig a little deeper, grab a journal or open a note on your phone. Take a moment, free of judgment, to reflect on these questions:</p>
+      <ul>
+        <li>When I am with my partner, do I feel more like myself or less like myself?</li>
+        <li>Do I feel safe expressing my honest feelings, even when they are negative?</li>
+        <li>How does my partner handle it when I set a boundary or say "no"?</li>
+        <li>Am I compromising my core values or sacrificing my independence for this relationship?</li>
+      </ul>
+
+      <div class="emergency-box">
+        <h3>Emergency & Support Resources</h3>
+        <p>If you felt unsafe while taking this assessment, or if you recognized patterns of abuse (physical, emotional, or financial), please know that you are not alone and help is available. <strong>This tool is for educational purposes and is not a substitute for professional help.</strong></p>
+        <ul>
+          <li><strong>US National Domestic Violence Hotline:</strong> Call 1-800-799-SAFE (7233) or text "START" to 88788. <a href="https://www.thehotline.org" target="_blank" rel="noopener">thehotline.org</a></li>
+          <li><strong>Crisis Text Line:</strong> Text HOME to 741741 to connect with a crisis counselor 24/7.</li>
+          <li><strong>Canada Assaulted Women’s Helpline:</strong> Call 1-866-863-0511 or text #SAFE (#7233).</li>
+          <li><strong>UK National Domestic Abuse Helpline:</strong> Call 0808 2000 247.</li>
+        </ul>
+        <p style="margin-top: 12px; font-size: 0.85rem;">If you are in immediate danger, please call your local emergency services (911 in the US/Canada).</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">What are common relationship red flags?</div>
+        <div class="faq-answer">Common red flags include controlling behavior, constant criticism, lack of communication, disrespect for boundaries, isolation from friends/family, and inconsistent or untrustworthy actions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I know if my relationship is toxic?</div>
+        <div class="faq-answer">A toxic relationship consistently drains you rather than supports you. Signs include frequent intense arguments, feeling like you're 'walking on eggshells,' feeling manipulated, or your self-esteem dropping since the relationship began.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can red flags be fixed?</div>
+        <div class="faq-answer">Some 'yellow flags' or mild issues can be addressed through open communication and active effort from both partners (like couples therapy). However, severe red flags involving abuse, deep manipulation, or core incompatibility usually mean the relationship is unhealthy and potentially unsafe.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is gaslighting in a relationship?</div>
+        <div class="faq-answer">Gaslighting is a form of psychological manipulation where a person makes you doubt your own memories, perception, or sanity. They might deny things that happened, minimize your feelings, or shift the blame entirely onto you.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">When should I leave a relationship?</div>
+        <div class="faq-answer">You should consider leaving if there is any form of physical, emotional, or verbal abuse. Other reasons include persistent unhappiness, core values clashing, your boundaries repeatedly being ignored, or if the relationship negatively impacts your mental health.</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const formContainer = document.getElementById('checklist-form');
+
+      const categories = [
+        {
+          title: "Communication",
+          items: [
+            "We listen to each other without interrupting.",
+            "My partner dismisses my opinions or ideas.",
+            "We can discuss difficult topics calmly.",
+            "My partner gives me the 'silent treatment' when angry.",
+            "We use 'I feel' statements instead of blaming each other.",
+            "Arguments frequently turn into yelling matches.",
+            "I feel heard and understood when I express my feelings.",
+            "My partner brings up past mistakes to win current arguments.",
+            "We apologize to each other when we are wrong."
+          ]
+        },
+        {
+          title: "Control & Independence",
+          items: [
+            "My partner checks my phone or emails without permission.",
+            "I feel free to spend time with my friends and family.",
+            "My partner gets overly jealous or possessive.",
+            "I have control over my own finances and spending.",
+            "My partner tries to isolate me from my support network.",
+            "I can make decisions about my own life and body.",
+            "My partner tells me what to wear or how to look.",
+            "I feel comfortable pursuing my own hobbies and interests.",
+            "My partner demands to know where I am at all times."
+          ]
+        },
+        {
+          title: "Respect & Boundaries",
+          items: [
+            "My partner respects my boundaries, even when they disagree.",
+            "My partner mocks or belittles me in public or private.",
+            "I feel valued and appreciated in the relationship.",
+            "My partner pressures me to do things I am uncomfortable with.",
+            "We speak to each other with kindness and respect.",
+            "My partner makes jokes at my expense.",
+            "I feel physically safe around my partner.",
+            "My partner threatens me or breaks things during arguments.",
+            "We support each other's personal growth and goals."
+          ]
+        },
+        {
+          title: "Intimacy & Affection",
+          items: [
+            "We have a satisfying emotional connection.",
+            "My partner pressures or guilt-trips me into having sex.",
+            "I feel comfortable discussing my sexual needs and desires.",
+            "Affection is withheld as a form of punishment.",
+            "We show physical affection outside of the bedroom.",
+            "My boundaries around physical intimacy are ignored.",
+            "I feel desirable and attractive to my partner.",
+            "Sex feels transactional or like an obligation.",
+            "We prioritize spending quality time together."
+          ]
+        },
+        {
+          title: "Trust & Honesty",
+          items: [
+            "I trust my partner completely.",
+            "I catch my partner in lies, even small ones.",
+            "We are open and honest with each other about our lives.",
+            "My partner frequently breaks promises or commitments.",
+            "I feel confident in my partner's fidelity.",
+            "I feel the need to hide things from my partner to avoid conflict.",
+            "My partner is reliable and shows up when they say they will.",
+            "My partner accuses me of cheating without evidence.",
+            "We have transparency in our relationship."
+          ]
+        },
+        {
+          title: "Future Goals & Values",
+          items: [
+            "Our core values and beliefs align.",
+            "My partner dismisses my career or life goals.",
+            "We discuss and plan for our future together.",
+            "We have fundamental disagreements about having children.",
+            "We agree on how to manage finances and debt.",
+            "My partner refuses to compromise on important life decisions.",
+            "I feel excited about the future we are building.",
+            "I feel like I am sacrificing my dreams for the relationship.",
+            "We support each other's long-term ambitions."
+          ]
+        }
+      ];
+
+      // Define which items are 'positive' (always is good) and 'negative' (always is bad)
+      // Array index corresponds to the item index within the category.
+      // true = positive statement (higher score is better)
+      // false = negative statement (lower score is better)
+      const scoringMap = [
+        [true, false, true, false, true, false, true, false, true], // Communication
+        [false, true, false, true, false, true, false, true, false], // Control
+        [true, false, true, false, true, false, true, false, true], // Respect
+        [true, false, true, false, true, false, true, false, true], // Intimacy
+        [true, false, true, false, true, false, true, false, true], // Trust
+        [true, false, true, false, true, false, true, false, true]  // Future
+      ];
+
+      let html = '';
+      let globalIndex = 0;
+
+      categories.forEach((category, catIdx) => {
+        html += `<div class="category-group">
+                   <h3 class="category-title">${category.title}</h3>`;
+
+        category.items.forEach((item, itemIdx) => {
+          const isPositive = scoringMap[catIdx][itemIdx];
+          html += `
+            <div class="checklist-item">
+              <label class="item-label" for="item-${globalIndex}">${item}</label>
+              <div class="range-container">
+                <span class="range-label">Never</span>
+                <input type="range" id="item-${globalIndex}" class="range-slider flag-input" min="0" max="100" value="50" data-positive="${isPositive}">
+                <span class="range-label">Always</span>
+              </div>
+            </div>
+          `;
+          globalIndex++;
+        });
+
+        html += `</div>`;
+      });
+
+      formContainer.innerHTML = html;
+
+      // Logic
+      const calculateBtn = document.getElementById('calculate-btn');
+      const resultsSection = document.getElementById('results-section');
+      const resultDisplay = document.getElementById('result-display');
+      const resultAdvice = document.getElementById('result-advice');
+      const shareBtn = document.getElementById('share-btn');
+      const shareFeedback = document.getElementById('share-feedback');
+
+      let finalCategory = '';
+
+      calculateBtn.addEventListener('click', () => {
+        const inputs = document.querySelectorAll('.flag-input');
+        let totalScore = 0;
+        let maxPossibleScore = inputs.length * 100;
+
+        inputs.forEach(input => {
+          const val = parseInt(input.value, 10);
+          const isPositive = input.getAttribute('data-positive') === 'true';
+
+          if (isPositive) {
+            // High value is good
+            totalScore += val;
+          } else {
+            // Low value is good (invert the score)
+            totalScore += (100 - val);
+          }
+        });
+
+        const percentage = (totalScore / maxPossibleScore) * 100;
+
+        let resultHTML = '';
+        let adviceText = '';
+
+        if (percentage >= 80) {
+          finalCategory = "Green Light";
+          resultDisplay.className = 'result-box result-green';
+          resultHTML = `<h3>Green Light! 💚</h3><p>Score: ${Math.round(percentage)}%</p>`;
+          adviceText = "This looks like a healthy, supportive relationship built on strong communication and mutual respect. While no relationship is perfect, you are displaying many signs of a solid foundation. Keep prioritizing honesty and regular check-ins to maintain this positive dynamic.";
+        } else if (percentage >= 55) {
+          finalCategory = "Yellow Caution";
+          resultDisplay.className = 'result-box result-yellow';
+          resultHTML = `<h3>Yellow Flag 💛</h3><p>Score: ${Math.round(percentage)}%</p>`;
+          adviceText = "There are some wonderful aspects to this relationship, but also areas that need attention. Yellow flags don't mean you need to leave immediately, but they are signals that you should pause, reflect, and communicate. Consider bringing up the areas you scored low on with your partner in a calm, non-confrontational way. If they are willing to work on it, that's a great sign. If they become defensive or refuse to change, that yellow flag might be turning red.";
+        } else {
+          finalCategory = "Red Alert";
+          resultDisplay.className = 'result-box result-red';
+          resultHTML = `<h3>Red Alert 🚩</h3><p>Score: ${Math.round(percentage)}%</p>`;
+          adviceText = "This score indicates several serious concerns regarding communication, respect, and potentially your emotional or physical safety. Frequent controlling behavior, lack of trust, or emotional manipulation are major red flags. Please take this seriously. You deserve a relationship where you feel safe, valued, and respected. Consider reaching out to a trusted friend, family member, or professional counselor for support.";
+        }
+
+        resultDisplay.innerHTML = resultHTML;
+        resultAdvice.innerHTML = adviceText;
+        resultsSection.style.display = 'block';
+
+        // Scroll to results
+        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // FAQ interaction
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+
+      shareBtn.addEventListener('click', async () => {
+        if (!finalCategory) return;
+
+        const summaryText = `I just took the Relationship Red Flags Checker on Ali Imperiale's site and got a "${finalCategory}" result. \n\nCheck your relationship dynamics here: https://aliimperiale.com/relationship-red-flags.html`;
+
+        try {
+          await navigator.clipboard.writeText(summaryText);
+          shareFeedback.style.display = 'inline-block';
+          setTimeout(() => {
+            shareFeedback.style.display = 'none';
+          }, 3000);
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+          // Fallback
+          const textArea = document.createElement("textarea");
+          textArea.value = summaryText;
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            shareFeedback.style.display = 'inline-block';
+            setTimeout(() => { shareFeedback.style.display = 'none'; }, 3000);
+          } catch (e) {
+            console.error('Fallback failed: ', e);
+          }
+          document.body.removeChild(textArea);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
