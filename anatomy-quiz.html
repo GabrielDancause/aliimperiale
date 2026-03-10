@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pleasure Anatomy Quiz | Ali Imperiale</title>
+  <meta name="description" content="An educational, interactive quiz about anatomy and pleasure. Learn about your body, bust common myths, and discover how to explore safely.">
+  <meta property="og:title" content="Pleasure Anatomy Quiz | Ali Imperiale">
+  <meta property="og:description" content="An educational, interactive quiz about anatomy and pleasure. Learn about your body, bust common myths, and discover how to explore safely.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/anatomy-quiz.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pleasure Anatomy Quiz">
+  <meta name="twitter:description" content="An educational, interactive quiz about anatomy and pleasure.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/anatomy-quiz.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Header */
+    .page-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: #FAF8EB;
+    }
+    .page-header p {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.15rem;
+      color: #C6C8BB;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Main Container */
+    .tool-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 16px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.08);
+      margin-bottom: 40px;
+    }
+
+    .card h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555549;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: #AD9846;
+      color: #2E3E24;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      background: #c4b460;
+      transform: translateY(-2px);
+    }
+
+    /* Quiz Area */
+    #quiz-area {
+      display: none;
+    }
+    .question-container {
+      margin-bottom: 24px;
+    }
+    .question-counter {
+      font-size: 0.85rem;
+      color: #AD9846;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .question-text {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.4rem;
+      color: #2E3E24;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-btn {
+      padding: 16px 20px;
+      background: #FAF8EB;
+      border: 1.5px solid #e0e2d5;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      color: #2E3E24;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: left;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: #AD9846;
+      background: #fff;
+    }
+
+    .option-btn.selected {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border-color: #2E3E24;
+    }
+
+    .option-btn.correct {
+      background: #e8f5e9;
+      border-color: #4caf50;
+      color: #2E3E24;
+    }
+
+    .option-btn.incorrect {
+      background: #ffebee;
+      border-color: #f44336;
+      color: #2E3E24;
+    }
+
+    /* Explanation Area */
+    #explanation-area {
+      display: none;
+      margin-top: 24px;
+      padding: 20px;
+      background: #fdfaf0;
+      border-left: 4px solid #AD9846;
+      border-radius: 0 12px 12px 0;
+    }
+
+    #explanation-area h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 10px;
+    }
+
+    #explanation-area p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .next-btn-container {
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    /* Results Area */
+    #results-area {
+      display: none;
+      text-align: center;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #FAF8EB;
+      border: 6px solid #AD9846;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .score-number {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3rem;
+      color: #2E3E24;
+      line-height: 1;
+    }
+
+    .score-text {
+      font-size: 0.9rem;
+      color: #555549;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+
+    .recommendation-box {
+      background: #fdfaf0;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    /* Educational Section */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 680px) {
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .edu-item {
+      background: #FAF8EB;
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    .edu-item h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* FAQ Section */
+    .faq-item {
+      margin-bottom: 24px;
+    }
+    .faq-item h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      color: #AD9846;
+      margin-bottom: 8px;
+    }
+    .faq-item p {
+      margin-bottom: 0;
+    }
+
+    /* Interactive Diagrams (CSS Only) */
+    .anatomy-diagram-wrapper {
+      margin: 24px 0;
+      padding: 20px;
+      background: #FAF8EB;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+    }
+
+    .diagram-note {
+      font-size: 0.8rem;
+      color: #8a8a7a;
+      font-style: italic;
+      margin-top: 16px;
+    }
+
+    .css-diagram {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    /* Clitoris Diagram */
+    .clit-glans {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: #e57373;
+      border-radius: 50%;
+      z-index: 3;
+    }
+    .clit-body {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 40px;
+      background: #ef9a9a;
+      border-radius: 10px;
+      z-index: 2;
+    }
+    .clit-crura-left {
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      width: 40%;
+      height: 80px;
+      border: 14px solid #ef9a9a;
+      border-color: #ef9a9a transparent transparent transparent;
+      border-radius: 50% 50% 0 0;
+      transform: rotate(-30deg);
+    }
+    .clit-crura-right {
+      position: absolute;
+      top: 15%;
+      right: 10%;
+      width: 40%;
+      height: 80px;
+      border: 14px solid #ef9a9a;
+      border-color: #ef9a9a transparent transparent transparent;
+      border-radius: 50% 50% 0 0;
+      transform: rotate(30deg);
+    }
+    .clit-bulb-left {
+      position: absolute;
+      top: 40%;
+      left: 20%;
+      width: 25px;
+      height: 60px;
+      background: #ffcdd2;
+      border-radius: 20px;
+      transform: rotate(-15deg);
+    }
+    .clit-bulb-right {
+      position: absolute;
+      top: 40%;
+      right: 20%;
+      width: 25px;
+      height: 60px;
+      background: #ffcdd2;
+      border-radius: 20px;
+      transform: rotate(15deg);
+    }
+
+    .diagram-label {
+      position: absolute;
+      background: #2E3E24;
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .label-glans { top: 10%; left: 70%; }
+    .label-body { top: 0; left: 10%; }
+    .label-crura { top: 30%; right: 5%; }
+    .label-bulbs { top: 70%; left: 10%; }
+
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle Navigation" onclick="this.classList.toggle('active'); this.previousElementSibling.classList.toggle('nav-open');">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+  </nav>
+
+  <main id="main-content">
+    <header class="page-header">
+      <h1>Pleasure Anatomy Quiz</h1>
+      <p>A judgment-free, educational quiz to test your knowledge about the human body, bust common myths, and discover how to explore pleasure safely.</p>
+    </header>
+
+    <div class="tool-container">
+
+      <!-- Start Screen -->
+      <div id="start-screen" class="card" style="text-align: center;">
+        <h2>Ready to test your anatomy knowledge?</h2>
+        <p>This 20-question quiz covers everything from the clitoris to the prostate. It's designed to be fun, educational, and completely shame-free.</p>
+        <button id="start-btn" class="btn-primary" style="margin-top: 20px;">
+          Start the Quiz
+        </button>
+      </div>
+
+      <!-- Quiz Area -->
+      <div id="quiz-area" class="card">
+        <div class="question-container">
+          <div class="question-counter">Question <span id="current-q-num">1</span> of 20</div>
+          <h2 class="question-text" id="question-text">Question goes here</h2>
+
+          <div class="options-grid" id="options-grid">
+            <!-- Options will be injected here -->
+          </div>
+        </div>
+
+        <div id="explanation-area">
+          <h3>The Facts</h3>
+          <p id="explanation-text">Explanation goes here.</p>
+          <div class="next-btn-container">
+            <button id="next-btn" class="btn-secondary">Next Question</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Area -->
+      <div id="results-area" class="card">
+        <h2>Your Anatomy IQ</h2>
+        <div class="score-circle">
+          <div class="score-number" id="final-score">0</div>
+          <div class="score-text">out of 20</div>
+        </div>
+
+        <div class="recommendation-box">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 12px;">Your Personalized Recommendation</h3>
+          <p id="recommendation-text">Recommendation goes here based on score.</p>
+        </div>
+
+        <button id="share-btn" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Share Results
+        </button>
+        <button id="retry-btn" class="btn-secondary" style="margin-left: 12px;">
+          Try Again
+        </button>
+      </div>
+
+      <!-- Educational Content Section -->
+      <div id="educational-section" style="margin-top: 60px;">
+        <h2 style="font-family: 'The Bloomington', cursive; font-size: 2.5rem; text-align: center; color: #2E3E24; margin-bottom: 30px;">Let's Talk About Bodies</h2>
+
+        <div class="anatomy-diagram-wrapper">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 20px;">The Internal Clitoris</h3>
+          <div class="css-diagram">
+            <div class="clit-glans"></div>
+            <div class="clit-body"></div>
+            <div class="clit-crura-left"></div>
+            <div class="clit-crura-right"></div>
+            <div class="clit-bulb-left"></div>
+            <div class="clit-bulb-right"></div>
+
+            <div class="diagram-label label-glans">Glans (External)</div>
+            <div class="diagram-label label-body">Body</div>
+            <div class="diagram-label label-crura">Crura (Legs)</div>
+            <div class="diagram-label label-bulbs">Vestibular Bulbs</div>
+          </div>
+          <p class="diagram-note">The clitoris is much larger than the external glans. The internal structures engorge with blood during arousal, hugging the vaginal canal.</p>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-item">
+            <h3><span style="font-size: 1.4rem;">🗺️</span> Pleasure Mapping</h3>
+            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Pleasure mapping is the practice of exploring your body without the goal of orgasm. Take 15 minutes to gently touch different areas—the neck, inner thighs, perineum—and rate the sensation from 1-10. It's a great way to discover new erogenous zones.</p>
+          </div>
+
+          <div class="edu-item">
+            <h3><span style="font-size: 1.4rem;">🌈</span> Normal Variations</h3>
+            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Pornography often shows a very narrow range of genital appearances. In reality, labia can be asymmetrical, long, or dark; penises curve in different directions; nipples vary wildly. All of these variations are completely normal and healthy.</p>
+          </div>
+
+          <div class="edu-item">
+            <h3><span style="font-size: 1.4rem;">🛑</span> Myth Busting</h3>
+            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;"><strong>Myth:</strong> Penetration is the main way women orgasm.<br><strong>Fact:</strong> 70-80% of women require direct clitoral stimulation to reach orgasm. The idea that vaginal intercourse alone should be enough is a persistent, frustrating myth.</p>
+          </div>
+
+          <div class="edu-item">
+            <h3><span style="font-size: 1.4rem;">🛡️</span> Safe Exploration</h3>
+            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">When exploring new areas (like anal play), safety is key. Use plenty of high-quality, body-safe lubricant, start very slow, communicate constantly with your partner, and never use toys that don't have a flared base.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="card" style="margin-top: 40px;">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>What is the difference between the vulva and the vagina?</h3>
+            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">The vulva refers to the external female genitalia, including the labia, clitoris, and the vaginal opening. The vagina is the internal muscular canal that connects the vulva to the cervix.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Where is the G-spot located?</h3>
+            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">The G-spot isn't a separate organ, but a highly sensitive area located on the anterior (front) wall of the vagina, about 1-2 inches inside. Its sensitivity is believed to come from the internal roots of the clitoris pressing against the vaginal wall.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the primary function of the clitoris?</h3>
+            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">The clitoris is the only human organ designed exclusively for pleasure. It contains thousands of nerve endings and has internal structures (crura and bulbs) that wrap around the vaginal canal.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can men have multiple orgasms?</h3>
+            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">While men typically experience a refractory period after ejaculation (a recovery time before they can be aroused again), some men can learn to separate orgasm from ejaculation, allowing for multiple orgasms.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why is it important to understand sexual anatomy?</h3>
+            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Understanding your own and your partner's sexual anatomy is crucial for communicating desires, exploring pleasure safely, debunking harmful myths, and improving overall sexual wellness and intimacy.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between the vulva and the vagina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The vulva refers to the external female genitalia, including the labia, clitoris, and the vaginal opening. The vagina is the internal muscular canal that connects the vulva to the cervix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is the G-spot located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The G-spot isn't a separate organ, but a highly sensitive area located on the anterior (front) wall of the vagina, about 1-2 inches inside. Its sensitivity is believed to come from the internal roots of the clitoris pressing against the vaginal wall."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the primary function of the clitoris?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The clitoris is the only human organ designed exclusively for pleasure. It contains thousands of nerve endings and has internal structures (crura and bulbs) that wrap around the vaginal canal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can men have multiple orgasms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While men typically experience a refractory period after ejaculation (a recovery time before they can be aroused again), some men can learn to separate orgasm from ejaculation, allowing for multiple orgasms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is it important to understand sexual anatomy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Understanding your own and your partner's sexual anatomy is crucial for communicating desires, exploring pleasure safely, debunking harmful myths, and improving overall sexual wellness and intimacy."
+      }
+    }
+  ]
+}
+</script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script src="back-to-top.js" defer></script>
+<script src="newsletter-bar.js" defer></script>
+<script src="email-capture.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const quizData = [
+    {
+      "q": "What percentage of the clitoris is actually internal?",
+      "options": ["About 10%", "About 25%", "About 50%", "About 90%"],
+      "correct": 3,
+      "explanation": "That's right! What we see on the outside (the glans) is just the tip of the iceberg. The clitoris extends internally like a wishbone, with the crura (legs) and bulbs wrapping around the vaginal canal."
+    },
+    {
+      "q": "The G-spot is a distinct, separate organ inside the vagina. True or false?",
+      "options": ["True", "False"],
+      "correct": 1,
+      "explanation": "False! Current research suggests the 'G-spot' isn't a separate organ, but rather a highly sensitive area where the internal roots of the clitoris press against the vaginal wall."
+    },
+    {
+      "q": "Where is the prostate gland located?",
+      "options": ["At the base of the penis", "Inside the testicles", "Internally, just in front of the rectum", "Just behind the bladder, near the spine"],
+      "correct": 2,
+      "explanation": "The prostate is located internally, roughly two inches inside the rectum towards the belly button. It's often referred to as the male G-spot because stimulating it can be incredibly pleasurable."
+    },
+    {
+      "q": "What is the primary function of the clitoris?",
+      "options": ["Reproduction", "Urination", "Menstruation", "Pleasure"],
+      "correct": 3,
+      "explanation": "The clitoris is the only human organ designed exclusively for pleasure. It has thousands of nerve endings dedicated entirely to feeling good!"
+    },
+    {
+      "q": "The frenulum (the V-shaped band of tissue on the underside of the penis glans) is often...",
+      "options": ["The least sensitive part of the penis", "The most sensitive part of the penis", "Only present in uncircumcised men", "Used for urination"],
+      "correct": 1,
+      "explanation": "For many people with penises, the frenulum is the most highly sensitive area because it's packed with nerve endings."
+    },
+    {
+      "q": "What is the A-spot (anterior fornix erogenous zone)?",
+      "options": ["Another name for the clitoris", "A sensitive area deep inside the vagina, past the G-spot", "A sensitive spot on the perineum", "The opening of the cervix"],
+      "correct": 1,
+      "explanation": "The A-spot is located deep in the vagina, near the cervix. For some people, stimulating this area can produce intense pleasure and increased lubrication."
+    },
+    {
+      "q": "Everyone's genital anatomy looks the same on the outside. True or False?",
+      "options": ["True", "False"],
+      "correct": 1,
+      "explanation": "False! Genitals are like fingerprints; they come in an infinite variety of shapes, sizes, colors, and textures. Labia can be asymmetrical, long, short, thick, or thin—all are normal."
+    },
+    {
+      "q": "What happens during the 'plateau' phase of the sexual response cycle?",
+      "options": ["Arousal drops completely", "Arousal builds and levels off just before orgasm", "The body returns to its resting state", "Orgasm occurs"],
+      "correct": 1,
+      "explanation": "During the plateau phase, arousal levels off and stays high. Heart rate increases, and muscles tense up right before orgasm. Playing in this phase (edging) can make orgasms stronger!"
+    },
+    {
+      "q": "The perineum (the area between the genitals and anus) is generally insensitive. True or False?",
+      "options": ["True", "False"],
+      "correct": 1,
+      "explanation": "False! The perineum is packed with nerve endings and can be highly sensitive and pleasurable for all bodies."
+    },
+    {
+      "q": "What is 'Responsive Desire'?",
+      "options": ["Getting turned on out of nowhere", "Only wanting sex in the morning", "Getting turned on in response to stimulation or context, rather than spontaneously", "Never wanting sex"],
+      "correct": 2,
+      "explanation": "Many people (especially women) experience responsive desire. This means arousal doesn't just 'happen'; it builds in response to kissing, touching, or a relaxing environment."
+    },
+    {
+      "q": "The hymen is a solid seal across the vaginal opening that breaks during first intercourse. True or False?",
+      "options": ["True", "False"],
+      "correct": 1,
+      "explanation": "False! This is a major myth. The hymen (or corona) is a flexible, stretchy ring of tissue that usually has a natural opening. It can stretch or tear slightly, but it doesn't completely 'seal' the vagina."
+    },
+    {
+      "q": "Squirting (female ejaculation) fluid comes from:",
+      "options": ["The Skene's glands and/or the bladder", "The cervix", "The ovaries", "The Bartholin's glands"],
+      "correct": 0,
+      "explanation": "Squirting fluid typically comes from the Skene's glands (the female prostate) and often contains fluid from the bladder. It's completely normal!"
+    },
+    {
+      "q": "What part of the vulva produces natural lubrication during arousal?",
+      "options": ["The clitoris", "The Bartholin's glands", "The labia majora", "The urethra"],
+      "correct": 1,
+      "explanation": "The Bartholin's glands, located near the vaginal opening, release fluid that helps lubricate the vulva during sexual arousal."
+    },
+    {
+      "q": "It is physically impossible to get pregnant from pre-ejaculate (pre-cum). True or False?",
+      "options": ["True", "False"],
+      "correct": 1,
+      "explanation": "False. While pre-cum itself doesn't contain sperm, it can pick up leftover sperm in the urethra from a previous ejaculation, making pregnancy possible (though less likely)."
+    },
+    {
+      "q": "Smegma (a buildup of dead skin cells and oils) only happens to people with penises. True or False?",
+      "options": ["True", "False"],
+      "correct": 1,
+      "explanation": "False! Smegma can accumulate under the foreskin of a penis AND under the clitoral hood of a vulva. Regular, gentle cleaning with warm water is all that's needed."
+    },
+    {
+      "q": "Which nerve is primarily responsible for transmitting sensations from the clitoris and penis?",
+      "options": ["The vagus nerve", "The sciatic nerve", "The pudendal nerve", "The optic nerve"],
+      "correct": 2,
+      "explanation": "The pudendal nerve is the main nerve for the pelvic floor, transmitting sensation from the genitals and perineum to the brain."
+    },
+    {
+      "q": "Orgasms in women are primarily triggered by vaginal penetration. True or False?",
+      "options": ["True", "False"],
+      "correct": 1,
+      "explanation": "False! Studies show that the vast majority of women (around 70-80%) require direct clitoral stimulation to reach orgasm. Penetration alone is rarely enough."
+    },
+    {
+      "q": "What causes an erection?",
+      "options": ["A bone inside the penis", "A muscle contracting", "Blood filling spongy tissues", "Air expanding"],
+      "correct": 2,
+      "explanation": "An erection happens when sexual arousal causes blood vessels to dilate, allowing blood to fill the spongy tissues (corpus cavernosum) inside the penis or clitoris."
+    },
+    {
+      "q": "Vulva and Vagina mean the exact same thing. True or False?",
+      "options": ["True", "False"],
+      "correct": 1,
+      "explanation": "False! The vulva is the external part (labia, clitoris, vaginal opening), while the vagina is the internal muscular canal leading to the cervix."
+    },
+    {
+      "q": "The refractory period (the time needed before having another orgasm) is usually longer for...",
+      "options": ["People with vulvas", "People with penises", "It is exactly the same", "Teenagers"],
+      "correct": 1,
+      "explanation": "Generally, people with penises experience a distinct refractory period where further stimulation can feel uncomfortable. Many people with vulvas have little to no refractory period and can experience multiple orgasms."
+    }
+  ];
+
+  let currentQuestionIndex = 0;
+  let score = 0;
+  let answered = false;
+
+  const startScreen = document.getElementById('start-screen');
+  const quizArea = document.getElementById('quiz-area');
+  const resultsArea = document.getElementById('results-area');
+  const eduSection = document.getElementById('educational-section');
+
+  const questionText = document.getElementById('question-text');
+  const optionsGrid = document.getElementById('options-grid');
+  const currentQNum = document.getElementById('current-q-num');
+
+  const explanationArea = document.getElementById('explanation-area');
+  const explanationText = document.getElementById('explanation-text');
+
+  const nextBtn = document.getElementById('next-btn');
+  const startBtn = document.getElementById('start-btn');
+  const shareBtn = document.getElementById('share-btn');
+  const retryBtn = document.getElementById('retry-btn');
+
+  const finalScoreEl = document.getElementById('final-score');
+  const recommendationText = document.getElementById('recommendation-text');
+
+  // Initialization
+  startBtn.addEventListener('click', () => {
+    startScreen.style.display = 'none';
+    quizArea.style.display = 'block';
+    eduSection.style.display = 'none'; // hide until end or scroll
+    loadQuestion();
+  });
+
+  function loadQuestion() {
+    answered = false;
+    explanationArea.style.display = 'none';
+
+    const qData = quizData[currentQuestionIndex];
+    currentQNum.textContent = currentQuestionIndex + 1;
+    questionText.textContent = qData.q;
+
+    optionsGrid.innerHTML = '';
+    qData.options.forEach((opt, index) => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => handleAnswer(index, btn));
+      optionsGrid.appendChild(btn);
+    });
+
+    if (currentQuestionIndex === quizData.length - 1) {
+      nextBtn.textContent = 'See Results';
+    } else {
+      nextBtn.textContent = 'Next Question';
+    }
+  }
+
+  function handleAnswer(selectedIndex, selectedBtn) {
+    if (answered) return;
+    answered = true;
+
+    const qData = quizData[currentQuestionIndex];
+    const isCorrect = selectedIndex === qData.correct;
+
+    if (isCorrect) score++;
+
+    // Style buttons
+    const allBtns = optionsGrid.querySelectorAll('.option-btn');
+    allBtns.forEach((btn, index) => {
+      btn.disabled = true;
+      if (index === qData.correct) {
+        btn.classList.add('correct');
+      } else if (index === selectedIndex) {
+        btn.classList.add('incorrect');
+      }
+    });
+
+    // Show explanation
+    explanationText.innerHTML = qData.explanation;
+    explanationArea.style.display = 'block';
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentQuestionIndex < quizData.length - 1) {
+      currentQuestionIndex++;
+      loadQuestion();
+      window.scrollTo({ top: quizArea.offsetTop - 100, behavior: 'smooth' });
+    } else {
+      showResults();
+    }
+  });
+
+  function showResults() {
+    quizArea.style.display = 'none';
+    resultsArea.style.display = 'block';
+    eduSection.style.display = 'block';
+
+    finalScoreEl.textContent = score;
+
+    let rec = "";
+    if (score === 20) {
+      rec = "Perfect score! You have a fantastic understanding of sexual anatomy and pleasure. You're likely very comfortable exploring and communicating about these topics. Share your knowledge (tastefully) with friends!";
+    } else if (score >= 15) {
+      rec = "Great job! You know your stuff. There are a few minor things to brush up on, but overall you have a strong, healthy understanding of bodies and pleasure.";
+    } else if (score >= 10) {
+      rec = "You have a solid foundation, but there's room to grow! Society doesn't make it easy to learn this stuff accurately. Check out the educational section below to learn more about pleasure mapping and normal variations.";
+    } else {
+      rec = "Thank you for taking this step to learn more! Most of what we're taught about sex and anatomy is incomplete or just plain wrong. Read through the educational section below to start unlearning the myths and discovering the facts.";
+    }
+    recommendationText.textContent = rec;
+
+    window.scrollTo({ top: resultsArea.offsetTop - 100, behavior: 'smooth' });
+  }
+
+  retryBtn.addEventListener('click', () => {
+    currentQuestionIndex = 0;
+    score = 0;
+    resultsArea.style.display = 'none';
+    quizArea.style.display = 'block';
+    loadQuestion();
+    window.scrollTo({ top: quizArea.offsetTop - 100, behavior: 'smooth' });
+  });
+
+  shareBtn.addEventListener('click', async () => {
+    const shareText = `I scored ${score}/20 on the Pleasure Anatomy Quiz by Ali Imperiale! 🍒✨\nTest your anatomy knowledge here: https://aliimperiale.com/anatomy-quiz.html`;
+
+    try {
+      await navigator.clipboard.writeText(shareText);
+      const originalHTML = shareBtn.innerHTML;
+      shareBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+      setTimeout(() => {
+        shareBtn.innerHTML = originalHTML;
+      }, 2000);
+    } catch (err) {
+      alert("Failed to copy. You can manually share: https://aliimperiale.com/anatomy-quiz.html");
+    }
+  });
+});
+</script>
+</body>
+</html>
