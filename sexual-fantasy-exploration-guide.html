@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Fantasy Exploration Guide & Quiz — Ali Imperiale</title>
+  <meta name="description" content="Safely explore, understand, and communicate your sexual fantasies with this interactive, non-judgmental guide and assessment.">
+  <meta property="og:title" content="Sexual Fantasy Exploration Guide & Quiz — Ali Imperiale">
+  <meta property="og:description" content="Safely explore, understand, and communicate your sexual fantasies with this interactive, non-judgmental guide and assessment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-fantasy-exploration-guide.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-fantasy-exploration-guide.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Site Nav Inline Styles */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 480px) {
+      .site-nav { padding: 12px 16px; }
+    }
+
+    /* Page specific styles */
+    .page-header {
+      text-align: center;
+      padding: 60px 24px 40px;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3rem;
+      font-weight: 400;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+    .page-header p {
+      font-size: 1.05rem;
+      color: #5a6b50;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .tracker-container {
+      max-width: 760px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e8e4d4;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 16px rgba(46,62,36,0.05);
+      margin-bottom: 24px;
+    }
+
+    .card h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.5rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e8e4d4;
+      padding-bottom: 12px;
+    }
+
+    .question-block {
+      margin-bottom: 32px;
+    }
+    .question-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .question-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      background: #FAF8EB;
+      border: 1px solid #e8e4d4;
+      padding: 14px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .option-label:hover {
+      background: #f4efd8;
+    }
+
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 14px;
+      position: relative;
+      flex-shrink: 0;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .option-input::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background: #AD9846;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .option-input:checked::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .option-input:checked + span {
+      font-weight: 600;
+      color: #2E3E24;
+    }
+
+    .option-text {
+      font-size: 0.95rem;
+      color: #5a6b50;
+      line-height: 1.4;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+    }
+
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #FAF8EB;
+      color: #2E3E24;
+      border: 1px solid #2E3E24;
+    }
+    .btn-secondary:hover {
+      background: #e8e4d4;
+    }
+
+    #results-section {
+      display: none;
+    }
+
+    .result-category {
+      background: #FAF8EB;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      border-left: 4px solid #AD9846;
+    }
+
+    .result-category h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+
+    .result-category p {
+      font-size: 0.95rem;
+      color: #5a6b50;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .recommendations {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #e8e4d4;
+    }
+
+    .recommendations h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+
+    .recommendations ul {
+      list-style: none;
+    }
+
+    .recommendations li {
+      font-size: 0.9rem;
+      color: #5a6b50;
+      margin-bottom: 8px;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .recommendations li::before {
+      content: '•';
+      color: #AD9846;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .educational-content {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 2px solid #e8e4d4;
+    }
+
+    .educational-content h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 24px;
+    }
+
+    .educational-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+
+    .educational-content p {
+      font-size: 1rem;
+      color: #5a6b50;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .share-container {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #2E3E24;
+      color: #FAF8EB;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+      .page-header h1 {
+        font-size: 3.5rem;
+      }
+      .options-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Sexual Fantasy Exploration Guide</h1>
+    <p>A safe, judgment-free space to explore your desires, understand your boundaries, and figure out what feels right for you.</p>
+  </header>
+
+  <main class="tracker-container">
+    <section class="card" id="quiz-section">
+      <h2>Explore Your Fantasies</h2>
+      <p style="margin-bottom: 24px; color: #5a6b50; line-height: 1.6;">Answer these questions honestly. There are no wrong answers, and everything is completely private—nothing leaves your browser.</p>
+
+      <form id="fantasy-quiz">
+        <div class="question-block" id="q1">
+          <div class="question-title">1. When I think about my sexual fantasies, they mostly revolve around...</div>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="q1" value="romantic" class="option-input" required>
+              <span class="option-text">Romance, deep connection, and passion.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q1" value="power" class="option-input">
+              <span class="option-text">Power dynamics (taking control or surrendering it).</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q1" value="taboo" class="option-input">
+              <span class="option-text">Things that are forbidden, risky, or "taboo."</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q1" value="novelty" class="option-input">
+              <span class="option-text">Novelty—new places, multiple people, or acting out scenarios.</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-block" id="q2">
+          <div class="question-title">2. How comfortable do you feel about the fantasies you have?</div>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="q2" value="comfortable" class="option-input" required>
+              <span class="option-text">Very comfortable. I enjoy them fully without judgment.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q2" value="curious" class="option-input">
+              <span class="option-text">Mostly comfortable, though I’m curious where some come from.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q2" value="mixed" class="option-input">
+              <span class="option-text">Mixed. Some are fun, others make me feel a bit weird.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q2" value="shame" class="option-input">
+              <span class="option-text">I sometimes feel guilt, shame, or confusion about them.</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-block" id="q3">
+          <div class="question-title">3. When it comes to acting out your fantasies in real life (IRL)...</div>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="q3" value="all_irl" class="option-input" required>
+              <span class="option-text">I want to experience almost all of them in reality.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q3" value="some_irl" class="option-input">
+              <span class="option-text">I'd love to try some, but others are definitely just for my head.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q3" value="pure_fantasy" class="option-input">
+              <span class="option-text">They are strictly fantasies. I have zero desire to actually do them.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q3" value="unsure" class="option-input">
+              <span class="option-text">I’m not sure yet what I want to keep as fantasy vs. reality.</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-block" id="q4">
+          <div class="question-title">4. How do you feel about sharing your fantasies with a partner?</div>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="q4" value="open" class="option-input" required>
+              <span class="option-text">I’m an open book. I love talking about them.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q4" value="selective" class="option-input">
+              <span class="option-text">I share some, but keep the more intense ones to myself.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q4" value="hesitant" class="option-input">
+              <span class="option-text">I want to share, but I’m nervous about being judged.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q4" value="private" class="option-input">
+              <span class="option-text">I prefer to keep them entirely private. They're just for me.</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-block" id="q5">
+          <div class="question-title">5. When exploring a fantasy with a partner, what is your biggest boundary concern?</div>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="q5" value="safety" class="option-input" required>
+              <span class="option-text">Physical safety and clear consent protocols (like safe words).</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q5" value="emotional" class="option-input">
+              <span class="option-text">Emotional safety and ensuring neither of us feels weird after.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q5" value="judgment" class="option-input">
+              <span class="option-text">Fear of judgment or ruining the relationship dynamic.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="q5" value="none" class="option-input">
+              <span class="option-text">I don't really have concerns; I'm comfortable communicating.</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button type="submit" class="btn btn-primary">See My Guide</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card" id="results-section">
+      <h2>Your Personal Exploration Guide</h2>
+      <p style="margin-bottom: 24px; color: #5a6b50; line-height: 1.6;">Based on your responses, here is a customized breakdown of your fantasy style and how to safely explore it.</p>
+
+      <div id="results-content"></div>
+
+      <div class="share-container">
+        <button id="share-btn" class="btn btn-secondary">Share Results</button>
+        <button id="retake-btn" class="btn btn-primary">Retake Assessment</button>
+      </div>
+    </section>
+
+    <div class="educational-content">
+      <h2>The Educational Stuff</h2>
+      <p>Let's take a minute to talk about why we have fantasies and what they actually mean. Spoiler alert: they’re completely normal.</p>
+
+      <h3>1. Fantasies Are Normal (And Very Common)</h3>
+      <p>Almost everyone has sexual fantasies, and they can range from incredibly mundane (having sex on a freshly made bed) to wildly taboo. Having a fantasy about something does not mean you are a bad person, nor does it mean you are secretly harboring dark desires. The brain is an erotic playground, and sometimes it just likes to explore forbidden or intense scenarios in the safe, controlled environment of your imagination.</p>
+
+      <h3>2. Fantasy vs. Reality</h3>
+      <p>This is a big one. <strong>Just because you fantasize about something does not mean you actually want to do it in real life.</strong> Many people enjoy fantasies precisely <em>because</em> they aren't real. For example, fantasizing about a non-consensual scenario (like being forced) is extremely common, but that does not mean the person actually wants to experience non-consent. In the fantasy, <em>you</em> are always secretly in control. In reality, you aren't.</p>
+
+      <h3>3. Why Do We Fantasize About Taboo Things?</h3>
+      <p>Psychologically, fantasies often help us process emotions, safely experience anxiety-inducing situations, or temporarily let go of control. If you spend your whole life being a responsible, in-control adult, it makes sense that you might fantasize about surrendering control entirely in the bedroom. It’s an escape hatch for your brain.</p>
+
+      <h3>4. How to Safely Explore Fantasies IRL</h3>
+      <p>If you <em>do</em> want to bring a fantasy into reality, communication and boundaries are everything.</p>
+      <ul style="color: #5a6b50; font-size: 1rem; line-height: 1.7; margin-left: 20px; margin-bottom: 16px;">
+        <li><strong>Start slow:</strong> Don't jump straight into the deep end. Start by just talking about it, or writing it down and sharing it.</li>
+        <li><strong>Roleplay safely:</strong> If your fantasy involves power dynamics or roleplay, establish clear hard limits and safe words beforehand.</li>
+        <li><strong>Aftercare is mandatory:</strong> Intense fantasies require emotional grounding afterward. Plan for cuddles, snacks, or just a debrief to make sure everyone feels safe and loved.</li>
+      </ul>
+
+      <h3>5. When to Seek Professional Help</h3>
+      <p>While most fantasies are healthy, if a fantasy causes you severe distress, interferes with your ability to enjoy consensual sex, or involves non-consenting parties (like minors or non-consenting adults), it is highly recommended to speak with a sex-positive therapist. They can help you untangle those feelings in a safe, non-judgmental environment.</p>
+    </div>
+  </main>
+
+  <div id="toast" class="toast">Results copied to clipboard!</div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('fantasy-quiz');
+      const quizSection = document.getElementById('quiz-section');
+      const resultsSection = document.getElementById('results-section');
+      const resultsContent = document.getElementById('results-content');
+      const retakeBtn = document.getElementById('retake-btn');
+      const shareBtn = document.getElementById('share-btn');
+      const toast = document.getElementById('toast');
+
+      // Check for saved results
+      const savedResults = localStorage.getItem('fantasyGuideResults');
+      if (savedResults) {
+        showResults(JSON.parse(savedResults));
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const answers = {
+          q1: formData.get('q1'),
+          q2: formData.get('q2'),
+          q3: formData.get('q3'),
+          q4: formData.get('q4'),
+          q5: formData.get('q5')
+        };
+
+        const results = generateResults(answers);
+        localStorage.setItem('fantasyGuideResults', JSON.stringify(results));
+        showResults(results);
+      });
+
+      retakeBtn.addEventListener('click', () => {
+        localStorage.removeItem('fantasyGuideResults');
+        form.reset();
+        resultsSection.style.display = 'none';
+        quizSection.style.display = 'block';
+        window.scrollTo({ top: quizSection.offsetTop - 80, behavior: 'smooth' });
+      });
+
+      shareBtn.addEventListener('click', () => {
+        const textToShare = "I just explored my sexual fantasies using Ali Imperiale's Interactive Guide! Check it out and explore yours: https://aliimperiale.com/sexual-fantasy-exploration-guide.html";
+
+        navigator.clipboard.writeText(textToShare).then(() => {
+          toast.classList.add('show');
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 3000);
+        });
+      });
+
+      function generateResults(answers) {
+        let typeInfo = { title: "", desc: "" };
+        if (answers.q1 === 'romantic') {
+          typeInfo = { title: "The Intimate Explorer", desc: "Your fantasies are deeply rooted in connection and passion. You likely crave emotional resonance alongside physical pleasure." };
+        } else if (answers.q1 === 'power') {
+          typeInfo = { title: "The Power Player", desc: "You are fascinated by power dynamics—whether taking the reins or letting go of control entirely. This is a very common way to process stress or safely step outside your everyday roles." };
+        } else if (answers.q1 === 'taboo') {
+          typeInfo = { title: "The Boundary Pusher", desc: "You are drawn to the forbidden or the taboo. This is incredibly common! Our brains love the thrill of breaking rules in the safe space of our imagination." };
+        } else {
+          typeInfo = { title: "The Novelty Seeker", desc: "You crave variety, new scenarios, and exciting settings. Your imagination is a cinematic experience!" };
+        }
+
+        let realityInfo = { title: "Fantasy vs. Reality Boundaries", desc: "" };
+        if (answers.q3 === 'all_irl') {
+          realityInfo.desc = "You're excited to bring your fantasies to life! Since you want to act them out, prioritizing safe, honest communication with your partner(s) is step one.";
+        } else if (answers.q3 === 'some_irl') {
+          realityInfo.desc = "You have a healthy understanding of the line between what's fun to think about and what's actually fun to do. It's perfectly okay to keep some things purely in your head.";
+        } else if (answers.q3 === 'pure_fantasy') {
+          realityInfo.desc = "Your fantasies are strictly for your brain, and that is completely valid! You don't ever have to act on a fantasy to enjoy it.";
+        } else {
+          realityInfo.desc = "You're still figuring out where the line is between fantasy and reality. Take your time. There is no rush to bring anything into the real world until you are 100% sure.";
+        }
+
+        let communicationInfo = { title: "Sharing & Communication", desc: "" };
+        if (answers.q4 === 'open') {
+          communicationInfo.desc = "You're open to sharing, which is fantastic for building intimacy! Just ensure you're checking in with your partner's comfort levels as you share.";
+        } else if (answers.q4 === 'selective' || answers.q4 === 'hesitant') {
+          communicationInfo.desc = "Sharing can be scary. Start small. Share a mild fantasy first to test the waters and build trust before diving into the deeper stuff.";
+        } else {
+          communicationInfo.desc = "You prefer to keep things private, and that's your right. Your mind is your own private playground. You only have to share if and when you want to.";
+        }
+
+        // Recommendations logic
+        let recs = [];
+        if (answers.q1 === 'power' || answers.q5 === 'safety') {
+          recs.push("Book: 'The New Bottoming Book' & 'The New Topping Book' by Dossie Easton and Janet Hardy for exploring power dynamics safely.");
+        }
+        if (answers.q2 === 'shame' || answers.q2 === 'mixed') {
+          recs.push("Book: 'Come As You Are' by Emily Nagoski to help understand that your desires are normal and unlearn sexual shame.");
+        }
+        if (answers.q4 === 'hesitant' || answers.q4 === 'selective') {
+          recs.push("Resource: Try the 'Yes / No / Maybe List' tool on this site with your partner to start conversations easily.");
+        }
+        if (recs.length === 0) {
+          recs.push("Book: 'Tell Me What You Want' by Justin J. Lehmiller for an amazing, science-based look at everyone's secret desires.");
+          recs.push("Resource: Explore the 'Kink Curiosity Explorer' tool to find new things to safely experiment with.");
+        }
+
+        return { typeInfo, realityInfo, communicationInfo, recs };
+      }
+
+      function showResults(data) {
+        resultsContent.innerHTML = '';
+
+        // Safe insertion using textContent
+        const typeEl = document.createElement('div');
+        typeEl.className = 'result-category';
+        const typeTitle = document.createElement('h3');
+        typeTitle.textContent = data.typeInfo.title;
+        const typeDesc = document.createElement('p');
+        typeDesc.textContent = data.typeInfo.desc;
+        typeEl.appendChild(typeTitle);
+        typeEl.appendChild(typeDesc);
+        resultsContent.appendChild(typeEl);
+
+        const realityEl = document.createElement('div');
+        realityEl.className = 'result-category';
+        const realityTitle = document.createElement('h3');
+        realityTitle.textContent = data.realityInfo.title;
+        const realityDesc = document.createElement('p');
+        realityDesc.textContent = data.realityInfo.desc;
+        realityEl.appendChild(realityTitle);
+        realityEl.appendChild(realityDesc);
+        resultsContent.appendChild(realityEl);
+
+        const commEl = document.createElement('div');
+        commEl.className = 'result-category';
+        const commTitle = document.createElement('h3');
+        commTitle.textContent = data.communicationInfo.title;
+        const commDesc = document.createElement('p');
+        commDesc.textContent = data.communicationInfo.desc;
+        commEl.appendChild(commTitle);
+        commEl.appendChild(commDesc);
+        resultsContent.appendChild(commEl);
+
+        const recEl = document.createElement('div');
+        recEl.className = 'recommendations';
+        const recTitle = document.createElement('h4');
+        recTitle.textContent = "Your Personalized Recommendations:";
+        recEl.appendChild(recTitle);
+        const ul = document.createElement('ul');
+        data.recs.forEach(recText => {
+          const li = document.createElement('li');
+          li.textContent = recText;
+          ul.appendChild(li);
+        });
+        recEl.appendChild(ul);
+        resultsContent.appendChild(recEl);
+
+        quizSection.style.display = 'none';
+        resultsSection.style.display = 'block';
+        window.scrollTo({ top: resultsSection.offsetTop - 80, behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>
