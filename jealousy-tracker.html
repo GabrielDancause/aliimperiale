@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jealousy Journal & Pattern Tracker | Ali Imperiale</title>
+  <meta name="description" content="A private self-reflection tool for understanding jealousy patterns. Log triggers, intensity, and thoughts to uncover underlying patterns. All data stays on your device.">
+  <meta property="og:title" content="Jealousy Journal & Pattern Tracker | Ali Imperiale">
+  <meta property="og:description" content="A private self-reflection tool for understanding jealousy patterns. Log triggers, intensity, and thoughts to uncover underlying patterns. All data stays on your device.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/jealousy-tracker.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jealousy Journal & Pattern Tracker | Ali Imperiale">
+  <meta name="twitter:description" content="A private self-reflection tool for understanding jealousy patterns. Log triggers, intensity, and thoughts to uncover underlying patterns.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/jealousy-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What are the common triggers for relationship jealousy?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Common triggers for relationship jealousy include a partner spending time with an ex, flirting with others, secretiveness with their phone, or feeling inadequate compared to a partner's friends. Triggers are highly personal and often rooted in past experiences or insecurities."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How can I stop being jealous in my relationship?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Stopping jealousy involves recognizing your triggers, communicating openly with your partner without blaming them, practicing self-compassion, and challenging irrational thoughts. Using a jealousy journal can help you identify patterns and reframe jealous thoughts into balanced ones."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Is jealousy a sign of love or insecurity?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Jealousy is typically a sign of insecurity or fear of loss, rather than a measure of love. While feeling a little protective is natural, intense jealousy usually stems from an underlying fear of abandonment, rejection, or feeling 'not good enough'."
+    }
+  }, {
+    "@type": "Question",
+    "name": "When does jealousy become unhealthy or toxic?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Jealousy becomes unhealthy when it leads to controlling behaviors, such as checking a partner's phone, isolating them from friends, making constant accusations, or when it causes significant distress that impacts your daily life and relationship."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How does evolutionary psychology explain jealousy?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Evolutionary psychology suggests jealousy evolved as an adaptive response to protect valuable relationships from perceived threats. Historically, it helped ancestors secure resources and ensure reproductive success by preventing partners from straying."
+    }
+  }]
+}
+  </script>
+  <style>
+    /* Specific styles for jealousy tracker */
+    .hero-banner {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px 40px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+    .hero-title {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: #FAF8EB;
+      line-height: 1.1;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #C6C8BB;
+      line-height: 1.6;
+    }
+
+    .tracker-container {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: #ffffff;
+      color: #2E3E24;
+      border: 1px solid rgba(46, 62, 36, 0.1);
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border-color: #2E3E24;
+    }
+    .tab-btn:hover:not(.active) {
+      background: #f0eedf;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2E3E24;
+    }
+    .form-group input[type="text"],
+    .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #C6C8BB;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      background: #FAF8EB;
+      color: #2E3E24;
+      transition: border-color 0.2s;
+    }
+    .form-group input[type="text"]:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #AD9846;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .slider {
+      flex: 1;
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #e2e0d5;
+      outline: none;
+    }
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #AD9846;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    .slider::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #AD9846;
+      cursor: pointer;
+      border: none;
+    }
+    .slider::-webkit-slider-thumb:hover, .slider::-moz-range-thumb:hover {
+      transform: scale(1.1);
+    }
+    .intensity-val {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #AD9846;
+      min-width: 30px;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #2E3E24;
+      border: 1.5px solid #2E3E24;
+      padding: 12.5px 28px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .actions-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .view-section {
+      display: none;
+    }
+    .view-section.active {
+      display: block;
+    }
+
+    /* Pattern view specific */
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .stat-box {
+      background: #FAF8EB;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(46, 62, 36, 0.05);
+    }
+    .stat-val {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.2rem;
+      color: #AD9846;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #555549;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .stat-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #2E3E24;
+    }
+
+    .reframe-section {
+      background: rgba(173, 152, 70, 0.08);
+      padding: 24px;
+      border-radius: 12px;
+      border-left: 4px solid #AD9846;
+      margin-top: 24px;
+    }
+    .reframe-section h4 {
+      margin-bottom: 12px;
+      color: #2E3E24;
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.3rem;
+    }
+    .reframe-item {
+      margin-bottom: 16px;
+    }
+    .reframe-item:last-child {
+      margin-bottom: 0;
+    }
+    .reframe-thought {
+      font-style: italic;
+      color: #555549;
+      margin-bottom: 6px;
+    }
+    .reframe-balanced {
+      font-weight: 500;
+      color: #2E3E24;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #555549;
+    }
+    .empty-state h4 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.5rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+
+    .privacy-notice {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #8a8a7a;
+      margin-top: 24px;
+    }
+
+    /* Content sections */
+    .content-section {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+    .content-section h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 2rem;
+      color: #2E3E24;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .content-section h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.4rem;
+      color: #2E3E24;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .content-section p {
+      line-height: 1.7;
+      color: #3a4a30;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+    .content-section ul {
+      margin-left: 20px;
+      margin-bottom: 24px;
+      color: #3a4a30;
+    }
+    .content-section li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .faq-container {
+      margin-top: 40px;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+      padding-bottom: 20px;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #2E3E24;
+      margin-bottom: 10px;
+    }
+    .faq-answer {
+      color: #555549;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* History list */
+    .history-container {
+      margin-top: 32px;
+      border-top: 1px solid rgba(46, 62, 36, 0.1);
+      padding-top: 24px;
+    }
+    .history-list {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .history-item {
+      padding: 16px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.05);
+      background: #fafafa;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .history-item:last-child {
+      margin-bottom: 0;
+    }
+    .history-date {
+      font-size: 0.75rem;
+      color: #8a8a7a;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .history-trigger {
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .history-detail {
+      font-size: 0.85rem;
+      color: #555549;
+      margin-bottom: 4px;
+    }
+    .history-delete {
+      background: none;
+      border: none;
+      color: #d9534f;
+      font-size: 0.8rem;
+      cursor: pointer;
+      padding: 0;
+      margin-top: 8px;
+      text-decoration: underline;
+    }
+
+    /* Messages */
+    .msg {
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .msg.success {
+      background: #e6f2e6;
+      color: #2a5a2a;
+      border: 1px solid #c2e0c2;
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .card {
+        padding: 24px 16px;
+      }
+      .actions-row {
+        flex-direction: column;
+      }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav" style="background: #2E3E24; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32" style="height: 32px; opacity: 0.9;"></a>
+    <ul class="nav-links" style="display: flex; gap: 24px; list-style: none;">
+      <li><a href="/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Home</a></li>
+      <li><a href="/blog/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Blog</a></li>
+      <li><a href="/about.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">YouTube</a></li>
+      <li><a href="/open-and-honest.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Patreon</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero-banner">
+    <h1 class="hero-title">Jealousy Journal &amp; Tracker</h1>
+    <p class="hero-subtitle">A private, judgment-free space to untangle your feelings. Track triggers, spot patterns, and reframe your thoughts. All data stays right here on your device.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <div class="tracker-container">
+      <div class="tabs">
+        <button class="tab-btn active" data-target="log-view">New Entry</button>
+        <button class="tab-btn" data-target="pattern-view">Insights &amp; Patterns</button>
+      </div>
+
+      <div id="status-msg" class="msg"></div>
+
+      <!-- LOG VIEW -->
+      <div id="log-view" class="view-section active">
+        <div class="card">
+          <form id="jealousy-form">
+            <div class="form-group">
+              <label for="trigger">What happened? (The Trigger)</label>
+              <input type="text" id="trigger" name="trigger" placeholder="e.g. Partner was texting an ex, saw them flirting..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="intensity">How intense is the feeling right now?</label>
+              <div class="slider-container">
+                <input type="range" id="intensity" name="intensity" min="1" max="10" value="5" class="slider">
+                <span class="intensity-val" id="intensity-display">5</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="thoughts">What are your thoughts telling you?</label>
+              <textarea id="thoughts" name="thoughts" placeholder="e.g. 'They like them more than me,' 'I'm not enough...'" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="body">Where do you feel it in your body?</label>
+              <input type="text" id="body" name="body" placeholder="e.g. Tight chest, sick to my stomach, hot face...">
+            </div>
+
+            <div class="form-group">
+              <label for="action">What did you do? (Or what do you want to do?)</label>
+              <textarea id="action" name="action" placeholder="e.g. I picked a fight, checked their phone, went quiet..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Save Entry</button>
+          </form>
+          <p class="privacy-notice">Your entries are saved to your browser's local storage. They never leave this device.</p>
+        </div>
+      </div>
+
+      <!-- PATTERN VIEW -->
+      <div id="pattern-view" class="view-section">
+        <div class="card">
+          <div id="empty-patterns" class="empty-state">
+            <h4>Not enough data yet</h4>
+            <p>Log at least 3 entries to unlock insights, patterns, and CBT reframes. Come back later!</p>
+            <p id="entry-count-text" style="font-weight: 600; margin-top: 10px;"></p>
+          </div>
+
+          <div id="pattern-content" style="display: none;">
+            <div class="pattern-grid">
+              <div class="stat-box">
+                <div class="stat-label">Total Entries</div>
+                <div class="stat-val" id="stat-total">0</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-label">Avg. Intensity</div>
+                <div class="stat-val" id="stat-intensity">0</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-label">Common Trigger</div>
+                <div class="stat-text" id="stat-trigger">-</div>
+              </div>
+            </div>
+
+            <div class="reframe-section">
+              <h4>CBT-Inspired Reframe</h4>
+              <p style="font-size: 0.9rem; color: #555549; margin-bottom: 16px;">Based on your recent entries, here are some alternative ways to look at your thoughts. Remember: feelings are valid, but thoughts aren't always facts.</p>
+              <div id="reframe-list">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <div class="actions-row">
+              <button id="btn-share" class="btn-primary">Copy Summary to Clipboard</button>
+              <button id="btn-export" class="btn-secondary">Export Journal (.txt)</button>
+              <button id="btn-clear" class="btn-secondary" style="border-color: #d9534f; color: #d9534f;">Clear Data</button>
+            </div>
+
+            <div class="history-container">
+              <h4 style="font-family: 'New Standard', Georgia, serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 16px;">Recent Entries</h4>
+              <div id="history-list" class="history-list">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Educational Content -->
+    <section class="content-section">
+      <h2>Understanding Jealousy</h2>
+
+      <p>Jealousy is one of the most uncomfortable, universally experienced human emotions. Yet, we rarely talk about it honestly. We are taught to be ashamed of it, to hide it, or to pretend we are above it. But the truth is, jealousy is normal. It is information.</p>
+
+      <h3>Healthy vs. Unhealthy Jealousy</h3>
+      <p>A little bit of jealousy is natural. It can serve as a reminder that you value your partner and your relationship. It becomes <strong>healthy jealousy</strong> when you can acknowledge the feeling, discuss it openly without blame, and use it as an opportunity to build intimacy and reassurance.</p>
+      <p>It turns into <strong>unhealthy jealousy</strong> when it leads to controlling behaviors (like checking phones or isolating a partner), constant accusations, or immense anxiety that disrupts your life. When jealousy dictates your actions rather than just informing your feelings, it is time to look deeper.</p>
+
+      <h3>An Evolutionary Perspective</h3>
+      <p>If you feel bad about getting jealous, blame evolution. Evolutionary psychology suggests that jealousy developed as an adaptive mechanism. For our ancestors, losing a partner to someone else wasn't just emotionally painful; it meant a loss of resources, protection, and reproductive success. Your brain is essentially running an ancient software program designed to protect what it considers valuable.</p>
+
+      <h3>Types of Jealousy</h3>
+      <ul>
+        <li><strong>Reactive Jealousy:</strong> A response to an actual, observable threat (e.g., catching a partner lying or cheating).</li>
+        <li><strong>Suspicious Jealousy:</strong> Worrying about a threat that hasn't happened or lacks solid evidence (e.g., ruminating over who they are texting).</li>
+        <li><strong>Retroactive Jealousy:</strong> Obsessing over a partner's past relationships or sexual history, even though it has no bearing on the present.</li>
+      </ul>
+
+      <h3>Resources & Next Steps</h3>
+      <p>If jealousy is overwhelming your relationship, you do not have to figure it out alone. Consider speaking with an AASECT-certified sex therapist or a couples counselor. Recommended reading includes:</p>
+      <ul>
+        <li><em>The Jealousy Workbook</em> by Kathy Labriola</li>
+        <li><em>Polysecure</em> by Jessica Fern (Great for attachment styles and jealousy, even if you are monogamous!)</li>
+        <li><em>Mating in Captivity</em> by Esther Perel</li>
+      </ul>
+
+      <!-- FAQs -->
+      <div class="faq-container">
+        <h3 style="text-align: center; margin-bottom: 24px;">Frequently Asked Questions</h3>
+
+        <div class="faq-item">
+          <div class="faq-question">What are the common triggers for relationship jealousy?</div>
+          <div class="faq-answer">Common triggers for relationship jealousy include a partner spending time with an ex, flirting with others, secretiveness with their phone, or feeling inadequate compared to a partner's friends. Triggers are highly personal and often rooted in past experiences or insecurities.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How can I stop being jealous in my relationship?</div>
+          <div class="faq-answer">Stopping jealousy involves recognizing your triggers, communicating openly with your partner without blaming them, practicing self-compassion, and challenging irrational thoughts. Using a jealousy journal can help you identify patterns and reframe jealous thoughts into balanced ones.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Is jealousy a sign of love or insecurity?</div>
+          <div class="faq-answer">Jealousy is typically a sign of insecurity or fear of loss, rather than a measure of love. While feeling a little protective is natural, intense jealousy usually stems from an underlying fear of abandonment, rejection, or feeling 'not good enough'.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">When does jealousy become unhealthy or toxic?</div>
+          <div class="faq-answer">Jealousy becomes unhealthy when it leads to controlling behaviors, such as checking a partner's phone, isolating them from friends, making constant accusations, or when it causes significant distress that impacts your daily life and relationship.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How does evolutionary psychology explain jealousy?</div>
+          <div class="faq-answer">Evolutionary psychology suggests jealousy evolved as an adaptive response to protect valuable relationships from perceived threats. Historically, it helped ancestors secure resources and ensure reproductive success by preventing partners from straying.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const STORAGE_KEY = 'ali_jealousy_journal';
+
+      // DOM Elements
+      const form = document.getElementById('jealousy-form');
+      const intensitySlider = document.getElementById('intensity');
+      const intensityDisplay = document.getElementById('intensity-display');
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const viewSections = document.querySelectorAll('.view-section');
+      const statusMsg = document.getElementById('status-msg');
+
+      const emptyPatterns = document.getElementById('empty-patterns');
+      const patternContent = document.getElementById('pattern-content');
+      const entryCountText = document.getElementById('entry-count-text');
+
+      const statTotal = document.getElementById('stat-total');
+      const statIntensity = document.getElementById('stat-intensity');
+      const statTrigger = document.getElementById('stat-trigger');
+      const reframeList = document.getElementById('reframe-list');
+      const historyList = document.getElementById('history-list');
+
+      const btnShare = document.getElementById('btn-share');
+      const btnExport = document.getElementById('btn-export');
+      const btnClear = document.getElementById('btn-clear');
+
+      // State
+      let journalEntries = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+
+      // Init
+      updateIntensityDisplay();
+      renderPatterns();
+
+      // Event Listeners
+      intensitySlider.addEventListener('input', updateIntensityDisplay);
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          viewSections.forEach(s => s.classList.remove('active'));
+
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.target).classList.add('active');
+
+          if(btn.dataset.target === 'pattern-view') {
+            renderPatterns();
+          }
+        });
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const newEntry = {
+          id: Date.now(),
+          date: new Date().toISOString(),
+          trigger: document.getElementById('trigger').value.trim(),
+          intensity: parseInt(document.getElementById('intensity').value, 10),
+          thoughts: document.getElementById('thoughts').value.trim(),
+          body: document.getElementById('body').value.trim(),
+          action: document.getElementById('action').value.trim()
+        };
+
+        journalEntries.push(newEntry);
+        saveEntries();
+
+        form.reset();
+        intensitySlider.value = 5;
+        updateIntensityDisplay();
+
+        showMsg('Entry saved successfully!', 'success');
+        renderPatterns(); // Update background data
+      });
+
+      btnShare.addEventListener('click', () => {
+        if (journalEntries.length < 3) return;
+
+        const avg = getAverageIntensity();
+        const trigger = getMostCommonWords(journalEntries.map(e => e.trigger));
+
+        const text = `Jealousy Tracker Summary:\n- Logged ${journalEntries.length} entries\n- Avg Intensity: ${avg}/10\n- Common theme: "${trigger}"\n\nSelf-reflection via aliimperiale.com`;
+
+        navigator.clipboard.writeText(text).then(() => {
+          showMsg('Summary copied to clipboard!', 'success');
+        }).catch(() => {
+          showMsg('Failed to copy. Try selecting and copying manually.', '');
+        });
+      });
+
+      btnExport.addEventListener('click', () => {
+        if (journalEntries.length === 0) return;
+
+        let text = `--- JEALOUSY JOURNAL EXPORT ---\nGenerated on: ${new Date().toLocaleDateString()}\n\n`;
+
+        journalEntries.forEach((entry, idx) => {
+          text += `ENTRY #${idx + 1} - ${new Date(entry.date).toLocaleString()}\n`;
+          text += `Trigger: ${entry.trigger}\n`;
+          text += `Intensity: ${entry.intensity}/10\n`;
+          text += `Thoughts: ${entry.thoughts}\n`;
+          text += `Body: ${entry.body}\n`;
+          text += `Action: ${entry.action}\n`;
+          text += `-----------------------------------\n\n`;
+        });
+
+        const blob = new Blob([text], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `jealousy-journal-${new Date().toISOString().split('T')[0]}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+
+      btnClear.addEventListener('click', () => {
+        if (confirm('Are you sure you want to delete all entries? This cannot be undone.')) {
+          journalEntries = [];
+          saveEntries();
+          renderPatterns();
+          showMsg('All data cleared.', 'success');
+        }
+      });
+
+      historyList.addEventListener('click', (e) => {
+        if (e.target.classList.contains('history-delete')) {
+          const id = parseInt(e.target.dataset.id, 10);
+          journalEntries = journalEntries.filter(entry => entry.id !== id);
+          saveEntries();
+          renderPatterns();
+          showMsg('Entry deleted.', 'success');
+        }
+      });
+
+      // Functions
+      function updateIntensityDisplay() {
+        intensityDisplay.textContent = intensitySlider.value;
+      }
+
+      function saveEntries() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(journalEntries));
+      }
+
+      function showMsg(text, type) {
+        statusMsg.textContent = text;
+        statusMsg.className = `msg ${type}`;
+        statusMsg.style.display = 'block';
+        setTimeout(() => {
+          statusMsg.style.display = 'none';
+        }, 3000);
+      }
+
+      function renderPatterns() {
+        const count = journalEntries.length;
+
+        if (count < 3) {
+          emptyPatterns.style.display = 'block';
+          patternContent.style.display = 'none';
+          entryCountText.textContent = `You have ${count} ${count === 1 ? 'entry' : 'entries'} so far.`;
+          return;
+        }
+
+        emptyPatterns.style.display = 'none';
+        patternContent.style.display = 'block';
+
+        // Stats
+        statTotal.textContent = count;
+        statIntensity.textContent = getAverageIntensity();
+
+        const commonTrigger = getMostCommonWords(journalEntries.map(e => e.trigger));
+        statTrigger.textContent = commonTrigger ? capitalize(commonTrigger) : 'Varied';
+
+        // Reframes
+        generateReframes();
+
+        // History
+        renderHistory();
+      }
+
+      function getAverageIntensity() {
+        if (journalEntries.length === 0) return 0;
+        const sum = journalEntries.reduce((acc, curr) => acc + curr.intensity, 0);
+        return (sum / journalEntries.length).toFixed(1);
+      }
+
+      function getMostCommonWords(strings) {
+        if (!strings || strings.length === 0) return '';
+
+        const stopWords = ['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'i', 'they', 'he', 'she', 'it', 'was', 'is', 'are', 'my', 'their', 'we'];
+        const wordCounts = {};
+
+        strings.forEach(str => {
+          const words = str.toLowerCase().replace(/[.,?!]/g, '').split(/\s+/);
+          words.forEach(word => {
+            if (word.length > 3 && !stopWords.includes(word)) {
+              wordCounts[word] = (wordCounts[word] || 0) + 1;
+            }
+          });
+        });
+
+        const sortedWords = Object.keys(wordCounts).sort((a, b) => wordCounts[b] - wordCounts[a]);
+        return sortedWords.length > 0 ? sortedWords[0] : '';
+      }
+
+      function generateReframes() {
+        reframeList.innerHTML = '';
+
+        // Pick top 3 recent thoughts
+        const recentEntries = [...journalEntries].sort((a, b) => b.id - a.id).slice(0, 3);
+
+        recentEntries.forEach(entry => {
+          if (!entry.thoughts) return;
+
+          // Truncate thought if too long
+          let thought = entry.thoughts;
+          if (thought.length > 60) thought = thought.substring(0, 60) + '...';
+
+          const div = document.createElement('div');
+          div.className = 'reframe-item';
+
+          div.innerHTML = `
+            <div class="reframe-thought">"I thought: ${escapeHtml(thought)}"</div>
+            <div class="reframe-balanced">Reframed: "I felt insecure because of this trigger, but a thought is not a fact. My partner is choosing to be with me."</div>
+          `;
+
+          reframeList.appendChild(div);
+        });
+      }
+
+      function renderHistory() {
+        historyList.innerHTML = '';
+
+        const sortedEntries = [...journalEntries].sort((a, b) => b.id - a.id);
+
+        sortedEntries.forEach(entry => {
+          const div = document.createElement('div');
+          div.className = 'history-item';
+
+          const date = new Date(entry.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+
+          div.innerHTML = `
+            <div class="history-date">${date} &bull; Intensity: ${entry.intensity}/10</div>
+            <div class="history-trigger">${escapeHtml(entry.trigger)}</div>
+            <div class="history-detail"><strong>Action:</strong> ${escapeHtml(entry.action || 'None recorded')}</div>
+            <button class="history-delete" data-id="${entry.id}">Delete</button>
+          `;
+
+          historyList.appendChild(div);
+        });
+      }
+
+      function escapeHtml(unsafe) {
+        return (unsafe || '').toString()
+             .replace(/&/g, "&amp;")
+             .replace(/</g, "&lt;")
+             .replace(/>/g, "&gt;")
+             .replace(/"/g, "&quot;")
+             .replace(/'/g, "&#039;");
+      }
+
+      function capitalize(str) {
+        if (!str) return '';
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      }
+    });
+  </script>
+</body>
+</html>
