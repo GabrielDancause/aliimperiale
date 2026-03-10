@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprehensive Birth Control Method Finder | Ali Imperiale</title>
+  <meta name="description" content="Interactive decision tree tool that recommends contraceptive methods based on lifestyle, health factors, preferences, and needs. Find the best birth control for you.">
+  <meta property="og:title" content="Comprehensive Birth Control Method Finder | Ali Imperiale">
+  <meta property="og:description" content="Interactive decision tree tool that recommends contraceptive methods based on lifestyle, health factors, preferences, and needs. Find the best birth control for you.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/birth-control-finder.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/birth-control-finder.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    /* .site-nav CSS copied from index.html */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+
+    /* Page specific styles */
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .main-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .header-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header-section h1 {
+      font-size: 2.5rem;
+      color: #2E3E24;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .header-section p {
+      font-size: 1.1rem;
+      color: #5a6b50;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .accent-color {
+      color: #AD9846;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+    </ul>
+  </nav>
+
+
+<style>
+/* App UI styles */
+.app-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
+  padding: 40px;
+  margin-bottom: 60px;
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.step-indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e0e4d8;
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+.step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e0e4d8;
+  color: #8a8a7a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.step-dot.active {
+  background: #AD9846;
+  color: #ffffff;
+}
+
+.step-dot.completed {
+  background: #2E3E24;
+  color: #ffffff;
+}
+
+.question-container {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.question-container.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.question-title {
+  font-size: 1.5rem;
+  color: #2E3E24;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.question-subtitle {
+  font-size: 0.95rem;
+  color: #5a6b50;
+  margin-bottom: 24px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.option-card {
+  border: 2px solid #e0e4d8;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  position: relative;
+}
+
+.option-card:hover {
+  border-color: #AD9846;
+  background: #FAF8EB;
+}
+
+.option-card.selected {
+  border-color: #2E3E24;
+  background: #FAF8EB;
+  box-shadow: 0 0 0 1px #2E3E24;
+}
+
+.option-card:focus-within {
+  outline: 2px solid #AD9846;
+  outline-offset: 2px;
+}
+
+.option-card input[type="radio"],
+.option-card input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.option-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2E3E24;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.option-desc {
+  font-size: 0.85rem;
+  color: #5a6b50;
+  line-height: 1.4;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  border-top: 1px solid #e0e4d8;
+  padding-top: 24px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+  border: none;
+}
+
+.btn-prev {
+  background: transparent;
+  color: #5a6b50;
+  border: 1px solid #c6c8bb;
+}
+
+.btn-prev:hover {
+  background: #f4f5f0;
+  color: #2E3E24;
+}
+
+.btn-next {
+  background: #2E3E24;
+  color: #ffffff;
+}
+
+.btn-next:hover {
+  background: #1a2414;
+}
+
+.btn-next:disabled {
+  background: #c6c8bb;
+  cursor: not-allowed;
+}
+
+/* Results Section */
+.results-section {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.results-section.active {
+  display: block;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e4d8;
+}
+
+.results-header h2 {
+  font-size: 2rem;
+  color: #2E3E24;
+  margin-bottom: 12px;
+}
+
+.results-header p {
+  color: #5a6b50;
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.recommendation-card {
+  border: 1px solid #e0e4d8;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.recommendation-card.top-match {
+  border: 2px solid #AD9846;
+  box-shadow: 0 4px 12px rgba(173, 152, 70, 0.15);
+}
+
+.top-match-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #AD9846;
+  color: #ffffff;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom-left-radius: 12px;
+}
+
+.rec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.rec-title-group h3 {
+  font-size: 1.4rem;
+  color: #2E3E24;
+  margin-bottom: 4px;
+}
+
+.rec-type {
+  font-size: 0.85rem;
+  color: #8a8a7a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #FAF8EB;
+  border-radius: 50%;
+  border: 2px solid #2E3E24;
+  font-weight: 700;
+  color: #2E3E24;
+  font-size: 1rem;
+}
+
+.rec-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f4f5f0;
+  border-radius: 8px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #5a6b50;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2E3E24;
+}
+
+.rec-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.details-list h4 {
+  font-size: 0.95rem;
+  color: #2E3E24;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pros-title::before { content: "✓"; color: #4CAF50; }
+.cons-title::before { content: "⚠"; color: #FF9800; }
+
+.details-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details-list li {
+  font-size: 0.9rem;
+  color: #5a6b50;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 16px;
+}
+
+.details-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #c6c8bb;
+}
+
+.btn-restart {
+  display: block;
+  margin: 40px auto 0;
+  background: #ffffff;
+  color: #2E3E24;
+  border: 2px solid #2E3E24;
+}
+
+.btn-restart:hover {
+  background: #FAF8EB;
+}
+
+/* Informational sections */
+.info-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.info-section h3 {
+  font-size: 1.5rem;
+  color: #2E3E24;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e4d8;
+  padding-bottom: 12px;
+}
+
+.myth-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.myth-card {
+  background: #FAF8EB;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #AD9846;
+}
+
+.myth-statement {
+  font-weight: 600;
+  color: #2E3E24;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.myth-statement span {
+  color: #d32f2f;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.myth-fact {
+  font-size: 0.9rem;
+  color: #5a6b50;
+  line-height: 1.5;
+}
+
+.medical-disclaimer {
+  background: #fdfaf6;
+  border: 1px solid #f2e3d5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #8c6b4a;
+  line-height: 1.6;
+}
+
+.medical-disclaimer strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #b35900;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 24px;
+  }
+  .rec-details {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .myth-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="main-container">
+  <div class="header-section">
+    <h1>Comprehensive <span class="accent-color">Birth Control</span> Finder</h1>
+    <p>Find the contraceptive method that best fits your lifestyle, health needs, and preferences. This interactive tool weighs your priorities to suggest personalized options.</p>
+  </div>
+
+  <div class="app-container" id="app-container">
+    <!-- Form Section -->
+    <div id="quiz-section">
+      <div class="step-indicator" id="step-indicator">
+        <!-- Dots injected via JS -->
+      </div>
+
+      <div id="questions-container">
+        <!-- Questions injected via JS -->
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn btn-prev" id="btn-prev" style="visibility: hidden;">Back</button>
+        <button type="button" class="btn btn-next" id="btn-next" disabled>Next Step</button>
+      </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section" id="results-section">
+      <div class="results-header">
+        <h2>Your Personalized Recommendations</h2>
+        <p>Based on your answers, here are the birth control methods that best align with your lifestyle, priorities, and health profile.</p>
+      </div>
+
+      <div id="recommendations-container">
+        <!-- Results injected via JS -->
+      </div>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <p style="color: #5a6b50; font-size: 0.95rem; margin-bottom: 16px;">
+          Want to discuss these options with a healthcare provider? Find resources at <a href="https://www.plannedparenthood.org" target="_blank" rel="noopener" style="color: #AD9846; font-weight: 600;">Planned Parenthood</a> or <a href="https://www.bedsider.org" target="_blank" rel="noopener" style="color: #AD9846; font-weight: 600;">Bedsider</a>.
+        </p>
+      </div>
+
+      <button type="button" class="btn btn-restart" id="btn-restart">Retake Questionnaire</button>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h3>Myth-Busting Contraception</h3>
+    <div class="myth-grid">
+      <div class="myth-card">
+        <div class="myth-statement"><span>Myth</span> The pill makes you gain a lot of weight.</div>
+        <div class="myth-fact">Extensive research shows no direct link between the combination pill and significant weight gain. Some may experience slight water retention initially, but it usually subsides.</div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-statement"><span>Myth</span> IUDs are only for people who have had children.</div>
+        <div class="myth-fact">False. The American College of Obstetricians and Gynecologists (ACOG) recommends IUDs as a safe and highly effective option for adolescents and nulliparous women (those who haven't given birth).</div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-statement"><span>Myth</span> Hormonal birth control affects your future fertility.</div>
+        <div class="myth-fact">There is no evidence that hormonal birth control impacts long-term fertility. Once you stop taking it, your natural cycle and fertility typically return within a few months.</div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-statement"><span>Myth</span> You must take the pill at the exact same minute every day.</div>
+        <div class="myth-fact">While the progestin-only pill (mini-pill) requires a strict 3-hour window, the combination pill has a larger window of forgiveness (up to 24 hours), though taking it consistently builds a good habit.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="medical-disclaimer">
+    <strong>Medical Disclaimer</strong>
+    This tool is designed for educational and informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition or before starting any new birth control method.
+  </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Method Data
+  const methods = [
+    {
+      id: "iud-hormonal",
+      name: "Hormonal IUD",
+      type: "Long-Acting Reversible (LARC) / Hormonal",
+      efficacy: "99.8%",
+      cost: "Moderate to High ($0 with insurance, up to $1,300 without)",
+      pros: ["Set it and forget it (3-8 years)", "Can significantly lighten or stop periods", "Highly effective", "Safe while breastfeeding"],
+      cons: ["Requires a healthcare provider for insertion/removal", "Possible irregular bleeding initially", "Does not protect against STIs"],
+      flags: {
+        effectiveness: 3, // 1-Low, 2-Medium, 3-High
+        effort: "low", // 'daily', 'per-act', 'low'
+        hormonal: true,
+        sti_protection: false,
+        menstruation_impact: "lighten",
+        postpartum: true
+      }
+    },
+    {
+      id: "iud-copper",
+      name: "Copper IUD (Paragard)",
+      type: "Long-Acting Reversible (LARC) / Non-Hormonal",
+      efficacy: "99.2%",
+      cost: "Moderate to High ($0 with insurance, up to $1,300 without)",
+      pros: ["Completely hormone-free", "Lasts up to 10-12 years", "Highly effective", "Can be used as emergency contraception (up to 5 days)"],
+      cons: ["Can make periods heavier and more painful", "Requires provider for insertion/removal", "Does not protect against STIs"],
+      flags: {
+        effectiveness: 3,
+        effort: "low",
+        hormonal: false,
+        sti_protection: false,
+        menstruation_impact: "heavier",
+        postpartum: true
+      }
+    },
+    {
+      id: "implant",
+      name: "The Implant (Nexplanon)",
+      type: "Long-Acting Reversible (LARC) / Hormonal",
+      efficacy: "99.95%",
+      cost: "Moderate to High ($0 with insurance, up to $1,300 without)",
+      pros: ["Most effective reversible method available", "Lasts up to 3 years", "Nothing to remember daily"],
+      cons: ["Irregular bleeding is very common", "Requires minor procedure in-office", "Does not protect against STIs"],
+      flags: {
+        effectiveness: 3,
+        effort: "low",
+        hormonal: true,
+        sti_protection: false,
+        menstruation_impact: "irregular",
+        postpartum: true
+      }
+    },
+    {
+      id: "pill-combo",
+      name: "Combination Pill",
+      type: "Short-Acting / Hormonal",
+      efficacy: "91% (typical use) to 99% (perfect use)",
+      cost: "Low ($0 with insurance, $15-$50/month without)",
+      pros: ["Can regulate periods and reduce cramps", "May improve acne", "Easy to stop at any time"],
+      cons: ["Must remember to take it daily", "Requires a prescription", "Does not protect against STIs", "Not recommended if breastfeeding (first 6 weeks) or history of blood clots"],
+      flags: {
+        effectiveness: 2,
+        effort: "daily",
+        hormonal: true,
+        sti_protection: false,
+        menstruation_impact: "regulate",
+        postpartum: false
+      }
+    },
+    {
+      id: "pill-mini",
+      name: "Progestin-Only Pill (Mini-Pill)",
+      type: "Short-Acting / Hormonal",
+      efficacy: "91% (typical use) to 99% (perfect use)",
+      cost: "Low ($0 with insurance, $15-$50/month without)",
+      pros: ["Safe for breastfeeding", "Good for those who can't take estrogen", "Can regulate periods"],
+      cons: ["Must be taken at the exact same time every day (3-hour window)", "Irregular spotting is common", "Does not protect against STIs"],
+      flags: {
+        effectiveness: 2,
+        effort: "daily",
+        hormonal: true,
+        sti_protection: false,
+        menstruation_impact: "irregular",
+        postpartum: true
+      }
+    },
+    {
+      id: "condoms",
+      name: "External Condoms",
+      type: "Barrier / Non-Hormonal",
+      efficacy: "82% (typical use) to 98% (perfect use)",
+      cost: "Very Low ($0.50-$2 each)",
+      pros: ["Only method that protects against most STIs", "Available over-the-counter anywhere", "Hormone-free"],
+      cons: ["Must be used correctly every time during intercourse", "Can break or slip off", "Requires partner cooperation"],
+      flags: {
+        effectiveness: 1,
+        effort: "per-act",
+        hormonal: false,
+        sti_protection: true,
+        menstruation_impact: "none",
+        postpartum: true
+      }
+    },
+    {
+      id: "ring",
+      name: "Vaginal Ring (NuvaRing / Annovera)",
+      type: "Short-Acting / Hormonal",
+      efficacy: "91% (typical use)",
+      cost: "Low to Moderate ($0 with insurance, $30-$200 without)",
+      pros: ["Only have to think about it once a month", "Can regulate periods and reduce cramps", "You control insertion/removal"],
+      cons: ["Must be comfortable inserting into the vagina", "Does not protect against STIs", "Requires a prescription"],
+      flags: {
+        effectiveness: 2,
+        effort: "monthly",
+        hormonal: true,
+        sti_protection: false,
+        menstruation_impact: "regulate",
+        postpartum: false
+      }
+    },
+    {
+      id: "shot",
+      name: "The Shot (Depo-Provera)",
+      type: "Short-Acting / Hormonal",
+      efficacy: "94% (typical use)",
+      cost: "Low to Moderate ($0 with insurance, $50-$150/shot without)",
+      pros: ["Only need it 4 times a year", "Often stops periods completely after a year", "Private"],
+      cons: ["Requires clinic visits every 3 months", "Can cause temporary bone density loss with long-term use", "Possible weight changes", "Delay in return to fertility (up to 10 months)"],
+      flags: {
+        effectiveness: 2,
+        effort: "monthly", // Using 'monthly' flag for non-daily short-acting
+        hormonal: true,
+        sti_protection: false,
+        menstruation_impact: "lighten",
+        postpartum: true
+      }
+    }
+  ];
+
+  // Questionnaire Data
+  const questions = [
+    {
+      id: "q1",
+      title: "How important is a high level of effectiveness?",
+      subtitle: "Consider how critical it is for you to avoid pregnancy at this time.",
+      type: "radio",
+      options: [
+        { id: "eff_high", label: "Extremely Important", desc: "I want the highest possible protection (>99%).", value: "high" },
+        { id: "eff_med", label: "Important", desc: "I want strong protection, but user-controlled methods (>90%) are fine if I use them perfectly.", value: "med" },
+        { id: "eff_low", label: "Somewhat Important", desc: "I'm okay with moderate protection or combining methods.", value: "low" }
+      ]
+    },
+    {
+      id: "q2",
+      title: "How much daily/weekly effort do you want to put in?",
+      subtitle: "Think about your routine and memory.",
+      type: "radio",
+      options: [
+        { id: "effort_low", label: "Set it and forget it", desc: "I don't want to think about it for months or years.", value: "low" },
+        { id: "effort_monthly", label: "Monthly check-in", desc: "I can handle remembering once a month or every few months.", value: "monthly" },
+        { id: "effort_daily", label: "Daily habit", desc: "Taking a pill every day is easy for me.", value: "daily" },
+        { id: "effort_peract", label: "Only when having sex", desc: "I'd rather only use something right before sex.", value: "per-act" }
+      ]
+    },
+    {
+      id: "q3",
+      title: "Are you comfortable using hormones?",
+      subtitle: "Hormonal methods can regulate periods, but some people prefer non-hormonal options.",
+      type: "radio",
+      options: [
+        { id: "hormone_yes", label: "Yes, I'm comfortable", desc: "I have no issues with estrogen or progestin.", value: "yes" },
+        { id: "hormone_no", label: "No, hormone-free only", desc: "I prefer or need to avoid synthetic hormones.", value: "no" },
+        { id: "hormone_indifferent", label: "I don't mind either way", desc: "I'm open to both hormonal and non-hormonal.", value: "indifferent" }
+      ]
+    },
+    {
+      id: "q4",
+      title: "How would you like your method to affect your period?",
+      subtitle: "Some methods alter menstruation significantly.",
+      type: "radio",
+      options: [
+        { id: "period_lighten", label: "Lighten or stop completely", desc: "I want fewer or no periods.", value: "lighten" },
+        { id: "period_regulate", label: "Regulate and predict", desc: "I want to know exactly when my period is coming.", value: "regulate" },
+        { id: "period_none", label: "Keep it natural", desc: "I want my natural cycle to continue unchanged.", value: "none" },
+        { id: "period_indifferent", label: "Doesn't matter", desc: "I'm fine with irregular spotting or heavier flow.", value: "indifferent" }
+      ]
+    },
+    {
+      id: "q5",
+      title: "Do you need protection against STIs?",
+      subtitle: "Sexually Transmitted Infections",
+      type: "radio",
+      options: [
+        { id: "sti_yes", label: "Yes", desc: "I have a new partner or multiple partners.", value: "yes" },
+        { id: "sti_no", label: "No", desc: "I am in a monogamous, tested relationship or use barriers already.", value: "no" }
+      ]
+    }
+  ];
+
+  // State
+  let currentStep = 0;
+  let userAnswers = {};
+
+  // DOM Elements
+  const stepIndicator = document.getElementById('step-indicator');
+  const questionsContainer = document.getElementById('questions-container');
+  const btnPrev = document.getElementById('btn-prev');
+  const btnNext = document.getElementById('btn-next');
+  const quizSection = document.getElementById('quiz-section');
+  const resultsSection = document.getElementById('results-section');
+  const recommendationsContainer = document.getElementById('recommendations-container');
+  const btnRestart = document.getElementById('btn-restart');
+
+  // Initialize
+  function init() {
+    renderSteps();
+    renderQuestions();
+    updateUI();
+  }
+
+  function renderSteps() {
+    stepIndicator.innerHTML = '';
+    questions.forEach((q, index) => {
+      const dot = document.createElement('div');
+      dot.className = `step-dot ${index === 0 ? 'active' : ''}`;
+      dot.textContent = index + 1;
+      stepIndicator.appendChild(dot);
+    });
+  }
+
+  function renderQuestions() {
+    questionsContainer.innerHTML = '';
+    questions.forEach((q, index) => {
+      const qDiv = document.createElement('div');
+      qDiv.className = `question-container ${index === 0 ? 'active' : ''}`;
+      qDiv.id = `q-container-${index}`;
+
+      const title = document.createElement('div');
+      title.className = 'question-title';
+      title.textContent = q.title;
+      qDiv.appendChild(title);
+
+      const subtitle = document.createElement('div');
+      subtitle.className = 'question-subtitle';
+      subtitle.textContent = q.subtitle;
+      qDiv.appendChild(subtitle);
+
+      const grid = document.createElement('div');
+      grid.className = 'options-grid';
+
+      q.options.forEach(opt => {
+        const card = document.createElement('label');
+        card.className = 'option-card';
+        card.innerHTML = `
+          <input type="radio" name="${q.id}" value="${opt.value}">
+          <span class="option-title">${opt.label}</span>
+          <span class="option-desc">${opt.desc}</span>
+        `;
+
+        card.addEventListener('click', () => {
+          // Remove selected class from siblings
+          const siblings = grid.querySelectorAll('.option-card');
+          siblings.forEach(s => s.classList.remove('selected'));
+
+          // Add to current
+          card.classList.add('selected');
+
+          // Update state
+          userAnswers[q.id] = opt.value;
+
+          // Enable next button
+          btnNext.disabled = false;
+        });
+
+        grid.appendChild(card);
+      });
+
+      qDiv.appendChild(grid);
+      questionsContainer.appendChild(qDiv);
+    });
+  }
+
+  function updateUI() {
+    // Update dots
+    const dots = stepIndicator.querySelectorAll('.step-dot');
+    dots.forEach((dot, index) => {
+      dot.classList.remove('active', 'completed');
+      if (index < currentStep) {
+        dot.classList.add('completed');
+      } else if (index === currentStep) {
+        dot.classList.add('active');
+      }
+    });
+
+    // Update questions
+    const qContainers = questionsContainer.querySelectorAll('.question-container');
+    qContainers.forEach((container, index) => {
+      if (index === currentStep) {
+        container.classList.add('active');
+      } else {
+        container.classList.remove('active');
+      }
+    });
+
+    // Update buttons
+    btnPrev.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
+
+    if (currentStep === questions.length - 1) {
+      btnNext.textContent = 'See Recommendations';
+    } else {
+      btnNext.textContent = 'Next Step';
+    }
+
+    // Check if current step has an answer
+    const currentQId = questions[currentStep].id;
+    btnNext.disabled = !userAnswers[currentQId];
+  }
+
+  // Navigation
+  btnNext.addEventListener('click', () => {
+    if (currentStep < questions.length - 1) {
+      currentStep++;
+      updateUI();
+    } else {
+      calculateResults();
+    }
+  });
+
+  btnPrev.addEventListener('click', () => {
+    if (currentStep > 0) {
+      currentStep--;
+      updateUI();
+    }
+  });
+
+  btnRestart.addEventListener('click', () => {
+    currentStep = 0;
+    userAnswers = {};
+    quizSection.style.display = 'block';
+    resultsSection.classList.remove('active');
+
+    // Clear selections
+    const cards = document.querySelectorAll('.option-card');
+    cards.forEach(card => {
+      card.classList.remove('selected');
+      const input = card.querySelector('input');
+      if (input) input.checked = false;
+    });
+
+    updateUI();
+  });
+
+  // Algorithm
+  function calculateResults() {
+    // Scoring logic
+    const scoredMethods = methods.map(method => {
+      let score = 0;
+      let maxPossibleScore = 0;
+
+      // Q1: Effectiveness
+      maxPossibleScore += 3;
+      if (userAnswers.q1 === 'high' && method.flags.effectiveness === 3) score += 3;
+      else if (userAnswers.q1 === 'med' && method.flags.effectiveness >= 2) score += 3;
+      else if (userAnswers.q1 === 'low') score += 3; // Any method is fine
+      else if (userAnswers.q1 === 'high' && method.flags.effectiveness === 2) score += 1;
+
+      // Q2: Effort
+      maxPossibleScore += 3;
+      if (userAnswers.q2 === method.flags.effort) score += 3;
+      else if (userAnswers.q2 === 'low' && method.flags.effort === 'monthly') score += 1;
+
+      // Q3: Hormones
+      maxPossibleScore += 4; // Weight heavily if they specifically want non-hormonal
+      if (userAnswers.q3 === 'no') {
+        if (!method.flags.hormonal) score += 4;
+        else score -= 10; // Dealbreaker
+      } else if (userAnswers.q3 === 'yes' && method.flags.hormonal) {
+        score += 2;
+      } else if (userAnswers.q3 === 'indifferent') {
+        score += 4;
+      }
+
+      // Q4: Period Impact
+      maxPossibleScore += 2;
+      if (userAnswers.q4 === method.flags.menstruation_impact) score += 2;
+      else if (userAnswers.q4 === 'indifferent') score += 2;
+
+      // Q5: STI Protection
+      // This is unique because only condoms really do this, but we don't want to exclude everything else,
+      // just highlight condoms if they say yes.
+      if (userAnswers.q5 === 'yes') {
+        if (method.flags.sti_protection) score += 5; // Big boost
+      }
+
+      const matchPercentage = Math.max(0, Math.round((score / maxPossibleScore) * 100));
+      // Dealbreaker check
+      const finalPercentage = score < 0 ? 0 : matchPercentage;
+
+      return {
+        ...method,
+        score: finalPercentage
+      };
+    });
+
+    // Sort descending
+    scoredMethods.sort((a, b) => b.score - a.score);
+
+    // Filter out 0 scores (dealbreakers) and take top 3
+    const topMatches = scoredMethods.filter(m => m.score > 0).slice(0, 3);
+
+    // If condoms wasn't top but they wanted STI protection, inject a note or make sure it's visible
+    // For simplicity, we just display the top 3 matches.
+
+    renderResults(topMatches);
+  }
+
+  function renderResults(matches) {
+    recommendationsContainer.innerHTML = '';
+
+    if (matches.length === 0) {
+      recommendationsContainer.innerHTML = '<p style="text-align:center; padding: 40px;">No exact match found based on strict criteria (e.g., non-hormonal requirements). Try adjusting your answers or consulting a healthcare provider.</p>';
+    } else {
+      matches.forEach((m, index) => {
+        const isTop = index === 0;
+        const card = document.createElement('div');
+        card.className = `recommendation-card ${isTop ? 'top-match' : ''}`;
+
+        const prosHtml = m.pros.map(p => `<li>${p}</li>`).join('');
+        const consHtml = m.cons.map(c => `<li>${c}</li>`).join('');
+
+        let badgeHtml = '';
+        if (isTop) {
+          badgeHtml = `<div class="top-match-badge">Top Match</div>`;
+        }
+
+        // Add a generic condom note if they selected STI protection but it wasn't the condom method itself
+        let stiWarning = '';
+        if (userAnswers.q5 === 'yes' && !m.flags.sti_protection) {
+          stiWarning = `<div style="margin-top: 16px; padding: 12px; background: #fff4e5; border-left: 4px solid #ff9800; border-radius: 4px; font-size: 0.85rem; color: #b35900;">
+            <strong>Note:</strong> Since you indicated needing STI protection, you should use condoms in addition to this method.
+          </div>`;
+        }
+
+        card.innerHTML = `
+          ${badgeHtml}
+          <div class="rec-header">
+            <div class="rec-title-group">
+              <h3>${m.name}</h3>
+              <div class="rec-type">${m.type}</div>
+            </div>
+            <div class="match-score">${m.score}%</div>
+          </div>
+
+          <div class="rec-stats">
+            <div class="stat-item">
+              <span class="stat-label">Effectiveness</span>
+              <span class="stat-value">${m.efficacy}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Estimated Cost</span>
+              <span class="stat-value">${m.cost}</span>
+            </div>
+          </div>
+
+          <div class="rec-details">
+            <div class="details-list">
+              <h4 class="pros-title">Pros</h4>
+              <ul>${prosHtml}</ul>
+            </div>
+            <div class="details-list">
+              <h4 class="cons-title">Considerations</h4>
+              <ul>${consHtml}</ul>
+            </div>
+          </div>
+
+          ${stiWarning}
+        `;
+
+        recommendationsContainer.appendChild(card);
+      });
+    }
+
+    quizSection.style.display = 'none';
+    resultsSection.classList.add('active');
+
+    // Scroll to top of results
+    document.getElementById('app-container').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Start
+  init();
+});
+</script>
+
+<style>
+/* FAQ Styles */
+.faq-section {
+  max-width: 900px;
+  margin: 60px auto 80px;
+  padding: 0 20px;
+}
+
+.faq-section h2 {
+  font-size: 2rem;
+  color: #2E3E24;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e0e4d8;
+  padding: 24px 0;
+}
+
+.faq-question {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2E3E24;
+  margin-bottom: 12px;
+}
+
+.faq-answer {
+  font-size: 1rem;
+  color: #5a6b50;
+  line-height: 1.6;
+}
+</style>
+
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">What is the most effective birth control method?</div>
+    <div class="faq-answer">Long-acting reversible contraceptives (LARCs) like the hormonal implant and IUDs are the most effective methods, with success rates over 99% because they eliminate user error.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Can I get birth control without a prescription?</div>
+    <div class="faq-answer">Yes. External condoms, internal condoms, spermicides, and sponges are available over-the-counter. Additionally, the progestin-only pill Opill is now available over-the-counter in the US.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">How soon after stopping birth control can I get pregnant?</div>
+    <div class="faq-answer">For most methods (like the pill, patch, ring, and IUDs), fertility typically returns within a few weeks to months. The exception is the birth control shot (Depo-Provera), which can delay fertility return for up to 10 months.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Does birth control protect against STIs?</div>
+    <div class="faq-answer">Most birth control methods do not protect against Sexually Transmitted Infections (STIs). Only barrier methods, such as external and internal condoms, provide STI protection.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Are there non-hormonal birth control options?</div>
+    <div class="faq-answer">Yes! The copper IUD (Paragard), external and internal condoms, diaphragms, cervical caps, and fertility awareness-based methods (FAMs) are entirely hormone-free.</div>
+  </div>
+</section>
+
+<!-- Footer Scripts -->
+<script src="mobile-nav.js"></script>
+<script src="newsletter-bar.js"></script>
+<script src="back-to-top.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the most effective birth control method?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Long-acting reversible contraceptives (LARCs) like the hormonal implant and IUDs are the most effective methods, with success rates over 99% because they eliminate user error."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get birth control without a prescription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. External condoms, internal condoms, spermicides, and sponges are available over-the-counter. Additionally, the progestin-only pill Opill is now available over-the-counter in the US."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How soon after stopping birth control can I get pregnant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most methods (like the pill, patch, ring, and IUDs), fertility typically returns within a few weeks to months. The exception is the birth control shot (Depo-Provera), which can delay fertility return for up to 10 months."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does birth control protect against STIs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most birth control methods do not protect against Sexually Transmitted Infections (STIs). Only barrier methods, such as external and internal condoms, provide STI protection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there non-hormonal birth control options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! The copper IUD (Paragard), external and internal condoms, diaphragms, cervical caps, and fertility awareness-based methods (FAMs) are entirely hormone-free."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>

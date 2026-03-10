@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relationship Energy Matching Tool — Ali Imperiale</title>
+  <meta name="description" content="Assess compatibility with your partner based on energy levels, activity preferences, and lifestyle choices. Get personalized tips for energy balance.">
+  <meta property="og:title" content="Relationship Energy Matching Tool">
+  <meta property="og:description" content="Assess compatibility with your partner based on energy levels, activity preferences, and lifestyle choices. Get personalized tips for energy balance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/relationship-energy-matching-tool.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/relationship-energy-matching-tool.html">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    /* Site Nav Inline Styles */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+
+    /* Page Specific Styles */
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+    .page-hero {
+      text-align: center;
+      padding: 60px 24px 40px;
+    }
+    .page-hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      font-size: 1.1rem;
+      color: #4a5c3f;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .tool-container {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+    .tool-card {
+      background: #fff;
+      border: 1px solid #e8e4d4;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(46,62,36,0.05);
+      margin-bottom: 40px;
+    }
+
+    .partner-section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #fdfcf7;
+      border-radius: 8px;
+      border: 1px solid #e8e4d4;
+    }
+    .partner-section h3 {
+      margin-top: 0;
+      color: #AD9846;
+      border-bottom: 2px solid #e8e4d4;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .question-group {
+      margin-bottom: 24px;
+    }
+    .question-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2E3E24;
+    }
+    .question-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1cdba;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      background-color: #fff;
+      color: #2E3E24;
+    }
+    .question-group select:focus {
+      outline: none;
+      border-color: #AD9846;
+      box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
+    }
+
+    .btn-submit {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s;
+      font-family: inherit;
+    }
+    .btn-submit:hover {
+      background-color: #1a2414;
+    }
+
+    .results-section {
+      display: none;
+      margin-top: 40px;
+      padding: 30px;
+      background: #fff;
+      border: 2px solid #AD9846;
+      border-radius: 12px;
+    }
+    .results-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .score-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #FAF8EB;
+      border: 4px solid #AD9846;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin: 0 auto 24px;
+    }
+    .results-title {
+      text-align: center;
+      color: #2E3E24;
+      margin-bottom: 16px;
+      font-size: 1.8rem;
+    }
+    .results-summary {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #4a5c3f;
+    }
+    .insight-card {
+      background: #FAF8EB;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      border-left: 4px solid #AD9846;
+    }
+    .insight-card h4 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #2E3E24;
+    }
+    .insight-card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #2E3E24;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid #e8e4d4;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .faq-item h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      color: #2E3E24;
+    }
+    .faq-item p {
+      margin: 0;
+      color: #4a5c3f;
+    }
+
+    @media (max-width: 600px) {
+      .tool-card {
+        padding: 24px;
+      }
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is relationship energy matching?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Relationship energy matching is the process of understanding and navigating the different natural energy levels, social preferences, and daily rhythms between partners to create a balanced dynamic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a relationship work if our energy levels are completely different?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! Differences in energy (like an introvert dating an extrovert, or a morning person with a night owl) are common. The key is communication, mutual respect, and finding compromises so both partners' needs are met without resentment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do we handle mismatched social energy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It helps to plan 'hybrid' social events where the introverted partner can leave early guilt-free, or scheduling regular alone time. Recognizing that needing downtime is not a rejection of the other person is crucial."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if our intimacy energy doesn't match?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Intimacy energy mismatches are normal. Having open, judgment-free conversations about what intimacy looks like for both of you helps. Sometimes it means finding new ways to connect that aren't purely physical, or scheduling intentional time for connection when both feel energized."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should we reassess our energy compatibility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Energy levels change due to stress, life events, aging, and health. Checking in every few months, or during major life transitions, can help ensure you both continue to support each other's evolving needs."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/tools.html" class="active">Tools</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-hero">
+      <h1>Relationship Energy Matching Tool</h1>
+      <p>Discover how your natural rhythms, social batteries, and lifestyle choices align with your partner's. Get personalized tips to bridge the gaps and celebrate your synergies.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="tool-card">
+        <form id="energyForm">
+
+          <div class="partner-section">
+            <h3>Partner 1</h3>
+
+            <div class="question-group">
+              <label for="p1_rhythm">1. Daily Rhythm</label>
+              <select id="p1_rhythm" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="1">Early bird (Energized in the morning)</option>
+                <option value="2">Flexible (Adapts easily to different schedules)</option>
+                <option value="3">Night owl (Energized late at night)</option>
+              </select>
+            </div>
+
+            <div class="question-group">
+              <label for="p1_social">2. Social Energy</label>
+              <select id="p1_social" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="1">Introvert (Recharges alone)</option>
+                <option value="2">Ambivert (Needs a balance of both)</option>
+                <option value="3">Extrovert (Recharges with others)</option>
+              </select>
+            </div>
+
+            <div class="question-group">
+              <label for="p1_activity">3. Weekend Activity Level</label>
+              <select id="p1_activity" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="1">Relaxed (Netflix, reading, resting)</option>
+                <option value="2">Moderate (A mix of chores, relaxing, and light outings)</option>
+                <option value="3">Active (Hiking, events, constantly on the go)</option>
+              </select>
+            </div>
+
+            <div class="question-group">
+              <label for="p1_comm">4. Communication Style Under Stress</label>
+              <select id="p1_comm" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="1">Needs space to process internally</option>
+                <option value="2">Wants to talk it out immediately</option>
+              </select>
+            </div>
+
+            <div class="question-group">
+              <label for="p1_intimacy">5. Intimacy Energy (Physical & Emotional)</label>
+              <select id="p1_intimacy" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="1">Lower frequency, values deep emotional connection first</option>
+                <option value="2">Moderate frequency, flexible approach</option>
+                <option value="3">High frequency, uses physical intimacy to connect emotionally</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="partner-section">
+            <h3>Partner 2</h3>
+
+            <div class="question-group">
+              <label for="p2_rhythm">1. Daily Rhythm</label>
+              <select id="p2_rhythm" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="1">Early bird (Energized in the morning)</option>
+                <option value="2">Flexible (Adapts easily to different schedules)</option>
+                <option value="3">Night owl (Energized late at night)</option>
+              </select>
+            </div>
+
+            <div class="question-group">
+              <label for="p2_social">2. Social Energy</label>
+              <select id="p2_social" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="1">Introvert (Recharges alone)</option>
+                <option value="2">Ambivert (Needs a balance of both)</option>
+                <option value="3">Extrovert (Recharges with others)</option>
+              </select>
+            </div>
+
+            <div class="question-group">
+              <label for="p2_activity">3. Weekend Activity Level</label>
+              <select id="p2_activity" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="1">Relaxed (Netflix, reading, resting)</option>
+                <option value="2">Moderate (A mix of chores, relaxing, and light outings)</option>
+                <option value="3">Active (Hiking, events, constantly on the go)</option>
+              </select>
+            </div>
+
+            <div class="question-group">
+              <label for="p2_comm">4. Communication Style Under Stress</label>
+              <select id="p2_comm" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="1">Needs space to process internally</option>
+                <option value="2">Wants to talk it out immediately</option>
+              </select>
+            </div>
+
+            <div class="question-group">
+              <label for="p2_intimacy">5. Intimacy Energy (Physical & Emotional)</label>
+              <select id="p2_intimacy" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="1">Lower frequency, values deep emotional connection first</option>
+                <option value="2">Moderate frequency, flexible approach</option>
+                <option value="3">High frequency, uses physical intimacy to connect emotionally</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit">Calculate Compatibility</button>
+        </form>
+
+        <div id="resultsArea" class="results-section">
+          <h2 class="results-title">Your Energy Compatibility</h2>
+          <div class="score-circle">
+            <span id="scoreDisplay">0%</span>
+          </div>
+          <p id="summaryDisplay" class="results-summary"></p>
+
+          <div id="insightsContainer"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is relationship energy matching?</h3>
+        <p>Relationship energy matching is the process of understanding and navigating the different natural energy levels, social preferences, and daily rhythms between partners to create a balanced dynamic.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can a relationship work if our energy levels are completely different?</h3>
+        <p>Absolutely! Differences in energy (like an introvert dating an extrovert, or a morning person with a night owl) are common. The key is communication, mutual respect, and finding compromises so both partners' needs are met without resentment.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do we handle mismatched social energy?</h3>
+        <p>It helps to plan "hybrid" social events where the introverted partner can leave early guilt-free, or scheduling regular alone time. Recognizing that needing downtime is not a rejection of the other person is crucial.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if our intimacy energy doesn't match?</h3>
+        <p>Intimacy energy mismatches are normal. Having open, judgment-free conversations about what intimacy looks like for both of you helps. Sometimes it means finding new ways to connect that aren't purely physical, or scheduling intentional time for connection when both feel energized.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How often should we reassess our energy compatibility?</h3>
+        <p>Energy levels change due to stress, life events, aging, and health. Checking in every few months, or during major life transitions, can help ensure you both continue to support each other's evolving needs.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <script>
+    document.getElementById('energyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const p1 = {
+        rhythm: parseInt(document.getElementById('p1_rhythm').value),
+        social: parseInt(document.getElementById('p1_social').value),
+        activity: parseInt(document.getElementById('p1_activity').value),
+        comm: parseInt(document.getElementById('p1_comm').value),
+        intimacy: parseInt(document.getElementById('p1_intimacy').value)
+      };
+
+      const p2 = {
+        rhythm: parseInt(document.getElementById('p2_rhythm').value),
+        social: parseInt(document.getElementById('p2_social').value),
+        activity: parseInt(document.getElementById('p2_activity').value),
+        comm: parseInt(document.getElementById('p2_comm').value),
+        intimacy: parseInt(document.getElementById('p2_intimacy').value)
+      };
+
+      let totalDiff = 0;
+      let maxDiff = 10; // 5 categories * max diff of 2 per category (except comm which is 1)
+
+      const insights = [];
+
+      // Rhythm
+      const rhythmDiff = Math.abs(p1.rhythm - p2.rhythm);
+      totalDiff += rhythmDiff;
+      if (rhythmDiff === 2) {
+        insights.push({
+          title: "Daily Rhythm Gap",
+          text: "You have opposite daily rhythms. Try to find a 'crossover hour' where the morning person isn't too tired and the night owl is awake enough to connect meaningfully."
+        });
+      } else if (rhythmDiff === 0) {
+        insights.push({
+          title: "Synchronized Schedules",
+          text: "Your daily rhythms align perfectly, making it easier to naturally spend quality time together without one of you feeling drained."
+        });
+      }
+
+      // Social
+      const socialDiff = Math.abs(p1.social - p2.social);
+      totalDiff += socialDiff;
+      if (socialDiff === 2) {
+        insights.push({
+          title: "Social Energy Balance",
+          text: "One of you is highly social while the other needs alone time. Compromise by taking separate cars to events, or establishing a 'safe word' when the introvert's social battery is depleted."
+        });
+      }
+
+      // Activity
+      const activityDiff = Math.abs(p1.activity - p2.activity);
+      totalDiff += activityDiff;
+      if (activityDiff >= 1) {
+        insights.push({
+          title: "Weekend Pacing",
+          text: "Your ideal weekends look slightly different. Make sure the more active partner has outlets for their energy, while protecting the downtime needs of the more relaxed partner."
+        });
+      }
+
+      // Comm
+      const commDiff = Math.abs(p1.comm - p2.comm);
+      totalDiff += commDiff;
+      if (commDiff === 1) {
+        insights.push({
+          title: "Conflict Processing",
+          text: "Under stress, one needs space while the other wants to resolve it immediately. Agree on a specific timeframe (e.g., 'Give me 30 minutes, then we talk') to honor both processing styles."
+        });
+      }
+
+      // Intimacy
+      const intimacyDiff = Math.abs(p1.intimacy - p2.intimacy);
+      totalDiff += intimacyDiff;
+      if (intimacyDiff >= 1) {
+        insights.push({
+          title: "Intimacy Expectations",
+          text: "There's a slight difference in how you approach intimacy. Focus on non-pressured physical touch and open conversations about what makes you both feel loved and connected outside the bedroom."
+        });
+      }
+
+      if (insights.length === 0) {
+         insights.push({
+          title: "Highly Compatible",
+          text: "You naturally align on almost all fronts! Enjoy this ease, but remember to keep communicating as life changes can shift these energies over time."
+        });
+      }
+
+      // Calculate score
+      const matchPercentage = Math.round(((maxDiff - totalDiff) / maxDiff) * 100);
+
+      // Update DOM
+      document.getElementById('scoreDisplay').textContent = `${matchPercentage}%`;
+
+      const summaryText = matchPercentage >= 80 ?
+        "You two have highly aligned energy levels! This makes day-to-day life flow smoothly." :
+        matchPercentage >= 50 ?
+        "You have a lovely balance of similarities and differences. A little communication goes a long way." :
+        "Opposites attract! You have very different energy profiles, which offers a great opportunity for growth if navigated with empathy.";
+
+      document.getElementById('summaryDisplay').textContent = summaryText;
+
+      const container = document.getElementById('insightsContainer');
+      container.innerHTML = ''; // Clear previous
+
+      insights.forEach(insight => {
+        const card = document.createElement('div');
+        card.className = 'insight-card';
+
+        const h4 = document.createElement('h4');
+        h4.textContent = insight.title;
+
+        const p = document.createElement('p');
+        p.textContent = insight.text;
+
+        card.appendChild(h4);
+        card.appendChild(p);
+        container.appendChild(card);
+      });
+
+      const resultsArea = document.getElementById('resultsArea');
+      resultsArea.classList.add('active');
+      resultsArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  </script>
+</body>
+</html>

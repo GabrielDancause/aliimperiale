@@ -18,7 +18,7 @@
   <meta property="og:image:height" content="960">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Love Language Quiz | Ali Imperiale">
-  <meta name="twitter:description" content="Take this interactive Love Language quiz to discover how you give and receive love. Great for individuals and couples.">
+  <meta name="twitter:description" content="Take this comprehensive 30-question interactive Love Language quiz to discover how you give and receive love. Great for individuals and couples.">
   <meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
   <link rel="canonical" href="https://aliimperiale.com/love-language-quiz.html">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -540,7 +540,7 @@
       <!-- Start Screen -->
       <div id="start-screen">
         <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 1.8rem; margin-bottom: 16px;">Ready to find out?</h2>
-        <p>This quick 20-question quiz is based on Dr. Gary Chapman's 5 Love Languages framework. For each scenario, pick the option that resonates most with you.</p>
+        <p>This comprehensive 30-question quiz is based on Dr. Gary Chapman's 5 Love Languages framework. For each scenario, pick the option that resonates most with you.</p>
 
         <div class="mode-toggle">
           <button class="mode-btn active" id="btn-solo-mode">Solo Mode</button>
@@ -557,7 +557,7 @@
       <!-- Question Screen -->
       <div id="quiz-screen">
         <div class="turn-indicator" id="turn-indicator">Partner 1's Turn</div>
-        <div class="question-counter"><span id="current-q">1</span> / 20</div>
+        <div class="question-counter"><span id="current-q">1</span> / 30</div>
         <div class="progress-bar">
           <div class="progress-fill" id="progress"></div>
         </div>
@@ -790,7 +790,37 @@
         optB: { text: "Take me out for a 1-on-1 lunch date.", type: LANGS.TIME } },
       { text: "The best physical demonstration of love is...",
         optA: { text: "A long, tight hug.", type: LANGS.TOUCH },
-        optB: { text: "A surprise gift waiting for me.", type: LANGS.GIFTS } }
+        optB: { text: "A surprise gift waiting for me.", type: LANGS.GIFTS } },
+      { text: "I feel especially loved when my partner...",
+        optA: { text: "Gives me an unexpected hug or kiss.", type: LANGS.TOUCH },
+        optB: { text: "Sends me an encouraging message before a big presentation.", type: LANGS.WORDS } },
+      { text: "It means the world to me if...",
+        optA: { text: "We spend an afternoon doing an activity together, just the two of us.", type: LANGS.TIME },
+        optB: { text: "My partner picks up my dry cleaning or does the grocery shopping.", type: LANGS.ACTS } },
+      { text: "I feel most appreciated when...",
+        optA: { text: "My partner brings me my favorite coffee or treat out of nowhere.", type: LANGS.GIFTS },
+        optB: { text: "My partner holds my hand while we are walking together.", type: LANGS.TOUCH } },
+      { text: "When I've had a bad day, the best thing my partner can do is...",
+        optA: { text: "Tell me how much they appreciate and believe in me.", type: LANGS.WORDS },
+        optB: { text: "Sit with me without distractions and listen to me vent.", type: LANGS.TIME } },
+      { text: "I know my partner is thinking of me when...",
+        optA: { text: "They take over a difficult task so I don't have to deal with it.", type: LANGS.ACTS },
+        optB: { text: "They surprise me with a thoughtful little gift.", type: LANGS.GIFTS } },
+      { text: "I feel truly connected when...",
+        optA: { text: "We cuddle while reading or watching TV.", type: LANGS.TOUCH },
+        optB: { text: "We go for a walk and talk about our future.", type: LANGS.TIME } },
+      { text: "It fills my cup when my partner...",
+        optA: { text: "Leaves me a sweet handwritten note to find later.", type: LANGS.WORDS },
+        optB: { text: "Buys me something small that reminded them of me.", type: LANGS.GIFTS } },
+      { text: "I feel loved and cared for when...",
+        optA: { text: "My partner cooks dinner for me after a long day.", type: LANGS.ACTS },
+        optB: { text: "My partner rests their hand on my leg or shoulder.", type: LANGS.TOUCH } },
+      { text: "A great way for my partner to show affection is...",
+        optA: { text: "Giving me a genuine, specific compliment.", type: LANGS.WORDS },
+        optB: { text: "Helping me clean up after dinner without being asked.", type: LANGS.ACTS } },
+      { text: "I feel most secure in our relationship when...",
+        optA: { text: "We plan and go on a special weekend getaway.", type: LANGS.TIME },
+        optB: { text: "My partner brings me a souvenir from their business trip.", type: LANGS.GIFTS } }
     ];
 
     const langDescriptions = {
