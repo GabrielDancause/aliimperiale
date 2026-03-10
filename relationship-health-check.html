@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relationship Health Check | Ali Imperiale</title>
+  <meta name="description" content="Take this interactive relationship health check to assess communication, trust, intimacy, respect, fun, and growth in your relationship.">
+  <meta property="og:title" content="Relationship Health Check | Ali Imperiale">
+  <meta property="og:description" content="Take this interactive relationship health check to assess communication, trust, intimacy, respect, fun, and growth in your relationship.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/relationship-health-check.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Relationship Health Check">
+  <meta name="twitter:description" content="Interactive relationship health check.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/relationship-health-check.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Add inline CSS for the tool here */
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    .main-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .page-title {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 400;
+      color: #2E3E24;
+    }
+    .page-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #555549;
+      margin-bottom: 40px;
+    }
+    .tool-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(46, 62, 36, 0.08);
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+    /* Buttons */
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: #FAF8EB;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+      padding: 10px 22px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    /* Links */
+    a {
+      color: #AD9846;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+
+    /* Assessment UI */
+    .intro-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .mode-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .mode-btn {
+      padding: 10px 20px;
+      border: 2px solid #AD9846;
+      background: transparent;
+      color: #2E3E24;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.2s;
+    }
+    .mode-btn.active {
+      background: #AD9846;
+      color: #FAF8EB;
+    }
+
+    .question-container {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+    }
+    .question-container:last-child {
+      border-bottom: none;
+    }
+    .question-text {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: #2E3E24;
+    }
+    .options-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .option-label {
+      flex: 1;
+      text-align: center;
+      cursor: pointer;
+    }
+    .option-label input {
+      display: none;
+    }
+    .option-box {
+      display: block;
+      padding: 10px 5px;
+      background: #FAF8EB;
+      border: 1px solid #C6C8BB;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      transition: all 0.15s;
+    }
+    .option-label input:checked + .option-box {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border-color: #2E3E24;
+    }
+    .option-label:hover .option-box {
+      border-color: #AD9846;
+    }
+
+    /* Results UI */
+    #results-section {
+      display: none;
+    }
+    .chart-container {
+      position: relative;
+      height: 400px;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    .score-banner {
+      text-align: center;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+    .score-banner.green { background: #4CAF50; }
+    .score-banner.yellow { background: #FFB300; color: #2E3E24; }
+    .score-banner.red { background: #F44336; }
+
+    .score-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; }
+    .score-value { font-size: 2.5rem; font-weight: 700; margin-bottom: 5px; }
+    .score-desc { font-size: 0.95rem; }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .analysis-card {
+      background: #FAF8EB;
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .analysis-card h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.2rem;
+      color: #AD9846;
+      margin-bottom: 15px;
+    }
+    .analysis-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .analysis-list li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.9rem;
+    }
+    .analysis-list li::before {
+      content: '•';
+      color: #2E3E24;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .tips-section { margin-bottom: 30px; }
+    .tips-section h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #2E3E24;
+    }
+    .tip-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-left: 4px solid #AD9846;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .tip-card h4 { margin-bottom: 5px; font-size: 1.05rem; }
+    .tip-card p { font-size: 0.9rem; color: #555549; margin: 0; }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .partner-toggle {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #AD9846;
+    }
+
+    /* Educational Section */
+    .edu-section {
+      background: #fff;
+      padding: 40px;
+      border-radius: 18px;
+      margin-bottom: 40px;
+      box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
+    }
+    .edu-section h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.2rem;
+      color: #2E3E24;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .edu-section p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555549;
+      margin-bottom: 20px;
+    }
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .edu-item h4 {
+      font-family: 'New Standard', Georgia, serif;
+      color: #AD9846;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .edu-item p {
+      font-size: 0.85rem;
+      margin-bottom: 0;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #e0dcca;
+    }
+    .faq-item {
+      margin-bottom: 25px;
+    }
+    .faq-item h4 {
+      font-family: 'New Standard', Georgia, serif;
+      color: #2E3E24;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .faq-item p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555549;
+    }
+
+    .disclaimer {
+      font-size: 0.8rem;
+      color: #8a8a7a;
+      text-align: center;
+      margin-top: 30px;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .tool-card {
+        padding: 20px;
+      }
+      .page-title {
+        font-size: 2.2rem;
+      }
+      .options-grid {
+        flex-direction: column;
+      }
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+      .edu-section {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is a relationship health check?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A relationship health check is a tool to assess the strengths and areas for growth in your partnership across key dimensions like communication, trust, intimacy, respect, fun, and growth."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How often should you do a relationship check-in?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Many couples find it helpful to do a regular check-in monthly or quarterly. It's a great way to stay connected, address minor issues before they grow, and celebrate what's working well."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What are the signs of a healthy relationship?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Healthy relationships are built on mutual respect, open and honest communication, deep trust, shared fun, emotional and physical intimacy, and a willingness to grow both individually and together."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Can we take this test as a couple?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes! This tool includes a Couples Mode. Both partners can answer the questions separately, and you can compare your results to see where your perspectives align and where they differ."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Is this a substitute for couples therapy?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No, this is an educational tool designed for self-reflection and sparking conversations. It is not a diagnostic tool or a substitute for professional couples therapy or counseling."
+    }
+  }]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="nav-hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-container" id="main-content">
+    <h1 class="page-title">Relationship Health Check</h1>
+    <p class="page-subtitle">A judgment-free assessment to see what's thriving and what needs some love.</p>
+
+    <div class="tool-card" id="assessment-container">
+      <div class="intro-section" id="intro-section">
+        <p>Answer the following 30 questions honestly. Don't overthink it — go with your gut feeling.</p>
+        <div class="mode-toggle">
+          <button class="mode-btn active" id="btn-solo" onclick="setMode('solo')">Solo Mode</button>
+          <button class="mode-btn" id="btn-couples" onclick="setMode('couples')">Couples Mode</button>
+        </div>
+        <p id="mode-desc" style="font-size: 0.85rem; color: #777;">Take the assessment yourself to reflect on the relationship.</p>
+
+        <div id="partner-turn-indicator" class="partner-toggle" style="display: none;">
+          Partner 1's Turn
+        </div>
+      </div>
+
+      <form id="assessment-form">
+        <div id="questions-container">
+          <!-- Questions will be injected here by JS -->
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+          <button type="submit" class="btn-primary" id="submit-btn">See Results</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Results Section -->
+    <div class="tool-card" id="results-section">
+      <h2 style="text-align: center; font-family: 'The Bloomington', cursive; font-size: 2.5rem; margin-bottom: 20px;">Your Results</h2>
+
+      <div id="score-banner" class="score-banner">
+        <div class="score-title">Overall Relationship Health</div>
+        <div class="score-value" id="overall-score">--/100</div>
+        <div class="score-desc" id="overall-desc"></div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="radarChart"></canvas>
+      </div>
+
+      <div class="analysis-grid">
+        <div class="analysis-card">
+          <h3>Areas of Strength</h3>
+          <ul class="analysis-list" id="strengths-list">
+            <!-- Strengths injected here -->
+          </ul>
+        </div>
+        <div class="analysis-card">
+          <h3>Areas for Growth</h3>
+          <ul class="analysis-list" id="growth-list">
+            <!-- Growth injected here -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="tips-section" id="tips-container">
+        <h3>Actionable Tips</h3>
+        <!-- Tips injected here -->
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn-primary" id="share-btn" onclick="shareResults()">Share Results</button>
+        <button class="btn-secondary" onclick="resetAssessment()">Retake Assessment</button>
+      </div>
+    </div>
+
+    <!-- Educational Section -->
+    <div class="edu-section">
+      <h2>The 6 Dimensions of a Relationship</h2>
+      <p>A thriving relationship isn't just about one thing working perfectly; it's about a balance across multiple areas of connection. We break relationship health down into six core dimensions. Understanding these can help you figure out exactly where you shine and where you might need to put in a little extra work.</p>
+
+      <div class="edu-grid">
+        <div class="edu-item">
+          <h4>Communication</h4>
+          <p>The foundation of everything. It's not just about talking, but actively listening, resolving conflict without cruelty, and feeling safe enough to express your true needs and feelings.</p>
+        </div>
+        <div class="edu-item">
+          <h4>Trust & Safety</h4>
+          <p>Feeling secure that your partner has your back. This includes emotional reliability, honesty, respecting boundaries, and creating a space where vulnerability is welcomed.</p>
+        </div>
+        <div class="edu-item">
+          <h4>Intimacy & Connection</h4>
+          <p>The closeness you share. This encompasses both emotional intimacy (feeling seen and understood) and physical connection, ensuring both partners feel desired and satisfied.</p>
+        </div>
+        <div class="edu-item">
+          <h4>Respect & Appreciation</h4>
+          <p>Valuing each other as individuals. It's about acknowledging efforts, showing gratitude, supporting each other's goals, and treating each other with kindness even when frustrated.</p>
+        </div>
+        <div class="edu-item">
+          <h4>Fun & Adventure</h4>
+          <p>The joy and playfulness in your bond. Sharing laughter, trying new things together, maintaining inside jokes, and not taking yourselves too seriously all the time.</p>
+        </div>
+        <div class="edu-item">
+          <h4>Growth & Alignment</h4>
+          <p>Moving in the same direction. Supporting each other's personal evolution while ensuring your core values, future goals, and commitment to the relationship remain aligned.</p>
+        </div>
+      </div>
+
+      <div class="faq-section">
+        <h3 style="text-align:center; font-family:'The Bloomington', cursive; font-size:2rem; color:#2E3E24; margin-top:20px; margin-bottom:30px;">Frequently Asked Questions</h3>
+        <div class="faq-item">
+          <h4>What is a relationship health check?</h4>
+          <p>A relationship health check is a tool to assess the strengths and areas for growth in your partnership across key dimensions like communication, trust, intimacy, respect, fun, and growth.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How often should you do a relationship check-in?</h4>
+          <p>Many couples find it helpful to do a regular check-in monthly or quarterly. It's a great way to stay connected, address minor issues before they grow, and celebrate what's working well.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What are the signs of a healthy relationship?</h4>
+          <p>Healthy relationships are built on mutual respect, open and honest communication, deep trust, shared fun, emotional and physical intimacy, and a willingness to grow both individually and together.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can we take this test as a couple?</h4>
+          <p>Yes! This tool includes a Couples Mode. Both partners can answer the questions separately, and you can compare your results to see where your perspectives align and where they differ.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Is this a substitute for couples therapy?</h4>
+          <p>No, this is an educational tool designed for self-reflection and sparking conversations. It is not a diagnostic tool or a substitute for professional couples therapy or counseling.</p>
+        </div>
+      </div>
+
+      <p class="disclaimer"><em>Disclaimer: This tool is designed for educational purposes and self-reflection. It is not a diagnostic tool and is not a substitute for professional couples therapy, counseling, or medical advice.</em></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script>
+    // Assessment Data
+    const dimensions = [
+      { id: 'comm', name: 'Communication' },
+      { id: 'trust', name: 'Trust & Safety' },
+      { id: 'inti', name: 'Intimacy' },
+      { id: 'resp', name: 'Respect' },
+      { id: 'fun', name: 'Fun & Adventure' },
+      { id: 'grow', name: 'Growth' }
+    ];
+
+    const questions = [
+      // Communication
+      { id: 'q1', dim: 'comm', text: "We can discuss difficult topics without it turning into a screaming match." },
+      { id: 'q2', dim: 'comm', text: "I feel heard and understood when I express my feelings." },
+      { id: 'q3', dim: 'comm', text: "My partner asks about my day and genuinely listens to the answer." },
+      { id: 'q4', dim: 'comm', text: "We repair quickly after an argument or misunderstanding." },
+      { id: 'q5', dim: 'comm', text: "I feel safe bringing up things that are bothering me." },
+      // Trust & Safety
+      { id: 'q6', dim: 'trust', text: "I trust my partner completely with my emotional vulnerabilities." },
+      { id: 'q7', dim: 'trust', text: "My partner keeps their promises and follows through on commitments." },
+      { id: 'q8', dim: 'trust', text: "I never worry about my partner hiding things from me." },
+      { id: 'q9', dim: 'trust', text: "We respect each other's boundaries, even when we disagree." },
+      { id: 'q10', dim: 'trust', text: "I feel emotionally and physically safe in this relationship." },
+      // Intimacy & Connection
+      { id: 'q11', dim: 'inti', text: "I am satisfied with the frequency and quality of our physical intimacy." },
+      { id: 'q12', dim: 'inti', text: "We show affection outside of the bedroom (hugging, holding hands, etc.)." },
+      { id: 'q13', dim: 'inti', text: "I feel desired and wanted by my partner." },
+      { id: 'q14', dim: 'inti', text: "We make time to connect intimately, even when life gets busy." },
+      { id: 'q15', dim: 'inti', text: "I feel comfortable communicating my sexual needs and desires." },
+      // Respect & Appreciation
+      { id: 'q16', dim: 'resp', text: "My partner frequently expresses appreciation for the things I do." },
+      { id: 'q17', dim: 'resp', text: "We speak to each other with kindness, even when stressed." },
+      { id: 'q18', dim: 'resp', text: "I feel valued for who I am, not just what I do for the relationship." },
+      { id: 'q19', dim: 'resp', text: "We support each other's individual goals and hobbies." },
+      { id: 'q20', dim: 'resp', text: "I never feel belittled or patronized by my partner." },
+      // Fun & Adventure
+      { id: 'q21', dim: 'fun', text: "We laugh together frequently." },
+      { id: 'q22', dim: 'fun', text: "We make time to go on dates and prioritize having fun together." },
+      { id: 'q23', dim: 'fun', text: "I enjoy trying new things and exploring with my partner." },
+      { id: 'q24', dim: 'fun', text: "We have inside jokes or shared silly moments." },
+      { id: 'q25', dim: 'fun', text: "Our relationship feels light and playful, not just heavy and serious." },
+      // Growth & Alignment
+      { id: 'q26', dim: 'grow', text: "We are aligned on our major life goals (finances, kids, lifestyle)." },
+      { id: 'q27', dim: 'grow', text: "I feel like this relationship makes me a better version of myself." },
+      { id: 'q28', dim: 'grow', text: "We handle life transitions and stress well as a team." },
+      { id: 'q29', dim: 'grow', text: "I am committed to working on my own personal growth." },
+      { id: 'q30', dim: 'grow', text: "I feel confident about the future of our relationship." }
+    ];
+
+    const tipsData = {
+      comm: "Communication: Try instituting a weekly 'state of the union' check-in. Practice active listening—repeat back what you heard before responding to ensure you actually understood.",
+      trust: "Trust & Safety: Rebuilding or strengthening trust requires consistency. Focus on keeping small promises and being transparent about your feelings and actions.",
+      inti: "Intimacy: Physical connection often starts outside the bedroom. Focus on non-sexual touch (cuddling, hand-holding) and schedule uninterrupted time just to focus on each other.",
+      resp: "Respect: Start a daily gratitude practice. Every evening, tell your partner one specific thing you appreciated about them that day.",
+      fun: "Fun & Adventure: Break the routine. Plan a surprise date night, take a class together, or try a new activity where you both are beginners and can laugh at your mistakes.",
+      grow: "Growth: Have a dedicated conversation about your 1-year and 5-year visions. Make sure you are supporting each other's individual goals while rowing the boat in the same direction."
+    };
+
+    let currentMode = 'solo'; // 'solo' or 'couples'
+    let partnerTurn = 1;
+    let partner1Scores = {};
+    let partner2Scores = {};
+    let radarChartInstance = null;
+
+    function initAssessment() {
+      const container = document.getElementById('questions-container');
+      container.innerHTML = '';
+
+      questions.forEach((q, index) => {
+        const div = document.createElement('div');
+        div.className = 'question-container';
+        div.innerHTML = `
+          <div class="question-text">${index + 1}. ${q.text}</div>
+          <div class="options-grid">
+            ${[1, 2, 3, 4, 5].map(val => `
+              <label class="option-label">
+                <input type="radio" name="${q.id}" value="${val}" required>
+                <span class="option-box">${val === 1 ? '1<br>(Never)' : val === 5 ? '5<br>(Always)' : val}</span>
+              </label>
+            `).join('')}
+          </div>
+        `;
+        container.appendChild(div);
+      });
+
+      // Scroll to top of assessment
+      document.getElementById('intro-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function setMode(mode) {
+      currentMode = mode;
+      document.getElementById('btn-solo').classList.toggle('active', mode === 'solo');
+      document.getElementById('btn-couples').classList.toggle('active', mode === 'couples');
+
+      const desc = document.getElementById('mode-desc');
+      const indicator = document.getElementById('partner-turn-indicator');
+
+      if (mode === 'couples') {
+        desc.textContent = 'Partner 1 answers first, then hands the device to Partner 2.';
+        indicator.style.display = 'block';
+        partnerTurn = 1;
+        indicator.textContent = "Partner 1's Turn";
+      } else {
+        desc.textContent = 'Take the assessment yourself to reflect on the relationship.';
+        indicator.style.display = 'none';
+      }
+
+      document.getElementById('assessment-form').reset();
+    }
+
+    function calculateScores(formData) {
+      const scores = {};
+      dimensions.forEach(d => {
+        scores[d.id] = { total: 0, count: 0 };
+      });
+
+      questions.forEach(q => {
+        const val = parseInt(formData.get(q.id));
+        if (!isNaN(val)) {
+          scores[q.dim].total += val;
+          scores[q.dim].count += 1;
+        }
+      });
+
+      const finalScores = {};
+      dimensions.forEach(d => {
+        // Calculate percentage: normalized 1-5 scale to 0-100%
+        // Max score is count * 5. Min score is count * 1.
+        // Formula: ((total - min) / (max - min)) * 100
+        const min = scores[d.id].count;
+        const max = scores[d.id].count * 5;
+        finalScores[d.id] = Math.round(((scores[d.id].total - min) / (max - min)) * 100);
+      });
+
+      return finalScores;
+    }
+
+    function renderResults() {
+      document.getElementById('assessment-container').style.display = 'none';
+      document.getElementById('results-section').style.display = 'block';
+      document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+
+      // Calculate overall score (average of dimensions for Partner 1, or average of both partners)
+      let overallScore = 0;
+      let p1Avg = Object.values(partner1Scores).reduce((a, b) => a + b, 0) / dimensions.length;
+
+      if (currentMode === 'couples') {
+        let p2Avg = Object.values(partner2Scores).reduce((a, b) => a + b, 0) / dimensions.length;
+        overallScore = Math.round((p1Avg + p2Avg) / 2);
+      } else {
+        overallScore = Math.round(p1Avg);
+      }
+
+      // Update banner
+      const banner = document.getElementById('score-banner');
+      const scoreVal = document.getElementById('overall-score');
+      const scoreDesc = document.getElementById('overall-desc');
+
+      scoreVal.textContent = `${overallScore}/100`;
+      banner.className = 'score-banner'; // reset
+
+      if (overallScore >= 80) {
+        banner.classList.add('green');
+        scoreDesc.textContent = "Thriving! Your relationship has a very strong foundation.";
+      } else if (overallScore >= 60) {
+        banner.classList.add('yellow');
+        scoreDesc.textContent = "Solid, but with room to grow. Focus on your lower-scoring areas.";
+      } else {
+        banner.classList.add('red');
+        scoreDesc.textContent = "Needs attention. It might be time to have some open conversations or seek outside support.";
+      }
+
+      // Render Chart
+      const ctx = document.getElementById('radarChart').getContext('2d');
+      if (radarChartInstance) radarChartInstance.destroy();
+
+      const labels = dimensions.map(d => d.name);
+      const datasets = [];
+
+      datasets.push({
+        label: currentMode === 'couples' ? 'Partner 1' : 'Your Score',
+        data: dimensions.map(d => partner1Scores[d.id]),
+        backgroundColor: 'rgba(46, 62, 36, 0.2)',
+        borderColor: '#2E3E24',
+        pointBackgroundColor: '#2E3E24',
+        borderWidth: 2
+      });
+
+      if (currentMode === 'couples') {
+        datasets.push({
+          label: 'Partner 2',
+          data: dimensions.map(d => partner2Scores[d.id]),
+          backgroundColor: 'rgba(173, 152, 70, 0.2)',
+          borderColor: '#AD9846',
+          pointBackgroundColor: '#AD9846',
+          borderWidth: 2
+        });
+      }
+
+      radarChartInstance = new Chart(ctx, {
+        type: 'radar',
+        data: { labels, datasets },
+        options: {
+          scales: {
+            r: {
+              min: 0,
+              max: 100,
+              ticks: { stepSize: 20 }
+            }
+          },
+          plugins: {
+            legend: { position: 'top' }
+          }
+        }
+      });
+
+      // Strengths, Growth, and Tips (based on combined average or solo score)
+      const combinedScores = {};
+      dimensions.forEach(d => {
+        if (currentMode === 'couples') {
+          combinedScores[d.id] = (partner1Scores[d.id] + partner2Scores[d.id]) / 2;
+        } else {
+          combinedScores[d.id] = partner1Scores[d.id];
+        }
+      });
+
+      // Sort dimensions by score
+      const sortedDims = [...dimensions].sort((a, b) => combinedScores[b.id] - combinedScores[a.id]);
+
+      const strengths = sortedDims.slice(0, 3);
+      const growth = sortedDims.slice(-3).reverse(); // Bottom 3, lowest first
+
+      document.getElementById('strengths-list').innerHTML = strengths.map(d => `<li><strong>${d.name}</strong> (${Math.round(combinedScores[d.id])}%)</li>`).join('');
+      document.getElementById('growth-list').innerHTML = growth.map(d => `<li><strong>${d.name}</strong> (${Math.round(combinedScores[d.id])}%)</li>`).join('');
+
+      // Inject tips for the bottom 2 areas
+      const tipsHtml = growth.slice(0, 2).map(d => `
+        <div class="tip-card">
+          <h4>${d.name}</h4>
+          <p>${tipsData[d.id]}</p>
+        </div>
+      `).join('');
+      document.getElementById('tips-container').innerHTML = `<h3>Actionable Tips</h3>${tipsHtml}`;
+    }
+
+    document.getElementById('assessment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+
+      if (currentMode === 'solo') {
+        partner1Scores = calculateScores(formData);
+        renderResults();
+      } else {
+        if (partnerTurn === 1) {
+          partner1Scores = calculateScores(formData);
+          partnerTurn = 2;
+          document.getElementById('partner-turn-indicator').textContent = "Partner 2's Turn";
+          document.getElementById('submit-btn').textContent = "See Results";
+          this.reset();
+          window.scrollTo({ top: document.getElementById('intro-section').offsetTop, behavior: 'smooth' });
+          alert("Partner 1 complete! Please hand the device to Partner 2.");
+        } else {
+          partner2Scores = calculateScores(formData);
+          renderResults();
+        }
+      }
+    });
+
+    function resetAssessment() {
+      document.getElementById('assessment-form').reset();
+      document.getElementById('results-section').style.display = 'none';
+      document.getElementById('assessment-container').style.display = 'block';
+      if (currentMode === 'couples') setMode('couples'); // reset turn indicator
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function shareResults() {
+      const score = document.getElementById('overall-score').textContent;
+      const text = `I just took the Relationship Health Check on AliImperiale.com and scored ${score}! Take the assessment yourself to see your relationship strengths and growth areas: https://aliimperiale.com/relationship-health-check.html`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('share-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = originalText; }, 2000);
+      }).catch(err => {
+        alert("Couldn't copy to clipboard. You can manually share this link: https://aliimperiale.com/relationship-health-check.html");
+      });
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', initAssessment);
+  </script>
+</body>
+</html>
