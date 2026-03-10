@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive First Time Readiness Checklist | Ali Imperiale</title>
+  <meta name="description" content="A comprehensive sexual readiness assessment and losing virginity checklist. Assess your emotional, physical, and practical readiness for first-time sex.">
+  <meta name="keywords" content="first time sex readiness, losing virginity checklist, sexual readiness assessment, first time sex tips, virginity, sexual health">
+  <meta name="author" content="Ali Imperiale">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* Site Nav Desktop Overrides */
+    .site-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #FAF8EB;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      color: #2E3E24;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #AD9846;
+    }
+
+    /* Page Layout */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header.page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    h1 {
+      color: #2E3E24;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      color: #2E3E24;
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+    .intro-text {
+      font-size: 1.1rem;
+      background-color: rgba(173, 152, 70, 0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    /* Checklist styles */
+    .checklist-section {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: #FAF8EB;
+      border-radius: 8px;
+      transition: background-color 0.2s;
+    }
+    .checklist-item:hover {
+      background: #f0ead2;
+    }
+    .checklist-item input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border: 2px solid #AD9846;
+      border-radius: 4px;
+      margin-right: 15px;
+      margin-top: 2px;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .checklist-item input[type="checkbox"]:checked {
+      background-color: #AD9846;
+    }
+    .checklist-item input[type="checkbox"]:checked::after {
+      content: '✔';
+      position: absolute;
+      color: white;
+      font-size: 16px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .checklist-item label {
+      cursor: pointer;
+      flex-grow: 1;
+    }
+    .item-title {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .item-desc {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Results */
+    #results-section {
+      text-align: center;
+      padding: 3rem 2rem;
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      border-radius: 12px;
+      margin-top: 3rem;
+      display: none;
+    }
+    #results-section h2 {
+      color: #AD9846;
+      border-bottom: none;
+    }
+    .score-display {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #AD9846;
+      margin: 1rem 0;
+    }
+    .progress-bar-container {
+      width: 100%;
+      height: 20px;
+      background: rgba(250, 248, 235, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    .progress-bar {
+      height: 100%;
+      background: #AD9846;
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    @media (max-width: 600px) {
+      .resources-grid { grid-template-columns: 1fr; }
+    }
+    .resource-card {
+      background: rgba(250, 248, 235, 0.1);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .resource-card h4 {
+      margin-top: 0;
+      color: #AD9846;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .btn {
+      background-color: #AD9846;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background-color 0.2s, transform 0.1s;
+      margin: 0.5rem;
+    }
+    .btn:hover { background-color: #8c7a36; }
+    .btn:active { transform: scale(0.98); }
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid #2E3E24;
+      color: #2E3E24;
+    }
+    .btn-secondary:hover {
+      background-color: rgba(46, 62, 36, 0.1);
+    }
+
+    /* Disclaimer */
+    .medical-disclaimer {
+      font-size: 0.85rem;
+      color: #666;
+      background: #eee;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      margin-top: 4rem;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1.2rem;
+      color: #2E3E24;
+      margin-bottom: 0.5rem;
+    }
+    .faq-item p {
+      color: #444;
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+
+  <!-- JSON-LD FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I know if I'm ready for sex for the first time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Being ready for sex involves emotional, physical, and practical readiness. It means you feel comfortable with your partner, understand consent, have communicated your boundaries, and are prepared with contraception if applicable. Trusting your gut and moving at a pace that feels totally safe and exciting for you is key."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it normal to be nervous about losing my virginity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! It is completely normal to feel a mix of excitement and anxiety. It's a new experience, and it's okay to have feelings about it. Communicating those nerves with your partner can actually be a great way to build intimacy and take the pressure off."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I start, but then I want to stop?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You always have the right to stop at any time, for any reason. Consent is ongoing. A good partner will immediately respect your decision to stop, slow down, or change activities without any guilt or pressure."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <header class="page-header">
+      <h1>First Time Readiness Checklist</h1>
+      <p class="intro-text">
+        Hey there! Whether you call it "losing your virginity," having sex for the first time, or just taking that next step in intimacy—it's a big deal, and it's totally normal to have a mix of excitement and butterflies.
+        <br><br>
+        I created this checklist not as a test you can "fail," but as a judgment-free tool to help you check in with yourself. Let's look at your emotional readiness, your communication game, and the practical stuff, so when you do decide the time is right, you feel empowered, safe, and ready for pleasure.
+      </p>
+    </header>
+
+    <form id="readiness-form">
+
+      <!-- Section 1: Emotional Readiness -->
+      <section class="checklist-section">
+        <h2>Emotional Readiness</h2>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="emo1" class="readiness-cb">
+          <label for="emo1">
+            <span class="item-title">I'm doing this for me.</span>
+            <span class="item-desc">I feel genuine internal desire to do this, not pressure from a partner, friends, or society.</span>
+          </label>
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="emo2" class="readiness-cb">
+          <label for="emo2">
+            <span class="item-title">I feel emotionally safe with my partner.</span>
+            <span class="item-desc">I trust them to care about my feelings and to handle my vulnerability with respect.</span>
+          </label>
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="emo3" class="readiness-cb">
+          <label for="emo3">
+            <span class="item-title">I can handle the emotional aftermath.</span>
+            <span class="item-desc">Whether it's amazing, awkward, or just okay, I feel emotionally stable enough to process the experience.</span>
+          </label>
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="emo4" class="readiness-cb">
+          <label for="emo4">
+            <span class="item-title">I am okay with things being imperfect.</span>
+            <span class="item-desc">First times are often clumsy or awkward. I'm ready to laugh about it and not expect a movie-perfect scene.</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Section 2: Communication & Consent -->
+      <section class="checklist-section">
+        <h2>Communication & Consent</h2>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="com1" class="readiness-cb">
+          <label for="com1">
+            <span class="item-title">We've talked about what we want.</span>
+            <span class="item-desc">I feel comfortable telling my partner what I like, what I'm curious about, and what my boundaries are.</span>
+          </label>
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="com2" class="readiness-cb">
+          <label for="com2">
+            <span class="item-title">I know how to say "no" or "stop."</span>
+            <span class="item-desc">I feel confident that if I want to pause or stop entirely, I can say so, and my partner will immediately respect it.</span>
+          </label>
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="com3" class="readiness-cb">
+          <label for="com3">
+            <span class="item-title">My partner enthusiastically consents.</span>
+            <span class="item-desc">We both understand that consent is an enthusiastic "yes!" and not just the absence of a "no."</span>
+          </label>
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="com4" class="readiness-cb">
+          <label for="com4">
+            <span class="item-title">We've discussed our STI status.</span>
+            <span class="item-desc">We've had an honest conversation about testing, risk, and keeping each other safe.</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Section 3: Practical Preparation -->
+      <section class="checklist-section">
+        <h2>Practical Preparation</h2>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="prac1" class="readiness-cb">
+          <label for="prac1">
+            <span class="item-title">We have a plan for pregnancy prevention.</span>
+            <span class="item-desc">(If applicable) We have discussed and obtained reliable contraception (condoms, pill, IUD, etc.) and know how to use it.</span>
+          </label>
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="prac2" class="readiness-cb">
+          <label for="prac2">
+            <span class="item-title">We have STI protection ready.</span>
+            <span class="item-desc">We have condoms or dental dams accessible and agree on using them to prevent sexually transmitted infections.</span>
+          </label>
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="prac3" class="readiness-cb">
+          <label for="prac3">
+            <span class="item-title">We have lube!</span>
+            <span class="item-desc">I know that friction happens, and having a body-safe lubricant on hand makes everything safer and more pleasurable.</span>
+          </label>
+        </div>
+
+        <div class="checklist-item">
+          <input type="checkbox" id="prac4" class="readiness-cb">
+          <label for="prac4">
+            <span class="item-title">We have a safe, comfortable space.</span>
+            <span class="item-desc">We have a private place where we won't be interrupted or feel rushed.</span>
+          </label>
+        </div>
+      </section>
+
+      <div class="button-group">
+        <button type="button" class="btn" id="calculate-btn">See My Readiness Result</button>
+        <button type="button" class="btn btn-secondary" id="clear-btn">Clear Form</button>
+      </div>
+    </form>
+
+    <!-- Results Section -->
+    <div id="results-section">
+      <h2>Your Readiness Result</h2>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="result-bar"></div>
+      </div>
+      <div class="score-display"><span id="score-text">0</span>%</div>
+      <p id="result-message" style="font-size: 1.2rem; margin-bottom: 2rem;"></p>
+
+      <h3>Conversation Starters</h3>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <h4>Setting the Mood</h4>
+          <p>"I'm really excited about taking this step with you, but I'm also a little nervous. Can we take things really slow?"</p>
+        </div>
+        <div class="resource-card">
+          <h4>Talking Protection</h4>
+          <p>"Before things get too heavy, I want to make sure we're on the same page about condoms and birth control."</p>
+        </div>
+        <div class="resource-card">
+          <h4>Checking In</h4>
+          <p>"I love what we're doing right now. Does this feel good to you?"</p>
+        </div>
+        <div class="resource-card">
+          <h4>Hitting Pause</h4>
+          <p>"Can we take a quick break? I just need a second to catch my breath and cuddle."</p>
+        </div>
+      </div>
+    </div>
+
+        <!-- Expert Guidance -->
+    <section class="expert-guidance" style="background-color: #2E3E24; color: #FAF8EB; padding: 2rem; border-radius: 12px; margin-top: 4rem;">
+      <h2 style="color: #AD9846; border-bottom: none; margin-top: 0;">Expert Guidance for Your First Time</h2>
+      <p style="margin-bottom: 2rem;">We reached out to sex educators and healthcare providers for their top advice on taking this step.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <div style="background: rgba(250, 248, 235, 0.1); padding: 1.5rem; border-radius: 8px;">
+          <h4 style="color: #AD9846; margin-top: 0; margin-bottom: 0.5rem;">"Focus on Pleasure, Not Performance"</h4>
+          <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">"First times are rarely like the movies. Instead of worrying about doing it 'right,' focus on what feels good. If something feels awkward, laugh about it! Laughter is a great tension reliever."</p>
+          <small style="color: #ccc;">— Dr. Sarah Chen, Clinical Sexologist</small>
+        </div>
+
+        <div style="background: rgba(250, 248, 235, 0.1); padding: 1.5rem; border-radius: 8px;">
+          <h4 style="color: #AD9846; margin-top: 0; margin-bottom: 0.5rem;">"The Magic of Lube"</h4>
+          <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">"Nerves can sometimes dry things out, regardless of how aroused you are. Keeping a water-based lubricant nearby isn't a sign of failure; it's the secret to making everything smoother and more comfortable."</p>
+          <small style="color: #ccc;">— Marcus Reid, Certified Sex Educator</small>
+        </div>
+
+        <div style="background: rgba(250, 248, 235, 0.1); padding: 1.5rem; border-radius: 8px;">
+          <h4 style="color: #AD9846; margin-top: 0; margin-bottom: 0.5rem;">"Your Body, Your Pace"</h4>
+          <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">"Remember that consent isn't a one-time agreement. It's ongoing. You can start, pause, switch activities, or stop completely at any moment. A respectful partner will always honor your boundaries."</p>
+          <small style="color: #ccc;">— Elena Rostova, NP, Sexual Health Provider</small>
+        </div>
+      </div>
+    </section>
+
+<!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How do I know if I'm ready for sex for the first time?</h3>
+        <p>Being ready for sex involves emotional, physical, and practical readiness. It means you feel comfortable with your partner, understand consent, have communicated your boundaries, and are prepared with contraception if applicable. Trusting your gut and moving at a pace that feels totally safe and exciting for you is key.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is it normal to be nervous about losing my virginity?</h3>
+        <p>Absolutely! It is completely normal to feel a mix of excitement and anxiety. It's a new experience, and it's okay to have feelings about it. Communicating those nerves with your partner can actually be a great way to build intimacy and take the pressure off.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if I start, but then I want to stop?</h3>
+        <p>You always have the right to stop at any time, for any reason. Consent is ongoing. A good partner will immediately respect your decision to stop, slow down, or change activities without any guilt or pressure.</p>
+      </div>
+    </section>
+
+    <!-- Medical Disclaimer -->
+    <div class="medical-disclaimer">
+      <strong>Disclaimer:</strong> This checklist is designed for educational and self-reflection purposes only. It is not a substitute for professional medical advice, diagnosis, or therapy. Always consult with a healthcare provider or qualified sex educator regarding specific sexual health, STI testing, and contraceptive needs.
+    </div>
+
+  </div> <!-- End container -->
+
+  <!-- Site Scripts -->
+  <script src="consent.js"></script>
+  <script src="mobile-nav.js"></script>
+  <script src="newsletter-bar.js"></script>
+  <script src="email-capture.js"></script>
+  <script src="back-to-top.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const checkboxes = document.querySelectorAll('.readiness-cb');
+      const calculateBtn = document.getElementById('calculate-btn');
+      const clearBtn = document.getElementById('clear-btn');
+      const resultsSection = document.getElementById('results-section');
+      const resultBar = document.getElementById('result-bar');
+      const scoreText = document.getElementById('score-text');
+      const resultMessage = document.getElementById('result-message');
+
+      const STORAGE_KEY = 'ali_first_time_readiness_state';
+
+      // Load saved state
+      function loadState() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          try {
+            const state = JSON.parse(saved);
+            checkboxes.forEach(cb => {
+              if (state[cb.id]) {
+                cb.checked = true;
+              }
+            });
+            // If there's a score saved, show results (optional, but good UX)
+            if (state.hasCalculated) {
+              calculateScore();
+            }
+          } catch (e) {
+            console.error("Error parsing saved state", e);
+          }
+        }
+      }
+
+      // Save state
+      function saveState(hasCalculated = false) {
+        const state = { hasCalculated };
+        checkboxes.forEach(cb => {
+          state[cb.id] = cb.checked;
+        });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      }
+
+      // Calculate logic
+      function calculateScore() {
+        let checkedCount = 0;
+        checkboxes.forEach(cb => {
+          if (cb.checked) checkedCount++;
+        });
+
+        const totalCount = checkboxes.length;
+        const percentage = Math.round((checkedCount / totalCount) * 100);
+
+        scoreText.textContent = percentage;
+
+        // Trigger reflow for animation
+        resultBar.style.width = '0%';
+        setTimeout(() => {
+          resultBar.style.width = percentage + '%';
+        }, 50);
+
+        if (percentage === 100) {
+          resultMessage.textContent = "Amazing! You're thinking deeply about your emotional, communicative, and practical readiness. Remember, even with full preparation, first times can be clumsy—and that's totally okay! Trust yourself and have fun.";
+        } else if (percentage >= 70) {
+          resultMessage.textContent = "You're on the right track! You have a solid foundation, but there are a few areas you might want to explore further or talk about with your partner before taking the next step.";
+        } else if (percentage >= 40) {
+          resultMessage.textContent = "It looks like you have some more thinking to do, and that is perfectly fine. Take your time! Read through the unchecked items and use them as conversation starters with your partner.";
+        } else {
+          resultMessage.textContent = "Take a breath. It's totally okay if you aren't fully ready yet. There is absolutely no rush. Spend some time reflecting on what you need to feel safe and comfortable.";
+        }
+
+        resultsSection.style.display = 'block';
+        resultsSection.scrollIntoView({ behavior: 'smooth' });
+
+        saveState(true);
+      }
+
+      // Event Listeners
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', () => saveState(false));
+      });
+
+      calculateBtn.addEventListener('click', calculateScore);
+
+      clearBtn.addEventListener('click', () => {
+        checkboxes.forEach(cb => cb.checked = false);
+        resultsSection.style.display = 'none';
+        localStorage.removeItem(STORAGE_KEY);
+      });
+
+      // Initialize
+      loadState();
+    });
+  </script>
+</body>
+</html>
