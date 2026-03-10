@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Trauma Recovery Assessment & Resource Finder | Ali Imperiale</title>
+  <meta name="description" content="A gentle, trauma-informed assessment tool to help survivors evaluate their healing journey and find personalized support resources.">
+  <meta property="og:title" content="Sexual Trauma Recovery Assessment & Resource Finder | Ali Imperiale">
+  <meta property="og:description" content="A gentle, trauma-informed assessment tool to help survivors evaluate their healing journey and find personalized support resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-trauma-recovery-assessment.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sexual Trauma Recovery Assessment & Resource Finder">
+  <meta name="twitter:description" content="A gentle, trauma-informed assessment tool to help survivors evaluate their healing journey and find personalized support resources.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-trauma-recovery-assessment.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Base Layout */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #FAF8EB;
+    }
+    main { flex: 1; }
+
+    /* Navigation Styles (Inline Required) */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo { height: 32px; opacity: 0.9; }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active { color: #FAF8EB; }
+
+    /* Tracker/Tool Layout */
+    .tracker-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .page-header h1 {
+      color: #2E3E24;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .page-header p {
+      color: #5a6b50;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .trigger-warning {
+      background-color: #f8e5e5;
+      border-left: 4px solid #d9534f;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      color: #333;
+    }
+    .trigger-warning h3 {
+      color: #d9534f;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    .trigger-warning p {
+      margin: 0 0 10px 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .trigger-warning p:last-child {
+      margin-bottom: 0;
+    }
+
+    .crisis-banner {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .crisis-banner h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #AD9846;
+    }
+    .crisis-banner p {
+      margin: 5px 0;
+      font-size: 0.95rem;
+    }
+    .crisis-banner a {
+      color: #FAF8EB;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      margin-bottom: 30px;
+    }
+
+    .card h2 {
+      color: #2E3E24;
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    /* Quiz Styles */
+    .question-block {
+      margin-bottom: 30px;
+    }
+    .question-block h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .question-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: -10px;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      background-color: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .option-label:hover {
+      background-color: #f0f0f0;
+      border-color: #ccc;
+    }
+
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%; /* For radio buttons */
+      margin-right: 12px;
+      position: relative;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"].option-input {
+      border-radius: 4px; /* For checkboxes */
+    }
+
+    .option-input::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 10px;
+      height: 10px;
+      background-color: #AD9846;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+
+    input[type="checkbox"].option-input::before {
+      border-radius: 2px;
+      width: 12px;
+      height: 12px;
+    }
+
+    .option-input:checked::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .option-input:checked + span {
+      font-weight: 600;
+      color: #2E3E24;
+    }
+
+    .option-label:has(.option-input:checked) {
+      background-color: rgba(173, 152, 70, 0.1);
+      border-color: #AD9846;
+    }
+
+    /* Custom check for browsers not supporting :has */
+    .option-label.selected {
+      background-color: rgba(173, 152, 70, 0.1);
+      border-color: #AD9846;
+    }
+
+    .opt-out-btn {
+      background: none;
+      border: none;
+      color: #888;
+      text-decoration: underline;
+      font-size: 0.85rem;
+      cursor: pointer;
+      padding: 0;
+      margin-top: 10px;
+      font-family: inherit;
+    }
+    .opt-out-btn:hover {
+      color: #555;
+    }
+
+    .btn-submit {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      border-radius: 8px;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s;
+      margin-top: 20px;
+    }
+    .btn-submit:hover {
+      background-color: #1a2414;
+    }
+
+    /* Results Section */
+    #results-section {
+      display: none;
+    }
+
+    .result-intro {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .resource-category {
+      margin-bottom: 30px;
+    }
+    .resource-category h3 {
+      color: #AD9846;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .resource-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .resource-item {
+      background-color: #f9f9f9;
+      border-left: 4px solid #2E3E24;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 0 8px 8px 0;
+    }
+    .resource-item h4 {
+      margin: 0 0 5px 0;
+      color: #2E3E24;
+      font-size: 1.05rem;
+    }
+    .resource-item p {
+      margin: 0 0 10px 0;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.4;
+    }
+    .resource-item a {
+      color: #AD9846;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .resource-item a:hover {
+      text-decoration: underline;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      text-align: center;
+      flex: 1;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      background-color: rgba(46, 62, 36, 0.05);
+    }
+
+    .educational-content {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #ddd;
+    }
+    .educational-content h2 {
+      color: #2E3E24;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .educational-content h3 {
+      color: #AD9846;
+      font-size: 1.2rem;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+    .educational-content p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 15px;
+    }
+    .educational-content ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    .educational-content li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* Coping Strategy Note */
+    .gentle-note {
+      background-color: #fdfaf6;
+      border-left: 4px solid #AD9846;
+      padding: 15px;
+      margin: 10px 0 20px;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #555;
+    }
+
+    /* Checkbox list specifically for coping */
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav { padding: 12px 16px; }
+      .tracker-container { margin: 20px auto; }
+      .page-header h1 { font-size: 1.8rem; }
+      .card { padding: 20px; }
+      .action-buttons { flex-direction: column; }
+      .checkbox-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <main class="tracker-container">
+    <header class="page-header">
+      <h1>Recovery Assessment & Resource Finder</h1>
+      <p>A gentle guide to help you reflect on your healing journey and connect with the right support, on your own terms.</p>
+    </header>
+
+    <div class="trigger-warning">
+      <h3>Gentle Content Note</h3>
+      <p>This assessment touches on experiences of sexual trauma, healing stages, and current coping mechanisms. It is designed to be supportive, not diagnostic, but answering these questions might bring up heavy feelings.</p>
+      <p>Please take this at your own pace. You can skip any question or close the page at any time. Your answers stay entirely private in your browser.</p>
+    </div>
+
+    <div class="crisis-banner">
+      <h3>Need immediate support?</h3>
+      <p>If you are in crisis, feeling unsafe, or need to talk to someone right now, please reach out:</p>
+      <p><strong>RAINN National Sexual Assault Hotline:</strong> Call 800-656-HOPE or <a href="https://www.rainn.org/" target="_blank" rel="noopener">chat online</a></p>
+      <p><strong>Crisis Text Line:</strong> Text HOME to 741741 (US/Canada)</p>
+      <p><strong>National Suicide Prevention Lifeline:</strong> Call or text 988 (US)</p>
+    </div>
+
+    <section class="card" id="assessment-section">
+      <h2>Self-Reflection</h2>
+      <p style="margin-bottom: 25px; color: #555;">Answer these questions based on how you feel <em>right now</em>. There are no right or wrong answers, only what is true for you today.</p>
+
+      <form id="assessment-form">
+
+        <!-- Stage of Healing -->
+        <div class="question-block">
+          <h3>1. How would you describe where you are in your healing journey right now?</h3>
+          <p class="question-desc">Healing isn't linear. It's okay if this changes day to day.</p>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="healing_stage" value="early" class="option-input" required>
+              <span>It happened recently, or I'm just starting to acknowledge it. Everything feels overwhelming.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="healing_stage" value="middle" class="option-input">
+              <span>I'm actively working through it. Some days are okay, some days are really hard.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="healing_stage" value="late" class="option-input">
+              <span>I have a good understanding of my triggers and coping skills, though it still impacts me sometimes.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="healing_stage" value="maintenance" class="option-input">
+              <span>I feel mostly stable and grounded, focusing on post-traumatic growth and deeper self-discovery.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Support System -->
+        <div class="question-block">
+          <h3>2. What does your personal support system look like?</h3>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="support_system" value="isolated" class="option-input" required>
+              <span>I feel completely alone. I haven't told anyone or don't have safe people to talk to.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="support_system" value="limited" class="option-input">
+              <span>I have one or two people I can trust, but I don't lean on them often about this.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="support_system" value="moderate" class="option-input">
+              <span>I have a few safe people who know, and they are generally supportive.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="support_system" value="strong" class="option-input">
+              <span>I have a strong, reliable network of friends, family, or chosen family who support me.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Professional Help -->
+        <div class="question-block">
+          <h3>3. Where are you at with professional support?</h3>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="professional_help" value="none" class="option-input" required>
+              <span>I haven't sought professional help and I'm not sure if I'm ready or how to find it.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="professional_help" value="seeking" class="option-input">
+              <span>I want to find a trauma-informed therapist or group, but I need help knowing where to start.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="professional_help" value="current" class="option-input">
+              <span>I am currently working with a therapist or attending a support group.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="professional_help" value="past" class="option-input">
+              <span>I have done therapy in the past and am currently taking a break or feeling complete with it.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Specific Impacts -->
+        <div class="question-block">
+          <h3>4. Which areas of your life are currently feeling the most impacted? (Select all that apply)</h3>
+          <p class="question-desc">You can skip this question if it feels too heavy right now.</p>
+          <div class="options-grid checkbox-grid">
+            <label class="option-label">
+              <input type="checkbox" name="impacts" value="trust" class="option-input">
+              <span>Trusting others</span>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="impacts" value="intimacy" class="option-input">
+              <span>Emotional intimacy</span>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="impacts" value="sexuality" class="option-input">
+              <span>Sexual connection / desire</span>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="impacts" value="body" class="option-input">
+              <span>Body image / feeling safe in my body</span>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="impacts" value="nervous_system" class="option-input">
+              <span>Nervous system (anxiety, hypervigilance)</span>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="impacts" value="sleep" class="option-input">
+              <span>Sleep / nightmares</span>
+            </label>
+          </div>
+          <button type="button" class="opt-out-btn" onclick="clearCheckboxes('impacts')">Clear my answers for this question</button>
+        </div>
+
+        <!-- Coping Strategies -->
+        <div class="question-block">
+          <h3>5. How are you currently coping when things get hard?</h3>
+          <div class="gentle-note">Note: All coping mechanisms exist for a reason—they are your brain's attempt to keep you safe. There is no judgment here.</div>
+          <div class="options-grid checkbox-grid">
+            <label class="option-label">
+              <input type="checkbox" name="coping" value="avoidance" class="option-input">
+              <span>Avoiding reminders, places, or people</span>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="coping" value="numbing" class="option-input">
+              <span>Numbing (substances, scrolling, overworking)</span>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="coping" value="dissociation" class="option-input">
+              <span>Checking out / dissociating</span>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="coping" value="grounding" class="option-input">
+              <span>Grounding exercises or mindfulness</span>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="coping" value="expression" class="option-input">
+              <span>Journaling, art, or talking it out</span>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" name="coping" value="movement" class="option-input">
+              <span>Movement, exercise, or yoga</span>
+            </label>
+          </div>
+          <button type="button" class="opt-out-btn" onclick="clearCheckboxes('coping')">Clear my answers for this question</button>
+        </div>
+
+        <!-- Goals -->
+        <div class="question-block">
+          <h3>6. What feels like your most urgent goal or need right now?</h3>
+          <div class="options-grid">
+            <label class="option-label">
+              <input type="radio" name="goal" value="safety" class="option-input" required>
+              <span>Just finding emotional safety and learning how to calm my nervous system.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="goal" value="processing" class="option-input">
+              <span>Finding a professional to help me process the memories and emotions safely.</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="goal" value="community" class="option-input">
+              <span>Connecting with others who understand what I've been through (support groups).</span>
+            </label>
+            <label class="option-label">
+              <input type="radio" name="goal" value="reclaiming" class="option-input">
+              <span>Reclaiming my body, my sexuality, and learning to enjoy intimacy again.</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">View My Personalized Resources</button>
+      </form>
+    </section>
+
+    <!-- Results Section -->
+    <section class="card" id="results-section">
+      <h2>Your Support Plan</h2>
+      <div id="results-content">
+        <!-- Results will be injected here via JS -->
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn-secondary" onclick="window.print()">Print / Save as PDF</button>
+        <button class="btn-secondary" onclick="shareResults()">Copy Link to Save</button>
+        <button class="btn-secondary" onclick="resetAssessment()">Take Again</button>
+      </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="educational-content">
+      <h2>Understanding the Healing Journey</h2>
+      <p>Hey friend. If you're reading this, I want to take a moment to acknowledge the immense courage it takes to look at your trauma and say, "I want to heal." Healing from sexual trauma is one of the hardest things a human being can do. It's not a straight line, and there is no "right" way to do it.</p>
+
+      <p>Here are a few gentle truths I want you to hold onto as you navigate this process:</p>
+
+      <h3>1. Your coping mechanisms kept you alive.</h3>
+      <p>Whether you've relied on dissociation, avoidance, numbing, or hyper-independence—please don't judge yourself. Your brain and body did exactly what they needed to do to survive an unbearable situation. The goal of healing isn't to punish yourself for how you coped, but to slowly build enough safety that you don't need those emergency brakes quite as often.</p>
+
+      <h3>2. Healing is physical, not just mental.</h3>
+      <p>Trauma isn't just a memory stored in your brain; it's an experience held in your nervous system. That's why talk therapy alone isn't always enough. Modalities like Somatic Experiencing, EMDR, trauma-informed yoga, and bodywork are often crucial for helping your physical body realize that the danger has passed.</p>
+
+      <h3>3. You get to set the pace.</h3>
+      <p>There is no timeline for this. You don't owe anyone details about your experience, and you don't have to push yourself into triggering situations "for the sake of healing." Boundaries are a trauma survivor's best friend. You get to say no. You get to stop a therapy session if it's too much. You are the absolute authority on your own healing.</p>
+
+      <h3>4. Reclaiming intimacy is possible.</h3>
+      <p>If you're struggling with sexual intimacy, body image, or trust, please know that you are not broken. Your body's hesitance is a sign that it is trying to protect you. Reclaiming your sexuality often starts outside the bedroom—learning to feel safe taking a deep breath, safe sitting in your own skin, safe saying "no." The pleasure and connection can come back, slowly, when safety is established first.</p>
+
+      <p><em>Disclaimer: I am an educator, not a therapist. This tool is designed for educational and self-reflection purposes. If you are struggling, please reach out to a licensed trauma professional.</em></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <script>
+    // UX for custom radio/checkbox labels
+    document.querySelectorAll('.option-input').forEach(input => {
+      input.addEventListener('change', function() {
+        // Handle radio button highlighting
+        if (this.type === 'radio') {
+          const name = this.name;
+          document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+            radio.closest('.option-label').classList.remove('selected');
+          });
+          if (this.checked) {
+            this.closest('.option-label').classList.add('selected');
+          }
+        }
+        // Handle checkbox highlighting
+        else if (this.type === 'checkbox') {
+          if (this.checked) {
+            this.closest('.option-label').classList.add('selected');
+          } else {
+            this.closest('.option-label').classList.remove('selected');
+          }
+        }
+      });
+    });
+
+    function clearCheckboxes(name) {
+      document.querySelectorAll(`input[name="${name}"]`).forEach(cb => {
+        cb.checked = false;
+        cb.closest('.option-label').classList.remove('selected');
+      });
+    }
+
+    // Main Logic
+    document.getElementById('assessment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Gather data safely
+      const formData = new FormData(this);
+      const stage = formData.get('healing_stage');
+      const support = formData.get('support_system');
+      const profHelp = formData.get('professional_help');
+      const goal = formData.get('goal');
+
+      const impacts = [];
+      document.querySelectorAll('input[name="impacts"]:checked').forEach(cb => impacts.push(cb.value));
+
+      const coping = [];
+      document.querySelectorAll('input[name="coping"]:checked').forEach(cb => coping.push(cb.value));
+
+      generateResults(stage, support, profHelp, goal, impacts, coping);
+
+      // Save to localStorage for returning users
+      const resultData = { stage, support, profHelp, goal, impacts, coping };
+      localStorage.setItem('traumaAssessmentData', JSON.stringify(resultData));
+
+      document.getElementById('assessment-section').style.display = 'none';
+      document.getElementById('results-section').style.display = 'block';
+      document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    function generateResults(stage, support, profHelp, goal, impacts, coping) {
+      const resultsContainer = document.getElementById('results-content');
+      let html = '<div class="result-intro">';
+
+      // Empathy intro based on stage
+      if (stage === 'early') {
+        html += '<p><strong>I am so glad you are here.</strong> Acknowledging what happened and starting to look for help is incredibly brave, and often feels overwhelming. Please remember you don\'t have to fix everything today. Your only job right now is finding safety.</p>';
+      } else if (stage === 'middle') {
+        html += '<p><strong>I see how hard you\'re working.</strong> Doing the active work of healing takes a massive amount of energy. Be gentle with yourself on the days when it feels like you\'re moving backward—that\'s a normal part of the process.</p>';
+      } else {
+        html += '<p><strong>Honor your progress.</strong> You have built incredible resilience to get to where you are. Continuing to refine your support system is a beautiful way to care for yourself.</p>';
+      }
+
+      html += '</div>';
+
+      // 1. Immediate Safety & Professional Help (Priority)
+      html += `
+        <div class="resource-category">
+          <h3>Professional & Crisis Support</h3>
+          <ul class="resource-list">
+            <li class="resource-item">
+              <h4>RAINN (Rape, Abuse & Incest National Network)</h4>
+              <p>The nation's largest anti-sexual violence organization. They offer a 24/7 hotline and online chat.</p>
+              <a href="https://www.rainn.org/" target="_blank" rel="noopener">Visit RAINN</a>
+            </li>`;
+
+      if (profHelp === 'none' || profHelp === 'seeking') {
+        html += `
+            <li class="resource-item">
+              <h4>Therapist Directories</h4>
+              <p>Look for providers specializing in "Trauma-Informed Care," "EMDR," or "Somatic Experiencing."</p>
+              <a href="https://www.psychologytoday.com/us/therapists/trauma-and-ptsd" target="_blank" rel="noopener">Psychology Today Directory</a> |
+              <a href="https://traumahealing.org/directory/" target="_blank" rel="noopener">Somatic Experiencing Directory</a>
+            </li>`;
+      }
+      html += `</ul></div>`;
+
+      // 2. Nervous System & Coping Support
+      if (goal === 'safety' || coping.includes('avoidance') || coping.includes('numbing') || coping.includes('dissociation')) {
+        html += `
+          <div class="resource-category">
+            <h3>Nervous System Regulation & Grounding</h3>
+            <ul class="resource-list">
+              <li class="resource-item">
+                <h4>Trauma-Sensitive Yoga (TCTSY)</h4>
+                <p>An evidence-based clinical intervention for complex trauma designed to help survivors gently reconnect with their bodies.</p>
+                <a href="https://www.traumasensitiveyoga.com/" target="_blank" rel="noopener">Learn about TCTSY</a>
+              </li>
+              <li class="resource-item">
+                <h4>Grounding Techniques Guide</h4>
+                <p>Simple 5-4-3-2-1 methods, temperature shifts (like holding ice), and breathing exercises to use when feeling triggered or dissociated.</p>
+                <a href="https://www.healthline.com/health/grounding-techniques" target="_blank" rel="noopener">Read Guide</a>
+              </li>
+            </ul>
+          </div>`;
+      }
+
+      // 3. Intimacy & Sexuality (If selected or goal is reclaiming)
+      if (goal === 'reclaiming' || impacts.includes('sexuality') || impacts.includes('intimacy') || impacts.includes('body')) {
+        html += `
+          <div class="resource-category">
+            <h3>Reclaiming Intimacy & Body Connection</h3>
+            <ul class="resource-list">
+              <li class="resource-item">
+                <h4>Book: Healing Sex</h4>
+                <p>By Staci Haines. A mind-body approach to healing sexual trauma and reclaiming your sexuality.</p>
+              </li>
+              <li class="resource-item">
+                <h4>Book: Come As You Are</h4>
+                <p>By Emily Nagoski. Essential reading for understanding that your body's sexual response system is completely normal.</p>
+              </li>
+              <li class="resource-item">
+                <h4>Guide: The Consent Builder</h4>
+                <p>Practice establishing boundaries and communicating needs before engaging in intimacy.</p>
+                <a href="/consent-communication-builder.html" target="_blank">Use the Builder</a>
+              </li>
+            </ul>
+          </div>`;
+      }
+
+      // 4. Community & Support Systems
+      if (support === 'isolated' || support === 'limited' || goal === 'community') {
+        html += `
+          <div class="resource-category">
+            <h3>Finding Community & Peer Support</h3>
+            <ul class="resource-list">
+              <li class="resource-item">
+                <h4>Support Group Central</h4>
+                <p>Online, peer-led support groups for survivors of sexual assault and trauma.</p>
+                <a href="https://www.supportgroupscentral.com/" target="_blank" rel="noopener">Find a Group</a>
+              </li>
+              <li class="resource-item">
+                <h4>1in6 (For Male Survivors)</h4>
+                <p>Specific resources, chat groups, and information for men who have experienced unwanted sexual experiences.</p>
+                <a href="https://1in6.org/" target="_blank" rel="noopener">Visit 1in6</a>
+              </li>
+            </ul>
+          </div>`;
+      }
+
+      resultsContainer.innerHTML = html;
+    }
+
+    function shareResults() {
+      // In a real app with backend, we'd generate a unique URL.
+      // Here, we just copy the current URL as a gesture, since results are local.
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        alert("Link copied! (Note: Since this tool values your privacy, your specific answers aren't saved in the URL, but you can share the tool with others).");
+      });
+    }
+
+    function resetAssessment() {
+      document.getElementById('assessment-form').reset();
+      document.querySelectorAll('.option-label').forEach(lbl => lbl.classList.remove('selected'));
+      localStorage.removeItem('traumaAssessmentData');
+      document.getElementById('results-section').style.display = 'none';
+      document.getElementById('assessment-section').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Auto-load previous results if they exist
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedData = localStorage.getItem('traumaAssessmentData');
+      if (savedData) {
+        try {
+          const data = JSON.parse(savedData);
+          generateResults(data.stage, data.support, data.profHelp, data.goal, data.impacts || [], data.coping || []);
+          document.getElementById('assessment-section').style.display = 'none';
+          document.getElementById('results-section').style.display = 'block';
+        } catch (e) {
+          console.error("Error loading saved data", e);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
