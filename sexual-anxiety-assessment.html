@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Anxiety Assessment Tool | Ali Imperiale</title>
+  <meta name="description" content="A comprehensive self-assessment that helps you identify specific types of sexual anxiety and provides personalized coping strategies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav { padding: 12px 16px; }
+      .site-nav .nav-links { display: none; }
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      color: #2E3E24;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .intro-text {
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .medical-disclaimer {
+      background-color: #f4f1e1;
+      border-left: 4px solid #AD9846;
+      padding: 15px 20px;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      border-radius: 4px;
+    }
+
+    .medical-disclaimer strong {
+      color: #AD9846;
+    }
+
+    /* Assessment UI */
+    .assessment-container {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .question-block {
+      display: none;
+    }
+
+    .question-block.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question-text {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-btn {
+      background: #FAF8EB;
+      border: 2px solid #e0e0e0;
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: #2E3E24;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .option-btn:hover {
+      border-color: #AD9846;
+      background: #f4f1e1;
+    }
+
+    .option-btn.selected {
+      background: #AD9846;
+      color: white;
+      border-color: #AD9846;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+    }
+
+    .btn-prev {
+      background: #e0e0e0;
+      color: #2E3E24;
+    }
+    .btn-prev:hover { background: #d0d0d0; }
+
+    .btn-next, .btn-submit {
+      background: #AD9846;
+      color: white;
+    }
+    .btn-next:hover, .btn-submit:hover { opacity: 0.9; }
+    .btn-next:disabled { background: #ccc; cursor: not-allowed; }
+
+    /* Results */
+    #results-section {
+      display: none;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      border-top: 5px solid #AD9846;
+    }
+
+    .score-summary {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .score-summary h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .anxiety-type-card {
+      background: #FAF8EB;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 4px solid #2E3E24;
+    }
+
+    .anxiety-type-card.high { border-left-color: #d32f2f; }
+    .anxiety-type-card.moderate { border-left-color: #f57c00; }
+    .anxiety-type-card.low { border-left-color: #388e3c; }
+
+    .anxiety-type-card h3 {
+      margin-top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .severity-badge {
+      font-size: 0.8rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: white;
+      font-weight: normal;
+    }
+    .severity-badge.high { background-color: #d32f2f; }
+    .severity-badge.moderate { background-color: #f57c00; }
+    .severity-badge.low { background-color: #388e3c; }
+
+    .strategies-list {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .strategies-list li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .resources-section {
+      margin-top: 40px;
+    }
+
+    .faq-section {
+      margin-top: 60px;
+    }
+
+    .faq-item {
+      margin-bottom: 25px;
+    }
+
+    .faq-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      line-height: 1.6;
+    }
+
+    .restart-btn {
+        display: block;
+        margin: 40px auto 0;
+        background: #2E3E24;
+        color: white;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <h1>Sexual Anxiety Assessment</h1>
+
+    <div class="intro-text" id="intro-text">
+      <p>Hey there! It's completely normal to feel anxious about sex and intimacy. Whether it's worrying about performance, feeling self-conscious about your body, or finding it hard to communicate your desires, you're definitely not alone.</p>
+      <p>This comprehensive assessment is designed to help you identify the specific types of sexual anxiety you might be experiencing. By understanding what's going on, we can figure out the best ways to navigate it together.</p>
+      <p>Take your time, answer honestly (there are no right or wrong answers here, just your experience), and remember this is a judgment-free zone.</p>
+    </div>
+
+    <div class="medical-disclaimer">
+      <strong>Medical Disclaimer:</strong> This assessment is for educational and self-discovery purposes only. It is not a diagnostic tool and should not be used as a substitute for professional medical advice, diagnosis, or therapy. If you are experiencing significant distress, please consult a qualified healthcare or mental health professional.
+    </div>
+
+    <div class="assessment-container" id="assessment-section">
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <div id="question-container">
+        <!-- Questions will be dynamically inserted here -->
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn btn-prev" id="btn-prev" disabled>Previous</button>
+        <button class="btn btn-next" id="btn-next" disabled>Next</button>
+      </div>
+    </div>
+
+    <div id="results-section">
+      <div class="result-card">
+        <div class="score-summary">
+          <h2>Your Assessment Results</h2>
+          <p>Thank you for your honesty and vulnerability in completing this assessment. Here is a breakdown of your anxiety profile across four key areas.</p>
+        </div>
+
+        <div id="results-container">
+          <!-- Results will be dynamically inserted here -->
+        </div>
+
+        <div class="resources-section">
+          <h3>General Resources & Professional Support</h3>
+          <p>If your anxiety is causing significant distress or impacting your relationships, seeking professional support is a great step. Look for therapists certified by AASECT (American Association of Sexuality Educators, Counselors and Therapists).</p>
+          <ul class="strategies-list">
+            <li><a href="/lgbtq-friendly-therapists-directory.html">Find an LGBTQ+ Friendly Therapist</a></li>
+            <li><a href="/sexual-wellness-assessment.html">Take the Comprehensive Sexual Wellness Assessment</a></li>
+            <li><a href="/sexual-communication-difficult-conversations.html">Guide to Difficult Sexual Conversations</a></li>
+          </ul>
+        </div>
+
+        <button class="btn restart-btn" id="btn-restart">Take Assessment Again</button>
+      </div>
+    </div>
+
+  <script>
+    const questions = [
+      // Performance Anxiety
+      {
+        id: "p1",
+        category: "performance",
+        text: "During sexual activity, how often are you focused on whether you are 'doing it right' rather than enjoying the moment?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "p2",
+        category: "performance",
+        text: "How often do you worry about taking too long to orgasm, or not orgasming at all?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "p3",
+        category: "performance",
+        text: "How much does the fear of losing an erection or inadequate lubrication interfere with your ability to enjoy sex?",
+        options: [
+          { text: "Not at all", score: 0 },
+          { text: "A little", score: 1 },
+          { text: "Somewhat", score: 2 },
+          { text: "A lot", score: 3 },
+          { text: "Completely", score: 4 }
+        ]
+      },
+      {
+        id: "p4",
+        category: "performance",
+        text: "Do you find yourself 'spectatoring' (mentally stepping outside your body to judge your performance) during sex?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "p5",
+        category: "performance",
+        text: "How frequently do you avoid initiating sex because you feel pressure to 'perform'?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "p6",
+        category: "performance",
+        text: "How much anxiety do you feel when trying a new sexual position or activity?",
+        options: [
+          { text: "None", score: 0 },
+          { text: "A little", score: 1 },
+          { text: "Moderate amount", score: 2 },
+          { text: "A lot", score: 3 },
+          { text: "Overwhelming amount", score: 4 }
+        ]
+      },
+      {
+        id: "p7",
+        category: "performance",
+        text: "Do you ever fake orgasms to end the sexual encounter or alleviate pressure?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+
+      // Body Image Anxiety
+      {
+        id: "b1",
+        category: "body",
+        text: "How often do you avoid certain sexual positions because they might highlight aspects of your body you dislike?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "b2",
+        category: "body",
+        text: "Do you insist on keeping the lights off or wearing clothes during sex due to body insecurities?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "b3",
+        category: "body",
+        text: "How frequently do negative thoughts about your physical appearance distract you during intimacy?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "b4",
+        category: "body",
+        text: "Do you worry that your partner is judging your body during sex?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "b5",
+        category: "body",
+        text: "How much does concern over bodily fluids, sounds, or smells inhibit your sexual expression?",
+        options: [
+          { text: "Not at all", score: 0 },
+          { text: "A little", score: 1 },
+          { text: "Somewhat", score: 2 },
+          { text: "A lot", score: 3 },
+          { text: "Completely", score: 4 }
+        ]
+      },
+      {
+        id: "b6",
+        category: "body",
+        text: "Do you feel the need to 'prepare' excessively (grooming, bathing) before you feel comfortable having sex?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "b7",
+        category: "body",
+        text: "How often do you compare your body to societal or pornographic standards while being intimate?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+
+      // Communication Anxiety
+      {
+        id: "c1",
+        category: "communication",
+        text: "How difficult is it for you to tell a partner what feels good during sex?",
+        options: [
+          { text: "Very easy", score: 0 },
+          { text: "Somewhat easy", score: 1 },
+          { text: "Neutral", score: 2 },
+          { text: "Somewhat difficult", score: 3 },
+          { text: "Very difficult", score: 4 }
+        ]
+      },
+      {
+        id: "c2",
+        category: "communication",
+        text: "If something is uncomfortable or painful, how likely are you to speak up and ask to stop or change?",
+        options: [
+          { text: "Very likely", score: 0 },
+          { text: "Somewhat likely", score: 1 },
+          { text: "Unsure", score: 2 },
+          { text: "Somewhat unlikely", score: 3 },
+          { text: "Very unlikely", score: 4 }
+        ]
+      },
+      {
+        id: "c3",
+        category: "communication",
+        text: "How often do you suppress your own sexual desires because you fear your partner's reaction or judgment?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "c4",
+        category: "communication",
+        text: "Do you feel anxious when discussing boundaries or safe words before engaging in intimacy?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "c5",
+        category: "communication",
+        text: "How hard is it to initiate a conversation about sexual fantasies or trying something new?",
+        options: [
+          { text: "Not hard at all", score: 0 },
+          { text: "A little hard", score: 1 },
+          { text: "Moderately hard", score: 2 },
+          { text: "Very hard", score: 3 },
+          { text: "Impossible", score: 4 }
+        ]
+      },
+      {
+        id: "c6",
+        category: "communication",
+        text: "When providing feedback to a partner, do you worry excessively about hurting their feelings or damaging their ego?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "c7",
+        category: "communication",
+        text: "Do you rely on non-verbal cues (like moving their hand) because verbalizing your desires feels too intimidating?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+
+      // Intimacy/Vulnerability Anxiety
+      {
+        id: "i1",
+        category: "intimacy",
+        text: "How uncomfortable do you feel maintaining eye contact during sex?",
+        options: [
+          { text: "Not uncomfortable", score: 0 },
+          { text: "Slightly uncomfortable", score: 1 },
+          { text: "Somewhat uncomfortable", score: 2 },
+          { text: "Very uncomfortable", score: 3 },
+          { text: "Extremely uncomfortable", score: 4 }
+        ]
+      },
+      {
+        id: "i2",
+        category: "intimacy",
+        text: "Do you feel a strong urge to emotionally detach or disconnect during physical intimacy?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "i3",
+        category: "intimacy",
+        text: "How often do you worry that if a partner truly 'sees' the real you during sex, they will reject you?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "i4",
+        category: "intimacy",
+        text: "Do you experience anxiety immediately after sex (post-coital dysphoria) related to the vulnerability you just shared?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "i5",
+        category: "intimacy",
+        text: "How difficult is it for you to engage in non-sexual physical affection (cuddling, holding hands) without it leading to sex?",
+        options: [
+          { text: "Not difficult", score: 0 },
+          { text: "Slightly difficult", score: 1 },
+          { text: "Moderately difficult", score: 2 },
+          { text: "Very difficult", score: 3 },
+          { text: "Extremely difficult", score: 4 }
+        ]
+      },
+      {
+        id: "i6",
+        category: "intimacy",
+        text: "Do you prefer casual sexual encounters over emotional intimacy because it feels 'safer'?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      },
+      {
+        id: "i7",
+        category: "intimacy",
+        text: "How often do you feel like you are 'acting a part' rather than being your authentic self during sex?",
+        options: [
+          { text: "Never", score: 0 },
+          { text: "Rarely", score: 1 },
+          { text: "Sometimes", score: 2 },
+          { text: "Often", score: 3 },
+          { text: "Almost always", score: 4 }
+        ]
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    const answers = {};
+
+    const questionContainer = document.getElementById('question-container');
+    const progressBar = document.getElementById('progress-bar');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    const assessmentSection = document.getElementById('assessment-section');
+    const resultsSection = document.getElementById('results-section');
+    const introText = document.getElementById('intro-text');
+    const btnRestart = document.getElementById('btn-restart');
+
+    function initAssessment() {
+      renderQuestions();
+      updateUI();
+    }
+
+    function renderQuestions() {
+      questionContainer.innerHTML = '';
+      questions.forEach((q, index) => {
+        const block = document.createElement('div');
+        block.className = `question-block ${index === 0 ? 'active' : ''}`;
+        block.id = `question-${index}`;
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = `${index + 1}. ${q.text}`;
+
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'options';
+
+        q.options.forEach((opt, optIndex) => {
+          const btn = document.createElement('button');
+          btn.className = 'option-btn';
+          btn.textContent = opt.text;
+          btn.onclick = () => selectOption(index, optIndex, opt.score);
+
+          if (answers[q.id] === opt.score) {
+            btn.classList.add('selected');
+          }
+
+          optionsContainer.appendChild(btn);
+        });
+
+        block.appendChild(qText);
+        block.appendChild(optionsContainer);
+        questionContainer.appendChild(block);
+      });
+    }
+
+    function selectOption(qIndex, optIndex, score) {
+      const q = questions[qIndex];
+      answers[q.id] = score;
+
+      const block = document.getElementById(`question-${qIndex}`);
+      const buttons = block.querySelectorAll('.option-btn');
+
+      buttons.forEach((b, i) => {
+        if (i === optIndex) b.classList.add('selected');
+        else b.classList.remove('selected');
+      });
+
+      btnNext.disabled = false;
+
+      // Auto advance after short delay
+      if (qIndex < questions.length - 1) {
+        setTimeout(() => {
+          currentQuestionIndex++;
+          updateUI();
+        }, 400);
+      }
+    }
+
+    function updateUI() {
+      // Update progress bar
+      const progress = ((currentQuestionIndex) / questions.length) * 100;
+      progressBar.style.width = `${progress}%`;
+
+      // Show current question
+      document.querySelectorAll('.question-block').forEach((block, index) => {
+        if (index === currentQuestionIndex) {
+          block.classList.add('active');
+        } else {
+          block.classList.remove('active');
+        }
+      });
+
+      // Update buttons
+      btnPrev.disabled = currentQuestionIndex === 0;
+
+      const currentQ = questions[currentQuestionIndex];
+      const hasAnswered = answers[currentQ.id] !== undefined;
+
+      if (currentQuestionIndex === questions.length - 1) {
+        btnNext.textContent = 'Submit';
+        btnNext.className = 'btn btn-submit';
+      } else {
+        btnNext.textContent = 'Next';
+        btnNext.className = 'btn btn-next';
+      }
+
+      btnNext.disabled = !hasAnswered;
+    }
+
+    btnPrev.addEventListener('click', () => {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        updateUI();
+      }
+    });
+
+    btnNext.addEventListener('click', () => {
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        updateUI();
+      } else {
+        calculateResults();
+      }
+    });
+
+    btnRestart.addEventListener('click', () => {
+      currentQuestionIndex = 0;
+      for (const key in answers) delete answers[key];
+      assessmentSection.style.display = 'block';
+      introText.style.display = 'block';
+      resultsSection.style.display = 'none';
+      initAssessment();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function calculateResults() {
+      const scores = {
+        performance: 0,
+        body: 0,
+        communication: 0,
+        intimacy: 0
+      };
+
+      const maxScores = {
+        performance: 7 * 4,
+        body: 7 * 4,
+        communication: 7 * 4,
+        intimacy: 7 * 4
+      };
+
+      questions.forEach(q => {
+        if (answers[q.id] !== undefined) {
+          scores[q.category] += answers[q.id];
+        }
+      });
+
+      renderResults(scores, maxScores);
+    }
+
+    function getSeverity(score, maxScore) {
+        const percentage = score / maxScore;
+        if (percentage >= 0.6) return { level: 'High', class: 'high' };
+        if (percentage >= 0.3) return { level: 'Moderate', class: 'moderate' };
+        return { level: 'Low', class: 'low' };
+    }
+
+    function renderResults(scores, maxScores) {
+      assessmentSection.style.display = 'none';
+      introText.style.display = 'none';
+      resultsSection.style.display = 'block';
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      const container = document.getElementById('results-container');
+      container.innerHTML = '';
+
+      const categoriesData = [
+          {
+              id: 'performance',
+              title: 'Performance Anxiety',
+              desc: 'Anxiety related to "doing it right," achieving or providing orgasms, and maintaining arousal.',
+              strategies: [
+                  'Practice "sensate focus" exercises: take turns touching without the goal of arousal or orgasm.',
+                  'Shift focus from the outcome (orgasm) to the process (pleasure, connection, sensation).',
+                  'Communicate with your partner that taking pressure off the "finish line" helps you enjoy the moment more.',
+                  'Incorporate mindfulness during sex to bring your attention back to your physical sensations when your mind wanders.'
+              ],
+              resources: [
+                  '<a href="/sexual-mindfulness-complete-guide.html">Sexual Mindfulness Guide</a>',
+                  '<a href="/sexual-confidence-building-guide.html">Sexual Confidence Building</a>'
+              ]
+          },
+          {
+              id: 'body',
+              title: 'Body Image Anxiety',
+              desc: 'Insecurity or distress regarding your physical appearance, bodily functions, or feeling judged by a partner.',
+              strategies: [
+                  'Start with "dim lighting" rather than total darkness to gradually build comfort.',
+                  'Practice naked non-sexual intimacy (like cuddling) to normalize skin-to-skin contact without performance pressure.',
+                  'Focus on what your body can *feel* rather than what it *looks* like.',
+                  'If specific positions trigger anxiety, communicate this and opt for positions where you feel more physically secure.'
+              ],
+              resources: [
+                  '<a href="/sexual-confidence-workout-tool.html">Sexual Confidence Workout</a>',
+                  '<a href="/pleasure-mapping-guide.html">Pleasure Mapping Guide</a>'
+              ]
+          },
+          {
+              id: 'communication',
+              title: 'Communication Anxiety',
+              desc: 'Difficulty or fear surrounding expressing desires, setting boundaries, or giving/receiving sexual feedback.',
+              strategies: [
+                  'Use the "sandwich method" for feedback: sandwich a critique between two positive affirmations.',
+                  'Discuss boundaries and desires outside the bedroom, in a neutral, non-sexual setting.',
+                  'Start small: practice voicing tiny preferences ("a little to the left" or "softer please") to build communication muscle.',
+                  'Establish a non-verbal traffic light system (Red, Yellow, Green) for quick check-ins during intimacy.'
+              ],
+              resources: [
+                  '<a href="/sexual-communication-scripts-builder.html">Communication Scripts Builder</a>',
+                  '<a href="/intimate-communication-scripts.html">Intimate Communication Scripts</a>'
+              ]
+          },
+          {
+              id: 'intimacy',
+              title: 'Intimacy & Vulnerability Anxiety',
+              desc: 'Fear of emotional closeness, being truly "seen," or maintaining connection before, during, or after sex.',
+              strategies: [
+                  'Acknowledge and plan for post-coital dysphoria or the "drop" with structured aftercare.',
+                  'Practice sustained eye contact for just 30 seconds during intimacy, gradually increasing as it feels safe.',
+                  'Separate physical intimacy from sex: intentionally schedule cuddle time that has a strict "no sex" boundary.',
+                  'Be honest with your partner about your need for emotional safety and what that looks like for you.'
+              ],
+              resources: [
+                  '<a href="/sexual-aftercare-guide.html">Sexual Aftercare Guide</a>',
+                  '<a href="/relationship-boundaries-generator.html">Boundaries Generator</a>'
+              ]
+          }
+      ];
+
+      categoriesData.forEach(cat => {
+          const score = scores[cat.id];
+          const maxScore = maxScores[cat.id];
+          const severity = getSeverity(score, maxScore);
+
+          const card = document.createElement('div');
+          card.className = `anxiety-type-card ${severity.class}`;
+
+          let strategiesHtml = '';
+          cat.strategies.forEach(s => {
+              strategiesHtml += `<li>${s}</li>`;
+          });
+
+          let resourcesHtml = '';
+          cat.resources.forEach(r => {
+              resourcesHtml += `<li>${r}</li>`;
+          });
+
+          card.innerHTML = `
+              <h3>${cat.title} <span class="severity-badge ${severity.class}">${severity.level} (${score}/${maxScore})</span></h3>
+              <p>${cat.desc}</p>
+
+              <h4>Coping Strategies</h4>
+              <ul class="strategies-list">
+                  ${strategiesHtml}
+              </ul>
+
+              <h4>Helpful Resources</h4>
+              <ul class="strategies-list">
+                  ${resourcesHtml}
+              </ul>
+          `;
+
+          container.appendChild(card);
+      });
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', initAssessment);
+  </script>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions About Sexual Anxiety</h2>
+
+      <div class="faq-item">
+        <h3>Is sexual anxiety normal?</h3>
+        <p>Absolutely. Almost everyone experiences some form of sexual anxiety at some point in their lives. It's incredibly common, especially with a new partner, after a life transition, or when trying something new. You are not broken or alone in feeling this way.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can sexual anxiety cause physical symptoms like erectile dysfunction or vaginal dryness?</h3>
+        <p>Yes. The brain is the biggest sex organ. When you're anxious, your body's "fight or flight" response is activated, which redirects blood flow and energy away from the genitals. This can absolutely result in physical changes like loss of erection, difficulty lubricating, or an inability to orgasm.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I tell my partner that I have sexual anxiety?</h3>
+        <p>The best time to talk about sexual anxiety is outside the bedroom, when you're both clothed and relaxed (like on a walk or sitting on the couch). You can say something like, "I really enjoy our time together, but sometimes my brain gets in the way and I feel anxious about [performance/my body/communicating]. I wanted to share this so you know it's not about you, and maybe we can work on ways to take the pressure off."</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>When should I see a therapist for my sexual anxiety?</h3>
+        <p>If your anxiety is causing significant personal distress, preventing you from forming or maintaining relationships, or if you've tried self-help strategies (like the ones in this assessment) and they aren't providing relief, it's a great time to seek professional support. Look for an AASECT certified sex therapist.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="consent.js"></script>
+  <script src="mobile-nav.js"></script>
+  <script src="newsletter-bar.js"></script>
+  <script src="email-capture.js"></script>
+  <script src="back-to-top.js"></script>
+
+  <!-- JSON-LD FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Is sexual anxiety normal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Almost everyone experiences some form of sexual anxiety at some point in their lives. It's incredibly common, especially with a new partner, after a life transition, or when trying something new. You are not broken or alone in feeling this way."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Can sexual anxiety cause physical symptoms like erectile dysfunction or vaginal dryness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The brain is the biggest sex organ. When you're anxious, your body's 'fight or flight' response is activated, which redirects blood flow and energy away from the genitals. This can absolutely result in physical changes like loss of erection, difficulty lubricating, or an inability to orgasm."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How do I tell my partner that I have sexual anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best time to talk about sexual anxiety is outside the bedroom, when you're both clothed and relaxed (like on a walk or sitting on the couch). You can say something like, 'I really enjoy our time together, but sometimes my brain gets in the way and I feel anxious about [performance/my body/communicating]. I wanted to share this so you know it's not about you, and maybe we can work on ways to take the pressure off.'"
+      }
+    }, {
+      "@type": "Question",
+      "name": "When should I see a therapist for my sexual anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your anxiety is causing significant personal distress, preventing you from forming or maintaining relationships, or if you've tried self-help strategies (like the ones in this assessment) and they aren't providing relief, it's a great time to seek professional support. Look for an AASECT certified sex therapist."
+      }
+    }]
+  }
+  </script>
+</body>
+</html>
