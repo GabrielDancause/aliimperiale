@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Style Quiz — Discover Your Unique Sexual Personality Type | Ali Imperiale</title>
+  <meta name="description" content="Discover your unique sexual personality type with this interactive quiz. Understand your communication style, desire patterns, and emotional needs.">
+  <meta property="og:title" content="Sexual Style Quiz — Discover Your Unique Sexual Personality Type">
+  <meta property="og:description" content="Discover your unique sexual personality type with this interactive quiz. Understand your communication style, desire patterns, and emotional needs.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-style-quiz.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sexual Style Quiz">
+  <meta name="twitter:description" content="Discover your unique sexual personality type with this interactive quiz.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-style-quiz.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    /* Site Nav Inline Styles */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    @media (min-width: 1200px) {
+      .site-nav,
+      nav {
+        padding-left: calc((100% - 1100px) / 2 + 24px);
+        padding-right: calc((100% - 1100px) / 2 + 24px);
+      }
+    }
+    @media (min-width: 1800px) {
+      .site-nav,
+      nav {
+        padding-left: calc((100% - 1320px) / 2 + 24px);
+        padding-right: calc((100% - 1320px) / 2 + 24px);
+      }
+    }
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+
+    /* Page specific styles */
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif !important;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .medical-disclaimer {
+      background-color: rgba(173, 152, 70, 0.1);
+      border-left: 4px solid #AD9846;
+      padding: 15px 20px;
+      margin-bottom: 30px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3rem;
+      color: #2E3E24;
+      margin-bottom: 10px;
+    }
+    .page-header p {
+      font-size: 1.1rem;
+      color: #5a6b50;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif !important;
+    }
+
+    /* Quiz Container */
+    .quiz-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(46, 62, 36, 0.05);
+      border: 1px solid rgba(46, 62, 36, 0.1);
+      margin-bottom: 40px;
+    }
+
+    /* Progress Bar */
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background-color: rgba(46, 62, 36, 0.1);
+      border-radius: 4px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background-color: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Questions */
+    .question-card {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    .question-card.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .question-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #2E3E24;
+    }
+
+    /* Options */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      background: #FAF8EB;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .option-label:hover {
+      background: rgba(173, 152, 70, 0.1);
+      border-color: rgba(173, 152, 70, 0.3);
+    }
+    .option-input {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 15px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .option-input:checked {
+      background-color: #AD9846;
+      box-shadow: inset 0 0 0 4px #FAF8EB;
+    }
+    .option-input:checked + span {
+      font-weight: 600;
+    }
+    .option-label.selected {
+      border-color: #AD9846;
+      background: rgba(173, 152, 70, 0.1);
+    }
+
+    /* Navigation */
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      border-top: 1px solid rgba(46, 62, 36, 0.1);
+      padding-top: 20px;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-prev {
+      background: transparent;
+      color: #2E3E24;
+      border: 1px solid #2E3E24;
+    }
+    .btn-prev:hover:not(:disabled) {
+      background: rgba(46, 62, 36, 0.05);
+    }
+    .btn-next, .btn-submit {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    .btn-next:hover:not(:disabled), .btn-submit:hover:not(:disabled) {
+      background: #1a2414;
+    }
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Results */
+    .results-container {
+      display: none;
+      text-align: center;
+      animation: fadeIn 0.5s ease;
+    }
+    .result-type {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.5rem;
+      color: #AD9846;
+      margin: 20px 0;
+    }
+    .result-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+    .compatibility-box {
+      background: rgba(46, 62, 36, 0.05);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    .compatibility-box h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+      padding-bottom: 8px;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      margin-top: 60px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 10px rgba(46, 62, 36, 0.05);
+    }
+    .faq-section h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2E3E24;
+    }
+    .faq-item {
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+      padding-bottom: 20px;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-question {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 10px;
+    }
+    .faq-answer {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #5a6b50;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 2.2rem; }
+      .quiz-container { padding: 20px; }
+      .option-label { padding: 12px 16px; font-size: 0.95rem; }
+      .faq-section { padding: 25px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Sexual Personality Type?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your sexual personality type is a unique combination of how you communicate desires, experience arousal, seek emotional connection, and approach physical intimacy. Understanding it can help you communicate better with partners and advocate for your needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can my sexual style change over time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! Human sexuality is fluid. Your sexual style can evolve based on life experiences, relationship dynamics, aging, stress levels, and personal growth. It's normal for your preferences to shift."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my partner and I have different styles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Having different styles is incredibly common and can actually be a source of growth and excitement. The key is communication, mutual respect, and finding creative ways to bridge the gap so both partners feel fulfilled."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is any sexual style 'better' than others?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All styles are valid and healthy as long as they involve enthusiastic, informed consent between adults. The goal of this quiz is self-discovery and empowerment, not judgment or ranking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should I use these results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use your results as a conversation starter! Reflect on whether the description resonates with you, share it with your partner, and use the compatibility insights to foster deeper discussions about your intimate life."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="nav-hamburger" aria-label="Toggle Navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tools.html" class="active">Tools</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="medical-disclaimer">
+      <strong>Educational Disclaimer:</strong> This quiz is designed for educational and self-discovery purposes only. It is not a diagnostic tool and does not substitute for professional medical advice, diagnosis, or sex therapy.
+    </div>
+
+    <div class="page-header">
+      <h1>Sexual Style Quiz</h1>
+      <p>Discover your unique sexual personality type. Learn how you communicate desires, experience arousal, and connect in intimate relationships.</p>
+    </div>
+
+    <div class="quiz-container" id="quiz-container">
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <div id="questions-wrapper">
+        <!-- Questions will be dynamically inserted here -->
+      </div>
+
+      <div class="quiz-nav">
+        <button class="btn btn-prev" id="btn-prev" disabled>Back</button>
+        <button class="btn btn-next" id="btn-next" disabled>Next</button>
+        <button class="btn btn-submit" id="btn-submit" style="display: none;">See Results</button>
+      </div>
+    </div>
+
+    <div class="quiz-container results-container" id="results-container">
+      <h2>Your Sexual Style Type is:</h2>
+      <div class="result-type" id="result-type"></div>
+      <div class="result-description" id="result-description"></div>
+
+      <div class="compatibility-box">
+        <h3>Compatibility Insights</h3>
+        <p id="result-compatibility"></p>
+      </div>
+
+      <button class="btn btn-next" onclick="location.reload()">Take Quiz Again</button>
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">What is a Sexual Personality Type?</div>
+        <div class="faq-answer">Your sexual personality type is a unique combination of how you communicate desires, experience arousal, seek emotional connection, and approach physical intimacy. Understanding it can help you communicate better with partners and advocate for your needs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can my sexual style change over time?</div>
+        <div class="faq-answer">Absolutely! Human sexuality is fluid. Your sexual style can evolve based on life experiences, relationship dynamics, aging, stress levels, and personal growth. It's normal for your preferences to shift.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What if my partner and I have different styles?</div>
+        <div class="faq-answer">Having different styles is incredibly common and can actually be a source of growth and excitement. The key is communication, mutual respect, and finding creative ways to bridge the gap so both partners feel fulfilled.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is any sexual style 'better' than others?</div>
+        <div class="faq-answer">No. All styles are valid and healthy as long as they involve enthusiastic, informed consent between adults. The goal of this quiz is self-discovery and empowerment, not judgment or ranking.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How should I use these results?</div>
+        <div class="faq-answer">Use your results as a conversation starter! Reflect on whether the description resonates with you, share it with your partner, and use the compatibility insights to foster deeper discussions about your intimate life.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <script>
+    const quizData = [
+      {
+        question: "1. When it comes to initiating intimacy, I usually:",
+        options: [
+          { text: "Love taking the lead and being direct about my desires.", type: "passionate" },
+          { text: "Prefer a slow, subtle build-up through affectionate touch.", type: "sensual" },
+          { text: "Enjoy trying new, spontaneous ways to get started.", type: "adventurous" },
+          { text: "Need an emotional connection or deep conversation first.", type: "deep" },
+          { text: "Like setting a mood or scene before anything physical happens.", type: "visionary" },
+          { text: "Keep it lighthearted, teasing, and fun.", type: "playful" }
+        ]
+      },
+      {
+        question: "2. My ideal sexual experience involves:",
+        options: [
+          { text: "Intense energy, vocal expression, and clear direction.", type: "passionate" },
+          { text: "Focusing on all five senses—lighting, scent, and lingering touch.", type: "sensual" },
+          { text: "Trying a new location, position, or dynamic I've never explored.", type: "adventurous" },
+          { text: "Feeling profoundly understood and emotionally bonded.", type: "deep" },
+          { text: "Exploring a specific fantasy, roleplay, or psychological dynamic.", type: "visionary" },
+          { text: "Lots of laughter, experimentation, and not taking it too seriously.", type: "playful" }
+        ]
+      },
+      {
+        question: "3. When communicating my desires to a partner, I:",
+        options: [
+          { text: "Am very straightforward and specific about what I want.", type: "passionate" },
+          { text: "Guide their hands and use body language to show them.", type: "sensual" },
+          { text: "Suggest trying something wild and gauge their reaction.", type: "adventurous" },
+          { text: "Frame it around how it will bring us closer together.", type: "deep" },
+          { text: "Describe a scenario or fantasy in vivid detail.", type: "visionary" },
+          { text: "Make a flirty joke or game out of asking for it.", type: "playful" }
+        ]
+      },
+      {
+        question: "4. What kills the mood for me the fastest?",
+        options: [
+          { text: "A lack of enthusiasm or passive energy.", type: "passionate" },
+          { text: "Rushing straight to the main event without enjoying the journey.", type: "sensual" },
+          { text: "Routine, predictability, or doing the exact same thing every time.", type: "adventurous" },
+          { text: "Feeling emotionally disconnected or unresolved conflict.", type: "deep" },
+          { text: "A sterile environment with bad lighting or distractions.", type: "visionary" },
+          { text: "A partner who takes themselves or the act too seriously.", type: "playful" }
+        ]
+      },
+      {
+        question: "5. How do I feel about scheduling sex?",
+        options: [
+          { text: "I like it if it guarantees dedicated, passionate time together.", type: "passionate" },
+          { text: "I prefer it to happen organically when the mood is perfectly right.", type: "sensual" },
+          { text: "I hate it—spontaneity is a huge turn-on for me.", type: "adventurous" },
+          { text: "It's fine, as long as we build emotional intimacy leading up to it.", type: "deep" },
+          { text: "I love it because it gives me time to plan the perfect scenario.", type: "visionary" },
+          { text: "I don't mind it, but I'll probably try to surprise my partner anyway.", type: "playful" }
+        ]
+      },
+      {
+        question: "6. During intimacy, my focus is primarily on:",
+        options: [
+          { text: "The physical intensity and mutual vocal feedback.", type: "passionate" },
+          { text: "The physical sensation, rhythm, and the feel of skin.", type: "sensual" },
+          { text: "The thrill of the experience and pushing boundaries.", type: "adventurous" },
+          { text: "The feeling of complete trust and vulnerability.", type: "deep" },
+          { text: "The mental stimulation and the narrative of the encounter.", type: "visionary" },
+          { text: "The shared joy, fun, and mutual entertainment.", type: "playful" }
+        ]
+      },
+      {
+        question: "7. My approach to foreplay is:",
+        options: [
+          { text: "Direct, hot, and explicitly verbal.", type: "passionate" },
+          { text: "A slow, deliberate, full-body experience like a massage.", type: "sensual" },
+          { text: "Unexpected—like a quickie or an impromptu make-out session.", type: "adventurous" },
+          { text: "Deep conversation, eye contact, and emotional check-ins.", type: "deep" },
+          { text: "Setting the scene with costumes, props, or specific dirty talk.", type: "visionary" },
+          { text: "Wrestling, tickling, or playing a sexy game.", type: "playful" }
+        ]
+      },
+      {
+        question: "8. After an intimate encounter, I usually want to:",
+        options: [
+          { text: "Talk about how great it was and what we'll do next time.", type: "passionate" },
+          { text: "Cuddle silently and bask in the physical afterglow.", type: "sensual" },
+          { text: "Get up, grab a snack, or do something energetic.", type: "adventurous" },
+          { text: "Have a deeply emotional conversation while holding each other.", type: "deep" },
+          { text: "Reflect on the fantasy we just played out.", type: "visionary" },
+          { text: "Laugh, joke around, and just enjoy each other's company.", type: "playful" }
+        ]
+      },
+      {
+        question: "9. When considering a new kink or fetish, I am:",
+        options: [
+          { text: "Eager to dive in and take charge of exploring it.", type: "passionate" },
+          { text: "Interested if it involves new sensory experiences (temperature, textures).", type: "sensual" },
+          { text: "Always down to try something at least once.", type: "adventurous" },
+          { text: "Open to it if it helps my partner and I understand each other better.", type: "deep" },
+          { text: "The one usually suggesting it based on a fantasy I've cultivated.", type: "visionary" },
+          { text: "Curious, but only if we can laugh through the awkward parts.", type: "playful" }
+        ]
+      },
+      {
+        question: "10. My preferred environment for intimacy is:",
+        options: [
+          { text: "Anywhere, as long as the energy is electric.", type: "passionate" },
+          { text: "A luxurious bed with high-quality sheets and candles.", type: "sensual" },
+          { text: "Somewhere unexpected or slightly risky.", type: "adventurous" },
+          { text: "A private, safe space where we won't be interrupted.", type: "deep" },
+          { text: "A space specifically curated to match the vibe or roleplay.", type: "visionary" },
+          { text: "Anywhere we can be loud and have fun without worrying.", type: "playful" }
+        ]
+      },
+      {
+        question: "11. If something goes wrong or is awkward during sex, I:",
+        options: [
+          { text: "Confidently pivot and direct us to something else.", type: "passionate" },
+          { text: "Slow down, breathe, and focus on physical touch to reset.", type: "sensual" },
+          { text: "Embrace the chaos and turn it into a new adventure.", type: "adventurous" },
+          { text: "Check in with my partner emotionally to make sure we're okay.", type: "deep" },
+          { text: "Feel briefly taken out of the fantasy, but try to re-immerse.", type: "visionary" },
+          { text: "Burst out laughing and completely brush it off.", type: "playful" }
+        ]
+      },
+      {
+        question: "12. I feel most desired when my partner:",
+        options: [
+          { text: "Tells me exactly what they want to do to me.", type: "passionate" },
+          { text: "Takes their time tracing my skin and praising my body.", type: "sensual" },
+          { text: "Surprises me with a spontaneous, passionate move.", type: "adventurous" },
+          { text: "Looks deeply into my eyes and tells me they love me.", type: "deep" },
+          { text: "Participates enthusiastically in a scenario I've imagined.", type: "visionary" },
+          { text: "Engages in witty, flirty banter that builds tension.", type: "playful" }
+        ]
+      },
+      {
+        question: "13. In terms of sexual stamina and pacing, I prefer:",
+        options: [
+          { text: "High energy, fast-paced, and intense from start to finish.", type: "passionate" },
+          { text: "A marathon session that ebbs and flows slowly.", type: "sensual" },
+          { text: "Unpredictable pacing—sometimes quick, sometimes drawn out.", type: "adventurous" },
+          { text: "Pacing that matches our emotional sync in the moment.", type: "deep" },
+          { text: "Pacing that serves the narrative or the scene we are creating.", type: "visionary" },
+          { text: "Dynamic pacing with breaks for laughing or changing things up.", type: "playful" }
+        ]
+      },
+      {
+        question: "14. My relationship with my own body during sex is:",
+        options: [
+          { text: "Confident—I know how to use it to get what I want.", type: "passionate" },
+          { text: "Connected—I am deeply tuned into every physical sensation.", type: "sensual" },
+          { text: "Uninhibited—I don't worry about how I look, just what I'm doing.", type: "adventurous" },
+          { text: "Vulnerable—I offer it fully as a way to connect.", type: "deep" },
+          { text: "Performative—I enjoy embodying a character or specific vibe.", type: "visionary" },
+          { text: "Relaxed—I don't take myself too seriously.", type: "playful" }
+        ]
+      },
+      {
+        question: "15. Ultimately, the main purpose of sex for me is:",
+        options: [
+          { text: "Intense physical release and powerful mutual satisfaction.", type: "passionate" },
+          { text: "Experiencing profound physical pleasure and sensory joy.", type: "sensual" },
+          { text: "Exploring the unknown and pushing my own boundaries.", type: "adventurous" },
+          { text: "Creating an unbreakable emotional bond with my partner.", type: "deep" },
+          { text: "Bringing my deepest fantasies to life in a safe space.", type: "visionary" },
+          { text: "Having an incredibly fun time and feeling joyful.", type: "playful" }
+        ]
+      }
+    ];
+
+    const resultTypes = {
+      passionate: {
+        title: "The Passionate Communicator",
+        description: "You thrive on intense, direct, and explicit energy. You know exactly what you want and aren't afraid to ask for it. For you, intimacy is about clear direction, vocal feedback, and powerful mutual satisfaction. You find confidence incredibly sexy and appreciate a partner who can match your straightforward approach to pleasure.",
+        compatibility: "You pair incredibly well with partners who appreciate clear direction and enthusiastic energy. You can inspire Sensual Explorers to be more direct, and you provide a wonderful anchor for Erotic Visionaries."
+      },
+      sensual: {
+        title: "The Sensual Explorer",
+        description: "You experience the world through your senses, and your sex life is no exception. You prefer a slow, deliberate build-up focusing on lighting, scent, taste, and lingering touch. For you, the journey is just as important—if not more so—than the destination. You need an environment that feels luxurious, comfortable, and deeply physical.",
+        compatibility: "You are a grounding force for Adventurous Free Spirits and deeply compatible with Deep Connectors, as both of you value taking your time and being present in the moment."
+      },
+      adventurous: {
+        title: "The Adventurous Free Spirit",
+        description: "Routine is your enemy. You crave novelty, spontaneity, and pushing the boundaries of what's expected. Whether it's a new location, position, or an unexpected quickie, you thrive on the thrill of the unknown. You view sex as a daring adventure and are always down to try something at least once.",
+        compatibility: "You naturally complement the Playful Enthusiast's love for fun. You can also coax Deep Connectors and Sensual Explorers out of their comfort zones by introducing exciting, low-pressure novelty."
+      },
+      deep: {
+        title: "The Deep Connector",
+        description: "For you, physical intimacy is inextricably linked to emotional intimacy. You need to feel profoundly understood, safe, and emotionally bonded before you can truly let go. Eye contact, deep conversation, and vulnerability are your ultimate aphrodisiacs. Sex is a sacred space for you to merge with your partner.",
+        compatibility: "You thrive with Sensual Explorers who match your pace, and you provide a safe, loving foundation that allows Erotic Visionaries to fully express their vulnerable fantasies."
+      },
+      visionary: {
+        title: "The Erotic Visionary",
+        description: "You have a rich, vivid imagination and view sex as an opportunity to explore psychological dynamics, fantasies, and roleplay. You love setting a specific scene, curating the vibe, and mentally stimulating your partner. For you, the mind is the most powerful sex organ, and you excel at bringing your erotic narratives to life.",
+        compatibility: "You pair brilliantly with Passionate Communicators who can boldly enact your scenarios, and Adventurous Free Spirits who are eager to participate in your creative visions."
+      },
+      playful: {
+        title: "The Playful Enthusiast",
+        description: "You see sex as an opportunity for unadulterated joy, laughter, and fun. You don't take yourself—or the act—too seriously. Awkward moments are met with laughter rather than embarrassment. For you, intimacy is a playground where you and your partner can be silly, flirtatious, and completely relaxed.",
+        compatibility: "Your joyful energy is infectious and works beautifully with the Adventurous Free Spirit. You are also fantastic at helping the Deep Connector and Erotic Visionary lighten up and enjoy the moment without pressure."
+      }
+    };
+
+    let currentQuestionIndex = 0;
+    const userAnswers = [];
+    const scores = { passionate: 0, sensual: 0, adventurous: 0, deep: 0, visionary: 0, playful: 0 };
+
+    const questionsWrapper = document.getElementById('questions-wrapper');
+    const progressBar = document.getElementById('progress-bar');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    const btnSubmit = document.getElementById('btn-submit');
+    const quizContainer = document.getElementById('quiz-container');
+    const resultsContainer = document.getElementById('results-container');
+
+    function initQuiz() {
+      quizData.forEach((q, index) => {
+        const card = document.createElement('div');
+        card.className = `question-card ${index === 0 ? 'active' : ''}`;
+        card.id = `question-${index}`;
+
+        const title = document.createElement('div');
+        title.className = 'question-title';
+        title.textContent = q.question;
+        card.appendChild(title);
+
+        const optionsList = document.createElement('div');
+        optionsList.className = 'options-list';
+
+        q.options.forEach((opt, optIndex) => {
+          const label = document.createElement('label');
+          label.className = 'option-label';
+
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = `q${index}`;
+          input.value = opt.type;
+          input.className = 'option-input';
+
+          input.addEventListener('change', () => {
+            userAnswers[index] = opt.type;
+            updateOptionStyles(optionsList, label);
+            checkAnswerState();
+          });
+
+          const span = document.createElement('span');
+          span.textContent = opt.text;
+
+          label.appendChild(input);
+          label.appendChild(span);
+          optionsList.appendChild(label);
+        });
+
+        card.appendChild(optionsList);
+        questionsWrapper.appendChild(card);
+      });
+      updateProgress();
+    }
+
+    function updateOptionStyles(list, selectedLabel) {
+      const labels = list.querySelectorAll('.option-label');
+      labels.forEach(l => l.classList.remove('selected'));
+      selectedLabel.classList.add('selected');
+    }
+
+    function checkAnswerState() {
+      if (userAnswers[currentQuestionIndex]) {
+        if (currentQuestionIndex === quizData.length - 1) {
+          btnNext.style.display = 'none';
+          btnSubmit.style.display = 'block';
+          btnSubmit.disabled = false;
+        } else {
+          btnNext.disabled = false;
+        }
+      } else {
+        btnNext.disabled = true;
+        btnSubmit.disabled = true;
+      }
+    }
+
+    function updateProgress() {
+      const progress = ((currentQuestionIndex) / quizData.length) * 100;
+      progressBar.style.width = `${progress}%`;
+    }
+
+    btnNext.addEventListener('click', () => {
+      document.getElementById(`question-${currentQuestionIndex}`).classList.remove('active');
+      currentQuestionIndex++;
+      document.getElementById(`question-${currentQuestionIndex}`).classList.add('active');
+
+      btnPrev.disabled = false;
+      checkAnswerState();
+      updateProgress();
+    });
+
+    btnPrev.addEventListener('click', () => {
+      document.getElementById(`question-${currentQuestionIndex}`).classList.remove('active');
+      currentQuestionIndex--;
+      document.getElementById(`question-${currentQuestionIndex}`).classList.add('active');
+
+      if (currentQuestionIndex === 0) {
+        btnPrev.disabled = true;
+      }
+
+      btnNext.style.display = 'block';
+      btnSubmit.style.display = 'none';
+      checkAnswerState();
+      updateProgress();
+    });
+
+    btnSubmit.addEventListener('click', calculateScore);
+
+    function calculateScore() {
+      userAnswers.forEach(answer => {
+        if (answer && scores[answer] !== undefined) {
+          scores[answer]++;
+        }
+      });
+
+      let highestScore = -1;
+      let dominantStyle = '';
+
+      for (const style in scores) {
+        if (scores[style] > highestScore) {
+          highestScore = scores[style];
+          dominantStyle = style;
+        }
+      }
+
+      showResults(dominantStyle);
+    }
+
+    function showResults(styleKey) {
+      quizContainer.style.display = 'none';
+      resultsContainer.style.display = 'block';
+      document.querySelector('.page-header p').style.display = 'none';
+
+      const result = resultTypes[styleKey];
+      document.getElementById('result-type').textContent = result.title;
+      document.getElementById('result-description').textContent = result.description;
+      document.getElementById('result-compatibility').textContent = result.compatibility;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Initialize
+    initQuiz();
+  </script>
+</body>
+</html>
