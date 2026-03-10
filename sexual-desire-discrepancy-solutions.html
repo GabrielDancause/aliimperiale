@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Desire Discrepancy Solution Generator — Ali Imperiale</title>
+  <meta name="description" content="An interactive tool helping couples navigate mismatched libidos with personalized solutions, communication scripts, and non-judgmental guidance.">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-desire-discrepancy-solutions.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+
+  <script src="consent.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 768px) {
+      .site-nav .nav-links { display: none; }
+      .site-nav { padding: 12px 16px; }
+    }
+
+    .tool-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .tool-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .tool-header h1 {
+      font-size: 2.5rem;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .tool-header p {
+      font-size: 1.1rem;
+      color: #5a6b50;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .disclaimer {
+      background-color: #f5eedc;
+      border-left: 4px solid #AD9846;
+      padding: 16px;
+      margin-bottom: 32px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+
+    .section-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(46, 62, 36, 0.05);
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+    .section-card h2 {
+      color: #2E3E24;
+      font-size: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 12px;
+      display: inline-block;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .range-slider {
+      width: 100%;
+      margin: 10px 0;
+      -webkit-appearance: none;
+      background: #e0e4dd;
+      height: 6px;
+      border-radius: 3px;
+      outline: none;
+    }
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #AD9846;
+      cursor: pointer;
+    }
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #5a6b50;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #AD9846;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #AD9846;
+      color: #fff;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #968133;
+    }
+    .btn-secondary {
+      background: #2E3E24;
+    }
+    .btn-secondary:hover {
+      background: #1f2b18;
+    }
+    .btn-clear {
+      background: transparent;
+      border: 1px solid #2E3E24;
+      color: #2E3E24;
+    }
+    .btn-clear:hover {
+      background: rgba(46, 62, 36, 0.05);
+    }
+    .actions-bar {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+      justify-content: center;
+    }
+
+    .results-container {
+      display: none;
+      margin-top: 40px;
+    }
+    .result-section {
+      margin-bottom: 32px;
+    }
+    .result-section h3 {
+      font-size: 1.4rem;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 600px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+    .info-card {
+      background: #fdfcfa;
+      border: 1px solid #e0e4dd;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .info-card h4 {
+      margin-top: 0;
+      color: #AD9846;
+    }
+    .info-card ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .script-box {
+      background: #f5eedc;
+      padding: 20px;
+      border-radius: 8px;
+      font-style: italic;
+      margin: 16px 0;
+      border-left: 4px solid #AD9846;
+    }
+
+    .progress-tracker {
+      margin-top: 40px;
+      border-top: 1px solid #e0e4dd;
+      padding-top: 32px;
+    }
+    .history-list {
+      list-style: none;
+      padding: 0;
+    }
+    .history-item {
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #e0e4dd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .success-story {
+      background: #fdfcfa;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px dashed #AD9846;
+      margin-bottom: 20px;
+    }
+    .success-story h4 {
+      margin-top: 0;
+      color: #2E3E24;
+    }
+
+    .faq-section {
+      margin-top: 60px;
+    }
+    .faq-item {
+      margin-bottom: 24px;
+    }
+    .faq-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it normal for partners to have different levels of sexual desire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, it is incredibly common! In fact, most long-term relationships will experience a desire discrepancy at some point. Desire naturally fluctuates over time due to stress, life changes, aging, hormones, and relationship dynamics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do we talk about mismatched libidos without hurting each other's feelings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The key is shifting from a 'you vs. me' mindset to an 'us vs. the issue' mindset. Use 'I' statements, avoid assigning blame, choose a neutral time to talk (not in the bedroom after a rejection), and focus on a shared goal of connection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is scheduled intimacy and does it kill the romance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Scheduled intimacy simply means prioritizing time for connection. It doesn't mean scheduling the exact sex act. It removes the pressure and guesswork. For many couples, anticipating the scheduled time actually builds desire!"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main class="tool-container">
+    <div class="tool-header">
+      <h1>Sexual Desire Discrepancy Solution Generator</h1>
+      <p>A gentle, non-judgmental space to help you and your partner navigate mismatched libidos, find common ground, and build a more connected intimacy.</p>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Medical Disclaimer:</strong> This tool is for educational and communication purposes only and is not a substitute for professional medical advice, diagnosis, or therapy. If you are experiencing sudden, severe changes in libido, pain during sex, or significant relationship distress, please consult a healthcare provider or licensed therapist.
+    </div>
+
+    <!-- Step 1: Assessment -->
+    <section class="section-card" id="assessment-section">
+      <h2>1. Understand Your Desires</h2>
+      <p>Let's start by getting a baseline. Answer these questions for yourself. If your partner is willing, they can do the same, or you can estimate for now.</p>
+
+      <div class="form-group">
+        <label>How would you describe your current baseline level of sexual desire?</label>
+        <input type="range" id="my-desire" class="range-slider" min="1" max="10" value="5">
+        <div class="slider-labels">
+          <span>Very Low (1)</span>
+          <span>Moderate (5)</span>
+          <span>Very High (10)</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>How would you describe your partner's current baseline level of sexual desire?</label>
+        <input type="range" id="partner-desire" class="range-slider" min="1" max="10" value="5">
+        <div class="slider-labels">
+          <span>Very Low (1)</span>
+          <span>Moderate (5)</span>
+          <span>Very High (10)</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>What are the primary factors that currently dampen your desire? (Select all that apply)</label>
+        <div class="checkbox-grid" id="contributing-factors">
+          <label class="checkbox-item"><input type="checkbox" value="stress"> High Stress / Burnout</label>
+          <label class="checkbox-item"><input type="checkbox" value="fatigue"> Fatigue / Exhaustion</label>
+          <label class="checkbox-item"><input type="checkbox" value="body_image"> Body Image Insecurities</label>
+          <label class="checkbox-item"><input type="checkbox" value="relationship"> Unresolved Relationship Conflict</label>
+          <label class="checkbox-item"><input type="checkbox" value="medication"> Medications (e.g., SSRIs)</label>
+          <label class="checkbox-item"><input type="checkbox" value="hormones"> Hormonal Changes</label>
+          <label class="checkbox-item"><input type="checkbox" value="pain"> Pain During Sex</label>
+          <label class="checkbox-item"><input type="checkbox" value="pressure"> Feeling Pressured</label>
+          <label class="checkbox-item"><input type="checkbox" value="routine"> Boring Routine</label>
+          <label class="checkbox-item"><input type="checkbox" value="other"> Other</label>
+        </div>
+      </div>
+
+      <div class="actions-bar">
+        <button class="btn" id="generate-btn">Generate Solutions</button>
+      </div>
+    </section>
+
+    <!-- Results Container -->
+    <div id="results-container" class="results-container">
+      <div class="section-card">
+        <h2>Your Personalized Action Plan</h2>
+        <p>Based on your input, here are some sensitive, actionable steps you can take to bridge the gap and foster deeper connection.</p>
+
+        <div id="recommendations-box"></div>
+
+        <div class="result-section">
+          <h3>Communication Script Generator</h3>
+          <p>It's hard to find the right words. Try adapting this script to initiate a gentle conversation with your partner:</p>
+          <div class="script-box" id="script-output"></div>
+        </div>
+
+        <div class="result-section">
+          <h3>Compromise &amp; Connection Activities</h3>
+          <div class="card-grid">
+            <div class="info-card">
+              <h4>Non-Sexual Intimacy Builders</h4>
+              <ul id="non-sexual-list">
+                <li>15-minute tech-free cuddle sessions.</li>
+                <li>Taking a bath or shower together (no expectations).</li>
+                <li>Giving each other a 10-minute shoulder or foot massage.</li>
+                <li>Cooking a meal together while listening to your favorite playlist.</li>
+                <li>Holding hands while walking or watching TV.</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>Compromise Activities</h4>
+              <ul id="compromise-list">
+                <li>Sensate focus exercises (touching without a goal of orgasm).</li>
+                <li>Mutual masturbation (enjoying pleasure together with less pressure).</li>
+                <li>"Outer-course" (grinding, heavy petting) instead of penetrative sex.</li>
+                <li>Reading erotica or listening to an audio story together.</li>
+                <li>Using toys to assist when energy levels are low.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-section">
+          <h3>Scheduling Intimacy Tools</h3>
+          <p>Scheduling doesn't have to kill the romance! It removes the anxiety of "will we or won't we?" and allows the lower-desire partner to mentally prepare.</p>
+          <div class="info-card">
+            <strong>The "Menu" Approach:</strong> Create a menu of intimacy options (e.g., Appetizers: kissing, cuddling; Mains: full intercourse; Desserts: massage). During your scheduled time, the lower-desire partner picks from the menu based on what they have the capacity for.
+          </div>
+        </div>
+
+        <div class="result-section">
+          <h3>Professional Help Decision Tree</h3>
+          <p>Wondering if it's time to seek a sex therapist or couples counselor?</p>
+          <ul style="padding-left: 20px;">
+            <li><strong>Yes, if:</strong> The discrepancy is causing deep resentment, you're unable to talk about it without fighting, or there's an underlying physical issue (like pain or sudden loss of libido).</li>
+            <li><strong>Consider it if:</strong> You feel stuck in a rut, want to improve communication, or need a neutral third party to help navigate compromises.</li>
+            <li><strong>Resource:</strong> Check out directories like AASECT (American Association of Sexuality Educators, Counselors and Therapists).</li>
+          </ul>
+        </div>
+
+        <div class="result-section">
+          <h3>Real Success Stories</h3>
+          <div class="success-story">
+            <h4>Sarah &amp; Mark's Shift</h4>
+            <p>"We realized my (Sarah) libido dropped significantly when I was overwhelmed with household chores. Mark taking on more invisible labor without being asked was the ultimate foreplay. We also started scheduling 'connection windows' twice a week—sometimes it leads to sex, sometimes just deep conversation. Taking the pressure off changed everything."</p>
+          </div>
+        </div>
+
+        <div class="actions-bar">
+          <button class="btn btn-secondary" id="save-progress-btn">Save Progress</button>
+          <button class="btn btn-clear" id="reset-btn">Start Over</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Tracking System -->
+    <section class="section-card progress-tracker">
+      <h2>Progress Tracking History</h2>
+      <p>Review your past assessments to see how your desire dynamics and communication are evolving over time.</p>
+      <div class="actions-bar" style="justify-content: flex-start; margin-bottom: 16px;">
+        <button class="btn btn-clear btn-sm" id="clear-history-btn">Clear All History</button>
+      </div>
+      <ul class="history-list" id="history-list">
+        <!-- History items injected here -->
+      </ul>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="section-card">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>Is it normal for partners to have different levels of sexual desire?</h3>
+          <p>Yes, it is incredibly common! In fact, most long-term relationships will experience a desire discrepancy at some point. Desire naturally fluctuates over time due to stress, life changes, aging, hormones, and relationship dynamics.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do we talk about mismatched libidos without hurting each other's feelings?</h3>
+          <p>The key is shifting from a 'you vs. me' mindset to an 'us vs. the issue' mindset. Use 'I' statements, avoid assigning blame, choose a neutral time to talk (not in the bedroom after a rejection), and focus on a shared goal of connection.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is scheduled intimacy and does it kill the romance?</h3>
+          <p>Scheduled intimacy simply means prioritizing time for connection. It doesn't mean scheduling the exact sex act. It removes the pressure and guesswork. For many couples, anticipating the scheduled time actually builds desire!</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background: #2E3E24; color: #FAF8EB; padding: 40px 24px; text-align: center; margin-top: 60px;">
+    <p>&copy; 2026 Ali Imperiale. All rights reserved.</p>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const generateBtn = document.getElementById('generate-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const saveProgressBtn = document.getElementById('save-progress-btn');
+    const clearHistoryBtn = document.getElementById('clear-history-btn');
+
+    const resultsContainer = document.getElementById('results-container');
+    const recommendationsBox = document.getElementById('recommendations-box');
+    const scriptOutput = document.getElementById('script-output');
+    const historyList = document.getElementById('history-list');
+
+    // Load state
+    loadHistory();
+    loadState();
+
+    generateBtn.addEventListener('click', () => {
+      generateSolutions();
+      saveState();
+    });
+
+    resetBtn.addEventListener('click', () => {
+      resetForm();
+    });
+
+    saveProgressBtn.addEventListener('click', () => {
+      saveToHistory();
+    });
+
+    clearHistoryBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear your progress history?')) {
+        localStorage.removeItem('sdd_history');
+        loadHistory();
+      }
+    });
+
+    function getFormValues() {
+      const myDesire = parseInt(document.getElementById('my-desire').value);
+      const partnerDesire = parseInt(document.getElementById('partner-desire').value);
+
+      const factors = [];
+      document.querySelectorAll('#contributing-factors input:checked').forEach(cb => {
+        factors.push(cb.value);
+      });
+
+      return { myDesire, partnerDesire, factors };
+    }
+
+    function generateSolutions() {
+      const { myDesire, partnerDesire, factors } = getFormValues();
+      const diff = Math.abs(myDesire - partnerDesire);
+
+      let recHTML = '';
+
+      if (diff === 0) {
+        recHTML += '<div class="info-card" style="margin-bottom: 20px;"><strong>Great news:</strong> Your base desire levels are currently aligned. If you selected contributing factors below, those are temporary roadblocks we can work through together without dealing with a fundamental mismatch!</div>';
+      } else if (diff <= 2) {
+        recHTML += '<div class="info-card" style="margin-bottom: 20px;"><strong>A Slight Mismatch:</strong> Your desire levels are very close. This is incredibly common and usually means small tweaks in communication and routine can bridge the gap entirely.</div>';
+      } else {
+        recHTML += '<div class="info-card" style="margin-bottom: 20px;"><strong>A Noticeable Discrepancy:</strong> It makes sense if you\'ve been feeling some friction. Remember, neither of you is "broken" or "wrong." The high-desire partner isn\'t "too much," and the lower-desire partner isn\'t "frigid." You simply have different needs right now.</div>';
+      }
+
+      if (factors.length > 0) {
+        recHTML += '<h4>Addressing Your Hurdles:</h4><ul>';
+        if (factors.includes('stress') || factors.includes('fatigue')) {
+          recHTML += '<li><strong>Stress & Exhaustion:</strong> Desire needs space to breathe. Before jumping into intimacy, prioritize offloading tasks for each other. <em>(Hint: doing the dishes can be foreplay!)</em></li>';
+        }
+        if (factors.includes('body_image')) {
+          recHTML += '<li><strong>Body Image:</strong> Focus on what your body can <em>feel</em> rather than how it looks. Try dimming the lights or doing a sensate focus exercise.</li>';
+        }
+        if (factors.includes('relationship')) {
+          recHTML += '<li><strong>Relationship Tension:</strong> It is hard to want physical intimacy when emotional intimacy is lacking. Consider setting aside 20 minutes to talk openly (clothed, outside the bedroom) before trying to connect physically.</li>';
+        }
+        if (factors.includes('medication') || factors.includes('hormones')) {
+          recHTML += '<li><strong>Physiological Factors:</strong> Be gentle with yourselves. If medications or hormones are dampening libido, explore other forms of touch (like massage) while you discuss options with a healthcare provider.</li>';
+        }
+        if (factors.includes('pain')) {
+          recHTML += '<li><strong>Pain:</strong> Stop any activity that causes pain immediately. Shift to outercourse or mutual massage, and please consult a pelvic floor physical therapist or doctor.</li>';
+        }
+        if (factors.includes('pressure')) {
+          recHTML += '<li><strong>Pressure:</strong> Take sex off the table completely for a set time (e.g., two weeks). Focus only on non-demand touch to reset the dynamic and remove the anxiety of expectation.</li>';
+        }
+        if (factors.includes('routine')) {
+          recHTML += '<li><strong>Routine:</strong> The brain craves novelty! Try changing the time of day you connect, the room you are in, or introducing a new sense (like a blindfold).</li>';
+        }
+        recHTML += '</ul>';
+      }
+
+      recommendationsBox.innerHTML = recHTML;
+
+      // Generate Script
+      let script = '';
+      if (myDesire > partnerDesire) {
+         script = '"Hey, I’ve been feeling a bit disconnected lately and I really miss feeling close to you physically. I know you’ve been dealing with ' + (factors.length > 0 ? 'some things like ' + factors.join(', ').replace(/_/g, ' ') : 'a lot') + ' and I want to support you. How can we find a way to connect that feels good and low-pressure for both of us?"';
+      } else if (myDesire < partnerDesire) {
+         script = '"Hey, I know we haven\'t been connecting physically as much as you\'d like, and I want you to know I still find you attractive and love you. Right now, my energy is low ' + (factors.length > 0 ? 'because of ' + factors.join(', ').replace(/_/g, ' ') : '') + '. I want to prioritize us. Can we start with some cuddling or a massage tonight with no expectations for sex?"';
+      } else {
+         script = '"Hey, I love that we are on the same page with our desire right now! I want to keep this momentum going. Let\'s make sure we prioritize our connection time this week."';
+      }
+      scriptOutput.textContent = script;
+
+      resultsContainer.style.display = 'block';
+      resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function saveState() {
+      const state = getFormValues();
+      localStorage.setItem('sdd_current_state', JSON.stringify(state));
+    }
+
+    function loadState() {
+      const saved = localStorage.getItem('sdd_current_state');
+      if (saved) {
+        try {
+          const state = JSON.parse(saved);
+          document.getElementById('my-desire').value = state.myDesire;
+          document.getElementById('partner-desire').value = state.partnerDesire;
+
+          if (state.factors) {
+             document.querySelectorAll('#contributing-factors input').forEach(cb => {
+               cb.checked = state.factors.includes(cb.value);
+             });
+          }
+          generateSolutions();
+        } catch (e) {
+          console.error('Error loading state', e);
+        }
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('my-desire').value = 5;
+      document.getElementById('partner-desire').value = 5;
+      document.querySelectorAll('#contributing-factors input').forEach(cb => cb.checked = false);
+      resultsContainer.style.display = 'none';
+      localStorage.removeItem('sdd_current_state');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function saveToHistory() {
+      const state = getFormValues();
+      const date = new Date();
+      // Adjust to local timezone correctly to avoid UTC mismatch bugs per memory
+      date.setTime(date.getTime() - date.getTimezoneOffset() * 60000);
+      const dateString = date.toISOString().split('T')[0];
+
+      const record = {
+        date: dateString,
+        myDesire: state.myDesire,
+        partnerDesire: state.partnerDesire,
+        factors: state.factors
+      };
+
+      let history = [];
+      try {
+        const stored = localStorage.getItem('sdd_history');
+        if (stored) history = JSON.parse(stored);
+      } catch (e) {}
+
+      history.unshift(record);
+      localStorage.setItem('sdd_history', JSON.stringify(history));
+
+      alert('Progress saved to history!');
+      loadHistory();
+    }
+
+    function loadHistory() {
+      let history = [];
+      try {
+        const stored = localStorage.getItem('sdd_history');
+        if (stored) history = JSON.parse(stored);
+      } catch (e) {}
+
+      historyList.innerHTML = '';
+
+      if (history.length === 0) {
+        historyList.innerHTML = '<li class="history-item">No history saved yet. Complete the assessment and click "Save Progress".</li>';
+        return;
+      }
+
+      history.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'history-item';
+
+        let factorsText = item.factors && item.factors.length > 0
+          ? `Factors: ${item.factors.join(', ').replace(/_/g, ' ')}`
+          : 'No specific factors';
+
+        li.innerHTML = `
+          <div>
+            <strong>${item.date}</strong><br>
+            <span style="font-size: 0.9em; color: #5a6b50;">
+              My Desire: ${item.myDesire}/10 | Partner Desire: ${item.partnerDesire}/10<br>
+              ${factorsText}
+            </span>
+          </div>
+        `;
+        historyList.appendChild(li);
+      });
+    }
+  });
+</script>
+</body>
+</html>
