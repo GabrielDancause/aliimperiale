@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G86C7NJG3F');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sexual Confidence Building Workout Tool | Ali Imperiale</title>
+<meta name="description" content="A dynamic, personalized sexual confidence building and intimacy confidence exercises tool. Build your sexual self-esteem with daily workouts, affirmations, and progress tracking.">
+<meta name="keywords" content="sexual confidence building, intimacy confidence exercises, sexual self-esteem workout">
+
+<!-- Standard Scripts -->
+<script src="consent.js" defer></script>
+<script src="mobile-nav.js" defer></script>
+<script src="newsletter-bar.js" defer></script>
+<script src="email-capture.js" defer></script>
+<script src="back-to-top.js" defer></script>
+
+<!-- CSS Links -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is sexual confidence building?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sexual confidence building is the practice of developing a positive, self-assured relationship with your own body, desires, and sexual expression. It involves exercises to improve body awareness, communication, and boundary setting."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How often should I do these intimacy confidence exercises?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For the best results, try to complete one intimacy confidence exercise daily. Consistency helps build new habits and positively rewires how you view yourself and your sexuality."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Are these sexual self-esteem workouts suitable for beginners?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Absolutely! These exercises are designed to be accessible for everyone, regardless of where they are on their sexual journey. Start small and go at your own pace."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What if an exercise makes me uncomfortable?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is completely normal to feel a bit out of your comfort zone, but if an exercise causes distress, stop immediately. Your safety and comfort are paramount. You can always skip an exercise or return to it later."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Can I do these exercises with a partner?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "While many exercises are focused on individual growth, communication and boundary-setting exercises are great to practice with a partner once you feel ready."
+    }
+  }]
+}
+</script>
+
+<style>
+  :root {
+    --bg-color: #FAF8EB;
+    --text-color: #2E3E24;
+    --accent-color: #AD9846;
+    --white: #FFFFFF;
+    --gray-light: #E0E0E0;
+    --gray-dark: #757575;
+    --success: #4CAF50;
+    --danger: #F44336;
+    --border-radius: 8px;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .quick-exit {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: var(--danger);
+    color: var(--white);
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  header.tool-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  header.tool-header h1 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .disclaimer {
+    background-color: var(--white);
+    border-left: 4px solid var(--accent-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .crisis-support {
+    background-color: #ffebee;
+    border-left: 4px solid var(--danger);
+    padding: 15px;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+  }
+
+  /* Dashboard Grid */
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 600px) {
+    .dashboard {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  .streak-container {
+    text-align: center;
+  }
+
+  .streak-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+  }
+
+  /* Progress Bars */
+  .progress-item {
+    margin-bottom: 15px;
+  }
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--gray-light);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background-color: var(--accent-color);
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  /* Exercise Section */
+  .exercise-section {
+    margin-bottom: 40px;
+  }
+
+  .exercise-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .tab-btn {
+    background-color: var(--white);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .tab-btn.active, .tab-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+  }
+
+  .exercise-list {
+    display: none;
+  }
+
+  .exercise-list.active {
+    display: block;
+  }
+
+  .exercise-item {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    border-left: 4px solid var(--gray-light);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .exercise-item.completed {
+    border-left-color: var(--success);
+    opacity: 0.8;
+  }
+
+  .exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .exercise-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  .exercise-desc {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--gray-dark);
+  }
+
+  .btn-complete {
+    align-self: flex-start;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+
+  .btn-complete:hover {
+    background-color: #96833b;
+  }
+
+  .btn-complete:disabled {
+    background-color: var(--success);
+    cursor: default;
+  }
+
+  /* Achievements */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+  }
+
+  .achievement {
+    text-align: center;
+    background-color: var(--white);
+    padding: 15px 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--gray-light);
+    opacity: 0.5;
+    filter: grayscale(100%);
+    transition: all 0.3s;
+  }
+
+  .achievement.unlocked {
+    opacity: 1;
+    filter: grayscale(0%);
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 5px rgba(173, 152, 70, 0.2);
+  }
+
+  .achievement-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .achievement-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  /* History & Reset */
+  .actions-section {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid var(--gray-light);
+    padding-top: 20px;
+  }
+
+  .btn-reset {
+    background-color: transparent;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  /* FAQ */
+  .faq-section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .faq-item {
+    margin-bottom: 20px;
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .faq-question {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+
+  .faq-answer {
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+</style>
+</head>
+<body>
+  <a href="https://google.com" class="quick-exit" aria-label="Quick Exit" title="Click to immediately exit this page">Quick Exit</a>
+
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <header class="tool-header">
+      <h1>Sexual Confidence Workout</h1>
+      <p>Your daily exercises for building sexual self-esteem, intimacy confidence, and positive body awareness.</p>
+    </header>
+
+    <div class="disclaimer">
+      <strong>Educational Tool & Medical Disclaimer:</strong> This tool is for educational and self-exploration purposes only. It is not a substitute for professional mental health care, sex therapy, or medical advice. If you are experiencing trauma, please prioritize your safety and seek professional support.
+    </div>
+
+    <div class="crisis-support">
+      <strong>Need support now?</strong> If you are in crisis or have experienced sexual assault, help is available.<br>
+      US: Call or text 988 (Suicide & Crisis Lifeline) or 800-656-HOPE (RAINN).<br>
+      International: Contact your local emergency services or a crisis support hotline.
+    </div>
+
+    <div class="dashboard">
+      <div class="card streak-container">
+        <h2>Current Streak</h2>
+        <div class="streak-number" id="streak-counter">0</div>
+        <p>Days in a row!</p>
+      </div>
+
+      <div class="card">
+        <h2>Category Progress</h2>
+        <div class="progress-item">
+          <div class="progress-label"><span>Body Awareness</span> <span id="progress-body-text">0/7</span></div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-body-fill"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label"><span>Communication</span> <span id="progress-comm-text">0/7</span></div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-comm-fill"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label"><span>Boundary Setting</span> <span id="progress-bound-text">0/7</span></div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-bound-fill"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label"><span>Sexual Expression</span> <span id="progress-expr-text">0/7</span></div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-expr-fill"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card exercise-section">
+      <h2>Daily Workout</h2>
+      <p style="margin-bottom: 20px; font-size: 0.95rem;">Select a category and complete an exercise to build your confidence muscle today.</p>
+
+      <div class="exercise-tabs">
+        <button class="tab-btn active" data-target="cat-body">Body Awareness</button>
+        <button class="tab-btn" data-target="cat-comm">Communication</button>
+        <button class="tab-btn" data-target="cat-bound">Boundary Setting</button>
+        <button class="tab-btn" data-target="cat-expr">Sexual Expression</button>
+      </div>
+
+      <div class="exercise-content">
+        <!-- Exercises will be injected here via JS -->
+        <div id="cat-body" class="exercise-list active"></div>
+        <div id="cat-comm" class="exercise-list"></div>
+        <div id="cat-bound" class="exercise-list"></div>
+        <div id="cat-expr" class="exercise-list"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Achievements</h2>
+      <div class="achievements-grid" id="achievements-container">
+        <!-- Achievements will be injected here via JS -->
+      </div>
+    </div>
+
+    <div class="actions-section">
+      <button class="btn-reset" id="btn-reset">Reset All Progress</button>
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">What is sexual confidence building?</div>
+        <div class="faq-answer">Sexual confidence building is the practice of developing a positive, self-assured relationship with your own body, desires, and sexual expression. It involves exercises to improve body awareness, communication, and boundary setting.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How often should I do these intimacy confidence exercises?</div>
+        <div class="faq-answer">For the best results, try to complete one intimacy confidence exercise daily. Consistency helps build new habits and positively rewires how you view yourself and your sexuality.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Are these sexual self-esteem workouts suitable for beginners?</div>
+        <div class="faq-answer">Absolutely! These exercises are designed to be accessible for everyone, regardless of where they are on their sexual journey. Start small and go at your own pace.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What if an exercise makes me uncomfortable?</div>
+        <div class="faq-answer">It is completely normal to feel a bit out of your comfort zone, but if an exercise causes distress, stop immediately. Your safety and comfort are paramount. You can always skip an exercise or return to it later.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I do these exercises with a partner?</div>
+        <div class="faq-answer">While many exercises are focused on individual growth, communication and boundary-setting exercises are great to practice with a partner once you feel ready.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+
+    // --- Data ---
+    const exercisesData = {
+      body: [
+        { id: 'b1', title: 'Mirror Work Day', desc: 'Stand in front of a mirror for 2 minutes and find 3 things you appreciate about your body.' },
+        { id: 'b2', title: 'Mindful Touch', desc: 'Spend 5 minutes gently touching different parts of your body, focusing only on the sensation without judgment.' },
+        { id: 'b3', title: 'Body Scan Meditation', desc: 'Do a 5-minute body scan, noticing areas of tension and consciously relaxing them.' },
+        { id: 'b4', title: 'Sensory Walk', desc: 'Take a short walk and focus entirely on the physical sensations: the ground under your feet, the air on your skin.' },
+        { id: 'b5', title: 'Naked Normalization', desc: 'Spend 10 minutes doing a mundane task (like making bed or folding laundry) completely naked.' },
+        { id: 'b6', title: 'Positive Affirmations', desc: 'Write down and repeat 3 positive affirmations about your physical self.' },
+        { id: 'b7', title: 'Gratitude Journaling', desc: 'Write down 3 things your body allowed you to experience today.' }
+      ],
+      comm: [
+        { id: 'c1', title: 'Voice Your Desires', desc: 'Practice saying out loud what you want in bed, even if just to yourself.' },
+        { id: 'c2', title: 'Active Listening', desc: 'Have a conversation where you only listen and ask follow-up questions without inserting your own story.' },
+        { id: 'c3', title: 'The "I" Statement', desc: 'Practice framing a difficult feeling using an "I feel X when Y happens" structure.' },
+        { id: 'c4', title: 'Check-in Text', desc: 'Send a positive, affirming check-in text to a partner or close friend.' },
+        { id: 'c5', title: 'Tone Awareness', desc: 'Record yourself saying a phrase and listen back to notice your tone and inflection.' },
+        { id: 'c6', title: 'Non-verbal Cues', desc: 'Spend 5 minutes observing people (or a video) focusing only on their body language.' },
+        { id: 'c7', title: 'Expressing Appreciation', desc: 'Explicitly tell someone exactly what you appreciate about something they did.' }
+      ],
+      bound: [
+        { id: 's1', title: 'Say No Practice', desc: 'Practice saying "No, thank you" to a small request today without over-explaining.' },
+        { id: 's2', title: 'Define a Hard Limit', desc: 'Write down one absolute hard limit you have in intimacy.' },
+        { id: 's3', title: 'The Pause', desc: 'Practice pausing for 3 seconds before responding to any request today.' },
+        { id: 's4', title: 'Identify Energy Drains', desc: 'List 3 things that drain your energy and brainstorm how to set a boundary around one.' },
+        { id: 's5', title: 'Digital Boundary', desc: 'Set a specific time today to put your phone away for at least an hour.' },
+        { id: 's6', title: 'Revisit a Boundary', desc: 'Think of a boundary you set recently. Did you hold it? Reflect on how it felt.' },
+        { id: 's7', title: 'Body Autonomy Check', desc: 'Remind yourself today that you own your body and have the right to change your mind at any time.' }
+      ],
+      expr: [
+        { id: 'e1', title: 'Explore a Fantasy', desc: 'Spend 5 minutes daydreaming about a sexual fantasy without judgment.' },
+        { id: 'e2', title: 'Sensual Playlist', desc: 'Create a playlist of 5 songs that make you feel sexy or sensual.' },
+        { id: 'e3', title: 'Dress for Yourself', desc: 'Wear an item of clothing or underwear today strictly because it makes YOU feel good.' },
+        { id: 'e4', title: 'Erotic Reading', desc: 'Read a short piece of erotica or a positive article about sexual expression.' },
+        { id: 'e5', title: 'Dance Break', desc: 'Put on one song and dance around your room exactly how you want to.' },
+        { id: 'e6', title: 'Identify Turn-ons', desc: 'Write a list of 5 non-physical things that turn you on.' },
+        { id: 'e7', title: 'Self-Pleasure Intention', desc: 'If you choose to masturbate today, set an intention to focus purely on your own pleasure, not a specific goal.' }
+      ]
+    };
+
+    const achievementsData = [
+      { id: 'ach1', icon: '🌱', name: 'First Step', desc: 'Complete your first exercise' },
+      { id: 'ach2', icon: '🔥', name: '3-Day Streak', desc: 'Maintain a 3-day streak' },
+      { id: 'ach3', icon: '⭐', name: 'Category Master', desc: 'Complete all exercises in one category' },
+      { id: 'ach4', icon: '👑', name: 'Confidence Royalty', desc: 'Complete 15 total exercises' }
+    ];
+
+    // --- State Management ---
+    let state = {
+      completedExercises: [], // array of exercise IDs
+      lastCompletedDate: null,
+      streak: 0,
+      unlockedAchievements: []
+    };
+
+    function loadState() {
+      const saved = localStorage.getItem('ali_sexual_confidence');
+      if (saved) {
+        state = JSON.parse(saved);
+      }
+      checkStreak();
+    }
+
+    function saveState() {
+      localStorage.setItem('ali_sexual_confidence', JSON.stringify(state));
+    }
+
+    function checkStreak() {
+      if (!state.lastCompletedDate) return;
+
+      const lastDate = new Date(state.lastCompletedDate);
+      const today = new Date();
+
+      // Reset times to compare just dates
+      lastDate.setHours(0,0,0,0);
+      today.setHours(0,0,0,0);
+
+      const diffTime = Math.abs(today - lastDate);
+      const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+
+      if (diffDays > 1) {
+        // Streak broken
+        state.streak = 0;
+        saveState();
+      }
+    }
+
+    // --- UI Updates ---
+    function updateDashboard() {
+      // Streak
+      document.getElementById('streak-counter').innerText = state.streak;
+
+      // Progress Bars
+      const categories = [
+        { key: 'body', idPrefix: 'progress-body' },
+        { key: 'comm', idPrefix: 'progress-comm' },
+        { key: 'bound', idPrefix: 'progress-bound' },
+        { key: 'expr', idPrefix: 'progress-expr' }
+      ];
+
+      categories.forEach(cat => {
+        const total = exercisesData[cat.key].length;
+        const completed = exercisesData[cat.key].filter(ex => state.completedExercises.includes(ex.id)).length;
+        const percent = Math.round((completed / total) * 100);
+
+        document.getElementById(`${cat.idPrefix}-text`).innerText = `${completed}/${total}`;
+        document.getElementById(`${cat.idPrefix}-fill`).style.width = `${percent}%`;
+      });
+    }
+
+    function renderExercises() {
+      const categories = [
+        { key: 'body', targetId: 'cat-body' },
+        { key: 'comm', targetId: 'cat-comm' },
+        { key: 'bound', targetId: 'cat-bound' },
+        { key: 'expr', targetId: 'cat-expr' }
+      ];
+
+      categories.forEach(cat => {
+        const container = document.getElementById(cat.targetId);
+        container.innerHTML = ''; // clear
+
+        exercisesData[cat.key].forEach(ex => {
+          const isCompleted = state.completedExercises.includes(ex.id);
+
+          const div = document.createElement('div');
+          div.className = `exercise-item ${isCompleted ? 'completed' : ''}`;
+
+          div.innerHTML = `
+            <div class="exercise-header">
+              <span class="exercise-title">${ex.title}</span>
+              <button class="btn-complete" onclick="completeExercise('${ex.id}', '${cat.key}')" ${isCompleted ? 'disabled' : ''}>
+                ${isCompleted ? 'Completed ✓' : 'Complete'}
+              </button>
+            </div>
+            <div class="exercise-desc">${ex.desc}</div>
+          `;
+
+          container.appendChild(div);
+        });
+      });
+    }
+
+    function renderAchievements() {
+      const container = document.getElementById('achievements-container');
+      container.innerHTML = '';
+
+      achievementsData.forEach(ach => {
+        const isUnlocked = state.unlockedAchievements.includes(ach.id);
+        const div = document.createElement('div');
+        div.className = `achievement ${isUnlocked ? 'unlocked' : ''}`;
+        div.title = ach.desc;
+
+        div.innerHTML = `
+          <div class="achievement-icon">${ach.icon}</div>
+          <div class="achievement-name">${ach.name}</div>
+        `;
+
+        container.appendChild(div);
+      });
+    }
+
+    // --- Actions ---
+    window.completeExercise = function(exId, catKey) {
+      if (state.completedExercises.includes(exId)) return;
+
+      state.completedExercises.push(exId);
+
+      // Update streak
+      const today = new Date();
+      today.setHours(0,0,0,0);
+
+      let updateStreak = false;
+      if (!state.lastCompletedDate) {
+        updateStreak = true;
+      } else {
+        const lastDate = new Date(state.lastCompletedDate);
+        lastDate.setHours(0,0,0,0);
+        if (today > lastDate) {
+          updateStreak = true;
+        }
+      }
+
+      if (updateStreak) {
+        state.streak += 1;
+        state.lastCompletedDate = new Date().toISOString();
+      }
+
+      checkAchievements(catKey);
+      saveState();
+
+      // Re-render UI
+      updateDashboard();
+      renderExercises();
+      renderAchievements();
+    };
+
+    function checkAchievements(lastCatKey) {
+      const newAchievements = [];
+
+      // First step
+      if (state.completedExercises.length >= 1 && !state.unlockedAchievements.includes('ach1')) {
+        newAchievements.push('ach1');
+      }
+
+      // 3-Day streak
+      if (state.streak >= 3 && !state.unlockedAchievements.includes('ach2')) {
+        newAchievements.push('ach2');
+      }
+
+      // Category Master
+      if (!state.unlockedAchievements.includes('ach3')) {
+        const totalInCat = exercisesData[lastCatKey].length;
+        const completedInCat = exercisesData[lastCatKey].filter(ex => state.completedExercises.includes(ex.id)).length;
+        if (completedInCat === totalInCat) {
+          newAchievements.push('ach3');
+        }
+      }
+
+      // Confidence Royalty
+      if (state.completedExercises.length >= 15 && !state.unlockedAchievements.includes('ach4')) {
+        newAchievements.push('ach4');
+      }
+
+      if (newAchievements.length > 0) {
+        state.unlockedAchievements = [...state.unlockedAchievements, ...newAchievements];
+        // Could add an alert or toast here for new unlocks
+      }
+    }
+
+    // --- Event Listeners ---
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // Remove active class from all tabs and lists
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.exercise-list').forEach(l => l.classList.remove('active'));
+
+        // Add active class to clicked tab and corresponding list
+        e.target.classList.add('active');
+        const targetId = e.target.getAttribute('data-target');
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+
+    document.getElementById('btn-reset').addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset all your progress and streaks? This cannot be undone.')) {
+        state = {
+          completedExercises: [],
+          lastCompletedDate: null,
+          streak: 0,
+          unlockedAchievements: []
+        };
+        saveState();
+        updateDashboard();
+        renderExercises();
+        renderAchievements();
+      }
+    });
+
+    // --- Initialization ---
+    loadState();
+    updateDashboard();
+    renderExercises();
+    renderAchievements();
+
+  </script>
+</body>
+</html>
