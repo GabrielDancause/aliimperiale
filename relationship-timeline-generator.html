@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+  <script src="consent.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relationship Timeline Generator Tool | Ali Imperiale</title>
+  <meta name="description" content="Track and visualize your relationship milestones, plan future goals, and celebrate important moments with this interactive timeline generator.">
+
+  <meta property="og:title" content="Relationship Timeline Generator Tool | Ali Imperiale">
+  <meta property="og:description" content="Track and visualize your relationship milestones, plan future goals, and celebrate important moments with this interactive timeline generator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/relationship-timeline-generator.html">
+  <meta property="og:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Relationship Timeline Generator Tool">
+  <meta name="twitter:description" content="Track and visualize your relationship milestones, plan future goals, and celebrate important moments with this interactive timeline generator.">
+  <meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+
+  <link rel="canonical" href="https://aliimperiale.com/relationship-timeline-generator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    /* Base Tool Styles */
+    :root {
+      --cream: #FAF8EB;
+      --olive: #2E3E24;
+      --gold: #AD9846;
+      --olive-light: #4A5E3D;
+      --gold-light: #C4B271;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--cream);
+      color: var(--olive);
+    }
+    .tracker-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .page-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .page-header h1 {
+      font-size: 2rem;
+      color: var(--olive);
+      margin-bottom: 0.5rem;
+    }
+    .page-header p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(46, 62, 36, 0.05);
+      border: 1px solid rgba(173, 152, 70, 0.2);
+    }
+    .card h2 {
+      color: var(--olive);
+      margin-top: 0;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--gold);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--olive);
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid rgba(46, 62, 36, 0.2);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+      background-color: #fff;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+    .btn:active {
+      transform: translateY(1px);
+    }
+    .btn-primary {
+      background-color: var(--olive);
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: var(--olive-light);
+    }
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--olive);
+      border: 2px solid var(--olive);
+    }
+    .btn-secondary:hover {
+      background-color: rgba(46, 62, 36, 0.05);
+    }
+    .btn-block {
+      display: block;
+      width: 100%;
+    }
+
+    /* Timeline Display */
+    .action-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .timeline-container {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-top: 2rem;
+    }
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--gold);
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.8rem;
+      top: 0.3rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--olive);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+    .timeline-date {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .timeline-title {
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem 0;
+      color: var(--olive);
+    }
+    .timeline-category-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      background-color: rgba(173, 152, 70, 0.15);
+      color: var(--olive);
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+    }
+    .timeline-desc {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .timeline-reflection {
+      background-color: rgba(46, 62, 36, 0.05);
+      padding: 1rem;
+      border-radius: 4px;
+      border-left: 3px solid var(--olive);
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .timeline-health {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+      background-color: #f0f0f0;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .health-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .health-thriving { background-color: #4CAF50; }
+    .health-growing { background-color: #2196F3; }
+    .health-challenging { background-color: #FF9800; }
+    .health-neutral { background-color: #9E9E9E; }
+
+    .timeline-photo {
+      max-width: 100%;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .btn-delete-item {
+      background: none;
+      border: none;
+      color: #d9534f;
+      font-size: 0.85rem;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: underline;
+    }
+
+    /* FAQ Section */
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .faq-item p {
+      margin-top: 0;
+      line-height: 1.5;
+    }
+
+    /* Inline CSS for navigation (from index.html/shared logic) */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      background-color: #FAF8EB;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+    }
+    .nav-logo {
+      height: 32px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2E3E24;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: #AD9846;
+    }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #2E3E24;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #FAF8EB;
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+        text-align: center;
+        gap: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <main class="tracker-container">
+    <header class="page-header">
+      <h1>Relationship Timeline Generator</h1>
+      <p>Track your milestones, reflect on important moments, and plan for your future together.</p>
+    </header>
+
+    <section class="card" id="input-section">
+      <h2>Add a Milestone</h2>
+      <p>Fill out the details below to add a new memory, milestone, or future goal to your relationship timeline.</p>
+
+      <form id="timeline-form" class="tool-form">
+        <div class="form-group">
+          <label for="milestone-title">Title / Event Name</label>
+          <input type="text" id="milestone-title" class="form-input" placeholder="e.g., Our First Date, Moved In Together" required>
+        </div>
+
+        <div class="form-group">
+          <label for="milestone-date">Date</label>
+          <input type="date" id="milestone-date" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="milestone-category">Category</label>
+          <select id="milestone-category" class="form-input" required>
+            <option value="" disabled selected>Select a category...</option>
+            <option value="firsts">Important Firsts (Date, Kiss, I Love You)</option>
+            <option value="living">Living & Life Changes (Moving In, Pets)</option>
+            <option value="intimacy">Sexual & Intimacy Milestones</option>
+            <option value="travel">Travel & Adventures</option>
+            <option value="challenges">Challenges Overcome Together</option>
+            <option value="goals">Goals Achieved / Future Planning</option>
+            <option value="anniversary">Anniversary</option>
+            <option value="other">Other Memories</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="milestone-desc">Description & Memories</label>
+          <textarea id="milestone-desc" class="form-input" rows="3" placeholder="What happened? How did you feel? Share your favorite memory from this moment." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="milestone-reflection">Reflection Prompt (Optional)</label>
+          <textarea id="milestone-reflection" class="form-input" rows="2" placeholder="e.g., How has our relationship grown since this moment?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="milestone-photo">Attach a Photo (Optional)</label>
+          <input type="file" id="milestone-photo" class="form-input file-input" accept="image/*">
+          <p class="form-hint" style="font-size: 0.85rem; color: #555; margin-top: 0.2rem;">Images are saved locally to your device. No data is uploaded to any server.</p>
+        </div>
+
+        <div class="form-group check-in-group" style="display: none;" id="health-check-container">
+          <label>Relationship Health Check-in</label>
+          <p class="form-hint" style="font-size: 0.85rem; color: #555; margin-bottom: 0.5rem;">How are you both feeling about this milestone?</p>
+          <select id="milestone-health" class="form-input">
+            <option value="thriving">Thriving - We are deeply connected and aligned.</option>
+            <option value="growing">Growing - Learning and adapting together.</option>
+            <option value="challenging">Challenging - We are working through some hurdles.</option>
+            <option value="neutral">Neutral - Just enjoying the ride.</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Add to Timeline</button>
+      </form>
+    </section>
+
+    <section class="card" id="timeline-section" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h2>Your Relationship Timeline</h2>
+        <div class="action-buttons">
+          <button id="btn-export" class="btn btn-secondary">Export Data</button>
+          <button id="btn-share" class="btn btn-primary">Share Link</button>
+          <button id="btn-clear" class="btn btn-danger" style="background-color: #d9534f; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 4px; cursor: pointer; font-weight: 600;">Clear All</button>
+        </div>
+      </div>
+
+      <div class="timeline-container" id="timeline-display">
+        <!-- Timeline items will be injected here via JS -->
+      </div>
+    </section>
+
+    <section class="educational-section card">
+      <h2>Why Track Relationship Milestones?</h2>
+      <p>I absolutely love the idea of creating a visual map of a relationship. It's so easy to get caught up in the day-to-day routine and forget just how far you've come together. A relationship timeline isn't just about marking dates on a calendar; it's about honoring the journey, celebrating the wins, and acknowledging the challenges you've overcome hand-in-hand.</p>
+
+      <h3>The Power of Shared Memories</h3>
+      <p>When we take the time to document our milestones—whether it's the nervous excitement of a first date, the chaotic joy of moving in together, or the vulnerability of navigating a tough transition—we're actually strengthening our bond. Research shows that reminiscing about positive shared experiences can boost relationship satisfaction and foster a deeper sense of connection.</p>
+
+      <h3>Planning for the Future</h3>
+      <p>This tool isn't just for looking backward; it's for dreaming forward. By adding "Future Goals" to your timeline, you and your partner can align on what you're working toward. Whether it's planning a dream vacation, buying a house, or focusing on personal growth, putting it on the timeline makes it feel real and achievable.</p>
+
+      <h3>Relationship Health Check-ins</h3>
+      <p>You'll notice an option to include a "Relationship Health Check-in" for certain milestones. Relationships are dynamic, and checking in on how you're both feeling during major life events (like moving, changing jobs, or hitting a big anniversary) is a proactive way to ensure you're staying connected and communicating openly.</p>
+      <p><em>Remember, your timeline is beautifully unique. There's no "right" pace or required order for milestones. Celebrate your story exactly as it unfolds!</em></p>
+    </section>
+
+    <section class="faq-section card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Is my relationship data private?</h3>
+        <p>Absolutely. Your privacy is a top priority. This tool runs entirely in your browser using local storage. None of your data, text, or uploaded photos are ever sent to a server, tracked, or saved externally. It lives purely on your specific device.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I add future events or goals?</h3>
+        <p>Yes! You can select a future date to add upcoming goals, planned trips, or relationship aspirations to your timeline. It's a great way to visualize what you're building toward together.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I share my timeline with my partner?</h3>
+        <p>You can use the "Share Link" button to generate a shareable URL containing your timeline data, or you can use the "Export Data" button to save a copy for your records. *Note: If you attached local photos, they will not transfer via the simple share link due to browser security restrictions, but text data will!*</p>
+      </div>
+    </section>
+
+    <!-- Inline JS Logic for Tool -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const STORAGE_KEY = 'ali_rel_timeline_data';
+        let timelineData = [];
+
+        const form = document.getElementById('timeline-form');
+        const timelineSection = document.getElementById('timeline-section');
+        const timelineDisplay = document.getElementById('timeline-display');
+        const categorySelect = document.getElementById('milestone-category');
+        const healthCheckContainer = document.getElementById('health-check-container');
+        const photoInput = document.getElementById('milestone-photo');
+
+        const btnClear = document.getElementById('btn-clear');
+        const btnExport = document.getElementById('btn-export');
+        const btnShare = document.getElementById('btn-share');
+
+        // Check URL for shared data
+        const urlParams = new URLSearchParams(window.location.search);
+        const sharedData = urlParams.get('data');
+        if (sharedData) {
+          try {
+            const parsedData = JSON.parse(decodeURIComponent(atob(sharedData)));
+            if (Array.isArray(parsedData)) {
+              timelineData = parsedData;
+              // Clean URL
+              window.history.replaceState({}, document.title, window.location.pathname);
+            }
+          } catch (e) {
+            console.error('Failed to parse shared data');
+          }
+        } else {
+          // Load from Local Storage
+          const stored = localStorage.getItem(STORAGE_KEY);
+          if (stored) {
+            try {
+              timelineData = JSON.parse(stored);
+            } catch (e) {
+              timelineData = [];
+            }
+          }
+        }
+
+        renderTimeline();
+
+        // Show/Hide Health Check based on Category
+        categorySelect.addEventListener('change', (e) => {
+          const val = e.target.value;
+          const showHealthCheck = ['living', 'challenges', 'goals', 'anniversary'].includes(val);
+          healthCheckContainer.style.display = showHealthCheck ? 'block' : 'none';
+          if (!showHealthCheck) {
+            document.getElementById('milestone-health').value = '';
+          } else {
+            document.getElementById('milestone-health').value = 'thriving';
+          }
+        });
+
+        // Handle Photo Upload (Convert to Data URL)
+        function getBase64(file) {
+          return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+          });
+        }
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const title = document.getElementById('milestone-title').value;
+          const date = document.getElementById('milestone-date').value;
+          const category = document.getElementById('milestone-category').value;
+          const desc = document.getElementById('milestone-desc').value;
+          const reflection = document.getElementById('milestone-reflection').value;
+
+          const isHealthCheckVisible = healthCheckContainer.style.display === 'block';
+          const health = isHealthCheckVisible ? document.getElementById('milestone-health').value : null;
+
+          let photoDataUrl = null;
+          if (photoInput.files && photoInput.files[0]) {
+            try {
+              photoDataUrl = await getBase64(photoInput.files[0]);
+            } catch (err) {
+              console.error("Error reading file", err);
+              alert("Could not load image file.");
+              return;
+            }
+          }
+
+          const newItem = {
+            id: Date.now().toString(),
+            title,
+            date,
+            category,
+            desc,
+            reflection,
+            health,
+            photo: photoDataUrl
+          };
+
+          timelineData.push(newItem);
+          saveAndRender();
+          form.reset();
+          healthCheckContainer.style.display = 'none';
+        });
+
+        btnClear.addEventListener('click', () => {
+          if (confirm('Are you sure you want to clear all timeline data? This cannot be undone.')) {
+            timelineData = [];
+            saveAndRender();
+          }
+        });
+
+        btnExport.addEventListener('click', () => {
+          if (timelineData.length === 0) return alert('No data to export.');
+          const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(timelineData, null, 2));
+          const downloadAnchorNode = document.createElement('a');
+          downloadAnchorNode.setAttribute("href", dataStr);
+          downloadAnchorNode.setAttribute("download", "relationship_timeline.json");
+          document.body.appendChild(downloadAnchorNode);
+          downloadAnchorNode.click();
+          downloadAnchorNode.remove();
+        });
+
+        btnShare.addEventListener('click', async () => {
+          if (timelineData.length === 0) return alert('No data to share.');
+
+          // Strip photos for URL sharing to prevent hitting URL length limits
+          const dataToShare = timelineData.map(item => {
+            const itemCopy = { ...item };
+            delete itemCopy.photo;
+            return itemCopy;
+          });
+
+          const encodedData = btoa(encodeURIComponent(JSON.stringify(dataToShare)));
+          const shareUrl = `${window.location.origin}${window.location.pathname}?data=${encodedData}`;
+
+          try {
+            await navigator.clipboard.writeText(shareUrl);
+            alert('Shareable link copied to clipboard! (Note: Local photos are not included in the link for privacy/size reasons)');
+          } catch (err) {
+            prompt('Copy this link to share:', shareUrl);
+          }
+        });
+
+        // Expose global delete function
+        window.deleteTimelineItem = function(id) {
+          if (confirm('Delete this milestone?')) {
+            timelineData = timelineData.filter(item => item.id !== id);
+            saveAndRender();
+          }
+        };
+
+        function saveAndRender() {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(timelineData));
+          renderTimeline();
+        }
+
+        function renderTimeline() {
+          if (timelineData.length === 0) {
+            timelineSection.style.display = 'none';
+            return;
+          }
+
+          timelineSection.style.display = 'block';
+          timelineDisplay.innerHTML = '';
+
+          // Sort by date ascending
+          const sortedData = [...timelineData].sort((a, b) => new Date(a.date) - new Date(b.date));
+
+          const categoryNames = {
+            'firsts': 'Firsts',
+            'living': 'Living & Life',
+            'intimacy': 'Intimacy',
+            'travel': 'Travel',
+            'challenges': 'Challenge Overcome',
+            'goals': 'Goal/Future',
+            'anniversary': 'Anniversary',
+            'other': 'Memory'
+          };
+
+          sortedData.forEach(item => {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'timeline-item';
+
+            const dateObj = new Date(item.date);
+            // Fix timezone issue to display selected local date
+            const userTimezoneOffset = dateObj.getTimezoneOffset() * 60000;
+            const displayDate = new Date(dateObj.getTime() + userTimezoneOffset);
+
+            const dateStr = displayDate.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+
+            // Check if future
+            const isFuture = displayDate > new Date();
+            const futureTag = isFuture ? `<span style="color:#AD9846; font-size:0.8rem; margin-left:8px;">(Future)</span>` : '';
+
+            let healthHTML = '';
+            if (item.health) {
+              const healthText = item.health.charAt(0).toUpperCase() + item.health.slice(1);
+              healthHTML = `
+                <div class="timeline-health">
+                  <div class="health-dot health-${item.health}"></div>
+                  Health Check: ${healthText}
+                </div>
+              `;
+            }
+
+            let photoHTML = '';
+            if (item.photo) {
+              photoHTML = `<img src="${item.photo}" alt="Milestone Photo" class="timeline-photo" loading="lazy">`;
+            }
+
+            let reflectionHTML = '';
+            if (item.reflection) {
+              reflectionHTML = `<div class="timeline-reflection"><strong>Reflection:</strong> ${sanitizeHTML(item.reflection)}</div>`;
+            }
+
+            itemEl.innerHTML = `
+              <div class="timeline-date">${dateStr} ${futureTag}</div>
+              <h3 class="timeline-title">${sanitizeHTML(item.title)}</h3>
+              <div class="timeline-category-tag">${categoryNames[item.category] || 'Other'}</div>
+              ${photoHTML}
+              <div class="timeline-desc">${sanitizeHTML(item.desc)}</div>
+              ${reflectionHTML}
+              ${healthHTML}
+              <button class="btn-delete-item" onclick="deleteTimelineItem('${item.id}')">Delete Event</button>
+            `;
+
+            timelineDisplay.appendChild(itemEl);
+          });
+        }
+
+        // Basic HTML Sanitizer to prevent self-XSS when displaying user input
+        function sanitizeHTML(str) {
+          const temp = document.createElement('div');
+          temp.textContent = str;
+          return temp.innerHTML;
+        }
+      });
+    </script>
+
+    <!-- JSON-LD Schema for FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Is my relationship data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Your privacy is a top priority. This tool runs entirely in your browser using local storage. None of your data, text, or uploaded photos are ever sent to a server, tracked, or saved externally. It lives purely on your specific device."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I add future events or goals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You can select a future date to add upcoming goals, planned trips, or relationship aspirations to your timeline. It's a great way to visualize what you're building toward together."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How do I share my timeline with my partner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use the Share Link button to generate a shareable URL containing your timeline data, or you can use the Export Data button to save a copy for your records. Note: If you attached local photos, they will not transfer via the simple share link due to browser security restrictions, but text data will."
+        }
+      }]
+    }
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section brand-section">
+        <a href="/"><img src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32" loading="lazy"></a>
+        <p>Casual chats about sex, relationships & other fun stuff. Empowering you to explore your desires without judgment.</p>
+        <div class="social-links">
+          <a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+          <a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+          <a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener" aria-label="Patreon">PT</a>
+        </div>
+      </div>
+
+      <div class="footer-section links-section">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="/blog/" style="color: inherit; text-decoration: none;">Blog</a></li>
+          <li><a href="/tools.html" style="color: inherit; text-decoration: none;">Tools</a></li>
+          <li><a href="/guides.html" style="color: inherit; text-decoration: none;">Guides</a></li>
+          <li><a href="/studies.html" style="color: inherit; text-decoration: none;">Studies</a></li>
+          <li><a href="/lists.html" style="color: inherit; text-decoration: none;">Lists</a></li>
+          <li><a href="/reads.html" style="color: inherit; text-decoration: none;">Reads</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section links-section">
+        <h3>About</h3>
+        <ul>
+          <li><a href="/about.html" style="color: inherit; text-decoration: none;">My Story</a></li>
+          <li><a href="/open-and-honest.html" style="color: inherit; text-decoration: none;">Course</a></li>
+          <li><a href="/newsletter.html" style="color: inherit; text-decoration: none;">Newsletter</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section disclaimer-section">
+        <h3>Disclaimer</h3>
+        <p>The content on this site is for educational and entertainment purposes only. I am a sex educator in training, not a licensed therapist or medical professional. Please consult a qualified healthcare provider for medical advice.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ali Imperiale. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
