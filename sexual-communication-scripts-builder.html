@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Communication Scripts Builder | Ali Imperiale</title>
+  <meta name="description" content="An interactive tool to generate personalized conversation starters and scripts for discussing sexual topics, desires, and boundaries.">
+  <meta property="og:title" content="Sexual Communication Scripts Builder | Ali Imperiale">
+  <meta property="og:description" content="An interactive tool to generate personalized conversation starters and scripts for discussing sexual topics, desires, and boundaries.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-communication-scripts-builder.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sexual Communication Scripts Builder">
+  <meta name="twitter:description" content="An interactive tool to generate personalized conversation starters and scripts for discussing sexual topics, desires, and boundaries.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-communication-scripts-builder.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How do I initiate a conversation about sex with my partner?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Start by picking a low-pressure setting, outside the bedroom and when neither of you is stressed. You can use an 'I' statement, like 'I've been thinking about our sex life and wanted to share some thoughts with you.' Being honest, gentle, and open to their perspective helps set a collaborative tone."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What's the best way to talk about boundaries without ruining the mood?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Discussing boundaries beforehand actually creates a safer, hotter environment. Try bringing it up playfully or directly before things get heavy: 'I'm really excited for tonight, but I just wanted to share that I'm a 'no' on X, but a hard 'yes' on Y.' Knowing the rules allows everyone to relax and fully enjoy the experience."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How can I tell my partner I want to try something new?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Frame it as an exploration together rather than a critique of what you're currently doing. You might say, 'I read this interesting article/took this fun quiz and it made me curious about trying [activity]. What are your thoughts?' Using tools like Yes/No/Maybe lists can also be a great, low-pressure way to explore mutual interests."
+    }
+  }]
+}
+  </script>
+  <style>
+    /* Site Nav Inline Styles (from index.html/other tools) */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav { padding: 12px 20px; }
+      .site-nav .nav-logo { height: 28px; }
+    }
+
+    /* Tool Specific Styles */
+    .tracker-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 60px 20px;
+      margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: #5a6b50;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
+      border: 1px solid rgba(46, 62, 36, 0.05);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #2E3E24;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 32px;
+    }
+
+    .group-label {
+      display: block;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background: #FAF8EB;
+      border: 1px solid #e8e4d4;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .option-label:hover {
+      border-color: #AD9846;
+      background: #fdfcee;
+    }
+
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 16px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      cursor: pointer;
+      background-color: transparent;
+    }
+
+    .option-input::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: #AD9846;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .option-input:checked::before {
+      transform: scale(1);
+    }
+
+    .option-input:checked + .option-text {
+      font-weight: 600;
+      color: #2E3E24;
+    }
+
+    .option-text {
+      color: #5a6b50;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    .btn-primary:hover {
+      background: #3a4f2d;
+      transform: translateY(-2px);
+    }
+
+    /* Results Section */
+    .results-intro {
+      margin-bottom: 24px;
+      color: #5a6b50;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .scripts-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .script-box {
+      background: #fdfcee;
+      border-left: 4px solid #AD9846;
+      padding: 20px;
+      border-radius: 0 12px 12px 0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #2E3E24;
+    }
+
+    .results-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .btn-secondary {
+      background: #AD9846;
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-secondary:hover {
+      background: #96833a;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-outline:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    /* Practice Mode & Edu */
+    .practice-content p {
+      color: #5a6b50;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .practice-steps {
+      color: #2E3E24;
+      line-height: 1.6;
+      padding-left: 20px;
+    }
+
+    .practice-steps li {
+      margin-bottom: 12px;
+    }
+
+    .practice-steps strong {
+      color: #AD9846;
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .edu-card {
+      background: #FAF8EB;
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    .edu-card h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+
+    .edu-card p {
+      font-size: 0.95rem;
+      color: #5a6b50;
+      line-height: 1.5;
+    }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #5a6b50;
+      line-height: 1.5;
+    }
+
+    /* Desktop overrides */
+    @media (min-width: 768px) {
+      .page-header h1 { font-size: 2.8rem; }
+      .page-header { padding: 80px 20px 40px; }
+      .card { padding: 40px; }
+      .options-grid { grid-template-columns: repeat(2, 1fr); }
+      .context-grid, .style-grid { grid-template-columns: repeat(3, 1fr); }
+      .results-actions { flex-direction: row; }
+      .edu-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle Navigation" onclick="this.classList.toggle('active'); this.previousElementSibling.classList.toggle('nav-open');">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+  </nav>
+
+  <main id="main-content" class="tracker-container">
+    <header class="page-header">
+      <h1>Sexual Communication Scripts Builder</h1>
+      <p>Generate personalized conversation starters and scripts for discussing sexual topics, boundaries, and desires.</p>
+    </header>
+
+    <div class="tool-wrapper">
+      <section class="card builder-section">
+        <h2 class="section-title">Build Your Script</h2>
+        <form id="script-form">
+          <div class="form-group">
+            <label class="group-label">1. What do you want to talk about?</label>
+            <div class="options-grid">
+              <label class="option-label">
+                <input type="radio" name="topic" value="initiating" class="option-input" checked>
+                <span class="option-text">Initiating Sexual Conversations</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="topic" value="desires" class="option-input">
+                <span class="option-text">Discussing Desires & Fantasies</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="topic" value="problems" class="option-input">
+                <span class="option-text">Addressing Concerns/Problems</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="topic" value="boundaries" class="option-input">
+                <span class="option-text">Negotiating Boundaries</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="topic" value="history" class="option-input">
+                <span class="option-text">Talking About Sexual History</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="topic" value="sti" class="option-input">
+                <span class="option-text">Discussing STI Testing</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="topic" value="new-activities" class="option-input">
+                <span class="option-text">Bringing Up New Activities</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="topic" value="libido" class="option-input">
+                <span class="option-text">Addressing Mismatched Libidos</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="topic" value="checkin" class="option-input">
+                <span class="option-text">Post-Sex Check-In</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="topic" value="goals" class="option-input">
+                <span class="option-text">Relationship Sexual Goals</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="group-label">2. What is the relationship context?</label>
+            <div class="options-grid context-grid">
+              <label class="option-label">
+                <input type="radio" name="context" value="new" class="option-input" checked>
+                <span class="option-text">New Partner</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="context" value="longterm" class="option-input">
+                <span class="option-text">Long-Term Relationship</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="context" value="casual" class="option-input">
+                <span class="option-text">Casual Encounter</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="group-label">3. Choose your communication style:</label>
+            <div class="options-grid style-grid">
+              <label class="option-label">
+                <input type="radio" name="style" value="direct" class="option-input" checked>
+                <span class="option-text">Direct & Clear</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="style" value="gentle" class="option-input">
+                <span class="option-text">Gentle & Reassuring</span>
+              </label>
+              <label class="option-label">
+                <input type="radio" name="style" value="playful" class="option-input">
+                <span class="option-text">Playful & Flirty</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Generate Scripts</button>
+        </form>
+      </section>
+
+      <section class="card results-section" id="results-section" style="display: none;">
+        <h2 class="section-title">Your Generated Scripts</h2>
+        <p class="results-intro">Here are a few options based on your selections. Feel free to tweak them to fit your exact voice!</p>
+
+        <div id="scripts-container" class="scripts-container">
+          <!-- Scripts will be injected here -->
+        </div>
+
+        <div class="results-actions">
+          <button type="button" class="btn-secondary" id="btn-copy">Copy Scripts to Clipboard</button>
+          <button type="button" class="btn-outline" id="btn-reset">Start Over</button>
+        </div>
+      </section>
+
+      <section class="card practice-section">
+        <h2 class="section-title">Practice Mode: Role-Play</h2>
+        <div class="practice-content">
+          <p>Practicing what you're going to say can significantly reduce anxiety. Try saying your chosen script out loud, or use this simple role-play exercise:</p>
+          <ol class="practice-steps">
+            <li><strong>Visualize the setting:</strong> Where are you? (e.g., on the couch, making dinner, on a walk). Ensure it's a neutral, non-sexual environment.</li>
+            <li><strong>Take a breath:</strong> Take a deep breath to ground yourself before speaking.</li>
+            <li><strong>Say it out loud:</strong> Read your script aloud right now. Notice how it feels in your body. Does it sound like you? Modify any words that feel unnatural.</li>
+            <li><strong>Anticipate the response:</strong> Imagine your partner responding positively, neutrally, or defensively. Plan a brief, calm follow-up for each.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="card educational-section">
+        <h2 class="section-title">Tips for Successful Sexual Communication</h2>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <h3>Timing is Everything</h3>
+            <p>Avoid having serious conversations right before, during, or immediately after sex. Pick a neutral time when you're both relaxed and fully clothed.</p>
+          </div>
+          <div class="edu-card">
+            <h3>The Setting Matters</h3>
+            <p>Conversations flow better when you aren't forced to make intense eye contact. Try talking while going for a walk, driving, or cooking together.</p>
+          </div>
+          <div class="edu-card">
+            <h3>Use "I" Statements</h3>
+            <p>Frame your thoughts around your own experience. Say "I feel..." or "I would love it if..." rather than "You never..." or "You always...".</p>
+          </div>
+          <div class="edu-card">
+            <h3>The Follow-Up</h3>
+            <p>Sexual communication isn't a one-and-done event. Check in a few days later: "Hey, thanks for chatting with me the other day. How are you feeling about what we discussed?"</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section card">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How do I initiate a conversation about sex with my partner?</h3>
+            <p>Start by picking a low-pressure setting, outside the bedroom and when neither of you is stressed. You can use an 'I' statement, like 'I've been thinking about our sex life and wanted to share some thoughts with you.' Being honest, gentle, and open to their perspective helps set a collaborative tone.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What's the best way to talk about boundaries without ruining the mood?</h3>
+            <p>Discussing boundaries beforehand actually creates a safer, hotter environment. Try bringing it up playfully or directly before things get heavy: 'I'm really excited for tonight, but I just wanted to share that I'm a 'no' on X, but a hard 'yes' on Y.' Knowing the rules allows everyone to relax and fully enjoy the experience.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I tell my partner I want to try something new?</h3>
+            <p>Frame it as an exploration together rather than a critique of what you're currently doing. You might say, 'I read this interesting article/took this fun quiz and it made me curious about trying [activity]. What are your thoughts?' Using tools like Yes/No/Maybe lists can also be a great, low-pressure way to explore mutual interests.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const scriptForm = document.getElementById('script-form');
+      const resultsSection = document.getElementById('results-section');
+      const scriptsContainer = document.getElementById('scripts-container');
+      const btnCopy = document.getElementById('btn-copy');
+      const btnReset = document.getElementById('btn-reset');
+
+      // Script Database
+      const scriptsDb = {
+        initiating: {
+          new: {
+            direct: ["I really enjoy spending time with you, and I'd love to talk about what we both like sexually so we can make sure we're on the same page.", "Can we chat about sex for a bit? I want to learn more about what feels good for you."],
+            gentle: ["I'm having such a good time getting to know you. When you have a moment, I'd love to chat a bit about our sexual preferences so we can both feel comfortable.", "I'd love to talk about sex sometime soon, whenever feels right for both of us. No pressure at all."],
+            playful: ["I'm so attracted to you, and I'd love to trade notes on what we're both into in the bedroom.", "Want to play a game of 'tell me your top three turn-ons'? I'll go first!"]
+          },
+          longterm: {
+            direct: ["Hey, I want to make sure we're prioritizing our sex life. Can we talk about how things are going and what we might want to change?", "Let's check in about sex. What's working well for us lately, and what do we want more of?"],
+            gentle: ["I've been thinking about our intimacy lately and how much I value it. Could we check in about how we're both feeling about our sex life?", "I love you and I love our connection. I just wanted to touch base and see how you're feeling about our physical intimacy these days."],
+            playful: ["I've been reminiscing about some of our hot moments. Want to plan a night soon to recreate them or try something new?", "Let's grab a drink tonight and have a fun, no-rules chat about our sex life. My treat!"]
+          },
+          casual: {
+            direct: ["Before we hook up, let's quickly cover what we're both into and what's off-limits.", "I'm looking forward to tonight. What are your hard yeses and hard nos?"],
+            gentle: ["I want to make sure we both have a great time. Would you mind sharing a bit about what you enjoy and what you don't?", "Just to make sure we're both comfortable, let's chat really quick about what feels good for you."],
+            playful: ["So, what's on the menu for tonight? Tell me what you like.", "I'm so ready for this, but first: give me a quick rundown of your favorite things."]
+          }
+        },
+        desires: {
+          new: {
+            direct: ["I've always been interested in [activity]. Is that something you'd ever want to explore?", "One of my biggest turn-ons is [activity]. How do you feel about that?"],
+            gentle: ["I was thinking about things I might want to try, and [activity] came to mind. No pressure, but what are your thoughts on it?", "I feel safe with you, so I wanted to share that I have a fantasy about [activity]."],
+            playful: ["Guess what I was daydreaming about today? [Activity]. Have you ever tried it?", "I have a confession: I'm really curious about [activity]. Thoughts?"]
+          },
+          longterm: {
+            direct: ["I'd love to start incorporating more [activity] into our sex life. Are you open to that?", "I want to try [activity] with you next time we have sex."],
+            gentle: ["I've been feeling really curious about [activity] lately. Would you be open to exploring that together sometime?", "I read something interesting about [activity] and it made me wonder if it's something we could try."],
+            playful: ["Want to try a little experiment tonight? I was thinking we could try [activity].", "I bought us a new toy/[outfit/thing] for [activity]. Want to unbox it together?"]
+          },
+          casual: {
+            direct: ["I'm really into [activity]. Is that on the table for tonight?", "Would you be down to try [activity]?"],
+            gentle: ["I'd love to try [activity], but only if you're completely comfortable with it too.", "If you're open to it, I'd really enjoy [activity]."],
+            playful: ["I'm feeling adventurous. How do you feel about [activity]?", "I have a fun idea for later: [activity]. Are you in?"]
+          }
+        },
+        problems: {
+          new: {
+            direct: ["Hey, earlier when we were doing [activity], it actually didn't feel great for me. Could we try doing it this way instead?", "I want to be honest: I struggle a bit with [issue]. I just wanted to give you a heads up."],
+            gentle: ["I really enjoyed our time together, but I realized that [activity] wasn't quite working for my body. Could we adjust how we do that?", "I'm a little nervous to bring this up, but I wanted to share that I sometimes have a hard time with [issue]."],
+            playful: ["That was so fun, but next time let's try [different activity] instead—I think it'll feel even better.", "You're great at [activity], but my body actually responds better to [different activity]. Let's practice that next time!"]
+          },
+          longterm: {
+            direct: ["I've noticed that [issue] has been happening lately, and I want us to figure it out together. Can we talk about it?", "I feel like we've fallen into a bit of a rut with [activity]. What can we do differently?"],
+            gentle: ["I miss feeling deeply connected to you. I've been feeling like [issue] is getting in the way, and I'd love to talk about how we can support each other through it.", "I wanted to bring up [issue]. I'm not blaming you at all, I just want us to navigate this as a team."],
+            playful: ["Let's mix things up! We've been doing a lot of [activity], but I'm craving more [different activity].", "I love our sex life, but I want to put a little more focus on [different activity]. Deal?"]
+          },
+          casual: {
+            direct: ["Just so you know, [activity] doesn't really work for me. Let's stick to [other activity].", "Hey, I need us to stop doing [activity]."],
+            gentle: ["That's actually not my favorite thing. Could we go back to doing [other activity]? That felt amazing.", "I think I need a break from [activity] for right now."],
+            playful: ["Ooh, actually let's not do that right now. Kiss me here instead.", "Not my favorite! But I love it when you do [other activity]."]
+          }
+        },
+        boundaries: {
+          new: {
+            direct: ["Before we go any further, I want to be clear that [activity] is a hard boundary for me. I'm excited about everything else, though.", "Just so we're clear, I don't do [activity]."],
+            gentle: ["I'm really enjoying this, but I wanted to let you know that I'm not comfortable with [activity]. Everything else is great.", "I like to take things slow with [activity], so let's hold off on that for now."],
+            playful: ["I'm so into this, but [activity] is on my 'no' list. What's on yours?", "Skip the [activity], but double down on the [other activity]!"]
+          },
+          longterm: {
+            direct: ["I know we've done [activity] in the past, but it's actually become a boundary for me now. I don't want to do it anymore.", "I need us to be stricter about my boundary regarding [activity]."],
+            gentle: ["My feelings have shifted a bit, and I'm realizing I don't want to engage in [activity] right now. I hope you understand.", "I need to hit pause on [activity] for a while. Let's focus on other ways to connect."],
+            playful: ["Let's retire [activity] for a bit and invent a new signature move.", "I'm putting [activity] on the banned list, but I'm taking suggestions for its replacement!"]
+          },
+          casual: {
+            direct: ["I don't do [activity].", "My boundary is no [activity]."],
+            gentle: ["Just a heads up, I'm not comfortable with [activity].", "I'd prefer if we avoid [activity] tonight."],
+            playful: ["[Activity] is off-limits, but everything else is fair game.", "Hard pass on [activity], but I'm very yes to [other activity]."]
+          }
+        },
+        history: {
+          new: {
+             direct: ["I think it's important we talk about our past sexual health. I was last tested on [date] and my results were [status].", "Before we get physically involved, let's talk about our sexual health history."],
+             gentle: ["To make sure we're both feeling safe and comfortable, would you be open to talking about our sexual health and testing history?", "I'd love to share my testing status with you and hear about yours when you're ready."],
+             playful: ["Let's get the boring admin stuff out of the way! I was tested last month and I'm good to go. How about you?", "Time for full disclosure: what's your STI testing status?"]
+          },
+          longterm: {
+             direct: ["I realized we haven't talked about our past sexual experiences much. Are you open to discussing it?", "I have some things from my past I'd like to share with you to help you understand me better sexually."],
+             gentle: ["I was reflecting on my past and how it shapes my sexuality today. I'd love to share some of that with you, if you're open to listening.", "Sometimes my past experiences affect how I feel during sex. Can we talk about that?"],
+             playful: ["Want to play a game of two truths and a lie about our past sexual adventures?", "I'll tell you my most embarrassing hookup story if you tell me yours!"]
+          },
+          casual: {
+             direct: ["I was last tested on [date] for everything and I'm clear. You?", "Let's confirm our testing statuses before we hook up."],
+             gentle: ["I like to be safe with new partners. I was tested recently and everything was negative. How about you?", "Are you comfortable sharing your recent STI testing status?"],
+             playful: ["Safety first! I'm fully tested and clear. Your turn.", "Let's do the sexy health check: when were you last tested?"]
+          }
+        },
+        sti: {
+          new: {
+            direct: ["Before we have sex, we need to discuss STI testing and protection. What are you currently using, and when were you last tested?", "I require recent test results before sleeping with someone new."],
+            gentle: ["My health and your health are really important to me. Could we chat about when we were both last tested for STIs?", "I'm really looking forward to being intimate, but I always ask about testing first to make sure we're both safe."],
+            playful: ["Let's get the sexiest conversation out of the way: STI testing! I was tested on [date], how about you?", "Show me yours (test results) and I'll show you mine!"]
+          },
+          longterm: {
+            direct: ["Since we've discussed opening our relationship/not using barriers, we both need to get tested this week.", "It's been a while since we were tested. Let's schedule appointments."],
+            gentle: ["Even though we've been together a while, I think it's good practice for us to get routine STI screenings. Want to go together?", "I'd feel a lot more comfortable if we both got updated tests. Is that okay with you?"],
+            playful: ["Date night idea: getting tested and then getting ice cream after! Who's in?", "Let's go get our annual check-ups out of the way so we can celebrate after."]
+          },
+          casual: {
+            direct: ["When were you last tested, and what protection do you have?", "I only hook up if we use barriers and have discussed recent test results."],
+            gentle: ["I like to keep things super safe. When was your last screening?", "I always use [barrier method]. Does that work for you?"],
+            playful: ["Condoms are non-negotiable for me. Got any on hand?", "I brought the protection! Just need to confirm you've been tested recently?"]
+          }
+        },
+        "new-activities": {
+            new: {
+                direct: ["I'm really interested in trying [activity]. Is that something you've done before or would want to try?", "I want to add [activity] to our repertoire."],
+                gentle: ["I've been reading about [activity] and it sounds intriguing. What are your thoughts on trying something like that?", "I'm curious about [activity]. Would you be open to exploring it slowly together?"],
+                playful: ["I have a fun idea for our next date: we try [activity]. Are you brave enough?", "I'm taking requests for tonight, but I also have a pitch: [activity]."]
+            },
+            longterm: {
+                direct: ["I feel like we need to mix things up. I want us to try [activity] this weekend.", "Let's try [activity]. I've been wanting to do it with you for a while."],
+                gentle: ["I love what we have, but I also love exploring with you. Would you be open to trying [activity] together?", "I was looking at this Yes/No/Maybe list and realized I'd love to try [activity]. What do you think?"],
+                playful: ["Surprise! I bought us [item for activity]. Ready for an adventure?", "Let's pretend it's our first time together and try something totally out of our usual routine, like [activity]."]
+            },
+            casual: {
+                direct: ["Are you into [activity]? I'd like to try it tonight.", "I'm looking to try [activity] if you're down."],
+                gentle: ["I sometimes enjoy [activity]. Is that something you'd be comfortable with?", "No pressure, but if you're open to it, I'd love to try [activity]."],
+                playful: ["Feeling adventurous? Let's try [activity].", "I vote we try [activity] tonight. Sound good?"]
+            }
+        },
+        libido: {
+            new: {
+                direct: ["I've noticed our drives might be a bit different. I usually prefer sex [frequency]. What about you?", "Let's talk about expectations around how often we have sex."],
+                gentle: ["Everyone's desire levels are different, and I want to make sure we're both feeling fulfilled without any pressure. How often do you typically like to have sex?", "I feel like I might have a [higher/lower] drive right now. Can we talk about how to navigate that?"],
+                playful: ["If you had to pick an ideal number of times a week to have sex, what's your magic number?", "I'm trying to gauge your stamina: what's your ideal frequency for getting busy?"]
+            },
+            longterm: {
+                direct: ["We need to talk about our mismatched libidos. It's causing tension and I want us to find a compromise.", "I've been feeling frustrated about how often we have sex. Can we figure out a solution?"],
+                gentle: ["I miss the physical connection we used to have. I know our drives are different right now, but I'd love to find a middle ground where we both feel loved and satisfied.", "I know you've been stressed and your drive is lower. How can we connect intimately without the pressure of having sex?"],
+                playful: ["Let's make a deal: we schedule sex for [day], but we also schedule a dedicated cuddle-only night. Deal?", "I'm missing you! How can I seduce you this week in a way that feels good for you?"]
+            },
+            casual: {
+                direct: ["I'm looking for something [frequency]. Does that align with what you're looking for?", "Just to set expectations, I usually only like to hook up [frequency]."],
+                gentle: ["I'm really enjoying this, but I tend to need a bit more space/time between encounters. I hope that's okay.", "I'd love to see you again, maybe [frequency]? Does that work for you?"],
+                playful: ["You're great, but I need time to recover! Let's aim for [frequency].", "I'm pacing myself! How about we do this again next week?"]
+            }
+        },
+        checkin: {
+            new: {
+                direct: ["That was great. What was your favorite part, and was there anything you didn't love?", "How did you feel about tonight? Anything we should change for next time?"],
+                gentle: ["I had such a wonderful time. I just wanted to check in—how are you feeling? Did everything feel good for you?", "I really enjoyed that. Is there anything I did that you really liked, or anything you'd prefer I do differently?"],
+                playful: ["On a scale of 1 to 10, how much did you love it when I did [activity]? Tell me your favorite part.", "Review time! What gets five stars and what needs improvement?"]
+            },
+            longterm: {
+                direct: ["Let's debrief. What worked well tonight, and what do we want to tweak?", "I feel like that encounter was [adjective]. How was it for you?"],
+                gentle: ["I love sharing these moments with you. How are you feeling right now? Is there anything you need?", "That felt really connecting for me. Did it feel the same for you?"],
+                playful: ["Wow. You were amazing. What was your favorite move tonight?", "I'm still thinking about when you did [activity]. Let's keep that in the regular rotation!"]
+            },
+            casual: {
+                direct: ["That was fun. You good?", "Just checking in—everything cool?"],
+                gentle: ["I had a great time. How are you feeling?", "Thanks for a fun night. Let me know if you need anything before I head out/go to sleep."],
+                playful: ["Well, that was hot. High five?", "10/10, would recommend. You?"]
+            }
+        },
+        goals: {
+             new: {
+                direct: ["As we start seeing each other, what are your overall goals for your sex life?", "What does a fulfilling sex life look like to you?"],
+                gentle: ["I'm really enjoying getting to know you sexually. I'm curious, what does your ideal sexual relationship look like?", "I'd love to hear about what makes you feel most sexually satisfied and connected."],
+                playful: ["If you could design the perfect sex life, what would it include?", "What's on your sexual bucket list for the next year?"]
+            },
+            longterm: {
+                direct: ["I want us to set some intentions for our sex life this year. What do we want to prioritize?", "Let's talk about our sexual goals. I want to focus on [goal]."],
+                gentle: ["Relationships evolve, and I want to make sure our sex life is growing with us. What are some things you'd love for us to experience together in the future?", "I value our intimacy so much. How can we continue to deepen our sexual connection this year?"],
+                playful: ["Let's make a sex bucket list! What are three things you want us to do together this year?", "New Year's Resolution: more orgasms. How are we going to achieve this?"]
+            },
+            casual: {
+                direct: ["What are you ultimately looking for out of this arrangement?", "Are you just looking to have fun, or are you trying to explore specific kinks?"],
+                gentle: ["I like to make sure I'm on the same page with people I hook up with. What are you hoping to get out of our time together?", "Just checking in on what your ideal scenario is for us."],
+                playful: ["Are we just having fun, or are we aiming for the casual hookup hall of fame?", "What's the goal here: stress relief, fun, or world domination?"]
+            }
+        }
+      };
+
+      // Fallback generator for generic responses
+      const generateFallback = (topic, context, style) => {
+          return [
+              `Hey, I wanted to talk to you about ${topic.replace('-', ' ')}. I think it's important for us to discuss it so we're on the same page.`,
+              `I've been thinking about ${topic.replace('-', ' ')} and I'd love to hear your thoughts on it when you're ready.`
+          ];
+      };
+
+      // Load saved state from localStorage
+      const loadSavedState = () => {
+        const savedData = localStorage.getItem('sexualCommunicationScripts');
+        if (savedData) {
+          try {
+            const data = JSON.parse(savedData);
+
+            // Set radio buttons
+            if (data.topic) {
+              const el = document.querySelector(`input[name="topic"][value="${data.topic}"]`);
+              if (el) el.checked = true;
+            }
+            if (data.context) {
+              const el = document.querySelector(`input[name="context"][value="${data.context}"]`);
+              if (el) el.checked = true;
+            }
+            if (data.style) {
+              const el = document.querySelector(`input[name="style"][value="${data.style}"]`);
+              if (el) el.checked = true;
+            }
+
+            // Restore results if they exist
+            if (data.scripts && data.scripts.length > 0) {
+              displayScripts(data.scripts);
+            }
+          } catch (e) {
+            console.error('Error loading saved state', e);
+          }
+        }
+      };
+
+      const displayScripts = (scripts) => {
+        scriptsContainer.innerHTML = '';
+        scripts.forEach(script => {
+          const div = document.createElement('div');
+          div.className = 'script-box';
+          div.textContent = script;
+          scriptsContainer.appendChild(div);
+        });
+        resultsSection.style.display = 'block';
+        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+
+      // Form submission
+      scriptForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const topic = document.querySelector('input[name="topic"]:checked').value;
+        const context = document.querySelector('input[name="context"]:checked').value;
+        const style = document.querySelector('input[name="style"]:checked').value;
+
+        let generatedScripts = [];
+
+        // Traverse DB with fallback
+        if (scriptsDb[topic] && scriptsDb[topic][context] && scriptsDb[topic][context][style]) {
+            generatedScripts = scriptsDb[topic][context][style];
+        } else {
+            generatedScripts = generateFallback(topic, context, style);
+        }
+
+        displayScripts(generatedScripts);
+
+        // Save to localStorage
+        const dataToSave = {
+            topic,
+            context,
+            style,
+            scripts: generatedScripts
+        };
+        localStorage.setItem('sexualCommunicationScripts', JSON.stringify(dataToSave));
+      });
+
+      // Copy to clipboard
+      btnCopy.addEventListener('click', () => {
+        const scripts = Array.from(scriptsContainer.children)
+                             .map(div => div.textContent)
+                             .join('\n\n---\n\n');
+
+        navigator.clipboard.writeText(scripts).then(() => {
+          const originalText = btnCopy.textContent;
+          btnCopy.textContent = 'Copied!';
+          btnCopy.style.background = '#3a4f2d'; // Darker green for success
+
+          setTimeout(() => {
+            btnCopy.textContent = originalText;
+            btnCopy.style.background = '';
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy text: ', err);
+          alert('Failed to copy to clipboard.');
+        });
+      });
+
+      // Reset
+      btnReset.addEventListener('click', () => {
+        localStorage.removeItem('sexualCommunicationScripts');
+        resultsSection.style.display = 'none';
+        scriptForm.reset();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Initialize
+      loadSavedState();
+    });
+  </script>
+</body>
+</html>
