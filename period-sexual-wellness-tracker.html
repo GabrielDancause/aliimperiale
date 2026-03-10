@@ -36,7 +36,7 @@
     "name": "How does the menstrual cycle affect libido?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Hormonal shifts throughout the menstrual cycle significantly impact libido. Many women experience a peak in sexual desire around ovulation due to a surge in estrogen and testosterone. Conversely, the luteal phase (before your period) often sees a drop in libido as progesterone increases."
+      "text": "Hormonal shifts throughout the menstrual cycle significantly impact libido. Many people who menstruate experience a peak in sexual desire around ovulation due to a surge in estrogen and testosterone. Conversely, the luteal phase (before your period) often sees a drop in libido as progesterone increases."
     }
   }, {
     "@type": "Question",
@@ -681,6 +681,27 @@
                 <label class="checkbox-label"><input type="checkbox" name="sex_act" value="orgasm"><span>Orgasm</span></label>
               </div>
             </div>
+
+            <div style="margin-top: 16px;">
+              <span style="display: block; font-size: 0.9rem; color: #555549; font-weight: 500; margin-bottom: 8px;">Partner Communication:</span>
+              <div class="checkbox-group">
+                <label class="checkbox-label"><input type="checkbox" name="communication" value="discussed_needs"><span>Discussed Needs</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="communication" value="set_boundaries"><span>Set Boundaries</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="communication" value="expressed_desires"><span>Expressed Desires</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="communication" value="checked_in"><span>Checked In</span></label>
+              </div>
+            </div>
+
+            <div style="margin-top: 16px;">
+              <span style="display: block; font-size: 0.9rem; color: #555549; font-weight: 500; margin-bottom: 8px;">Contraception & Safety:</span>
+              <div class="checkbox-group">
+                <label class="checkbox-label"><input type="checkbox" name="contraception" value="pill_taken"><span>Pill Taken</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="contraception" value="condom_used"><span>Condom/Barrier Used</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="contraception" value="missed_dose"><span>Missed Dose</span></label>
+                <label class="checkbox-label"><input type="checkbox" name="contraception" value="unprotected"><span>Unprotected</span></label>
+              </div>
+            </div>
+
           </div>
 
           <!-- Symptoms & Mood Logs -->
@@ -699,6 +720,29 @@
                 <span id="mood-val" style="color: #AD9846; font-weight: 700;">3</span>
               </div>
               <input type="range" id="log-mood" class="slider" min="1" max="5" value="3">
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Comfort Level / Pain</span>
+                <span id="comfort-val" style="color: #AD9846; font-weight: 700;">3</span>
+              </div>
+              <input type="range" id="log-comfort" class="slider" min="1" max="5" value="3">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #8a8a7a; margin-top: 4px;">
+                <span>Low Pain</span><span>High Pain</span>
+              </div>
+            </div>
+
+
+            <div style="margin-top: 16px;">
+              <span style="display: block; font-size: 0.9rem; color: #555549; font-weight: 500; margin-bottom: 8px;">Cycle Flow:</span>
+              <div class="checkbox-group">
+                <label class="checkbox-label"><input type="radio" name="flow" value="none"><span>None</span></label>
+                <label class="checkbox-label"><input type="radio" name="flow" value="spotting"><span>Spotting</span></label>
+                <label class="checkbox-label"><input type="radio" name="flow" value="light"><span>Light</span></label>
+                <label class="checkbox-label"><input type="radio" name="flow" value="medium"><span>Medium</span></label>
+                <label class="checkbox-label"><input type="radio" name="flow" value="heavy"><span>Heavy</span></label>
+              </div>
             </div>
 
             <div style="margin-top: 16px;">
@@ -725,7 +769,9 @@
     <!-- Data Visualization -->
     <section class="card" id="data-view" style="display: none;">
       <h2>Your Patterns</h2>
-      <p style="text-align: center; color: #555549; margin-bottom: 24px;">See how your libido, mood, and energy fluctuate throughout your cycle.</p>
+            <p style="text-align: center; color: #555549; margin-bottom: 24px;">See how your libido, mood, and energy fluctuate throughout your cycle.</p>
+
+      <div id="dynamic-insights-container" style="margin-bottom: 24px;"></div>
 
       <div class="chart-container" id="chart-container">
         <canvas id="wellnessChart"></canvas>
@@ -768,6 +814,20 @@
           <strong>Sexual Wellness:</strong> Progesterone has a calming, sometimes sedating effect. In the first half, you might enjoy slower, more sensual, and deeply emotional intimacy. As you approach your period, hormones drop (hello, PMS), and desire often plummets. Focus on comfort, cuddling, and non-demanding touch.</p>
         </div>
       </div>
+      <div style="margin-top: 48px;">
+        <h3>Contraception Options &amp; Timing</h3>
+        <p>Understanding your cycle can empower you to make informed decisions about contraception. While tracking your fertile window (often called Fertility Awareness-Based Methods or FABMs) can be used to prevent pregnancy, it requires strict daily tracking of basal body temperature and cervical mucus to be highly effective. If you are not ready for a pregnancy, relying solely on a calendar tracker is not recommended. Consider combining tracking with barrier methods (like condoms, which also protect against STIs) or discussing hormonal/non-hormonal options (IUDs, the pill, implants) with your doctor.</p>
+
+        <h3>Sexual Health During Menstruation</h3>
+        <p>Having sex during your period is completely normal and safe. However, the cervix is slightly more open during this time, which can theoretically slightly increase the risk of infections or STIs if exposed. Using barrier methods like condoms or dental dams is still important for STI protection. Embrace the physical benefits, but always communicate with your partner about comfort levels and boundaries regarding period sex.</p>
+
+        <h3>Pain Management During Periods</h3>
+        <p>Cramping (dysmenorrhea) is caused by prostaglandins causing the uterus to contract. Besides over-the-counter anti-inflammatory medications and heat therapy, sexual arousal and orgasm can be natural pain relievers. The rush of endorphins, oxytocin, and dopamine from an orgasm can temporarily relieve menstrual cramps and improve mood. Solo play is a fantastic, pressure-free way to explore this.</p>
+
+        <h3>When to Consult a Healthcare Provider</h3>
+        <p>While fluctuations in libido, energy, and mood are normal, severe symptoms are not something you just have to "live with." You should consult a healthcare provider if you experience: debilitating pain that interferes with your daily life (which could be a sign of endometriosis or fibroids), extremely heavy bleeding (soaking through a pad/tampon every hour), severe mood drops or depressive episodes before your period (PMDD), or pain during sex (dyspareunia).</p>
+      </div>
+
     </div>
 
     <!-- FAQ -->
@@ -776,7 +836,7 @@
 
       <div class="faq-item">
         <div class="faq-question">How does the menstrual cycle affect libido?</div>
-        <div class="faq-answer">Hormonal shifts throughout the menstrual cycle significantly impact libido. Many women experience a peak in sexual desire around ovulation due to a surge in estrogen and testosterone. Conversely, the luteal phase (before your period) often sees a drop in libido as progesterone increases.</div>
+        <div class="faq-answer">Hormonal shifts throughout the menstrual cycle significantly impact libido. Many people who menstruate experience a peak in sexual desire around ovulation due to a surge in estrogen and testosterone. Conversely, the luteal phase (before your period) often sees a drop in libido as progesterone increases.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question">Why is my libido high during my period?</div>
@@ -879,7 +939,7 @@
       }
 
       // Sync sliders
-      ['libido', 'arousal', 'energy', 'mood'].forEach(type => {
+      ['libido', 'arousal', 'energy', 'mood', 'comfort'].forEach(type => {
         const slider = document.getElementById(`log-${type}`);
         const valSpan = document.getElementById(`${type}-val`);
         slider.addEventListener('input', () => { valSpan.textContent = slider.value; });
@@ -921,14 +981,22 @@
         // Collect checkboxes
         const acts = Array.from(document.querySelectorAll('input[name="sex_act"]:checked')).map(el => el.value);
         const symps = Array.from(document.querySelectorAll('input[name="symptom"]:checked')).map(el => el.value);
+        const comms = Array.from(document.querySelectorAll('input[name="communication"]:checked')).map(el => el.value);
+        const contra = Array.from(document.querySelectorAll('input[name="contraception"]:checked')).map(el => el.value);
+        const flowEl = document.querySelector('input[name="flow"]:checked');
+        const flowVal = flowEl ? flowEl.value : null;
 
         logs[selectedDateStr] = {
           libido: parseInt(document.getElementById('log-libido').value, 10),
           arousal: parseInt(document.getElementById('log-arousal').value, 10),
           energy: parseInt(document.getElementById('log-energy').value, 10),
           mood: parseInt(document.getElementById('log-mood').value, 10),
+          comfort: parseInt(document.getElementById('log-comfort').value, 10),
           acts: acts,
           symptoms: symps,
+          communication: comms,
+          contraception: contra,
+          flow: flowVal,
           notes: document.getElementById('log-notes').value
         };
 
@@ -1090,7 +1158,7 @@
 
         // Populate existing log if any
         const logs = JSON.parse(localStorage.getItem(STORAGE_KEY_LOGS) || '{}');
-        const dayLog = logs[dStr] || { libido: 3, arousal: 3, energy: 3, mood: 3, acts: [], symptoms: [], notes: '' };
+        const dayLog = logs[dStr] || { libido: 3, arousal: 3, energy: 3, mood: 3, comfort: 3, acts: [], symptoms: [], communication: [], contraception: [], flow: null, notes: '' };
 
         document.getElementById('log-libido').value = dayLog.libido;
         document.getElementById('libido-val').textContent = dayLog.libido;
@@ -1100,10 +1168,12 @@
         document.getElementById('energy-val').textContent = dayLog.energy;
         document.getElementById('log-mood').value = dayLog.mood;
         document.getElementById('mood-val').textContent = dayLog.mood;
+        document.getElementById('log-comfort').value = dayLog.comfort || 3;
+        document.getElementById('comfort-val').textContent = dayLog.comfort || 3;
         document.getElementById('log-notes').value = dayLog.notes || '';
 
-        // Reset checkboxes
-        document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+        // Reset checkboxes and radios
+        document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(cb => cb.checked = false);
         dayLog.acts.forEach(act => {
           const cb = document.querySelector(`input[name="sex_act"][value="${act}"]`);
           if(cb) cb.checked = true;
@@ -1112,9 +1182,66 @@
           const cb = document.querySelector(`input[name="symptom"][value="${sym}"]`);
           if(cb) cb.checked = true;
         });
+        if(dayLog.communication) {
+          dayLog.communication.forEach(comm => {
+            const cb = document.querySelector(`input[name="communication"][value="${comm}"]`);
+            if(cb) cb.checked = true;
+          });
+        }
+        if(dayLog.contraception) {
+          dayLog.contraception.forEach(con => {
+            const cb = document.querySelector(`input[name="contraception"][value="${con}"]`);
+            if(cb) cb.checked = true;
+          });
+        }
+        if (dayLog.flow) {
+          const rEl = document.querySelector(`input[name="flow"][value="${dayLog.flow}"]`);
+          if(rEl) rEl.checked = true;
+        }
 
         logPanel.style.display = 'block';
         logPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+
+      function renderInsights() {
+        const logs = JSON.parse(localStorage.getItem(STORAGE_KEY_LOGS) || '{}');
+        const dates = Object.keys(logs);
+        const container = document.getElementById('dynamic-insights-container');
+
+        if (dates.length < 2) {
+          container.innerHTML = '';
+          return;
+        }
+
+        let totalLibido = 0;
+        let totalComfort = 0;
+        let highComfortDays = 0;
+        let lowComfortDays = 0;
+
+        dates.forEach(d => {
+          totalLibido += logs[d].libido;
+          const comfort = logs[d].comfort || 3;
+          totalComfort += comfort;
+          if (comfort <= 2) lowComfortDays++;
+          if (comfort >= 4) highComfortDays++;
+        });
+
+        const avgLibido = (totalLibido / dates.length).toFixed(1);
+        const avgComfort = (totalComfort / dates.length).toFixed(1);
+
+        let insightHtml = `<div class="insight-box" style="display: block; margin-top: 0;">`;
+        insightHtml += `<h4>Your Personalized Insights</h4>`;
+        insightHtml += `<ul style="margin-left: 20px; color: #3a4a30;">`;
+        insightHtml += `<li><strong>Average Libido:</strong> ${avgLibido} out of 5 across logged days.</li>`;
+        insightHtml += `<li><strong>Comfort Level:</strong> Your average comfort level is ${avgComfort} out of 5.</li>`;
+
+        if (lowComfortDays > (dates.length / 3) && lowComfortDays > 1) {
+            insightHtml += `<li><strong style="color: #d9534f;">Health Note:</strong> You've logged multiple days with low comfort or high pain. Consider consulting a healthcare provider to explore pain management or rule out conditions like endometriosis.</li>`;
+        }
+
+        insightHtml += `</ul></div>`;
+        container.innerHTML = insightHtml;
       }
 
       function renderChart() {
@@ -1135,6 +1262,7 @@
         const libidoData = dates.map(d => logs[d].libido);
         const moodData = dates.map(d => logs[d].mood);
         const energyData = dates.map(d => logs[d].energy);
+        const comfortData = dates.map(d => logs[d].comfort || 3);
 
         const ctx = document.getElementById('wellnessChart').getContext('2d');
 
@@ -1180,7 +1308,18 @@
                 borderDash: [5, 5],
                 pointRadius: 4,
                 pointBackgroundColor: '#AD9846'
-              }
+              },
+              {
+                label: 'Comfort',
+                data: comfortData,
+                borderColor: '#6a1b9a',
+                backgroundColor: 'rgba(106, 27, 154, 0.1)',
+                tension: 0.3,
+                borderWidth: 2,
+                pointRadius: 4,
+                pointBackgroundColor: '#6a1b9a'
+              },
+
             ]
           },
           options: {
@@ -1208,6 +1347,7 @@
             }
           }
         });
+        renderInsights();
       }
     });
   </script>
