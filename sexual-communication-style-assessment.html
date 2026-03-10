@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Sexual Communication Style Assessment - Ali Imperiale</title>
+  <meta name="description" content="Discover your sexual communication style with this interactive assessment. Learn strategies for difficult conversations, conflict resolution, and partner compatibility.">
+  <meta name="keywords" content="sexual communication styles, intimacy communication test, relationship communication assessment, intimate communication, communication patterns">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+
+    .main-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .header-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header-section h1 {
+      color: #2E3E24;
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .header-section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #4A5D3F;
+    }
+
+    .medical-disclaimer {
+      background-color: #f3f0df;
+      border-left: 4px solid #AD9846;
+      padding: 16px 20px;
+      margin-bottom: 40px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .medical-disclaimer strong {
+      color: #AD9846;
+    }
+
+    .assessment-container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(46, 62, 36, 0.08);
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background: #e8e5d5;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .question-section {
+      display: none;
+    }
+
+    .question-section.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: #2E3E24;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      border: 2px solid #e8e5d5;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+
+    .option-label:hover {
+      border-color: #AD9846;
+      background-color: #fcfbf5;
+    }
+
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 16px;
+      position: relative;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .option-input::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #AD9846;
+      transition: transform 0.2s ease;
+    }
+
+    .option-input:checked::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .option-input:checked + span {
+      font-weight: 600;
+      color: #2E3E24;
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8e5d5;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+    }
+
+    .btn-secondary:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .btn-primary {
+      background: #AD9846;
+      color: #FAF8EB;
+    }
+
+    .btn-primary:hover {
+      background: #96833b;
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .results-section {
+      display: none;
+    }
+
+    .results-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .result-header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid #e8e5d5;
+    }
+
+    .result-title {
+      color: #AD9846;
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .result-subtitle {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #4A5D3F;
+    }
+
+    .result-card {
+      background: #FAF8EB;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+      border-left: 4px solid #2E3E24;
+    }
+
+    .result-card h3 {
+      margin-top: 0;
+      color: #2E3E24;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .script-box {
+      background: #fff;
+      padding: 16px;
+      border-radius: 6px;
+      font-style: italic;
+      color: #4A5D3F;
+      border: 1px dashed #AD9846;
+      margin-top: 12px;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+      justify-content: center;
+    }
+
+    .style-tag {
+      background: #e8e5d5;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2E3E24;
+    }
+
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is it important to know my sexual communication style?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Understanding your sexual communication style helps you identify how you naturally express desires and boundaries. This self-awareness reduces misunderstandings, helps you articulate your needs more clearly to a partner, and provides actionable strategies for conflict resolution and deeper intimacy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can my sexual communication style change over time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Your communication style is influenced by your current relationship dynamics, past experiences, and personal growth. As you become more comfortable, heal from past trauma, or learn new skills (like those taught in sex therapy), you might shift from indirect to more direct communication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my partner and I have opposite communication styles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Opposite styles (like one person being very direct and verbal while the other is indirect and emotional) are common. The key is mutual understanding and translation. This assessment provides compatibility insights and specific scripts to help bridge that gap without judgment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this assessment a diagnostic tool for relationship problems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This tool is for educational purposes and personal reflection. It is not a clinical or psychological diagnosis. If you are experiencing significant distress or abuse in your relationship, please consult a licensed therapist or a certified sex educator."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-container">
+    <div class="header-section">
+      <h1>Interactive Sexual Communication Style Assessment</h1>
+      <p>Discover your unique communication patterns in intimate relationships. Are you direct or indirect? Verbal or non-verbal? This tool will help you understand your style, learn strategies for difficult conversations, and improve partner compatibility.</p>
+    </div>
+
+    <div class="medical-disclaimer">
+      <strong>Medical Disclaimer:</strong> This assessment is for educational and self-reflection purposes only. It is not a substitute for professional relationship counseling, sex therapy, or psychological diagnosis. If you are experiencing severe relationship distress or emotional trauma, please seek help from a qualified healthcare provider or licensed therapist.
+    </div>
+
+    <div class="assessment-container">
+      <div id="assessment-ui">
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <div id="questions-container">
+          <!-- Questions will be dynamically injected here -->
+        </div>
+
+        <div class="navigation-buttons">
+          <button class="btn btn-secondary" id="btn-prev" disabled>Previous</button>
+          <button class="btn btn-primary" id="btn-next" disabled>Next</button>
+        </div>
+      </div>
+
+      <div class="results-section" id="results-ui">
+        <div class="result-header">
+          <h2 class="result-title" id="result-title">Your Style</h2>
+          <div class="tag-container" id="result-tags">
+            <!-- Tags injected here -->
+          </div>
+          <p class="result-subtitle" id="result-description">Description of your style.</p>
+        </div>
+
+        <div class="result-card">
+          <h3>Your Strengths</h3>
+          <p id="result-strengths"></p>
+        </div>
+
+        <div class="result-card">
+          <h3>Growth Areas</h3>
+          <p id="result-growth"></p>
+        </div>
+
+        <div class="result-card">
+          <h3>Scripts for Difficult Conversations</h3>
+          <p>Try using these personalized scripts when navigating tricky topics with your partner:</p>
+          <div class="script-box" id="result-script-1"></div>
+          <div class="script-box" id="result-script-2"></div>
+        </div>
+
+        <div class="result-card">
+          <h3>Partner Compatibility & Coaching Tips</h3>
+          <p id="result-compatibility"></p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <button class="btn btn-secondary" id="btn-retake">Retake Assessment</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="faq-section" style="max-width: 800px; margin: 60px auto 40px; padding: 0 20px;">
+      <h2 style="color: #2E3E24; font-size: 2rem; margin-bottom: 30px; text-align: center;">Frequently Asked Questions</h2>
+
+      <div class="faq-item" style="margin-bottom: 24px; border-bottom: 1px solid #e8e5d5; padding-bottom: 24px;">
+        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 12px;">Why is it important to know my sexual communication style?</h3>
+        <p style="color: #4A5D3F; line-height: 1.6;">Understanding your sexual communication style helps you identify how you naturally express desires and boundaries. This self-awareness reduces misunderstandings, helps you articulate your needs more clearly to a partner, and provides actionable strategies for conflict resolution and deeper intimacy.</p>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 24px; border-bottom: 1px solid #e8e5d5; padding-bottom: 24px;">
+        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 12px;">Can my sexual communication style change over time?</h3>
+        <p style="color: #4A5D3F; line-height: 1.6;">Absolutely. Your communication style is influenced by your current relationship dynamics, past experiences, and personal growth. As you become more comfortable, heal from past trauma, or learn new skills (like those taught in sex therapy), you might shift from indirect to more direct communication.</p>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 24px; border-bottom: 1px solid #e8e5d5; padding-bottom: 24px;">
+        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 12px;">What if my partner and I have opposite communication styles?</h3>
+        <p style="color: #4A5D3F; line-height: 1.6;">Opposite styles (like one person being very direct and verbal while the other is indirect and emotional) are common. The key is mutual understanding and translation. This assessment provides compatibility insights and specific scripts to help bridge that gap without judgment.</p>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 24px; border-bottom: 1px solid #e8e5d5; padding-bottom: 24px;">
+        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 12px;">Is this assessment a diagnostic tool for relationship problems?</h3>
+        <p style="color: #4A5D3F; line-height: 1.6;">No. This tool is for educational purposes and personal reflection. It is not a clinical or psychological diagnosis. If you are experiencing significant distress or abuse in your relationship, please consult a licensed therapist or a certified sex educator.</p>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="consent.js"></script>
+  <script src="mobile-nav.js"></script>
+  <script src="newsletter-bar.js"></script>
+  <script src="email-capture.js"></script>
+  <script src="back-to-top.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const questions = [
+        {
+          id: 1,
+          question: "When you want to try something new in bed, you usually:",
+          options: [
+            { text: "Directly ask my partner if they are open to trying it.", value: { direct: 1, verbal: 1, logical: 0 } },
+            { text: "Hint at it during a conversation or share an article/video about it.", value: { direct: 0, verbal: 1, emotional: 1 } },
+            { text: "Gently guide their hands or body in the moment to show them what I want.", value: { direct: 1, verbal: 0, emotional: 0 } },
+            { text: "Wait and see if they bring it up first, or try to create a mood that naturally leads there.", value: { direct: 0, verbal: 0, emotional: 1 } }
+          ]
+        },
+        {
+          id: 2,
+          question: "If something your partner is doing isn't feeling good, you typically:",
+          options: [
+            { text: "Say 'stop' or give specific verbal feedback right away to correct it.", value: { direct: 1, verbal: 1, logical: 1 } },
+            { text: "Make a subtle sound or say something like 'maybe try this instead'.", value: { direct: 0, verbal: 1, emotional: 1 } },
+            { text: "Shift my body away or physically guide them to do something else.", value: { direct: 1, verbal: 0, logical: 0 } },
+            { text: "Endure it for a bit hoping it improves, or fake enjoyment to not hurt their feelings.", value: { direct: 0, verbal: 0, emotional: 1 } }
+          ]
+        },
+        {
+          id: 3,
+          question: "How do you prefer to communicate your boundaries?",
+          options: [
+            { text: "I state them clearly and factually before we get physical.", value: { direct: 1, verbal: 1, logical: 1 } },
+            { text: "I prefer to bring them up casually in conversation when the mood feels right.", value: { direct: 0, verbal: 1, emotional: 1 } },
+            { text: "I use physical cues, like gently pushing their hand away if they cross a line.", value: { direct: 1, verbal: 0, emotional: 0 } },
+            { text: "I hope they can read my body language and understand what I'm comfortable with.", value: { direct: 0, verbal: 0, emotional: 1 } }
+          ]
+        },
+        {
+          id: 4,
+          question: "After sex (aftercare), you usually want:",
+          options: [
+            { text: "To talk about what we just did and analyze what was good.", value: { direct: 1, verbal: 1, logical: 1 } },
+            { text: "To cuddle and exchange loving words of affirmation.", value: { direct: 0, verbal: 1, emotional: 1 } },
+            { text: "To just hold each other quietly without needing to speak.", value: { direct: 0, verbal: 0, emotional: 1 } },
+            { text: "To get up, clean up, and move on to the next activity.", value: { direct: 1, verbal: 0, logical: 1 } }
+          ]
+        },
+        {
+          id: 5,
+          question: "When you are dealing with a conflict or miscommunication about sex, you tend to:",
+          options: [
+            { text: "Sit down and logically discuss the issue to find a concrete solution.", value: { direct: 1, verbal: 1, logical: 1 } },
+            { text: "Focus on how the situation makes me feel and seek emotional reassurance.", value: { direct: 0, verbal: 1, emotional: 1 } },
+            { text: "Need physical space first, then maybe address it later through actions.", value: { direct: 0, verbal: 0, logical: 0 } },
+            { text: "Avoid talking about it directly and hope the tension resolves itself.", value: { direct: 0, verbal: 0, emotional: 1 } }
+          ]
+        }
+      ];
+
+      const state = {
+        currentStep: 0,
+        answers: {},
+        scores: {
+          direct: 0,
+          verbal: 0,
+          logical: 0,
+          emotional: 0
+        }
+      };
+
+      const container = document.getElementById('questions-container');
+      const progressBar = document.getElementById('progress-bar');
+      const btnNext = document.getElementById('btn-next');
+      const btnPrev = document.getElementById('btn-prev');
+      const assessmentUI = document.getElementById('assessment-ui');
+      const resultsUI = document.getElementById('results-ui');
+
+      function init() {
+        loadState();
+        renderQuestions();
+        updateUI();
+      }
+
+      function loadState() {
+        const saved = localStorage.getItem('sexualCommAssessmentState');
+        if (saved) {
+          try {
+            const parsed = JSON.parse(saved);
+            if (parsed.currentStep !== undefined) state.currentStep = parsed.currentStep;
+            if (parsed.answers) state.answers = parsed.answers;
+            if (parsed.scores) state.scores = parsed.scores;
+          } catch (e) {
+            console.error('Failed to parse saved state', e);
+          }
+        }
+      }
+
+      function saveState() {
+        localStorage.setItem('sexualCommAssessmentState', JSON.stringify(state));
+      }
+
+      function clearState() {
+        localStorage.removeItem('sexualCommAssessmentState');
+        state.currentStep = 0;
+        state.answers = {};
+        state.scores = { direct: 0, verbal: 0, logical: 0, emotional: 0 };
+      }
+
+      function renderQuestions() {
+        container.innerHTML = '';
+        questions.forEach((q, index) => {
+          const section = document.createElement('div');
+          section.className = `question-section ${index === state.currentStep ? 'active' : ''}`;
+          section.id = `question-${index}`;
+
+          const title = document.createElement('h2');
+          title.className = 'question-title';
+          title.textContent = `${index + 1}. ${q.question}`;
+          section.appendChild(title);
+
+          const optionsGrid = document.createElement('div');
+          optionsGrid.className = 'options-grid';
+
+          q.options.forEach((opt, optIndex) => {
+            const label = document.createElement('label');
+            label.className = 'option-label';
+
+            const input = document.createElement('input');
+            input.type = 'radio';
+            input.name = `q-${index}`;
+            input.className = 'option-input';
+            input.value = optIndex;
+
+            if (state.answers[index] === optIndex) {
+              input.checked = true;
+            }
+
+            input.addEventListener('change', () => {
+              state.answers[index] = optIndex;
+              saveState();
+              updateButtons();
+            });
+
+            const text = document.createElement('span');
+            text.textContent = opt.text;
+
+            label.appendChild(input);
+            label.appendChild(text);
+            optionsGrid.appendChild(label);
+          });
+
+          section.appendChild(optionsGrid);
+          container.appendChild(section);
+        });
+      }
+
+      function updateUI() {
+        if (state.currentStep >= questions.length) {
+          showResults();
+          return;
+        }
+
+        assessmentUI.style.display = 'block';
+        resultsUI.classList.remove('active');
+        resultsUI.style.display = 'none';
+
+        document.querySelectorAll('.question-section').forEach((el, index) => {
+          if (index === state.currentStep) {
+            el.classList.add('active');
+          } else {
+            el.classList.remove('active');
+          }
+        });
+
+        const progress = ((state.currentStep) / questions.length) * 100;
+        progressBar.style.width = `${progress}%`;
+
+        updateButtons();
+      }
+
+      function updateButtons() {
+        btnPrev.disabled = state.currentStep === 0;
+        const hasAnsweredCurrent = state.answers[state.currentStep] !== undefined;
+
+        if (state.currentStep === questions.length - 1) {
+          btnNext.textContent = 'See Results';
+          btnNext.disabled = !hasAnsweredCurrent;
+        } else {
+          btnNext.textContent = 'Next';
+          btnNext.disabled = !hasAnsweredCurrent;
+        }
+      }
+
+      btnNext.addEventListener('click', () => {
+        if (state.currentStep < questions.length - 1) {
+          state.currentStep++;
+          saveState();
+          updateUI();
+        } else {
+          calculateResults();
+          state.currentStep++;
+          saveState();
+          showResults();
+        }
+      });
+
+      btnPrev.addEventListener('click', () => {
+        if (state.currentStep > 0) {
+          state.currentStep--;
+          saveState();
+          updateUI();
+        }
+      });
+
+      document.getElementById('btn-retake').addEventListener('click', () => {
+        clearState();
+        renderQuestions();
+        updateUI();
+      });
+
+      function calculateResults() {
+        state.scores = { direct: 0, verbal: 0, logical: 0, emotional: 0 };
+
+        for (let i = 0; i < questions.length; i++) {
+          const selectedOptionIndex = state.answers[i];
+          if (selectedOptionIndex !== undefined) {
+            const values = questions[i].options[selectedOptionIndex].value;
+            if (values.direct) state.scores.direct += values.direct;
+            if (values.verbal) state.scores.verbal += values.verbal;
+            if (values.logical) state.scores.logical += values.logical;
+            if (values.emotional) state.scores.emotional += values.emotional;
+          }
+        }
+      }
+
+      function showResults() {
+        assessmentUI.style.display = 'none';
+        resultsUI.style.display = 'block';
+
+        // Ensure standard display toggle triggers animation if handled via class
+        setTimeout(() => {
+            resultsUI.classList.add('active');
+        }, 10);
+
+        const s = state.scores;
+
+        // Determine primary style
+        let isDirect = s.direct >= 3;
+        let isVerbal = s.verbal >= 3;
+        let isLogical = s.logical >= 2;
+
+        let title = "The Intuitive Connector";
+        let desc = "";
+        let strengths = "";
+        let growth = "";
+        let script1 = "";
+        let script2 = "";
+        let compat = "";
+        let tags = [];
+
+        if (isDirect && isVerbal) {
+          title = "The Direct Communicator";
+          tags = ["Direct", "Verbal", "Action-Oriented"];
+          desc = "You prefer clear, unambiguous communication. You say what you mean and ask for what you want directly.";
+          strengths = "Your partner rarely has to guess what you want. You are excellent at setting clear boundaries and navigating consent.";
+          growth = "Your directness might sometimes come across as transactional or blunt to a more emotionally-focused partner. Work on softening your delivery.";
+          script1 = "I really love when we do X, but I want to try adding Y into the mix. How does that sound to you?";
+          script2 = "I'm noticing I'm feeling disconnected right now. Can we take a pause and just cuddle for a minute?";
+          compat = "You pair well with other direct communicators. If your partner is indirect, you may need to learn to pick up on their subtle cues and create a safe space for them to speak up without feeling pressured.";
+        } else if (!isDirect && isVerbal) {
+          title = "The Suggestive Narrator";
+          tags = ["Indirect", "Verbal", "Emotional"];
+          desc = "You communicate through hints, suggestions, and emotional sharing rather than explicit demands.";
+          strengths = "You are highly empathetic and great at building a mood or atmosphere. You navigate conversations with care and tact.";
+          growth = "You might feel unheard if your partner doesn't pick up on your hints. Practice stating your needs clearly rather than hoping they are guessed.";
+          script1 = "I've been thinking about this fantasy lately, and I'd love to explore it with you if you're open to it.";
+          script2 = "When you do X, it makes me feel Y. I would love it if we could try Z instead.";
+          compat = "You do well with emotionally intuitive partners. If paired with a highly direct partner, remember they need clear instructions, not hints. Don't assume they don't care just because they missed a subtle cue.";
+        } else if (isDirect && !isVerbal) {
+          title = "The Physical Guide";
+          tags = ["Direct", "Non-verbal", "Physical"];
+          desc = "You use your body language and physical actions to clearly show what you want and don't want.";
+          strengths = "You are very present in your body during intimacy. You are good at taking the lead physically and showing rather than telling.";
+          growth = "Some boundaries or nuanced desires require words. Practice translating your physical desires into verbal communication before or after sex.";
+          script1 = "[Show them exactly where you want their hand, then reinforce verbally:] 'Yes, right there, keep doing that.'";
+          script2 = "'I struggle to find the words sometimes, but when I pull you closer like this, it means I want you to take charge.'";
+          compat = "You mesh well with highly observant partners. If your partner relies on verbal feedback, they might feel unsure if they are doing things right. Make an effort to give verbal affirmations.";
+        } else {
+          title = "The Intuitive Connector";
+          tags = ["Indirect", "Non-verbal", "Atmospheric"];
+          desc = "You rely on energy, vibe, and subtle body language to communicate your desires and boundaries.";
+          strengths = "You are deeply attuned to the emotional undercurrents of intimacy. You excel at creating a safe, loving space.";
+          growth = "Relying purely on intuition can lead to misunderstandings or resentment if your partner misreads you. Practice verbalizing at least one specific desire or boundary per session.";
+          script1 = "I really need to feel emotionally connected before we get physical tonight. Can we spend some time just talking first?";
+          script2 = "I'm not totally sure what I want right now, but I know I want to be close to you. Let's just go slow and see what happens.";
+          compat = "You thrive with highly empathic, patient partners. A very direct, logical partner might overwhelm you or feel disconnected. You will both need to bridge the gap by blending explicit check-ins with emotional connection.";
+        }
+
+        document.getElementById('result-title').textContent = title;
+        document.getElementById('result-description').textContent = desc;
+        document.getElementById('result-strengths').textContent = strengths;
+        document.getElementById('result-growth').textContent = growth;
+        document.getElementById('result-script-1').textContent = script1;
+        document.getElementById('result-script-2').textContent = script2;
+        document.getElementById('result-compatibility').textContent = compat;
+
+        const tagsContainer = document.getElementById('result-tags');
+        tagsContainer.innerHTML = '';
+        tags.forEach(tag => {
+            const span = document.createElement('span');
+            span.className = 'style-tag';
+            span.textContent = tag;
+            tagsContainer.appendChild(span);
+        });
+
+      }
+
+      init();
+    });
+  </script>
+</body>
+</html>
