@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Trauma Recovery Resource Hub — Ali Imperiale</title>
+  <meta name="description" content="A sensitive, professional guide and resource hub for sexual trauma recovery, featuring healing timelines, communication tools, and symptom assessment.">
+  <meta name="keywords" content="sexual trauma recovery, healing from sexual assault, intimacy after trauma">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-trauma-recovery-hub.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-color: #FAF8EB;
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      line-height: 1.6;
+    }
+
+    .quick-exit {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #b03a2e;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 9999;
+      transition: transform 0.2s;
+    }
+
+    .quick-exit:hover {
+      transform: scale(1.05);
+      background-color: #922b21;
+    }
+
+    .trigger-warning-banner {
+      background-color: #fcf3cf;
+      border-left: 4px solid #f1c40f;
+      padding: 16px 24px;
+      margin-bottom: 32px;
+      border-radius: 4px;
+    }
+
+    .trigger-warning-banner p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #5a6b50;
+    }
+
+    .crisis-support-banner {
+      background-color: #fadbd8;
+      border-left: 4px solid #e74c3c;
+      padding: 16px 24px;
+      margin-bottom: 32px;
+      border-radius: 4px;
+    }
+
+    .crisis-support-banner h3 {
+      margin-top: 0;
+      color: #b03a2e;
+      font-size: 1.1rem;
+    }
+
+    .crisis-support-banner p {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .crisis-support-banner a {
+      color: #b03a2e;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .medical-disclaimer {
+      background-color: #e8e4d4;
+      padding: 16px 24px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin: 48px 0 24px;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 32px 0 16px;
+    }
+
+    p {
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+    .intro-text {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 48px;
+      color: #5a6b50;
+    }
+
+    .resource-card {
+      background: white;
+      border: 1px solid #e8e4d4;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(46,62,36,0.05);
+    }
+
+    .resource-card h4 {
+      color: #AD9846;
+      font-size: 1.1rem;
+      margin: 0 0 12px 0;
+    }
+
+    .story-card {
+      background: #fdfaf0;
+      border-left: 4px solid #AD9846;
+      padding: 24px;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .story-author {
+      font-weight: 600;
+      font-style: normal;
+      display: block;
+      margin-top: 12px;
+      color: #5a6b50;
+    }
+
+    .assessment-container {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(46,62,36,0.08);
+      margin: 48px 0;
+    }
+
+    .assessment-question {
+      margin-bottom: 24px;
+      display: none;
+    }
+
+    .assessment-question.active {
+      display: block;
+    }
+
+    .assessment-question h4 {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .option-label {
+      display: block;
+      padding: 16px;
+      margin-bottom: 12px;
+      background: #FAF8EB;
+      border: 2px solid #e8e4d4;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .option-label:hover {
+      border-color: #AD9846;
+      background: #fdfaf0;
+    }
+
+    .option-label input {
+      display: none;
+    }
+
+    .option-label.selected {
+      border-color: #2E3E24;
+      background: #e8f0e4;
+      color: #2E3E24;
+    }
+
+    .btn-primary {
+      background-color: #2E3E24;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a2414;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+      padding: 12px 26px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-secondary:hover {
+      background-color: #f0f0f0;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #e8e4d4;
+      border-radius: 4px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+    }
+
+    .results-container {
+      display: none;
+    }
+
+    .results-container.active {
+      display: block;
+    }
+
+    .history-container {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid #e8e4d4;
+      display: none;
+    }
+
+    .history-container.active {
+      display: block;
+    }
+
+    .history-item {
+      background: #FAF8EB;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    .history-date {
+      font-weight: 600;
+      color: #AD9846;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-item h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+  </style>
+</head>
+<body>
+  <a href="https://weather.com" class="quick-exit" title="Quickly exit this site">Quick Exit</a>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div class="trigger-warning-banner">
+      <p><strong>Content Warning:</strong> This page discusses sexual trauma, assault, abuse, and related trauma responses. If reading this feels overwhelming, please take care of yourself, step away, or use the Quick Exit button in the corner to leave immediately.</p>
+    </div>
+
+    <div class="crisis-support-banner">
+      <h3>Immediate Support & Crisis Resources</h3>
+      <p>If you are in immediate danger, please call 911 or your local emergency number.</p>
+      <p><strong>RAINN (Rape, Abuse & Incest National Network):</strong> Call <a href="tel:8006564673">800-656-HOPE</a> or visit <a href="https://rainn.org" target="_blank" rel="noopener">rainn.org</a> to chat.</p>
+      <p><strong>Crisis Text Line:</strong> Text HOME to <a href="sms:741741">741741</a> (US & Canada).</p>
+      <p><strong>The Trevor Project (LGBTQ Youth):</strong> Call <a href="tel:8664887386">866-488-7386</a> or text START to <a href="sms:678-678">678-678</a>.</p>
+    </div>
+
+    <h1>Sexual Trauma Recovery Hub</h1>
+    <p class="intro-text">A gentle, judgment-free space for healing, understanding trauma responses, and taking the next steps on your journey. I'm so glad you're here.</p>
+
+    <div class="medical-disclaimer">
+      <p><strong>Educational Disclaimer:</strong> I am a sex educator, not a medical professional or licensed therapist. The information and assessment tools provided here are for educational purposes only and are not meant to diagnose or replace professional medical or psychological treatment. If you are experiencing distress, please reach out to a qualified healthcare provider or a therapist who specializes in trauma.</p>
+    </div>
+
+
+    <h2>Recognizing Trauma Responses</h2>
+    <p>Healing begins with understanding. Often, our bodies remember what our minds try to forget. If you’ve experienced sexual trauma—whether it was assault, abuse, coercion, or medical trauma—your brain and body might be reacting in ways that feel confusing, overwhelming, or completely out of your control. *This is not your fault.* It’s a normal response to an abnormal situation.</p>
+    <p>Trauma responses in the realm of intimacy can look like:</p>
+    <ul>
+      <li><strong>Dissociation:</strong> Checking out, feeling numb, or feeling like you're floating above your body during sex or intimate moments.</li>
+      <li><strong>Hypervigilance:</strong> Being constantly "on edge," overly sensitive to touch, or unable to relax with a partner.</li>
+      <li><strong>Avoidance:</strong> Completely avoiding sex, intimacy, dating, or anything that reminds you of the traumatic event.</li>
+      <li><strong>Physical Pain:</strong> Experiencing pain during penetration (vaginismus or dyspareunia) that isn't linked to a medical condition.</li>
+      <li><strong>Flashbacks/Intrusive Thoughts:</strong> Suddenly feeling like you are back in the traumatic situation, or experiencing unwanted memories during intimate moments.</li>
+      <li><strong>People-Pleasing/Fawning:</strong> Going along with sexual acts you don’t actually want to do to avoid conflict or "keep the peace."</li>
+    </ul>
+
+    <h2>Finding Specialized Support</h2>
+    <p>You don't have to navigate this alone. Finding a therapist who is specifically trained in trauma is crucial. Look for credentials like <strong>Certified Trauma Professional (CTP)</strong>, or therapists trained in modalities like <strong>EMDR (Eye Movement Desensitization and Reprocessing)</strong>, <strong>Somatic Experiencing (SE)</strong>, or <strong>Trauma-Focused Cognitive Behavioral Therapy (TF-CBT)</strong>.</p>
+
+    <div class="resource-card">
+      <h4>Directories & Organizations</h4>
+      <ul>
+        <li><a href="https://www.aasect.org/referral-directory" target="_blank" rel="noopener">AASECT Directory</a>: Find certified sex therapists who often specialize in sexual trauma.</li>
+        <li><a href="https://traumahealing.org/" target="_blank" rel="noopener">Somatic Experiencing International</a>: Directory of SE practitioners who help release trauma stored in the body.</li>
+        <li><a href="https://www.emdria.org/" target="_blank" rel="noopener">EMDR International Association</a>: Find therapists trained in EMDR, highly effective for PTSD.</li>
+        <li><a href="https://nsvrc.org/" target="_blank" rel="noopener">National Sexual Violence Resource Center (NSVRC)</a>: Resources and local support center locators.</li>
+      </ul>
+    </div>
+
+    <div class="resource-card">
+      <h4>Different Types of Trauma</h4>
+      <p>Trauma isn't a monolith. Healing might look different depending on your experience:</p>
+      <ul>
+        <li><strong>Childhood Sexual Abuse:</strong> Often requires long-term, specialized therapy focusing on attachment and core beliefs.</li>
+        <li><strong>Intimate Partner Violence (IPV):</strong> Support groups and domestic violence advocates can provide crucial safety planning alongside therapy.</li>
+        <li><strong>Medical Trauma:</strong> (e.g., traumatic exams or childbirth). Seek out trauma-informed pelvic floor physical therapists and medical advocates.</li>
+        <li><strong>Coercion & "Gray Area" Trauma:</strong> Therapy can help validate your experience when society or individuals try to minimize it.</li>
+      </ul>
+    </div>
+
+    <h2>Intimacy & Partner Communication</h2>
+    <p>Rebuilding intimacy after trauma is a delicate, gradual process. If you have a partner, open communication is your strongest tool. It’s okay to need things to be different now.</p>
+    <p><strong>Tips for navigating intimacy:</strong></p>
+    <ul>
+      <li><strong>Take intercourse off the table:</strong> Focus on non-sexual touch, cuddling, or sensual massage without the expectation of sex.</li>
+      <li><strong>Establish a "Safe Word":</strong> Use a traffic light system (Red = Stop immediately, Yellow = Slow down/check in, Green = Good to go) to maintain a sense of control.</li>
+      <li><strong>Scripting for Partners:</strong> "I want to be close to you, but my body is feeling overwhelmed right now. Can we just hold hands instead?"</li>
+      <li><strong>Focus on Consent:</strong> Continuous, enthusiastic consent is essential. Practice checking in: "Does this still feel good?"</li>
+    </ul>
+
+    <h2>Self-Care & Trigger Management</h2>
+    <p>Triggers happen. They are your brain's alarm system misfiring. When a trigger occurs, the goal isn't to never be triggered again, but to learn how to self-soothe and ground yourself in the present moment.</p>
+    <ul>
+      <li><strong>Grounding Techniques:</strong> The 5-4-3-2-1 method (name 5 things you see, 4 you can touch, 3 you can hear, 2 you can smell, 1 you can taste).</li>
+      <li><strong>Temperature Changes:</strong> Holding an ice cube or splashing cold water on your face can reset your nervous system.</li>
+      <li><strong>Movement:</strong> Shaking out your limbs or taking a brisk walk to release built-up adrenaline.</li>
+      <li><strong>Self-Compassion:</strong> Remind yourself, "I am safe now. That is in the past. My body is just trying to protect me."</li>
+    </ul>
+
+    <h2>Healing Timelines & Hope</h2>
+    <p>Healing from sexual trauma is rarely linear. It’s not a staircase; it’s more like a spiral. You might revisit old feelings, but each time you do, you’ll have more tools and resilience. There is no timeline for healing. Be gentle with yourself.</p>
+
+    <div class="story-card">
+      <p>"For years after my assault, I thought my sex life was ruined forever. I flinched at every touch. It took time, somatic therapy, and a deeply patient partner, but I finally feel safe in my own body again. Intimacy feels like mine again, not something that happens to me. There is hope. It just takes time and a lot of grace."</p>
+      <span class="story-author">— Anonymous Survivor</span>
+    </div>
+
+    <h2>Trauma Symptom Assessment Tool</h2>
+    <p>This simple tool can help you identify if you might be experiencing common trauma responses related to intimacy. *Remember, this is not a diagnostic tool.* It's a starting point for reflection and a helpful guide to share with a therapist.</p>
+
+    <div class="assessment-container" id="assessment-container">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div id="questions-area">
+        <!-- Questions injected via JS -->
+      </div>
+
+      <div class="controls">
+        <button class="btn-secondary" id="btn-prev" style="display:none;">Previous</button>
+        <button class="btn-primary" id="btn-next">Next</button>
+      </div>
+
+      <div class="results-container" id="results-area">
+        <h3>Assessment Results</h3>
+        <p id="results-text"></p>
+        <p><strong>Next Steps:</strong> Please consider reaching out to a trauma-informed therapist. Use the resources provided above to find a professional who can help you navigate these feelings.</p>
+        <button class="btn-primary" id="btn-restart" style="margin-top: 20px;">Retake Assessment</button>
+
+        <div class="history-container" id="history-area">
+            <h4>Saved Results</h4>
+            <button class="btn-secondary" id="btn-clear-history" style="margin-bottom: 16px; font-size: 0.8rem; padding: 8px 16px;">Clear All History</button>
+            <div id="history-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h4>Is it normal to not want sex at all after trauma?</h4>
+      <p>Absolutely. Your body and mind have been through a significant shock. Aiding your survival and safety is your brain's top priority, which often means shutting down desire. This is a very common protective response and doesn't mean your sex drive is gone forever.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I heal without going to therapy?</h4>
+      <p>While self-care, supportive partners, and education are vital, sexual trauma is complex and deeply rooted in the nervous system. A trained trauma professional provides tools and safety structures that are incredibly difficult to replicate on your own. Therapy is highly recommended.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How do I tell a new partner about my trauma?</h4>
+      <p>You only share what you want, when you want. You don't owe anyone your full story. You can start small, focusing on boundaries: "I have some past experiences that make unexpected touch difficult for me. I need us to take things slow and communicate clearly." Share more details only if and when you feel completely safe and trust them.</p>
+    </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Is it normal to not want sex at all after trauma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Your body and mind have been through a significant shock. Aiding your survival and safety is your brain's top priority, which often means shutting down desire. This is a very common protective response and doesn't mean your sex drive is gone forever."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I heal without going to therapy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While self-care, supportive partners, and education are vital, sexual trauma is complex and deeply rooted in the nervous system. A trained trauma professional provides tools and safety structures that are incredibly difficult to replicate on your own. Therapy is highly recommended."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How do I tell a new partner about my trauma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You only share what you want, when you want. You don't owe anyone your full story. You can start small, focusing on boundaries: 'I have some past experiences that make unexpected touch difficult for me. I need us to take things slow and communicate clearly.' Share more details only if and when you feel completely safe and trust them."
+        }
+      }]
+    }
+    </script>
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const questions = [
+        {
+          id: 'q1',
+          text: 'Do you frequently experience physical discomfort or pain during intimacy that isn\'t linked to a medical condition?',
+          options: [
+            { text: 'Rarely or never', score: 0 },
+            { text: 'Sometimes', score: 1 },
+            { text: 'Often or always', score: 2 }
+          ]
+        },
+        {
+          id: 'q2',
+          text: 'During intimate moments, do you ever feel "checked out," numb, or like you are watching yourself from the outside?',
+          options: [
+            { text: 'Rarely or never', score: 0 },
+            { text: 'Sometimes', score: 1 },
+            { text: 'Often or always', score: 2 }
+          ]
+        },
+        {
+          id: 'q3',
+          text: 'Do you find yourself agreeing to sexual acts you don\'t actually want, just to "keep the peace" or avoid conflict?',
+          options: [
+            { text: 'Rarely or never', score: 0 },
+            { text: 'Sometimes', score: 1 },
+            { text: 'Often or always', score: 2 }
+          ]
+        },
+        {
+          id: 'q4',
+          text: 'Do you experience sudden, intrusive memories, feelings of panic, or flashbacks when touched in certain ways?',
+          options: [
+            { text: 'Rarely or never', score: 0 },
+            { text: 'Sometimes', score: 1 },
+            { text: 'Often or always', score: 2 }
+          ]
+        },
+        {
+          id: 'q5',
+          text: 'Do you consistently avoid situations, conversations, or relationships that might lead to physical intimacy?',
+          options: [
+            { text: 'Rarely or never', score: 0 },
+            { text: 'Sometimes', score: 1 },
+            { text: 'Often or always', score: 2 }
+          ]
+        }
+      ];
+
+      let currentStep = 0;
+      let answers = {};
+
+      const questionsArea = document.getElementById('questions-area');
+      const btnNext = document.getElementById('btn-next');
+      const btnPrev = document.getElementById('btn-prev');
+      const btnRestart = document.getElementById('btn-restart');
+      const btnClearHistory = document.getElementById('btn-clear-history');
+      const progressFill = document.getElementById('progress-fill');
+      const resultsArea = document.getElementById('results-area');
+      const resultsText = document.getElementById('results-text');
+      const historyArea = document.getElementById('history-area');
+      const historyList = document.getElementById('history-list');
+
+      function init() {
+        renderQuestions();
+        updateView();
+        loadHistory();
+      }
+
+      function renderQuestions() {
+        questionsArea.innerHTML = '';
+        questions.forEach((q, index) => {
+          const qDiv = document.createElement('div');
+          qDiv.className = 'assessment-question';
+          qDiv.id = `step-${index}`;
+
+          let html = `<h4>${index + 1}. ${q.text}</h4>`;
+
+          q.options.forEach((opt, optIndex) => {
+            html += `
+              <label class="option-label" id="label-${index}-${optIndex}">
+                <input type="radio" name="question-${index}" value="${opt.score}" data-step="${index}" data-opt="${optIndex}">
+                ${opt.text}
+              </label>
+            `;
+          });
+
+          qDiv.innerHTML = html;
+          questionsArea.appendChild(qDiv);
+        });
+
+        const inputs = questionsArea.querySelectorAll('input[type="radio"]');
+        inputs.forEach(input => {
+          input.addEventListener('change', (e) => {
+            const step = e.target.getAttribute('data-step');
+
+            // clear selected classes for this step
+            const labels = document.querySelectorAll(`#step-${step} .option-label`);
+            labels.forEach(l => l.classList.remove('selected'));
+
+            // add to selected
+            e.target.parentElement.classList.add('selected');
+            answers[step] = parseInt(e.target.value);
+
+            // Auto advance after short delay if not last
+            if (currentStep < questions.length - 1) {
+              setTimeout(() => {
+                currentStep++;
+                updateView();
+              }, 300);
+            }
+          });
+        });
+      }
+
+      function updateView() {
+        // Hide all questions
+        document.querySelectorAll('.assessment-question').forEach(q => q.classList.remove('active'));
+
+        // Show current question
+        const currentQ = document.getElementById(`step-${currentStep}`);
+        if(currentQ) {
+          currentQ.classList.add('active');
+        }
+
+        // Update progress bar
+        const progress = ((currentStep + 1) / questions.length) * 100;
+        progressFill.style.width = `${progress}%`;
+
+        // Update buttons
+        btnPrev.style.display = currentStep > 0 ? 'inline-block' : 'none';
+
+        if (currentStep === questions.length - 1) {
+          btnNext.textContent = 'View Results';
+        } else {
+          btnNext.textContent = 'Next';
+        }
+
+        // Show/hide results area
+        if (currentStep >= questions.length) {
+          questionsArea.style.display = 'none';
+          document.querySelector('.controls').style.display = 'none';
+          document.querySelector('.progress-bar').style.display = 'none';
+          calculateAndShowResults();
+        } else {
+          questionsArea.style.display = 'block';
+          document.querySelector('.controls').style.display = 'flex';
+          document.querySelector('.progress-bar').style.display = 'block';
+          resultsArea.classList.remove('active');
+        }
+      }
+
+      btnNext.addEventListener('click', () => {
+        if (answers[currentStep] === undefined) {
+          alert("Please select an option to continue.");
+          return;
+        }
+        currentStep++;
+        updateView();
+      });
+
+      btnPrev.addEventListener('click', () => {
+        if (currentStep > 0) {
+          currentStep--;
+          updateView();
+        }
+      });
+
+      btnRestart.addEventListener('click', () => {
+        currentStep = 0;
+        answers = {};
+
+        // Reset selections
+        document.querySelectorAll('input[type="radio"]').forEach(i => i.checked = false);
+        document.querySelectorAll('.option-label').forEach(l => l.classList.remove('selected'));
+
+        updateView();
+      });
+
+      function calculateAndShowResults() {
+        let totalScore = 0;
+        for (let key in answers) {
+          totalScore += answers[key];
+        }
+
+        let resultMessage = "";
+        let resultCategory = "";
+
+        if (totalScore <= 2) {
+          resultCategory = "Low Indication of Trauma Responses";
+          resultMessage = "Your answers indicate that you are experiencing few to no common trauma responses regarding intimacy. If you are still feeling distress or dissatisfaction, remember that everyone's experience is unique, and seeking support is always a valid option.";
+        } else if (totalScore <= 6) {
+          resultCategory = "Moderate Indication of Trauma Responses";
+          resultMessage = "Your answers indicate that you may be experiencing some trauma-related responses that are impacting your intimacy. This is very common, and it is a protective response from your nervous system. Seeking the guidance of a trauma-informed therapist could be highly beneficial.";
+        } else {
+          resultCategory = "High Indication of Trauma Responses";
+          resultMessage = "Your answers indicate a high likelihood of experiencing significant trauma responses around intimacy. *Please hear me: you are not broken, and this is not your fault.* Your body is working hard to protect you. I strongly encourage you to reach out to a specialized trauma therapist or use the resources above to begin unpacking these feelings in a safe environment.";
+        }
+
+        resultsText.innerHTML = `<strong>${resultCategory}</strong><br><br>${resultMessage}`;
+        resultsArea.classList.add('active');
+
+        saveResult(totalScore, resultCategory);
+      }
+
+      function saveResult(score, category) {
+        const result = {
+          date: new Date().toISOString(),
+          score: score,
+          category: category
+        };
+
+        let history = JSON.parse(localStorage.getItem('traumaAssessmentHistory') || '[]');
+        history.unshift(result);
+        localStorage.setItem('traumaAssessmentHistory', JSON.stringify(history));
+
+        loadHistory();
+      }
+
+      function loadHistory() {
+        let history = JSON.parse(localStorage.getItem('traumaAssessmentHistory') || '[]');
+        if (history.length > 0) {
+          historyArea.classList.add('active');
+          historyList.innerHTML = '';
+          history.forEach(item => {
+            const dateStr = new Date(item.date).toLocaleDateString();
+            const div = document.createElement('div');
+            div.className = 'history-item';
+            div.innerHTML = `<span class="history-date">${dateStr}</span>Result: ${item.category}`;
+            historyList.appendChild(div);
+          });
+        } else {
+          historyArea.classList.remove('active');
+        }
+      }
+
+      btnClearHistory.addEventListener('click', () => {
+        if(confirm('Are you sure you want to clear your assessment history?')) {
+          localStorage.removeItem('traumaAssessmentHistory');
+          loadHistory();
+        }
+      });
+
+      init();
+    });
+  </script>
+</body>
+</html>
