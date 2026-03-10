@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Pleasure Mapping Guide | Ali Imperiale</title>
+  <meta name="description" content="Discover and track your erogenous zones, preferences, and what brings you pleasure with this interactive pleasure mapping guide and sexual self-discovery tool.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    /* Base Overrides */
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Header & Intro */
+    header.page-header {
+      max-width: 800px;
+      margin: 60px auto 40px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    header.page-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2E3E24;
+    }
+    header.page-header p {
+      font-size: 1.1rem;
+      color: #4A5D4E;
+    }
+
+    /* Disclaimer */
+    .medical-disclaimer {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      padding: 15px 20px;
+      background-color: rgba(173, 152, 70, 0.1);
+      border-left: 4px solid #AD9846;
+      font-size: 0.9rem;
+      color: #2E3E24;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* Sections */
+    section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.05);
+    }
+    section h2 {
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    /* Body Diagram Styling */
+    .mapping-area {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    @media (min-width: 768px) {
+      .mapping-area {
+        flex-direction: row;
+      }
+    }
+    .diagram-container {
+      flex: 1;
+      position: relative;
+      background: #FAF8EB;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      min-height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .controls-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* SVG Styling */
+    .body-svg {
+      max-width: 100%;
+      height: auto;
+      max-height: 500px;
+    }
+    .zone {
+      fill: #e0e2d5;
+      stroke: #2E3E24;
+      stroke-width: 2;
+      cursor: pointer;
+      transition: fill 0.2s, stroke-width 0.2s;
+    }
+    .zone:hover {
+      fill: #AD9846;
+      stroke-width: 3;
+    }
+    .zone.selected {
+      fill: #AD9846;
+      stroke-width: 3;
+    }
+    .zone.intensity-1 { fill: #f0e6c5; }
+    .zone.intensity-2 { fill: #e6cd8c; }
+    .zone.intensity-3 { fill: #AD9846; }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2E3E24;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #AD9846;
+    }
+    select, textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #c6c8bb;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #FAF8EB;
+      color: #2E3E24;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      font-family: inherit;
+    }
+    button:hover {
+      background-color: #4A5D4E;
+    }
+    .btn-secondary {
+      background-color: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+    }
+    .btn-secondary:hover {
+      background-color: rgba(46, 62, 36, 0.1);
+    }
+
+    /* Saved Zones List */
+    .saved-zones {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .zone-card {
+      background: #FAF8EB;
+      border-left: 4px solid #AD9846;
+      padding: 15px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .zone-info h4 {
+      margin: 0 0 5px 0;
+      color: #2E3E24;
+    }
+    .zone-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #4A5D4E;
+    }
+    .delete-btn {
+      background: none;
+      border: none;
+      color: #cc0000;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0 5px;
+    }
+    .delete-btn:hover {
+      background: none;
+      color: #ff0000;
+    }
+
+    /* Mood Tracking */
+    .mood-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1));
+      gap: 15px;
+    }
+    .mood-checkbox {
+      display: none;
+    }
+    .mood-label {
+      display: block;
+      padding: 10px 15px;
+      background: #FAF8EB;
+      border: 1px solid #c6c8bb;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+    .mood-checkbox:checked + .mood-label {
+      background: #AD9846;
+      color: #fff;
+      border-color: #AD9846;
+    }
+
+    /* Progress and Summary */
+    .summary-box {
+      background: #FAF8EB;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .template-box {
+      background: #eef0e6;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #2E3E24;
+      margin-top: 15px;
+      font-style: italic;
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Interactive Pleasure Mapping Guide</h1>
+    <p>Discover your erogenous zones, track sensations, and explore what brings you pleasure. This tool is designed to help you reconnect with your body and communicate your desires.</p>
+  </header>
+
+  <div class="medical-disclaimer">
+    <strong>Medical Disclaimer:</strong> This interactive pleasure mapping guide is for educational and self-discovery purposes only. It is not a substitute for professional medical advice, diagnosis, or therapy. If you experience pain or discomfort, please consult with a healthcare professional or qualified sex therapist.
+  </div>
+
+  <div class="container" id="app-container">
+    <!-- Expert Insights Section -->
+    <section>
+      <h2>What is Pleasure Mapping?</h2>
+      <p>Hey there! I'm Ali. Let's talk about pleasure mapping. It's essentially taking the time to intentionally explore your body to discover what feels good, where, and how.</p>
+      <p>We often get stuck in routines, focusing only on the "main events" or primary erogenous zones (like genitals or breasts). But the truth is, your entire body is covered in nerve endings waiting to be activated. Pleasure mapping helps you expand your menu of sensations.</p>
+      <p>By tracking your preferences, you can better understand your own desires and, importantly, communicate them more effectively to a partner. Let's start mapping!</p>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section id="mapping-tool">
+      <h2>Map Your Erogenous Zones</h2>
+      <p>Click on different areas of the body diagram below to select a zone, then use the controls to record how you feel about being touched there.</p>
+
+      <div class="mapping-area">
+        <div class="diagram-container">
+          <!-- Simple abstract body diagram SVG -->
+          <svg class="body-svg" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Head & Neck -->
+            <circle cx="100" cy="40" r="25" class="zone" data-zone="Head/Hair" />
+            <rect x="85" y="65" width="30" height="20" class="zone" data-zone="Neck" />
+
+            <!-- Torso -->
+            <path d="M 60 85 Q 100 95 140 85 L 130 150 Q 100 160 70 150 Z" class="zone" data-zone="Chest" />
+            <path d="M 70 150 Q 100 160 130 150 L 125 210 Q 100 220 75 210 Z" class="zone" data-zone="Stomach/Abdomen" />
+
+            <!-- Arms -->
+            <path d="M 60 85 Q 40 120 30 180 L 45 180 Q 55 120 70 95 Z" class="zone" data-zone="Left Arm" />
+            <path d="M 140 85 Q 160 120 170 180 L 155 180 Q 145 120 130 95 Z" class="zone" data-zone="Right Arm" />
+
+            <!-- Hands -->
+            <circle cx="37" cy="195" r="12" class="zone" data-zone="Left Hand" />
+            <circle cx="163" cy="195" r="12" class="zone" data-zone="Right Hand" />
+
+            <!-- Pelvis/Genitals -->
+            <path d="M 75 210 Q 100 220 125 210 L 115 250 Q 100 260 85 250 Z" class="zone" data-zone="Pelvis/Genitals" />
+
+            <!-- Legs -->
+            <path d="M 75 210 L 85 250 L 80 340 L 55 340 Z" class="zone" data-zone="Left Thigh/Leg" />
+            <path d="M 125 210 L 115 250 L 120 340 L 145 340 Z" class="zone" data-zone="Right Thigh/Leg" />
+
+            <!-- Feet -->
+            <ellipse cx="67" cy="355" rx="15" ry="10" class="zone" data-zone="Left Foot" />
+            <ellipse cx="132" cy="355" rx="15" ry="10" class="zone" data-zone="Right Foot" />
+          </svg>
+        </div>
+
+        <div class="controls-container">
+          <div id="zone-editor" style="display: none;">
+            <h3 id="current-zone-name">Selected Zone</h3>
+
+            <div class="form-group">
+              <label for="sensation-type">Preferred Sensation Type</label>
+              <select id="sensation-type">
+                <option value="">Select a sensation...</option>
+                <option value="Light Touch">Light Touch / Feathering</option>
+                <option value="Firm Pressure">Firm Pressure / Massage</option>
+                <option value="Scratching">Scratching / Raking</option>
+                <option value="Kissing">Kissing / Licking</option>
+                <option value="Temperature">Temperature Play (Hot/Cold)</option>
+                <option value="Vibration">Vibration</option>
+                <option value="Do Not Touch">Do Not Touch</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="intensity-slider">Pleasure Intensity (1-10)</label>
+              <input type="range" id="intensity-slider" min="1" max="10" value="5">
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #4A5D4E;">
+                <span>Mild</span>
+                <span id="intensity-value">5</span>
+                <span>Intense</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="zone-notes">Notes / Specifics</label>
+              <textarea id="zone-notes" placeholder="e.g., Only light touches here, avoid ticking..."></textarea>
+            </div>
+
+            <button id="save-zone-btn">Save Zone Preferences</button>
+          </div>
+
+          <div id="no-zone-selected">
+            <p style="text-align: center; color: #4A5D4E; margin-top: 50px;">
+              <em>Select a body part on the diagram to start mapping.</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Saved Zones Section -->
+    <section>
+      <h2>Your Mapped Zones</h2>
+      <div id="saved-zones-list" class="saved-zones">
+        <p style="text-align: center; color: #4A5D4E;"><em>No zones mapped yet. Start clicking the diagram!</em></p>
+      </div>
+      <div style="margin-top: 20px; text-align: right;">
+        <button id="clear-all-btn" class="btn-secondary" style="display: none;">Clear All Data</button>
+      </div>
+    </section>
+
+    <!-- Mood & Context Section -->
+    <section>
+      <h2>Mood & Context Influences</h2>
+      <p>Pleasure doesn't happen in a vacuum. Context matters! What helps you get into a receptive, pleasurable headspace?</p>
+
+      <div class="form-group">
+        <label>Select your top mood enhancers:</label>
+        <div class="mood-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px;">
+          <div>
+            <input type="checkbox" id="mood-relaxation" class="mood-checkbox" value="Relaxation/Massage">
+            <label for="mood-relaxation" class="mood-label">Relaxation</label>
+          </div>
+          <div>
+            <input type="checkbox" id="mood-romance" class="mood-checkbox" value="Romance/Candles">
+            <label for="mood-romance" class="mood-label">Romance</label>
+          </div>
+          <div>
+            <input type="checkbox" id="mood-playful" class="mood-checkbox" value="Playfulness/Laughing">
+            <label for="mood-playful" class="mood-label">Playfulness</label>
+          </div>
+          <div>
+            <input type="checkbox" id="mood-kink" class="mood-checkbox" value="Kink/Power Dynamics">
+            <label for="mood-kink" class="mood-label">Kink Elements</label>
+          </div>
+          <div>
+            <input type="checkbox" id="mood-music" class="mood-checkbox" value="Music/Ambiance">
+            <label for="mood-music" class="mood-label">Good Music</label>
+          </div>
+          <div>
+            <input type="checkbox" id="mood-talk" class="mood-checkbox" value="Deep Conversation">
+            <label for="mood-talk" class="mood-label">Deep Connection</label>
+          </div>
+        </div>
+      </div>
+      <button id="save-mood-btn">Save Mood Preferences</button>
+      <span id="mood-save-status" style="margin-left: 10px; color: #AD9846; font-weight: bold;"></span>
+    </section>
+
+    <!-- Communication Templates Section -->
+    <section>
+      <h2>Communication Scripts</h2>
+      <p>Found some new spots? Here are some casual, low-pressure ways to bring them up with a partner based on what you've mapped.</p>
+
+      <div id="communication-templates">
+        <div class="template-box">
+          "Hey, I was doing some reading and realized I'd love to explore more touch on my [Zone]. Would you be open to trying some [Sensation Type] there next time?"
+        </div>
+        <div class="template-box">
+          "I've been thinking about what really gets me going, and setting the mood with [Mood Enhancer] combined with focus on my [Zone] sounds incredible right now."
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">What is pleasure mapping?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Pleasure mapping is the process of intentionally exploring your body to discover new erogenous zones, understand your preferences for different types of touch, and track what brings you pleasure. It helps you expand beyond traditional zones and communicate your desires more effectively.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">Why should I map my erogenous zones?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Mapping your erogenous zones allows you to discover new sources of pleasure, increase your sexual self-awareness, and break out of sexual routines. It is also an excellent tool for building sexual confidence and improving communication with partners.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">Can I use this pleasure mapping guide with a partner?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Absolutely! While pleasure mapping is a powerful solo exercise for sexual self-discovery, exploring the map together with a partner can foster intimacy, trust, and open communication about each other's bodies and preferences.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name">Are erogenous zones the same for everyone?</h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">No, erogenous zones are highly individual and can even change over time depending on your mood, stress levels, and environment. What feels incredibly pleasurable to one person might feel ticklish or uncomfortable to another.</p>
+        </div>
+      </div>
+    </section>
+  </div> <!-- Close app-container -->
+
+  <script src="consent.js"></script>
+  <script src="mobile-nav.js"></script>
+  <script src="newsletter-bar.js"></script>
+  <script src="email-capture.js"></script>
+  <script src="back-to-top.js"></script>
+
+  <!-- FAQ JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is pleasure mapping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pleasure mapping is the process of intentionally exploring your body to discover new erogenous zones, understand your preferences for different types of touch, and track what brings you pleasure. It helps you expand beyond traditional zones and communicate your desires more effectively."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why should I map my erogenous zones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mapping your erogenous zones allows you to discover new sources of pleasure, increase your sexual self-awareness, and break out of sexual routines. It is also an excellent tool for building sexual confidence and improving communication with partners."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this pleasure mapping guide with a partner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! While pleasure mapping is a powerful solo exercise for sexual self-discovery, exploring the map together with a partner can foster intimacy, trust, and open communication about each other's bodies and preferences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are erogenous zones the same for everyone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, erogenous zones are highly individual and can even change over time depending on your mood, stress levels, and environment. What feels incredibly pleasurable to one person might feel ticklish or uncomfortable to another."
+        }
+      }
+    ]
+  }
+  </script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Elements
+      const zones = document.querySelectorAll('.zone');
+      const zoneEditor = document.getElementById('zone-editor');
+      const noZoneSelected = document.getElementById('no-zone-selected');
+      const currentZoneName = document.getElementById('current-zone-name');
+      const sensationType = document.getElementById('sensation-type');
+      const intensitySlider = document.getElementById('intensity-slider');
+      const intensityValue = document.getElementById('intensity-value');
+      const zoneNotes = document.getElementById('zone-notes');
+      const saveZoneBtn = document.getElementById('save-zone-btn');
+      const savedZonesList = document.getElementById('saved-zones-list');
+      const clearAllBtn = document.getElementById('clear-all-btn');
+
+      const moodCheckboxes = document.querySelectorAll('.mood-checkbox');
+      const saveMoodBtn = document.getElementById('save-mood-btn');
+      const moodSaveStatus = document.getElementById('mood-save-status');
+
+      // State
+      let selectedZoneId = null;
+      let mappedData = JSON.parse(localStorage.getItem('pleasureMapData')) || { zones: {}, moods: [] };
+
+      // Initialize
+      renderSavedZones();
+      restoreMoods();
+      applyZoneColors();
+
+      // Interactions
+      zones.forEach(zone => {
+        zone.addEventListener('click', (e) => {
+          // Deselect all
+          zones.forEach(z => z.classList.remove('selected'));
+          // Select current
+          e.target.classList.add('selected');
+
+          selectedZoneId = e.target.getAttribute('data-zone');
+          currentZoneName.textContent = selectedZoneId;
+
+          // Show editor
+          noZoneSelected.style.display = 'none';
+          zoneEditor.style.display = 'block';
+
+          // Populate if exists
+          if (mappedData.zones[selectedZoneId]) {
+            const data = mappedData.zones[selectedZoneId];
+            sensationType.value = data.sensation || '';
+            intensitySlider.value = data.intensity || 5;
+            intensityValue.textContent = data.intensity || 5;
+            zoneNotes.value = data.notes || '';
+          } else {
+            // Reset
+            sensationType.value = '';
+            intensitySlider.value = 5;
+            intensityValue.textContent = '5';
+            zoneNotes.value = '';
+          }
+        });
+      });
+
+      intensitySlider.addEventListener('input', (e) => {
+        intensityValue.textContent = e.target.value;
+      });
+
+      saveZoneBtn.addEventListener('click', () => {
+        if (!selectedZoneId) return;
+
+        const data = {
+          name: selectedZoneId,
+          sensation: sensationType.value,
+          intensity: parseInt(intensitySlider.value, 10),
+          notes: zoneNotes.value
+        };
+
+        mappedData.zones[selectedZoneId] = data;
+        saveData();
+        renderSavedZones();
+        applyZoneColors();
+
+        // Brief visual feedback on button
+        const originalText = saveZoneBtn.textContent;
+        saveZoneBtn.textContent = 'Saved!';
+        saveZoneBtn.style.backgroundColor = '#AD9846';
+        setTimeout(() => {
+          saveZoneBtn.textContent = originalText;
+          saveZoneBtn.style.backgroundColor = '';
+        }, 1500);
+      });
+
+      saveMoodBtn.addEventListener('click', () => {
+        const selectedMoods = Array.from(moodCheckboxes)
+          .filter(cb => cb.checked)
+          .map(cb => cb.value);
+
+        mappedData.moods = selectedMoods;
+        saveData();
+
+        moodSaveStatus.textContent = "Saved!";
+        setTimeout(() => {
+          moodSaveStatus.textContent = "";
+        }, 2000);
+      });
+
+      clearAllBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to clear all your mapped data? This cannot be undone.')) {
+          mappedData = { zones: {}, moods: [] };
+          saveData();
+          renderSavedZones();
+          applyZoneColors();
+          restoreMoods();
+
+          // Reset editor UI
+          zoneEditor.style.display = 'none';
+          noZoneSelected.style.display = 'block';
+          zones.forEach(z => z.classList.remove('selected'));
+        }
+      });
+
+      // Functions
+      function saveData() {
+        localStorage.setItem('pleasureMapData', JSON.stringify(mappedData));
+      }
+
+      function renderSavedZones() {
+        savedZonesList.innerHTML = '';
+        const zoneKeys = Object.keys(mappedData.zones);
+
+        if (zoneKeys.length === 0) {
+          savedZonesList.innerHTML = '<p style="text-align: center; color: #4A5D4E;"><em>No zones mapped yet. Start clicking the diagram!</em></p>';
+          clearAllBtn.style.display = 'none';
+          return;
+        }
+
+        clearAllBtn.style.display = 'inline-block';
+
+        zoneKeys.forEach(key => {
+          const zone = mappedData.zones[key];
+
+          const card = document.createElement('div');
+          card.className = 'zone-card';
+
+          const info = document.createElement('div');
+          info.className = 'zone-info';
+
+          const h4 = document.createElement('h4');
+          h4.textContent = zone.name;
+
+          const p1 = document.createElement('p');
+          p1.textContent = `Sensation: ${zone.sensation || 'Not specified'} | Intensity: ${zone.intensity}/10`;
+
+          info.appendChild(h4);
+          info.appendChild(p1);
+
+          if (zone.notes) {
+            const p2 = document.createElement('p');
+            p2.style.fontStyle = 'italic';
+            p2.style.marginTop = '5px';
+            p2.textContent = `"${zone.notes}"`;
+            info.appendChild(p2);
+          }
+
+          const delBtn = document.createElement('button');
+          delBtn.className = 'delete-btn';
+          delBtn.innerHTML = '&times;';
+          delBtn.title = 'Remove Zone';
+          delBtn.onclick = (e) => {
+            e.stopPropagation();
+            delete mappedData.zones[key];
+            saveData();
+            renderSavedZones();
+            applyZoneColors();
+
+            if (selectedZoneId === key) {
+               zoneEditor.style.display = 'none';
+               noZoneSelected.style.display = 'block';
+               zones.forEach(z => z.classList.remove('selected'));
+               selectedZoneId = null;
+            }
+          };
+
+          card.appendChild(info);
+          card.appendChild(delBtn);
+
+          // Clicking card selects zone on diagram
+          card.style.cursor = 'pointer';
+          card.onclick = () => {
+             const svgZone = document.querySelector(`.zone[data-zone="${key}"]`);
+             if (svgZone) {
+                 svgZone.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                 svgZone.dispatchEvent(new Event('click'));
+             }
+          };
+
+          savedZonesList.appendChild(card);
+        });
+      }
+
+      function restoreMoods() {
+        const savedMoods = mappedData.moods || [];
+        moodCheckboxes.forEach(cb => {
+          cb.checked = savedMoods.includes(cb.value);
+        });
+      }
+
+      function applyZoneColors() {
+        // Reset all classes
+        zones.forEach(z => {
+          z.classList.remove('intensity-1', 'intensity-2', 'intensity-3');
+          const zoneData = mappedData.zones[z.getAttribute('data-zone')];
+
+          if (zoneData) {
+            if (zoneData.intensity >= 8) {
+              z.classList.add('intensity-3');
+            } else if (zoneData.intensity >= 4) {
+              z.classList.add('intensity-2');
+            } else {
+              z.classList.add('intensity-1');
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
