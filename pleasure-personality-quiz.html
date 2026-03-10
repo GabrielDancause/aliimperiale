@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pleasure Personality Quiz — Discover Your Type</title>
+  <meta name="description" content="Take this interactive pleasure personality quiz to discover your unique sexual personality type. Learn about your preferences for touch, pacing, and connection, with personalized enhancement tips.">
+  <meta property="og:title" content="Pleasure Personality Quiz — Discover Your Type">
+  <meta property="og:description" content="Take this interactive pleasure personality quiz to discover your unique sexual personality type. Learn about your preferences for touch, pacing, and connection, with personalized enhancement tips.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/pleasure-personality-quiz.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/pleasure-personality-quiz.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body { background-color: #FAF8EB; }
+    .tool-hero {
+      text-align: center;
+      padding: 80px 24px 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .tool-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .tool-hero p {
+      font-size: 1.1rem;
+      color: #5a6b50;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .quiz-container {
+      max-width: 700px;
+      margin: 0 auto 64px;
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #e2dabc;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #eee;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .question-block {
+      display: none;
+    }
+    .question-block.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .question-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      border: 2px solid #e2dabc;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1.05rem;
+      color: #2E3E24;
+      background: #fff;
+    }
+    .option-label:hover {
+      border-color: #AD9846;
+      background: #fdfcf8;
+    }
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 16px;
+      position: relative;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .option-input::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 12px;
+      height: 12px;
+      background-color: #AD9846;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+    .option-input:checked::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .option-input:checked + .option-text {
+      font-weight: 600;
+    }
+    .option-label:has(.option-input:checked) {
+      border-color: #AD9846;
+      background: #FAF8EB;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+    }
+    .btn {
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-prev {
+      background: transparent;
+      color: #5a6b50;
+      border: 2px solid #e2dabc;
+    }
+    .btn-prev:hover {
+      background: #fdfcf8;
+      border-color: #AD9846;
+      color: #2E3E24;
+    }
+    .btn-next {
+      background: #2E3E24;
+      color: white;
+      margin-left: auto;
+    }
+    .btn-next:hover {
+      background: #3e5330;
+    }
+    .btn-next:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .results-block {
+      display: none;
+      text-align: left;
+    }
+    .results-block.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    .result-header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+    .result-type {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #AD9846;
+      margin: 8px 0 16px;
+    }
+    .result-desc {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      line-height: 1.6;
+    }
+    .result-section {
+      margin-bottom: 24px;
+    }
+    .result-section h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+    .result-section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    .result-section li {
+      margin-bottom: 8px;
+      color: #5a6b50;
+      line-height: 1.5;
+    }
+    .action-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #AD9846;
+      color: #AD9846;
+    }
+    .btn-outline:hover {
+      background: #FAF8EB;
+    }
+
+    .faq-section {
+      max-width: 800px;
+      margin: 64px auto;
+      padding: 0 24px;
+    }
+    .faq-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .faq-item {
+      margin-bottom: 24px;
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .faq-item h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+    .faq-item p {
+      color: #5a6b50;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Notification */
+    .notification {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #2E3E24;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 600px) {
+      .quiz-container {
+        padding: 20px;
+        border-radius: 12px;
+      }
+      .tool-hero h1 { font-size: 2rem; }
+      .option-label { padding: 12px 16px; }
+      .result-type { font-size: 1.8rem; }
+    }
+
+    .site-nav {
+      background-color: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      color: #FAF8EB;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: #AD9846;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* Handled by mobile-nav.js */
+      }
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a sexual pleasure personality type?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A pleasure personality type categorizes the core ways you prefer to experience arousal, intimacy, and satisfaction. While everyone is unique, finding your dominant type helps you understand what naturally turns you on—whether it's physical touch, emotional connection, novelty, or sensory experiences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can knowing my pleasure type improve my sex life?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Understanding your type gives you a roadmap to what feels best for you. It empowers you to communicate your needs clearly to partners, explore activities that genuinely excite you, and avoid frustrating encounters that don't align with your core desires."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can my pleasure personality type change?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Your desires are fluid and can evolve over time based on your life stage, relationship dynamics, stress levels, and personal growth. It's totally normal for a highly Physical type to lean more Emotional with a certain partner or at a different point in life."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I fit into more than one type?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most people are a blend of types! You likely have a primary type and one or two secondary types. The goal isn't to put yourself in a box, but rather to give you a vocabulary to describe the multifaceted ways you enjoy pleasure."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="tool-hero">
+      <h1>Discover Your Pleasure Personality</h1>
+      <p>We all experience pleasure differently. Are you driven by deep emotional connection, intense physical sensation, novelty, or sensory immersion? Take this 15-question quiz to uncover your unique pleasure profile and learn how to maximize your satisfaction.</p>
+    </section>
+
+    <div class="quiz-container">
+      <div id="quiz-ui">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <form id="quiz-form">
+          <!-- Questions will be injected here -->
+        </form>
+
+        <div class="nav-buttons">
+          <button type="button" class="btn btn-prev" id="btn-prev" style="display: none;">Back</button>
+          <button type="button" class="btn btn-next" id="btn-next" disabled>Next</button>
+        </div>
+      </div>
+
+      <div id="results-ui" class="results-block">
+        <!-- Results will be injected here -->
+      </div>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What is a sexual pleasure personality type?</h3>
+        <p>A pleasure personality type categorizes the core ways you prefer to experience arousal, intimacy, and satisfaction. While everyone is unique, finding your dominant type helps you understand what naturally turns you on—whether it's physical touch, emotional connection, novelty, or sensory experiences.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can knowing my pleasure type improve my sex life?</h3>
+        <p>Understanding your type gives you a roadmap to what feels best for you. It empowers you to communicate your needs clearly to partners, explore activities that genuinely excite you, and avoid frustrating encounters that don't align with your core desires.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can my pleasure personality type change?</h3>
+        <p>Absolutely. Your desires are fluid and can evolve over time based on your life stage, relationship dynamics, stress levels, and personal growth. It's totally normal for a highly Physical type to lean more Emotional with a certain partner or at a different point in life.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What if I fit into more than one type?</h3>
+        <p>Most people are a blend of types! You likely have a primary type and one or two secondary types. The goal isn't to put yourself in a box, but rather to give you a vocabulary to describe the multifaceted ways you enjoy pleasure.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="notification" id="notification">Progress saved!</div>
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <script>
+    const questions = [
+      {
+        id: "q1",
+        title: "When you think about an ideal sexual experience, what is the most essential element?",
+        options: [
+          { text: "Feeling a deep, intense emotional bond and absolute safety with my partner.", type: "Emotional" },
+          { text: "The physical sensations—the friction, the rhythm, the pure bodily pleasure.", type: "Physical" },
+          { text: "Trying something totally new, surprising, or breaking the routine.", type: "Adventurous" },
+          { text: "The buildup—teasing, soft touches, specific lighting, and taking our time.", type: "Sensual" }
+        ]
+      },
+      {
+        id: "q2",
+        title: "How do you prefer to transition into intimacy?",
+        options: [
+          { text: "I love a long runway. Start with a massage, dim lighting, and soft music.", type: "Sensual" },
+          { text: "I like when it happens spontaneously, maybe in an unexpected place.", type: "Adventurous" },
+          { text: "I need to feel emotionally connected first. A deep conversation or looking into their eyes.", type: "Emotional" },
+          { text: "Just get right to it! A heavy makeout session that escalates quickly.", type: "Physical" }
+        ]
+      },
+      {
+        id: "q3",
+        title: "What role does your environment play in your arousal?",
+        options: [
+          { text: "It's crucial. I need the room to smell good, the sheets to be soft, and the lighting to be just right.", type: "Sensual" },
+          { text: "I don't really notice the room if the physical stimulation is good.", type: "Physical" },
+          { text: "I actually like changing it up—hotels, a different room, or even outdoors.", type: "Adventurous" },
+          { text: "It doesn't matter much, as long as I feel completely secure and loved in that moment.", type: "Emotional" }
+        ]
+      },
+      {
+        id: "q4",
+        title: "During sex, where is your focus mostly directed?",
+        options: [
+          { text: "On the specific physical sensations my body is experiencing.", type: "Physical" },
+          { text: "On the emotional exchange, eye contact, and feeling their energy.", type: "Emotional" },
+          { text: "On the overall atmosphere, the sounds, the smells, and the slow touches.", type: "Sensual" },
+          { text: "On trying a new position or exploring a new fantasy we discussed.", type: "Adventurous" }
+        ]
+      },
+      {
+        id: "q5",
+        title: "Which of these sounds like the best foreplay to you?",
+        options: [
+          { text: "Roleplaying or introducing a new sex toy we haven't used before.", type: "Adventurous" },
+          { text: "A slow, full-body massage with warm oil.", type: "Sensual" },
+          { text: "Direct, intense touch on my most sensitive areas.", type: "Physical" },
+          { text: "Cuddling, whispering sweet things, and reassuring each other.", type: "Emotional" }
+        ]
+      },
+      {
+        id: "q6",
+        title: "How do you typically reach climax?",
+        options: [
+          { text: "Through consistent, targeted physical stimulation and a specific rhythm.", type: "Physical" },
+          { text: "Usually when I feel overwhelmingly connected and in sync with my partner.", type: "Emotional" },
+          { text: "When my senses are fully overwhelmed—the sights, sounds, and touches all build up.", type: "Sensual" },
+          { text: "It's highly variable! The excitement of a new scenario often pushes me over the edge.", type: "Adventurous" }
+        ]
+      },
+      {
+        id: "q7",
+        title: "If sex had to be described as a genre for you, what would it be?",
+        options: [
+          { text: "A slow-burn romance novel where the emotional tension is palpable.", type: "Emotional" },
+          { text: "An action movie—intense, fast-paced, and physically demanding.", type: "Physical" },
+          { text: "A beautifully shot, highly aesthetic indie film that engages all the senses.", type: "Sensual" },
+          { text: "A thrilling adventure or mystery where you don't know what happens next.", type: "Adventurous" }
+        ]
+      },
+      {
+        id: "q8",
+        title: "How do you feel about scheduling sex?",
+        options: [
+          { text: "I don't love it. I prefer the thrill of spontaneity and doing it when the mood strikes.", type: "Adventurous" },
+          { text: "I like it! It gives me time to set the mood, light candles, and prepare my space.", type: "Sensual" },
+          { text: "It's fine, as long as the physical drive is there when the time comes.", type: "Physical" },
+          { text: "I prefer when it arises naturally from a moment of deep connection, rather than a calendar.", type: "Emotional" }
+        ]
+      },
+      {
+        id: "q9",
+        title: "What is your biggest 'turn-off'?",
+        options: [
+          { text: "Feeling emotionally distant or in a fight with my partner.", type: "Emotional" },
+          { text: "A bad environment—like a messy room, bad smells, or harsh lighting.", type: "Sensual" },
+          { text: "A routine that has become entirely predictable and boring.", type: "Adventurous" },
+          { text: "A lack of direct, satisfying physical stimulation or mismatched pacing.", type: "Physical" }
+        ]
+      },
+      {
+        id: "q10",
+        title: "What kind of dirty talk works best for you?",
+        options: [
+          { text: "Explicit descriptions of exactly what they are going to do to my body.", type: "Physical" },
+          { text: "Hearing how much they love me, how safe I am, or how deeply they feel for me.", type: "Emotional" },
+          { text: "Whispered praises, describing how good I look, smell, or taste.", type: "Sensual" },
+          { text: "Talking through a fantasy, a scenario, or trying on different personas.", type: "Adventurous" }
+        ]
+      },
+      {
+        id: "q11",
+        title: "How important is eye contact to you during intimacy?",
+        options: [
+          { text: "Absolutely vital. It's how I feel the emotional bond.", type: "Emotional" },
+          { text: "It's nice, but sometimes I prefer to close my eyes and just feel the physical sensations.", type: "Physical" },
+          { text: "I love it, especially if the lighting makes everything look cinematic and beautiful.", type: "Sensual" },
+          { text: "It depends on the scenario! Sometimes blindfolds are more fun.", type: "Adventurous" }
+        ]
+      },
+      {
+        id: "q12",
+        title: "If you had to choose one prop or addition for the bedroom, what would it be?",
+        options: [
+          { text: "A brand new, high-tech sex toy or some light bondage gear.", type: "Adventurous" },
+          { text: "A massage oil candle or high-quality silk sheets.", type: "Sensual" },
+          { text: "A classic vibrator—something reliable that gets the physical job done.", type: "Physical" },
+          { text: "Nothing extra. Just undisturbed time to focus entirely on each other.", type: "Emotional" }
+        ]
+      },
+      {
+        id: "q13",
+        title: "How do you feel about 'quickies'?",
+        options: [
+          { text: "Love them! They are intense, efficient, and physically satisfying.", type: "Physical" },
+          { text: "They are great because they are usually spontaneous and exciting.", type: "Adventurous" },
+          { text: "Not my favorite. I need more time to transition and build the sensory experience.", type: "Sensual" },
+          { text: "Only if we are already feeling deeply connected; otherwise, I feel rushed.", type: "Emotional" }
+        ]
+      },
+      {
+        id: "q14",
+        title: "What is your ideal aftercare?",
+        options: [
+          { text: "Deep cuddling, forehead kisses, and talking about how much we care about each other.", type: "Emotional" },
+          { text: "Lying in a pile of comfortable blankets, maybe having a snack or a warm drink.", type: "Sensual" },
+          { text: "Catching my breath, enjoying the post-orgasm physical glow, maybe a quick shower.", type: "Physical" },
+          { text: "Laughing, debriefing what we just did, or talking about what we want to try next time.", type: "Adventurous" }
+        ]
+      },
+      {
+        id: "q15",
+        title: "When you masturbate, what usually gets you going?",
+        options: [
+          { text: "Focusing heavily on specific physical friction and reliable techniques.", type: "Physical" },
+          { text: "Taking my time, setting a mood, using lotion, and enjoying the entire process.", type: "Sensual" },
+          { text: "Fantasizing about intense emotional scenarios or romantic encounters.", type: "Emotional" },
+          { text: "Watching new types of erotica or reading a fantasy scenario I haven't thought of before.", type: "Adventurous" }
+        ]
+      }
+    ];
+
+    const resultsData = {
+      "Sensual": {
+        title: "The Sensual Pleasure Seeker",
+        description: "For you, pleasure is a full-body, multi-sensory experience. You don't just want physical touch; you want an atmosphere. You thrive when all your senses—sight, smell, sound, and touch—are engaged. You likely appreciate a 'slow burn' and require a solid runway of foreplay to fully drop into your body. Rushing is the enemy of your pleasure.",
+        tips: [
+          "Invest in your environment: dim lighting, specific playlists, and good smelling candles or massage oils are non-negotiable for your best experiences.",
+          "Communicate your need for a 'slow runway' to your partner. Explain that sensual touch (like a massage) is just as important as direct genital stimulation.",
+          "Try incorporating temperature play, like warming massage oils or an ice cube, to further engage your senses."
+        ]
+      },
+      "Physical": {
+        title: "The Physical Pleasure Seeker",
+        description: "You are highly attuned to the mechanical, bodily sensations of sex. For you, pleasure is direct, rhythmic, and visceral. You likely know exactly what type of friction, pressure, and speed your body requires to reach orgasm. While you can enjoy atmosphere and romance, the core of your satisfaction comes from the tangible, physical acts of sex.",
+        tips: [
+          "Don't be afraid to be highly specific with your partner about what physical touch works for you. Use your hands to guide theirs.",
+          "Incorporate high-quality toys that deliver consistent, targeted stimulation.",
+          "Remember that it's okay if you don't need a huge emotional buildup to enjoy physical pleasure; your body's straightforward responsiveness is a gift."
+        ]
+      },
+      "Emotional": {
+        title: "The Emotional Pleasure Seeker",
+        description: "Your arousal is inextricably linked to your heart. For you, the most intense orgasms happen when you feel completely safe, seen, and deeply connected to your partner. Physical touch without an emotional anchor might feel hollow to you. You require trust and vulnerability to fully surrender to pleasure.",
+        tips: [
+          "Prioritize 'emotional foreplay'—deep conversations, checking in throughout the day, or sharing affirmations before getting physical.",
+          "Use eye contact during sex to maintain that intense tether of connection with your partner.",
+          "If you are feeling disconnected from your partner, address the emotional block first before trying to force physical intimacy."
+        ]
+      },
+      "Adventurous": {
+        title: "The Adventurous Pleasure Seeker",
+        description: "Novelty is your ultimate aphrodisiac. You get bored by routine and crave spontaneity, surprise, and exploration. Your pleasure spikes when you are trying a new position, exploring a taboo fantasy, or having sex in a new environment. The thrill of the unknown is what drops you into your arousal.",
+        tips: [
+          "Keep a 'Yes/No/Maybe' list with your partner to continually discover new boundaries and fantasies to explore.",
+          "Change up the routine regularly—try having sex at different times of the day or in rooms other than the bedroom.",
+          "Explore roleplay or light kink to introduce new psychological thrills into your sex life."
+        ]
+      }
+    };
+
+    let currentStep = 0;
+    let userAnswers = {}; // questionId: selectedType
+
+    const form = document.getElementById('quiz-form');
+    const btnNext = document.getElementById('btn-next');
+    const btnPrev = document.getElementById('btn-prev');
+    const progressBar = document.getElementById('progress');
+    const quizUi = document.getElementById('quiz-ui');
+    const resultsUi = document.getElementById('results-ui');
+    const notification = document.getElementById('notification');
+
+    function initQuiz() {
+      // Load from localStorage
+      const savedState = localStorage.getItem('pleasureQuizState');
+      if (savedState) {
+        try {
+          const state = JSON.parse(savedState);
+          userAnswers = state.answers || {};
+          currentStep = state.step || 0;
+        } catch(e) {
+          console.error("Could not load state");
+        }
+      }
+
+      renderQuestions();
+      updateUI();
+    }
+
+    function renderQuestions() {
+      form.innerHTML = '';
+      questions.forEach((q, index) => {
+        const block = document.createElement('div');
+        block.className = 'question-block';
+        block.id = `step-${index}`;
+
+        const title = document.createElement('h2');
+        title.className = 'question-title';
+        title.textContent = `${index + 1}. ${q.title}`;
+        block.appendChild(title);
+
+        const grid = document.createElement('div');
+        grid.className = 'options-grid';
+
+        q.options.forEach((opt, optIndex) => {
+          const label = document.createElement('label');
+          label.className = 'option-label';
+
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = q.id;
+          input.value = opt.type;
+          input.className = 'option-input';
+
+          // Restore selected state
+          if (userAnswers[q.id] === opt.type) {
+            input.checked = true;
+          }
+
+          input.addEventListener('change', () => {
+            userAnswers[q.id] = opt.type;
+            saveState();
+            checkNextButton();
+          });
+
+          const textSpan = document.createElement('span');
+          textSpan.className = 'option-text';
+          textSpan.textContent = opt.text;
+
+          label.appendChild(input);
+          label.appendChild(textSpan);
+          grid.appendChild(label);
+        });
+
+        block.appendChild(grid);
+        form.appendChild(block);
+      });
+    }
+
+    function updateUI() {
+      // Hide all steps
+      document.querySelectorAll('.question-block').forEach((b, i) => {
+        if(i === currentStep) {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
+        }
+      });
+
+      // Update progress
+      const progressPercent = (currentStep / questions.length) * 100;
+      progressBar.style.width = `${progressPercent}%`;
+
+      // Buttons
+      if (currentStep === 0) {
+        btnPrev.style.display = 'none';
+      } else {
+        btnPrev.style.display = 'block';
+      }
+
+      if (currentStep === questions.length - 1) {
+        btnNext.textContent = 'See Results';
+      } else {
+        btnNext.textContent = 'Next';
+      }
+
+      checkNextButton();
+
+      // Scroll to top of quiz
+      if (currentStep > 0) {
+        const quizTop = document.querySelector('.quiz-container').getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({top: quizTop, behavior: 'smooth'});
+      }
+    }
+
+    function checkNextButton() {
+      const currentQId = questions[currentStep].id;
+      if (userAnswers[currentQId]) {
+        btnNext.disabled = false;
+      } else {
+        btnNext.disabled = true;
+      }
+    }
+
+    function saveState() {
+      const state = {
+        answers: userAnswers,
+        step: currentStep
+      };
+      localStorage.setItem('pleasureQuizState', JSON.stringify(state));
+      showNotification();
+    }
+
+    let notifTimeout;
+    function showNotification() {
+      notification.classList.add('show');
+      clearTimeout(notifTimeout);
+      notifTimeout = setTimeout(() => {
+        notification.classList.remove('show');
+      }, 2000);
+    }
+
+    function calculateResults() {
+      const counts = { Sensual: 0, Physical: 0, Emotional: 0, Adventurous: 0 };
+
+      for (const key in userAnswers) {
+        if (counts[userAnswers[key]] !== undefined) {
+          counts[userAnswers[key]]++;
+        }
+      }
+
+      // Find max
+      let maxCount = 0;
+      let dominantType = "Sensual"; // default fallback
+
+      for (const type in counts) {
+        if (counts[type] > maxCount) {
+          maxCount = counts[type];
+          dominantType = type;
+        }
+      }
+
+      return dominantType;
+    }
+
+    function showResults() {
+      const dominantType = calculateResults();
+      const resultData = resultsData[dominantType];
+
+      quizUi.style.display = 'none';
+
+      let tipsHtml = '';
+      resultData.tips.forEach(tip => {
+        tipsHtml += `<li>${tip}</li>`;
+      });
+
+      resultsUi.innerHTML = `
+        <div class="result-header">
+          <h2>Your Pleasure Personality is...</h2>
+          <h1 class="result-type">${resultData.title}</h1>
+          <p class="result-desc">${resultData.description}</p>
+        </div>
+
+        <div class="result-section">
+          <h3>How to Maximize Your Pleasure:</h3>
+          <ul>
+            ${tipsHtml}
+          </ul>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-next" onclick="restartQuiz()">Retake Quiz</button>
+          <button class="btn btn-outline" onclick="copyResults()">Share Result</button>
+        </div>
+      `;
+
+      resultsUi.classList.add('active');
+      localStorage.removeItem('pleasureQuizState'); // clear state after completion
+
+      const quizTop = document.querySelector('.quiz-container').getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({top: quizTop, behavior: 'smooth'});
+    }
+
+    function restartQuiz() {
+      userAnswers = {};
+      currentStep = 0;
+      localStorage.removeItem('pleasureQuizState');
+
+      resultsUi.classList.remove('active');
+      quizUi.style.display = 'block';
+
+      renderQuestions();
+      updateUI();
+    }
+
+    function copyResults() {
+      const dominantType = calculateResults();
+      const text = `I just took the Pleasure Personality Quiz and got: ${resultsData[dominantType].title}! Discover your unique sexual personality type at aliimperiale.com/pleasure-personality-quiz.html`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        notification.textContent = "Result copied to clipboard!";
+        showNotification();
+        setTimeout(() => { notification.textContent = "Progress saved!"; }, 2000); // reset text
+      });
+    }
+
+    btnNext.addEventListener('click', () => {
+      if (currentStep < questions.length - 1) {
+        currentStep++;
+        saveState();
+        updateUI();
+      } else {
+        showResults();
+      }
+    });
+
+    btnPrev.addEventListener('click', () => {
+      if (currentStep > 0) {
+        currentStep--;
+        saveState();
+        updateUI();
+      }
+    });
+
+    // Initialize
+    initQuiz();
+</script>
+
+</body>
+</html>
