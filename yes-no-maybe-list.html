@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yes/No/Maybe List Generator — Ali Imperiale</title>
+  <meta name="description" content="An interactive couples communication tool to discuss boundaries and desires. A tasteful Yes/No/Maybe list to help explore your relationship.">
+  <meta property="og:title" content="Yes/No/Maybe List Generator — Ali Imperiale">
+  <meta property="og:description" content="An interactive couples communication tool to discuss boundaries and desires. A tasteful Yes/No/Maybe list to help explore your relationship.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/yes-no-maybe-list.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Yes/No/Maybe List Generator">
+  <meta name="twitter:description" content="An interactive couples communication tool to discuss boundaries and desires.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/yes-no-maybe-list.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is a Yes/No/Maybe list?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A Yes/No/Maybe list is an interactive couples communication tool used to explore sexual desires, boundaries, and fantasies in a safe, structured way. It allows partners to rate different activities independently and then compare their answers to find mutual interests."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How do you use a Yes No Maybe list?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Partner 1 goes through the list of activities and marks each as Yes (interested), No (not interested), or Maybe (open to discussing). Then, Partner 2 completes the same list without seeing the first partner's answers. Once both are finished, the tool reveals only the overlapping 'Yes' and 'Maybe' answers to focus on shared desires without pressure."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Why are boundaries important in relationships?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Discussing boundaries is crucial for healthy communication and emotional safety. It ensures both partners feel respected and understood, reducing anxiety and making it easier to explore intimacy comfortably."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Can a Yes/No/Maybe list improve intimacy?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes! By providing a structured, judgment-free way to share fantasies, couples can discover new shared interests, improve their communication, and build deeper trust and intimacy."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Is my data saved when using this Yes/No/Maybe list?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. This tool is completely private. All your answers are processed entirely in your web browser, and no data is saved, stored, or sent to any server."
+    }
+  }]
+}
+</script>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tool-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .tool-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+    .tool-header h1 {
+      font-size: 2.8rem;
+      font-weight: 400;
+      font-family: 'The Bloomington', cursive;
+      margin-bottom: 16px;
+      color: #FAF8EB;
+    }
+    .tool-header p {
+      font-size: 1.1rem;
+      color: #C6C8BB;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .tool-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(46, 62, 36, 0.08);
+      margin-bottom: 40px;
+    }
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    .step-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #C6C8BB;
+      transition: background-color 0.3s;
+    }
+    .step-dot.active {
+      background-color: #AD9846;
+    }
+    .question-category {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #AD9846;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .question-text {
+      font-size: 1.6rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.4;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-rating {
+      padding: 14px 32px;
+      border: 2px solid #2E3E24;
+      background: transparent;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex: 1;
+      min-width: 120px;
+      max-width: 200px;
+    }
+    .btn-rating:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    .btn-rating.yes:hover { background: #2E3E24; border-color: #2E3E24; }
+    .btn-rating.no:hover { background: #8a8a7a; border-color: #8a8a7a; }
+    .btn-rating.maybe:hover { background: #AD9846; border-color: #AD9846; }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #AD9846;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      background: #c4b460;
+      transform: translateY(-2px);
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: #C6C8BB;
+      border-radius: 3px;
+      margin-top: 40px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .results-section {
+      display: none;
+    }
+    .results-category {
+      margin-bottom: 40px;
+    }
+    .results-category h3 {
+      font-size: 1.4rem;
+      color: #2E3E24;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+    }
+    .result-text {
+      font-weight: 500;
+    }
+    .result-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .badge-yes { background: #2E3E24; color: #FAF8EB; }
+    .badge-maybe { background: #AD9846; color: #2E3E24; }
+
+    .intro-screen, .partner-transition-screen {
+      text-align: center;
+    }
+
+    .edu-section {
+      background: #ffffff;
+      padding: 60px 20px;
+      margin-top: 60px;
+    }
+    .edu-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .edu-inner h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 2rem;
+      margin-bottom: 24px;
+      color: #2E3E24;
+    }
+    .edu-inner p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .faq-item {
+      margin-bottom: 24px;
+    }
+    .faq-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .card { padding: 30px 20px; }
+      .question-text { font-size: 1.3rem; }
+      .btn-rating { padding: 12px 20px; min-width: 100px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .site-nav, .site-footer, .edu-section, .tool-header, .btn-primary, .btn-secondary { display: none !important; }
+      .card { box-shadow: none; border: none; padding: 0; }
+      .results-section { display: block !important; }
+      .result-item { border-bottom: 1px solid #ccc; page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav" style="background: #2E3E24; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32" style="height: 32px; opacity: 0.9;"></a>
+    <ul class="nav-links" style="display: flex; gap: 24px; list-style: none; margin: 0; padding: 0;">
+      <li><a href="/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Home</a></li>
+      <li><a href="/blog/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Blog</a></li>
+      <li><a href="/about.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">YouTube</a></li>
+      <li><a href="/open-and-honest.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <div class="tool-header">
+      <h1>Yes / No / Maybe List</h1>
+      <p>A private, judgment-free tool for couples to communicate desires, establish boundaries, and find shared fantasies. All data stays in your browser.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="card" id="app-card">
+
+        <!-- Intro Screen -->
+        <div id="screen-intro" class="intro-screen">
+          <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 2rem; color: #2E3E24; margin-bottom: 20px;">Ready to explore?</h2>
+          <p style="font-size: 1.1rem; color: #555549; margin-bottom: 30px; line-height: 1.6;">How this works:<br>1. <strong>Partner 1</strong> goes through the list alone.<br>2. <strong>Partner 2</strong> goes through the same list.<br>3. The tool reveals <em>only</em> the things you both said Yes or Maybe to.</p>
+          <button class="btn-primary" onclick="startApp()">Start: Partner 1</button>
+        </div>
+
+        <!-- Question Screen -->
+        <div id="screen-questions" style="display: none;">
+          <div class="step-indicator">
+            <span style="font-weight: 600; font-size: 0.9rem; color: #8a8a7a;" id="partner-label">Partner 1</span>
+          </div>
+          <div class="question-category" id="q-category">Romantic</div>
+          <div class="question-text" id="q-text">Holding hands in public</div>
+          <div class="btn-group">
+            <button class="btn-rating yes" onclick="rateItem('yes')">Yes</button>
+            <button class="btn-rating maybe" onclick="rateItem('maybe')">Maybe</button>
+            <button class="btn-rating no" onclick="rateItem('no')">No</button>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <div style="text-align: center; margin-top: 10px; font-size: 0.8rem; color: #8a8a7a;" id="progress-text">1 / 60</div>
+        </div>
+
+        <!-- Transition Screen -->
+        <div id="screen-transition" class="partner-transition-screen" style="display: none;">
+          <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 2rem; color: #2E3E24; margin-bottom: 20px;">Partner 1 Complete!</h2>
+          <p style="font-size: 1.1rem; color: #555549; margin-bottom: 30px;">Pass the device to Partner 2. No peeking!</p>
+          <button class="btn-secondary" onclick="startPartnerTwo()">Start: Partner 2</button>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="screen-results" class="results-section">
+          <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 2rem; color: #2E3E24; margin-bottom: 10px; text-align: center;">Your Overlap</h2>
+          <p style="text-align: center; margin-bottom: 40px; color: #555549;">Here are the things you both said Yes or Maybe to. Time to talk!</p>
+
+          <div id="results-container"></div>
+
+          <div style="text-align: center; margin-top: 50px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <button class="btn-secondary" onclick="shareResults()">Copy Summary</button>
+            <button class="btn-primary" onclick="window.print()">Save PDF / Print</button>
+            <button class="btn-secondary" style="background: transparent; border: 2px solid #2E3E24;" onclick="location.reload()">Reset List</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Educational Section -->
+    <div class="edu-section">
+      <div class="edu-inner">
+        <h2>Why Use a Yes/No/Maybe List?</h2>
+        <p>Talking about sex, boundaries, and fantasies can feel vulnerable. For many couples, bringing up a new idea feels risky — what if your partner judges you? What if they say no and things get awkward?</p>
+        <p>A Yes/No/Maybe list removes the pressure. It’s a structured, gamified way to explore what’s on the table. Because this tool only shows you the <strong>overlap</strong> (the things you both said Yes or Maybe to), you never have to feel rejected if you propose something your partner isn't into. If they marked it "No," it just disappears from the final results.</p>
+        <p>Think of this not as a to-do list, but as a conversation starter. If you both marked "Maybe" on something, that doesn't mean you have to do it tonight. It just means: <em>"I'm curious enough to talk about this over a glass of wine."</em></p>
+
+        <div style="width: 40px; height: 2px; background: #AD9846; margin: 40px 0; border-radius: 1px;"></div>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>Is my data private?</h3>
+          <p>100%. This tool operates entirely within your web browser. No data is saved, tracked, or sent to any server. When you close the tab, your answers are gone forever.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if we have very little overlap?</h3>
+          <p>That is completely normal, especially if you haven't discussed these topics much before. Focus on the few things you did overlap on! Quality of connection matters more than the quantity of activities.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can we change our minds?</h3>
+          <p>Always. A "Yes" today might be a "No" tomorrow. Enthusiastic, ongoing consent is the foundation of any healthy sexual relationship.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script>
+  const questions = [
+    // Romantic
+    { id: 'r1', category: 'Romantic', text: 'Holding hands in public' },
+    { id: 'r2', category: 'Romantic', text: 'Going on regular date nights' },
+    { id: 'r3', category: 'Romantic', text: 'Writing love letters or sweet notes' },
+    { id: 'r4', category: 'Romantic', text: 'Cuddling before falling asleep' },
+    { id: 'r5', category: 'Romantic', text: 'Planning surprise getaways' },
+    { id: 'r6', category: 'Romantic', text: 'Stargazing together' },
+    { id: 'r7', category: 'Romantic', text: 'Taking baths or showers together' },
+    { id: 'r8', category: 'Romantic', text: 'Giving each other massages' },
+    { id: 'r9', category: 'Romantic', text: 'Recreating your first date' },
+    { id: 'r10', category: 'Romantic', text: 'Cooking a meal together nude' },
+
+    // Sensual
+    { id: 's1', category: 'Sensual', text: 'Using blindfolds' },
+    { id: 's2', category: 'Sensual', text: 'Using ice or temperature play' },
+    { id: 's3', category: 'Sensual', text: 'Extended foreplay (30+ minutes)' },
+    { id: 's4', category: 'Sensual', text: 'Mutual masturbation' },
+    { id: 's5', category: 'Sensual', text: 'Using massage oils or lotions' },
+    { id: 's6', category: 'Sensual', text: 'Feather tickling or light scratching' },
+    { id: 's7', category: 'Sensual', text: 'Listening to erotic audio together' },
+    { id: 's8', category: 'Sensual', text: 'Sensory deprivation (earplugs + blindfold)' },
+    { id: 's9', category: 'Sensual', text: 'Edging (delaying orgasm)' },
+    { id: 's10', category: 'Sensual', text: 'Kissing everywhere but the genitals' },
+    { id: 's11', category: 'Sensual', text: 'Using silk ties or soft restraints' },
+    { id: 's12', category: 'Sensual', text: 'Eye-gazing during intimacy' },
+
+    // Adventurous
+    { id: 'a1', category: 'Adventurous', text: 'Having sex outside (secluded)' },
+    { id: 'a2', category: 'Adventurous', text: 'Having sex in a car' },
+    { id: 'a3', category: 'Adventurous', text: 'Having sex in a hotel room' },
+    { id: 'a4', category: 'Adventurous', text: 'Having sex in a pool or ocean' },
+    { id: 'a5', category: 'Adventurous', text: 'Trying a new sex toy together' },
+    { id: 'a6', category: 'Adventurous', text: 'Recording a private video (and deleting it)' },
+    { id: 'a7', category: 'Adventurous', text: 'Taking intimate photos of each other' },
+    { id: 'a8', category: 'Adventurous', text: 'Having sex in front of a mirror' },
+    { id: 'a9', category: 'Adventurous', text: 'Having sex with the lights fully on' },
+    { id: 'a10', category: 'Adventurous', text: 'Morning sex' },
+    { id: 'a11', category: 'Adventurous', text: 'Quickie before work' },
+    { id: 'a12', category: 'Adventurous', text: 'Going to a sex shop together' },
+
+    // Fantasy
+    { id: 'f1', category: 'Fantasy', text: 'Roleplaying: Strangers meeting at a bar' },
+    { id: 'f2', category: 'Fantasy', text: 'Roleplaying: Boss and employee' },
+    { id: 'f3', category: 'Fantasy', text: 'Roleplaying: Teacher and student' },
+    { id: 'f4', category: 'Fantasy', text: 'Light bondage (tying hands/feet)' },
+    { id: 'f5', category: 'Fantasy', text: 'Spanking' },
+    { id: 'f6', category: 'Fantasy', text: 'Hair pulling' },
+    { id: 'f7', category: 'Fantasy', text: 'Dirty talk' },
+    { id: 'f8', category: 'Fantasy', text: 'Calling each other specific names/titles' },
+    { id: 'f9', category: 'Fantasy', text: 'Watching porn together' },
+    { id: 'f10', category: 'Fantasy', text: 'Reading erotica to each other' },
+    { id: 'f11', category: 'Fantasy', text: 'Wearing specific lingerie/costumes' },
+    { id: 'f12', category: 'Fantasy', text: 'Threesome fantasy discussion (not acting on it)' },
+
+    // Communication
+    { id: 'c1', category: 'Communication', text: 'Giving feedback during sex' },
+    { id: 'c2', category: 'Communication', text: 'Asking for exactly what you want' },
+    { id: 'c3', category: 'Communication', text: 'Saying "no" or "stop" without feeling guilty' },
+    { id: 'c4', category: 'Communication', text: 'Discussing sexual desires outside the bedroom' },
+    { id: 'c5', category: 'Communication', text: 'Sexting during the day' },
+    { id: 'c6', category: 'Communication', text: 'Sending spicy photos to each other' },
+    { id: 'c7', category: 'Communication', text: 'Having a safe word' },
+    { id: 'c8', category: 'Communication', text: 'Aftercare (cuddling/talking after sex)' },
+    { id: 'c9', category: 'Communication', text: 'Scheduling sex' },
+    { id: 'c10', category: 'Communication', text: 'Discussing past sexual experiences openly' }
+  ];
+
+  let currentPartner = 1;
+  let currentIndex = 0;
+
+  let p1Answers = {};
+  let p2Answers = {};
+
+  const elIntro = document.getElementById('screen-intro');
+  const elQuestions = document.getElementById('screen-questions');
+  const elTransition = document.getElementById('screen-transition');
+  const elResults = document.getElementById('screen-results');
+
+  const elCategory = document.getElementById('q-category');
+  const elText = document.getElementById('q-text');
+  const elProgress = document.getElementById('progress-bar');
+  const elProgressText = document.getElementById('progress-text');
+  const elPartnerLabel = document.getElementById('partner-label');
+  const elResultsContainer = document.getElementById('results-container');
+
+  function startApp() {
+    elIntro.style.display = 'none';
+    elQuestions.style.display = 'block';
+    currentPartner = 1;
+    currentIndex = 0;
+    p1Answers = {};
+    p2Answers = {};
+    renderQuestion();
+  }
+
+  function startPartnerTwo() {
+    elTransition.style.display = 'none';
+    elQuestions.style.display = 'block';
+    currentPartner = 2;
+    currentIndex = 0;
+    elPartnerLabel.innerText = 'Partner 2';
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const q = questions[currentIndex];
+    elCategory.innerText = q.category;
+    elText.innerText = q.text;
+
+    const progressPercent = ((currentIndex) / questions.length) * 100;
+    elProgress.style.width = progressPercent + '%';
+    elProgressText.innerText = (currentIndex + 1) + ' / ' + questions.length;
+  }
+
+  function rateItem(rating) {
+    const qId = questions[currentIndex].id;
+    if (currentPartner === 1) {
+      p1Answers[qId] = rating;
+    } else {
+      p2Answers[qId] = rating;
+    }
+
+    currentIndex++;
+
+    if (currentIndex >= questions.length) {
+      if (currentPartner === 1) {
+        elQuestions.style.display = 'none';
+        elTransition.style.display = 'block';
+      } else {
+        elQuestions.style.display = 'none';
+        showResults();
+      }
+    } else {
+      renderQuestion();
+    }
+  }
+
+  function showResults() {
+    elResults.style.display = 'block';
+
+    // Group overlaps by category
+    const overlaps = {};
+
+    questions.forEach(q => {
+      const a1 = p1Answers[q.id];
+      const a2 = p2Answers[q.id];
+
+      if ((a1 === 'yes' || a1 === 'maybe') && (a2 === 'yes' || a2 === 'maybe')) {
+        if (!overlaps[q.category]) {
+          overlaps[q.category] = [];
+        }
+
+        let status = 'maybe';
+        if (a1 === 'yes' && a2 === 'yes') {
+          status = 'yes';
+        }
+
+        overlaps[q.category].push({
+          text: q.text,
+          status: status
+        });
+      }
+    });
+
+    let html = '';
+
+    if (Object.keys(overlaps).length === 0) {
+      html = '<p style="text-align:center; padding: 40px; color: #555549; background: #FAF8EB; border-radius: 12px;">No overlaps found this time. That is okay! This is just a starting point for communication.</p>';
+    } else {
+      for (const cat in overlaps) {
+        html += `<div class="results-category">
+                  <h3>${cat}</h3>`;
+
+        overlaps[cat].forEach(item => {
+          const badgeClass = item.status === 'yes' ? 'badge-yes' : 'badge-maybe';
+          const badgeText = item.status === 'yes' ? 'Yes' : 'Maybe';
+          html += `<div class="result-item">
+                    <span class="result-text">${item.text}</span>
+                    <span class="result-badge ${badgeClass}">${badgeText}</span>
+                   </div>`;
+        });
+
+        html += `</div>`;
+      }
+    }
+
+    elResultsContainer.innerHTML = html;
+  }
+
+  function shareResults() {
+    let text = "Our Yes/No/Maybe List Overlap! 🌶️\n\n";
+    let yesCount = 0;
+    let maybeCount = 0;
+
+    questions.forEach(q => {
+      const a1 = p1Answers[q.id];
+      const a2 = p2Answers[q.id];
+      if (a1 === 'yes' && a2 === 'yes') yesCount++;
+      else if ((a1 === 'yes' || a1 === 'maybe') && (a2 === 'yes' || a2 === 'maybe')) maybeCount++;
+    });
+
+    text += `Mutual YES: ${yesCount} items\n`;
+    text += `Mutual MAYBE/MIXED: ${maybeCount} items\n\n`;
+    text += `Create your own at: https://aliimperiale.com/yes-no-maybe-list.html`;
+
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Summary copied to clipboard!");
+    }).catch(err => {
+      console.error('Could not copy text: ', err);
+    });
+  }
+</script>
+</body>
+</html>

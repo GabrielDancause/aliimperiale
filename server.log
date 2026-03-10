@@ -1,0 +1,8 @@
+127.0.0.1 - - [10/Mar/2026 10:22:21] "GET /yes-no-maybe-list.html HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 10:22:51] "GET /yes-no-maybe-list.html HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 10:22:52] "GET /shared.css HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 10:22:52] "GET /consent.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 10:22:52] "GET /logo-beige.webp HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 10:22:52] "GET /mobile-nav.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 10:22:52] "GET /fonts/NewStandard-Regular.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2026 10:22:52] "GET /fonts/TheBloomington-Script.woff2 HTTP/1.1" 200 -
