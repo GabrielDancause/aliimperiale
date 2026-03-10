@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relationship Compatibility Calculator — Ali Imperiale</title>
+  <meta name="description" content="A comprehensive assessment tool for couples to measure compatibility across communication, sexuality, life goals, conflict resolution, finances, and more.">
+  <meta property="og:title" content="Relationship Compatibility Calculator — Ali Imperiale">
+  <meta property="og:description" content="A comprehensive assessment tool for couples to measure compatibility across communication, sexuality, life goals, conflict resolution, finances, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/compatibility-calculator.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/compatibility-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .calculator-hero {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .calculator-hero h1 {
+      color: #FAF8EB;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .calculator-hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .main-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .section-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .section-title {
+      color: #AD9846;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #FAF8EB;
+      padding-bottom: 10px;
+    }
+    .question-block {
+      margin-bottom: 25px;
+    }
+    .question-text {
+      font-weight: 600;
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+    .option-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-bottom: 8px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .option-input:checked {
+      background-color: #AD9846;
+      box-shadow: inset 0 0 0 4px #fff;
+    }
+    .option-text {
+      font-size: 0.8rem;
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      .options-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .option-label {
+        flex-direction: row;
+        text-align: left;
+      }
+      .option-input {
+        margin-bottom: 0;
+        margin-right: 15px;
+      }
+      .option-text {
+        font-size: 0.95rem;
+      }
+    }
+    .calculate-btn {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      background-color: #AD9846;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      transition: background-color 0.2s;
+      margin: 40px 0;
+    }
+    .calculate-btn:hover {
+      background-color: #8c7a36;
+    }
+    #results-container {
+      display: none;
+      margin-top: 40px;
+    }
+    .result-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .overall-score-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #2E3E24;
+      color: #FAF8EB;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 5px 15px rgba(46, 62, 36, 0.3);
+    }
+    .overall-percent {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    .overall-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .report-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .report-card {
+      background: #fff;
+      border-left: 5px solid #AD9846;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .report-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .report-card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2E3E24;
+    }
+    .report-card-score {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #AD9846;
+    }
+    .report-card-advice {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #444;
+    }
+    .report-card-indicator {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .indicator-strong { background: #e6f4ea; color: #137333; }
+    .indicator-moderate { background: #fef7e0; color: #b06000; }
+    .indicator-needs-work { background: #fce8e6; color: #c5221f; }
+
+    .medical-disclaimer {
+      font-size: 0.8rem;
+      color: #666;
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background: #eaeaea;
+      border-radius: 8px;
+    }
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a relationship compatibility test perfectly accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No single relationship compatibility test can predict the future of a relationship with 100% accuracy. Tests serve as valuable tools to highlight areas of alignment and friction, providing a structured way to start important conversations rather than a definitive judgment on your relationship's fate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most important area of couples compatibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While all areas matter, many relationship experts point to 'Communication Styles' and 'Conflict Resolution' as foundational. Shared values (like life goals and family planning) are also crucial, but effective communication allows a couple to navigate differences in other areas successfully."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a relationship survive low compatibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, relationships can survive and even thrive despite low initial compatibility if both partners are deeply committed, willing to compromise, and dedicate effort to understanding each other. However, profound misalignments in core values (like having children) are much harder to overcome."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should we take a relationship assessment together or separately?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is often highly beneficial to take the assessment separately first, ensuring honest answers without the other partner's influence. Afterward, come together to compare your results in a safe, non-judgmental environment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should couples assess their compatibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "People change and evolve over time, meaning compatibility shifts as well. It's healthy to re-evaluate your alignment every year or during major life transitions (like moving, changing careers, or considering marriage)."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <div class="calculator-hero">
+    <h1>Relationship Compatibility Calculator</h1>
+    <p>A comprehensive assessment to evaluate your alignment across seven key relationship dimensions. Discover your strengths and identify areas for growth.</p>
+  </div>
+
+  <div class="main-container">
+    <form id="compatibility-form">
+      <!-- Section 1 -->
+      <div class="section-card" id="sec-communication">
+        <h2 class="section-title">1. Communication Styles</h2>
+        <!-- Questions will be injected here via JS for cleaner HTML -->
+      </div>
+      <!-- Section 2 -->
+      <div class="section-card" id="sec-sexual">
+        <h2 class="section-title">2. Sexual Compatibility</h2>
+      </div>
+      <!-- Section 3 -->
+      <div class="section-card" id="sec-lifegoals">
+        <h2 class="section-title">3. Life Goals Alignment</h2>
+      </div>
+      <!-- Section 4 -->
+      <div class="section-card" id="sec-conflict">
+        <h2 class="section-title">4. Conflict Resolution</h2>
+      </div>
+      <!-- Section 5 -->
+      <div class="section-card" id="sec-financial">
+        <h2 class="section-title">5. Financial Values</h2>
+      </div>
+      <!-- Section 6 -->
+      <div class="section-card" id="sec-family">
+        <h2 class="section-title">6. Family Planning</h2>
+      </div>
+      <!-- Section 7 -->
+      <div class="section-card" id="sec-social">
+        <h2 class="section-title">7. Social Needs</h2>
+      </div>
+
+      <button type="button" class="calculate-btn" id="calculate-btn">Calculate Compatibility</button>
+    </form>
+
+    <div id="results-container">
+      <div class="result-header">
+        <h2>Your Compatibility Profile</h2>
+        <div class="overall-score-circle">
+          <span class="overall-percent" id="overall-score">0%</span>
+          <span class="overall-label">Overall Match</span>
+        </div>
+        <p id="overall-summary" style="max-width: 600px; margin: 0 auto; line-height: 1.6; font-size: 1.1rem;"></p>
+      </div>
+      <div class="report-grid" id="report-grid">
+        <!-- Report cards will be injected here -->
+      </div>
+    </div>
+
+    <div class="medical-disclaimer">
+      <strong>Disclaimer:</strong> This tool is for educational and entertainment purposes only. It is not a substitute for professional relationship counseling, therapy, or mental health advice.
+    </div>
+
+    <div id="faq-container">
+
+<div class="faq-section" style="margin-top: 60px;">
+  <h2 style="text-align: center; color: #AD9846; margin-bottom: 30px;">Frequently Asked Questions</h2>
+
+  <div class="faq-item" style="background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+    <h3 style="margin-top: 0; color: #2E3E24; font-size: 1.1rem;">Is a relationship compatibility test perfectly accurate?</h3>
+    <p style="margin-bottom: 0; color: #444; line-height: 1.5;">No single relationship compatibility test can predict the future of a relationship with 100% accuracy. Tests serve as valuable tools to highlight areas of alignment and friction, providing a structured way to start important conversations rather than a definitive judgment on your relationship's fate.</p>
+  </div>
+
+  <div class="faq-item" style="background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+    <h3 style="margin-top: 0; color: #2E3E24; font-size: 1.1rem;">What is the most important area of couples compatibility?</h3>
+    <p style="margin-bottom: 0; color: #444; line-height: 1.5;">While all areas matter, many relationship experts point to 'Communication Styles' and 'Conflict Resolution' as foundational. Shared values (like life goals and family planning) are also crucial, but effective communication allows a couple to navigate differences in other areas successfully.</p>
+  </div>
+
+  <div class="faq-item" style="background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+    <h3 style="margin-top: 0; color: #2E3E24; font-size: 1.1rem;">Can a relationship survive low compatibility?</h3>
+    <p style="margin-bottom: 0; color: #444; line-height: 1.5;">Yes, relationships can survive and even thrive despite low initial compatibility if both partners are deeply committed, willing to compromise, and dedicate effort to understanding each other. However, profound misalignments in core values (like having children) are much harder to overcome.</p>
+  </div>
+
+  <div class="faq-item" style="background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+    <h3 style="margin-top: 0; color: #2E3E24; font-size: 1.1rem;">Should we take a relationship assessment together or separately?</h3>
+    <p style="margin-bottom: 0; color: #444; line-height: 1.5;">It is often highly beneficial to take the assessment separately first, ensuring honest answers without the other partner's influence. Afterward, come together to compare your results in a safe, non-judgmental environment.</p>
+  </div>
+
+  <div class="faq-item" style="background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+    <h3 style="margin-top: 0; color: #2E3E24; font-size: 1.1rem;">How often should couples assess their compatibility?</h3>
+    <p style="margin-bottom: 0; color: #444; line-height: 1.5;">People change and evolve over time, meaning compatibility shifts as well. It's healthy to re-evaluate your alignment every year or during major life transitions (like moving, changing careers, or considering marriage).</p>
+  </div>
+</div>
+
+    </div>
+
+  </div>
+
+<script src="mobile-nav.js" defer></script>
+<script src="newsletter-bar.js" defer></script>
+<script src="email-capture.js" defer></script>
+<script src="back-to-top.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const questions = {
+        communication: [
+            { id: "c1", text: "How often do you discuss your feelings openly with your partner?", weight: 1.2 },
+            { id: "c2", text: "When you share a concern, how well do you feel understood?", weight: 1.0 },
+            { id: "c3", text: "How comfortable are you bringing up difficult topics?", weight: 1.1 }
+        ],
+        sexual: [
+            { id: "s1", text: "How satisfied are you with the frequency of physical intimacy?", weight: 1.2 },
+            { id: "s2", text: "How comfortable are you expressing your sexual desires and boundaries?", weight: 1.1 },
+            { id: "s3", text: "How well do your libidos and sexual preferences align?", weight: 1.3 }
+        ],
+        lifegoals: [
+            { id: "l1", text: "How aligned are your 5-year and 10-year life plans?", weight: 1.5 },
+            { id: "l2", text: "Do you share similar ambitions regarding career and personal growth?", weight: 1.0 },
+            { id: "l3", text: "How well do your desired living locations (city vs. country, home country vs. abroad) match?", weight: 1.2 }
+        ],
+        conflict: [
+            { id: "cr1", text: "When you disagree, how quickly do you reach a healthy compromise?", weight: 1.2 },
+            { id: "cr2", text: "How often do arguments escalate into personal attacks?", weight: -1.0 }, // Reversed scoring in render
+            { id: "cr3", text: "Do you both apologize and forgive easily after a conflict?", weight: 1.1 }
+        ],
+        financial: [
+            { id: "f1", text: "How similar are your spending versus saving habits?", weight: 1.2 },
+            { id: "f2", text: "Do you agree on how to handle shared expenses and debt?", weight: 1.3 },
+            { id: "f3", text: "How aligned are your long-term financial goals (e.g., retirement, investing)?", weight: 1.1 }
+        ],
+        family: [
+            { id: "fp1", text: "Do you agree on whether or not to have children?", weight: 2.0 }, // Dealbreaker weight
+            { id: "fp2", text: "If you have or want children, do you agree on parenting styles and values?", weight: 1.2 },
+            { id: "fp3", text: "How aligned are your expectations regarding involvement with extended family?", weight: 1.0 }
+        ],
+        social: [
+            { id: "sn1", text: "How compatible are your needs for socialization versus alone time?", weight: 1.0 },
+            { id: "sn2", text: "Do you enjoy spending time with each other's friends and families?", weight: 0.9 },
+            { id: "sn3", text: "How well do your hobbies and leisure activities align?", weight: 0.8 }
+        ]
+    };
+
+    const advice = {
+        communication: {
+            strong: "Excellent! You have built a solid foundation of trust and openness. Keep prioritizing active listening and honest dialogue.",
+            moderate: "Good foundation, but there's room for improvement. Try scheduling regular 'check-ins' to discuss feelings before they escalate.",
+            needsWork: "Communication seems to be a hurdle. Consider practicing 'I' statements and active listening exercises, or exploring couples counseling to build better communication tools."
+        },
+        sexual: {
+            strong: "Great alignment! Your physical intimacy and ability to communicate about sex are strong pillars of your connection.",
+            moderate: "You have a decent baseline, but some desires or boundaries might need more open discussion. Focus on creating a safe space for vulnerability.",
+            needsWork: "There appears to be a disconnect here. Open, non-judgmental conversations about needs, boundaries, and desires are crucial. Consider consulting a sex therapist."
+        },
+        lifegoals: {
+            strong: "You are truly a team moving in the same direction! Shared goals make navigating life's challenges much easier.",
+            moderate: "You share some common ground, but some long-term visions differ. Try creating a joint vision board or mapping out a compromise for divergent paths.",
+            needsWork: "Your life trajectories seem to be pulling you in different directions. It's vital to have a serious conversation about dealbreakers and whether a compromise is truly possible without resentment."
+        },
+        conflict: {
+            strong: "Fantastic conflict resolution skills! You tackle the problem, not each other, which is key to longevity.",
+            moderate: "You handle disagreements okay, but sometimes things might escalate or linger. Focus on taking 'time-outs' when heated and returning to the issue calmly.",
+            needsWork: "Arguments seem to be damaging your connection. Learning healthy conflict resolution—focusing on the issue, avoiding blame, and practicing repair attempts—is essential."
+        },
+        financial: {
+            strong: "You are financially on the same page! This significantly reduces a major source of relationship stress.",
+            moderate: "You have some financial friction. Consider setting up a joint budget that allows for individual discretionary spending to reduce tension.",
+            needsWork: "Financial values are clashing. It's critical to have transparent conversations about debt, savings, and financial goals, perhaps with the help of a financial advisor."
+        },
+        family: {
+            strong: "Your visions for family life align perfectly, which is a massive strength for your long-term compatibility.",
+            moderate: "You agree on the big picture but differ on the details (like parenting styles or extended family involvement). Continuous dialogue is key here.",
+            needsWork: "There is a fundamental disagreement regarding family planning. This is often a dealbreaker; honest, potentially difficult conversations are needed immediately."
+        },
+        social: {
+            strong: "Your social rhythms mesh well! You respect each other's need for connection and autonomy.",
+            moderate: "You sometimes clash over how to spend free time. Work on finding a balance that honors both your introverted and extroverted needs.",
+            needsWork: "Your social needs are very different, leading to potential feelings of neglect or suffocation. Establishing clear boundaries and dedicated 'couple time' vs 'individual time' is necessary."
+        }
+    };
+
+    const sectionNames = {
+        communication: "Communication Styles",
+        sexual: "Sexual Compatibility",
+        lifegoals: "Life Goals",
+        conflict: "Conflict Resolution",
+        financial: "Financial Values",
+        family: "Family Planning",
+        social: "Social Needs"
+    };
+
+    // Render Form
+    for (const [sectionKey, sectionQuestions] of Object.entries(questions)) {
+        let containerId = `sec-${sectionKey}`;
+        if(sectionKey === 'lifegoals') containerId = 'sec-lifegoals'; // Match HTML ids
+        const container = document.getElementById(containerId);
+
+        if(container) {
+            sectionQuestions.forEach((q, index) => {
+                const isReversed = q.weight < 0;
+                const weightVal = Math.abs(q.weight);
+                const block = document.createElement('div');
+                block.className = 'question-block';
+                block.innerHTML = `
+                    <div class="question-text">${index + 1}. ${q.text}</div>
+                    <div class="options-grid" data-weight="${weightVal}" data-reversed="${isReversed}">
+                        <label class="option-label">
+                            <input type="radio" name="${q.id}" value="1" class="option-input" required>
+                            <span class="option-text">${isReversed ? 'Always' : 'Never'}</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="${q.id}" value="2" class="option-input">
+                            <span class="option-text">${isReversed ? 'Often' : 'Rarely'}</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="${q.id}" value="3" class="option-input">
+                            <span class="option-text">Sometimes</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="${q.id}" value="4" class="option-input">
+                            <span class="option-text">${isReversed ? 'Rarely' : 'Often'}</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="${q.id}" value="5" class="option-input">
+                            <span class="option-text">${isReversed ? 'Never' : 'Always'}</span>
+                        </label>
+                    </div>
+                `;
+                container.appendChild(block);
+            });
+        }
+    }
+
+    // Calculate Logic
+    document.getElementById('calculate-btn').addEventListener('click', () => {
+        const form = document.getElementById('compatibility-form');
+        if(!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        let totalScore = 0;
+        let totalPossible = 0;
+        const sectionScores = {};
+
+        for (const [sectionKey, sectionQuestions] of Object.entries(questions)) {
+            let sectionScore = 0;
+            let sectionPossible = 0;
+
+            sectionQuestions.forEach(q => {
+                const inputs = document.getElementsByName(q.id);
+                let selectedValue = 0;
+                for(let input of inputs) {
+                    if(input.checked) {
+                        selectedValue = parseInt(input.value);
+                        break;
+                    }
+                }
+
+                const weightVal = Math.abs(q.weight);
+                // The value is already mapped to 1 (worst) to 5 (best) via the labels, even for reversed questions
+                const normalizedScore = (selectedValue - 1) / 4; // 0 to 1
+
+                sectionScore += (normalizedScore * weightVal);
+                sectionPossible += weightVal;
+            });
+
+            const percentage = (sectionScore / sectionPossible) * 100;
+            sectionScores[sectionKey] = percentage;
+
+            totalScore += sectionScore;
+            totalPossible += sectionPossible;
+        }
+
+        const overallPercentage = Math.round((totalScore / totalPossible) * 100);
+
+        // Render Results
+        document.getElementById('overall-score').innerText = `${overallPercentage}%`;
+
+        let overallSummary = "";
+        if(overallPercentage >= 80) overallSummary = "Your relationship shows remarkable alignment across key areas. You have a very strong foundation for long-term success!";
+        else if (overallPercentage >= 60) overallSummary = "You have a solid connection with generally good compatibility, though there are specific areas that could benefit from active attention and compromise.";
+        else if (overallPercentage >= 40) overallSummary = "Your compatibility is moderate. There are significant differences in how you approach key life areas that require honest dialogue and dedicated effort to bridge.";
+        else overallSummary = "Your fundamental compatibility appears low. There are major misalignments in your values, goals, or styles that may pose significant challenges to long-term harmony.";
+
+        document.getElementById('overall-summary').innerText = overallSummary;
+
+        const reportGrid = document.getElementById('report-grid');
+        reportGrid.innerHTML = ''; // clear previous
+
+        for(const [sectionKey, percentage] of Object.entries(sectionScores)) {
+            const pRounded = Math.round(percentage);
+            let strengthClass = '';
+            let indicatorText = '';
+            let adviceText = '';
+
+            if(pRounded >= 75) {
+                strengthClass = 'indicator-strong';
+                indicatorText = 'Strong Match';
+                adviceText = advice[sectionKey].strong;
+            } else if(pRounded >= 50) {
+                strengthClass = 'indicator-moderate';
+                indicatorText = 'Moderate Alignment';
+                adviceText = advice[sectionKey].moderate;
+            } else {
+                strengthClass = 'indicator-needs-work';
+                indicatorText = 'Needs Attention';
+                adviceText = advice[sectionKey].needsWork;
+            }
+
+            const card = document.createElement('div');
+            card.className = 'report-card';
+            card.innerHTML = `
+                <div class="report-card-header">
+                    <div class="report-card-title">${sectionNames[sectionKey]}</div>
+                    <div class="report-card-score">${pRounded}%</div>
+                </div>
+                <div class="report-card-advice">${adviceText}</div>
+                <div class="report-card-indicator ${strengthClass}">${indicatorText}</div>
+            `;
+            reportGrid.appendChild(card);
+        }
+
+        document.getElementById('compatibility-form').style.display = 'none';
+        document.getElementById('calculator-hero') // hide hero
+        const resultsContainer = document.getElementById('results-container');
+        resultsContainer.style.display = 'block';
+        resultsContainer.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+</script>
+
+</body>
+</html>
