@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+
+  <script>
+    const phasesInfo = {
+      menstrual: {
+        title: "Menstrual Phase",
+        hormones: "Estrogen and Progesterone drop to their lowest levels.",
+        libido: "Typically lower libido. Energy levels may be lower, and you might crave rest and comfort.",
+        insights: "Focus on gentle touch, emotional intimacy, and self-care. It's totally normal if intercourse isn't appealing—explore sensual massage or solo pleasure with external stimulation. Communicate your need for rest or slow-paced connection to your partner."
+      },
+      follicular: {
+        title: "Follicular Phase",
+        hormones: "Estrogen and Testosterone slowly begin to rise.",
+        libido: "Desire and energy start to increase. You may feel more open to trying new things and initiating intimacy.",
+        insights: "Capitalize on rising energy! This is a great time to introduce new toys, try new positions, or flirt and communicate openly about fantasies. Your body is gearing up for ovulation, so natural lubrication might begin to increase."
+      },
+      ovulatory: {
+        title: "Ovulatory Phase",
+        hormones: "Estrogen and Testosterone peak.",
+        libido: "Peak sexual desire, arousal, and natural lubrication. You may feel most confident and orgasms can be more intense.",
+        insights: "Enjoy the natural boost! Your body is biologically primed for reproduction, which translates to heightened sensitivity and stronger cravings for connection. It's the perfect time for passionate, spontaneous intimacy. Remember, if you are avoiding pregnancy, be extra mindful of contraception."
+      },
+      luteal: {
+        title: "Luteal Phase",
+        hormones: "Progesterone rises while Estrogen and Testosterone drop.",
+        libido: "Libido may decrease or fluctuate. You might feel more sensitive, introspective, or experience PMS symptoms.",
+        insights: "As your body prepares for menstruation, you might prefer more affectionate, emotionally grounded intimacy over high-energy sex. Focus on cuddling, mutual masturbation, or extended foreplay. Be gentle with yourself and communicate any physical sensitivities (like breast tenderness) to your partner."
+      }
+    };
+
+    let currentResultData = null;
+
+    function calculateDesire() {
+      const lastPeriodStr = document.getElementById('last-period').value;
+      const cycleLength = parseInt(document.getElementById('cycle-length').value, 10);
+      const periodLength = parseInt(document.getElementById('period-length').value, 10);
+
+      if (!lastPeriodStr || isNaN(cycleLength) || isNaN(periodLength)) {
+        alert("Please fill in all fields correctly.");
+        return;
+      }
+
+      const inputDate = new Date(lastPeriodStr);
+      const userTimezoneOffset = inputDate.getTimezoneOffset() * 60000;
+      const lastPeriodDate = new Date(inputDate.getTime() + userTimezoneOffset);
+      lastPeriodDate.setHours(0, 0, 0, 0);
+
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const msPerDay = 1000 * 60 * 60 * 24;
+      const daysSinceStart = Math.floor((today - lastPeriodDate) / msPerDay);
+
+      if (daysSinceStart < 0) {
+        alert("Last period date cannot be in the future.");
+        return;
+      }
+
+      const currentDayOfCycle = (daysSinceStart % cycleLength) + 1;
+
+      let phaseKey = '';
+
+      const ovulatoryStart = cycleLength - 14 - 2;
+      const ovulatoryEnd = cycleLength - 14 + 1;
+
+      if (currentDayOfCycle <= periodLength) {
+        phaseKey = 'menstrual';
+      } else if (currentDayOfCycle > periodLength && currentDayOfCycle < ovulatoryStart) {
+        phaseKey = 'follicular';
+      } else if (currentDayOfCycle >= ovulatoryStart && currentDayOfCycle <= ovulatoryEnd) {
+        phaseKey = 'ovulatory';
+      } else {
+        phaseKey = 'luteal';
+      }
+
+      const info = phasesInfo[phaseKey];
+
+      const card = document.getElementById('current-phase-card');
+      card.innerHTML = ''; // Clear previous
+
+      const h3 = document.createElement('h3');
+      h3.textContent = `${info.title} (Day ${currentDayOfCycle} of ${cycleLength})`;
+
+      const p1 = document.createElement('p');
+      const strong1 = document.createElement('strong');
+      strong1.textContent = "What's happening chemically: ";
+      p1.appendChild(strong1);
+      p1.appendChild(document.createTextNode(info.hormones));
+
+      const p2 = document.createElement('p');
+      const strong2 = document.createElement('strong');
+      strong2.textContent = "Impact on libido: ";
+      p2.appendChild(strong2);
+      p2.appendChild(document.createTextNode(info.libido));
+
+      const p3 = document.createElement('p');
+      const strong3 = document.createElement('strong');
+      strong3.textContent = "Tips & Insights: ";
+      p3.appendChild(strong3);
+      p3.appendChild(document.createTextNode(info.insights));
+
+      card.appendChild(h3);
+      card.appendChild(p1);
+      card.appendChild(p2);
+      card.appendChild(p3);
+
+      document.getElementById('results-section').style.display = 'block';
+
+      const localDate = new Date(today.getTime() - (today.getTimezoneOffset() * 60000));
+      const isoDateStr = localDate.toISOString().split('T')[0];
+
+      currentResultData = {
+        date: isoDateStr,
+        dayOfCycle: currentDayOfCycle,
+        phaseTitle: info.title
+      };
+    }
+
+    function saveResult() {
+      if (!currentResultData) return;
+
+      let history = JSON.parse(localStorage.getItem('cycleDesireHistory')) || [];
+      history.unshift(currentResultData);
+      localStorage.setItem('cycleDesireHistory', JSON.stringify(history));
+
+      alert("Result saved to history!");
+      loadHistory();
+    }
+
+    function loadHistory() {
+      let history = JSON.parse(localStorage.getItem('cycleDesireHistory')) || [];
+      const historyList = document.getElementById('history-list');
+      const historySection = document.getElementById('history-section');
+
+      historyList.innerHTML = '';
+
+      if (history.length === 0) {
+        historySection.style.display = 'none';
+        return;
+      }
+
+      historySection.style.display = 'block';
+
+      history.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'history-item';
+
+        const h4 = document.createElement('h4');
+        h4.textContent = `Saved on: ${item.date}`;
+
+        const p = document.createElement('p');
+        p.textContent = `Cycle Day: ${item.dayOfCycle} — ${item.phaseTitle}`;
+
+        div.appendChild(h4);
+        div.appendChild(p);
+        historyList.appendChild(div);
+      });
+    }
+
+    function clearHistory() {
+      if (confirm("Are you sure you want to clear all saved history?")) {
+        localStorage.removeItem('cycleDesireHistory');
+        loadHistory();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadHistory);
+  </script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menstrual Cycle & Desire Calculator | Ali Imperiale</title>
+  <meta name="description" content="Understand how your menstrual cycle affects sexual desire, arousal, and pleasure. Calculate hormone cycle phases and get personalized insights on menstruation sexuality.">
+  <link rel="canonical" href="https://aliimperiale.com/menstrual-cycle-desire-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body { background-color: #FAF8EB; }
+
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    .calculator-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(46,62,36,0.05);
+      border: 1px solid #e8e4d4;
+    }
+    .calculator-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .calculator-header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .calculator-header p {
+      color: #5a6b50;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #d4cfb8;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: #AD9846;
+    }
+    .btn {
+      display: inline-block;
+      width: 100%;
+      padding: 16px 24px;
+      background-color: #AD9846;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .btn:hover {
+      background-color: #8c7a38;
+    }
+    .btn-secondary {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      border: 1px solid #d4cfb8;
+      margin-top: 16px;
+    }
+    .btn-secondary:hover {
+      background-color: #e8e4d4;
+    }
+    #results-section {
+      display: none;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #e8e4d4;
+    }
+    .phase-card {
+      background-color: #FAF8EB;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+      border-left: 4px solid #AD9846;
+    }
+    .phase-card h3 {
+      color: #2E3E24;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+    }
+    .phase-card p {
+      color: #5a6b50;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .phase-card strong {
+      color: #2E3E24;
+    }
+    .history-section {
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #e8e4d4;
+      display: none;
+    }
+    .history-item {
+      background: #fdfdf9;
+      border: 1px solid #d4cfb8;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .history-item h4 {
+      margin-bottom: 4px;
+      color: #2E3E24;
+    }
+    .clear-btn-container {
+      margin-bottom: 20px;
+    }
+    .disclaimer {
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+      margin-top: 30px;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main class="calculator-container">
+    <div class="calculator-header">
+      <h1>Menstrual Cycle & Desire Calculator</h1>
+      <p>Discover how your hormonal fluctuations affect your libido, arousal, and pleasure throughout the month. Track your cycle phases and optimize your sexual wellness.</p>
+    </div>
+    <div id="calculator-form">
+      <div class="form-group">
+        <label for="last-period">First day of your last period:</label>
+        <input type="date" id="last-period" required>
+      </div>
+      <div class="form-group">
+        <label for="cycle-length">Average cycle length (days):</label>
+        <input type="number" id="cycle-length" min="20" max="45" value="28" required>
+      </div>
+      <div class="form-group">
+        <label for="period-length">Average period length (days):</label>
+        <input type="number" id="period-length" min="2" max="10" value="5" required>
+      </div>
+      <button type="button" class="btn" onclick="calculateDesire()">Calculate My Cycle & Desire</button>
+    </div>
+
+    <div id="results-section">
+      <h2 style="text-align:center; color:#2E3E24; margin-bottom:30px;">Your Current Cycle Phase</h2>
+      <div id="current-phase-card" class="phase-card">
+        <!-- Content injected by JS -->
+      </div>
+      <button type="button" class="btn btn-secondary" onclick="saveResult()">Save Result</button>
+    </div>
+
+    <div id="history-section" class="history-section">
+      <h3 style="color:#2E3E24; margin-bottom:20px;">Saved History</h3>
+      <div class="clear-btn-container">
+        <button type="button" class="btn btn-secondary" style="padding:10px 16px; font-size:0.9rem; margin-top:0;" onclick="clearHistory()">Clear All History</button>
+      </div>
+      <div id="history-list">
+        <!-- Content injected by JS -->
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> This tool provides educational information based on typical hormonal patterns. It is not intended as medical advice or a diagnostic tool. If you have concerns about your menstrual cycle, sexual health, or hormone levels, please consult a healthcare professional.
+    </div>
+  </main>
+
+
+
+
+
+  <section class="educational-content" style="max-width: 800px; margin: 60px auto; padding: 0 20px;">
+    <h2 style="color:#2E3E24; font-family:'Montserrat', sans-serif; margin-bottom: 20px;">Understanding Your Menstrual Cycle & Libido</h2>
+    <p style="color:#5a6b50; line-height:1.6; margin-bottom: 20px;">Our bodies are beautifully complex, and it's totally normal for sexual desire to fluctuate throughout the month. When we track these changes, we can stop wondering "what's wrong with me?" on low-energy days and instead lean into what our bodies actually need.</p>
+
+    <h3 style="color:#2E3E24; font-family:'Montserrat', sans-serif; margin-bottom: 15px; margin-top: 30px;">Hormones and Desire</h3>
+    <p style="color:#5a6b50; line-height:1.6; margin-bottom: 20px;">Estrogen, progesterone, and testosterone are the main hormones driving your cycle. During the follicular and ovulatory phases, estrogen and testosterone rise, often leading to increased natural lubrication, energy, and sexual desire. In the luteal and menstrual phases, progesterone dominates and estrogen drops, which can make you feel more inward, sleepy, or sensitive.</p>
+
+    <h3 style="color:#2E3E24; font-family:'Montserrat', sans-serif; margin-bottom: 15px; margin-top: 30px;">Partner Communication</h3>
+    <p style="color:#5a6b50; line-height:1.6; margin-bottom: 20px;">I always say, communication is the ultimate foreplay! Sharing your cycle insights with a partner can take the pressure off. You can say things like, <em>"I'm in my luteal phase right now, so I'm craving more cuddling and low-pressure touch,"</em> or <em>"I'm ovulating and feeling super energized—let's try that new thing we talked about."</em></p>
+  </section>
+
+  <section class="faq-section" style="max-width: 800px; margin: 60px auto; padding: 0 20px;">
+    <h2 style="color:#2E3E24; font-family:'Montserrat', sans-serif; margin-bottom: 30px;">Frequently Asked Questions</h2>
+
+    <div class="faq-item" style="margin-bottom: 24px;">
+      <h3 style="color:#AD9846; font-size: 1.1rem; margin-bottom: 10px;">Why is my period sexual desire so low sometimes?</h3>
+      <p style="color:#5a6b50; line-height:1.6;">It's completely normal for period sexual desire to drop. During menstruation, your estrogen and progesterone levels are at their lowest. You might also be experiencing cramping or fatigue. Give yourself grace and focus on comforting touch rather than penetrative sex if that's what your body wants.</p>
+    </div>
+
+    <div class="faq-item" style="margin-bottom: 24px;">
+      <h3 style="color:#AD9846; font-size: 1.1rem; margin-bottom: 10px;">How does this hormone cycle calculator work?</h3>
+      <p style="color:#5a6b50; line-height:1.6;">This hormone cycle calculator estimates your current phase based on standard cycle algorithms (your cycle length and period length). It breaks down your cycle into four phases—menstrual, follicular, ovulatory, and luteal—to help you understand typical hormonal shifts and their impact on your sexuality and energy.</p>
+    </div>
+
+    <div class="faq-item" style="margin-bottom: 24px;">
+      <h3 style="color:#AD9846; font-size: 1.1rem; margin-bottom: 10px;">Does menstrual cycle libido change if I'm on birth control?</h3>
+      <p style="color:#5a6b50; line-height:1.6;">Yes! Hormonal birth control overrides your natural hormonal fluctuations to prevent ovulation. This means you might not experience the typical peaks and valleys in menstrual cycle libido described here. However, tracking your mood and energy can still provide valuable insights into your body's unique patterns.</p>
+    </div>
+  </section>
+
+  <!-- FAQPage JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Why is my period sexual desire so low sometimes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's completely normal for period sexual desire to drop. During menstruation, your estrogen and progesterone levels are at their lowest. You might also be experiencing cramping or fatigue. Give yourself grace and focus on comforting touch rather than penetrative sex if that's what your body wants."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How does this hormone cycle calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This hormone cycle calculator estimates your current phase based on standard cycle algorithms (your cycle length and period length). It breaks down your cycle into four phases—menstrual, follicular, ovulatory, and luteal—to help you understand typical hormonal shifts and their impact on your sexuality and energy."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Does menstrual cycle libido change if I'm on birth control?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Hormonal birth control overrides your natural hormonal fluctuations to prevent ovulation. This means you might not experience the typical peaks and valleys in menstrual cycle libido described here. However, tracking your mood and energy can still provide valuable insights into your body's unique patterns."
+      }
+    }]
+  }
+  </script>
+
+  <!-- Required Standard Scripts -->
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+</body>
+</html>
