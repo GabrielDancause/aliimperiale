@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fertility Awareness Calculator | Ali Imperiale</title>
+<meta name="description" content="A comprehensive fertility awareness calculator to track your menstrual cycle, basal body temperature, and cervical mucus. Predict ovulation and fertile windows.">
+<meta property="og:title" content="Fertility Awareness Calculator | Ali Imperiale">
+<meta property="og:description" content="A comprehensive fertility awareness calculator to track your menstrual cycle, basal body temperature, and cervical mucus. Predict ovulation and fertile windows.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aliimperiale.com/fertility-awareness-calculator.html">
+<meta property="og:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+<meta property="og:image:width" content="768">
+<meta property="og:image:height" content="960">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fertility Awareness Calculator | Ali Imperiale">
+<meta name="twitter:image" content="https://aliimperiale.com/TAD_9494-Edit_Social.jpg">
+<link rel="canonical" href="https://aliimperiale.com/fertility-awareness-calculator.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  body {
+    background-color: #FAF8EB;
+    color: #2E3E24;
+  }
+
+  /* Navigation (copied from index) */
+  .site-nav {
+    background: #2E3E24;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+  }
+  .nav-logo {
+    height: 36px;
+    opacity: 0.95;
+    transition: opacity 0.2s;
+  }
+  .nav-logo:hover {
+    opacity: 1;
+  }
+  .site-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .site-nav .nav-links a {
+    color: #C6C8BB;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.15s ease;
+  }
+  .site-nav .nav-links a:hover, .site-nav .nav-links a.active {
+    color: #FAF8EB;
+  }
+
+  /* Page Header */
+  .page-header {
+    background-color: #2E3E24;
+    color: #FAF8EB;
+    text-align: center;
+    padding: 40px 20px 60px;
+    position: relative;
+  }
+  .page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #FAF8EB;
+    border-radius: 30px 30px 0 0;
+  }
+  .page-header h1 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .page-header p {
+    font-size: 1.05rem;
+    color: #C6C8BB;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Main Container */
+  .tracker-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Card Style */
+  .card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
+    border: 1px solid rgba(46, 62, 36, 0.06);
+  }
+
+  .card h2 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2E3E24;
+    text-align: center;
+  }
+
+  /* Input Section */
+  .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 200px;
+  }
+  .input-field label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #555549;
+  }
+  .input-field input, .input-field select {
+    padding: 12px 16px;
+    border: 1px solid #C6C8BB;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    background: #FAF8EB;
+    color: #2E3E24;
+  }
+  .input-field input:focus, .input-field select:focus {
+    outline: none;
+    border-color: #AD9846;
+    box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
+  }
+  .btn-calculate {
+    background: #2E3E24;
+    color: #FAF8EB;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    align-self: center;
+    margin-top: 10px;
+  }
+  .btn-calculate:hover {
+    background: #3a5030;
+    transform: translateY(-1px);
+  }
+
+  /* Results Section */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    display: none;
+  }
+  .result-box {
+    background: #FAF8EB;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(173, 152, 70, 0.3);
+  }
+  .result-box h3 {
+    font-size: 1rem;
+    color: #555549;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .result-box p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2E3E24;
+  }
+  .result-box.highlight {
+    background: rgba(173, 152, 70, 0.1);
+    border-color: #AD9846;
+  }
+
+  /* Share button */
+  .share-container {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+  }
+  .btn-share {
+    background: #FAF8EB;
+    color: #AD9846;
+    border: 2px solid #AD9846;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-share:hover {
+    background: #AD9846;
+    color: #fff;
+  }
+
+  /* Educational Section */
+  .edu-section {
+    margin-top: 20px;
+  }
+  .edu-section h3 {
+    font-family: 'New Standard', Georgia, serif;
+    font-size: 1.4rem;
+    color: #2E3E24;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+  .edu-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555549;
+    margin-bottom: 16px;
+  }
+  .edu-section ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+    color: #555549;
+    line-height: 1.6;
+  }
+  .edu-section li {
+    margin-bottom: 8px;
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    background: #fdf5f5;
+    border-left: 4px solid #d9534f;
+    padding: 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #5a2a2a;
+    margin-top: 10px;
+  }
+
+  /* FAQ */
+  .faq-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .faq-section h2 {
+    font-family: 'New Standard', Georgia, serif;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .faq-question {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #2E3E24;
+    margin-bottom: 10px;
+  }
+  .faq-answer {
+    font-size: 0.95rem;
+    color: #555549;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .page-header h1 { font-size: 2rem; }
+    .input-group { flex-direction: column; align-items: stretch; }
+    .input-field { min-width: 100%; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How does basal body temperature (BBT) help track fertility?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Your basal body temperature (BBT) typically rises slightly (about 0.5 to 1 degree Fahrenheit) immediately after ovulation. Tracking BBT daily before you get out of bed can help confirm that ovulation has occurred."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What does cervical mucus indicate about my fertile window?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Cervical mucus changes throughout your cycle. As you approach ovulation, it becomes clearer, wetter, and stretchier—often described as having a raw egg white consistency. This type of mucus creates an ideal environment for sperm to survive and swim."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is the symptothermal method?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The symptothermal method is a natural family planning approach that combines tracking multiple fertility signs: waking temperature (BBT), cervical mucus changes, and sometimes cervical position, to more accurately pinpoint ovulation and the fertile window."
+    }
+  }, {
+    "@type": "Question",
+    "name": "When should I consult a healthcare provider about my fertility?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You should consult a healthcare provider if your cycles are consistently irregular (shorter than 21 days or longer than 35 days), if you experience severe pain during your periods, if you have been tracking and trying to conceive for over a year (or six months if over age 35) without success, or if you suspect you might not be ovulating."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Can I use this calculator for birth control?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. This calculator is designed for educational purposes and cycle tracking. It provides estimates and should NOT be used as a reliable method of contraception or birth control. If you are trying to prevent pregnancy, please consult a healthcare professional for reliable methods."
+    }
+  }]
+}
+</script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/">
+      <img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale">
+    </a>
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Fertility Awareness Calculator</h1>
+    <p>Track your basal body temperature, cervical mucus, and cycle length to better understand your body's natural fertility signs.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="tracker-container">
+    <!-- Input Card -->
+    <section class="card">
+      <h2>Log Your Daily Fertility Signs</h2>
+      <p style="text-align: center; margin-bottom: 20px; color: #555549; font-size: 0.95rem;">Enter your cycle details and today's observations to track your fertility window.</p>
+
+      <div class="input-group">
+        <div class="input-field">
+          <label for="last-period">First Day of Last Period</label>
+          <input type="date" id="last-period" required>
+        </div>
+        <div class="input-field">
+          <label for="cycle-length">Average Cycle Length (Days)</label>
+          <input type="number" id="cycle-length" value="28" min="20" max="45" required>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-field">
+          <label for="bbt-input">Basal Body Temperature (°F)</label>
+          <input type="number" id="bbt-input" placeholder="e.g. 97.5" step="0.1" min="96.0" max="100.0">
+        </div>
+        <div class="input-field">
+          <label for="mucus-input">Cervical Mucus</label>
+          <select id="mucus-input">
+            <option value="">-- Select Observation --</option>
+            <option value="dry">Dry / None</option>
+            <option value="sticky">Sticky / Tacky</option>
+            <option value="creamy">Creamy / Lotion-like</option>
+            <option value="eggwhite">Clear / Stretchy (Egg White)</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <button class="btn-calculate" id="btn-calculate">Calculate My Fertility</button>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> This tool provides estimates for educational purposes only. It is <strong>NOT a reliable method for birth control</strong>.
+      </div>
+    </section>
+
+    <!-- Results Overview -->
+    <section class="card" id="results-section" style="display: none;">
+      <h2>Your Fertility Status</h2>
+      <div class="results-grid" id="results-grid">
+        <div class="result-box">
+          <h3>Next Period</h3>
+          <p id="res-next-period">--</p>
+        </div>
+        <div class="result-box highlight">
+          <h3>Estimated Ovulation</h3>
+          <p id="res-ovulation">--</p>
+        </div>
+        <div class="result-box highlight">
+          <h3>Fertile Window</h3>
+          <p id="res-fertile">--</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 30px; text-align: center;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #2E3E24;">Today's Fertility Analysis</h3>
+        <p id="analysis-text" style="font-size: 1rem; color: #555549; line-height: 1.6; max-width: 600px; margin: 0 auto;">--</p>
+      </div>
+
+      <div class="share-container" id="share-container">
+        <button class="btn-share" id="btn-share">Share Results (Copy to Clipboard)</button>
+        <span id="share-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-left: 10px;">Copied!</span>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="card edu-section">
+      <h2>Understanding Fertility Awareness</h2>
+      <p>Fertility Awareness Methods (FAM), specifically the symptothermal method, involve observing and charting your body's natural fertility signs to either avoid pregnancy or increase your chances of conceiving. By understanding how your hormones affect your body throughout your menstrual cycle, you can make more informed choices.</p>
+
+      <h3>The Three Main Fertility Signs</h3>
+      <ul>
+        <li><strong>Basal Body Temperature (BBT):</strong> Your resting body temperature shifts slightly (about 0.5°F - 1°F) right after ovulation due to the hormone progesterone. Tracking this helps confirm that ovulation has already passed.</li>
+        <li><strong>Cervical Mucus:</strong> Your cervix produces fluid that changes in consistency. Around ovulation, rising estrogen makes it clear, wet, and stretchy (like raw egg whites) to help sperm survive and swim. After ovulation, it becomes dry or sticky.</li>
+        <li><strong>Cervical Position:</strong> While not included in this calculator, tracking how high, soft, and open your cervix feels can provide additional clues. During your fertile window, the cervix is high, open, and soft (acronym: SHOW).</li>
+      </ul>
+
+      <h3>When to Consult a Healthcare Provider</h3>
+      <p>While tracking at home is empowering, it's important to reach out to a professional if you notice:</p>
+      <ul>
+        <li>Consistently irregular cycles (shorter than 21 days or longer than 35 days).</li>
+        <li>Cycles where you don't seem to ovulate (no sustained temperature shift).</li>
+        <li>Severe pelvic pain, unusually heavy bleeding, or spotting between periods.</li>
+        <li>If you have been trying to conceive for over a year (or six months if over age 35) without success.</li>
+      </ul>
+      <p><em>Always rely on certified instructors or healthcare providers when learning to use FAM as a primary form of birth control. Simple calendar tracking is not enough to prevent pregnancy reliably.</em></p>
+    </section>
+  </main>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">How does basal body temperature (BBT) help track fertility?</div>
+      <div class="faq-answer">Your basal body temperature (BBT) typically rises slightly (about 0.5 to 1 degree Fahrenheit) immediately after ovulation. Tracking BBT daily before you get out of bed can help confirm that ovulation has occurred.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What does cervical mucus indicate about my fertile window?</div>
+      <div class="faq-answer">Cervical mucus changes throughout your cycle. As you approach ovulation, it becomes clearer, wetter, and stretchier—often described as having a raw egg white consistency. This type of mucus creates an ideal environment for sperm to survive and swim.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What is the symptothermal method?</div>
+      <div class="faq-answer">The symptothermal method is a natural family planning approach that combines tracking multiple fertility signs: waking temperature (BBT), cervical mucus changes, and sometimes cervical position, to more accurately pinpoint ovulation and the fertile window.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">When should I consult a healthcare provider about my fertility?</div>
+      <div class="faq-answer">You should consult a healthcare provider if your cycles are consistently irregular (shorter than 21 days or longer than 35 days), if you experience severe pain during your periods, if you have been tracking and trying to conceive for over a year (or six months if over age 35) without success, or if you suspect you might not be ovulating.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I use this calculator for birth control?</div>
+      <div class="faq-answer">No. This calculator is designed for educational purposes and cycle tracking. It provides estimates and should NOT be used as a reliable method of contraception or birth control. If you are trying to prevent pregnancy, please consult a healthcare professional for reliable methods.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Set default date to today
+    const dateInput = document.getElementById('last-period');
+    const today = new Date();
+    dateInput.value = today.toISOString().split('T')[0];
+
+    const calculateFertility = () => {
+      const lastPeriodStr = document.getElementById('last-period').value;
+      const cycleLen = parseInt(document.getElementById('cycle-length').value, 10);
+      const bbt = parseFloat(document.getElementById('bbt-input').value);
+      const mucus = document.getElementById('mucus-input').value;
+
+      if(!lastPeriodStr || isNaN(cycleLen)) {
+        alert("Please enter the first day of your last period and your average cycle length.");
+        return;
+      }
+
+      // Base dates (using noon to prevent timezone jump)
+      const baseDate = new Date(lastPeriodStr + 'T12:00:00');
+
+      const nextP = new Date(baseDate);
+      nextP.setDate(nextP.getDate() + cycleLen);
+
+      const ovulation = new Date(nextP);
+      ovulation.setDate(ovulation.getDate() - 14);
+
+      const fertileStart = new Date(ovulation);
+      fertileStart.setDate(fertileStart.getDate() - 5);
+
+      const fertileEnd = new Date(ovulation);
+      fertileEnd.setDate(fertileEnd.getDate() + 1);
+
+      // Render dates
+      document.getElementById('res-next-period').textContent = nextP.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+      document.getElementById('res-ovulation').textContent = ovulation.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+      document.getElementById('res-fertile').textContent = `${fertileStart.toLocaleDateString('en-US', {month: 'short', day: 'numeric'})} - ${fertileEnd.toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}`;
+
+      // Analysis Logic based on Symptothermal Method signs
+      let analysis = "";
+      const currentDate = new Date();
+      currentDate.setHours(12, 0, 0, 0); // Normalize to noon
+
+      const isDuringFertileWindow = currentDate >= fertileStart && currentDate <= fertileEnd;
+      const isPostOvulation = currentDate > fertileEnd;
+
+      if (isDuringFertileWindow) {
+        analysis += "Based on your dates, you are currently in or approaching your <strong>estimated fertile window</strong>. ";
+      } else if (isPostOvulation && currentDate < nextP) {
+        analysis += "Based on your dates, you are likely past ovulation and in your <strong>luteal phase</strong>. ";
+      } else {
+        analysis += "Based on your dates, you are likely in your <strong>follicular phase</strong> (low fertility). ";
+      }
+
+      // Add mucus context
+      if (mucus === 'eggwhite') {
+        analysis += "<br><br>Your observation of <strong>clear, stretchy (egg white) cervical mucus</strong> is a primary sign of high fertility. This type of mucus helps sperm survive and travel to the egg.";
+      } else if (mucus === 'creamy') {
+        analysis += "<br><br>Your observation of <strong>creamy, lotion-like cervical mucus</strong> indicates rising estrogen levels, often seen in the days leading up to your peak fertile window.";
+      } else if (mucus === 'sticky' || mucus === 'dry') {
+        analysis += "<br><br>Your observation of <strong>dry or sticky cervical mucus</strong> is typically associated with lower fertility phases of your cycle.";
+      }
+
+      // Add BBT context
+      if (!isNaN(bbt)) {
+        if (bbt >= 98.0 && isPostOvulation) {
+            analysis += "<br><br>Your basal body temperature of <strong>" + bbt + "°F</strong> is on the higher end, which aligns with the typical thermal shift caused by progesterone rising <em>after</em> ovulation has occurred.";
+        } else if (bbt < 98.0 && isDuringFertileWindow) {
+             analysis += "<br><br>Your basal body temperature of <strong>" + bbt + "°F</strong> is relatively low, which is typical <em>before</em> ovulation. You'll want to watch for a sustained temperature rise to confirm ovulation.";
+        } else {
+             analysis += "<br><br>You logged a basal body temperature of <strong>" + bbt + "°F</strong>. Tracking this daily will help you identify the slight sustained rise that confirms ovulation has passed.";
+        }
+      }
+
+      if(!mucus && isNaN(bbt)) {
+          analysis += "<br><br><em>Tip: Log your cervical mucus and basal body temperature (BBT) above for a more personalized analysis of your fertility signs today.</em>";
+      }
+
+      document.getElementById('analysis-text').innerHTML = analysis;
+
+      // Show sections
+      document.getElementById('results-section').style.display = 'block';
+      document.getElementById('results-grid').style.display = 'grid';
+      document.getElementById('share-container').style.display = 'block';
+    };
+
+    // Event Listeners
+    document.getElementById('btn-calculate').addEventListener('click', calculateFertility);
+
+    document.getElementById('btn-share').addEventListener('click', async () => {
+      const nextP = document.getElementById('res-next-period').textContent;
+      const ov = document.getElementById('res-ovulation').textContent;
+      const fert = document.getElementById('res-fertile').textContent;
+
+      const text = `🌸 My Fertility Estimates from Ali Imperiale's Calculator 🌸\n\n🩸 Next Period: ${nextP}\n✨ Estimated Ovulation: ${ov}\n🌿 Fertile Window: ${fert}\n\nTrack yours at: https://aliimperiale.com/fertility-awareness-calculator.html`;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        const msg = document.getElementById('share-msg');
+        msg.style.display = 'inline';
+        setTimeout(() => msg.style.display = 'none', 3000);
+      } catch (err) {
+        console.error('Failed to copy', err);
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
