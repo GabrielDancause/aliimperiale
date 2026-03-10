@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hormone Cycle & Desire Correlation Calculator | Ali Imperiale</title>
+  <meta name="description" content="Track how hormonal fluctuations throughout menstrual cycles affect sexual desire, mood, and energy. Calculate insights and understand patterns.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+.hero-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hero-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .hero-section p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .calculator-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    select, input[type="range"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #C6C8BB;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      background-color: #FAF8EB;
+      color: #2E3E24;
+    }
+
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 5px;
+    }
+
+    .btn-primary {
+      background-color: #AD9846;
+      color: #FAF8EB;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background-color: #8c7b38;
+    }
+
+    #results-section {
+      display: none;
+      background-color: #eaf1e8;
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 30px;
+      border-left: 5px solid #AD9846;
+    }
+
+    .insight-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .insight-card h3 {
+      margin-top: 0;
+      color: #AD9846;
+    }
+
+    .chart-container {
+      margin-top: 20px;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .bar-label {
+      width: 80px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 20px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 0 15px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background-color: #AD9846;
+      width: 0%;
+      transition: width 1s ease-out;
+    }
+
+    .content-section {
+      margin-bottom: 50px;
+    }
+
+    .content-section h2 {
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #C6C8BB;
+      padding-bottom: 15px;
+    }
+
+    .faq-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .share-btn {
+      background-color: transparent;
+      border: 2px solid #2E3E24;
+      color: #2E3E24;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .share-btn:hover {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .medical-disclaimer {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 40px;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section h1 { font-size: 2rem; }
+      .calculator-card { padding: 20px; }
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the menstrual cycle affect sexual desire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hormonal fluctuations during the menstrual cycle significantly impact libido. Estrogen and testosterone peaks around ovulation often increase desire, while progesterone dominance in the luteal phase can sometimes decrease it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the four phases of the menstrual cycle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The four phases are Menstruation (Days 1-5), the Follicular Phase (Days 6-14), Ovulation (around Day 14), and the Luteal Phase (Days 15-28)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it normal for my libido to change throughout the month?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, absolutely! It's completely normal for sexual desire to ebb and flow throughout your cycle due to hormonal changes, stress levels, energy, and overall well-being."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Primary Site Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+        <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main class="container" id="main-content">
+
+    <div class="hero-section">
+      <h1>Hormone Cycle & <span class="text-gold">Desire Correlation</span> Calculator</h1>
+      <p>Hey there! I'm Ali. Curious about why you're ready to go one day and completely uninterested the next? This tool helps you map your current cycle phase to your daily desire, mood, and energy. Track, learn, and discover your unique rhythm.</p>
+    </div>
+
+    <div class="calculator-card">
+      <form id="calculator-form">
+
+        <div class="form-group">
+          <label for="cycleDay">What day of your cycle are you currently on?</label>
+          <select id="cycleDay" required>
+            <option value="" disabled selected>Select an option...</option>
+            <option value="menstrual">Days 1-5 (Menstrual Phase / Period)</option>
+            <option value="follicular">Days 6-13 (Follicular Phase)</option>
+            <option value="ovulatory">Days 14-16 (Ovulatory Phase)</option>
+            <option value="luteal_early">Days 17-24 (Early/Mid Luteal Phase)</option>
+            <option value="luteal_late">Days 25-28+ (Late Luteal Phase / PMS)</option>
+            <option value="unsure">I'm not tracking / Unsure (Skip to General Input)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="desireLevel">Rate your current level of sexual desire / libido (1-10):</label>
+          <input type="range" id="desireLevel" min="1" max="10" value="5">
+          <div class="range-labels">
+            <span>Low (1)</span>
+            <span>Neutral (5)</span>
+            <span>High (10)</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="moodLevel">How is your mood today?</label>
+          <input type="range" id="moodLevel" min="1" max="10" value="5">
+          <div class="range-labels">
+            <span>Down/Anxious (1)</span>
+            <span>Okay (5)</span>
+            <span>Happy/Stable (10)</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="energyLevel">Rate your current physical energy level:</label>
+          <input type="range" id="energyLevel" min="1" max="10" value="5">
+          <div class="range-labels">
+            <span>Exhausted (1)</span>
+            <span>Normal (5)</span>
+            <span>Energized (10)</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Calculate My Cycle Insights</button>
+      </form>
+
+      <div id="results-section">
+        <h2>Your Cycle Profile: <span id="res-phase" class="text-gold"></span></h2>
+        <p id="res-summary"></p>
+
+        <div class="chart-container">
+          <div class="bar-row">
+            <span class="bar-label">Desire</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-desire"></div></div>
+            <span class="bar-value" id="val-desire"></span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Mood</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-mood"></div></div>
+            <span class="bar-value" id="val-mood"></span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Energy</span>
+            <div class="bar-track"><div class="bar-fill" id="bar-energy"></div></div>
+            <span class="bar-value" id="val-energy"></span>
+          </div>
+        </div>
+
+        <div class="insight-card" style="margin-top: 25px;">
+          <h3>What's Happening Hormonally?</h3>
+          <p id="res-hormones"></p>
+        </div>
+
+        <div class="insight-card">
+          <h3>Intimacy Recommendation</h3>
+          <p id="res-recommendation"></p>
+        </div>
+
+        <button class="share-btn" id="shareBtn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+          Share Summary with Partner
+        </button>
+      </div>
+    </div>
+
+    <section class="content-section">
+      <h2>The Science of Hormones & Desire</h2>
+      <p>Our bodies are pretty incredible, aren't they? But sometimes they feel wildly unpredictable. Understanding the four main phases of the menstrual cycle can take the mystery out of those libido swings. It's not just "in your head"—it's biological!</p>
+      <ul>
+        <li><strong>Menstruation (Days 1-5):</strong> Estrogen and progesterone are at their lowest. While energy might be low, some folks experience increased arousal due to pelvic congestion or the lack of pregnancy anxiety.</li>
+        <li><strong>Follicular (Days 6-13):</strong> Estrogen is rising! You'll likely notice climbing energy levels, better moods, and a slow build in sexual desire as your body prepares for ovulation.</li>
+        <li><strong>Ovulation (Days 14-16):</strong> Hello, peak libido! Estrogen reaches its highest point, accompanied by a quick surge in testosterone. This cocktail often makes us feel more confident, flirtatious, and highly interested in sex.</li>
+        <li><strong>Luteal (Days 17-28):</strong> Progesterone takes over, which is essentially the "chill out and nest" hormone. While it's great for calming down, it can dampen sexual desire, leading to the familiar PMS slump right before your period.</li>
+      </ul>
+      <p>Remember, this isn't a strict rulebook. Factors like stress, relationship dynamics, sleep, and birth control methods heavily influence this baseline.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How does the menstrual cycle affect sexual desire?</h3>
+        <p>Hormonal fluctuations during the menstrual cycle significantly impact libido. Estrogen and testosterone peaks around ovulation generally increase desire, making you feel more receptive to intimacy. Conversely, the progesterone dominance in the luteal phase can sometimes decrease libido, making you crave comfort over sex.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What are the four phases of the menstrual cycle?</h3>
+        <p>The four distinct phases are: Menstruation (typically Days 1-5 when bleeding occurs), the Follicular Phase (Days 6-14 as the body prepares an egg), Ovulation (around Day 14 when the egg releases), and the Luteal Phase (Days 15-28 preparing for potential pregnancy or the next period).</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is it normal for my libido to change throughout the month?</h3>
+        <p>Yes, absolutely! It is completely normal for sexual desire to ebb and flow throughout your cycle. Libido isn't a flat line; it's heavily influenced by natural hormonal shifts, stress, sleep, and relationship dynamics. Giving yourself grace during low-desire periods is crucial.</p>
+      </div>
+    </section>
+
+    <div class="medical-disclaimer">
+      <strong>Medical Disclaimer:</strong> The content provided in this tool is for informational and educational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="consent.js"></script>
+  <script src="mobile-nav.js"></script>
+  <script src="newsletter-bar.js"></script>
+  <script src="email-capture.js"></script>
+  <script src="back-to-top.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("calculator-form");
+    const resultsSection = document.getElementById("results-section");
+    const shareBtn = document.getElementById("shareBtn");
+
+    const insights = {
+      "menstrual": {
+        phase: "Menstrual Phase (Period)",
+        summary: "You are currently in the menstrual phase. Hormone levels are dropping, causing the uterine lining to shed.",
+        hormones: "Estrogen and progesterone are at their lowest points. While energy might dip initially, you might experience a slow, subtle increase in desire due to pelvic blood flow or simply the psychological relief of not worrying about pregnancy. Some people feel deeply introspective here.",
+        recommendation: "Focus on comfort and low-pressure intimacy. Solo play, sensual massage, cuddling, and warm baths are highly recommended. Don't push yourself if you're feeling sluggish—rest is productive!"
+      },
+      "follicular": {
+        phase: "Follicular Phase",
+        summary: "Your body is preparing for ovulation, marked by a steady rise in estrogen.",
+        hormones: "Rising estrogen usually means increasing physical energy, sharper focus, and an elevated mood. Testosterone starts to gently climb as well. This combination often leads to a gradual, flirtatious build in your sexual desire.",
+        recommendation: "This is a great time to introduce novelty! Your brain is primed for new experiences, making it the perfect window to try that new toy, experiment with a different scenario, or engage in active, playful intimacy."
+      },
+      "ovulatory": {
+        phase: "Ovulatory Phase",
+        summary: "The main event! An egg is released, and your hormones are peaking.",
+        hormones: "Estrogen hits its highest peak, accompanied by a sharp surge in testosterone and a slight dip in progesterone. This biological cocktail is practically designed to maximize your libido, natural lubrication, and overall confidence.",
+        recommendation: "Enjoy the ride! If you're feeling a spontaneous, high-energy drive, lean into it. This is often the phase where orgasms feel more intense and you feel most comfortable in your body. Communicate your desires clearly."
+      },
+      "luteal_early": {
+        phase: "Early/Mid Luteal Phase",
+        summary: "Your body is winding down post-ovulation, preparing the uterine lining.",
+        hormones: "Progesterone—the 'calming' hormone—takes center stage, while estrogen and testosterone begin to decline. You might notice a shift from high-energy arousal to a desire for cozy, emotional connection and slower pacing.",
+        recommendation: "Shift gears to sensual, slow-paced intimacy. Focus on emotional bonding, prolonged foreplay, and deep communication. Your body might require more physical stimulation to become aroused than it did a few days ago, and that's totally normal."
+      },
+      "luteal_late": {
+        phase: "Late Luteal Phase (PMS)",
+        summary: "Hormones take a steep dive right before your period begins.",
+        hormones: "Both estrogen and progesterone drop significantly. This sudden withdrawal often leads to PMS symptoms: mood swings, fatigue, breast tenderness, and a noticeable dip in sexual desire for many.",
+        recommendation: "Prioritize self-care and grace. Your desire might be low, and that is okay. Intimacy right now might look like a back rub, watching a movie together, or simply vocalizing your needs without the expectation of sex."
+      },
+      "unsure": {
+        phase: "General Tracking",
+        summary: "You're tracking your daily feelings without a specific cycle phase attached.",
+        hormones: "Even without tracking a cycle, your daily inputs show a unique snapshot. Desire, mood, and energy are deeply interconnected. When stress is high (low mood) or you're exhausted (low energy), your libido naturally takes a backseat as a survival mechanism.",
+        recommendation: "Listen to what your current inputs are telling you. If energy is low, prioritize rest. If desire is high but mood is low, consider solo-play as a stress reliever. Intimacy should adapt to where you are today, not where you think you 'should' be."
+      }
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const phaseKey = document.getElementById("cycleDay").value;
+      const desireVal = parseInt(document.getElementById("desireLevel").value, 10);
+      const moodVal = parseInt(document.getElementById("moodLevel").value, 10);
+      const energyVal = parseInt(document.getElementById("energyLevel").value, 10);
+
+      if(!phaseKey) {
+        alert("Please select a cycle phase.");
+        return;
+      }
+
+      const insight = insights[phaseKey];
+
+      // Update UI texts
+      document.getElementById("res-phase").textContent = insight.phase;
+      document.getElementById("res-summary").textContent = insight.summary;
+      document.getElementById("res-hormones").textContent = insight.hormones;
+
+      // Personalize recommendation based on inputs
+      let personalizedRec = insight.recommendation;
+      if(desireVal <= 3 && moodVal >= 7) {
+        personalizedRec += " Note: Your mood is great, but desire is low—a perfect day for non-sexual romantic connection!";
+      } else if (energyVal <= 3) {
+        personalizedRec += " Note: Given your low energy today, keep expectations low and prioritize deep rest over active intimacy.";
+      }
+      document.getElementById("res-recommendation").textContent = personalizedRec;
+
+      // Animate bars
+      document.getElementById("val-desire").textContent = desireVal + "/10";
+      document.getElementById("val-mood").textContent = moodVal + "/10";
+      document.getElementById("val-energy").textContent = energyVal + "/10";
+
+      // Show section first to allow width transition
+      resultsSection.style.display = "block";
+
+      setTimeout(() => {
+        document.getElementById("bar-desire").style.width = (desireVal * 10) + "%";
+        document.getElementById("bar-mood").style.width = (moodVal * 10) + "%";
+        document.getElementById("bar-energy").style.width = (energyVal * 10) + "%";
+      }, 50);
+
+      // Scroll to results
+      resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    shareBtn.addEventListener("click", () => {
+      const phase = document.getElementById("res-phase").textContent;
+      const desireVal = document.getElementById("desireLevel").value;
+      const moodVal = document.getElementById("moodLevel").value;
+      const energyVal = document.getElementById("energyLevel").value;
+
+      const text = `Hey! Tracking my cycle today:\nPhase: ${phase}\nDesire: ${desireVal}/10\nMood: ${moodVal}/10\nEnergy: ${energyVal}/10\n\nLet's connect based on where I'm at today! (via Ali Imperiale's Tracker)`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = shareBtn.innerHTML;
+        shareBtn.innerHTML = "Copied to Clipboard!";
+        setTimeout(() => {
+          shareBtn.innerHTML = originalText;
+        }, 3000);
+      }).catch(err => {
+        alert("Failed to copy text. Please try again.");
+      });
+    });
+  });
+</script>
+</body>
+
+</html>
