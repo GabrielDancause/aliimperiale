@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boundaries Quiz & Builder | Ali Imperiale</title>
+  <meta name="description" content="Take this interactive quiz to discover your boundary style and build custom boundary statements for your relationships.">
+  <meta property="og:title" content="Boundaries Quiz & Builder | Ali Imperiale">
+  <meta property="og:description" content="Take this interactive quiz to discover your boundary style and build custom boundary statements.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/boundaries-quiz.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Boundaries Quiz & Builder">
+  <meta name="twitter:description" content="Take this interactive quiz to discover your boundary style and build custom boundary statements.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/boundaries-quiz.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Content wrapper for footer push */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+    }
+
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Page Header */
+    .page-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #FAF8EB;
+      border-radius: 40px 40px 0 0;
+    }
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: #FAF8EB;
+    }
+    .page-header p {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.15rem;
+      color: #C6C8BB;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Container and Cards */
+    .tracker-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(46, 62, 36, 0.06);
+      border: 1px solid rgba(46, 62, 36, 0.08);
+      margin-bottom: 32px;
+    }
+
+    .card-title {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    /* Quiz Elements */
+    .quiz-scenario {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .quiz-scenario.active {
+      display: block;
+    }
+
+    .scenario-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .scenario-category {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #AD9846;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .scenario-progress {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      color: #8a8a7a;
+      font-weight: 600;
+    }
+
+    .scenario-question {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      color: #2E3E24;
+      font-weight: 600;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .options-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: #fafbfc;
+      border: 1.5px solid #e0e2d5;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      color: #3a4a30;
+      line-height: 1.4;
+    }
+
+    .option-input {
+      appearance: none;
+      background-color: #FAF8EB;
+      margin: 0;
+      font: inherit;
+      color: currentColor;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid #C6C8BB;
+      border-radius: 50%;
+      display: grid;
+      place-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+    .option-input::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      background-color: white;
+    }
+    .option-label.selected .option-input {
+      background-color: #AD9846;
+      border-color: #AD9846;
+    }
+    .option-label.selected .option-input::before {
+      transform: scale(1);
+    }
+
+    .option-label:hover {
+      background: #FAF8EB;
+      border-color: #AD9846;
+    }
+
+    .option-label.selected {
+      background: #FAF8EB;
+      border-color: #AD9846;
+      box-shadow: 0 0 0 1px #AD9846;
+    }
+
+
+    .quiz-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:disabled {
+      background: #C6C8BB;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      background: #FAF8EB;
+      color: #2E3E24;
+      border: 1.5px solid #C6C8BB;
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      border-color: #2E3E24;
+      background: #f4f5f0;
+    }
+
+    .btn-secondary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Results Section */
+    #results-section {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .result-header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+    }
+
+    .result-style {
+      font-family: 'The Bloomington', cursive;
+      font-size: 2.8rem;
+      color: #AD9846;
+      margin: 16px 0;
+      line-height: 1.1;
+    }
+
+    .result-description {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: #555549;
+      line-height: 1.6;
+    }
+
+    .statement-generator {
+      background: #FAF8EB;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+      border: 1px solid rgba(173, 152, 70, 0.3);
+    }
+
+    .statement-generator h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+
+    #custom-statement {
+      font-family: 'New Standard', Georgia, serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #422626;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .script-box {
+      background: #fff;
+      border-left: 4px solid #AD9846;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .script-box strong {
+      display: block;
+      color: #2E3E24;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .script-box p {
+      margin: 0;
+      font-family: 'New Standard', Georgia, serif;
+      font-style: italic;
+      color: #422626;
+      font-size: 1.05rem;
+    }
+
+    /* Info Section */
+    .info-section {
+      margin-top: 48px;
+    }
+
+    .info-section h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .info-section p {
+      font-size: 0.95rem;
+      color: #555549;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-item h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: #AD9846;
+      margin-bottom: 8px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+      .card {
+        padding: 24px 20px;
+      }
+      .quiz-actions {
+        flex-direction: column-reverse;
+        gap: 12px;
+      }
+      .btn {
+        width: 100%;
+      }
+      .result-style {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How do I know what my boundary style is?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Your boundary style usually falls into three categories: firm (clear and consistent), flexible (adaptable but sometimes weak), or needs work (often porous, leading to resentment). Taking our quiz can help you identify your natural tendencies in different scenarios."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How do I set boundaries without feeling guilty?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Feeling guilty is common when you first start setting boundaries, especially if you are a people-pleaser. Remember that boundaries are a form of self-care and mutual respect. Clear communication, like 'I need some time to myself tonight,' is healthy, not selfish."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What are examples of physical boundaries?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Physical boundaries involve your personal space and body. Examples include preferring a handshake over a hug, needing personal space in crowded areas, or clearly communicating when you do or do not want physical affection from a partner."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Why are digital boundaries important in a relationship?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Digital boundaries protect your peace and privacy. Important examples include setting expectations for how quickly you respond to texts, deciding what is acceptable to post on social media, and maintaining privacy with passwords and location sharing."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What should I say when someone crosses my boundaries?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "When a boundary is crossed, be firm but calm. You might say, 'I've mentioned before that I don't want to discuss this topic. If we continue, I'll need to leave the conversation.' Consistency in enforcing consequences is key."
+    }
+  }]
+}
+</script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle Navigation" onclick="this.classList.toggle('active'); this.previousElementSibling.classList.toggle('nav-open');">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+  </nav>
+
+  <header class="page-header">
+      <h1>Boundaries Quiz & Builder</h1>
+      <p>Discover your boundary style and build custom scripts to help you communicate what you need in your relationships.</p>
+  </header>
+
+  <main class="tracker-container" id="main-content">
+
+      <section class="card" id="quiz-section">
+          <!-- Quiz container injected by JS -->
+          <div id="quiz-container"></div>
+      </section>
+
+      <section class="card" id="results-section">
+          <div class="result-header">
+              <h2 class="card-title">Your Boundary Style Is:</h2>
+              <div class="result-style" id="result-style-title">Firm & Clear</div>
+              <p class="result-description" id="result-description">You generally have a good grasp of your needs and aren't afraid to communicate them. You prioritize mutual respect and self-care.</p>
+          </div>
+
+          <div class="statement-generator">
+              <h3>Your Custom Boundary Statement</h3>
+              <p>Based on your answers, here is a statement you can use when you need to enforce a limit:</p>
+              <div id="custom-statement">"I value our relationship, but I need to protect my peace. When this happens, I will need to step away."</div>
+              <button class="btn btn-secondary" id="btn-share" style="margin-top: 12px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                  Share Results
+              </button>
+          </div>
+
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 20px;">Scripts for Difficult Conversations</h3>
+
+          <div class="script-box">
+            <strong>When someone pushes back:</strong>
+            <p>"I hear that you're disappointed, but my boundary isn't up for negotiation."</p>
+          </div>
+
+          <div class="script-box">
+            <strong>When you need space:</strong>
+            <p>"I'm feeling overwhelmed right now. I need some time to myself, and I'll reconnect when I'm ready."</p>
+          </div>
+
+          <div class="script-box">
+            <strong>When someone gives unsolicited advice:</strong>
+            <p>"I appreciate that you care, but I'm just looking to vent right now, not for solutions."</p>
+          </div>
+
+          <div style="text-align: center; margin-top: 40px;">
+              <button class="btn btn-primary" id="btn-restart">Take Quiz Again</button>
+          </div>
+      </section>
+
+      <div class="info-section card">
+          <h2>Why Boundaries Matter</h2>
+          <p>Boundaries are the limits we set to protect our physical, emotional, and mental well-being. They are not about controlling other people; they are about communicating what we need to feel safe and respected in a relationship.</p>
+          <p>Without boundaries, we often experience resentment, burnout, and a loss of our sense of self. Learning to articulate your limits is a continuous practice, and it's completely normal if it feels uncomfortable at first.</p>
+
+          <h2 style="margin-top: 40px;">Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How do I know what my boundary style is?</h3>
+            <p>Your boundary style usually falls into three categories: firm (clear and consistent), flexible (adaptable but sometimes weak), or needs work (often porous, leading to resentment). Taking our quiz can help you identify your natural tendencies in different scenarios.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do I set boundaries without feeling guilty?</h3>
+            <p>Feeling guilty is common when you first start setting boundaries, especially if you are a people-pleaser. Remember that boundaries are a form of self-care and mutual respect. Clear communication, like "I need some time to myself tonight," is healthy, not selfish.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What are examples of physical boundaries?</h3>
+            <p>Physical boundaries involve your personal space and body. Examples include preferring a handshake over a hug, needing personal space in crowded areas, or clearly communicating when you do or do not want physical affection from a partner.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why are digital boundaries important in a relationship?</h3>
+            <p>Digital boundaries protect your peace and privacy. Important examples include setting expectations for how quickly you respond to texts, deciding what is acceptable to post on social media, and maintaining privacy with passwords and location sharing.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What should I say when someone crosses my boundaries?</h3>
+            <p>When a boundary is crossed, be firm but calm. You might say, "I've mentioned before that I don't want to discuss this topic. If we continue, I'll need to leave the conversation." Consistency in enforcing consequences is key.</p>
+          </div>
+      </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script src="back-to-top.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const quizContainer = document.getElementById('quiz-container');
+    const quizSection = document.getElementById('quiz-section');
+    const resultsSection = document.getElementById('results-section');
+    const btnRestart = document.getElementById('btn-restart');
+    const btnShare = document.getElementById('btn-share');
+
+    const resultStyleTitle = document.getElementById('result-style-title');
+    const resultDescription = document.getElementById('result-description');
+    const customStatement = document.getElementById('custom-statement');
+
+    // Quiz Data
+    const questions = [
+        {
+            category: "Physical",
+            text: "Someone you just met goes in for a tight hug, but you prefer a handshake. What do you do?",
+            options: [
+                { text: "Take a step back, offer my hand, and say 'I'm more of a handshake person!'", score: 3 }, // Firm
+                { text: "Accept the hug but feel uncomfortable, then try to avoid them later.", score: 1 }, // Needs Work
+                { text: "Do a quick, awkward half-hug and hope they don't do it again.", score: 2 } // Flexible
+            ]
+        },
+        {
+            category: "Physical",
+            text: "Your partner wants to be physically affectionate in public, but you feel uncomfortable.",
+            options: [
+                { text: "Gently pull away and say 'I prefer saving this for when we're alone.'", score: 3 },
+                { text: "Just let them do it so you don't cause a scene.", score: 1 },
+                { text: "Hold their hand but pull away if they try to kiss you, without saying why.", score: 2 }
+            ]
+        },
+        {
+            category: "Physical",
+            text: "A family member keeps commenting on your weight or appearance.",
+            options: [
+                { text: "Laugh it off or change the subject quickly.", score: 2 },
+                { text: "Say clearly, 'I don't discuss my body. Let's talk about something else.'", score: 3 },
+                { text: "Stay quiet and let it ruin your mood for the rest of the day.", score: 1 }
+            ]
+        },
+        {
+            category: "Emotional",
+            text: "A friend texts you a long rant about their day when you're already feeling emotionally drained.",
+            options: [
+                { text: "Read it but don't reply until the next day.", score: 2 },
+                { text: "Reply immediately and try to fix their problem, even if it exhausts you.", score: 1 },
+                { text: "Text back: 'I want to be here for you, but I don't have the capacity tonight. Can we talk tomorrow?'", score: 3 }
+            ]
+        },
+        {
+            category: "Emotional",
+            text: "You and your partner are arguing, and voices are starting to get raised.",
+            options: [
+                { text: "Say 'I'm feeling overwhelmed. I need a 20-minute break before we continue.'", score: 3 },
+                { text: "Yell back or shut down completely.", score: 1 },
+                { text: "Try to appease them and agree just to make the argument stop.", score: 2 }
+            ]
+        },
+        {
+            category: "Emotional",
+            text: "Someone asks you for a favor that you really don't want to do, but you technically have the time.",
+            options: [
+                { text: "Say yes because you feel guilty.", score: 1 },
+                { text: "Say 'I'd love to help, but my plate is full right now.'", score: 3 },
+                { text: "Make up an elaborate lie about why you can't do it.", score: 2 }
+            ]
+        },
+        {
+            category: "Sexual",
+            text: "You're in the middle of getting intimate, and you suddenly realize you're not in the mood anymore.",
+            options: [
+                { text: "Just finish so you don't disappoint them.", score: 1 },
+                { text: "Stop and say, 'I'm actually not feeling this right now, can we just cuddle?'", score: 3 },
+                { text: "Start acting distracted hoping they'll notice and stop.", score: 2 }
+            ]
+        },
+        {
+            category: "Sexual",
+            text: "A new partner wants to try something in the bedroom that you are unsure about.",
+            options: [
+                { text: "Say 'I'm not ready for that yet, let's stick to what we were doing.'", score: 3 },
+                { text: "Go along with it because you want them to think you're fun/open-minded.", score: 1 },
+                { text: "Say 'maybe later' to avoid a direct conversation.", score: 2 }
+            ]
+        },
+        {
+            category: "Sexual",
+            text: "You want to bring up the topic of getting STI tested before sleeping with someone new.",
+            options: [
+                { text: "Bring it up clearly: 'When was your last test? Let's go together.'", score: 3 },
+                { text: "Assume they're clean because they seem nice.", score: 1 },
+                { text: "Ask vaguely if they 'are safe' and accept whatever answer they give.", score: 2 }
+            ]
+        },
+        {
+            category: "Digital",
+            text: "Your boss emails you with a non-urgent request at 9 PM on a Friday.",
+            options: [
+                { text: "Reply immediately to show you're dedicated.", score: 1 },
+                { text: "Ignore it but feel stressed about it all weekend.", score: 2 },
+                { text: "Leave it unread and reply on Monday morning during business hours.", score: 3 }
+            ]
+        },
+        {
+            category: "Digital",
+            text: "A partner asks for your phone passcode 'just to be transparent'.",
+            options: [
+                { text: "Give it to them because you have nothing to hide.", score: 1 },
+                { text: "Say 'I value my privacy, so I prefer to keep my passcode to myself.'", score: 3 },
+                { text: "Refuse, but start an argument about trust.", score: 2 }
+            ]
+        },
+        {
+            category: "Digital",
+            text: "A friend posts a photo of you on Instagram that you hate, without asking.",
+            options: [
+                { text: "Text them and ask them to take it down.", score: 3 },
+                { text: "Leave it up but feel resentful about it.", score: 1 },
+                { text: "Untag yourself and hope nobody notices.", score: 2 }
+            ]
+        },
+        {
+            category: "Social",
+            text: "You have plans to go out, but you're exhausted and just want to stay home.",
+            options: [
+                { text: "Force yourself to go and be miserable.", score: 1 },
+                { text: "Cancel 10 minutes before with a fake excuse.", score: 2 },
+                { text: "Text early: 'I'm so exhausted, I need to take a raincheck tonight.'", score: 3 }
+            ]
+        },
+        {
+            category: "Social",
+            text: "A friend constantly shows up 45 minutes late when you meet up.",
+            options: [
+                { text: "Say 'My time is valuable. If you're going to be late, please let me know.'", score: 3 },
+                { text: "Stop inviting them to things without explaining why.", score: 2 },
+                { text: "Just accept that this is how they are and wait patiently.", score: 1 }
+            ]
+        },
+        {
+            category: "Social",
+            text: "You're at a party and someone keeps pressing you to drink more when you don't want to.",
+            options: [
+                { text: "Hold a drink and pretend to sip it all night.", score: 2 },
+                { text: "Say 'No thanks, I'm good with this' and change the subject or walk away.", score: 3 },
+                { text: "Give in and have the drink to avoid standing out.", score: 1 }
+            ]
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+    let userAnswers = [];
+
+    // Initialize Quiz
+    function initQuiz() {
+        quizContainer.innerHTML = '';
+        currentQuestionIndex = 0;
+        userAnswers = new Array(questions.length).fill(null);
+
+        questions.forEach((q, index) => {
+            const scenarioDiv = document.createElement('div');
+            scenarioDiv.className = `quiz-scenario ${index === 0 ? 'active' : ''}`;
+            scenarioDiv.id = `scenario-${index}`;
+
+            let optionsHtml = '';
+            q.options.forEach((opt, optIndex) => {
+                optionsHtml += `
+                    <label class="option-label" onclick="selectOption(${index}, ${optIndex}, this)">
+                        <input type="radio" class="option-input" name="q${index}" value="${opt.score}">
+                        ${opt.text}
+                    </label>
+                `;
+            });
+
+            scenarioDiv.innerHTML = `
+                <div class="scenario-header">
+                    <span class="scenario-category">${q.category}</span>
+                    <span class="scenario-progress">Question ${index + 1} of ${questions.length}</span>
+                </div>
+                <div class="scenario-question">${q.text}</div>
+                <div class="options-group">
+                    ${optionsHtml}
+                </div>
+                <div class="quiz-actions">
+                    <button class="btn btn-secondary" onclick="prevQuestion(${index})" ${index === 0 ? 'style="visibility:hidden;"' : ''}>Back</button>
+                    <button class="btn btn-primary" id="next-btn-${index}" onclick="nextQuestion(${index})" disabled>
+                        ${index === questions.length - 1 ? 'See Results' : 'Next'}
+                    </button>
+                </div>
+            `;
+            quizContainer.appendChild(scenarioDiv);
+        });
+    }
+
+    // Handle Selection (Global so inline onclick works)
+    window.selectOption = function(qIndex, optIndex, labelElement) {
+        // Update styling
+        const allLabels = labelElement.parentElement.querySelectorAll('.option-label');
+        allLabels.forEach(lbl => lbl.classList.remove('selected'));
+        labelElement.classList.add('selected');
+
+        // Select radio
+        const radio = labelElement.querySelector('input');
+        radio.checked = true;
+
+        // Save answer score
+        userAnswers[qIndex] = parseInt(radio.value);
+
+        // Enable Next button
+        const nextBtn = document.getElementById(`next-btn-${qIndex}`);
+        if(nextBtn) nextBtn.disabled = false;
+    };
+
+    window.prevQuestion = function(index) {
+        document.getElementById(`scenario-${index}`).classList.remove('active');
+        document.getElementById(`scenario-${index - 1}`).classList.add('active');
+    };
+
+    window.nextQuestion = function(index) {
+        if (index === questions.length - 1) {
+            showResults();
+        } else {
+            document.getElementById(`scenario-${index}`).classList.remove('active');
+            document.getElementById(`scenario-${index + 1}`).classList.add('active');
+        }
+    };
+
+    function showResults() {
+        quizSection.style.display = 'none';
+
+        // Calculate Score
+        const totalScore = userAnswers.reduce((a, b) => a + b, 0);
+        const maxScore = questions.length * 3;
+        const percentage = totalScore / maxScore;
+
+        let styleName = "";
+        let styleDesc = "";
+        let statement = "";
+
+        if (percentage >= 0.8) {
+            styleName = "Firm & Clear";
+            styleDesc = "You have a strong grasp of your needs and aren't afraid to communicate them. You understand that boundaries are about mutual respect and protecting your peace. Keep up the good work advocating for yourself!";
+            statement = "I value our relationship, but I need to protect my peace. This is a hard limit for me.";
+        } else if (percentage >= 0.5) {
+            styleName = "Flexible & Adapting";
+            styleDesc = "You generally know what you want, but you sometimes bend your rules to avoid conflict or keep the peace. You're doing great, but remember: you are allowed to be firm without feeling guilty.";
+            statement = "I understand where you're coming from, but I don't have the capacity for this right now.";
+        } else {
+            styleName = "Needs Work (People Pleaser)";
+            styleDesc = "You tend to put others' needs before your own, which often leads to burnout and resentment. You might feel like setting limits makes you a bad partner/friend. It doesn't. Start small: 'no' is a complete sentence.";
+            statement = "I need some time to process this. I will get back to you when I am ready.";
+        }
+
+        resultStyleTitle.textContent = styleName;
+        resultDescription.textContent = styleDesc;
+        customStatement.textContent = `"${statement}"`;
+
+        resultsSection.style.display = 'block';
+        window.scrollTo({ top: resultsSection.offsetTop - 100, behavior: 'smooth' });
+    }
+
+    btnRestart.addEventListener('click', () => {
+        resultsSection.style.display = 'none';
+        initQuiz();
+        quizSection.style.display = 'block';
+        window.scrollTo({ top: quizSection.offsetTop - 100, behavior: 'smooth' });
+    });
+
+    btnShare.addEventListener('click', async () => {
+        const style = resultStyleTitle.textContent;
+        const text = `I took the Ali Imperiale Boundaries Quiz and my boundary style is: ${style}!\n\nFind out your style: https://aliimperiale.com/boundaries-quiz.html`;
+
+        try {
+            await navigator.clipboard.writeText(text);
+            const originalText = btnShare.innerHTML;
+            btnShare.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+            setTimeout(() => {
+                btnShare.innerHTML = originalText;
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+            alert('Failed to copy to clipboard.');
+        }
+    });
+
+    // Start
+    initQuiz();
+});
+</script>
+</body>
+</html>
