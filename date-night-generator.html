@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Night Idea Generator | Ali Imperiale</title>
+  <meta name="description" content="A fun, interactive tool to generate the perfect date night idea. Filter by budget, location, mood, and duration, or let us surprise you!">
+  <meta property="og:title" content="Date Night Idea Generator | Ali Imperiale">
+  <meta property="og:description" content="Stuck on what to do for date night? Use this fun, interactive tool to find the perfect idea.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/date-night-generator.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Date Night Idea Generator">
+  <meta name="twitter:description" content="Generate the perfect date night idea. Filter by budget, location, mood, and duration.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/date-night-generator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="alternate" type="application/rss+xml" title="Ali Imperiale Blog" href="https://aliimperiale.com/feed.xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is a good date night idea for a tight budget?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some of the best dates are free. Try building a living room fort, doing a blind taste test with snacks you already have, going for a sunset walk, or creating a bucket list together over drinks at home."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How do you make a date night feel special at home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The key to an at-home date night is separating it from your normal routine. Put your phones away, change out of your normal loungewear, light candles, play music, and commit to the activity—whether that's cooking together or having an indoor picnic."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What are some fun, adventurous date ideas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Step out of your comfort zone by trying an escape room, going bouldering, taking a specialized class (like pottery or glassblowing), or doing a food truck crawl where you get each course from a different place."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How often should couples have a date night?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While once a week is a great goal, the frequency matters less than the consistency and intention. If you can only manage one focused, intentional date night a month, that is far better than four distracted ones."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What should we talk about on a date night?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Try to avoid logistical talk (chores, bills, kids, work stress). Instead, focus on dreams, future plans, hypothetical questions, reflecting on favorite memories, or discussing what you're currently learning or reading about."
+      }
+    }]
+  }
+  </script>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    :root {
+      --cream: #FAF8EB;
+      --olive: #2E3E24;
+      --gold: #AD9846;
+      --text-color: #2E3E24;
+      --white: #ffffff;
+      --border-radius: 18px;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    #main-content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .generator-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .generator-header h1 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 2.5rem;
+      color: var(--olive);
+      margin-bottom: 10px;
+    }
+
+    .generator-header p {
+      font-size: 1.1rem;
+      color: #555549;
+    }
+
+    .generator-container {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      margin-bottom: 40px;
+    }
+
+    /* Filters Section */
+    .filters-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .filter-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--olive);
+    }
+
+    .filter-group select {
+      padding: 10px;
+      border: 1px solid rgba(46, 62, 36, 0.2);
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      background-color: var(--cream);
+      color: var(--text-color);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .filter-group select:focus {
+      border-color: var(--gold);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--olive);
+      color: var(--cream);
+      border: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.15s;
+      text-align: center;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      background-color: #3a5030;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--olive);
+      border: 2px solid var(--olive);
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(46, 62, 36, 0.05);
+    }
+
+    /* Card UI */
+    .card-display-area {
+      position: relative;
+      height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+      margin-top: 20px;
+    }
+
+    .idea-card {
+      background: var(--white);
+      border: 2px solid var(--gold);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(173, 152, 70, 0.15);
+      position: absolute;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: grab;
+      user-select: none;
+      touch-action: pan-y;
+    }
+
+    .idea-card:active {
+      cursor: grabbing;
+    }
+
+    .idea-card h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: var(--olive);
+      margin-bottom: 15px;
+    }
+
+    .idea-card p {
+      font-size: 1rem;
+      color: #555549;
+      margin-bottom: 20px;
+    }
+
+    .idea-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .idea-tag {
+      background: rgba(173, 152, 70, 0.1);
+      color: var(--olive);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-controls {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .control-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .control-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .btn-skip {
+      background-color: #fff;
+      color: #e74c3c;
+      border: 2px solid #e74c3c;
+    }
+
+    .btn-save {
+      background-color: #fff;
+      color: #2ecc71;
+      border: 2px solid #2ecc71;
+    }
+
+    /* Saved Dates Section */
+    .saved-dates-section {
+      margin-top: 50px;
+    }
+
+    .saved-dates-section h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.8rem;
+      color: var(--olive);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .saved-dates-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .saved-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(46, 62, 36, 0.05);
+      border: 1px solid rgba(46, 62, 36, 0.1);
+      position: relative;
+    }
+
+    .saved-card h4 {
+      margin: 0 0 10px 0;
+      color: var(--olive);
+      font-size: 1.1rem;
+    }
+
+    .saved-card p {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .remove-saved {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: #999;
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 5px;
+    }
+
+    .remove-saved:hover {
+      color: #e74c3c;
+    }
+
+    .plan-it-btn {
+      background: var(--gold);
+      color: var(--olive);
+      border: none;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .plan-it-details {
+      display: none;
+      background: var(--cream);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      border: 1px dashed var(--gold);
+    }
+
+    .share-btn {
+      background: transparent;
+      color: var(--olive);
+      border: 1px solid var(--olive);
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Seasonal Suggestions */
+    .seasonal-banner {
+      background-color: rgba(173, 152, 70, 0.15);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .seasonal-icon {
+      font-size: 2rem;
+    }
+
+    .seasonal-text h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.1rem;
+      color: var(--olive);
+    }
+
+    .seasonal-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Animation classes */
+    .swipe-left { transform: translateX(-150%) rotate(-15deg); opacity: 0; }
+    .swipe-right { transform: translateX(150%) rotate(15deg); opacity: 0; }
+
+    /* Educational Section */
+    .educational-section {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 40px;
+      margin-top: 60px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.05);
+    }
+
+    .educational-section h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 2rem;
+      color: var(--olive);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .educational-section p {
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    @media (max-width: 600px) {
+      .filters-section { grid-template-columns: 1fr 1fr; }
+      .generator-container { padding: 20px; }
+      .idea-card { padding: 20px; height: 300px; }
+      .card-display-area { height: 300px; }
+      .educational-section { padding: 25px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar" style="background: #AD9846; padding: 10px 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+    <p style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600; color: #2E3E24; margin: 0; letter-spacing: 0.3px;">New Course: Open &amp; Honest &mdash; The Couples Course</p>
+    <a href="/open-and-honest.html" style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; color: #FAF8EB; background: #2E3E24; padding: 6px 18px; border-radius: 20px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: background 0.2s, transform 0.15s; white-space: nowrap;">Explore the Open &amp; Honest Course</a>
+    <button class="announcement-close" onclick="document.getElementById('announcement-bar').style.display='none';sessionStorage.setItem('hide-announcement','1')" aria-label="Close announcement" style="background: none; border: none; color: #2E3E24; font-size: 1.2rem; cursor: pointer; padding: 0 0 0 8px; line-height: 1; opacity: 0.6; transition: opacity 0.15s;">&times;</button>
+  </div>
+  <script>if(sessionStorage.getItem('hide-announcement')==='1'){document.getElementById('announcement-bar').style.display='none'}</script>
+
+  <!-- Navigation -->
+  <nav class="site-nav" style="background: #2E3E24; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32" style="height: 32px; opacity: 0.9;"></a>
+    <ul class="nav-links" style="display: flex; gap: 24px; list-style: none; margin: 0; padding: 0;">
+      <li><a href="/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'Montserrat', sans-serif;">Home</a></li>
+      <li><a href="/blog/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'Montserrat', sans-serif;">Blog</a></li>
+      <li><a href="/about.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'Montserrat', sans-serif;">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'Montserrat', sans-serif;">YouTube</a></li>
+      <li><a href="/open-and-honest.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'Montserrat', sans-serif;">Course</a></li>
+      <li><a href="/reads.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'Montserrat', sans-serif;">Reads</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <div class="generator-header">
+      <h1>Date Night Idea Generator</h1>
+      <p>Banish "I don't know, what do you want to do?" forever. Find the perfect date night vibe.</p>
+    </div>
+
+    <div class="seasonal-banner" id="seasonalBanner">
+      <div class="seasonal-icon" id="seasonalIcon">🌟</div>
+      <div class="seasonal-text">
+        <h3 id="seasonalTitle">Seasonal Inspiration</h3>
+        <p id="seasonalDesc">Check out our suggestions perfectly tailored for this time of year!</p>
+      </div>
+    </div>
+
+    <div class="generator-container">
+      <div class="filters-section">
+        <div class="filter-group">
+          <label for="budgetFilter">Budget</label>
+          <select id="budgetFilter">
+            <option value="any">Any Budget</option>
+            <option value="free">Free / Cheap</option>
+            <option value="$$">Moderate ($$)</option>
+            <option value="$$$">Splurge ($$$)</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="locationFilter">Location</label>
+          <select id="locationFilter">
+            <option value="any">Anywhere</option>
+            <option value="home">At Home</option>
+            <option value="out">Going Out</option>
+            <option value="travel">Weekend Trip</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="moodFilter">Mood</label>
+          <select id="moodFilter">
+            <option value="any">Any Vibe</option>
+            <option value="romantic">Romantic</option>
+            <option value="adventurous">Adventurous</option>
+            <option value="chill">Chill</option>
+            <option value="spicy">Spicy</option>
+            <option value="creative">Creative</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="durationFilter">Duration</label>
+          <select id="durationFilter">
+            <option value="any">Any Length</option>
+            <option value="quick">Quick (1-2 hrs)</option>
+            <option value="evening">Full Evening</option>
+            <option value="weekend">Whole Weekend</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="surpriseMeBtn" class="btn-primary" style="margin-bottom: 20px;">🎲 Surprise Me! (Random Date)</button>
+      <div style="text-align: center; color: #888; font-size: 0.85rem; margin-bottom: 10px;">OR SWIPE THROUGH IDEAS</div>
+
+      <div class="card-display-area" id="cardArea">
+        <!-- Card gets injected here -->
+      </div>
+
+      <div class="card-controls">
+        <button class="control-btn btn-skip" id="btnSkip" title="Skip">✗</button>
+        <button class="control-btn btn-save" id="btnSave" title="Save">♥</button>
+      </div>
+    </div>
+
+    <div class="saved-dates-section" id="savedDatesSection" style="display: none;">
+      <h2>Your Saved Ideas</h2>
+      <div class="saved-dates-list" id="savedDatesList">
+        <!-- Saved dates injected here -->
+      </div>
+    </div>
+
+    <!-- Educational & FAQ Section -->
+    <div class="educational-section">
+      <h2>Why Intentional Date Nights Matter</h2>
+      <p>When you've been with someone for a while, "date night" often turns into ordering the same takeout and watching whatever's new on Netflix while sitting on opposite ends of the couch. There's absolutely nothing wrong with a cozy night in, but when that becomes the <em>only</em> way you connect, it's easy to slip into roommate mode.</p>
+
+      <p>Intentional date nights aren't about spending a lot of money or doing something wild every weekend. They're about <strong>novelty</strong> and <strong>undivided attention</strong>. Trying something new together forces you out of your routine, creating a shared experience that builds intimacy and connection outside of your daily responsibilities.</p>
+
+      <p>Whether you're recreating your first date, building a living room fort, or getting dressed up for a fancy hotel bar, the goal is simply to look at each other and say, "I am choosing to spend this time focused entirely on us."</p>
+
+      <div style="margin-top: 40px;">
+        <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.5rem; color: var(--olive); margin-bottom: 15px;">Frequently Asked Questions</h3>
+
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: var(--olive); font-weight: 600; margin-bottom: 5px;">What is a good date night idea for a tight budget?</h4>
+          <p style="font-size: 0.95rem; color: #555549; margin-top: 0;">Some of the best dates are free. Try building a living room fort, doing a blind taste test with snacks you already have, going for a sunset walk, or creating a bucket list together over drinks at home.</p>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: var(--olive); font-weight: 600; margin-bottom: 5px;">How do you make a date night feel special at home?</h4>
+          <p style="font-size: 0.95rem; color: #555549; margin-top: 0;">The key to an at-home date night is separating it from your normal routine. Put your phones away, change out of your normal loungewear, light candles, play music, and commit to the activity—whether that's cooking together or having an indoor picnic.</p>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: var(--olive); font-weight: 600; margin-bottom: 5px;">What are some fun, adventurous date ideas?</h4>
+          <p style="font-size: 0.95rem; color: #555549; margin-top: 0;">Step out of your comfort zone by trying an escape room, going bouldering, taking a specialized class (like pottery or glassblowing), or doing a food truck crawl where you get each course from a different place.</p>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: var(--olive); font-weight: 600; margin-bottom: 5px;">How often should couples have a date night?</h4>
+          <p style="font-size: 0.95rem; color: #555549; margin-top: 0;">While once a week is a great goal, the frequency matters less than the consistency and intention. If you can only manage one focused, intentional date night a month, that is far better than four distracted ones.</p>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: var(--olive); font-weight: 600; margin-bottom: 5px;">What should we talk about on a date night?</h4>
+          <p style="font-size: 0.95rem; color: #555549; margin-top: 0;">Try to avoid logistical talk (chores, bills, kids, work stress). Instead, focus on dreams, future plans, hypothetical questions, reflecting on favorite memories, or discussing what you're currently learning or reading about.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script src="back-to-top.js" defer></script>
+<script>
+  const dateIdeas = [
+    { id: 1, title: "Indoor Picnic", desc: "Clear the living room floor, lay out a blanket, and eat your favorite takeout or charcuterie.", tags: ["home", "chill", "evening", "free"], budget: "free", location: "home", mood: "chill", duration: "evening", tips: "Light some candles and put on a acoustic playlist. Extra points if you ban phones." },
+    { id: 2, title: "Local Tourist", desc: "Visit a landmark or museum in your own city that you've never been to.", tags: ["out", "adventurous", "weekend", "$$"], budget: "$$", location: "out", mood: "adventurous", duration: "weekend", tips: "Take lots of cheesy tourist photos. Grab a souvenir magnet." },
+    { id: 3, title: "Blind Taste Test", desc: "Buy 5-10 different types of chocolate, cheese, or craft beer. Blindfold each other and guess the flavors.", tags: ["home", "creative", "quick", "$$"], budget: "$$", location: "home", mood: "creative", duration: "quick", tips: "Make it a competition. The loser has to give the winner a massage." },
+    { id: 4, title: "Bookstore Scavenger Hunt", desc: "Go to a local bookstore and find books for each other based on prompts (e.g., 'a book that reminds you of me').", tags: ["out", "chill", "quick", "free"], budget: "free", location: "out", mood: "chill", duration: "quick", tips: "Grab coffee at the bookstore cafe afterward to read the first chapters." },
+    { id: 5, title: "Cook a New Recipe Together", desc: "Pick a complex recipe you've never tried. Buy the ingredients together and cook.", tags: ["home", "creative", "evening", "$$"], budget: "$$", location: "home", mood: "creative", duration: "evening", tips: "Don't stress if it turns out bad. Have a backup frozen pizza ready just in case." },
+    { id: 6, title: "Fancy Hotel Bar", desc: "Dress up in your best clothes and grab one expensive drink at the nicest hotel in town.", tags: ["out", "romantic", "quick", "$$$"], budget: "$$$", location: "out", mood: "romantic", duration: "quick", tips: "Pretend to be mysterious strangers who just met at the bar." },
+    { id: 7, title: "At-Home Spa Night", desc: "Face masks, bubble bath, massages, and relaxation music.", tags: ["home", "romantic", "evening", "free"], budget: "free", location: "home", mood: "romantic", duration: "evening", tips: "Use real massage oil. Take turns giving full-body massages." },
+    { id: 8, title: "Thrift Store Outfit Challenge", desc: "Go to a thrift store. You each have $15 to pick an outfit for the other person to wear to dinner.", tags: ["out", "creative", "evening", "$$"], budget: "$$", location: "out", mood: "creative", duration: "evening", tips: "Commit to the outfits. Take photos!" },
+    { id: 9, title: "Sunset Hike", desc: "Find a local trail with a good view. Pack some snacks and watch the sun go down.", tags: ["out", "adventurous", "evening", "free"], budget: "free", location: "out", mood: "adventurous", duration: "evening", tips: "Bring a headlamp or flashlight for the hike back down." },
+    { id: 10, title: "Strip Poker / Board Game", desc: "Play your favorite 2-player game, but make the stakes spicy.", tags: ["home", "spicy", "evening", "free"], budget: "free", location: "home", mood: "spicy", duration: "evening", tips: "Start with lots of layers of clothing to make the game last longer." },
+    { id: 11, title: "Arcade Night", desc: "Get a roll of quarters and hit up a local arcade or barcade.", tags: ["out", "adventurous", "evening", "$$"], budget: "$$", location: "out", mood: "adventurous", duration: "evening", tips: "Combine all your tickets at the end to buy the weirdest prize possible." },
+    { id: 12, title: "Stargazing Drive", desc: "Drive out of the city away from the light pollution. Lay on the hood of the car and look at the stars.", tags: ["out", "romantic", "evening", "free"], budget: "free", location: "out", mood: "romantic", duration: "evening", tips: "Download a stargazing app to help identify constellations." },
+    { id: 13, title: "DIY Pottery/Paint Night", desc: "Buy some cheap air-dry clay or canvases and create art while drinking wine.", tags: ["home", "creative", "evening", "$$"], budget: "$$", location: "home", mood: "creative", duration: "evening", tips: "Follow a Bob Ross tutorial together." },
+    { id: 14, title: "Food Truck Crawl", desc: "Skip the sit-down restaurant and get an appetizer, main course, and dessert from three different food trucks.", tags: ["out", "adventurous", "evening", "$$"], budget: "$$", location: "out", mood: "adventurous", duration: "evening", tips: "Share every dish so you can try more things." },
+    { id: 15, title: "Body Painting", desc: "Get some body-safe paint and use each other as canvases.", tags: ["home", "spicy", "evening", "$$"], budget: "$$", location: "home", mood: "spicy", duration: "evening", tips: "Put down an old sheet first. Have fun washing it off together in the shower." },
+    { id: 16, title: "Cabin Getaway", desc: "Rent a cozy cabin in the woods for the weekend. No Wi-Fi allowed.", tags: ["travel", "romantic", "weekend", "$$$"], budget: "$$$", location: "travel", mood: "romantic", duration: "weekend", tips: "Pack board games, good books, and lots of wine." },
+    { id: 17, title: "Comedy Club", desc: "Go see a local stand-up comedy show.", tags: ["out", "chill", "evening", "$$"], budget: "$$", location: "out", mood: "chill", duration: "evening", tips: "Sit in the front row if you're brave enough to get roasted." },
+    { id: 18, title: "Flea Market Flipping", desc: "Go to a flea market, find an ugly item, and spend the afternoon repainting/fixing it together.", tags: ["out", "creative", "weekend", "$$"], budget: "$$", location: "out", mood: "creative", duration: "weekend", tips: "Make a bet on who can find the weirdest item under $5." },
+    { id: 19, title: "Recreate Your First Date", desc: "Go to the exact places and do the exact things you did on your first date.", tags: ["out", "romantic", "evening", "$$"], budget: "$$", location: "out", mood: "romantic", duration: "evening", tips: "Talk about your first impressions of each other." },
+    { id: 20, title: "Truth or Dare: Spicy Edition", desc: "Play a heavily customized game of truth or dare.", tags: ["home", "spicy", "quick", "free"], budget: "free", location: "home", mood: "spicy", duration: "quick", tips: "Write down truths and dares on slips of paper beforehand." },
+    { id: 21, title: "Take a Class Together", desc: "Sign up for a one-off class: cooking, pottery, salsa dancing, or glassblowing.", tags: ["out", "creative", "evening", "$$$"], budget: "$$$", location: "out", mood: "creative", duration: "evening", tips: "It's okay to be terrible at it. Laugh at yourselves." },
+    { id: 22, title: "Late Night Dessert Run", desc: "Go out at 10 PM specifically just to get ice cream, pie, or fancy donuts.", tags: ["out", "chill", "quick", "$$"], budget: "$$", location: "out", mood: "chill", duration: "quick", tips: "Eat it in the car while listening to a podcast or your favorite album." },
+    { id: 23, title: "Volunteer Together", desc: "Spend a Saturday morning walking dogs at an animal shelter or helping at a food bank.", tags: ["out", "chill", "weekend", "free"], budget: "free", location: "out", mood: "chill", duration: "weekend", tips: "Grab a casual lunch together afterward." },
+    { id: 24, title: "Create a Bucket List", desc: "Sit down with drinks and create a master list of everything you want to do together in the next 5 years.", tags: ["home", "romantic", "evening", "free"], budget: "free", location: "home", mood: "romantic", duration: "evening", tips: "Dream big. Include travel, career, and relationship goals." },
+    { id: 25, title: "Roleplay Night", desc: "Create alter-egos, dress up, and meet at a bar as 'strangers'.", tags: ["out", "spicy", "evening", "$$"], budget: "$$", location: "out", mood: "spicy", duration: "evening", tips: "Commit to the accents and backstories for at least the first drink." },
+    { id: 26, title: "Botanical Garden Picnic", desc: "Pack a lunch and spend the afternoon wandering through a botanical garden or conservatory.", tags: ["out", "chill", "weekend", "$$"], budget: "$$", location: "out", mood: "chill", duration: "weekend", tips: "Bring a disposable camera to take aesthetic photos." },
+    { id: 27, title: "Living Room Fort", desc: "Use all the blankets and pillows in the house. Build a fort and watch a movie inside it.", tags: ["home", "creative", "evening", "free"], budget: "free", location: "home", mood: "creative", duration: "evening", tips: "Fairy lights are mandatory for structural integrity." },
+    { id: 28, title: "Couples Yoga", desc: "Find a beginner couples yoga or acroyoga video on YouTube and try not to drop each other.", tags: ["home", "chill", "quick", "free"], budget: "free", location: "home", mood: "chill", duration: "quick", tips: "Stretch properly first. Focus on the breathing and connection." },
+    { id: 29, title: "Go to a Drive-In Movie", desc: "Find a local drive-in theater. Bring an air mattress for the back of the car/truck.", tags: ["out", "romantic", "evening", "$$"], budget: "$$", location: "out", mood: "romantic", duration: "evening", tips: "Sneak in your own premium snacks and blankets." },
+    { id: 30, title: "Sensory Deprivation Play", desc: "Blindfold one partner and use different sensations (ice, feathers, warm massage oil).", tags: ["home", "spicy", "evening", "free"], budget: "free", location: "home", mood: "spicy", duration: "evening", tips: "Communication is key. Establish boundaries and a safe word beforehand." },
+    { id: 31, title: "Escape Room", desc: "Test your communication skills by getting locked in a room together.", tags: ["out", "adventurous", "evening", "$$$"], budget: "$$$", location: "out", mood: "adventurous", duration: "evening", tips: "Remember it's just a game. Don't actually get mad at each other." },
+    { id: 32, title: "Wine Tasting at Home", desc: "Buy 3-4 cheap bottles of wine. Print out tasting notes and pretend to be sommeliers.", tags: ["home", "chill", "evening", "$$"], budget: "$$", location: "home", mood: "chill", duration: "evening", tips: "Swirl the glass aggressively and use words like 'oaky' and 'pretentious'." },
+    { id: 33, title: "Record Store Roulette", desc: "Go to a record store. Each pick an album the other person has to listen to.", tags: ["out", "creative", "quick", "$$"], budget: "$$", location: "out", mood: "creative", duration: "quick", tips: "Pick something completely out of their normal genre." },
+    { id: 34, title: "Rooftop Drinks", desc: "Find the highest publicly accessible point or rooftop bar in your city for sunset.", tags: ["out", "romantic", "evening", "$$$"], budget: "$$$", location: "out", mood: "romantic", duration: "evening", tips: "Dress up nicely. Perfect opportunity for a cute photo." },
+    { id: 35, title: "Read Erotica Together", desc: "Take turns reading a spicy story or chapter out loud to each other in bed.", tags: ["home", "spicy", "quick", "free"], budget: "free", location: "home", mood: "spicy", duration: "quick", tips: "Don't be afraid to laugh if the writing is terrible, but lean into it if it's hot." },
+    { id: 36, title: "Farmers Market Morning", desc: "Wake up early, grab coffee, and buy fresh ingredients for lunch.", tags: ["out", "chill", "weekend", "$$"], budget: "$$", location: "out", mood: "chill", duration: "weekend", tips: "Buy a weird vegetable you've never cooked before and figure it out later." },
+    { id: 37, title: "Go Kart Racing", desc: "Embrace your inner child and get highly competitive at a go-kart track.", tags: ["out", "adventurous", "quick", "$$$"], budget: "$$$", location: "out", mood: "adventurous", duration: "quick", tips: "Loser pays for the milkshakes after." },
+    { id: 38, title: "At-Home Chopped", desc: "Pick 4 random ingredients from the pantry. You have 30 minutes to make a dish.", tags: ["home", "creative", "evening", "free"], budget: "free", location: "home", mood: "creative", duration: "evening", tips: "You must eat the final result, no matter how weird." },
+    { id: 39, title: "Visit an Aquarium", desc: "Spend a few hours looking at fish and learning weird ocean facts.", tags: ["out", "chill", "weekend", "$$$"], budget: "$$$", location: "out", mood: "chill", duration: "weekend", tips: "Go during a weekday or early morning to avoid the crowds of kids." },
+    { id: 40, title: "Tie Me Up", desc: "Experiment with some basic, safe restraints or light bondage.", tags: ["home", "spicy", "evening", "$$"], budget: "$$", location: "home", mood: "spicy", duration: "evening", tips: "Keep scissors nearby, use soft restraints, and check in often." },
+    { id: 41, title: "IKEA Date", desc: "Walk through IKEA, pretend you live in the display rooms, and eat Swedish meatballs.", tags: ["out", "creative", "weekend", "$$"], budget: "$$", location: "out", mood: "creative", duration: "weekend", tips: "Play house. Point out what you'd put in your fictional shared apartment." },
+    { id: 42, title: "Sunrise Breakfast", desc: "Wake up before dawn, grab drive-thru breakfast, and park somewhere to watch the sun come up.", tags: ["out", "romantic", "quick", "$$"], budget: "$$", location: "out", mood: "romantic", duration: "quick", tips: "Bring blankets. It's usually colder than you think." },
+    { id: 43, title: "PowerPoint Night", desc: "Create 5-minute presentations on stupid topics (e.g., 'Historical figures I could beat in a fight').", tags: ["home", "creative", "evening", "free"], budget: "free", location: "home", mood: "creative", duration: "evening", tips: "Take the presentations completely seriously." },
+    { id: 44, title: "Bouldering/Rock Climbing", desc: "Hit up an indoor climbing gym. It requires trust and communication.", tags: ["out", "adventurous", "weekend", "$$$"], budget: "$$$", location: "out", mood: "adventurous", duration: "weekend", tips: "Great way to see how you support each other through physical challenges." },
+    { id: 45, title: "Tantric Breathing", desc: "Sit facing each other, synchronize your breathing, and hold eye contact for 5 minutes.", tags: ["home", "spicy", "quick", "free"], budget: "free", location: "home", mood: "spicy", duration: "quick", tips: "It will feel awkward at first. Push through the giggles." },
+    { id: 46, title: "Dive Bar Tour", desc: "Skip the fancy places. Map out 3-4 of the diviest, grimiest bars in town.", tags: ["out", "adventurous", "evening", "$$"], budget: "$$", location: "out", mood: "adventurous", duration: "evening", tips: "Play pool, put songs on the jukebox, and drink cheap beer." },
+    { id: 47, title: "Bake a Complicated Dessert", desc: "Macarons, a multi-layer cake, or croissants. Spend hours making something sweet.", tags: ["home", "creative", "weekend", "$$"], budget: "$$", location: "home", mood: "creative", duration: "weekend", tips: "The mess is half the fun. Do the dishes together after." },
+    { id: 48, title: "Local Sports Game", desc: "Go to a minor league baseball or local hockey game. Eat hot dogs and cheer for a random team.", tags: ["out", "chill", "evening", "$$"], budget: "$$", location: "out", mood: "chill", duration: "evening", tips: "Buy the cheap seats and just enjoy the atmosphere." },
+    { id: 49, title: "Future Planning Walk", desc: "Go for a long walk with no destination. Talk specifically about where you want to be in 10 years.", tags: ["out", "romantic", "quick", "free"], budget: "free", location: "out", mood: "romantic", duration: "quick", tips: "Keep it positive and dreamy, not stressful." },
+    { id: 50, title: "New Toy Night", desc: "Go to an adult store together, pick out one new toy, and go home to try it.", tags: ["out", "spicy", "evening", "$$$"], budget: "$$$", location: "out", mood: "spicy", duration: "evening", tips: "Make an event out of the shopping trip. Browse and talk about what looks interesting." }
+  ];
+
+  let filteredIdeas = [...dateIdeas];
+  let currentCardIndex = 0;
+
+  // Elements
+  const budgetFilter = document.getElementById('budgetFilter');
+  const locationFilter = document.getElementById('locationFilter');
+  const moodFilter = document.getElementById('moodFilter');
+  const durationFilter = document.getElementById('durationFilter');
+  const surpriseMeBtn = document.getElementById('surpriseMeBtn');
+  const cardArea = document.getElementById('cardArea');
+  const btnSkip = document.getElementById('btnSkip');
+  const btnSave = document.getElementById('btnSave');
+  const savedDatesSection = document.getElementById('savedDatesSection');
+  const savedDatesList = document.getElementById('savedDatesList');
+
+  // State
+  let savedIdeas = JSON.parse(localStorage.getItem('ali_saved_dates')) || [];
+
+  // Functions
+  function filterIdeas() {
+    const b = budgetFilter.value;
+    const l = locationFilter.value;
+    const m = moodFilter.value;
+    const d = durationFilter.value;
+
+    filteredIdeas = dateIdeas.filter(idea => {
+      return (b === 'any' || idea.budget === b) &&
+             (l === 'any' || idea.location === l) &&
+             (m === 'any' || idea.mood === m) &&
+             (d === 'any' || idea.duration === d);
+    });
+
+    // Shuffle the filtered ideas
+    filteredIdeas.sort(() => Math.random() - 0.5);
+    currentCardIndex = 0;
+    renderCurrentCard();
+  }
+
+  function renderCurrentCard() {
+    cardArea.innerHTML = '';
+
+    if (filteredIdeas.length === 0) {
+      cardArea.innerHTML = `
+        <div class="idea-card" style="border-color: #ccc;">
+          <h3>No ideas found</h3>
+          <p>Try loosening your filters to see more options!</p>
+          <button class="btn-secondary" onclick="resetFilters()">Reset Filters</button>
+        </div>
+      `;
+      return;
+    }
+
+    if (currentCardIndex >= filteredIdeas.length) {
+      // Loop back or show end
+      currentCardIndex = 0;
+    }
+
+    const idea = filteredIdeas[currentCardIndex];
+    const card = document.createElement('div');
+    card.className = 'idea-card';
+    card.id = `card-${idea.id}`;
+
+    card.innerHTML = `
+      <h3>${idea.title}</h3>
+      <p>${idea.desc}</p>
+      <div class="idea-tags">
+        <span class="idea-tag">${idea.budget}</span>
+        <span class="idea-tag">${idea.location}</span>
+        <span class="idea-tag">${idea.duration}</span>
+      </div>
+    `;
+
+    cardArea.appendChild(card);
+    setupCardDrag(card);
+  }
+
+  function nextCard() {
+    currentCardIndex++;
+    setTimeout(() => {
+      renderCurrentCard();
+    }, 300); // Wait for animation
+  }
+
+  function saveIdea(idea) {
+    if (!savedIdeas.find(i => i.id === idea.id)) {
+      savedIdeas.push(idea);
+      localStorage.setItem('ali_saved_dates', JSON.stringify(savedIdeas));
+      renderSavedDates();
+    }
+  }
+
+  function removeSavedIdea(id) {
+    savedIdeas = savedIdeas.filter(i => i.id !== id);
+    localStorage.setItem('ali_saved_dates', JSON.stringify(savedIdeas));
+    renderSavedDates();
+  }
+
+  function renderSavedDates() {
+    if (savedIdeas.length === 0) {
+      savedDatesSection.style.display = 'none';
+      return;
+    }
+
+    savedDatesSection.style.display = 'block';
+    savedDatesList.innerHTML = '';
+
+    savedIdeas.forEach(idea => {
+      const card = document.createElement('div');
+      card.className = 'saved-card';
+      card.innerHTML = `
+        <button class="remove-saved" onclick="removeSavedIdea(${idea.id})" aria-label="Remove saved idea">×</button>
+        <h4>${idea.title}</h4>
+        <p>${idea.desc}</p>
+        <button class="plan-it-btn" onclick="toggleDetails(${idea.id})">Plan it!</button>
+        <div class="plan-it-details" id="details-${idea.id}">
+          <strong>Pro Tip:</strong> ${idea.tips}
+          <br><br>
+          <button class="share-btn" onclick="shareIdea('${idea.title}', '${idea.desc}')">
+            📋 Copy to clipboard
+          </button>
+        </div>
+      `;
+      savedDatesList.appendChild(card);
+    });
+  }
+
+  window.toggleDetails = function(id) {
+    const el = document.getElementById(`details-${id}`);
+    if (el.style.display === 'block') {
+      el.style.display = 'none';
+    } else {
+      el.style.display = 'block';
+    }
+  };
+
+  window.shareIdea = function(title, desc) {
+    const text = `Date Night Idea: ${title}\n${desc}\n\nGenerated from aliimperiale.com`;
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied to clipboard! Send it to your partner.");
+    });
+  };
+
+  window.resetFilters = function() {
+    budgetFilter.value = 'any';
+    locationFilter.value = 'any';
+    moodFilter.value = 'any';
+    durationFilter.value = 'any';
+    filterIdeas();
+  };
+
+  // Drag logic
+  function setupCardDrag(card) {
+    let isDragging = false;
+    let startX = 0;
+    let currentX = 0;
+
+    const handleStart = (e) => {
+      isDragging = true;
+      startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+      card.style.transition = 'none';
+    };
+
+    const handleMove = (e) => {
+      if (!isDragging) return;
+      const x = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+      currentX = x - startX;
+      const rotation = currentX * 0.05;
+      card.style.transform = `translateX(${currentX}px) rotate(${rotation}deg)`;
+    };
+
+    const handleEnd = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      card.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+
+      if (currentX > 100) {
+        // Swipe Right
+        card.classList.add('swipe-right');
+        saveIdea(filteredIdeas[currentCardIndex]);
+        nextCard();
+      } else if (currentX < -100) {
+        // Swipe Left
+        card.classList.add('swipe-left');
+        nextCard();
+      } else {
+        // Reset
+        card.style.transform = `translateX(0) rotate(0)`;
+      }
+    };
+
+    card.addEventListener('mousedown', handleStart);
+    card.addEventListener('touchstart', handleStart, {passive: true});
+
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('touchmove', handleMove, {passive: true});
+
+    document.addEventListener('mouseup', handleEnd);
+    document.addEventListener('touchend', handleEnd);
+  }
+
+  // Event Listeners
+  budgetFilter.addEventListener('change', filterIdeas);
+  locationFilter.addEventListener('change', filterIdeas);
+  moodFilter.addEventListener('change', filterIdeas);
+  durationFilter.addEventListener('change', filterIdeas);
+
+  surpriseMeBtn.addEventListener('click', () => {
+    if (filteredIdeas.length === 0) return;
+    // Pick a random card from the currently filtered deck
+    currentCardIndex = Math.floor(Math.random() * filteredIdeas.length);
+    renderCurrentCard();
+  });
+
+  btnSkip.addEventListener('click', () => {
+    if (filteredIdeas.length === 0) return;
+    const card = document.querySelector('.idea-card');
+    if(card) {
+      card.classList.add('swipe-left');
+      nextCard();
+    }
+  });
+
+  btnSave.addEventListener('click', () => {
+    if (filteredIdeas.length === 0) return;
+    const card = document.querySelector('.idea-card');
+    if(card) {
+      card.classList.add('swipe-right');
+      saveIdea(filteredIdeas[currentCardIndex]);
+      nextCard();
+    }
+  });
+
+  // Seasonal Logic
+  function setSeasonalBanner() {
+    const month = new Date().getMonth(); // 0 = Jan, 11 = Dec
+    const title = document.getElementById('seasonalTitle');
+    const desc = document.getElementById('seasonalDesc');
+    const icon = document.getElementById('seasonalIcon');
+
+    if (month === 1) { // Feb
+      icon.textContent = '❤️';
+      title.textContent = 'Valentine\'s Vibes';
+      desc.textContent = 'Try filtering by "Romantic" and "Splurge" for the ultimate February date.';
+    } else if (month >= 5 && month <= 7) { // Summer
+      icon.textContent = '☀️';
+      title.textContent = 'Summer Lovin\'';
+      desc.textContent = 'Filter by "Going Out" and "Adventurous" to make the most of the weather.';
+    } else if (month === 9) { // Oct
+      icon.textContent = '🎃';
+      title.textContent = 'Spooky Season';
+      desc.textContent = 'Stay in and build a fort, or find an escape room to get the adrenaline pumping.';
+    } else if (month === 10 || month === 11) { // Nov/Dec
+      icon.textContent = '❄️';
+      title.textContent = 'Cozy Winter Dates';
+      desc.textContent = 'Filter by "At Home" and "Chill" for maximum coziness.';
+    } else {
+      document.getElementById('seasonalBanner').style.display = 'none';
+    }
+  }
+
+  // Init
+  filterIdeas();
+  renderSavedDates();
+  setSeasonalBanner();
+</script>
+</body>
+</html>
