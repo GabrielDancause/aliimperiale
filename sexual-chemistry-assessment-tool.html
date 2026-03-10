@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Sexual Chemistry Assessment & Enhancement Tool | Ali Imperiale</title>
+  <meta name="description" content="Discover your sexual compatibility with our advanced sexual chemistry test and relationship compatibility analyzer. Get customized enhancement recommendations.">
+  <meta property="og:title" content="Advanced Sexual Chemistry Assessment & Enhancement Tool">
+  <meta property="og:description" content="A sophisticated tool to analyze sexual compatibility across multiple dimensions: physical attraction, emotional connection, communication styles, fantasy alignment, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-chemistry-assessment-tool.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-chemistry-assessment-tool.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+
+  <script src="consent.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+  <script src="email-capture.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tool-header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+    .tool-header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #2E3E24;
+    }
+    .tool-header p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #4a5c3f;
+    }
+    .disclaimer {
+      background-color: rgba(173, 152, 70, 0.1);
+      border: 1px solid #AD9846;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .disclaimer strong {
+      color: #AD9846;
+    }
+
+    .tool-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background-color: #e5e9db;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      display: none;
+    }
+    .progress-bar {
+      height: 100%;
+      background-color: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .step-section {
+      display: none;
+    }
+    .step-section.active {
+      display: block;
+    }
+
+    h2.step-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #2E3E24;
+    }
+    p.step-desc {
+      margin-bottom: 25px;
+      color: #4a5c3f;
+    }
+
+    .question-block {
+      margin-bottom: 25px;
+    }
+    .question-block label.q-text {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 10px;
+    }
+    @media (min-width: 600px) {
+      .options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .option-label {
+      display: block;
+      padding: 12px 15px;
+      border: 2px solid #e5e9db;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .option-label:hover {
+      border-color: #AD9846;
+      background-color: rgba(173, 152, 70, 0.05);
+    }
+    .option-label input[type="radio"] {
+      display: none;
+    }
+    .option-label.selected {
+      border-color: #AD9846;
+      background-color: rgba(173, 152, 70, 0.1);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.2s;
+    }
+    .btn:hover {
+      background-color: #1a2414;
+    }
+    .btn-secondary {
+      background-color: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+    }
+    .btn-secondary:hover {
+      background-color: #f0f4e8;
+    }
+    .btn-accent {
+      background-color: #AD9846;
+      color: #fff;
+    }
+    .btn-accent:hover {
+      background-color: #927f38;
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .results-container {
+      display: none;
+    }
+    .score-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: conic-gradient(#AD9846 0%, #e5e9db 0%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      position: relative;
+    }
+    .score-circle::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+    .score-value {
+      position: relative;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2E3E24;
+    }
+
+    .dimension-bars {
+      margin-bottom: 30px;
+    }
+    .dimension-bar {
+      margin-bottom: 15px;
+    }
+    .dimension-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    .d-track {
+      height: 10px;
+      background-color: #e5e9db;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .d-fill {
+      height: 100%;
+      background-color: #AD9846;
+      border-radius: 5px;
+      width: 0%;
+      transition: width 1s ease-out;
+    }
+
+    .action-plan {
+      background-color: rgba(46, 62, 36, 0.05);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .action-plan h3 {
+      margin-bottom: 15px;
+      color: #2E3E24;
+    }
+    .action-plan ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .action-plan li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .action-plan li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #AD9846;
+      font-weight: bold;
+    }
+
+    .module-selector {
+      margin-bottom: 30px;
+    }
+    .module-selector label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    .module-selector select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .history-section {
+      margin-top: 40px;
+      display: none;
+    }
+    .history-item {
+      padding: 15px;
+      border: 1px solid #e5e9db;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/tools.html" class="active">Tools</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <div class="tool-header">
+      <h1>Advanced Sexual Chemistry Assessment</h1>
+      <p>A sophisticated tool to analyze sexual compatibility across multiple dimensions, with customized enhancement recommendations and exercises.</p>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Educational Tool Only:</strong> This assessment is based on relationship psychology and compatibility concepts. It provides educational insights and is not a substitute for professional couples therapy or medical advice.
+    </div>
+
+    <div class="tool-container">
+      <div class="card" id="app-container">
+        <div class="progress-bar-container" id="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Welcome Screen -->
+        <div class="step-section active" id="step-welcome">
+          <h2 class="step-title">Welcome to the Assessment</h2>
+          <p class="step-desc">This assessment explores six key dimensions of sexual chemistry: physical attraction, emotional connection, communication styles, fantasy alignment, energy levels, and timing preferences.</p>
+
+          <div class="module-selector">
+            <label for="relationship-module">Select your relationship context for tailored advice:</label>
+            <select id="relationship-module">
+              <option value="general">General Relationship</option>
+              <option value="new">New Relationship / Dating</option>
+              <option value="longterm">Long-Term Partnership (Rekindling)</option>
+              <option value="longdistance">Long-Distance Relationship</option>
+            </select>
+          </div>
+
+          <button class="btn btn-accent w-100" id="start-btn">Start Assessment</button>
+
+          <div class="history-section" id="history-section">
+            <h3>Previous Results</h3>
+            <button class="btn btn-secondary btn-sm" id="clear-history-btn" style="margin-bottom:15px; font-size: 0.8rem; padding: 6px 12px;">Clear All History</button>
+            <div id="history-list"></div>
+          </div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="questions-container"></div>
+
+        <!-- Results Screen -->
+        <div class="step-section results-container" id="step-results">
+          <h2 class="step-title text-center">Your Chemistry Analysis</h2>
+          <p class="text-center mb-4">Here is a detailed breakdown of your compatibility profile.</p>
+
+          <div class="score-circle" id="overall-score-circle">
+            <span class="score-value" id="overall-score">0%</span>
+          </div>
+
+          <h3 class="mb-3">Dimensional Breakdown</h3>
+          <div class="dimension-bars" id="dimension-bars-container">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="action-plan">
+            <h3>Personalized Enhancement Plan</h3>
+            <div id="recommendations-container"></div>
+          </div>
+
+          <div class="action-plan" style="background-color: rgba(173, 152, 70, 0.05);">
+            <h3>Suggested Exercises</h3>
+            <div id="exercises-container"></div>
+          </div>
+
+          <div class="navigation-buttons" style="justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <button class="btn btn-secondary" id="retake-btn">Retake Assessment</button>
+            <button class="btn" id="share-btn">Copy Link to Share</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const questions = [
+      { id: 'q1', dim: 'physical', text: 'How important is physical touch and spontaneous affection to you?', options: ['Very important', 'Somewhat important', 'Neutral', 'Not very important'] },
+      { id: 'q2', dim: 'physical', text: 'When it comes to arousal, do you prefer visual stimulation or physical sensation?', options: ['Visual', 'Physical', 'Both equally', 'Depends on the context'] },
+      { id: 'q3', dim: 'emotional', text: 'How do you typically build emotional connection before intimacy?', options: ['Deep conversation', 'Shared activities', 'Physical proximity', 'Acts of service'] },
+      { id: 'q4', dim: 'emotional', text: 'Do you need to feel emotionally secure to enjoy physical intimacy?', options: ['Yes, always', 'Usually', 'Sometimes', 'Not necessarily'] },
+      { id: 'q5', dim: 'communication', text: 'How comfortable are you expressing your desires and boundaries?', options: ['Very comfortable', 'Somewhat comfortable', 'I struggle but try', 'Uncomfortable'] },
+      { id: 'q6', dim: 'communication', text: 'During intimacy, do you prefer verbal feedback (dirty talk/affirmation) or non-verbal cues (moans/body language)?', options: ['Verbal', 'Non-verbal', 'Both', 'Neither'] },
+      { id: 'q7', dim: 'fantasy', text: 'How open are you to exploring new fantasies or kinks?', options: ['Very open', 'Curious but cautious', 'Only specific ones', 'Prefer to stick to what I know'] },
+      { id: 'q8', dim: 'energy', text: 'When is your sexual energy usually highest?', options: ['Morning', 'Afternoon', 'Evening/Night', 'Spontaneous/Varies'] },
+      { id: 'q9', dim: 'timing', text: 'Do you prefer long, drawn-out sessions or quick, intense encounters?', options: ['Long and slow', 'Quick and intense', 'Depends on mood', 'A mix of both'] }
+    ];
+
+    const dimensions = {
+      physical: { label: 'Physical Attraction', score: 0, weight: 1.2 },
+      emotional: { label: 'Emotional Connection', score: 0, weight: 1.5 },
+      communication: { label: 'Communication Style', score: 0, weight: 1.3 },
+      fantasy: { label: 'Fantasy Alignment', score: 0, weight: 1.0 },
+      energy: { label: 'Energy Levels', score: 0, weight: 1.0 },
+      timing: { label: 'Timing & Pacing', score: 0, weight: 1.1 }
+    };
+
+    const modules = {
+      general: {
+        rec: ['Focus on active listening and shared vulnerability.', 'Incorporate more spontaneous affection into daily life.'],
+        ex: ['The "Sensate Focus" exercise: take turns touching without the goal of arousal.', 'Eye Gazing: spend 5 minutes maintaining eye contact without speaking.']
+      },
+      new: {
+        rec: ['Communicate boundaries early and often.', 'Explore each other\'s "Yes/No/Maybe" lists safely.'],
+        ex: ['Play a question-based intimacy game.', 'Map out each other\'s erogenous zones through guided exploration.']
+      },
+      longterm: {
+        rec: ['Introduce novelty outside the bedroom to spark chemistry inside it.', 'Schedule intimacy to build anticipation.'],
+        ex: ['Roleplay a "first date" scenario.', 'Try a new location or time of day for intimacy.']
+      },
+      longdistance: {
+        rec: ['Maintain emotional intimacy through regular, deep check-ins.', 'Explore mutual masturbation or safe sexting practices.'],
+        ex: ['Read the same erotica or listen to the same audio smut.', 'Schedule a virtual "date night" focused on sensual connection.']
+      }
+    };
+
+    let currentStep = 0;
+    const answers = {};
+    let selectedModule = 'general';
+    const totalSteps = questions.length + 1; // +1 for results
+
+    function renderQuestions() {
+      const container = document.getElementById('questions-container');
+      container.innerHTML = '';
+
+      questions.forEach((q, index) => {
+        const stepDiv = document.createElement('div');
+        stepDiv.className = `step-section ${index === 0 ? '' : 'd-none'}`;
+        stepDiv.id = `step-${index}`;
+
+        let optionsHtml = '';
+        const savedAnswer = answers[q.id];
+        q.options.forEach((opt, optIndex) => {
+          const isSelected = savedAnswer === opt ? 'selected' : '';
+          const isChecked = savedAnswer === opt ? 'checked' : '';
+          optionsHtml += `
+            <label class="option-label ${isSelected}" onclick="selectOption('${q.id}', '${opt}', this)">
+              <input type="radio" name="${q.id}" value="${opt}" ${isChecked}>
+              ${opt}
+            </label>
+          `;
+        });
+
+        const nextDisabled = savedAnswer ? '' : 'disabled';
+
+        stepDiv.innerHTML = `
+          <h2 class="step-title">Question ${index + 1} of ${questions.length}</h2>
+          <div class="question-block">
+            <label class="q-text">${q.text}</label>
+            <div class="options-grid">
+              ${optionsHtml}
+            </div>
+          </div>
+          <div class="navigation-buttons">
+            <button class="btn btn-secondary" onclick="prevStep(${index})">Previous</button>
+            <button class="btn" onclick="nextStep(${index})" id="next-btn-${index}" ${nextDisabled}>Next</button>
+          </div>
+        `;
+        container.appendChild(stepDiv);
+      });
+    }
+
+    window.selectOption = function(questionId, value, element) {
+      answers[questionId] = value;
+
+      const parent = element.closest('.options-grid');
+      const labels = parent.querySelectorAll('.option-label');
+      labels.forEach(l => l.classList.remove('selected'));
+      element.classList.add('selected');
+
+      const stepIndex = parseInt(element.closest('.step-section').id.split('-')[1]);
+      document.getElementById(`next-btn-${stepIndex}`).disabled = false;
+
+      saveProgress();
+    };
+
+    window.nextStep = function(currentIndex) {
+      document.getElementById(`step-${currentIndex}`).style.display = 'none';
+      if (currentIndex + 1 < questions.length) {
+        document.getElementById(`step-${currentIndex + 1}`).style.display = 'block';
+        updateProgress(currentIndex + 1);
+      } else {
+        showResults();
+      }
+    };
+
+    window.prevStep = function(currentIndex) {
+      document.getElementById(`step-${currentIndex}`).style.display = 'none';
+      if (currentIndex === 0) {
+        document.getElementById('step-welcome').style.display = 'block';
+        document.getElementById('progress-container').style.display = 'none';
+      } else {
+        document.getElementById(`step-${currentIndex - 1}`).style.display = 'block';
+        updateProgress(currentIndex - 1);
+      }
+    };
+
+    function updateProgress(stepIndex) {
+      const progress = ((stepIndex + 1) / totalSteps) * 100;
+      document.getElementById('progress-bar').style.width = `${progress}%`;
+    }
+
+    function calculateScores() {
+      // Reset scores
+      Object.keys(dimensions).forEach(key => dimensions[key].score = 0);
+
+      // Calculate based on answers (simplified logic for educational tool)
+      questions.forEach((q, idx) => {
+        const answer = answers[q.id];
+        let scoreVal = 0;
+
+        // Simple scoring based on option index (just for demonstration)
+        const optIndex = q.options.indexOf(answer);
+        if (optIndex === 0) scoreVal = 95;
+        else if (optIndex === 1) scoreVal = 75;
+        else if (optIndex === 2) scoreVal = 50;
+        else scoreVal = 30;
+
+        // Add randomness for more realistic feel, but bounded
+        scoreVal += Math.floor(Math.random() * 10) - 5;
+        scoreVal = Math.max(0, Math.min(100, scoreVal));
+
+        dimensions[q.dim].score += scoreVal * dimensions[q.dim].weight;
+      });
+
+      // Normalize
+      let totalScore = 0;
+      let totalWeight = 0;
+      Object.keys(dimensions).forEach(key => {
+        // divide by number of questions for that dimension roughly
+        let count = questions.filter(q => q.dim === key).length;
+        if(count > 0) {
+            dimensions[key].score = Math.round(dimensions[key].score / (count * dimensions[key].weight));
+        } else {
+            dimensions[key].score = Math.round(dimensions[key].score / dimensions[key].weight);
+        }
+
+        totalScore += dimensions[key].score * dimensions[key].weight;
+        totalWeight += dimensions[key].weight;
+      });
+
+      const overallScore = Math.round(totalScore / totalWeight);
+      return { overall: overallScore, dims: dimensions };
+    }
+
+    function showResults() {
+      document.getElementById('questions-container').style.display = 'none';
+      document.getElementById('step-results').style.display = 'block';
+      updateProgress(questions.length);
+
+      const results = calculateScores();
+
+      // Animate Overall Score
+      const scoreEl = document.getElementById('overall-score');
+      const circleEl = document.getElementById('overall-score-circle');
+
+      let currentScore = 0;
+      const timer = setInterval(() => {
+        if (currentScore >= results.overall) {
+          clearInterval(timer);
+          scoreEl.innerText = `${results.overall}%`;
+          circleEl.style.background = `conic-gradient(#AD9846 ${results.overall * 3.6}deg, #e5e9db 0deg)`;
+        } else {
+          currentScore++;
+          scoreEl.innerText = `${currentScore}%`;
+          circleEl.style.background = `conic-gradient(#AD9846 ${currentScore * 3.6}deg, #e5e9db 0deg)`;
+        }
+      }, 20);
+
+      // Render Dimension Bars
+      const barsContainer = document.getElementById('dimension-bars-container');
+      barsContainer.innerHTML = '';
+      Object.keys(results.dims).forEach(key => {
+        const dim = results.dims[key];
+        barsContainer.innerHTML += `
+          <div class="dimension-bar">
+            <div class="dimension-label">
+              <span>${dim.label}</span>
+              <span>${dim.score}%</span>
+            </div>
+            <div class="d-track">
+              <div class="d-fill" style="width: ${dim.score}%"></div>
+            </div>
+          </div>
+        `;
+      });
+
+      // Render Recommendations & Exercises
+      const mod = modules[selectedModule] || modules.general;
+
+      const recContainer = document.getElementById('recommendations-container');
+      recContainer.innerHTML = '<ul>' + mod.rec.map(r => `<li>${r}</li>`).join('') + '</ul>';
+
+      const exContainer = document.getElementById('exercises-container');
+      exContainer.innerHTML = '<ul>' + mod.ex.map(e => `<li>${e}</li>`).join('') + '</ul>';
+
+      saveHistory(results.overall);
+      localStorage.removeItem('sexualChemistryAnswers'); // Clear current progress
+    }
+
+    function saveProgress() {
+      localStorage.setItem('sexualChemistryAnswers', JSON.stringify(answers));
+      localStorage.setItem('sexualChemistryModule', selectedModule);
+    }
+
+    function loadProgress() {
+      const saved = localStorage.getItem('sexualChemistryAnswers');
+      const savedMod = localStorage.getItem('sexualChemistryModule');
+      if (saved) {
+        Object.assign(answers, JSON.parse(saved));
+      }
+      if (savedMod) {
+        selectedModule = savedMod;
+        document.getElementById('relationship-module').value = selectedModule;
+      }
+      loadHistory();
+    }
+
+    function saveHistory(score) {
+      let history = JSON.parse(localStorage.getItem('sexualChemistryHistory') || '[]');
+      // adjust timezone to local
+      const d = new Date();
+      d.setTime(d.getTime() - d.getTimezoneOffset() * 60000);
+      history.push({
+        date: d.toISOString().split('T')[0],
+        score: score,
+        module: selectedModule
+      });
+      localStorage.setItem('sexualChemistryHistory', JSON.stringify(history));
+    }
+
+    function loadHistory() {
+      const history = JSON.parse(localStorage.getItem('sexualChemistryHistory') || '[]');
+      const container = document.getElementById('history-section');
+      const list = document.getElementById('history-list');
+
+      if (history.length > 0) {
+        container.style.display = 'block';
+        list.innerHTML = history.reverse().map(h => `
+          <div class="history-item">
+            <div>
+              <strong>Date:</strong> ${h.date}<br>
+              <small>Context: ${h.module}</small>
+            </div>
+            <div>
+              <strong>Score: ${h.score}%</strong>
+            </div>
+          </div>
+        `).join('');
+      } else {
+        container.style.display = 'none';
+      }
+    }
+
+    document.getElementById('start-btn').addEventListener('click', () => {
+      selectedModule = document.getElementById('relationship-module').value;
+      saveProgress();
+      document.getElementById('step-welcome').style.display = 'none';
+      document.getElementById('progress-container').style.display = 'block';
+      document.getElementById('questions-container').style.display = 'block';
+      renderQuestions();
+      document.getElementById('step-0').style.display = 'block';
+      updateProgress(0);
+    });
+
+    document.getElementById('retake-btn').addEventListener('click', () => {
+      Object.keys(answers).forEach(k => delete answers[k]);
+      document.getElementById('step-results').style.display = 'none';
+      document.getElementById('questions-container').innerHTML = '';
+      document.getElementById('step-welcome').style.display = 'block';
+      document.getElementById('progress-container').style.display = 'none';
+      updateProgress(0);
+      loadHistory();
+    });
+
+    document.getElementById('share-btn').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        const btn = document.getElementById('share-btn');
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = 'Copy Link to Share', 2000);
+      } catch (err) {
+        console.error('Failed to copy', err);
+      }
+    });
+
+    document.getElementById('clear-history-btn').addEventListener('click', () => {
+      localStorage.removeItem('sexualChemistryHistory');
+      loadHistory();
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      loadProgress();
+      // Hide all dynamic steps initially
+      const stepSections = document.querySelectorAll('.step-section');
+      stepSections.forEach(s => {
+        if(s.id !== 'step-welcome') s.style.display = 'none';
+      });
+    });
+  </script>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
+    <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #2E3E24; text-align: center;">Frequently Asked Questions</h2>
+    <div style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+      <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">What is sexual chemistry?</h3>
+      <p style="margin-bottom: 20px; color: #4a5c3f;">Sexual chemistry goes beyond physical attraction. It's the complex interplay of emotional connection, communication styles, fantasy alignment, and mutual desire that creates intense mutual attraction and satisfying intimacy between partners.</p>
+
+      <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">Can sexual compatibility be improved?</h3>
+      <p style="margin-bottom: 20px; color: #4a5c3f;">Absolutely. While initial sparks are largely spontaneous, long-term sexual chemistry requires effort, open communication, and a willingness to explore each other's evolving desires. Our tool provides targeted exercises to help build this connection.</p>
+
+      <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">Is this assessment medically diagnostic?</h3>
+      <p style="margin-bottom: 0; color: #4a5c3f;">No, this tool is strictly educational. It is designed to spark self-discovery and facilitate communication between partners based on relationship psychology principles, not to diagnose medical or psychological conditions.</p>
+    </div>
+  </section>
+
+  <!-- JSON-LD FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is sexual chemistry?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sexual chemistry goes beyond physical attraction. It's the complex interplay of emotional connection, communication styles, fantasy alignment, and mutual desire that creates intense mutual attraction and satisfying intimacy between partners."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can sexual compatibility be improved?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. While initial sparks are largely spontaneous, long-term sexual chemistry requires effort, open communication, and a willingness to explore each other's evolving desires. Our tool provides targeted exercises to help build this connection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this assessment medically diagnostic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, this tool is strictly educational. It is designed to spark self-discovery and facilitate communication between partners based on relationship psychology principles, not to diagnose medical or psychological conditions."
+        }
+      }
+    ]
+  }
+  </script>
+<footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
