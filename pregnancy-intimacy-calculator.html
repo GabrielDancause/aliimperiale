@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregnancy Intimacy & Sex Calculator — Ali Imperiale</title>
+  <meta name="description" content="An interactive guide for expectant couples to navigate intimacy, sexual safety, and relationship connection throughout pregnancy and postpartum.">
+  <meta property="og:title" content="Pregnancy Intimacy & Sex Calculator">
+  <meta property="og:description" content="An interactive guide for expectant couples to navigate intimacy, sexual safety, and relationship connection throughout pregnancy and postpartum.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/pregnancy-intimacy-calculator.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pregnancy Intimacy Calculator">
+  <meta name="twitter:description" content="Navigate intimacy during pregnancy with our interactive guide.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/pregnancy-intimacy-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-color: #FAF8EB;
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Primary Site Navigation (Desktop) */
+    .site-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #FAF8EB;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+    }
+    .nav-logo {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: #2E3E24;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #AD9846;
+    }
+
+    /* Study / Tool Container */
+    .study-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .study-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #AD9846;
+    }
+    .study-header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    .study-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .tool-section {
+      padding: 40px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+    }
+    .tool-section:last-child {
+      border-bottom: none;
+    }
+    .tool-section h2 {
+      color: #AD9846;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #AD9846;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .disclaimer-box {
+      background-color: #fdfaf2;
+      border-left: 4px solid #AD9846;
+      padding: 20px;
+      margin: 30px 0;
+      font-size: 0.95rem;
+      border-radius: 0 8px 8px 0;
+    }
+    .disclaimer-box strong {
+      color: #AD9846;
+    }
+
+    /* Tool Interactive Elements */
+    .input-group {
+      margin-bottom: 20px;
+    }
+    .input-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    select, input[type="text"], input[type="number"], textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #fdfaf2;
+    }
+    select:focus, input:focus, textarea:focus {
+      outline: none;
+      border-color: #AD9846;
+      box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
+    }
+    .btn-primary {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+      display: inline-block;
+      text-align: center;
+    }
+    .btn-primary:hover {
+      background-color: #3f5431;
+    }
+    .btn-secondary {
+      background-color: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-secondary:hover {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    .results-area {
+      background: #fdfaf2;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 25px;
+      display: none;
+      border: 1px solid #eaeaea;
+    }
+    .results-area.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .result-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border-left: 4px solid #2E3E24;
+    }
+    .result-card h4 {
+      margin-top: 0;
+      color: #2E3E24;
+    }
+
+    /* Radio buttons styling */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .radio-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 12px 15px;
+      background: #fdfaf2;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .radio-label:hover {
+      border-color: #AD9846;
+      background: #FAF8EB;
+    }
+    .radio-label input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%;
+      margin-right: 15px;
+      position: relative;
+      background: #fff;
+    }
+    .radio-label input[type="radio"]:checked::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      width: 10px;
+      height: 10px;
+      background-color: #AD9846;
+      border-radius: 50%;
+    }
+    .radio-label input[type="radio"]::before {
+      content: '';
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    /* Position Visuals (CSS-based) */
+    .position-visual {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+      padding: 20px;
+      background: rgba(173, 152, 70, 0.1);
+      border-radius: 8px;
+    }
+    .abstract-person {
+      width: 40px;
+      height: 100px;
+      background-color: #2E3E24;
+      border-radius: 20px;
+      position: relative;
+    }
+    .abstract-person::before {
+      content: '';
+      position: absolute;
+      top: -25px;
+      left: 5px;
+      width: 30px;
+      height: 30px;
+      background-color: #AD9846;
+      border-radius: 50%;
+    }
+    .person-partner {
+      background-color: #AD9846;
+    }
+    .person-partner::before {
+      background-color: #2E3E24;
+    }
+    /* Specific positioning styles */
+    .pos-spoons { transform: rotate(15deg); }
+    .pos-spoons-partner { transform: rotate(15deg) translate(-10px, 10px); }
+
+    .pos-side { transform: rotate(90deg) translate(0px, 20px); }
+    .pos-side-partner { transform: rotate(-90deg) translate(0px, 20px); }
+
+    .pos-edge { transform: rotate(0deg); }
+    .pos-edge-partner { transform: rotate(0deg) translate(0, 20px); height: 80px;}
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      margin: 10px 0;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background-color: #AD9846;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Custom Checkbox */
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    .checkbox-label input {
+      margin-top: 4px;
+      margin-right: 12px;
+      width: 18px;
+      height: 18px;
+      accent-color: #AD9846;
+    }
+
+    .clear-btn {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .study-container { margin: 20px auto; }
+      .tool-section { padding: 25px; }
+      .site-nav { padding: 15px 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is sex safe during pregnancy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For the vast majority of normal, low-risk pregnancies, sex is completely safe. The amniotic sac, uterine muscles, and mucus plug protect the baby. However, always consult your healthcare provider, especially if you have a history of preterm labor, placenta previa, or other complications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does libido change during pregnancy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Libido can fluctuate wildly! The first trimester often brings fatigue and nausea, lowering desire. The second trimester might bring a surge in libido due to increased blood flow and hormones. The third trimester often sees a dip again due to physical discomfort, but everyone is different."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the best sex positions during pregnancy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As your belly grows, positions that take pressure off your stomach are best. Side-lying (spooning), woman on top, or edge-of-the-bed positions are often comfortable. Avoid lying flat on your back after the first trimester as it can compress major blood vessels."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img src="logo-beige.webp" alt="Ali Imperiale Logo" class="nav-logo"></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="lists.html">Lists</a></li>
+      <li><a href="guides.html">Guides</a></li>
+      <li><a href="studies.html">Research</a></li>
+    </ul>
+  </nav>
+
+  <header class="study-header">
+    <h1>Pregnancy Intimacy & Sex Calculator</h1>
+    <p>Your supportive, educational guide for navigating intimacy, sexual safety, and profound connection throughout all stages of pregnancy and beyond.</p>
+  </header>
+
+  <main class="study-container">
+    <div class="disclaimer-box">
+      <strong>Medical Disclaimer:</strong> I'm an educator, not your doctor! This tool provides educational information, not medical advice or diagnoses. Always, always, <em>always</em> consult your OB/GYN or midwife before making decisions about sex during pregnancy, especially if you experience bleeding, cramping, or have a high-risk pregnancy.
+    </div>
+
+    <!-- Section 1: Trimester Guidance & Safety Positions -->
+    <section class="tool-section" id="trimester-calculator">
+      <h2>Trimester Guidance & Safety</h2>
+      <p>Where are you in your pregnancy journey? Let's talk about what's going on with your body, common changes in desire, and the most comfortable (and safe!) positions.</p>
+
+      <div class="input-group">
+        <label for="current-trimester">Select Your Trimester:</label>
+        <select id="current-trimester">
+          <option value="">-- Choose Trimester --</option>
+          <option value="first">1st Trimester (Weeks 1-13)</option>
+          <option value="second">2nd Trimester (Weeks 14-27)</option>
+          <option value="third">3rd Trimester (Weeks 28-40+)</option>
+          <option value="postpartum">Postpartum (0-6+ Weeks)</option>
+        </select>
+      </div>
+
+      <div id="trimester-results" class="results-area">
+        <h3 id="tri-title">Trimester Details</h3>
+        <p id="tri-desc">Description here...</p>
+
+        <div class="result-card">
+          <h4>Recommended Positions (Safety & Comfort)</h4>
+          <p id="tri-pos-desc">Position description...</p>
+          <div id="tri-pos-visual" class="position-visual">
+            <!-- Dynamic CSS visuals injected here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Libido Change Tracker -->
+    <section class="tool-section" id="libido-tracker">
+      <h2>Desire & Libido Tracker</h2>
+      <p>Pregnancy hormones are a wild ride! How is your desire feeling lately? Remember, there is no "normal" — some people want sex constantly, others want zero contact. Both are valid!</p>
+
+      <div class="input-group">
+        <label>Current Desire Level (1 = None, 5 = Very High):</label>
+        <div class="radio-group" id="libido-radios">
+          <label class="radio-label"><input type="radio" name="libido-level" value="1"> 1 - "Don't even look at me."</label>
+          <label class="radio-label"><input type="radio" name="libido-level" value="2"> 2 - "Maybe, if the stars align."</label>
+          <label class="radio-label"><input type="radio" name="libido-level" value="3"> 3 - "Neutral, could go either way."</label>
+          <label class="radio-label"><input type="radio" name="libido-level" value="4"> 4 - "Feeling pretty frisky!"</label>
+          <label class="radio-label"><input type="radio" name="libido-level" value="5"> 5 - "Can't get enough!"</label>
+        </div>
+      </div>
+
+      <div id="libido-insight" class="results-area">
+        <p id="libido-message">Insight text...</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Partner Support Assessment -->
+    <section class="tool-section" id="partner-support">
+      <h2>Partner Connection Assessment</h2>
+      <p>Intimacy isn't just physical. How supported and connected are you feeling with your partner outside the bedroom?</p>
+
+      <div class="input-group">
+        <label>Check all the ways your partner is currently showing up for you:</label>
+        <label class="checkbox-label"><input type="checkbox" name="support-item" value="chores"> Taking on extra household chores</label>
+        <label class="checkbox-label"><input type="checkbox" name="support-item" value="massage"> Giving non-sexual physical affection (massages, cuddles)</label>
+        <label class="checkbox-label"><input type="checkbox" name="support-item" value="appointments"> Attending medical appointments</label>
+        <label class="checkbox-label"><input type="checkbox" name="support-item" value="listening"> Actively listening to fears/anxieties without trying to "fix" them</label>
+        <label class="checkbox-label"><input type="checkbox" name="support-item" value="educating"> Reading/educating themselves about pregnancy and birth</label>
+      </div>
+
+      <button class="btn-primary" id="calculate-support-btn">Assess Connection</button>
+
+      <div id="support-results" class="results-area">
+        <h4 id="support-score">Connection Score</h4>
+        <p id="support-feedback">Feedback...</p>
+      </div>
+    </section>
+
+
+    <!-- Section 4: Postpartum Preparation Timeline -->
+    <section class="tool-section" id="postpartum-prep">
+      <h2>Postpartum Intimacy Preparation</h2>
+      <p>The "fourth trimester" is intense. Having a conversation <em>before</em> the baby arrives about your expectations for intimacy, boundaries, and physical recovery is a game-changer.</p>
+
+      <div class="result-card">
+        <h4>Before Baby Arrives (3rd Trimester)</h4>
+        <ul style="padding-left: 20px;">
+          <li>Discuss sleep strategy (shifts vs. taking turns) so neither of you is entirely depleted.</li>
+          <li>Agree on visitors: Who is allowed over, and for how long? Protect your peace.</li>
+          <li>Stock up on high-quality, body-safe water-based lubricant. Hormonal drops during breastfeeding can cause vaginal dryness.</li>
+        </ul>
+      </div>
+
+      <div class="result-card">
+        <h4>0-6 Weeks Postpartum</h4>
+        <ul style="padding-left: 20px;">
+          <li>Focus entirely on healing, bonding with baby, and survival. No penetrative sex.</li>
+          <li>Physical affection like hugs, shoulder rubs, and holding hands while the baby sleeps is the goal.</li>
+          <li>Be honest about 'touched out' syndrome. It's okay to tell your partner, "I love you, but my body needs a break from being touched."</li>
+        </ul>
+      </div>
+
+      <div class="result-card">
+        <h4>6+ Weeks (The "Cleared" Myth)</h4>
+        <ul style="padding-left: 20px;">
+          <li>Being medically "cleared" by a doctor does <strong>not</strong> mean you have to be ready. It just means the cervix is closed.</li>
+          <li>When you *do* try penetration, expect it to feel different, tight, or even slightly painful initially. Go agonizingly slow.</li>
+          <li>Prioritize outercourse (mutual masturbation, oral sex) before jumping back into penetration.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 5: Body Change Acceptance -->
+    <section class="tool-section" id="body-acceptance">
+      <h2>Body Change Acceptance</h2>
+      <p>Pregnancy changes your body fundamentally. Stretch marks, darker nipples, a shifting center of gravity—it's wild. How are you feeling about your changing shape right now?</p>
+
+      <div class="input-group">
+        <label for="body-feeling">I am currently feeling...</label>
+        <select id="body-feeling">
+          <option value="">-- Select an Option --</option>
+          <option value="amazed">Amazed at what my body can do</option>
+          <option value="neutral">Neutral/It just is what it is</option>
+          <option value="struggling">Struggling with the physical changes</option>
+          <option value="alien">Like I'm living in an alien vessel</option>
+        </select>
+      </div>
+
+      <div id="body-activity-result" class="results-area">
+        <h4 id="body-activity-title">Activity Recommendation</h4>
+        <p id="body-activity-desc">Activity...</p>
+      </div>
+    </section>
+
+    <!-- Section 6: Communication Prompts -->
+    <section class="tool-section" id="communication-prompts">
+      <h2>Couples Communication Prompts</h2>
+      <p>Not sure how to talk about sex right now? Try these fill-in-the-blank scripts to start the conversation without pressure.</p>
+
+      <div class="result-card">
+        <p><strong>To ask for non-sexual touch:</strong><br>
+        "I'm feeling really touched-out by the baby today, but I still want to connect with you. Can we just sit next to each other and hold hands while we watch TV?"</p>
+      </div>
+
+      <div class="result-card">
+        <p><strong>To express physical discomfort:</strong><br>
+        "I love being intimate with you, but my [hips/back/belly] is really aching right now. Can we try [massage/mutual masturbation/spooning] instead of our usual routine?"</p>
+      </div>
+
+      <div class="result-card">
+        <p><strong>To navigate the postpartum return:</strong><br>
+        "I know it's been a while, and I miss you. I want to try [kissing/touching], but I need us to agree that there is absolutely zero expectation it will lead to penetration tonight. Deal?"</p>
+      </div>
+    </section>
+
+    <!-- Section 7: Provider Questions -->
+    <section class="tool-section" id="provider-questions">
+      <h2>Questions for Your Healthcare Provider</h2>
+      <p>Never be embarrassed to ask your OB or midwife about sex! They've heard it all.</p>
+      <button class="btn-primary" id="generate-q-btn">Generate a Question</button>
+
+      <div id="question-result" class="results-area">
+        <p id="question-text" style="font-size: 1.2rem; font-weight: 500; font-style: italic; color: #2E3E24;"></p>
+      </div>
+    </section>
+
+    <!-- Section 8: Myths vs Facts -->
+    <section class="tool-section" id="myths-facts">
+      <h2>Myth vs. Fact</h2>
+
+      <div class="result-card">
+        <h4>Myth: Sex can poke or hurt the baby.</h4>
+        <p><strong>Fact:</strong> The baby is protected by the amniotic sac, the strong muscles of the uterus, and a thick mucus plug. Unless your doctor tells you otherwise (like in the case of placenta previa), penetration is perfectly safe.</p>
+      </div>
+
+      <div class="result-card">
+        <h4>Myth: Orgasm causes miscarriage.</h4>
+        <p><strong>Fact:</strong> An orgasm can cause mild uterine contractions (Braxton Hicks), but these are totally normal and harmless in a healthy, low-risk pregnancy. They do not induce labor or cause miscarriage.</p>
+      </div>
+
+      <div class="result-card">
+        <h4>Myth: You have to stop having sex in the 3rd trimester.</h4>
+        <p><strong>Fact:</strong> You can have sex right up until your water breaks or you go into labor! (Again, assuming a low-risk pregnancy). In fact, semen contains prostaglandins which can actually help soften the cervix when you're full term.</p>
+      </div>
+    </section>
+
+    <!-- Section 9: Clear History -->
+    <section class="tool-section" style="text-align: center; border-bottom: none;">
+      <button class="btn-secondary clear-btn" id="clear-all-btn">Clear Saved Progress</button>
+    </section>
+
+  </main>
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Shared state saving function
+    function saveState(key, value) {
+        localStorage.setItem(`ali_pregnancy_${key}`, JSON.stringify(value));
+    }
+
+    function loadState(key, defaultValue) {
+        const saved = localStorage.getItem(`ali_pregnancy_${key}`);
+        return saved ? JSON.parse(saved) : defaultValue;
+    }
+
+    // --- Section 1: Trimester Guidance ---
+    const trimesterSelect = document.getElementById('current-trimester');
+    const trimesterResults = document.getElementById('trimester-results');
+    const triTitle = document.getElementById('tri-title');
+    const triDesc = document.getElementById('tri-desc');
+    const triPosDesc = document.getElementById('tri-pos-desc');
+    const triPosVisual = document.getElementById('tri-pos-visual');
+
+    const trimesterData = {
+        'first': {
+            title: '1st Trimester: Exhaustion & Nausea',
+            desc: "Let's be real: growing an entire human from scratch is exhausting. If your libido has tanked because you feel like you have a permanent hangover, that is incredibly common and perfectly okay. Focus on rest and gentle, non-demand connection.",
+            posDesc: "Right now, your bump isn't huge, so most positions you enjoyed before are physically fine. However, your breasts might be wildly sensitive. The 'Spooning' position is great for gentle intimacy that doesn't put pressure on your chest or require high energy.",
+            visual: '<div class="abstract-person pos-spoons"></div><div class="abstract-person person-partner pos-spoons-partner"></div>'
+        },
+        'second': {
+            title: '2nd Trimester: The Honeymoon Phase?',
+            desc: "Ah, the second trimester. Nausea often lifts, energy returns, and increased blood flow to the pelvic region can actually make orgasms more intense and frequent! Enjoy this surge if you have it. If not, don't stress—every body reacts differently.",
+            posDesc: "As your belly grows, lying flat on your back (missionary) can become uncomfortable or compress major blood vessels. Side-lying positions or being on top are excellent alternatives. Try the 'Side-by-Side' or 'Scissors' position.",
+            visual: '<div class="abstract-person pos-side"></div><div class="abstract-person person-partner pos-side-partner"></div>'
+        },
+        'third': {
+            title: '3rd Trimester: Round & Ready (or Not)',
+            desc: "The home stretch. Your belly is large, you might be dealing with pelvic pain, heartburn, or just sheer physical discomfort. Penetrative sex might feel clumsy or unappealing. This is a brilliant time to explore mutual masturbation or outercourse.",
+            posDesc: "Positions where you have control over depth and weight are crucial now. 'Edge of the bed' (where you lie on your back slightly elevated, hips at the edge, while your partner stands or kneels) takes the weight off your joints and belly.",
+            visual: '<div class="abstract-person pos-edge"></div><div class="abstract-person person-partner pos-edge-partner"></div>'
+        },
+        'postpartum': {
+            title: 'Postpartum: Healing & Transition',
+            desc: "The 4th trimester is all about healing. Whether you had a vaginal or cesarean birth, your body needs time. The general rule is waiting 6 weeks for penetration, but your desire might take much longer to return due to sleep deprivation and hormone shifts (especially if nursing). Give yourself massive grace.",
+            posDesc: "When you *are* cleared and ready, start slow. Use lots of high-quality, body-safe lubricant (hormone drops cause dryness). 'Spooning' allows for shallow penetration and easy pausing if anything hurts. Prioritize communication over completion.",
+            visual: '<div class="abstract-person pos-spoons"></div><div class="abstract-person person-partner pos-spoons-partner"></div>'
+        }
+    };
+
+    function updateTrimester(val) {
+        if (!val) {
+            trimesterResults.classList.remove('active');
+            return;
+        }
+        const data = trimesterData[val];
+        triTitle.textContent = data.title;
+        triDesc.textContent = data.desc;
+        triPosDesc.textContent = data.posDesc;
+        // Using innerHTML here strictly for the static, trusted visual shapes
+        triPosVisual.innerHTML = data.visual;
+        trimesterResults.classList.add('active');
+        saveState('trimester', val);
+    }
+
+    const savedTrimester = loadState('trimester', '');
+    if (savedTrimester) {
+        trimesterSelect.value = savedTrimester;
+        updateTrimester(savedTrimester);
+    }
+
+    trimesterSelect.addEventListener('change', (e) => {
+        updateTrimester(e.target.value);
+    });
+
+    // --- Section 2: Libido Tracker ---
+    const libidoRadios = document.querySelectorAll('input[name="libido-level"]');
+    const libidoInsight = document.getElementById('libido-insight');
+    const libidoMessage = document.getElementById('libido-message');
+
+    const libidoMessages = {
+        "1": "Totally understandable. Your body is doing intense work. Focus on self-care and communicate to your partner that this is temporary and biological, not personal. Acknowledge the 'touch out' feeling.",
+        "2": "Low gear is fine. Sometimes desire during pregnancy is 'responsive' rather than 'spontaneous'. You might not crave it, but if you start kissing, you might get into it. Or not! No pressure.",
+        "3": "Cruising in neutral. This is a great place to check in with your partner. Ask for what you need—maybe it's a massage tonight, and sex tomorrow. You get to dictate the pace.",
+        "4": "Ride that wave! The increased blood volume during pregnancy can make things feel highly sensitive and amazing. Have fun, use pillows for support, and enjoy the connection.",
+        "5": "Get it! The 'pregnancy glow' extends to the bedroom for some. Capitalize on this energy. Just remember to listen to your body and shift positions if anything feels tweaky or uncomfortable."
+    };
+
+    function updateLibido(val) {
+        libidoMessage.textContent = libidoMessages[val];
+        libidoInsight.classList.add('active');
+        saveState('libido', val);
+    }
+
+    const savedLibido = loadState('libido', null);
+    if (savedLibido) {
+        const radioToSelect = document.querySelector(`input[name="libido-level"][value="${savedLibido}"]`);
+        if (radioToSelect) {
+            radioToSelect.checked = true;
+            updateLibido(savedLibido);
+        }
+    }
+
+    libidoRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            updateLibido(e.target.value);
+        });
+    });
+
+    // --- Section 3: Partner Support ---
+    const supportCheckboxes = document.querySelectorAll('input[name="support-item"]');
+    const calcSupportBtn = document.getElementById('calculate-support-btn');
+    const supportResults = document.getElementById('support-results');
+    const supportScore = document.getElementById('support-score');
+    const supportFeedback = document.getElementById('support-feedback');
+
+    function calculateSupport() {
+        let score = 0;
+        let checkedValues = [];
+        supportCheckboxes.forEach(cb => {
+            if (cb.checked) {
+                score++;
+                checkedValues.push(cb.value);
+            }
+        });
+
+        saveState('support_checks', checkedValues);
+
+        supportScore.textContent = `You checked ${score} out of 5 areas of support.`;
+
+        if (score === 5) {
+            supportFeedback.textContent = "Amazing! Your partner is really stepping up. This strong foundation of non-sexual intimacy and shared mental load makes physical intimacy much easier to navigate when you're ready.";
+        } else if (score >= 3) {
+            supportFeedback.textContent = "Good foundation. Your partner is involved, but there might be room to ask for specific support. If you need them to read a book or take on more chores, explicitly ask them. They aren't mind readers!";
+        } else {
+            supportFeedback.textContent = "It looks like you're carrying a heavy load right now. Pregnancy can be isolating. It's crucial to have a sit-down conversation about the 'mental load' and explicitly ask for the non-sexual support you need before focusing on physical intimacy.";
+        }
+
+        supportResults.classList.add('active');
+    }
+
+    const savedSupportChecks = loadState('support_checks', []);
+    if (savedSupportChecks.length > 0) {
+        supportCheckboxes.forEach(cb => {
+            if (savedSupportChecks.includes(cb.value)) {
+                cb.checked = true;
+            }
+        });
+        calculateSupport(); // Auto calculate if saved
+    }
+
+    calcSupportBtn.addEventListener('click', calculateSupport);
+
+    // --- Section 5: Body Acceptance ---
+    const bodySelect = document.getElementById('body-feeling');
+    const bodyResult = document.getElementById('body-activity-result');
+    const bodyTitle = document.getElementById('body-activity-title');
+    const bodyDesc = document.getElementById('body-activity-desc');
+
+    const bodyActivities = {
+        'amazed': {
+            title: 'Celebrate Your Vessel',
+            desc: "That's incredible! Channel that awe into a sensual massage with your partner. Have them rub pregnancy-safe oil on your belly and explicitly thank your body out loud for the work it's doing."
+        },
+        'neutral': {
+            title: 'Grounding Exercises',
+            desc: "Neutrality is highly underrated! Sometimes the best activity is simply taking a warm bath, floating, and focusing on your breath. You don't have to 'love' every change to respect it."
+        },
+        'struggling': {
+            title: 'Sensate Focus',
+            desc: "It is incredibly hard to watch your body morph out of your control. Try a 'sensate focus' exercise: lie down with your partner and have them touch you (non-sexually) only in areas you feel comfortable with right now (e.g., your arms, hair, feet). Avoid the 'trigger' areas and focus purely on sensation without judgment."
+        },
+        'alien': {
+            title: 'Mirror Affirmations (The Gentle Kind)',
+            desc: "When you feel disconnected, try this: stand in front of a mirror (clothed or naked, your choice). Instead of looking at your belly, look into your own eyes. Remind yourself: 'This is temporary. My body is performing a radical function. I am still me in here.'"
+        }
+    };
+
+    function updateBody(val) {
+        if (!val) {
+            bodyResult.classList.remove('active');
+            return;
+        }
+        const data = bodyActivities[val];
+        bodyTitle.textContent = data.title;
+        bodyDesc.textContent = data.desc;
+        bodyResult.classList.add('active');
+        saveState('body_feeling', val);
+    }
+
+    const savedBody = loadState('body_feeling', '');
+    if (savedBody) {
+        bodySelect.value = savedBody;
+        updateBody(savedBody);
+    }
+
+    bodySelect.addEventListener('change', (e) => {
+        updateBody(e.target.value);
+    });
+
+    // --- Section 7: Provider Questions ---
+    const qBtn = document.getElementById('generate-q-btn');
+    const qResultArea = document.getElementById('question-result');
+    const qText = document.getElementById('question-text');
+
+    const questions = [
+        "I've been experiencing some spotting after intercourse. Is this normal cervix sensitivity or something I need to come in for?",
+        "Are there any specific sexual positions I should strictly avoid right now?",
+        "I've had some mild cramping after an orgasm. How do I differentiate between Braxton Hicks and preterm labor?",
+        "I have a history of pelvic floor dysfunction. Should I be doing specific exercises to prepare for birth, or modifying my sexual activity?",
+        "My libido is completely gone and I'm feeling guilty. Can you reassure me that this is a normal hormonal shift?",
+        "We are approaching my due date. Is there any truth to having sex to naturally induce labor?"
+    ];
+
+    qBtn.addEventListener('click', () => {
+        const randomQ = questions[Math.floor(Math.random() * questions.length)];
+        qText.textContent = `"${randomQ}"`;
+        qResultArea.classList.add('active');
+    });
+
+    // --- Section 9: Clear History ---
+    const clearBtn = document.getElementById('clear-all-btn');
+    clearBtn.addEventListener('click', () => {
+        if(confirm("Are you sure you want to clear your saved progress?")) {
+            localStorage.removeItem('ali_pregnancy_trimester');
+            localStorage.removeItem('ali_pregnancy_libido');
+            localStorage.removeItem('ali_pregnancy_support_checks');
+            localStorage.removeItem('ali_pregnancy_body_feeling');
+            location.reload();
+        }
+    });
+});
+</script>
+
+</body>
+</html>
