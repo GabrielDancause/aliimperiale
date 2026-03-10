@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Erogenous Zone Mapping Guide | Ali Imperiale</title>
+  <meta name="description" content="Discover and map your personal pleasure zones with this interactive educational guide. Explore anatomy, arousal, and guided self-discovery exercises.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body { background-color: #FAF8EB; }
+
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Hero Section */
+    .guide-hero {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .guide-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      color: #AD9846;
+    }
+    .guide-hero p {
+      max-width: 800px;
+      margin: 0 auto 24px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .medical-disclaimer {
+      font-size: 0.85rem;
+      color: #C6C8BB;
+      max-width: 800px;
+      margin: 0 auto;
+      font-style: italic;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    /* Tool Layout */
+    .tool-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    /* Map Section */
+    .map-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(46,62,36,0.08);
+      position: relative;
+    }
+    .sex-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .toggle-btn {
+      background: #FAF8EB;
+      border: 2px solid #2E3E24;
+      color: #2E3E24;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .toggle-btn.active {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    .svg-container {
+      width: 100%;
+      height: 500px;
+      position: relative;
+    }
+    .body-map {
+      width: 100%;
+      height: 100%;
+    }
+    .zone {
+      fill: #e0e0e0;
+      stroke: #2E3E24;
+      stroke-width: 2;
+      cursor: pointer;
+      transition: fill 0.3s, opacity 0.3s;
+    }
+    .zone:hover {
+      opacity: 0.8;
+      stroke: #AD9846;
+      stroke-width: 3;
+    }
+    .zone.selected {
+      stroke: #AD9846;
+      stroke-width: 4;
+    }
+
+    /* Panel Section */
+    .panel-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(46,62,36,0.08);
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-section h2 {
+      color: #2E3E24;
+      margin-bottom: 16px;
+      font-size: 1.8rem;
+    }
+    .zone-placeholder {
+      color: #666;
+      font-style: italic;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .zone-content {
+      display: none; /* hidden by default */
+    }
+    .zone-desc {
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .exercise-box {
+      background: #FAF8EB;
+      border-left: 4px solid #AD9846;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+    .exercise-box h4 {
+      margin-bottom: 8px;
+      color: #2E3E24;
+    }
+
+    /* Rating System */
+    .rating-section {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+    }
+    .rating-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+    .rating-scale {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .rating-btn {
+      background: #eee;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .rating-btn:hover {
+      background: #ddd;
+    }
+    .rating-btn.active[data-val="1"] { background: #ffebee; color: #c62828; }
+    .rating-btn.active[data-val="2"] { background: #ffcdd2; color: #c62828; }
+    .rating-btn.active[data-val="3"] { background: #ef9a9a; color: #c62828; }
+    .rating-btn.active[data-val="4"] { background: #e57373; color: white; }
+    .rating-btn.active[data-val="5"] { background: #ef5350; color: white; }
+    .rating-btn.active[data-val="6"] { background: #f44336; color: white; }
+    .rating-btn.active[data-val="7"] { background: #e53935; color: white; }
+    .rating-btn.active[data-val="8"] { background: #d32f2f; color: white; }
+    .rating-btn.active[data-val="9"] { background: #c62828; color: white; }
+    .rating-btn.active[data-val="10"] { background: #b71c1c; color: white; }
+
+    /* Progress & Comm Templates */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .feature-card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(46,62,36,0.08);
+    }
+    .feature-card h3 {
+      color: #AD9846;
+      margin-bottom: 16px;
+    }
+    .progress-list {
+      list-style: none;
+    }
+    .progress-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .template-box {
+      background: #FAF8EB;
+      padding: 16px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    /* FAQ */
+    .faq-section {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+    .faq-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #2E3E24;
+    }
+    .faq-item {
+      background: #fff;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .faq-item h3 {
+      color: #AD9846;
+      margin-bottom: 12px;
+    }
+    .faq-item p {
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .tool-layout, .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .site-nav { padding: 12px 16px; }
+      .guide-hero h1 { font-size: 2rem; }
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <section class="guide-hero">
+    <h1>Interactive Erogenous Zone Mapping Guide</h1>
+    <p>Every body is uniquely wired for pleasure. Use this interactive map to explore, discover, and communicate your personal erogenous zones. Understanding your body's sensitivity can lead to more profound self-connection and intimacy.</p>
+    <p class="medical-disclaimer">This tool is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or therapy.</p>
+  </section>
+
+  <div class="container">
+    <div class="tool-layout">
+      <!-- Body Map Section -->
+      <div class="map-section">
+        <div class="sex-toggle">
+          <button class="toggle-btn active" data-target="vulva">Vulva/Clitoral Anatomy</button>
+          <button class="toggle-btn" data-target="penis">Penis/Testicular Anatomy</button>
+        </div>
+
+        <div class="svg-container">
+          <!-- Vulva/Clitoral Map -->
+          <svg id="map-vulva" class="body-map" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+            <!-- Generic Body Outline -->
+            <path d="M120,50 Q200,-10 280,50 Q300,100 320,200 Q350,300 330,450 Q300,550 250,580 Q200,600 150,580 Q100,550 70,450 Q50,300 80,200 Q100,100 120,50" fill="none" stroke="#ddd" stroke-width="2"/>
+
+            <!-- Erogenous Zones (Abstract representations for mapping) -->
+            <circle class="zone" data-id="neck" cx="200" cy="120" r="30" />
+            <ellipse class="zone" data-id="breasts" cx="140" cy="220" rx="40" ry="30" />
+            <ellipse class="zone" data-id="breasts" cx="260" cy="220" rx="40" ry="30" />
+            <circle class="zone" data-id="nipples" cx="140" cy="220" r="10" />
+            <circle class="zone" data-id="nipples" cx="260" cy="220" r="10" />
+            <ellipse class="zone" data-id="stomach" cx="200" cy="320" rx="50" ry="40" />
+            <ellipse class="zone" data-id="inner-thighs" cx="130" cy="450" rx="30" ry="60" />
+            <ellipse class="zone" data-id="inner-thighs" cx="270" cy="450" rx="30" ry="60" />
+            <circle class="zone" data-id="genitals-v" cx="200" cy="420" r="45" />
+
+            <text x="200" y="125" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Neck</text>
+            <text x="140" y="190" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Breast</text>
+            <text x="260" y="190" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Breast</text>
+            <text x="200" y="325" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Stomach</text>
+            <text x="130" y="455" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Thigh</text>
+            <text x="270" y="455" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Thigh</text>
+            <text x="200" y="425" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Vulva/Clitoris</text>
+          </svg>
+
+          <!-- Penis/Testicular Map -->
+          <svg id="map-penis" class="body-map" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <!-- Generic Body Outline -->
+            <path d="M120,50 Q200,-10 280,50 Q300,100 320,200 Q350,300 330,450 Q300,550 250,580 Q200,600 150,580 Q100,550 70,450 Q50,300 80,200 Q100,100 120,50" fill="none" stroke="#ddd" stroke-width="2"/>
+
+            <!-- Erogenous Zones (Abstract representations for mapping) -->
+            <circle class="zone" data-id="neck" cx="200" cy="120" r="30" />
+            <ellipse class="zone" data-id="chest" cx="150" cy="210" rx="40" ry="30" />
+            <ellipse class="zone" data-id="chest" cx="250" cy="210" rx="40" ry="30" />
+            <circle class="zone" data-id="nipples-p" cx="150" cy="210" r="8" />
+            <circle class="zone" data-id="nipples-p" cx="250" cy="210" r="8" />
+            <ellipse class="zone" data-id="stomach" cx="200" cy="310" rx="50" ry="40" />
+            <ellipse class="zone" data-id="inner-thighs" cx="130" cy="450" rx="30" ry="60" />
+            <ellipse class="zone" data-id="inner-thighs" cx="270" cy="450" rx="30" ry="60" />
+            <circle class="zone" data-id="perineum" cx="200" cy="465" r="20" />
+            <rect class="zone" data-id="genitals-p" x="175" y="380" width="50" height="70" rx="10" />
+
+            <text x="200" y="125" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Neck/Ears</text>
+            <text x="150" y="175" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Chest</text>
+            <text x="250" y="175" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Chest</text>
+            <text x="200" y="315" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Stomach</text>
+            <text x="130" y="455" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Thigh</text>
+            <text x="270" y="455" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Thigh</text>
+            <text x="200" y="415" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Penis/Testes</text>
+            <text x="200" y="495" text-anchor="middle" font-size="10" fill="#2E3E24" pointer-events="none">Perineum</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Info Panel Section -->
+      <div class="panel-section">
+        <h2 id="zone-title">Select a Zone</h2>
+        <div id="zone-placeholder" class="zone-placeholder">
+          Click on a highlighted area of the body map to explore its potential for pleasure, learn about the anatomy, and record your sensitivity rating.
+        </div>
+
+        <div id="zone-content" class="zone-content">
+          <p id="zone-desc" class="zone-desc"></p>
+
+          <div class="exercise-box">
+            <h4>Guided Exploration</h4>
+            <p id="zone-exercise"></p>
+          </div>
+
+          <div class="rating-section">
+            <h3>My Sensitivity Rating</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 12px; color: #666;">Rate the intensity of pleasure for this zone (1 = Low/Neutral, 10 = Extremely Sensitive).</p>
+            <div class="rating-scale" id="rating-scale">
+              <button class="rating-btn" data-val="1">1</button>
+              <button class="rating-btn" data-val="2">2</button>
+              <button class="rating-btn" data-val="3">3</button>
+              <button class="rating-btn" data-val="4">4</button>
+              <button class="rating-btn" data-val="5">5</button>
+              <button class="rating-btn" data-val="6">6</button>
+              <button class="rating-btn" data-val="7">7</button>
+              <button class="rating-btn" data-val="8">8</button>
+              <button class="rating-btn" data-val="9">9</button>
+              <button class="rating-btn" data-val="10">10</button>
+            </div>
+            <p id="rating-feedback" style="font-size: 0.9rem; color: #AD9846; font-weight: 600; min-height: 20px;"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress & Communication Section -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>My Mapped Zones</h3>
+        <p style="margin-bottom: 16px; font-size: 0.95rem;">Your personal pleasure map based on your ratings. Data is stored locally on your device.</p>
+        <ul id="progress-list" class="progress-list">
+          <li class="progress-item" style="color: #666; font-style: italic;">No zones rated yet. Start clicking the map!</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <h3>Partner Communication</h3>
+        <p style="margin-bottom: 16px; font-size: 0.95rem;">Use these templates to share your discoveries with a partner.</p>
+
+        <div class="template-box">
+          "I've been exploring what feels good for me lately, and I realized my <span id="comm-zone-1" style="font-weight:600;color:#2E3E24;">[Zone]</span> is really sensitive. Next time we're together, I'd love if you tried touching it by <span id="comm-action-1" style="font-weight:600;color:#2E3E24;">[Action]</span>."
+        </div>
+
+        <div class="template-box">
+          "I want to help you map your own pleasure zones! Would you be open to me exploring your body and you telling me what feels like a 10?"
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is an erogenous zone?</h3>
+        <p>An erogenous zone is an area of the human body that has heightened sensitivity, which, when stimulated, may create a sexual response such as relaxation, the production of sexual fantasies, sexual arousal, and orgasm. They are often concentrated in areas with a high density of nerve endings.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do erogenous zones change over time?</h3>
+        <p>Yes, absolutely. Sensitivity can shift due to hormonal changes, stress levels, relationship dynamics, new experiences, age, and mood. A zone that feels neutral one day might feel intensely pleasurable another day. That's why mapping is an ongoing process of self-discovery.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are everyone's erogenous zones the same?</h3>
+        <p>No. While there are common zones (like genitals, lips, and nipples) because of nerve density, secondary erogenous zones (like the back of the knees, the nape of the neck, or the scalp) are highly individual. What brings one person immense pleasure might feel ticklish or uncomfortable to someone else.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How can I talk to my partner about my zones?</h3>
+        <p>Communication is key! You can use the "Partner Communication" templates provided above. Start outside the bedroom when you're both relaxed. Be positive and framed around mutual pleasure ("I love when you do X, it makes me feel Y. I just discovered that Z feels amazing too...").</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is an erogenous zone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An erogenous zone is an area of the human body that has heightened sensitivity, which, when stimulated, may create a sexual response such as relaxation, the production of sexual fantasies, sexual arousal, and orgasm. They are often concentrated in areas with a high density of nerve endings."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Do erogenous zones change over time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely. Sensitivity can shift due to hormonal changes, stress levels, relationship dynamics, new experiences, age, and mood. A zone that feels neutral one day might feel intensely pleasurable another day. That's why mapping is an ongoing process of self-discovery."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Are everyone's erogenous zones the same?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. While there are common zones (like genitals, lips, and nipples) because of nerve density, secondary erogenous zones (like the back of the knees, the nape of the neck, or the scalp) are highly individual. What brings one person immense pleasure might feel ticklish or uncomfortable to someone else."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How can I talk to my partner about my zones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Communication is key! You can use the 'Partner Communication' templates provided above. Start outside the bedroom when you're both relaxed. Be positive and framed around mutual pleasure ('I love when you do X, it makes me feel Y. I just discovered that Z feels amazing too...')."
+      }
+    }]
+  }
+  </script>
+
+  <script src="consent.js"></script>
+  <script src="mobile-nav.js"></script>
+  <script src="newsletter-bar.js"></script>
+  <script src="email-capture.js"></script>
+  <script src="back-to-top.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Data definitions using template literals
+      const zoneData = {
+        'neck': {
+          title: 'Neck & Ears',
+          desc: `The neck and ears are packed with nerve endings, particularly the nape of the neck, earlobes, and the soft skin just behind the ear. These are common secondary erogenous zones that often respond well to gentle breath, light kissing, or nibbling.`,
+          exercise: `Try tracing your fingers lightly from the base of your ear down the side of your neck. Notice if you prefer feather-light touches, slight pressure, or even changes in temperature (like an ice cube or warm breath).`,
+          action: `kissing and lightly tracing the back of my neck`
+        },
+        'breasts': {
+          title: 'Breasts / Chest',
+          desc: `The breasts and chest area hold significant potential for pleasure due to high nerve density. Sensitivity can vary greatly between individuals and fluctuate with hormonal cycles. It's not just about the nipples; the entire breast or chest tissue can be responsive.`,
+          exercise: `Using a massage oil or lotion, use full-hand contact to cup and stroke your chest. Pay attention to the sides and underneath, areas often overlooked. Do you prefer broad strokes or more focused, deeper pressure?`,
+          action: `cupping and massaging my chest with warm hands`
+        },
+        'chest': {
+          title: 'Chest',
+          desc: `The chest area holds significant potential for pleasure due to high nerve density. Sensitivity can vary greatly between individuals. It's not just about the nipples; the entire pectoral region can be highly responsive to different types of touch.`,
+          exercise: `Using a massage oil or lotion, use full-hand contact to stroke your chest. Pay attention to the areas near the collarbone and sides. Do you prefer broad strokes or more focused, deeper pressure?`,
+          action: `massaging my chest with broad, firm strokes`
+        },
+        'nipples': {
+          title: 'Nipples',
+          desc: `Nipples are primary erogenous zones for many, with dense nerve networks. Stimulation here can actually trigger the same pleasure centers in the brain as genital stimulation. Sensitivity ranges from numb to overwhelmingly intense.`,
+          exercise: `Experiment with varying pressure: start with just the fabric of your shirt, then light fingertips, and finally a firmer pinch or tug if that appeals to you. Where is your personal sweet spot on that spectrum?`,
+          action: `teasing and gently flicking my nipples`
+        },
+        'nipples-p': {
+          title: 'Nipples',
+          desc: `Nipples are primary erogenous zones for many people of all sexes, featuring dense nerve networks. Stimulation here can be surprisingly intense. Sensitivity ranges from numb to overwhelmingly intense.`,
+          exercise: `Experiment with varying pressure: start with light fingertips, circular motions, and finally a firmer pinch or tug if that appeals to you. Where is your personal sweet spot on that spectrum?`,
+          action: `gently pinching and circling my nipples`
+        },
+        'stomach': {
+          title: 'Stomach & Lower Abdomen',
+          desc: `The stomach and lower abdomen are emotionally vulnerable areas. Touch here can build anticipation and create a deep sense of intimacy. The closer the touch gets to the genital area, the more it can amplify arousal.`,
+          exercise: `Lie on your back and slowly trace circles around your belly button, gradually widening the circles towards your hip bones and pubic mound. Notice the shift in sensation as the touch moves lower.`,
+          action: `slowly tracing circles on my lower stomach`
+        },
+        'inner-thighs': {
+          title: 'Inner Thighs',
+          desc: `The skin on the inner thighs is incredibly delicate and sensitive. As a gateway to the genitals, touching the inner thighs is a powerful way to build sexual tension and anticipation without direct genital contact.`,
+          exercise: `Use the back of your hand or a soft object (like a feather or silk scarf) to stroke upward from your knee toward your groin. Stop just short of your genitals. Focus on the feeling of anticipation.`,
+          action: `lightly stroking the inside of my thighs`
+        },
+        'genitals-v': {
+          title: 'Vulva & Clitoris',
+          desc: `The vulva encompasses the external genitalia, including the labia, vaginal opening, and the clitoris (a highly complex organ dedicated entirely to pleasure, containing thousands of nerve endings). This is a primary center for arousal and orgasm.`,
+          exercise: `Using a mirror, take time to visually explore your anatomy. Then, using a lubricant, experiment with different types of touch: broad flat strokes across the labia versus focused, rhythmic circles on or around the clitoris. Notice the difference in buildup.`,
+          action: `focusing on slow, rhythmic pressure around my clitoris`
+        },
+        'genitals-p': {
+          title: 'Penis & Testicles',
+          desc: `The penis and testicles are primary erogenous zones, rich in nerve endings. Different areas have varying sensitivities—the frenulum (underside, just below the head) and the glans (head) are often particularly sensitive. The scrotum is also highly responsive to temperature and touch.`,
+          exercise: `Using a lubricant, experiment with different grips and speeds on the shaft, then try lightly tracing the frenulum or gently cupping and lifting the testicles. Notice which variations in pressure and speed feel best.`,
+          action: `experimenting with different grips and speeds on the shaft`
+        },
+        'perineum': {
+          title: 'Perineum',
+          desc: `The perineum is the area of skin between the genitals and the anus. It's a highly innervated area that sits close to internal pelvic floor muscles and pleasure centers. It can be a very sensitive and highly arousing zone for many.`,
+          exercise: `Apply a small amount of lubricant and try applying firm, steady pressure with one or two fingers to the perineum while simultaneously exploring other areas. Notice how the dual sensation affects your overall arousal.`,
+          action: `applying gentle, steady pressure to my perineum`
+        }
+      };
+
+      // State
+      let currentSex = 'vulva';
+      let currentZone = null;
+      let ratings = JSON.parse(localStorage.getItem('ezm_ratings')) || {};
+
+      // DOM Elements
+      const mapVulva = document.getElementById('map-vulva');
+      const mapPenis = document.getElementById('map-penis');
+      const toggleBtns = document.querySelectorAll('.toggle-btn');
+
+      const zoneTitle = document.getElementById('zone-title');
+      const zonePlaceholder = document.getElementById('zone-placeholder');
+      const zoneContent = document.getElementById('zone-content');
+      const zoneDesc = document.getElementById('zone-desc');
+      const zoneExercise = document.getElementById('zone-exercise');
+
+      const ratingBtns = document.querySelectorAll('.rating-btn');
+      const ratingFeedback = document.getElementById('rating-feedback');
+
+      const progressList = document.getElementById('progress-list');
+      const commZone1 = document.getElementById('comm-zone-1');
+      const commAction1 = document.getElementById('comm-action-1');
+
+      // Initialize Map Colors
+      function updateMapColors() {
+        document.querySelectorAll('.zone').forEach(el => {
+          const zoneId = el.getAttribute('data-id');
+          if (ratings[zoneId]) {
+            const val = parseInt(ratings[zoneId]);
+            // Apply color scale based on rating
+            if (val <= 3) el.style.fill = '#ffcdd2';
+            else if (val <= 6) el.style.fill = '#ef5350';
+            else el.style.fill = '#b71c1c';
+          } else {
+            el.style.fill = '#e0e0e0';
+          }
+        });
+      }
+
+      // Update Progress UI
+      function updateProgressUI() {
+        progressList.innerHTML = '';
+        const savedKeys = Object.keys(ratings);
+
+        if (savedKeys.length === 0) {
+          progressList.innerHTML = `<li class="progress-item" style="color: #666; font-style: italic;">No zones rated yet. Start clicking the map!</li>`;
+          return;
+        }
+
+        let highestRatedZone = null;
+        let highestRating = -1;
+
+        savedKeys.forEach(key => {
+          const data = zoneData[key];
+          if (!data) return; // Skip if data is missing for some reason
+          const val = parseInt(ratings[key]);
+
+          if (val > highestRating) {
+            highestRating = val;
+            highestRatedZone = key;
+          }
+
+          const li = document.createElement('li');
+          li.className = 'progress-item';
+          li.innerHTML = `
+            <span style="font-weight: 500;">${data.title}</span>
+            <span style="color: #AD9846; font-weight: 600;">Rating: ${val}/10</span>
+          `;
+          progressList.appendChild(li);
+        });
+
+        // Update Communication Template if we have a highest rated zone
+        if (highestRatedZone && highestRating >= 7) {
+          commZone1.textContent = zoneData[highestRatedZone].title.toLowerCase();
+          commAction1.textContent = zoneData[highestRatedZone].action;
+        }
+      }
+
+      // Handle Sex Toggle
+      toggleBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const target = e.target.getAttribute('data-target');
+          if (target === currentSex) return;
+
+          currentSex = target;
+          toggleBtns.forEach(b => b.classList.remove('active'));
+          e.target.classList.add('active');
+
+          if (currentSex === 'vulva') {
+            mapVulva.style.display = 'block';
+            mapPenis.style.display = 'none';
+          } else {
+            mapVulva.style.display = 'none';
+            mapPenis.style.display = 'block';
+          }
+
+          // Deselect
+          currentZone = null;
+          document.querySelectorAll('.zone').forEach(z => z.classList.remove('selected'));
+          zonePlaceholder.style.display = 'block';
+          zoneContent.style.display = 'none';
+          zoneTitle.textContent = 'Select a Zone';
+        });
+      });
+
+      // Handle Zone Click
+      document.querySelectorAll('.zone').forEach(zone => {
+        zone.addEventListener('click', (e) => {
+          const zoneId = e.currentTarget.getAttribute('data-id');
+          currentZone = zoneId;
+
+          // Visual selection
+          document.querySelectorAll('.zone').forEach(z => z.classList.remove('selected'));
+          // Select all paths with this ID (for mirrored zones like breasts/thighs)
+          document.querySelectorAll(`.zone[data-id="${zoneId}"]`).forEach(z => z.classList.add('selected'));
+
+          // Update Panel Content safely using textContent
+          const data = zoneData[zoneId];
+          zoneTitle.textContent = data.title;
+          zoneDesc.textContent = data.desc;
+          zoneExercise.textContent = data.exercise;
+
+          zonePlaceholder.style.display = 'none';
+          zoneContent.style.display = 'block';
+
+          // Update Rating Buttons
+          ratingBtns.forEach(b => b.classList.remove('active'));
+          if (ratings[zoneId]) {
+            const val = ratings[zoneId];
+            const btn = document.querySelector(`.rating-btn[data-val="${val}"]`);
+            if (btn) btn.classList.add('active');
+            ratingFeedback.textContent = `Saved: ${val}/10`;
+          } else {
+            ratingFeedback.textContent = '';
+          }
+        });
+      });
+
+      // Handle Rating Click
+      ratingBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          if (!currentZone) return;
+
+          const val = e.target.getAttribute('data-val');
+          ratings[currentZone] = val;
+          localStorage.setItem('ezm_ratings', JSON.stringify(ratings));
+
+          // UI Updates
+          ratingBtns.forEach(b => b.classList.remove('active'));
+          e.target.classList.add('active');
+          ratingFeedback.textContent = `Saved: ${val}/10`;
+
+          updateMapColors();
+          updateProgressUI();
+        });
+      });
+
+      // Initial Load
+      updateMapColors();
+      updateProgressUI();
+    });
+  </script>
+</body>
+</html>
