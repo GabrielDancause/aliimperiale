@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Couples Conversation Starter Tool | Ali Imperiale</title>
+  <meta name="description" content="A free, interactive couples conversation starter tool. Over 200 thought-provoking questions across 4 levels to deepen your connection.">
+  <meta property="og:title" content="Couples Conversation Starter Tool">
+  <meta property="og:description" content="A free, interactive couples conversation starter tool. Over 200 thought-provoking questions across 4 levels to deepen your connection.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/conversation-starters.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Couples Conversation Starter Tool">
+  <link rel="canonical" href="https://aliimperiale.com/conversation-starters.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Add base custom styles here */
+    body { line-height: 1.7; background-color: #FAF8EB; color: #2E3E24; }
+    .nav { background-color: #2E3E24; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { height: 36px; opacity: 0.95; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: #C6C8BB; text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.15s ease; }
+    .nav-links a:hover { color: #FAF8EB; }
+
+    .tool-header { background-color: #2E3E24; color: #FAF8EB; text-align: center; padding: 32px 20px 60px; position: relative; }
+    .tool-header::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 30px; background: #FAF8EB; border-radius: 30px 30px 0 0; }
+    .tool-header h1 { font-family: 'New Standard', Georgia, serif; font-size: 2.2rem; font-weight: 400; line-height: 1.3; max-width: 600px; margin: 0 auto; color: #FAF8EB; }
+    .tool-subtitle { font-size: 0.95rem; color: #C6C8BB; margin-top: 14px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 10px 20px 40px; }
+
+    /* Tool Styles */
+    #tool-container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    /* Category Filters */
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1.5px solid #2E3E24;
+      color: #2E3E24;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      background: rgba(46, 62, 36, 0.05);
+    }
+    .filter-btn.active {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    /* Card Flip Animation */
+    .card-scene {
+      width: 100%;
+      max-width: 500px;
+      height: 300px;
+      perspective: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .card.is-flipped {
+      transform: rotateY(180deg);
+    }
+    .card__face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px rgba(46, 62, 36, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid rgba(46, 62, 36, 0.06);
+    }
+    .card__face--front {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+    .card__face--front h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    .card__face--front p {
+      font-size: 0.9rem;
+      color: #C6C8BB;
+    }
+    .card__face--back {
+      transform: rotateY(180deg);
+    }
+    .card-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #AD9846;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .card-question {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.4rem;
+      color: #2E3E24;
+      line-height: 1.4;
+    }
+
+    /* Controls */
+    .tool-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.15s;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #3a5030;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #ffffff;
+      color: #2E3E24;
+      border: 1.5px solid rgba(46, 62, 36, 0.2);
+    }
+    .btn-secondary:hover {
+      background: #FAF8EB;
+      border-color: #2E3E24;
+    }
+
+    /* Timer */
+    .timer-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .timer-select {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #C6C8BB;
+      background: #fff;
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      font-size: 0.85rem;
+    }
+    .timer-display {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #AD9846;
+      min-width: 50px;
+      text-align: center;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #2E3E24;
+      color: #FAF8EB;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Print Styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #print-area, #print-area * {
+        visibility: visible;
+      }
+      #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+      .print-question {
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+      }
+      .print-category {
+        font-size: 0.8rem;
+        color: #666;
+        text-transform: uppercase;
+      }
+      .print-text {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav { padding: 14px 16px; } .nav-logo { height: 30px; } .nav-links { gap: 16px; } .nav-links a { font-size: 0.82rem; }
+      .tool-header { padding: 24px 16px 52px; } .tool-header h1 { font-size: 1.65rem; } .tool-subtitle { font-size: 0.88rem; }
+      .card-scene { height: 260px; }
+      .card__face--front h2 { font-size: 2.5rem; }
+      .card-question { font-size: 1.2rem; }
+      .btn { padding: 10px 18px; font-size: 0.85rem; }
+    }
+  </style>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Couples Conversation Starter Tool",
+    "author": {
+      "@type": "Person",
+      "name": "Ali Imperiale",
+      "url": "https://aliimperiale.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Ali Imperiale",
+      "url": "https://aliimperiale.com"
+    },
+    "url": "https://aliimperiale.com/conversation-starters.html",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://aliimperiale.com/conversation-starters.html"
+    },
+    "description": "A free, interactive couples conversation starter tool. Over 200 thought-provoking questions across 4 levels to deepen your connection.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://aliimperiale.com/avatar-pro.jpg",
+      "width": 1280,
+      "height": 720
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are good deep conversation starters for couples?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Good deep conversation starters focus on values, fears, childhood memories, and future aspirations. Asking things like 'What is a belief you held strongly but changed your mind about?' or 'When do you feel most authentically yourself?' can spark meaningful dialogue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can we improve communication in our relationship?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Improving communication starts with active listening and creating a safe, non-judgmental space. Dedicating time to unplug and ask each other open-ended questions—like the ones in this tool—can help break routine patterns and foster deeper connection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are some fun questions to ask your partner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fun questions keep things light and playful. Try asking: 'If we had to survive a zombie apocalypse, what would be our individual roles?' or 'What is the most ridiculous thing you believed as a child?' These bring out laughter and shared joy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is it important to ask questions in a relationship?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As relationships progress, couples often assume they know everything about each other. Asking questions maintains curiosity, helps you understand how your partner is evolving, and prevents emotional drift."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to talk about intimacy and spicy topics?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Talking about intimacy requires vulnerability. It's best to start with curiosity rather than criticism. Using structured questions like 'What is a fantasy you've never shared with me?' or 'What can I do outside the bedroom to make you feel more desired inside it?' can make these conversations easier to navigate."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <nav class="nav">
+    <a href="/">
+      <img class="nav-logo" src="logo-green.webp" alt="Ali Imperiale" height="36">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <header class="tool-header">
+    <h1>Couples Conversation Starters</h1>
+    <p class="tool-subtitle">Over 200 thought-provoking questions to deepen your connection, spark laughter, and explore intimacy. No fluff, just real talk.</p>
+  </header>
+
+  <main class="container" id="main-content">
+    <div id="tool-container">
+
+      <div class="category-filters" id="category-filters">
+        <button class="filter-btn active" data-category="all">All Categories</button>
+        <button class="filter-btn" data-category="light">Light & Fun</button>
+        <button class="filter-btn" data-category="deeper">Getting Deeper</button>
+        <button class="filter-btn" data-category="vulnerable">Vulnerable</button>
+        <button class="filter-btn" data-category="spicy">Spicy</button>
+      </div>
+
+      <div class="card-scene">
+        <div class="card" id="question-card">
+          <div class="card__face card__face--front">
+            <h2>Let's Talk</h2>
+            <p>Tap card to reveal a question</p>
+          </div>
+          <div class="card__face card__face--back">
+            <div class="card-category" id="card-category">Category</div>
+            <div class="card-question" id="card-question">Question goes here...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timer-container">
+        <label for="timer-select">Timer:</label>
+        <select id="timer-select" class="timer-select">
+          <option value="0">Off</option>
+          <option value="30">30s</option>
+          <option value="60">1 min</option>
+          <option value="120">2 min</option>
+          <option value="300">5 min</option>
+        </select>
+        <div id="timer-display" class="timer-display" style="display:none;"></div>
+      </div>
+
+      <div class="tool-controls">
+        <button id="btn-next" class="btn">Next Question &rarr;</button>
+        <button id="btn-save" class="btn btn-secondary">Save this one</button>
+        <button id="btn-share" class="btn btn-secondary">Share Results</button>
+        <button id="btn-print" class="btn btn-secondary">Generate PDF</button>
+      </div>
+
+    </div>
+
+    <div id="print-area" style="display: none;"></div>
+    <div id="toast" class="toast">Action successful</div>
+
+    <div style="margin-top: 60px; max-width: 720px; margin-left: auto; margin-right: auto;" id="educational-section">
+      <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 1.8rem; font-weight: 400; color: #2E3E24; margin-bottom: 20px;">Why Couples Need Better Questions</h2>
+      <p style="margin-bottom: 16px;">It's incredibly easy to fall into a routine. You wake up, you go to work, you ask "how was your day?", you watch a show, and you go to sleep. When you've been with someone for a long time, there's a natural assumption that you already know everything about them.</p>
+
+      <p style="margin-bottom: 16px;">But human beings are not static. We are constantly evolving, changing our minds, developing new fears, and finding new passions. If you stop asking questions, you stop getting to know the person your partner is becoming.</p>
+
+      <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.3rem; font-weight: 400; color: #422626; margin-top: 28px; margin-bottom: 12px;">The Illusion of Intimacy</h3>
+      <p style="margin-bottom: 16px;">Often, couples mistake logistical communication ("Did you pay the electric bill?") or shared physical space for actual intimacy. True intimacy—the kind that makes you feel deeply seen and secure—requires vulnerability. It requires putting your phone away, making eye contact, and asking questions that don't have a simple yes or no answer.</p>
+
+      <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.3rem; font-weight: 400; color: #422626; margin-top: 28px; margin-bottom: 12px;">How to Use This Tool</h3>
+      <ul style="margin-bottom: 20px; padding-left: 24px;">
+        <li style="margin-bottom: 8px;"><strong>Set the Scene:</strong> Don't do this while distracted. Pour a glass of wine, make a cup of tea, or do this on a long drive.</li>
+        <li style="margin-bottom: 8px;"><strong>No Judgment Allowed:</strong> The vulnerable and spicy categories will only work if both partners feel safe. If your partner shares a fantasy or a fear, respond with curiosity, not criticism.</li>
+        <li style="margin-bottom: 8px;"><strong>Take Turns:</strong> When a question is revealed, you both should answer it. You'll be surprised by how differently you might view the same topic.</li>
+        <li style="margin-bottom: 8px;"><strong>Use the Timer:</strong> If you tend to overthink or ramble, set the timer to 2 minutes per person to keep the conversation flowing.</li>
+      </ul>
+
+      <p style="margin-bottom: 16px;">Remember, the goal isn't to get through all 200 questions. If one question leads to a three-hour conversation, that is a massive success. The goal is connection.</p>
+
+      <div style="margin-top: 48px; border-top: 1px solid rgba(46, 62, 36, 0.1); padding-top: 32px;" class="faq-section">
+        <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 1.6rem; font-weight: 400; color: #2E3E24; margin-bottom: 20px;">Frequently Asked Questions</h2>
+
+        <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.15rem; font-weight: 400; color: #422626; margin-top: 20px; margin-bottom: 8px;">What are good deep conversation starters for couples?</h3>
+        <p style="margin-bottom: 16px;">Good deep conversation starters focus on values, fears, childhood memories, and future aspirations. Asking things like "What is a belief you held strongly but changed your mind about?" or "When do you feel most authentically yourself?" can spark meaningful dialogue without feeling like an interrogation.</p>
+
+        <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.15rem; font-weight: 400; color: #422626; margin-top: 20px; margin-bottom: 8px;">How can we improve communication in our relationship?</h3>
+        <p style="margin-bottom: 16px;">Improving communication starts with active listening and creating a safe, non-judgmental space. Dedicating time to unplug and ask each other open-ended questions—like the ones in this tool—can help break routine patterns and foster deeper connection. It's about being genuinely curious, not trying to "win" a conversation.</p>
+
+        <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.15rem; font-weight: 400; color: #422626; margin-top: 20px; margin-bottom: 8px;">What are some fun questions to ask your partner?</h3>
+        <p style="margin-bottom: 16px;">Fun questions keep things light and playful. Try asking: "If we had to survive a zombie apocalypse, what would be our individual roles?" or "What is the most ridiculous thing you believed as a child?" These bring out laughter and shared joy, which is just as important as the deep, heavy stuff.</p>
+
+        <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.15rem; font-weight: 400; color: #422626; margin-top: 20px; margin-bottom: 8px;">Why is it important to ask questions in a relationship?</h3>
+        <p style="margin-bottom: 16px;">As relationships progress, couples often assume they know everything about each other. Asking questions maintains curiosity, helps you understand how your partner is evolving, and prevents emotional drift. It shows you're still interested in who they are today, not just who they were when you met.</p>
+
+        <h3 style="font-family: 'New Standard', Georgia, serif; font-size: 1.15rem; font-weight: 400; color: #422626; margin-top: 20px; margin-bottom: 8px;">How to talk about intimacy and spicy topics?</h3>
+        <p style="margin-bottom: 16px;">Talking about intimacy requires vulnerability. It's best to start with curiosity rather than criticism. Using structured questions like "What is a fantasy you've never shared with me?" or "What can I do outside the bedroom to make you feel more desired inside it?" can make these conversations easier to navigate and less daunting.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/reads.html">Reads</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script src="back-to-top.js" defer></script>
+<script>
+  // Question Database
+  const questions = [
+    // Light & Fun
+    { text: "If we had to survive a zombie apocalypse, what would be our individual roles?", category: "light" },
+    { text: "What is the most ridiculous thing you believed as a child?", category: "light" },
+    { text: "If you could instantly become an expert in one subject, what would it be?", category: "light" },
+    { text: "What’s your favorite memory of us from our first year together?", category: "light" },
+    { text: "If we could teleport to any place in the world right now for dinner, where are we going?", category: "light" },
+    { text: "What’s a movie or TV show you quote the most?", category: "light" },
+    { text: "If you had to eat one meal every day for the rest of your life, what would it be?", category: "light" },
+    { text: "What is your most unpopular opinion?", category: "light" },
+    { text: "What’s the weirdest dream you’ve ever had?", category: "light" },
+    { text: "If you were a pro wrestler, what would your entrance theme song be?", category: "light" },
+    { text: "What’s the best compliment you’ve ever received from a stranger?", category: "light" },
+    { text: "What is your guilty pleasure song?", category: "light" },
+    { text: "If we opened a business together, what would it be?", category: "light" },
+    { text: "What is something you’re embarrassingly bad at?", category: "light" },
+    { text: "What’s the most spontaneous thing you’ve ever done?", category: "light" },
+    { text: "If you had to delete all apps on your phone but three, which three do you keep?", category: "light" },
+    { text: "What is a weird food combination that you actually love?", category: "light" },
+    { text: "If you could have any superpower, but only for 24 hours, what would you choose?", category: "light" },
+    { text: "What’s the funniest thing that has ever happened to you on a date?", category: "light" },
+    { text: "If you had to be on a reality TV show, which one would it be?", category: "light" },
+    { text: "What’s your favorite physical feature of mine?", category: "light" },
+    { text: "What’s a small thing I do that always makes you smile?", category: "light" },
+    { text: "If we could swap lives for a day, what’s the first thing you would do?", category: "light" },
+    { text: "What was your first impression of me?", category: "light" },
+    { text: "What’s the best gift you’ve ever received?", category: "light" },
+
+    // Getting Deeper
+    { text: "What is a belief you held strongly but changed your mind about?", category: "deeper" },
+    { text: "When do you feel most authentically yourself?", category: "deeper" },
+    { text: "What is something you’ve always wanted to do but have been too afraid to try?", category: "deeper" },
+    { text: "How has your definition of success changed over the past five years?", category: "deeper" },
+    { text: "What’s a lesson you had to learn the hard way?", category: "deeper" },
+    { text: "In what ways do you think we balance each other out?", category: "deeper" },
+    { text: "What’s something you wish you had more time for?", category: "deeper" },
+    { text: "What does your ideal weekend look like, from start to finish?", category: "deeper" },
+    { text: "What is a habit you’re trying to break?", category: "deeper" },
+    { text: "How do you prefer to be comforted when you’re stressed or upset?", category: "deeper" },
+    { text: "What’s something you’re really proud of but rarely get to talk about?", category: "deeper" },
+    { text: "What’s the hardest part about getting older?", category: "deeper" },
+    { text: "What is a boundary you’ve struggled to enforce in the past?", category: "deeper" },
+    { text: "What’s a piece of advice you’d give to your younger self?", category: "deeper" },
+    { text: "What is a friendship or relationship that profoundly shaped who you are?", category: "deeper" },
+    { text: "How do you think we’ve both grown since we met?", category: "deeper" },
+    { text: "What is something you appreciate about how we handle conflict?", category: "deeper" },
+    { text: "What’s a goal you have for our relationship in the next year?", category: "deeper" },
+    { text: "When do you feel most connected to me?", category: "deeper" },
+    { text: "What is something you want us to do more often?", category: "deeper" },
+    { text: "What’s a tradition you want to start together?", category: "deeper" },
+    { text: "How do you define emotional intimacy?", category: "deeper" },
+    { text: "What’s a trait of mine you wish you had more of?", category: "deeper" },
+    { text: "What is something you worry about that you haven’t told me?", category: "deeper" },
+    { text: "What’s the best part about being in a relationship with me?", category: "deeper" },
+
+    // Vulnerable
+    { text: "What is your biggest fear regarding our relationship?", category: "vulnerable" },
+    { text: "What is something from your past you’re still trying to heal from?", category: "vulnerable" },
+    { text: "When was the last time you cried, and why?", category: "vulnerable" },
+    { text: "What is a recurring insecurity you battle with?", category: "vulnerable" },
+    { text: "Is there anything you feel you can’t fully share with me? Why?", category: "vulnerable" },
+    { text: "How do you think your childhood affects how you love today?", category: "vulnerable" },
+    { text: "What is the hardest thing you’ve ever had to forgive?", category: "vulnerable" },
+    { text: "What’s a time you felt completely broken, and how did you put yourself back together?", category: "vulnerable" },
+    { text: "What is a regret you carry with you?", category: "vulnerable" },
+    { text: "What is something you need from me that you’re afraid to ask for?", category: "vulnerable" },
+    { text: "When do you feel most unappreciated, and how can I help?", category: "vulnerable" },
+    { text: "What’s a memory that always makes you feel sad when you think about it?", category: "vulnerable" },
+    { text: "How do you deal with feelings of jealousy or inadequacy?", category: "vulnerable" },
+    { text: "What is a mistake you made that taught you a profound lesson?", category: "vulnerable" },
+    { text: "What do you think is your biggest flaw as a partner?", category: "vulnerable" },
+    { text: "When did you feel most let down by me, even if you never said anything?", category: "vulnerable" },
+    { text: "What is a part of yourself you feel you have to hide from the world?", category: "vulnerable" },
+    { text: "What does unconditional love mean to you, and do you think we have it?", category: "vulnerable" },
+    { text: "If you knew you only had one year left to live, how would you change your life?", category: "vulnerable" },
+    { text: "What is a secret you’ve never told anyone?", category: "vulnerable" },
+
+    // Spicy
+    { text: "What is a fantasy you’ve never shared with me?", category: "spicy" },
+    { text: "What can I do outside the bedroom to make you feel more desired inside it?", category: "spicy" },
+    { text: "What is your favorite sexual memory of us?", category: "spicy" },
+    { text: "Is there a specific touch or action that always turns you on?", category: "spicy" },
+    { text: "What’s a new place you’d like us to have sex?", category: "spicy" },
+    { text: "Do you prefer slow and sensual, or fast and rough?", category: "spicy" },
+    { text: "What is something you’ve always wanted to try but felt too shy to bring up?", category: "spicy" },
+    { text: "How important is foreplay to you, and what does your ideal foreplay look like?", category: "spicy" },
+    { text: "What outfit or piece of clothing makes me look the sexiest to you?", category: "spicy" },
+    { text: "What’s a roleplay scenario you find intriguing?", category: "spicy" },
+    { text: "How do you feel about watching porn together?", category: "spicy" },
+    { text: "What time of day do you feel the most aroused?", category: "spicy" },
+    { text: "What’s a sex toy you’d be interested in introducing into our play?", category: "spicy" },
+    { text: "What is the hottest thing I’ve ever whispered in your ear?", category: "spicy" },
+    { text: "Do you enjoy dirty talk? What kind of words or phrases turn you on?", category: "spicy" },
+    { text: "What’s a specific memory of us that you sometimes masturbate to?", category: "spicy" },
+    { text: "How do you feel about public displays of affection, and how far is too far?", category: "spicy" },
+    { text: "What is a physical feature of yours that you wish I paid more attention to?", category: "spicy" },
+    { text: "What’s the best orgasm you’ve ever had with me?", category: "spicy" },
+    { text: "What does sexual chemistry mean to you, and how can we keep ours strong?", category: "spicy" }
+  ];
+
+  // Additional Questions to reach 200+ thought-provoking questions
+  const additionalQuestions = [
+    // Light & Fun
+    { text: "What is the weirdest habit you have when you're alone?", category: "light" },
+    { text: "If our relationship had a mascot, what would it be?", category: "light" },
+    { text: "What’s the most embarrassing thing you’ve Googled recently?", category: "light" },
+    { text: "If we had to swap wardrobes for a week, what’s the first thing you’d wear of mine?", category: "light" },
+    { text: "What is a skill you think you’d be naturally amazing at with zero practice?", category: "light" },
+    { text: "What’s a trend you fully bought into but now deeply regret?", category: "light" },
+    { text: "If you could win an Olympic medal in any non-sport activity, what would it be?", category: "light" },
+    { text: "What’s the most ridiculous argument we’ve ever had?", category: "light" },
+    { text: "If you were stranded on a desert island, which three of my possessions would you bring?", category: "light" },
+    { text: "What’s the worst haircut you’ve ever had?", category: "light" },
+    { text: "If you could only eat one food shape (like circles or squares) for a week, what would it be?", category: "light" },
+    { text: "What’s a movie that everyone loves but you secretly hate?", category: "light" },
+    { text: "If you had to describe our relationship using only emojis, which ones would you pick?", category: "light" },
+    { text: "What’s your favorite nickname I’ve given you?", category: "light" },
+    { text: "If we were in a horror movie, who would die first and how?", category: "light" },
+    { text: "What’s a weird phobia you have that makes no sense?", category: "light" },
+    { text: "If you could instantly speak another language fluently, what would it be?", category: "light" },
+    { text: "What’s a childhood TV show you would gladly watch right now?", category: "light" },
+    { text: "If you had to perform in a talent show today, what would your talent be?", category: "light" },
+    { text: "What’s the most impulsive purchase you’ve ever made?", category: "light" },
+    { text: "If you could erase one song from existence, what would it be?", category: "light" },
+    { text: "What is your least favorite chore, and what would you pay someone else to do it?", category: "light" },
+    { text: "If you were a ghost, how would you haunt me?", category: "light" },
+    { text: "What’s a popular slang word you can’t stand?", category: "light" },
+    { text: "If you could be any animal for a day, what would you be?", category: "light" },
+    { text: "What’s the weirdest thing you’ve ever eaten?", category: "light" },
+    { text: "If we had to join a circus, what would our act be?", category: "light" },
+    { text: "What’s a book you’ve pretended to read but actually haven’t?", category: "light" },
+    { text: "If you could live in any fictional universe, which one would you choose?", category: "light" },
+    { text: "What’s the funniest rumor you’ve ever heard about yourself?", category: "light" },
+
+    // Getting Deeper
+    { text: "What is a part of your personality you feel I don’t fully understand?", category: "deeper" },
+    { text: "What is a decision you made that completely changed the trajectory of your life?", category: "deeper" },
+    { text: "How do you define success in a relationship?", category: "deeper" },
+    { text: "What’s a value your parents instilled in you that you want to pass on?", category: "deeper" },
+    { text: "What’s a value your parents instilled in you that you actively want to unlearn?", category: "deeper" },
+    { text: "When was a time you felt profoundly misunderstood by me?", category: "deeper" },
+    { text: "What is something you’re currently struggling to accept about yourself?", category: "deeper" },
+    { text: "How do you want to be remembered by the people closest to you?", category: "deeper" },
+    { text: "What’s a dream you’ve let go of, and how do you feel about it now?", category: "deeper" },
+    { text: "In what situations do you feel the most out of your element?", category: "deeper" },
+    { text: "What is a small change we could make to improve our daily life together?", category: "deeper" },
+    { text: "How do you think your communication style differs from mine?", category: "deeper" },
+    { text: "What’s a topic you wish we discussed more often?", category: "deeper" },
+    { text: "When do you feel most supported by me?", category: "deeper" },
+    { text: "What is a fear you have about the future?", category: "deeper" },
+    { text: "What’s a habit of mine that you admire and wish you had?", category: "deeper" },
+    { text: "How do you think we handle stress differently?", category: "deeper" },
+    { text: "What is something you feel you’ve compromised on in our relationship?", category: "deeper" },
+    { text: "What does 'home' mean to you?", category: "deeper" },
+    { text: "What is a lesson you’re currently trying to learn?", category: "deeper" },
+    { text: "How do you want our relationship to look five years from now?", category: "deeper" },
+    { text: "What is a way I can show up better for you during hard times?", category: "deeper" },
+    { text: "What’s a boundary you’ve set recently that you’re proud of?", category: "deeper" },
+    { text: "How do you feel about the way we split responsibilities?", category: "deeper" },
+    { text: "What’s a part of our past you look back on with the most fondness?", category: "deeper" },
+    { text: "What is something you think we take for granted about each other?", category: "deeper" },
+    { text: "How do you think your past relationships have influenced how you treat me?", category: "deeper" },
+    { text: "What’s a compliment I’ve given you that you still think about?", category: "deeper" },
+    { text: "What is a way you feel you’ve changed for the better since we met?", category: "deeper" },
+    { text: "How do you define loyalty in a relationship?", category: "deeper" },
+    { text: "What’s a tradition you want us to start right now?", category: "deeper" },
+    { text: "What is something you wish you were more courageous about?", category: "deeper" },
+
+    // Vulnerable
+    { text: "What is a secret you’ve been keeping from me, no matter how small?", category: "vulnerable" },
+    { text: "When did you last feel deeply ashamed, and why?", category: "vulnerable" },
+    { text: "What is a toxic trait you know you have but struggle to change?", category: "vulnerable" },
+    { text: "Have you ever doubted our relationship? When and why?", category: "vulnerable" },
+    { text: "What is a trauma or difficult experience you feel still affects your daily life?", category: "vulnerable" },
+    { text: "What is the most hurtful thing someone has ever said to you?", category: "vulnerable" },
+    { text: "When do you feel the most lonely, even when we’re together?", category: "vulnerable" },
+    { text: "What is a part of my personality that you find difficult to handle?", category: "vulnerable" },
+    { text: "What is a way I’ve hurt you that you’ve never brought up?", category: "vulnerable" },
+    { text: "Do you ever feel like you’re not enough for me? In what ways?", category: "vulnerable" },
+    { text: "What is a failure you haven’t fully forgiven yourself for?", category: "vulnerable" },
+    { text: "What is a need of yours that you feel is currently unmet in our relationship?", category: "vulnerable" },
+    { text: "When do you feel most judged by me?", category: "vulnerable" },
+    { text: "What is a fear you have about getting older?", category: "vulnerable" },
+    { text: "What is a lie you’ve told me to protect my feelings?", category: "vulnerable" },
+    { text: "How do you feel about your body right now, and how does that affect our intimacy?", category: "vulnerable" },
+    { text: "What is a part of yourself you feel you lost when we got together?", category: "vulnerable" },
+    { text: "What is the hardest truth you’ve ever had to accept about yourself?", category: "vulnerable" },
+    { text: "When was a time you felt you needed me, but I wasn’t there for you?", category: "vulnerable" },
+    { text: "What is a deep-seated insecurity you rarely talk about?", category: "vulnerable" },
+    { text: "What do you think is the biggest threat to our relationship?", category: "vulnerable" },
+    { text: "What is a way you’ve self-sabotaged in the past?", category: "vulnerable" },
+    { text: "What is a part of your childhood you never want to repeat?", category: "vulnerable" },
+    { text: "How do you handle feelings of resentment toward me?", category: "vulnerable" },
+    { text: "What is a question you’re afraid to ask me?", category: "vulnerable" },
+    { text: "When did you realize you loved me, and what scared you about it?", category: "vulnerable" },
+    { text: "What is a emotional wall you still have up with me?", category: "vulnerable" },
+    { text: "What is a time you felt truly powerless?", category: "vulnerable" },
+    { text: "How do you want me to respond when you’re pushing me away?", category: "vulnerable" },
+    { text: "What is a part of your identity you feel is misunderstood?", category: "vulnerable" },
+
+    // Spicy
+    { text: "What is a boundary in the bedroom you’d be willing to renegotiate?", category: "spicy" },
+    { text: "What is a specific outfit you want to see me wear (or take off)?", category: "spicy" },
+    { text: "What is a sexual experience we haven’t had yet that you’re curious about?", category: "spicy" },
+    { text: "How often do you masturbate, and what are you usually thinking about?", category: "spicy" },
+    { text: "What is a non-sexual thing I do that turns you on instantly?", category: "spicy" },
+    { text: "What is a place outside the bedroom you’ve fantasized about us being intimate?", category: "spicy" },
+    { text: "What is a kink or fetish you’ve read about and found surprisingly interesting?", category: "spicy" },
+    { text: "How do you feel about introducing light bondage or restraint into our play?", category: "spicy" },
+    { text: "What is a dirty word or phrase you want me to use more often?", category: "spicy" },
+    { text: "What is a sexual routine of ours you’d like to switch up?", category: "spicy" },
+    { text: "What is a time I surprised you sexually in a good way?", category: "spicy" },
+    { text: "How do you feel about sensory deprivation (blindfolds, earplugs) during sex?", category: "spicy" },
+    { text: "What is a way you want me to take control in the bedroom?", category: "spicy" },
+    { text: "What is a way you want to take control in the bedroom?", category: "spicy" },
+    { text: "How do you feel about watching each other masturbate?", category: "spicy" },
+    { text: "What is a specific type of foreplay you feel we skip over too quickly?", category: "spicy" },
+    { text: "What is a sexual fantasy you have involving someone else watching us?", category: "spicy" },
+    { text: "How do you feel about incorporating temperature play (ice, warm oils) into our sex life?", category: "spicy" },
+    { text: "What is a sexual act you enjoy giving more than receiving?", category: "spicy" },
+    { text: "What is a sexual act you enjoy receiving more than giving?", category: "spicy" },
+    { text: "What is a time we had sex that you still think about constantly?", category: "spicy" },
+    { text: "How do you feel about exploring edging or orgasm denial?", category: "spicy" },
+    { text: "What is a part of my body you want to explore more intimately?", category: "spicy" },
+    { text: "What is a sexual limit you have that you think might change in the future?", category: "spicy" },
+    { text: "How do you want me to initiate sex more often?", category: "spicy" },
+    { text: "What is a specific scenario you want us to roleplay?", category: "spicy" },
+    { text: "How do you feel about taking photos or videos together (and immediately deleting them)?", category: "spicy" },
+    { text: "What is a way you want us to incorporate more build-up or teasing throughout the day?", category: "spicy" },
+    { text: "What is a sexual desire you’ve had recently that you haven’t acted on?", category: "spicy" },
+    { text: "What is the most vulnerable you’ve ever felt during sex?", category: "spicy" },
+
+    // More Light & Fun
+    { text: "If our pets could talk, what would they say about us?", category: "light" },
+    { text: "What’s the most chaotic thing we’ve ever done together?", category: "light" },
+    { text: "If we had to switch careers right now, what would you choose for me?", category: "light" },
+    { text: "What’s a bizarre conspiracy theory you secretly think might be true?", category: "light" },
+    { text: "If you could only use three condiments for the rest of your life, what are they?", category: "light" },
+    { text: "What’s the worst movie we’ve ever seen together?", category: "light" },
+    { text: "If we were forced to live in a video game, which one would it be?", category: "light" },
+    { text: "What’s a small, everyday thing that brings you an unreasonable amount of joy?", category: "light" },
+    { text: "If you had to change your name, what would you change it to?", category: "light" },
+    { text: "What’s a weird habit of mine that you’ve secretly grown to love?", category: "light" },
+    { text: "If you could have any fictional character as a best friend, who would it be?", category: "light" },
+    { text: "What’s the most embarrassing phase you went through as a teenager?", category: "light" },
+    { text: "If we could time travel, what era would you want us to live in?", category: "light" },
+    { text: "What’s a song that instantly puts you in a good mood?", category: "light" },
+    { text: "If you had to give up coffee or sweets for a year, which would you choose?", category: "light" },
+    { text: "What’s the strangest coincidence you’ve ever experienced?", category: "light" },
+    { text: "If you could instantly master any musical instrument, which one would it be?", category: "light" },
+    { text: "What’s a food you hated as a kid but love now?", category: "light" },
+    { text: "If we were to write a book together, what would the title be?", category: "light" },
+    { text: "What’s the most adventurous thing you want to do in the next five years?", category: "light" }
+  ];
+
+  questions.push(...additionalQuestions);
+
+  const categoryLabels = {
+    light: "Light & Fun",
+    deeper: "Getting Deeper",
+    vulnerable: "Vulnerable",
+    spicy: "Spicy"
+  };
+
+  // State
+  let currentCategory = 'all';
+  let filteredQuestions = [...questions];
+  let currentQuestionIndex = -1;
+  let isFlipped = false;
+  let timerInterval;
+  let timerSecondsRemaining = 0;
+
+  // DOM Elements
+  const card = document.getElementById('question-card');
+  const cardCategory = document.getElementById('card-category');
+  const cardQuestion = document.getElementById('card-question');
+  const btnNext = document.getElementById('btn-next');
+  const btnSave = document.getElementById('btn-save');
+  const btnShare = document.getElementById('btn-share');
+  const btnPrint = document.getElementById('btn-print');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const timerSelect = document.getElementById('timer-select');
+  const timerDisplay = document.getElementById('timer-display');
+  const printArea = document.getElementById('print-area');
+  const toast = document.getElementById('toast');
+
+  // Initialization
+  function init() {
+    shuffleArray(filteredQuestions);
+    setupEventListeners();
+  }
+
+  // Event Listeners
+  function setupEventListeners() {
+    card.addEventListener('click', flipCard);
+
+    btnNext.addEventListener('click', () => {
+      if (isFlipped) {
+        flipCard(); // Flip it closed
+        setTimeout(() => {
+          nextQuestion(); // Change content
+          flipCard(); // Flip it back open
+        }, 300);
+      } else {
+        nextQuestion();
+        flipCard();
+      }
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // Update active class
+        filterBtns.forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+
+        // Filter questions
+        currentCategory = e.target.getAttribute('data-category');
+        if (currentCategory === 'all') {
+          filteredQuestions = [...questions];
+        } else {
+          filteredQuestions = questions.filter(q => q.category === currentCategory);
+        }
+
+        shuffleArray(filteredQuestions);
+        currentQuestionIndex = -1;
+
+        // Reset card
+        if (isFlipped) {
+          flipCard();
+        }
+      });
+    });
+
+    btnSave.addEventListener('click', saveQuestion);
+    btnShare.addEventListener('click', shareQuestion);
+    btnPrint.addEventListener('click', generatePDF);
+    timerSelect.addEventListener('change', startTimer);
+  }
+
+  function flipCard() {
+    if (currentQuestionIndex === -1) {
+      nextQuestion(); // Ensure there's a question before flipping
+    }
+    isFlipped = !isFlipped;
+    if (isFlipped) {
+      card.classList.add('is-flipped');
+    } else {
+      card.classList.remove('is-flipped');
+    }
+  }
+
+  function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex >= filteredQuestions.length) {
+      currentQuestionIndex = 0; // Loop back
+      shuffleArray(filteredQuestions);
+    }
+
+    const q = filteredQuestions[currentQuestionIndex];
+    cardCategory.textContent = categoryLabels[q.category] || "Random";
+    cardCategory.style.color = q.category === 'spicy' ? '#c74c4c' : '#AD9846';
+    cardQuestion.textContent = q.text;
+
+    startTimer(); // Reset timer if active
+  }
+
+  // Timer Logic
+  function startTimer() {
+    clearInterval(timerInterval);
+    const duration = parseInt(timerSelect.value, 10);
+
+    if (duration === 0) {
+      timerDisplay.style.display = 'none';
+      return;
+    }
+
+    timerSecondsRemaining = duration;
+    timerDisplay.style.display = 'block';
+    updateTimerDisplay();
+
+    timerInterval = setInterval(() => {
+      timerSecondsRemaining--;
+      updateTimerDisplay();
+
+      if (timerSecondsRemaining <= 0) {
+        clearInterval(timerInterval);
+        timerDisplay.style.color = '#c74c4c'; // Red when done
+      } else {
+        timerDisplay.style.color = '#AD9846';
+      }
+    }, 1000);
+  }
+
+  function updateTimerDisplay() {
+    const mins = Math.floor(timerSecondsRemaining / 60);
+    const secs = timerSecondsRemaining % 60;
+    timerDisplay.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+  }
+
+  // Save to LocalStorage
+  function saveQuestion() {
+    if (currentQuestionIndex === -1 || !isFlipped) {
+      showToast("Flip the card first to see the question!");
+      return;
+    }
+
+    const q = filteredQuestions[currentQuestionIndex];
+    let saved = JSON.parse(localStorage.getItem('savedQuestions') || '[]');
+
+    // Check if already saved
+    if (!saved.some(sq => sq.text === q.text)) {
+      saved.push(q);
+      localStorage.setItem('savedQuestions', JSON.stringify(saved));
+      showToast("Question saved to your device!");
+    } else {
+      showToast("Already saved!");
+    }
+  }
+
+  // Share via Clipboard
+  function shareQuestion() {
+    if (currentQuestionIndex === -1 || !isFlipped) {
+      showToast("Flip the card first to see the question!");
+      return;
+    }
+
+    const q = filteredQuestions[currentQuestionIndex];
+    const textToShare = `Couples Question: "${q.text}"\nGet more conversation starters at: https://aliimperiale.com/conversation-starters.html`;
+
+    navigator.clipboard.writeText(textToShare).then(() => {
+      showToast("Copied to clipboard!");
+    }).catch(() => {
+      showToast("Failed to copy. Try again.");
+    });
+  }
+
+  // Generate PDF (Print 10 random questions)
+  function generatePDF() {
+    const shuffledForPrint = [...questions];
+    shuffleArray(shuffledForPrint);
+    const selected = shuffledForPrint.slice(0, 10);
+
+    let html = `<h2>10 Couples Conversation Starters</h2><p>From Ali Imperiale (aliimperiale.com)</p><hr>`;
+
+    selected.forEach((q, i) => {
+      html += `
+        <div class="print-question">
+          <div class="print-category">${categoryLabels[q.category]}</div>
+          <div class="print-text">${i+1}. ${q.text}</div>
+        </div>
+      `;
+    });
+
+    printArea.innerHTML = html;
+    window.print();
+  }
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+
+  // Helper: Fisher-Yates shuffle
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  // Run init
+  init();
+
+</script>
+</body>
+</html>
