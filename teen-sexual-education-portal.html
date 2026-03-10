@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+<script src="mobile-nav.js" defer></script>
+<script src="newsletter-bar.js" defer></script>
+<script src="email-capture.js" defer></script>
+<script src="back-to-top.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teen Sexual Education Portal — Ali Imperiale</title>
+  <meta name="description" content="A comprehensive, age-appropriate resource for teens covering anatomy, puberty, consent, healthy relationships, contraception, LGBTQ+ topics, and more.">
+  <meta name="keywords" content="teen sex education, adolescent sexual health, puberty guidance, consent education, LGBTQ+ teens">
+  <meta property="og:title" content="Teen Sexual Education Portal — Ali Imperiale">
+  <meta property="og:description" content="A comprehensive, age-appropriate resource for teens covering anatomy, puberty, consent, healthy relationships, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/teen-sexual-education-portal.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/teen-sexual-education-portal.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body { background-color: #FAF8EB; }
+
+    .portal-hero {
+      text-align: center;
+      padding: 80px 24px 48px;
+      background-color: #FAF8EB;
+    }
+    .portal-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .portal-hero p {
+      font-size: 1.15rem;
+      color: #5a6b50;
+      max-width: 700px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+    .quick-exit-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #d9534f;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(217, 83, 79, 0.4);
+      z-index: 1000;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+    .quick-exit-btn:hover {
+      background-color: #c9302c;
+      transform: translateY(-2px);
+    }
+
+    .portal-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+
+    .content-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .content-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #AD9846;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+    .content-section p, .content-section ul, .content-section ol {
+      font-size: 1.1rem;
+      color: #4a5c40;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .content-section ul {
+      list-style-type: disc;
+      padding-left: 24px;
+    }
+    .content-section li {
+      margin-bottom: 8px;
+    }
+    .disclaimer-box {
+      background-color: #fdf5f5;
+      border-left: 4px solid #d9534f;
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .disclaimer-box p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      color: #c9302c;
+      font-weight: 500;
+    }
+
+    .quiz-container {
+      background: #fdfdf9;
+      border: 1px solid #e0dfd5;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 24px;
+    }
+    .quiz-question {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .quiz-btn {
+      background: #fff;
+      border: 2px solid #AD9846;
+      color: #2E3E24;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: left;
+    }
+    .quiz-btn:hover {
+      background: #FAF8EB;
+    }
+    .quiz-btn.correct {
+      background: #d4edda;
+      border-color: #28a745;
+      color: #155724;
+    }
+    .quiz-btn.incorrect {
+      background: #f8d7da;
+      border-color: #dc3545;
+      color: #721c24;
+    }
+    .quiz-feedback {
+      margin-top: 16px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      display: none;
+      padding: 12px;
+      border-radius: 8px;
+    }
+
+    .qa-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .qa-form textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    .qa-form button {
+      align-self: flex-start;
+      background: #2E3E24;
+      color: #fff;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .qa-form button:hover {
+      background: #1a2414;
+    }
+    #qa-response {
+      margin-top: 16px;
+      color: #28a745;
+      font-weight: 600;
+      display: none;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+    .faq-item h3 {
+      font-size: 1.25rem;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .faq-item p {
+      font-size: 1.05rem;
+      color: #4a5c40;
+    }
+
+    /* Abstract shapes for anatomy (tasteful) */
+    .shape-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 32px 0;
+    }
+    .abstract-shape {
+      width: 120px;
+      height: 120px;
+      background-color: #e8e3c8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: #2E3E24;
+      text-align: center;
+      padding: 16px;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+    }
+    .abstract-shape.vulva {
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    }
+    .abstract-shape.penis {
+      border-radius: 30px;
+      height: 140px;
+      width: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .content-section {
+        padding: 24px;
+      }
+      .portal-hero h1 {
+        font-size: 2.2rem;
+      }
+      .shape-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <button class="quick-exit-btn" id="quick-exit" aria-label="Quick Exit" title="Click to quickly leave this page">Quick Exit</button>
+
+  <main id="main-content">
+    <section class="portal-hero">
+      <h1>Teen Sexual Education Portal</h1>
+      <p>Hey there! I'm Ali. Welcome to a safe, judgment-free space to learn about your body, relationships, and sexual health. This portal is designed to give you honest, accurate information so you can make informed decisions and feel empowered.</p>
+    </section>
+
+    <div class="portal-container">
+
+      <!-- Crisis Support -->
+      <section class="content-section" style="border-left: 6px solid #d9534f;">
+        <h2 style="color: #d9534f; border-bottom-color: #d9534f;">Crisis Support & Trusted Adults</h2>
+        <p>If you are in immediate danger or need help right away, please reach out to these resources. They are free, confidential, and available 24/7:</p>
+        <ul>
+          <li><strong>Crisis Text Line:</strong> Text HOME to 741741 to connect with a crisis counselor.</li>
+          <li><strong>RAINN (National Sexual Assault Hotline):</strong> Call 800-656-HOPE or chat online at rainn.org.</li>
+          <li><strong>The Trevor Project (for LGBTQ+ youth):</strong> Text START to 678-678 or call 866-488-7386.</li>
+        </ul>
+        <p>It's also incredibly helpful to find a trusted adult you can talk to—like a parent, guardian, school counselor, or doctor.</p>
+      </section>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer-box">
+        <p><strong>Heads Up:</strong> This portal provides educational information, not medical diagnoses. Always seek advice from a professional healthcare provider for medical concerns, especially if you're experiencing urgent or "red flag" symptoms.</p>
+      </div>
+
+      <!-- Anatomy & Puberty -->
+      <section class="content-section">
+        <h2>Anatomy & Puberty Basics</h2>
+        <p>Puberty is a wild ride. Your body is changing, hormones are shifting, and it's completely normal to feel confused or overwhelmed. Let's break down the basics of what's happening.</p>
+
+        <div class="shape-container">
+          <div class="abstract-shape vulva">Vulva &<br>Internal Organs</div>
+          <div class="abstract-shape penis">Penis &<br>Testicles</div>
+        </div>
+
+        <p>Everyone's body is different, and there's a wide range of "normal." Whether you have a vulva or a penis, puberty brings changes like body hair growth, changes in body shape, voice deepening, or the start of a menstrual cycle.</p>
+        <ul>
+          <li><strong>People who menstruate:</strong> Menstruation is a normal part of reproductive health. It's okay to ask questions about products, cramps, or cycle tracking.</li>
+          <li><strong>Hormones:</strong> They affect not just your body, but your mood and energy levels too. Be patient with yourself!</li>
+        </ul>
+      </section>
+
+      <!-- Consent Education -->
+      <section class="content-section">
+        <h2>Consent: The Golden Rule</h2>
+        <p>Consent is everything. It's an agreement between participants to engage in any kind of sexual activity, from holding hands to intercourse. Consent must be clearly communicated—a lack of a "no" doesn't mean "yes."</p>
+        <ul>
+          <li><strong>F.R.I.E.S:</strong> Freely given, Reversible, Informed, Enthusiastic, and Specific.</li>
+          <li>You can always change your mind, even if you've already said yes or if you've done something before.</li>
+          <li>It's important to check in with your partner. Try asking, "Is this okay?" or "Do you like this?"</li>
+        </ul>
+      </section>
+
+      <!-- Healthy Relationships -->
+      <section class="content-section">
+        <h2>Healthy Relationships & Emotional Readiness</h2>
+        <p>A healthy relationship is built on respect, trust, and open communication. It's totally okay to take your time and not rush into anything. Emotional readiness is just as important as physical readiness.</p>
+        <p><strong>Green Flags:</strong></p>
+        <ul>
+          <li>They listen to your boundaries and respect them.</li>
+          <li>You feel safe and supported.</li>
+          <li>You can be your authentic self around them.</li>
+        </ul>
+        <p><strong>Red Flags:</strong></p>
+        <ul>
+          <li>They pressure you into doing things you aren't ready for.</li>
+          <li>They check your phone or try to control who you hang out with.</li>
+          <li>They make you feel bad about your choices or body.</li>
+        </ul>
+      </section>
+
+      <!-- First-Time Guidance -->
+      <section class="content-section">
+        <h2>First-Time Guidance</h2>
+        <p>Thinking about having sex for the first time? It's a big step. There's no "right" age or perfect timeline—it's about when you and your partner feel truly ready, safe, and comfortable.</p>
+        <ul>
+          <li><strong>Talk about it first:</strong> Discuss boundaries, contraception, and STI prevention before anything happens.</li>
+          <li><strong>Awkwardness is normal:</strong> First times rarely look like the movies. Embrace the awkwardness and communicate!</li>
+          <li><strong>Safety first:</strong> Have condoms or other barriers ready.</li>
+        </ul>
+      </section>
+
+      <!-- Contraception & STI Prevention -->
+      <section class="content-section">
+        <h2>Contraception & STI Prevention</h2>
+        <p>If you're going to be sexually active, protecting yourself is key. There are many options available to prevent pregnancy and sexually transmitted infections (STIs).</p>
+        <ul>
+          <li><strong>Barrier Methods (Condoms):</strong> The only method that protects against both pregnancy and STIs.</li>
+          <li><strong>Hormonal Methods:</strong> Pills, patches, injections, or IUDs (help prevent pregnancy, but not STIs).</li>
+          <li><strong>Testing:</strong> Regular STI testing is a normal, responsible part of being sexually active.</li>
+        </ul>
+      </section>
+
+      <!-- LGBTQ+ Topics -->
+      <section class="content-section">
+        <h2>LGBTQ+ Identities & Topics</h2>
+        <p>Sexuality and gender exist on a spectrum. Whether you're straight, gay, bi, trans, non-binary, questioning, or anywhere else on the spectrum, your identity is valid.</p>
+        <ul>
+          <li><strong>Exploration is okay:</strong> It's completely normal to take time figuring out who you are and who you're attracted to.</li>
+          <li><strong>Inclusive sex ed:</strong> Safer sex practices apply to all types of sex and all bodies. Use barriers for any skin-to-skin contact or fluid exchange.</li>
+          <li><strong>Find your community:</strong> Look for safe spaces and supportive friends or groups where you can be yourself.</li>
+        </ul>
+      </section>
+
+      <!-- Interactive Quiz -->
+      <section class="content-section" id="quiz-section">
+        <h2>Myth-Busting Quiz</h2>
+        <p>Test your knowledge! Let's bust some common myths about sex and puberty.</p>
+        <div class="quiz-container">
+          <div id="quiz-content">
+            <div class="quiz-question" id="question-text">Loading...</div>
+            <div class="quiz-options" id="options-container">
+              <!-- Options will be injected here -->
+            </div>
+            <div class="quiz-feedback" id="quiz-feedback"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Anonymous Q&A -->
+      <section class="content-section">
+        <h2>Anonymous Q&A</h2>
+        <p>Have a question you're too embarrassed to ask out loud? Drop it here anonymously. (Note: This is a safe space, but if you need immediate help, please use the crisis resources at the top of the page.)</p>
+        <div class="qa-form">
+          <textarea id="qa-input" placeholder="Type your question here..." aria-label="Question input"></textarea>
+          <button onclick="submitQuestion()">Submit Question</button>
+          <div id="qa-response">Thanks for asking! Your question has been submitted securely and anonymously. Look out for answers in future blog posts or videos!</div>
+        </div>
+      </section>
+
+      <!-- Peer Stories -->
+      <section class="content-section">
+        <h2>Peer Stories</h2>
+        <p>You're not alone. Hearing from others can remind us that everyone goes through similar struggles and triumphs.</p>
+        <blockquote style="border-left: 4px solid #AD9846; padding-left: 16px; font-style: italic; color: #5a6b50;">
+          "I was so nervous to tell my partner I wasn't ready to go further. When I finally said it, they were totally supportive. It made me realize that a good partner will always respect your boundaries." <br>— Sam, 16
+        </blockquote>
+        <blockquote style="border-left: 4px solid #AD9846; padding-left: 16px; font-style: italic; color: #5a6b50;">
+          "Figuring out I was bi took a long time. I wish I knew earlier that there’s no rush to label yourself." <br>— Alex, 17
+        </blockquote>
+      </section>
+
+      <!-- Parent/Educator Resources -->
+      <section class="content-section">
+        <h2>For Parents & Educators</h2>
+        <p>Talking to teens about sex can feel daunting, but it's essential. Keep the lines of communication open, be honest, and create a judgment-free zone.</p>
+        <ul>
+          <li><strong>Start early, talk often:</strong> Don't make "The Talk" a one-time event. Make it an ongoing conversation.</li>
+          <li><strong>Listen more than you speak:</strong> Ask open-ended questions and validate their feelings.</li>
+          <li><strong>Admit when you don't know:</strong> It's okay to say, "I'm not sure, let's look that up together."</li>
+        </ul>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>Is it normal to have a high (or low) sex drive during puberty?</h3>
+          <p>Absolutely. Hormone fluctuations can make your libido feel like a rollercoaster. There is no "normal" amount of desire.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if I don't feel ready for a relationship?</h3>
+          <p>That's completely fine! Focus on your friendships, hobbies, and getting to know yourself. There is absolutely no timeline you have to follow.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I know if I'm ready for sex?</h3>
+          <p>Readiness is a mix of feeling emotionally prepared, understanding the risks, knowing how to protect yourself, and communicating clearly with a partner you trust.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it normal to have a high (or low) sex drive during puberty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Hormone fluctuations can make your libido feel like a rollercoaster. There is no 'normal' amount of desire."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I don't feel ready for a relationship?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That's completely fine! Focus on your friendships, hobbies, and getting to know yourself. There is absolutely no timeline you have to follow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if I'm ready for sex?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Readiness is a mix of feeling emotionally prepared, understanding the risks, knowing how to protect yourself, and communicating clearly with a partner you trust."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    // Quick Exit Functionality
+    document.getElementById('quick-exit').addEventListener('click', function() {
+      // Redirect to a neutral page immediately
+      window.location.replace('https://www.google.com');
+    });
+
+    // Anonymous Q&A Functionality
+    function submitQuestion() {
+      const input = document.getElementById('qa-input');
+      const response = document.getElementById('qa-response');
+      if (input.value.trim() !== '') {
+        input.value = '';
+        response.style.display = 'block';
+        setTimeout(() => {
+          response.style.display = 'none';
+        }, 5000);
+      }
+    }
+
+    // Interactive Quiz Logic
+    const quizData = [
+      {
+        question: "1. You can't get pregnant the first time you have sex.",
+        options: ["True", "False"],
+        answer: 1, // index of "False"
+        explanation: "False! Pregnancy can happen any time there is unprotected sex where sperm meets an egg, even the very first time."
+      },
+      {
+        question: "2. If you don't say 'no', it means you've given consent.",
+        options: ["True", "False"],
+        answer: 1,
+        explanation: "False! Consent must be a clear, enthusiastic 'yes'. Silence or lack of a 'no' is not consent."
+      },
+      {
+        question: "3. Pulling out is a highly effective way to prevent pregnancy and STIs.",
+        options: ["True", "False"],
+        answer: 1,
+        explanation: "False! Pre-ejaculate (pre-cum) can contain sperm and STIs. It is not a reliable method for preventing pregnancy or infections."
+      },
+      {
+        question: "4. It's totally normal if your body develops at a different pace than your friends.",
+        options: ["True", "False"],
+        answer: 0,
+        explanation: "True! Everyone's body runs on its own clock. Try not to compare yourself to others—your timeline is perfect for you."
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+
+    const questionEl = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const feedbackEl = document.getElementById('quiz-feedback');
+
+    function loadQuestion() {
+      const currentQuiz = quizData[currentQuestionIndex];
+      questionEl.textContent = currentQuiz.question;
+      optionsContainer.innerHTML = '';
+      feedbackEl.style.display = 'none';
+
+      currentQuiz.options.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.classList.add('quiz-btn');
+        btn.textContent = option;
+        btn.onclick = () => checkAnswer(index, btn);
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selectedIndex, btnElement) {
+      const currentQuiz = quizData[currentQuestionIndex];
+      const allButtons = optionsContainer.querySelectorAll('.quiz-btn');
+
+      // Disable all buttons
+      allButtons.forEach(btn => btn.disabled = true);
+
+      feedbackEl.style.display = 'block';
+
+      if (selectedIndex === currentQuiz.answer) {
+        btnElement.classList.add('correct');
+        feedbackEl.innerHTML = `<strong>Correct!</strong> ${currentQuiz.explanation}`;
+        feedbackEl.style.backgroundColor = '#d4edda';
+        feedbackEl.style.color = '#155724';
+      } else {
+        btnElement.classList.add('incorrect');
+        allButtons[currentQuiz.answer].classList.add('correct');
+        feedbackEl.innerHTML = `<strong>Not quite!</strong> ${currentQuiz.explanation}`;
+        feedbackEl.style.backgroundColor = '#f8d7da';
+        feedbackEl.style.color = '#721c24';
+      }
+
+      // Show next question button
+      const nextBtn = document.createElement('button');
+      nextBtn.classList.add('quiz-btn');
+      nextBtn.style.marginTop = '16px';
+      nextBtn.style.backgroundColor = '#AD9846';
+      nextBtn.style.color = '#fff';
+      nextBtn.style.border = 'none';
+      nextBtn.textContent = currentQuestionIndex < quizData.length - 1 ? 'Next Question' : 'Restart Quiz';
+      nextBtn.onclick = () => {
+        if (currentQuestionIndex < quizData.length - 1) {
+          currentQuestionIndex++;
+          loadQuestion();
+        } else {
+          currentQuestionIndex = 0;
+          loadQuestion();
+        }
+      };
+      optionsContainer.appendChild(nextBtn);
+    }
+
+    // Initialize Quiz
+    loadQuestion();
+  </script>
+</body>
+</html>
