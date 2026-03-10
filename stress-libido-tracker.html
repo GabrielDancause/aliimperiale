@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stress &amp; Libido Tracker | Ali Imperiale</title>
+  <meta name="description" content="A daily tracking tool to visualize the connection between your stress levels and sexual desire over time. Discover your patterns and get personalized insights.">
+  <meta property="og:title" content="Stress &amp; Libido Tracker | Ali Imperiale">
+  <meta property="og:description" content="Track your stress and desire daily. Discover patterns, get insights, and improve intimacy.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/stress-libido-tracker.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stress &amp; Libido Tracker | Ali Imperiale">
+  <meta name="twitter:description" content="Track your stress and desire daily. Discover patterns, get insights, and improve intimacy.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/stress-libido-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How does stress affect libido?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "When you're stressed, your body produces cortisol and adrenaline, which trigger a 'fight or flight' response. This evolutionary mechanism prioritizes survival over reproduction, leading to a decrease in sexual desire. Chronic stress can also cause fatigue and emotional exhaustion, further dampening libido."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Can reducing stress increase my sex drive?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Lowering stress helps balance your hormones and allows your nervous system to shift from 'fight or flight' to 'rest and digest.' This relaxed state is crucial for feeling emotionally connected and physically aroused, which naturally boosts your sex drive."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Why is my libido low even when I'm not feeling stressed?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Libido is complex and influenced by many factors beyond immediate stress. Sleep quality, medication, relationship dynamics, hormonal changes, and even subconscious tension or burnout can all play a role. Tracking these factors over time can help identify hidden patterns."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How long does it take to see a pattern between stress and desire?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For most people, a clear pattern emerges after 14 to 30 days of consistent daily tracking. This allows you to observe how variations in daily stress, sleep, and mood correlate with your level of sexual desire."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Is it normal for libido to fluctuate?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Absolutely! It is completely normal for libido to ebb and flow. It's not a static switch. Factors like your menstrual cycle, daily energy levels, stress, and emotional connection all naturally cause your desire to fluctuate day to day or week to week."
+    }
+  }]
+}
+</script>
+<style>
+    /* Navigation */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Page Header */
+    .page-header {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      padding: 40px 20px 60px;
+      text-align: center;
+      position: relative;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: #FAF8EB;
+      border-radius: 30px 30px 0 0;
+    }
+    .page-header h1 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: #FAF8EB;
+    }
+    .page-header p {
+      font-size: 0.95rem;
+      color: #C6C8BB;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Tracker Container */
+    .tracker-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Cards */
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
+      border: 1px solid rgba(46, 62, 36, 0.06);
+    }
+    .card h2 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .range-slider-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    input[type="range"] {
+      flex-grow: 1;
+      accent-color: #AD9846;
+      height: 6px;
+      border-radius: 3px;
+      background: #e6e4d9;
+      outline: none;
+    }
+    .range-value {
+      font-weight: 700;
+      color: #2E3E24;
+      width: 30px;
+      text-align: center;
+      background: #FAF8EB;
+      padding: 4px;
+      border-radius: 6px;
+    }
+    .radio-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .radio-group label {
+      background: #FAF8EB;
+      border: 1px solid #C6C8BB;
+      padding: 10px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      margin: 0;
+    }
+    .radio-group input[type="radio"] {
+      display: none;
+    }
+    .radio-group input[type="radio"]:checked + label {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border-color: #2E3E24;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 14px 24px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #AD9846;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-align: center;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      background: #c4b460;
+      transform: translateY(-2px);
+    }
+
+    /* Charts & Insights */
+    .chart-container {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    .insight-box {
+      background: #FAF8EB;
+      border-left: 4px solid #AD9846;
+      padding: 16px;
+      border-radius: 0 12px 12px 0;
+      margin-top: 20px;
+    }
+    .insight-box p {
+      font-size: 0.9rem;
+      color: #3a4a32;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .insight-box strong {
+      color: #2E3E24;
+    }
+
+    .actions-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* Challenge Mode */
+    .challenge-banner {
+      background: linear-gradient(135deg, #2E3E24, #3a5030);
+      color: #FAF8EB;
+      padding: 24px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.15);
+      margin-bottom: 12px;
+    }
+    .challenge-banner h3 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: #AD9846;
+    }
+    .challenge-banner p {
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      opacity: 0.9;
+    }
+    .progress-bar-container {
+      background: rgba(250, 248, 235, 0.2);
+      height: 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: #AD9846;
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+    .progress-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Education Section */
+    .education-content p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #3a4a32;
+      margin-bottom: 16px;
+    }
+    .education-content h3 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.3rem;
+      color: #2E3E24;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .education-content ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .education-content li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #3a4a32;
+    }
+    .education-content li::before {
+      content: '✨';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.9rem;
+    }
+
+    /* FAQ Section */
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e6e4d9;
+      padding-bottom: 16px;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: #2E3E24;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #555549;
+      display: none;
+    }
+    .faq-answer.open {
+      display: block;
+      margin-top: 8px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #2E3E24;
+      color: #FAF8EB;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 24px 20px;
+      }
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      .radio-group label {
+        flex: 1 1 calc(50% - 6px);
+        text-align: center;
+      }
+    }
+</style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Stress &amp; Libido Tracker</h1>
+    <p>Discover the hidden patterns between your daily stress, energy levels, and sexual desire. Log your data daily to unlock personalized insights.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="tracker-container" id="main-content">
+
+    <!-- Challenge Mode Banner -->
+    <div class="challenge-banner" id="challenge-banner" style="display: none;">
+      <h3>30-Day Tracking Challenge</h3>
+      <p>Log your data for 30 consecutive days to unlock deep insights into your desire patterns.</p>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="challenge-progress-bar"></div>
+      </div>
+      <div class="progress-text">Day <span id="current-streak">0</span> of 30</div>
+    </div>
+
+    <!-- Daily Tracking Form -->
+    <section class="card">
+      <h2>Log Today's Data</h2>
+      <form id="tracker-form">
+
+        <div class="form-group">
+          <label for="stress-level">Overall Stress Level (1-10)</label>
+          <div class="range-slider-container">
+            <input type="range" id="stress-level" name="stress" min="1" max="10" value="5">
+            <div class="range-value" id="stress-value">5</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="desire-level">Sexual Desire / Libido (1-10)</label>
+          <div class="range-slider-container">
+            <input type="range" id="desire-level" name="desire" min="1" max="10" value="5">
+            <div class="range-value" id="desire-value">5</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Energy Level</label>
+          <div class="radio-group">
+            <input type="radio" id="energy-low" name="energy" value="Low">
+            <label for="energy-low">Low</label>
+            <input type="radio" id="energy-medium" name="energy" value="Medium" checked>
+            <label for="energy-medium">Medium</label>
+            <input type="radio" id="energy-high" name="energy" value="High">
+            <label for="energy-high">High</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Sleep Quality (Last Night)</label>
+          <div class="radio-group">
+            <input type="radio" id="sleep-poor" name="sleep" value="Poor">
+            <label for="sleep-poor">Poor</label>
+            <input type="radio" id="sleep-fair" name="sleep" value="Fair" checked>
+            <label for="sleep-fair">Fair</label>
+            <input type="radio" id="sleep-good" name="sleep" value="Good">
+            <label for="sleep-good">Good</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Primary Mood</label>
+          <div class="radio-group">
+            <input type="radio" id="mood-anxious" name="mood" value="Anxious">
+            <label for="mood-anxious">Anxious</label>
+            <input type="radio" id="mood-sad" name="mood" value="Sad/Low">
+            <label for="mood-sad">Sad/Low</label>
+            <input type="radio" id="mood-calm" name="mood" value="Calm" checked>
+            <label for="mood-calm">Calm</label>
+            <input type="radio" id="mood-happy" name="mood" value="Happy">
+            <label for="mood-happy">Happy</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Save Today's Entry</button>
+      </form>
+    </section>
+
+    <!-- Visualizations & Insights -->
+    <section class="card" id="results-section" style="display: none;">
+      <h2>Your Patterns</h2>
+      <div class="chart-container">
+        <canvas id="correlationChart"></canvas>
+      </div>
+
+      <div id="dynamic-insight" class="insight-box">
+        <!-- JS will populate this -->
+      </div>
+
+      <div class="actions-row">
+        <button id="share-btn" class="btn-primary" style="flex: 1; max-width: 250px;">Copy Shareable Summary</button>
+        <button id="export-btn" class="btn-secondary">Export Data (CSV)</button>
+        <button id="clear-btn" class="btn-secondary" style="background: #e6e4d9;">Reset Data</button>
+      </div>
+    </section>
+
+    <!-- Educational Section -->
+    <section class="card education-content">
+      <h2>The Stress-Libido Connection</h2>
+      <p>It’s incredibly common to experience a dip in your sex drive when you’re stressed. But why does this happen? It comes down to biology and how our nervous system prioritizes survival over pleasure.</p>
+
+      <h3>The Biology of Stress</h3>
+      <p>When you're overwhelmed, your body enters a "fight or flight" state. Your adrenal glands release cortisol and adrenaline. Evolutionarily, if you're running from a bear, your body decides that reproducing isn't a priority right now. Blood flow is diverted away from sexual organs and towards your muscles and brain.</p>
+
+      <h3>How to Manage It</h3>
+      <ul>
+        <li><strong>Acknowledge the Context:</strong> Don't shame yourself for having low desire when stressed. It's your body functioning exactly as it should.</li>
+        <li><strong>Shift the Nervous System:</strong> Before being intimate, try transitioning out of "fight or flight". Deep breathing, a warm bath, or gentle cuddling can help signal to your body that you are safe.</li>
+        <li><strong>Focus on Connection, Not Performance:</strong> Remove the pressure of sex. Focus on sensual touch, massage, or simply being close without the expectation of intercourse.</li>
+        <li><strong>Responsive Desire:</strong> Remember that many people have responsive desire—they only feel aroused <em>after</em> the context is right and stimulation begins.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">How does stress affect libido? <span>▼</span></div>
+          <div class="faq-answer">When you're stressed, your body produces cortisol and adrenaline, which trigger a 'fight or flight' response. This evolutionary mechanism prioritizes survival over reproduction, leading to a decrease in sexual desire. Chronic stress can also cause fatigue and emotional exhaustion, further dampening libido.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can reducing stress increase my sex drive? <span>▼</span></div>
+          <div class="faq-answer">Yes. Lowering stress helps balance your hormones and allows your nervous system to shift from 'fight or flight' to 'rest and digest.' This relaxed state is crucial for feeling emotionally connected and physically aroused, which naturally boosts your sex drive.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Why is my libido low even when I'm not feeling stressed? <span>▼</span></div>
+          <div class="faq-answer">Libido is complex and influenced by many factors beyond immediate stress. Sleep quality, medication, relationship dynamics, hormonal changes, and even subconscious tension or burnout can all play a role. Tracking these factors over time can help identify hidden patterns.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How long does it take to see a pattern between stress and desire? <span>▼</span></div>
+          <div class="faq-answer">For most people, a clear pattern emerges after 14 to 30 days of consistent daily tracking. This allows you to observe how variations in daily stress, sleep, and mood correlate with your level of sexual desire.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is it normal for libido to fluctuate? <span>▼</span></div>
+          <div class="faq-answer">Absolutely! It is completely normal for libido to ebb and flow. It's not a static switch. Factors like your menstrual cycle, daily energy levels, stress, and emotional connection all naturally cause your desire to fluctuate day to day or week to week.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">Action successful!</div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- State Management ---
+    const STORAGE_KEY = 'ali_stress_libido_data';
+    let trackerData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    let chartInstance = null;
+
+    // --- DOM Elements ---
+    const form = document.getElementById('tracker-form');
+    const stressSlider = document.getElementById('stress-level');
+    const stressValue = document.getElementById('stress-value');
+    const desireSlider = document.getElementById('desire-level');
+    const desireValue = document.getElementById('desire-value');
+    const resultsSection = document.getElementById('results-section');
+    const dynamicInsight = document.getElementById('dynamic-insight');
+    const clearBtn = document.getElementById('clear-btn');
+    const exportBtn = document.getElementById('export-btn');
+    const shareBtn = document.getElementById('share-btn');
+    const toast = document.getElementById('toast');
+
+    // Challenge Mode Elements
+    const challengeBanner = document.getElementById('challenge-banner');
+    const challengeProgressBar = document.getElementById('challenge-progress-bar');
+    const currentStreakSpan = document.getElementById('current-streak');
+
+    // --- Initialize UI ---
+    updateSliderUI(stressSlider, stressValue);
+    updateSliderUI(desireSlider, desireValue);
+
+    stressSlider.addEventListener('input', () => updateSliderUI(stressSlider, stressValue));
+    desireSlider.addEventListener('input', () => updateSliderUI(desireSlider, desireValue));
+
+    function updateSliderUI(slider, displayElement) {
+      displayElement.textContent = slider.value;
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    // --- FAQ Toggle Logic ---
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('span');
+
+        // Close others
+        document.querySelectorAll('.faq-answer').forEach(el => {
+          if (el !== answer) {
+            el.classList.remove('open');
+            el.previousElementSibling.querySelector('span').textContent = '▼';
+          }
+        });
+
+        answer.classList.toggle('open');
+        icon.textContent = answer.classList.contains('open') ? '▲' : '▼';
+      });
+    });
+
+    // --- Core Logic ---
+    function renderApp() {
+      if (trackerData.length > 0) {
+        resultsSection.style.display = 'block';
+        renderChart();
+        generateInsights();
+        updateChallengeMode();
+      } else {
+        resultsSection.style.display = 'none';
+        challengeBanner.style.display = 'none';
+      }
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const today = new Date().toISOString().split('T')[0];
+
+      // Check if entry exists for today
+      const existingIndex = trackerData.findIndex(entry => entry.date === today);
+
+      const newEntry = {
+        date: today,
+        stress: parseInt(stressSlider.value),
+        desire: parseInt(desireSlider.value),
+        energy: document.querySelector('input[name="energy"]:checked').value,
+        sleep: document.querySelector('input[name="sleep"]:checked').value,
+        mood: document.querySelector('input[name="mood"]:checked').value
+      };
+
+      if (existingIndex !== -1) {
+        trackerData[existingIndex] = newEntry; // Update existing
+        showToast("Today's entry updated!");
+      } else {
+        trackerData.push(newEntry);
+        showToast("Entry saved successfully!");
+      }
+
+      // Sort by date ascending
+      trackerData.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(trackerData));
+      renderApp();
+    });
+
+    function calculateStreak() {
+      if (trackerData.length === 0) return 0;
+
+      let streak = 1;
+      const sortedDates = [...trackerData].map(d => new Date(d.date)).sort((a, b) => b - a);
+      const today = new Date();
+      today.setHours(0,0,0,0);
+
+      // Check if latest entry is today or yesterday to maintain streak
+      const diffTime = Math.abs(today - sortedDates[0]);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+      if (diffDays > 1) return 0; // Streak broken
+
+      for (let i = 0; i < sortedDates.length - 1; i++) {
+        const current = sortedDates[i];
+        const next = sortedDates[i+1];
+        const dayDiff = Math.round((current - next) / (1000 * 60 * 60 * 24));
+
+        if (dayDiff === 1) {
+          streak++;
+        } else {
+          break;
+        }
+      }
+      return streak;
+    }
+
+    function updateChallengeMode() {
+      const streak = calculateStreak();
+      challengeBanner.style.display = 'block';
+      currentStreakSpan.textContent = streak;
+
+      // Calculate progress (max 30)
+      const percentage = Math.min((streak / 30) * 100, 100);
+      challengeProgressBar.style.width = percentage + '%';
+
+      if (streak >= 30) {
+        challengeBanner.querySelector('h3').textContent = '🎉 30-Day Challenge Complete!';
+        challengeBanner.querySelector('p').textContent = 'Amazing job! You now have a solid dataset of your patterns.';
+      }
+    }
+
+    function renderChart() {
+      const ctx = document.getElementById('correlationChart').getContext('2d');
+
+      // Show max 14 days for readability
+      const displayData = trackerData.slice(-14);
+
+      const labels = displayData.map(entry => {
+        const d = new Date(entry.date);
+        return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+      });
+      const stressData = displayData.map(entry => entry.stress);
+      const desireData = displayData.map(entry => entry.desire);
+
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Stress Level',
+              data: stressData,
+              borderColor: '#AD9846',
+              backgroundColor: 'rgba(173, 152, 70, 0.1)',
+              borderWidth: 2,
+              tension: 0.3,
+              fill: true
+            },
+            {
+              label: 'Sexual Desire',
+              data: desireData,
+              borderColor: '#2E3E24',
+              backgroundColor: 'rgba(46, 62, 36, 0.1)',
+              borderWidth: 2,
+              tension: 0.3,
+              fill: true
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 10,
+              title: {
+                display: true,
+                text: 'Level (1-10)'
+              }
+            }
+          },
+          plugins: {
+            tooltip: {
+              callbacks: {
+                footer: function(tooltipItems) {
+                  const dataIndex = tooltipItems[0].dataIndex;
+                  const entry = displayData[dataIndex];
+                  return `Mood: ${entry.mood}\nEnergy: ${entry.energy}\nSleep: ${entry.sleep}`;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function generateInsights() {
+      if (trackerData.length < 3) {
+        dynamicInsight.innerHTML = `<p><strong>Keep tracking!</strong> Log a few more days of data to unlock personalized insights about your desire patterns.</p>`;
+        return;
+      }
+
+      // Calculate averages
+      let totalStress = 0, totalDesire = 0;
+      let highDesireStressThreshold = 0;
+      let highDesireCount = 0;
+
+      trackerData.forEach(entry => {
+        totalStress += entry.stress;
+        totalDesire += entry.desire;
+        if (entry.desire >= 7) {
+          highDesireStressThreshold += entry.stress;
+          highDesireCount++;
+        }
+      });
+
+      const avgStress = (totalStress / trackerData.length).toFixed(1);
+      const avgDesire = (totalDesire / trackerData.length).toFixed(1);
+
+      let insightText = `<p>Based on your <strong>${trackerData.length}-day</strong> history, your average stress is <strong>${avgStress}</strong> and average desire is <strong>${avgDesire}</strong>.</p>`;
+
+      if (highDesireCount > 0) {
+        const avgStressWhenDesireHigh = (highDesireStressThreshold / highDesireCount).toFixed(1);
+        insightText += `<p style="margin-top: 8px;"><strong>Pattern spotted:</strong> Your desire tends to peak when your stress level is around <strong>${avgStressWhenDesireHigh}</strong> or lower.</p>`;
+      }
+
+      // Check correlation between sleep/energy and desire
+      const goodSleepDesire = trackerData.filter(e => e.sleep === 'Good').map(e => e.desire);
+      if (goodSleepDesire.length > 0) {
+        const avgGoodSleepDesire = (goodSleepDesire.reduce((a,b)=>a+b,0) / goodSleepDesire.length).toFixed(1);
+        if (parseFloat(avgGoodSleepDesire) > parseFloat(avgDesire)) {
+          insightText += `<p style="margin-top: 8px;">✨ You report higher libido (avg ${avgGoodSleepDesire}) on days following <strong>Good</strong> sleep.</p>`;
+        }
+      }
+
+      dynamicInsight.innerHTML = insightText;
+    }
+
+    // --- Export & Reset ---
+    exportBtn.addEventListener('click', () => {
+      if (trackerData.length === 0) return;
+
+      let csvContent = "data:text/csv;charset=utf-8,";
+      csvContent += "Date,Stress Level,Desire Level,Energy,Sleep Quality,Mood\n";
+
+      trackerData.forEach(row => {
+        csvContent += `${row.date},${row.stress},${row.desire},${row.energy},${row.sleep},${row.mood}\n`;
+      });
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "ali_stress_libido_data.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    clearBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to delete all your tracked data? This cannot be undone.')) {
+        localStorage.removeItem(STORAGE_KEY);
+        trackerData = [];
+        renderApp();
+        showToast("Data reset successfully.");
+      }
+    });
+
+    shareBtn.addEventListener('click', () => {
+      if (trackerData.length === 0) return;
+
+      const streak = calculateStreak();
+      const text = `I'm on a ${streak}-day streak tracking my Stress & Libido connection using Ali Imperiale's tracker! Understanding my patterns has been an eye-opener. ✨\n\nTry it out: https://aliimperiale.com/stress-libido-tracker.html`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast("Shareable summary copied to clipboard!");
+      }).catch(err => {
+        console.error('Could not copy text: ', err);
+        showToast("Failed to copy. Try again.");
+      });
+    });
+
+    // Initial Render
+    renderApp();
+  });
+</script>
+<script src="mobile-nav.js" defer></script>
+<script src="back-to-top.js" defer></script>
+<script src="newsletter-bar.js" defer></script>
+<script src="email-capture.js" defer></script>
+</body>
+</html>
