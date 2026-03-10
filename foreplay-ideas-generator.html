@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Foreplay Ideas Generator | Ali Imperiale</title>
+  <meta name="description" content="Generate personalized, tasteful foreplay ideas based on your boundaries, preferences, and available time. Explore sensual massage, role play, and intimate games.">
+  <meta property="og:title" content="Interactive Foreplay Ideas Generator | Ali Imperiale">
+  <meta property="og:description" content="Generate personalized, tasteful foreplay ideas based on your boundaries, preferences, and available time. Explore sensual massage, role play, and intimate games.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/foreplay-ideas-generator.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/foreplay-ideas-generator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Navigation styling specific to the page */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    /* Page specific styles */
+    .tracker-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .page-header h1 {
+      font-family: 'The Bloomington', cursive;
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: #2E3E24;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: #555549;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      margin-bottom: 30px;
+    }
+
+    .card h2 {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.5rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #FAF8EB;
+      padding-bottom: 10px;
+    }
+
+    /* Form Styles */
+    .filter-group {
+      margin-bottom: 25px;
+    }
+
+    .filter-group h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: #555549;
+    }
+
+    .option-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #C6C8BB;
+      border-radius: 50%;
+      margin: 0;
+      display: grid;
+      place-content: center;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+    }
+
+    .option-input[type="checkbox"] {
+      border-radius: 4px;
+    }
+
+    .option-input::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #AD9846;
+      transform: scale(0);
+      transition: transform 0.1s ease-in-out;
+    }
+
+    .option-input[type="checkbox"]::before {
+      border-radius: 2px;
+    }
+
+    .option-input:checked {
+      border-color: #AD9846;
+    }
+
+    .option-input:checked::before {
+      transform: scale(1);
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn-primary:hover {
+      background: #3a5030;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #2E3E24;
+      border: 2px solid #2E3E24;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #2E3E24;
+      color: #FAF8EB;
+    }
+
+    /* Results Area */
+    #results-area {
+      display: none;
+    }
+
+    .idea-card {
+      background: #FAF8EB;
+      border: 1px solid rgba(46, 62, 36, 0.1);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .idea-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .idea-title {
+      font-family: 'New Standard', Georgia, serif;
+      font-size: 1.3rem;
+      color: #2E3E24;
+      margin: 0;
+    }
+
+    .idea-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .idea-tag {
+      background: #e8e4d4;
+      color: #AD9846;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .idea-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555549;
+      margin-bottom: 20px;
+    }
+
+    .idea-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .favorite-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #ccc;
+      transition: color 0.2s ease;
+      padding: 0;
+    }
+
+    .favorite-btn.active {
+      color: #AD9846;
+    }
+
+    .saved-ideas-section {
+      display: none;
+      margin-top: 40px;
+    }
+
+    .empty-saved {
+      text-align: center;
+      color: #8a8a7a;
+      font-style: italic;
+      padding: 20px;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      margin-top: 50px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(46, 62, 36, 0.1);
+      padding-bottom: 15px;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .faq-answer {
+      color: #555549;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .educational-content {
+      line-height: 1.7;
+      color: #555549;
+    }
+
+    .educational-content p {
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+      .options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .idea-header {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can we introduce new foreplay ideas into our relationship?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best way to introduce new foreplay ideas is through open, low-pressure communication outside the bedroom. Use tools like a Yes/No/Maybe list or an ideas generator to find activities you're both curious about, and approach them with a playful, no-expectations attitude."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are some intimate games for couples?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Intimate games can range from simple question prompts (like \"We're Not Really Strangers\") to sensory play (like blindfolded tasting or touch games), or role-playing scenarios. The goal is to build anticipation and connection before moving to further sexual activities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should foreplay last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no 'correct' duration for foreplay. It should last as long as it takes for both partners to feel emotionally connected, physically aroused, and ready for whatever comes next. For many, foreplay is the main event rather than just a prelude."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if an idea feels awkward or doesn't work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Awkwardness is completely normal when trying new things! If something doesn't work, give yourselves permission to laugh about it and stop. The goal is pleasure and connection, not performing a script perfectly. It's okay to say, 'Actually, I'm not feeling this right now.'"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can foreplay include non-physical activities?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Emotional and psychological foreplay—like sending flirty texts throughout the day, sharing fantasies, deep conversations, or acts of service that relieve stress—can be incredibly arousing and set the stage for physical intimacy."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="/reads.html">Reads</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Foreplay Ideas Generator</h1>
+    <p>Discover personalized, tasteful ways to build anticipation and connection. Judgment-free inspiration tailored to your vibe.</p>
+  </header>
+
+  <main class="tracker-container">
+
+    <section class="card" id="generator-form">
+      <h2>Customize Your Vibe</h2>
+
+      <div class="filter-group">
+        <h3>Time Available</h3>
+        <div class="options-grid">
+          <label class="option-label">
+            <input type="radio" name="time" value="quick" class="option-input" checked> Quickie (5-15 mins)
+          </label>
+          <label class="option-label">
+            <input type="radio" name="time" value="moderate" class="option-input"> Standard (15-30 mins)
+          </label>
+          <label class="option-label">
+            <input type="radio" name="time" value="extended" class="option-input"> Extended (30+ mins)
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Intensity Level</h3>
+        <div class="options-grid">
+          <label class="option-label">
+            <input type="radio" name="intensity" value="sweet" class="option-input" checked> Sweet & Sensual
+          </label>
+          <label class="option-label">
+            <input type="radio" name="intensity" value="playful" class="option-input"> Fun & Playful
+          </label>
+          <label class="option-label">
+            <input type="radio" name="intensity" value="spicy" class="option-input"> Spicy & Intense
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Kink Level</h3>
+        <div class="options-grid">
+          <label class="option-label">
+            <input type="radio" name="kink" value="vanilla" class="option-input" checked> Vanilla
+          </label>
+          <label class="option-label">
+            <input type="radio" name="kink" value="curious" class="option-input"> Kink Curious
+          </label>
+          <label class="option-label">
+            <input type="radio" name="kink" value="kinky" class="option-input"> Kinky
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Location</h3>
+        <div class="options-grid">
+          <label class="option-label">
+            <input type="radio" name="location" value="bedroom" class="option-input" checked> Bedroom
+          </label>
+          <label class="option-label">
+            <input type="radio" name="location" value="elsewhere" class="option-input"> Elsewhere Indoors
+          </label>
+          <label class="option-label">
+            <input type="radio" name="location" value="public" class="option-input"> Public/Outdoors
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Partner Gender Focus (Optional)</h3>
+        <div class="options-grid">
+          <label class="option-label">
+            <input type="radio" name="gender" value="any" class="option-input" checked> Any / Neutral
+          </label>
+          <label class="option-label">
+            <input type="radio" name="gender" value="f" class="option-input"> Female Partner
+          </label>
+          <label class="option-label">
+            <input type="radio" name="gender" value="m" class="option-input"> Male Partner
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Specific Interests (Select any)</h3>
+        <div class="options-grid">
+          <label class="option-label">
+            <input type="checkbox" name="interest" value="massage" class="option-input"> Massage
+          </label>
+          <label class="option-label">
+            <input type="checkbox" name="interest" value="sensory" class="option-input"> Sensory Play
+          </label>
+          <label class="option-label">
+            <input type="checkbox" name="interest" value="games" class="option-input"> Games/Toys
+          </label>
+          <label class="option-label">
+            <input type="checkbox" name="interest" value="teasing" class="option-input"> Teasing
+          </label>
+        </div>
+      </div>
+
+      <button type="button" class="btn-primary" id="generate-btn">Generate Ideas</button>
+    </section>
+
+    <section id="results-area">
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #FAF8EB; padding-bottom: 10px;">
+          <h2 style="border: none; margin: 0; padding: 0;">Your Inspiration</h2>
+          <button type="button" class="btn-secondary" id="share-btn">Copy Link</button>
+        </div>
+
+        <div id="ideas-container">
+          <!-- Ideas generated here -->
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+          <button type="button" class="btn-secondary" id="generate-more-btn">Give Me Another</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card saved-ideas-section" id="saved-ideas-section">
+      <h2>Saved Favorites</h2>
+      <div id="saved-container">
+        <!-- Saved ideas go here -->
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>About Foreplay & Intimacy</h2>
+      <div class="educational-content">
+        <p>Think of foreplay not just as the "warm-up" to the main event, but as the main event itself. Taking time to build anticipation, connect emotionally, and explore each other's bodies without rushing towards a finish line can drastically improve the quality of your sex life.</p>
+        <p>Introducing new ideas into the bedroom can sometimes feel intimidating. It's completely normal to feel a bit awkward when trying something for the first time! The key is to approach these activities with a sense of curiosity and playfulness. If an idea doesn't work out as planned, laugh it off and try something else.</p>
+        <p>Remember that communication is your most powerful tool. Discuss boundaries beforehand, use safe words if exploring new intensities, and check in with your partner to ensure you're both enjoying the experience.</p>
+      </div>
+
+      <div class="faq-section">
+        <h3 style="margin-bottom: 20px; color: #2E3E24;">Frequently Asked Questions</h3>
+
+        <div class="faq-item">
+          <div class="faq-question">How can we introduce new foreplay ideas into our relationship?</div>
+          <div class="faq-answer">The best way to introduce new foreplay ideas is through open, low-pressure communication outside the bedroom. Use tools like a Yes/No/Maybe list or an ideas generator to find activities you're both curious about, and approach them with a playful, no-expectations attitude.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What are some intimate games for couples?</div>
+          <div class="faq-answer">Intimate games can range from simple question prompts (like "We're Not Really Strangers") to sensory play (like blindfolded tasting or touch games), or role-playing scenarios. The goal is to build anticipation and connection before moving to further sexual activities.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How long should foreplay last?</div>
+          <div class="faq-answer">There is no 'correct' duration for foreplay. It should last as long as it takes for both partners to feel emotionally connected, physically aroused, and ready for whatever comes next. For many, foreplay is the main event rather than just a prelude.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What if an idea feels awkward or doesn't work?</div>
+          <div class="faq-answer">Awkwardness is completely normal when trying new things! If something doesn't work, give yourselves permission to laugh about it and stop. The goal is pleasure and connection, not performing a script perfectly. It's okay to say, 'Actually, I'm not feeling this right now.'</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Can foreplay include non-physical activities?</div>
+          <div class="faq-answer">Absolutely. Emotional and psychological foreplay—like sending flirty texts throughout the day, sharing fantasies, deep conversations, or acts of service that relieve stress—can be incredibly arousing and set the stage for physical intimacy.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script src="back-to-top.js" defer></script>
+<script src="newsletter-bar.js" defer></script>
+<script src="email-capture.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Database of foreplay ideas
+  const ideasDB = [
+    // Massage / Sweet
+    {
+      id: "m_s_q_1",
+      title: "Hand & Arm Massage",
+      description: "Use a lightly scented lotion to give a focused massage to just their hands and forearms. It's surprisingly intimate, very relaxing, and a great way to transition from work mode to connection mode.",
+      tags: ["massage", "sweet", "quick", "vanilla", "bedroom"],
+      time: "quick",
+      intensity: "sweet",
+      interest: "massage",
+      kink: "vanilla",
+      location: "bedroom",
+      gender: "any"
+    },
+    {
+      id: "m_s_m_1",
+      title: "Sensual Foot Massage",
+      description: "Start with a warm towel wrap for their feet, then use massage oil. Focus on the arches and heels. Maintain eye contact while you do this to build a slow, sweet tension.",
+      tags: ["massage", "sweet", "moderate", "vanilla"],
+      time: "moderate",
+      intensity: "sweet",
+      interest: "massage",
+      kink: "vanilla",
+      location: "bedroom",
+      gender: "any"
+    },
+    {
+      id: "m_s_e_1",
+      title: "Full Body Sensual Massage",
+      description: "Dim the lights, put on a relaxing playlist, and use warmed massage oil. Spend at least 30 minutes focusing purely on relaxing their muscles—no expectations of it leading to sex. The lack of pressure often makes it incredibly arousing.",
+      tags: ["massage", "sweet", "extended", "vanilla"],
+      time: "extended",
+      intensity: "sweet",
+      interest: "massage",
+      kink: "vanilla",
+      location: "bedroom",
+      gender: "any"
+    },
+
+    // Massage / Playful
+    {
+      id: "m_p_q_1",
+      title: "The 'Guess the Object' Massage",
+      description: "Blindfold your partner. Use different objects (a feather, silk tie, ice cube, warm towel, soft brush) to stroke their back. Have them guess what you're using.",
+      tags: ["massage", "playful", "sensory", "quick", "curious"],
+      time: "quick",
+      intensity: "playful",
+      interest: "massage",
+      kink: "curious",
+      location: "bedroom",
+      gender: "any"
+    },
+
+    // Massage / Spicy
+    {
+      id: "m_sp_m_1",
+      title: "Erogenous Zone Focus",
+      description: "Give a massage but intentionally avoid the back and shoulders. Focus entirely on the inner thighs, back of the knees, neck, and lower stomach. Use very light, teasing touches.",
+      tags: ["massage", "spicy", "teasing", "moderate", "curious"],
+      time: "moderate",
+      intensity: "spicy",
+      interest: "massage",
+      kink: "curious",
+      location: "bedroom",
+      gender: "any"
+    },
+
+    // Sensory / Sweet
+    {
+      id: "s_s_m_1",
+      title: "Blindfolded Taste Test",
+      description: "Blindfold your partner and feed them small bites of different foods (chocolate, fruit, honey). Focus on the sensory experience and sharing the moment.",
+      tags: ["sensory", "sweet", "moderate", "vanilla", "kitchen"],
+      time: "moderate",
+      intensity: "sweet",
+      interest: "sensory",
+      kink: "vanilla",
+      location: "elsewhere",
+      gender: "any"
+    },
+
+    // Sensory / Playful
+    {
+      id: "s_p_q_1",
+      title: "Temperature Play",
+      description: "Alternate between using an ice cube and your warm breath on their neck, chest, and stomach. The contrast heightens nerve sensitivity.",
+      tags: ["sensory", "playful", "quick", "curious"],
+      time: "quick",
+      intensity: "playful",
+      interest: "sensory",
+      kink: "curious",
+      location: "bedroom",
+      gender: "any"
+    },
+
+    // Sensory / Spicy
+    {
+      id: "s_sp_m_1",
+      title: "Sensory Deprivation",
+      description: "Use a blindfold and noise-canceling headphones (or earplugs). Remove their ability to see or hear you, relying entirely on touch to communicate your desires.",
+      tags: ["sensory", "spicy", "moderate", "kinky"],
+      time: "moderate",
+      intensity: "spicy",
+      interest: "sensory",
+      kink: "kinky",
+      location: "bedroom",
+      gender: "any"
+    },
+
+    // Games / Sweet
+    {
+      id: "g_s_m_1",
+      title: "The Question Game",
+      description: "Take turns asking each other questions you've never asked before. They can be deep, silly, or slightly flirty. The goal is to build emotional intimacy before physical intimacy.",
+      tags: ["games", "sweet", "moderate", "vanilla"],
+      time: "moderate",
+      intensity: "sweet",
+      interest: "games",
+      kink: "vanilla",
+      location: "bedroom",
+      gender: "any"
+    },
+
+    // Games / Playful
+    {
+      id: "g_p_m_1",
+      title: "Strip Games",
+      description: "Play a classic game (cards, Mario Kart, Jenga) but with a twist: the loser of each round removes an item of clothing. Keep the energy light and competitive.",
+      tags: ["games", "playful", "moderate", "curious"],
+      time: "moderate",
+      intensity: "playful",
+      interest: "games",
+      kink: "curious",
+      location: "elsewhere",
+      gender: "any"
+    },
+
+    // Games / Spicy
+    {
+      id: "g_sp_e_1",
+      title: "Role Reversal Night",
+      description: "For the entire evening, swap your usual roles. If one of you normally initiates, the other must do it. If one is usually more dominant, switch. See how the new dynamic feels.",
+      tags: ["games", "spicy", "extended", "kinky"],
+      time: "extended",
+      intensity: "spicy",
+      interest: "games",
+      kink: "kinky",
+      location: "bedroom",
+      gender: "any"
+    },
+
+    // Teasing / Playful
+    {
+      id: "t_p_q_1",
+      title: "The 'No Touching' Rule",
+      description: "Set a timer for 10 minutes. You can look, you can talk dirty, you can get as close as you want, but absolutely no physical contact until the timer goes off.",
+      tags: ["teasing", "playful", "quick", "curious"],
+      time: "quick",
+      intensity: "playful",
+      interest: "teasing",
+      kink: "curious",
+      location: "bedroom",
+      gender: "any"
+    },
+
+    // Teasing / Spicy
+    {
+      id: "t_sp_m_1",
+      title: "Edging Practice",
+      description: "Bring your partner close to the edge of climax, then stop completely. Let them cool down, then start again. Do this 3-4 times to build intense anticipation before letting them finish.",
+      tags: ["teasing", "spicy", "moderate", "kinky"],
+      time: "moderate",
+      intensity: "spicy",
+      interest: "teasing",
+      kink: "kinky",
+      location: "bedroom",
+      gender: "any"
+    },
+
+    // Specific Genders
+    {
+      id: "gen_m_sp_m_1",
+      title: "Gentle Prostate Play",
+      description: "Using plenty of lube and a finger or small toy, gently explore his perineum and slowly introduce prostate play. Keep communication open and go slowly.",
+      tags: ["massage", "spicy", "moderate", "curious", "him"],
+      time: "moderate",
+      intensity: "spicy",
+      interest: "massage",
+      kink: "curious",
+      location: "bedroom",
+      gender: "m"
+    },
+    {
+      id: "gen_f_sp_q_1",
+      title: "Clitoral Teasing",
+      description: "Hover over her clitoris with your mouth or fingers without making direct contact. Let the heat and close proximity build anticipation before you finally touch her.",
+      tags: ["teasing", "spicy", "quick", "curious", "her"],
+      time: "quick",
+      intensity: "spicy",
+      interest: "teasing",
+      kink: "curious",
+      location: "bedroom",
+      gender: "f"
+    },
+
+    // Location: Public
+    {
+      id: "loc_p_p_q_1",
+      title: "Under-the-Table Teasing",
+      description: "While out at a restaurant or bar, secretly slip a hand onto their thigh under the table. Stroke higher and higher, but stop just short of their center.",
+      tags: ["teasing", "playful", "quick", "public"],
+      time: "quick",
+      intensity: "playful",
+      interest: "teasing",
+      kink: "curious",
+      location: "public",
+      gender: "any"
+    },
+    {
+      id: "loc_p_sp_m_1",
+      title: "Remote Controlled Fun",
+      description: "Use a remote-controlled vibrating toy while out in public. Give the controller to your partner and let them dictate when and how intensely you feel it.",
+      tags: ["games", "spicy", "moderate", "public", "kinky"],
+      time: "moderate",
+      intensity: "spicy",
+      interest: "games",
+      kink: "kinky",
+      location: "public",
+      gender: "any"
+    },
+
+    // Location: Elsewhere
+    {
+      id: "loc_e_s_q_1",
+      title: "Kitchen Counter Makeout",
+      description: "Lift them onto the kitchen counter while you're cooking or cleaning up. Stand between their legs and just passionately make out for a few minutes.",
+      tags: ["sweet", "quick", "kitchen"],
+      time: "quick",
+      intensity: "sweet",
+      interest: "teasing",
+      kink: "vanilla",
+      location: "elsewhere",
+      gender: "any"
+    },
+
+    // General / Quick (Fallback options)
+    {
+      id: "gen_q_1",
+      title: "The 5-Minute Makeout",
+      description: "Set a timer for 5 minutes. No clothes come off, hands stay above the waist. Just passionate, focused kissing like you're teenagers again.",
+      tags: ["sweet", "quick", "teasing", "vanilla"],
+      time: "quick",
+      intensity: "sweet",
+      interest: "teasing",
+      kink: "vanilla",
+      location: "bedroom",
+      gender: "any"
+    },
+    {
+      id: "gen_q_2",
+      title: "Flirty Texts",
+      description: "Start foreplay hours before you see each other. Send a few suggestive texts throughout the day hinting at what you want to do later.",
+      tags: ["playful", "quick", "teasing", "public"],
+      time: "quick",
+      intensity: "playful",
+      interest: "teasing",
+      kink: "vanilla",
+      location: "public",
+      gender: "any"
+    },
+    {
+      id: "gen_e_1",
+      title: "Shower Together",
+      description: "Take a long shower together. Wash each other's hair, soap each other up. Focus on the slippery sensations rather than rushing to sex.",
+      tags: ["sensory", "moderate", "sweet", "shower"],
+      time: "moderate",
+      intensity: "sweet",
+      interest: "sensory",
+      kink: "vanilla",
+      location: "elsewhere",
+      gender: "any"
+    }
+  ];
+
+  // DOM Elements
+  const generateBtn = document.getElementById('generate-btn');
+  const resultsArea = document.getElementById('results-area');
+  const ideasContainer = document.getElementById('ideas-container');
+  const generateMoreBtn = document.getElementById('generate-more-btn');
+  const shareBtn = document.getElementById('share-btn');
+  const savedIdeasSection = document.getElementById('saved-ideas-section');
+  const savedContainer = document.getElementById('saved-container');
+
+  // State
+  let currentIdea = null;
+  let savedIdeas = JSON.parse(localStorage.getItem('ali_saved_foreplay_ideas')) || [];
+
+  // Initialize
+  renderSavedIdeas();
+
+  // Escape HTML utility to prevent XSS
+  const escapeHTML = (str) => {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  };
+
+  // Generate Idea Logic
+  const generateIdea = () => {
+    // Get filter values
+    const timeVal = document.querySelector('input[name="time"]:checked').value;
+    const intensityVal = document.querySelector('input[name="intensity"]:checked').value;
+    const kinkVal = document.querySelector('input[name="kink"]:checked').value;
+    const locationVal = document.querySelector('input[name="location"]:checked').value;
+    const genderVal = document.querySelector('input[name="gender"]:checked').value;
+
+    const interestCheckboxes = document.querySelectorAll('input[name="interest"]:checked');
+    const selectedInterests = Array.from(interestCheckboxes).map(cb => cb.value);
+
+    // Filter DB
+    let filteredIdeas = ideasDB.filter(idea => {
+      // Base matchers
+      const matchTime = idea.time === timeVal;
+      const matchIntensity = idea.intensity === intensityVal;
+
+      // Kink level logic: If curious, include vanilla. If kinky, include all.
+      let matchKink = false;
+      if (kinkVal === "kinky") matchKink = true; // Kinky people can do anything
+      else if (kinkVal === "curious") matchKink = (idea.kink === "vanilla" || idea.kink === "curious");
+      else matchKink = idea.kink === "vanilla"; // Vanilla only
+
+      // Location logic
+      const matchLocation = idea.location === locationVal;
+
+      // Gender logic
+      const matchGender = (idea.gender === "any") || (idea.gender === genderVal) || (genderVal === "any");
+
+      // Interest logic
+      const matchInterest = selectedInterests.length === 0 ||
+                           selectedInterests.includes(idea.interest) ||
+                           selectedInterests.some(i => idea.tags.includes(i));
+
+      return matchTime && matchIntensity && matchKink && matchLocation && matchGender && matchInterest;
+    });
+
+    // Fallback cascade if filters are too strict
+    if (filteredIdeas.length === 0) {
+      // 1. Drop time constraint
+      filteredIdeas = ideasDB.filter(idea => idea.intensity === intensityVal &&
+                                              (idea.kink === kinkVal || idea.kink === "vanilla") &&
+                                              (idea.location === locationVal || idea.location === "bedroom"));
+
+      if (filteredIdeas.length === 0) {
+        // 2. Drop everything except kink level and intensity
+        filteredIdeas = ideasDB.filter(idea => idea.intensity === intensityVal &&
+                                                (idea.kink === kinkVal || idea.kink === "vanilla"));
+
+        if (filteredIdeas.length === 0) {
+          // Ultimate fallback - at least respect kink boundary
+          filteredIdeas = ideasDB.filter(idea => idea.kink === kinkVal || idea.kink === "vanilla");
+
+          if (filteredIdeas.length === 0) {
+             filteredIdeas = ideasDB; // Safety net
+          }
+        }
+      }
+    }
+
+    // Pick a random idea
+    const randomIndex = Math.floor(Math.random() * filteredIdeas.length);
+    currentIdea = filteredIdeas[randomIndex];
+
+    // Render Idea
+    renderCurrentIdea();
+
+    // Show results area and scroll to it
+    resultsArea.style.display = 'block';
+    resultsArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const renderCurrentIdea = () => {
+    if (!currentIdea) return;
+
+    const isSaved = savedIdeas.some(saved => saved.id === currentIdea.id);
+    const starClass = isSaved ? 'favorite-btn active' : 'favorite-btn';
+    const starIcon = isSaved ? '★' : '☆';
+
+    const tagsHTML = currentIdea.tags.map(tag =>
+      `<span class="idea-tag">${escapeHTML(tag)}</span>`
+    ).join('');
+
+    ideasContainer.innerHTML = `
+      <div class="idea-card">
+        <div class="idea-header">
+          <h3 class="idea-title">${escapeHTML(currentIdea.title)}</h3>
+          <div class="idea-actions">
+            <button class="${starClass}" aria-label="Save idea" data-id="${escapeHTML(currentIdea.id)}" onclick="toggleSave('${escapeHTML(currentIdea.id)}')">
+              ${starIcon}
+            </button>
+          </div>
+        </div>
+        <div class="idea-tags">
+          ${tagsHTML}
+        </div>
+        <div class="idea-description">
+          ${escapeHTML(currentIdea.description)}
+        </div>
+      </div>
+    `;
+  };
+
+  // Save/Unsave Logic
+  window.toggleSave = (ideaId) => {
+    const isSaved = savedIdeas.some(saved => saved.id === ideaId);
+
+    if (isSaved) {
+      savedIdeas = savedIdeas.filter(saved => saved.id !== ideaId);
+    } else {
+      const ideaToSave = ideasDB.find(idea => idea.id === ideaId);
+      if (ideaToSave) {
+        savedIdeas.push(ideaToSave);
+      }
+    }
+
+    // Save to local storage
+    localStorage.setItem('ali_saved_foreplay_ideas', JSON.stringify(savedIdeas));
+
+    // Re-render
+    if (currentIdea && currentIdea.id === ideaId) {
+      renderCurrentIdea();
+    }
+    renderSavedIdeas();
+  };
+
+  // Render Saved Ideas
+  function renderSavedIdeas() {
+    if (savedIdeas.length === 0) {
+      savedIdeasSection.style.display = 'none';
+      savedContainer.innerHTML = '';
+      return;
+    }
+
+    savedIdeasSection.style.display = 'block';
+
+    savedContainer.innerHTML = savedIdeas.map(idea => {
+      const tagsHTML = idea.tags.map(tag =>
+        `<span class="idea-tag">${escapeHTML(tag)}</span>`
+      ).join('');
+
+      return `
+        <div class="idea-card">
+          <div class="idea-header">
+            <h3 class="idea-title">${escapeHTML(idea.title)}</h3>
+            <div class="idea-actions">
+              <button class="favorite-btn active" aria-label="Unsave idea" onclick="toggleSave('${escapeHTML(idea.id)}')">
+                ★
+              </button>
+            </div>
+          </div>
+          <div class="idea-tags">
+            ${tagsHTML}
+          </div>
+          <div class="idea-description">
+            ${escapeHTML(idea.description)}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // Share Logic
+  const handleShare = () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      const originalText = shareBtn.textContent;
+      shareBtn.textContent = 'Copied!';
+      setTimeout(() => {
+        shareBtn.textContent = originalText;
+      }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy link: ', err);
+    });
+  };
+
+  // Event Listeners
+  generateBtn.addEventListener('click', generateIdea);
+  generateMoreBtn.addEventListener('click', generateIdea);
+  shareBtn.addEventListener('click', handleShare);
+});
+</script>
+</body>
+</html>
