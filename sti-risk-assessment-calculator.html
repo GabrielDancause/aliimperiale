@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STI Risk Assessment & Prevention Calculator | Ali Imperiale</title>
+  <meta name="description" content="An interactive educational tool to help you understand STI risks, explore prevention methods, and build a testing timeline.">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    body {
+      background-color: #FAF8EB;
+      color: #2E3E24;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navigation - Match index.html */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 768px) {
+      .site-nav .nav-links {
+        display: none; /* Handled by mobile-nav.js */
+      }
+    }
+    @media (max-width: 480px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+
+    /* Tool Container & Base Styles */
+    .tool-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1, h2, h3, h4 {
+      color: #2E3E24;
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .intro-text {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #2E3E24;
+    }
+    .medical-disclaimer {
+      background-color: #e8eaca;
+      border-left: 5px solid #AD9846;
+      padding: 15px 20px;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+    .medical-disclaimer strong {
+      color: #AD9846;
+    }
+
+    .section-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+    }
+    .section-card h2 {
+      border-bottom: 2px solid #e8eaca;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      color: #2E3E24;
+    }
+
+    /* Form Styles */
+    .question {
+      margin-bottom: 25px;
+    }
+    .question label.q-text {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .option-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 10px 15px;
+      border: 1px solid #c6c8bb;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .option-label:hover {
+      background-color: #f4f5f0;
+    }
+    .option-input {
+      appearance: none;
+      margin: 0 10px 0 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #AD9846;
+      border-radius: 50%; /* For radio */
+      display: inline-grid;
+      place-content: center;
+    }
+    .option-input.checkbox {
+      border-radius: 4px; /* For checkbox */
+    }
+    .option-input::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em #AD9846;
+    }
+    .option-input.checkbox::before {
+      border-radius: 2px;
+    }
+    .option-input:checked::before {
+      transform: scale(1);
+    }
+    .option-input:checked + .option-text {
+      font-weight: 600;
+    }
+
+    .btn {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 14px 24px;
+      font-size: 1.1rem;
+      font-family: inherit;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn:hover {
+      background-color: #3f5431;
+    }
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid #2E3E24;
+      color: #2E3E24;
+    }
+    .btn-secondary:hover {
+      background-color: #2E3E24;
+      color: #FAF8EB;
+    }
+    .btn-gold {
+      background-color: #AD9846;
+      color: #FAF8EB;
+    }
+    .btn-gold:hover {
+      background-color: #c0aa55;
+    }
+
+    /* Results Dashboard */
+    .hidden {
+      display: none !important;
+    }
+    #results-section {
+      background-color: #e8eaca;
+      border: 2px solid #AD9846;
+    }
+    .risk-level-banner {
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .risk-low { background-color: #d4edda; color: #155724; }
+    .risk-moderate { background-color: #fff3cd; color: #856404; }
+    .risk-high { background-color: #f8d7da; color: #721c24; }
+
+    .timeline-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 15px;
+      border-left: 4px solid #AD9846;
+    }
+
+    /* Script Generator */
+    .script-builder {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    select, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #c6c8bb;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    .generated-script {
+      background-color: #f4f5f0;
+      padding: 20px;
+      border-radius: 8px;
+      font-style: italic;
+      margin-top: 15px;
+      border: 1px solid #e8eaca;
+      white-space: pre-wrap;
+    }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 8px;
+    }
+    .faq-answer {
+      color: #4a5c3e;
+      line-height: 1.6;
+    }
+
+    /* History */
+    .history-list {
+      list-style: none;
+      padding: 0;
+    }
+    .history-item {
+      background: #f4f5f0;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How often should I get tested for STIs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you are sexually active, it is generally recommended to get tested at least once a year. If you have multiple or new partners, testing every 3 to 6 months is highly encouraged. Always consult your healthcare provider for personalized advice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator provide a medical diagnosis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, this tool provides educational information only and does not serve as a medical diagnosis. Always consult a licensed healthcare professional for medical advice, diagnosis, or treatment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I do if my risk is calculated as high?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your risk level is elevated, we recommend scheduling an appointment with your healthcare provider or a local sexual health clinic for comprehensive STI screening and to discuss prevention strategies like PrEP or vaccinations."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main class="tool-container">
+    <h1>STI Risk Assessment &amp; Prevention Calculator</h1>
+    <p class="intro-text">An educational tool to help you understand your sexual health risk factors, explore prevention methods, and build a personalized testing timeline. Honest, completely judgment-free, and evidence-based.</p>
+
+    <div class="medical-disclaimer">
+      <strong>Medical Disclaimer:</strong> This tool is for educational purposes only. It is <strong>not</strong> a diagnostic tool, nor does it replace professional medical advice. Always consult a healthcare provider for proper STI testing, diagnosis, and treatment. If you have symptoms, seek medical care immediately.
+    </div>
+
+    <!-- Questionnaire Section -->
+    <section class="section-card" id="questionnaire-section">
+      <h2>Let's Assess Your Risk Factors</h2>
+      <p>Answer these questions honestly to get an educational overview of your risk level. Your answers are not sent to any server; they stay right here in your browser.</p>
+
+      <form id="risk-form">
+        <div class="question">
+          <label class="q-text">1. How many new sexual partners have you had in the last 12 months?</label>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q1_partners" value="0" class="option-input"><span class="option-text">0</span></label>
+            <label class="option-label"><input type="radio" name="q1_partners" value="1" class="option-input"><span class="option-text">1</span></label>
+            <label class="option-label"><input type="radio" name="q1_partners" value="2-3" class="option-input"><span class="option-text">2 to 3</span></label>
+            <label class="option-label"><input type="radio" name="q1_partners" value="4+" class="option-input"><span class="option-text">4 or more</span></label>
+          </div>
+        </div>
+
+        <div class="question">
+          <label class="q-text">2. Which activities do you typically engage in? (Check all that apply)</label>
+          <div class="options">
+            <label class="option-label"><input type="checkbox" name="q2_activities" value="oral" class="option-input checkbox"><span class="option-text">Oral sex</span></label>
+            <label class="option-label"><input type="checkbox" name="q2_activities" value="vaginal" class="option-input checkbox"><span class="option-text">Vaginal sex</span></label>
+            <label class="option-label"><input type="checkbox" name="q2_activities" value="anal" class="option-input checkbox"><span class="option-text">Anal sex</span></label>
+            <label class="option-label"><input type="checkbox" name="q2_activities" value="manual" class="option-input checkbox"><span class="option-text">Mutual masturbation / Manual stimulation</span></label>
+          </div>
+        </div>
+
+        <div class="question">
+          <label class="q-text">3. How often do you use barrier methods (like external/internal condoms or dental dams) with new or untested partners?</label>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q3_barriers" value="always" class="option-input"><span class="option-text">Always</span></label>
+            <label class="option-label"><input type="radio" name="q3_barriers" value="sometimes" class="option-input"><span class="option-text">Sometimes</span></label>
+            <label class="option-label"><input type="radio" name="q3_barriers" value="rarely" class="option-input"><span class="option-text">Rarely or Never</span></label>
+            <label class="option-label"><input type="radio" name="q3_barriers" value="n/a" class="option-input"><span class="option-text">Not applicable (long-term mutually monogamous tested relationship)</span></label>
+          </div>
+        </div>
+
+        <div class="question">
+          <label class="q-text">4. When was your last full STI screening?</label>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q4_testing" value="<6m" class="option-input"><span class="option-text">Within the last 6 months</span></label>
+            <label class="option-label"><input type="radio" name="q4_testing" value="6-12m" class="option-input"><span class="option-text">6 to 12 months ago</span></label>
+            <label class="option-label"><input type="radio" name="q4_testing" value=">1y" class="option-input"><span class="option-text">Over a year ago</span></label>
+            <label class="option-label"><input type="radio" name="q4_testing" value="never" class="option-input"><span class="option-text">Never</span></label>
+          </div>
+        </div>
+
+        <button type="button" id="btn-calculate" class="btn">Calculate My Profile</button>
+      </form>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section-card hidden" id="results-section">
+      <h2>Your Assessment Overview</h2>
+
+      <div id="risk-banner" class="risk-level-banner risk-low">
+        <h3 style="margin-bottom: 5px;" id="risk-title">Estimated Risk Factor: Base</h3>
+        <p style="margin: 0;" id="risk-desc">Based on your answers, your current practices suggest a standard baseline risk.</p>
+      </div>
+
+      <div class="timeline-box">
+        <h3>Testing Timeline Recommendation</h3>
+        <p id="timeline-text">We recommend a routine screening annually, or before new partners.</p>
+        <button type="button" class="btn btn-secondary" id="btn-save-result" style="margin-top: 10px;">Save Result to History</button>
+      </div>
+    </section>
+
+    <!-- Prevention & Education Section -->
+    <section class="section-card">
+      <h2>Prevention &amp; Protection Overview</h2>
+      <p>Knowledge is power. Here is how different methods help keep you safe:</p>
+      <ul style="line-height: 1.6; color: #4a5c3e;">
+        <li><strong>External/Internal Condoms:</strong> Highly effective against fluid-transmitted STIs (HIV, Chlamydia, Gonorrhea) and reduce risk of skin-to-skin STIs (HPV, Herpes).</li>
+        <li><strong>Dental Dams:</strong> Effective for oral-vulva or oral-anal contact to prevent transmission.</li>
+        <li><strong>PrEP (Pre-Exposure Prophylaxis):</strong> Highly effective daily pill or injection to prevent HIV, though it does not protect against other STIs.</li>
+        <li><strong>Vaccinations:</strong> HPV and Hepatitis B vaccines are key preventative measures.</li>
+        <li><strong>Regular Testing:</strong> Routine screening catches asymptomatic infections early, protecting you and your partners.</li>
+      </ul>
+    </section>
+
+    <!-- Script Generator Section -->
+    <section class="section-card">
+      <h2>Partner Discussion Script Generator</h2>
+      <p>Talking about STI testing can feel awkward, but it's totally normal and super sexy. Let's build a script to help you bring it up.</p>
+
+      <div class="script-builder">
+        <div>
+          <label style="font-weight:600;">Who are you talking to?</label>
+          <select id="script-partner-select">
+            <option value="new">A potential new partner</option>
+            <option value="current">A current partner (bringing up testing)</option>
+            <option value="casual">A casual hookup</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-weight:600;">What's your main boundary?</label>
+          <select id="script-boundary">
+            <option value="test">We need to share recent test results</option>
+            <option value="condom">We need to use condoms/barriers</option>
+            <option value="both">We need to test AND use barriers</option>
+          </select>
+        </div>
+        <button type="button" id="btn-generate-script" class="btn btn-gold">Generate Script</button>
+      </div>
+
+      <div id="generated-script-output" class="generated-script hidden"></div>
+    </section>
+
+    <!-- Local Testing & Treatment Info -->
+    <section class="section-card">
+      <h2>Testing, Treatment &amp; Navigating Care</h2>
+
+      <h3>Finding a Testing Center</h3>
+      <p>Look for local sexual health clinics, Planned Parenthood locations, or ask your primary care provider. Many public health clinics offer free or sliding-scale testing.</p>
+
+      <h3>Insurance Coverage</h3>
+      <p>Under the Affordable Care Act (ACA) in the US, many STI screenings (including HIV, Syphilis, Chlamydia, and Gonorrhea) are considered preventive care and covered without a copay by most insurance plans. Always verify with your specific provider.</p>
+
+      <h3>Treatment Overview</h3>
+      <p>Most common STIs (like Chlamydia, Gonorrhea, and Syphilis) are bacterial and completely curable with antibiotics. Viral STIs (like Herpes, HIV, or HPV) are manageable with medication. The most important step is knowing your status.</p>
+
+      <h3>Stigma Reduction</h3>
+      <p>STIs are incredibly common—they are basically the common cold of the genital world. Experiencing an STI does not make you dirty or bad. It simply means you are an active human who caught a bug. Let go of the shame, get tested, get treated, and keep enjoying your sex life safely.</p>
+    </section>
+
+    <!-- Saved History -->
+    <section class="section-card hidden" id="history-section">
+      <h2>Your Saved History</h2>
+      <button class="btn btn-secondary" id="btn-clear-history" style="margin-bottom: 15px;">Clear All History</button>
+      <ul class="history-list" id="history-list"></ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">How often should I get tested for STIs?</div>
+        <div class="faq-answer">If you are sexually active, it is generally recommended to get tested at least once a year. If you have multiple or new partners, testing every 3 to 6 months is highly encouraged.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Does this calculator provide a medical diagnosis?</div>
+        <div class="faq-answer">No, this tool provides educational information only and does not serve as a medical diagnosis. Always consult a licensed healthcare professional for medical advice.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What should I do if my risk is calculated as high?</div>
+        <div class="faq-answer">If your risk level is elevated, we recommend scheduling an appointment with your healthcare provider or a local sexual health clinic for comprehensive STI screening and to discuss prevention strategies.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Standard Site Scripts -->
+  <script defer src="consent.js"></script>
+  <script defer src="mobile-nav.js"></script>
+  <script defer src="newsletter-bar.js"></script>
+  <script defer src="email-capture.js"></script>
+  <script defer src="back-to-top.js"></script>
+
+  <!-- Interactive Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Risk Form logic
+      const calculateBtn = document.getElementById('btn-calculate');
+      const resultsSection = document.getElementById('results-section');
+      const riskBanner = document.getElementById('risk-banner');
+      const riskTitle = document.getElementById('risk-title');
+      const riskDesc = document.getElementById('risk-desc');
+      const timelineText = document.getElementById('timeline-text');
+      const form = document.getElementById('risk-form');
+
+      // State
+      let currentRiskState = null;
+
+      function calculateRisk() {
+        const partners = document.querySelector('input[name="q1_partners"]:checked');
+        const barriers = document.querySelector('input[name="q3_barriers"]:checked');
+        const testing = document.querySelector('input[name="q4_testing"]:checked');
+        const activities = document.querySelectorAll('input[name="q2_activities"]:checked');
+
+        let score = 0;
+
+        activities.forEach(act => {
+          if(act.value === 'anal') score += 1.5;
+          if(act.value === 'vaginal') score += 1;
+          if(act.value === 'oral') score += 0.5;
+        });
+        if(partners) {
+          if(partners.value === '1') score += 1;
+          if(partners.value === '2-3') score += 2;
+          if(partners.value === '4+') score += 3;
+        }
+
+        if(barriers) {
+          if(barriers.value === 'sometimes') score += 1;
+          if(barriers.value === 'rarely') score += 2;
+        }
+
+        if(testing) {
+          if(testing.value === '6-12m') score += 1;
+          if(testing.value === '>1y') score += 2;
+          if(testing.value === 'never') score += 3;
+        }
+
+        let riskLevel = 'low';
+        if(score >= 4) {
+          riskLevel = 'high';
+        } else if (score >= 2) {
+          riskLevel = 'moderate';
+        }
+
+        currentRiskState = {
+            date: new Date().toISOString(),
+            level: riskLevel,
+            score: score
+        };
+
+        renderRiskResults(riskLevel);
+        resultsSection.classList.remove('hidden');
+      }
+
+      function renderRiskResults(riskLevel) {
+          riskBanner.className = 'risk-level-banner'; // Reset
+
+          if(riskLevel === 'high') {
+              riskBanner.classList.add('risk-high');
+              riskTitle.textContent = "Estimated Risk Factor: Elevated";
+              riskDesc.textContent = "Your profile suggests higher exposure. We strongly encourage scheduling a full STI panel soon and discussing preventative options like PrEP.";
+              timelineText.textContent = "Recommended testing: Every 3 months (or after every new partner).";
+          } else if (riskLevel === 'moderate') {
+              riskBanner.classList.add('risk-moderate');
+              riskTitle.textContent = "Estimated Risk Factor: Moderate";
+              riskDesc.textContent = "Your profile suggests a moderate exposure level. Consider increasing barrier use with new partners.";
+              timelineText.textContent = "Recommended testing: Every 6 months, or before a new partner.";
+          } else {
+              riskBanner.classList.add('risk-low');
+              riskTitle.textContent = "Estimated Risk Factor: Standard Baseline";
+              riskDesc.textContent = "Your profile suggests standard risk. Continue your current practices.";
+              timelineText.textContent = "Recommended testing: Annually, or if you change partners.";
+          }
+      }
+
+      calculateBtn.addEventListener('click', calculateRisk);
+
+      // Script Generator Logic
+      const generateScriptBtn = document.getElementById('btn-generate-script');
+      const scriptOutput = document.getElementById('generated-script-output');
+      const partnerSelect = document.getElementById('script-partner-select');
+      const boundarySelect = document.getElementById('script-boundary');
+
+      function generateScript() {
+          const partner = partnerSelect ? partnerSelect.value : 'new';
+          const boundary = boundarySelect.value;
+          let script = '';
+
+          if (partner === 'new') {
+             if (boundary === 'test') {
+                 script = "Hey! Before we take things further, I make it a rule to share recent STI testing results. When were you last tested?";
+             } else if (boundary === 'condom') {
+                 script = "I am so excited to hook up with you. Just so you know, I always use condoms/barriers. Do you have any, or should I grab some?";
+             } else {
+                 script = "Before we get naked, I like to be on the same page about sexual health. I always use barriers and like to share recent test results. When was your last screening?";
+             }
+          } else if (partner === 'current') {
+             if (boundary === 'test') {
+                 script = "I was reading up on sexual health and realized it's been a while since my last checkup. I'm going to book an appointment—want to go together or swap results after?";
+             } else if (boundary === 'condom') {
+                 script = "Hey, I've been thinking about our sexual health and I'd like us to start using barriers for our shared peace of mind.";
+             } else {
+                 script = "I want us to be as safe and healthy as possible. Let's both get tested and make sure we're using barriers moving forward.";
+             }
+          } else {
+             if (boundary === 'test') {
+                 script = "Just a quick check-in before things get too hot—have you been tested recently? I try to ask all new partners.";
+             } else if (boundary === 'condom') {
+                 script = "Just a heads up, I'm a stickler for condoms. Make sure we have some handy!";
+             } else {
+                 script = "Before we jump into this, I always ask partners about their testing status and I always use condoms. Cool with you?";
+             }
+          }
+
+          scriptOutput.textContent = script;
+          scriptOutput.classList.remove('hidden');
+      }
+
+      generateScriptBtn.addEventListener('click', generateScript);
+
+      // LocalStorage History Logic
+      const saveBtn = document.getElementById('btn-save-result');
+      const clearBtn = document.getElementById('btn-clear-history');
+      const historyList = document.getElementById('history-list');
+      const historySection = document.getElementById('history-section');
+
+      function loadHistory() {
+          const history = JSON.parse(localStorage.getItem('stiRiskHistory')) || [];
+          historyList.innerHTML = '';
+
+          if(history.length === 0) {
+              historySection.classList.add('hidden');
+              return;
+          }
+
+          historySection.classList.remove('hidden');
+          history.forEach((item) => {
+              const li = document.createElement('li');
+              li.className = 'history-item';
+
+              // Handle timezone offset for display
+              const dateObj = new Date(item.date);
+              const formattedDate = dateObj.toLocaleDateString();
+
+              li.innerHTML = `
+                  <span><strong>Date:</strong> ${formattedDate}</span>
+                  <span class="card-tag">Risk: ${item.level.toUpperCase()}</span>
+              `;
+              historyList.appendChild(li);
+          });
+      }
+
+      function saveResult() {
+          if(!currentRiskState) return;
+
+          // Adjust for local timezone issue with toISOString
+          const now = new Date();
+          const localNow = new Date(now.getTime() - (now.getTimezoneOffset() * 60000)).toISOString();
+          currentRiskState.date = localNow;
+
+          const history = JSON.parse(localStorage.getItem('stiRiskHistory')) || [];
+          history.push(currentRiskState);
+          localStorage.setItem('stiRiskHistory', JSON.stringify(history));
+          loadHistory();
+          alert("Result saved to your browser's local storage.");
+      }
+
+      function clearHistory() {
+          localStorage.removeItem('stiRiskHistory');
+          loadHistory();
+      }
+
+      saveBtn.addEventListener('click', saveResult);
+      clearBtn.addEventListener('click', clearHistory);
+
+      // Init
+      loadHistory();
+    });
+  </script>
+</body>
+
+</html>
