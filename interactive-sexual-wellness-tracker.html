@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Sexual Wellness & Pleasure Tracking Tool | Ali Imperiale</title>
+  <meta name="description" content="A comprehensive personal dashboard for tracking sexual health metrics, pleasure patterns, communication quality, energy levels, and wellness goals. Track desire, mood, stress, self-care, and view personalized insights safely in your browser.">
+
+  <meta property="og:title" content="Interactive Sexual Wellness & Pleasure Tracking Tool | Ali Imperiale">
+  <meta property="og:description" content="A comprehensive personal dashboard for tracking sexual health metrics, pleasure patterns, communication quality, energy levels, and wellness goals. Track desire, mood, stress, self-care, and view personalized insights safely in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/interactive-sexual-wellness-tracker.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="canonical" href="https://aliimperiale.com/interactive-sexual-wellness-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+
+  <!-- Shared CSS -->
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <!-- Google Analytics & Consent -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <style>
+    :root {
+      --cream: #FAF8EB;
+      --olive: #2E3E24;
+      --gold: #AD9846;
+      --gold-hover: #8f7d3a;
+      --white: #ffffff;
+      --gray-light: #e5e5e5;
+      --gray: #666666;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--olive);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--olive);
+    }
+
+    .tracker-container {
+      max-width: 1000px;
+      margin: 100px auto 60px;
+      padding: 0 24px;
+    }
+
+    .tracker-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .tracker-header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .tracker-header p {
+      font-size: 1.1rem;
+      color: var(--gray);
+    }
+
+    /* Tabs */
+    .tabs-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid var(--gray-light);
+      padding-bottom: 12px;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray);
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 8px 8px 0 0;
+      transition: all 0.3s;
+    }
+
+    .tab-btn:hover {
+      color: var(--olive);
+      background-color: rgba(173, 152, 70, 0.1);
+    }
+
+    .tab-btn.active {
+      color: var(--olive);
+      background-color: rgba(173, 152, 70, 0.2);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .tab-content {
+      display: none;
+      background: var(--white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--gold);
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .form-group p.desc {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-top: -4px;
+      margin-bottom: 12px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--gold);
+    }
+
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--gray-light);
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      min-height: 80px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
+    }
+
+    .btn-primary {
+      background-color: var(--gold);
+      color: var(--white);
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--gold-hover);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--olive);
+      border: 2px solid var(--olive);
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--olive);
+      color: var(--white);
+    }
+
+    /* Dashboard Widgets */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .widget {
+      background: var(--cream);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid var(--gray-light);
+    }
+
+    .widget h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      border-bottom: 1px solid var(--gray-light);
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px dashed rgba(0,0,0,0.05);
+    }
+
+    .stat-label {
+      color: var(--gray);
+    }
+
+    .stat-value {
+      font-weight: 600;
+      color: var(--olive);
+    }
+
+    /* Checkbox list */
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      accent-color: var(--gold);
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Charts Container */
+    .chart-container {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    /* Goals List */
+    .goal-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .goal-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: var(--cream);
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .goal-item.completed span {
+      text-decoration: line-through;
+      color: var(--gray);
+    }
+
+    .add-goal-form {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .add-goal-form input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid var(--gray-light);
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Calendar */
+    .calendar-widget {
+      width: 100%;
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background: var(--cream);
+      font-weight: 600;
+    }
+    .calendar-header button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: var(--olive);
+    }
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      background: var(--gray-light);
+      padding: 2px;
+    }
+    .calendar-day-header {
+      text-align: center;
+      padding: 8px 0;
+      background: var(--white);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray);
+    }
+    .calendar-day {
+      background: var(--white);
+      min-height: 60px;
+      padding: 5px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      position: relative;
+    }
+    .calendar-day:hover {
+      background: var(--cream);
+    }
+    .calendar-day.has-entry::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .calendar-day.today {
+      font-weight: bold;
+      border: 1px solid var(--gold);
+    }
+    .calendar-day.selected {
+      background: rgba(173, 152, 70, 0.1);
+    }
+
+    /* History Entry */
+    .history-entry {
+      background: var(--cream);
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border-left: 4px solid var(--gold);
+    }
+    .history-date {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--olive);
+    }
+    .history-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .history-note {
+      margin-top: 10px;
+      font-style: italic;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Tooltips */
+    .tooltip-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: var(--gray-light);
+      color: var(--gray);
+      border-radius: 50%;
+      font-size: 0.7rem;
+      margin-left: 6px;
+      cursor: help;
+      position: relative;
+    }
+    .tooltip-icon:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--olive);
+      color: var(--white);
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      width: 200px;
+      z-index: 10;
+      text-align: left;
+      font-weight: normal;
+    }
+
+    /* Alert / Notification */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--olive);
+      color: var(--white);
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+    .notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .tabs-nav {
+        flex-direction: column;
+      }
+      .tab-btn {
+        border-radius: 8px;
+        border-bottom: none;
+      }
+      .tab-btn.active {
+        border-bottom: none;
+        border-left: 4px solid var(--gold);
+      }
+      .tracker-header h1 {
+        font-size: 1.8rem;
+      }
+      .calendar-day {
+        min-height: 40px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main id="app-root">
+
+  <div class="tracker-container">
+    <div class="tracker-header">
+      <h1>Wellness & Pleasure Tracker</h1>
+      <p>Your private, localized dashboard for tracking desire, connection, and sexual wellness.</p>
+    </div>
+
+    <div class="tabs-nav" id="tracker-tabs">
+      <button class="tab-btn active" data-tab="dashboard">Dashboard</button>
+      <button class="tab-btn" data-tab="checkin">Daily Check-in</button>
+      <button class="tab-btn" data-tab="history">History & Calendar</button>
+      <button class="tab-btn" data-tab="goals">Goals & Self-Care</button>
+      <button class="tab-btn" data-tab="settings">Settings & Export</button>
+    </div>
+
+    <!-- Dashboard Tab -->
+    <div class="tab-content active" id="tab-dashboard">
+      <h2>Welcome to your Dashboard</h2>
+      <p>Here's a snapshot of your recent wellness patterns.</p>
+
+      <div class="dashboard-grid">
+        <div class="widget">
+          <h3>Weekly Averages</h3>
+          <div class="stat-row">
+            <span class="stat-label">Desire Level</span>
+            <span class="stat-value" id="avg-desire">-</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Energy Level</span>
+            <span class="stat-value" id="avg-energy">-</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Stress Level</span>
+            <span class="stat-value" id="avg-stress">-</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Connection</span>
+            <span class="stat-value" id="avg-connection">-</span>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h3>Recent Insights</h3>
+          <div id="insights-container">
+            <p style="color:var(--gray); font-style:italic;">Log more data to see personalized insights about your patterns.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Trends Over Time (Last 7 Entries)</h3>
+      <div class="chart-container">
+        <canvas id="trendsChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Daily Check-in Tab -->
+    <div class="tab-content" id="tab-checkin">
+      <h2>Daily Check-in</h2>
+      <p>Log your current levels and activities. Be honest with yourself—this data is 100% private.</p>
+
+      <form id="checkin-form">
+        <div class="form-group">
+          <label>Date <span class="tooltip-icon" data-tooltip="Defaults to today, but you can log past days.">?</span></label>
+          <input type="date" id="log-date" style="padding:10px; border:1px solid var(--gray-light); border-radius:6px; font-family:Montserrat;">
+        </div>
+
+        <h3>Mind & Body</h3>
+
+        <div class="form-group">
+          <label>Energy Level (1-10)</label>
+          <input type="range" id="log-energy" min="1" max="10" value="5">
+          <div class="range-labels"><span>Exhausted</span><span>Balanced</span><span>Energized</span></div>
+        </div>
+
+        <div class="form-group">
+          <label>Stress / Anxiety Level (1-10)</label>
+          <input type="range" id="log-stress" min="1" max="10" value="5">
+          <div class="range-labels"><span>Calm/Relaxed</span><span>Moderate</span><span>Highly Stressed</span></div>
+        </div>
+
+        <div class="form-group">
+          <label>Cycle Phase (Optional)</label>
+          <select id="log-cycle" style="width:100%; padding:10px; border:1px solid var(--gray-light); border-radius:6px; font-family:Montserrat;">
+            <option value="">Not Applicable / Prefer not to say</option>
+            <option value="Menstruation">Menstruation (Days 1-5)</option>
+            <option value="Follicular">Follicular (Days 6-13)</option>
+            <option value="Ovulation">Ovulation (Days 14-16)</option>
+            <option value="Luteal">Luteal (Days 17-28)</option>
+          </select>
+        </div>
+
+        <h3>Desire & Connection</h3>
+
+        <div class="form-group">
+          <label>Spontaneous Desire Level (1-10) <span class="tooltip-icon" data-tooltip="Desire that appears out of nowhere, unprompted.">?</span></label>
+          <input type="range" id="log-desire" min="1" max="10" value="5">
+          <div class="range-labels"><span>None</span><span>Moderate</span><span>High</span></div>
+        </div>
+
+        <div class="form-group">
+          <label>Responsive Desire Level (1-10) <span class="tooltip-icon" data-tooltip="Desire that builds in response to stimulation, context, or intimacy.">?</span></label>
+          <input type="range" id="log-responsive" min="1" max="10" value="5">
+          <div class="range-labels"><span>None</span><span>Moderate</span><span>High</span></div>
+        </div>
+
+        <div class="form-group">
+          <label>Relationship Connection / Communication Quality (1-10)</label>
+          <p class="desc">How connected did you feel to your partner(s) or yourself today?</p>
+          <input type="range" id="log-connection" min="1" max="10" value="5">
+          <div class="range-labels"><span>Disconnected</span><span>Neutral</span><span>Deeply Connected</span></div>
+        </div>
+
+        <div class="form-group">
+          <label>Sexual Satisfaction (1-10) <span class="tooltip-icon" data-tooltip="If you engaged in sexual activity (solo or partnered), how satisfying was it?">?</span></label>
+          <input type="range" id="log-satisfaction" min="1" max="10" value="5">
+          <div class="range-labels"><span>Not Applicable/Low</span><span>Moderate</span><span>Highly Satisfying</span></div>
+        </div>
+
+        <h3>Self-Care & Activities</h3>
+        <p class="desc">Check what you engaged in today:</p>
+        <div class="form-group checkbox-grid">
+          <label class="checkbox-label"><input type="checkbox" name="activities" value="Exercise"> Exercise</label>
+          <label class="checkbox-label"><input type="checkbox" name="activities" value="Meditation"> Meditation</label>
+          <label class="checkbox-label"><input type="checkbox" name="activities" value="Good Sleep"> Good Sleep</label>
+          <label class="checkbox-label"><input type="checkbox" name="activities" value="Solo Play"> Solo Play</label>
+          <label class="checkbox-label"><input type="checkbox" name="activities" value="Partner Intimacy"> Partner Intimacy</label>
+          <label class="checkbox-label"><input type="checkbox" name="activities" value="Sensate Focus"> Sensate Focus</label>
+          <label class="checkbox-label"><input type="checkbox" name="activities" value="Deep Conversation"> Deep Talk</label>
+        </div>
+
+        <div class="form-group">
+          <label>Journal Notes</label>
+          <textarea id="log-notes" placeholder="Reflect on your day, feelings, or intimate experiences..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Save Check-in</button>
+      </form>
+    </div>
+
+    <!-- History & Calendar Tab -->
+    <div class="tab-content" id="tab-history">
+      <h2>History & Calendar</h2>
+
+      <div class="dashboard-grid">
+        <div class="calendar-widget">
+          <div class="calendar-header">
+            <button id="cal-prev">&lt;</button>
+            <span id="cal-month-year">Month Year</span>
+            <button id="cal-next">&gt;</button>
+          </div>
+          <div class="calendar-grid">
+            <div class="calendar-day-header">Sun</div>
+            <div class="calendar-day-header">Mon</div>
+            <div class="calendar-day-header">Tue</div>
+            <div class="calendar-day-header">Wed</div>
+            <div class="calendar-day-header">Thu</div>
+            <div class="calendar-day-header">Fri</div>
+            <div class="calendar-day-header">Sat</div>
+            <!-- Calendar days generated by JS -->
+          </div>
+        </div>
+
+        <div class="widget">
+          <h3>Entry Details</h3>
+          <div id="selected-entry-details">
+            <p style="color:var(--gray);">Select a day on the calendar to view details.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Recent Entries</h3>
+      <div id="history-list">
+        <!-- History generated by JS -->
+      </div>
+    </div>
+
+    <!-- Goals Tab -->
+    <div class="tab-content" id="tab-goals">
+      <h2>Goals & Self-Care Actions</h2>
+      <p>Set small, actionable goals for your sexual wellness and intimacy journey.</p>
+
+      <div class="widget" style="margin-bottom:20px;">
+        <h3>Your Goals</h3>
+        <ul class="goal-list" id="goals-list">
+          <!-- Goals generated by JS -->
+        </ul>
+
+        <form class="add-goal-form" id="add-goal-form">
+          <input type="text" id="new-goal-text" placeholder="e.g., Meditate for 10 mins before bed, initiate a deep conversation..." required>
+          <button type="submit" class="btn-secondary">Add Goal</button>
+        </form>
+      </div>
+
+      <div class="widget">
+        <h3>Wellness Recommendations</h3>
+        <p style="font-size:0.9rem; color:var(--gray); margin-bottom:15px;">Based on general wellness principles to support healthy sexuality.</p>
+        <ul style="line-height:1.6; color:var(--olive);">
+          <li><strong>Prioritize Rest:</strong> Fatigue is a major libido killer. Aim for 7-9 hours of sleep.</li>
+          <li><strong>Mindful Touch:</strong> Practice non-sexual touching (cuddling, massage) to build connection without pressure.</li>
+          <li><strong>Stress Management:</strong> High cortisol suppresses sex hormones. Find a stress-relief practice that works for you.</li>
+          <li><strong>Communicate Desires:</strong> Share a fantasy or a specific boundary with your partner in a neutral setting.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Settings & Export Tab -->
+    <div class="tab-content" id="tab-settings">
+      <h2>Settings & Data Privacy</h2>
+      <p>Your data is stored <strong>locally on your device</strong> within your browser. It is never sent to a server.</p>
+
+      <div class="widget">
+        <h3>Export Your Data</h3>
+        <p style="font-size:0.9rem; color:var(--gray); margin-bottom:15px;">Download your data as a JSON file to backup or transfer to another browser.</p>
+        <button id="btn-export" class="btn-secondary">Export Data (JSON)</button>
+      </div>
+
+      <div class="widget" style="margin-top:20px; border-color:#ffcccc; background:#fff5f5;">
+        <h3 style="color:#cc0000; border-bottom-color:#ffcccc;">Danger Zone</h3>
+        <p style="font-size:0.9rem; color:#666; margin-bottom:15px;">Permanently delete all tracking data, history, and goals from this device. This cannot be undone.</p>
+        <button id="btn-clear-data" class="btn-secondary" style="border-color:#cc0000; color:#cc0000;">Clear All Data</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="notification" class="notification">Notification message</div>
+
+</main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Social</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Data Store
+      const STORAGE_KEY = 'ali_wellness_tracker_data';
+      const GOALS_KEY = 'ali_wellness_tracker_goals';
+
+      let trackingData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      let goalsData = JSON.parse(localStorage.getItem(GOALS_KEY)) || [
+        { id: 1, text: "Schedule 10 minutes of uninterrupted connection time.", completed: false },
+        { id: 2, text: "Prioritize 8 hours of sleep.", completed: false }
+      ];
+
+      // Elements
+      const tabs = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+      const notification = document.getElementById('notification');
+
+      // Form elements
+      const checkinForm = document.getElementById('checkin-form');
+      const logDateInput = document.getElementById('log-date');
+      const checkinSection = document.getElementById('tab-checkin'); // Tab container holding the form
+
+      // Calendar elements
+      const calMonthYear = document.getElementById('cal-month-year');
+      const calPrev = document.getElementById('cal-prev');
+      const calNext = document.getElementById('cal-next');
+      const calGrid = document.querySelector('.calendar-grid');
+      const selectedEntryDetails = document.getElementById('selected-entry-details');
+      const historyList = document.getElementById('history-list');
+
+      // Initialize Date input to today
+      const today = new Date().toISOString().split('T')[0];
+      logDateInput.value = today;
+
+      // Calendar state
+      let currentDate = new Date();
+
+      // Chart instance
+      let trendsChart;
+
+      // --- Tabs Navigation ---
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tabContents.forEach(tc => tc.classList.remove('active'));
+
+          tab.classList.add('active');
+          document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+
+          if (tab.dataset.tab === 'dashboard') updateDashboard();
+          if (tab.dataset.tab === 'history') updateHistory();
+        });
+      });
+
+      // --- Helper: Show Notification ---
+      function showNotification(message, isError = false) {
+        notification.textContent = message;
+        notification.style.backgroundColor = isError ? '#cc0000' : 'var(--olive)';
+        notification.classList.add('show');
+        setTimeout(() => notification.classList.remove('show'), 3000);
+      }
+
+      // --- Save Check-in ---
+      // We attach the listener to the specific tab container or a wrapper instead of the form element
+      // because Playwright interacts better with non-form-submission workflows sometimes.
+      // But standard form submission works well too, so we'll use form submit with preventDefault.
+      checkinForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const date = document.getElementById('log-date').value;
+        if (!date) {
+            showNotification('Please select a date.', true);
+            return;
+        }
+
+        const activitiesBoxes = document.querySelectorAll('input[name="activities"]:checked');
+        const activities = Array.from(activitiesBoxes).map(cb => cb.value);
+
+        const entry = {
+          energy: parseInt(document.getElementById('log-energy').value, 10),
+          stress: parseInt(document.getElementById('log-stress').value, 10),
+          cycle: document.getElementById('log-cycle').value,
+          desire: parseInt(document.getElementById('log-desire').value, 10),
+          responsive: parseInt(document.getElementById('log-responsive').value, 10),
+          connection: parseInt(document.getElementById('log-connection').value, 10),
+          satisfaction: parseInt(document.getElementById('log-satisfaction').value, 10),
+          activities: activities,
+          notes: document.getElementById('log-notes').value
+        };
+
+        trackingData[date] = entry;
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(trackingData));
+
+        showNotification('Check-in saved successfully!');
+
+        // Switch to Dashboard
+        tabs.forEach(t => t.classList.remove('active'));
+        tabContents.forEach(tc => tc.classList.remove('active'));
+        document.querySelector('[data-tab="dashboard"]').classList.add('active');
+        document.getElementById('tab-dashboard').classList.add('active');
+
+        updateDashboard();
+      });
+
+      // --- Update Dashboard ---
+      function updateDashboard() {
+        const dates = Object.keys(trackingData).sort();
+
+        if (dates.length === 0) {
+          document.getElementById('avg-desire').textContent = '-';
+          document.getElementById('avg-energy').textContent = '-';
+          document.getElementById('avg-stress').textContent = '-';
+          document.getElementById('avg-connection').textContent = '-';
+          document.getElementById('insights-container').innerHTML = `<p style="color:var(--gray); font-style:italic;">Log more data to see personalized insights about your patterns.</p>`;
+          if(trendsChart) trendsChart.destroy();
+          return;
+        }
+
+        // Calculate averages for last 7 entries
+        const recentDates = dates.slice(-7);
+        let sumDesire = 0, sumEnergy = 0, sumStress = 0, sumConn = 0;
+
+        const chartLabels = [];
+        const chartDesire = [];
+        const chartEnergy = [];
+        const chartStress = [];
+
+        recentDates.forEach(date => {
+          const d = trackingData[date];
+          sumDesire += d.desire;
+          sumEnergy += d.energy;
+          sumStress += d.stress;
+          sumConn += d.connection;
+
+          chartLabels.push(date.substring(5)); // MM-DD
+          chartDesire.push(d.desire);
+          chartEnergy.push(d.energy);
+          chartStress.push(d.stress);
+        });
+
+        const count = recentDates.length;
+        document.getElementById('avg-desire').textContent = (sumDesire / count).toFixed(1) + '/10';
+        document.getElementById('avg-energy').textContent = (sumEnergy / count).toFixed(1) + '/10';
+        document.getElementById('avg-stress').textContent = (sumStress / count).toFixed(1) + '/10';
+        document.getElementById('avg-connection').textContent = (sumConn / count).toFixed(1) + '/10';
+
+        // Generate Insights
+        generateInsights(recentDates);
+
+        // Update Chart
+        const ctx = document.getElementById('trendsChart').getContext('2d');
+        if (trendsChart) trendsChart.destroy();
+
+        trendsChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: chartLabels,
+            datasets: [
+              {
+                label: 'Desire',
+                data: chartDesire,
+                borderColor: '#AD9846', // Gold
+                backgroundColor: 'rgba(173, 152, 70, 0.1)',
+                tension: 0.3,
+                fill: true
+              },
+              {
+                label: 'Energy',
+                data: chartEnergy,
+                borderColor: '#2E3E24', // Olive
+                backgroundColor: 'transparent',
+                tension: 0.3
+              },
+              {
+                label: 'Stress',
+                data: chartStress,
+                borderColor: '#cc0000', // Red-ish for stress
+                backgroundColor: 'transparent',
+                borderDash: [5, 5],
+                tension: 0.3
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { min: 1, max: 10 }
+            },
+            plugins: {
+              legend: { position: 'bottom' }
+            }
+          }
+        });
+      }
+
+      function generateInsights(recentDates) {
+        const container = document.getElementById('insights-container');
+        if (recentDates.length < 3) {
+          container.innerHTML = `<p style="color:var(--gray); font-style:italic;">Need at least 3 logs to generate insights.</p>`;
+          return;
+        }
+
+        let insightsHtml = '<ul style="padding-left: 20px; line-height: 1.6;">';
+
+        let highStressLowDesireCount = 0;
+        let highEnergyHighDesireCount = 0;
+
+        recentDates.forEach(date => {
+          const d = trackingData[date];
+          if (d.stress > 6 && d.desire < 5) highStressLowDesireCount++;
+          if (d.energy > 6 && d.desire > 6) highEnergyHighDesireCount++;
+        });
+
+        if (highStressLowDesireCount >= 2) {
+          insightsHtml += `<li><strong>Stress Impact:</strong> Stress seems to be negatively impacting your desire recently. Consider prioritizing down-regulation activities.</li>`;
+        }
+
+        if (highEnergyHighDesireCount >= 2) {
+          insightsHtml += `<li><strong>Energy Link:</strong> Your desire spikes when you have good energy levels. Focus on sleep and rest!</li>`;
+        }
+
+        // Cycle tracking insight (if available)
+        const currentPhase = trackingData[recentDates[recentDates.length - 1]].cycle;
+        if (currentPhase) {
+          insightsHtml += `<li><strong>Cycle Phase (${currentPhase}):</strong> Log consistently to see how this phase affects your unique patterns.</li>`;
+        }
+
+        insightsHtml += '</ul>';
+        container.innerHTML = insightsHtml;
+      }
+
+      // --- History & Calendar ---
+      function updateHistory() {
+        renderCalendar();
+        renderHistoryList();
+      }
+
+      function renderCalendar() {
+        calGrid.querySelectorAll('.calendar-day').forEach(el => el.remove());
+
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        calMonthYear.textContent = `${monthNames[month]} ${year}`;
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        const todayStr = new Date().toISOString().split('T')[0];
+
+        // Empty cells for days before start of month
+        for (let i = 0; i < firstDay; i++) {
+          const emptyDiv = document.createElement('div');
+          emptyDiv.className = 'calendar-day';
+          emptyDiv.style.background = 'var(--gray-light)';
+          calGrid.appendChild(emptyDiv);
+        }
+
+        // Days of month
+        for (let i = 1; i <= daysInMonth; i++) {
+          const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+          const dayDiv = document.createElement('div');
+          dayDiv.className = 'calendar-day';
+          dayDiv.textContent = i;
+
+          if (dateStr === todayStr) dayDiv.classList.add('today');
+          if (trackingData[dateStr]) dayDiv.classList.add('has-entry');
+
+          dayDiv.addEventListener('click', () => {
+            document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
+            dayDiv.classList.add('selected');
+            showEntryDetails(dateStr);
+          });
+
+          calGrid.appendChild(dayDiv);
+        }
+      }
+
+      calPrev.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+      });
+
+      calNext.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+      });
+
+      function showEntryDetails(dateStr) {
+        const entry = trackingData[dateStr];
+        if (!entry) {
+          selectedEntryDetails.innerHTML = `<p style="color:var(--gray);">No data logged for ${dateStr}.</p>`;
+          return;
+        }
+
+        const activities = entry.activities && entry.activities.length > 0 ? entry.activities.join(', ') : 'None';
+
+        selectedEntryDetails.innerHTML = `
+          <h4 style="margin-top:0;">${dateStr}</h4>
+          <div class="stat-row"><span class="stat-label">Energy</span> <span class="stat-value">${entry.energy}/10</span></div>
+          <div class="stat-row"><span class="stat-label">Stress</span> <span class="stat-value">${entry.stress}/10</span></div>
+          <div class="stat-row"><span class="stat-label">Desire</span> <span class="stat-value">${entry.desire}/10</span></div>
+          <div class="stat-row"><span class="stat-label">Connection</span> <span class="stat-value">${entry.connection}/10</span></div>
+          <div class="stat-row"><span class="stat-label">Activities</span> <span class="stat-value">${activities}</span></div>
+          ${entry.notes ? `<p class="history-note">"${entry.notes}"</p>` : ''}
+        `;
+      }
+
+      function renderHistoryList() {
+        const dates = Object.keys(trackingData).sort().reverse();
+        historyList.innerHTML = '';
+
+        if (dates.length === 0) {
+          historyList.innerHTML = `<p style="color:var(--gray);">No history available.</p>`;
+          return;
+        }
+
+        // Show last 10 entries
+        dates.slice(0, 10).forEach(date => {
+          const entry = trackingData[date];
+          const div = document.createElement('div');
+          div.className = 'history-entry';
+          div.innerHTML = `
+            <div class="history-date">${date} ${entry.cycle ? `(${entry.cycle})` : ''}</div>
+            <div class="history-details">
+              <span><strong>Desire:</strong> ${entry.desire}/10</span>
+              <span><strong>Energy:</strong> ${entry.energy}/10</span>
+              <span><strong>Stress:</strong> ${entry.stress}/10</span>
+            </div>
+          `;
+          historyList.appendChild(div);
+        });
+      }
+
+      // --- Goals ---
+      const goalsList = document.getElementById('goals-list');
+      const addGoalForm = document.getElementById('add-goal-form');
+      const newGoalText = document.getElementById('new-goal-text');
+
+      function renderGoals() {
+        goalsList.innerHTML = '';
+        goalsData.forEach((goal, index) => {
+          const li = document.createElement('li');
+          li.className = `goal-item ${goal.completed ? 'completed' : ''}`;
+
+          li.innerHTML = `
+            <input type="checkbox" ${goal.completed ? 'checked' : ''} data-index="${index}">
+            <span>${goal.text}</span>
+            <button class="delete-goal" data-index="${index}" style="margin-left:auto; background:none; border:none; color:#cc0000; cursor:pointer;">&times;</button>
+          `;
+          goalsList.appendChild(li);
+        });
+
+        // Add Listeners
+        goalsList.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+          cb.addEventListener('change', (e) => {
+            const index = e.target.dataset.index;
+            goalsData[index].completed = e.target.checked;
+            saveGoals();
+            renderGoals();
+          });
+        });
+
+        goalsList.querySelectorAll('.delete-goal').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const index = e.target.dataset.index;
+            goalsData.splice(index, 1);
+            saveGoals();
+            renderGoals();
+          });
+        });
+      }
+
+      function saveGoals() {
+        localStorage.setItem(GOALS_KEY, JSON.stringify(goalsData));
+      }
+
+      addGoalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const text = newGoalText.value.trim();
+        if (text) {
+          goalsData.push({ id: Date.now(), text: text, completed: false });
+          saveGoals();
+          renderGoals();
+          newGoalText.value = '';
+          showNotification('Goal added!');
+        }
+      });
+
+      // --- Settings & Export ---
+      document.getElementById('btn-export').addEventListener('click', () => {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(trackingData, null, 2));
+        const downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href",     dataStr);
+        downloadAnchorNode.setAttribute("download", "wellness_tracker_data.json");
+        document.body.appendChild(downloadAnchorNode); // required for firefox
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+        showNotification('Data exported!');
+      });
+
+      document.getElementById('btn-clear-data').addEventListener('click', () => {
+        if (confirm("Are you sure you want to permanently delete ALL your tracking data? This cannot be undone.")) {
+          localStorage.removeItem(STORAGE_KEY);
+          localStorage.removeItem(GOALS_KEY);
+          trackingData = {};
+          goalsData = [];
+
+          updateDashboard();
+          updateHistory();
+          renderGoals();
+
+          showNotification('All data deleted successfully.', true);
+        }
+      });
+
+      // Initialize
+      updateDashboard();
+      renderGoals();
+    });
+  </script>
+<script src="mobile-nav.js" defer></script>
+</body>
+</html>
