@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Compatibility Quiz — Ali Imperiale</title>
+  <meta name="description" content="Discover shared interests and preferences with our interactive Sexual Compatibility Quiz. Build intimacy through better communication and understanding.">
+
+  <meta property="og:title" content="Sexual Compatibility Quiz — Ali Imperiale">
+  <meta property="og:description" content="Discover shared interests and preferences with our interactive Sexual Compatibility Quiz. Build intimacy through better communication and understanding.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-compatibility-quiz.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+
+  <meta name="twitter:card" content="summary">
+
+  <link rel="canonical" href="https://aliimperiale.com/sexual-compatibility-quiz.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+
+  <style>
+    :root {
+      --bg-color: #FAF8EB;
+      --text-color: #2E3E24;
+      --accent-color: #AD9846;
+      --border-color: #D6D8CB;
+      --card-bg: #FFFFFF;
+      --hover-bg: #F4EED8;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-color);
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--accent-color);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .hero-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-section p {
+      font-size: 1.1rem;
+      color: #5a6b50;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Quiz Container Styles */
+    .quiz-container {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(46, 62, 36, 0.08);
+      padding: 40px;
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background-color: #E8EBE1;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: var(--accent-color);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .question-category {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-color);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .question-text {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .option-card {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #FFFFFF;
+    }
+
+    .option-card:hover {
+      border-color: var(--accent-color);
+      background: var(--hover-bg);
+    }
+
+    .option-card:focus-within {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+
+    .option-card.selected {
+      border-color: var(--accent-color);
+      background: var(--hover-bg);
+    }
+
+    .option-card input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .radio-custom {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border-color);
+      border-radius: 50%;
+      margin-right: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .option-card.selected .radio-custom {
+      border-color: var(--accent-color);
+    }
+
+    .option-card.selected .radio-custom::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: var(--accent-color);
+      border-radius: 50%;
+    }
+
+    .option-label {
+      font-size: 1.05rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .quiz-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--text-color);
+      color: #FAF8EB;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a2414;
+    }
+
+    .btn-primary:disabled {
+      background-color: #a4a99e;
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: #f0f2e9;
+    }
+
+    /* Results Section Styles */
+    #results-container {
+      display: none;
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .results-header h2 {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 16px;
+    }
+
+    .result-section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border-color);
+    }
+
+    .result-section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .result-score {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent-color);
+      margin-bottom: 16px;
+    }
+
+    .action-steps {
+      background: var(--bg-color);
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .action-steps h4 {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .action-steps ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .action-steps li {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .quiz-container {
+        padding: 24px;
+      }
+      .quiz-navigation {
+        flex-direction: column-reverse;
+        gap: 16px;
+      }
+      .quiz-navigation button {
+        width: 100%;
+      }
+      .hero-section h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Desktop Nav Overrides */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+      .site-nav .nav-links {
+        display: none; /* Handled by mobile-nav.js */
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is sexual compatibility important?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sexual compatibility isn't about perfectly matching desires from day one. It's about being willing to communicate, adapt, and explore together. Understanding each other's intimate styles builds trust, reduces friction, and enhances overall relationship satisfaction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should we do if our quiz results are very different?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Different results are completely normal and an opportunity for growth! Use the conversation starters in your profiles to discuss how you can meet in the middle. Often, mismatched libidos or styles can be bridged with intentional communication and scheduled intimacy check-ins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should couples retake this quiz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desires, boundaries, and preferences change over time due to stress, life stages, hormones, and personal growth. It's healthy to check in on your sexual compatibility every 6 to 12 months, or whenever you feel disconnected."
+      }
+    }
+  ]
+}
+  </script>
+
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <div class="hero-section">
+      <h1>Sexual Compatibility Quiz</h1>
+      <p>Discover shared interests, understand your unique intimacy styles, and explore preferences to deepen your connection.</p>
+    </div>
+
+    <!-- Intro State -->
+    <div id="intro-container" class="quiz-container">
+      <h2 style="font-size:1.6rem; margin-bottom:16px;">How it works</h2>
+      <p>This quiz is designed to help you build a personalized "Intimacy Profile" spanning multiple categories:</p>
+      <ul style="margin-bottom:24px; line-height:1.8;">
+        <li><strong>Intimacy Styles:</strong> How you naturally connect and express affection.</li>
+        <li><strong>Communication:</strong> Your preferred methods for discussing desires and boundaries.</li>
+        <li><strong>Boundaries:</strong> Your comfort levels with different types of exploration.</li>
+        <li><strong>Kink Interests:</strong> Areas of curiosity and established preferences.</li>
+        <li><strong>Romantic Languages:</strong> What makes you feel most loved and desired.</li>
+        <li><strong>Physical Preferences:</strong> Dynamics of physical touch and connection.</li>
+      </ul>
+      <p style="margin-bottom:24px;">Take this quiz individually and share your results with your partner, or take it side-by-side to spark meaningful conversations. There are no right or wrong answers—only opportunities to understand yourself and each other better.</p>
+      <button id="start-btn" class="btn btn-primary" style="width:100%;">Start the Quiz</button>
+    </div>
+
+    <!-- Quiz State -->
+    <div id="quiz-container" class="quiz-container" style="display:none;">
+      <div class="progress-bar-container" aria-label="Quiz progress">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <span id="question-category" class="question-category">Category</span>
+      <h2 id="question-text" class="question-text">Question text goes here?</h2>
+
+      <div id="options-container" class="options-grid">
+        <!-- Options injected via JS -->
+      </div>
+
+      <div class="quiz-navigation">
+        <button id="prev-btn" class="btn btn-secondary" disabled>Previous</button>
+        <span id="question-counter" style="font-size:0.9rem; color:#5a6b50; font-weight:500;">1 / 10</span>
+        <button id="next-btn" class="btn btn-primary" disabled>Next</button>
+      </div>
+    </div>
+
+    <!-- Results State -->
+    <div id="results-container">
+      <div class="results-header">
+        <h2>Your Intimacy Profile</h2>
+        <p>Here is a detailed breakdown of your compatibility preferences and actionable advice for exploring these with a partner.</p>
+      </div>
+
+      <div id="results-content">
+        <!-- Results injected via JS -->
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <button onclick="window.print()" class="btn btn-secondary" style="margin-right:16px;">Print / Save as PDF</button>
+        <button onclick="location.reload()" class="btn btn-primary">Retake Quiz</button>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid #D6D8CB;">
+      <h2 style="text-align:center; margin-bottom: 32px; color: #AD9846;">Frequently Asked Questions</h2>
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div style="background: #FFFFFF; padding: 24px; border-radius: 8px; border: 1px solid #D6D8CB;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; color: #2E3E24;">Why is sexual compatibility important?</h3>
+          <p style="margin: 0; font-size: 0.95rem; color: #5a6b50;">Sexual compatibility isn't about perfectly matching desires from day one. It's about being willing to communicate, adapt, and explore together. Understanding each other's intimate styles builds trust, reduces friction, and enhances overall relationship satisfaction.</p>
+        </div>
+        <div style="background: #FFFFFF; padding: 24px; border-radius: 8px; border: 1px solid #D6D8CB;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; color: #2E3E24;">What should we do if our quiz results are very different?</h3>
+          <p style="margin: 0; font-size: 0.95rem; color: #5a6b50;">Different results are completely normal and an opportunity for growth! Use the conversation starters in your profiles to discuss how you can meet in the middle. Often, mismatched libidos or styles can be bridged with intentional communication and scheduled intimacy check-ins.</p>
+        </div>
+        <div style="background: #FFFFFF; padding: 24px; border-radius: 8px; border: 1px solid #D6D8CB;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; color: #2E3E24;">How often should couples retake this quiz?</h3>
+          <p style="margin: 0; font-size: 0.95rem; color: #5a6b50;">Desires, boundaries, and preferences change over time due to stress, life stages, hormones, and personal growth. It's healthy to check in on your sexual compatibility every 6 to 12 months, or whenever you feel disconnected.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="background-color: #2E3E24; color: #FAF8EB; padding: 40px 20px; margin-top: 60px;">
+    <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+      <div style="flex: 1; min-width: 250px;">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28" style="margin-bottom: 16px;">
+        <p style="color: #C6C8BB; font-size: 0.9rem; line-height: 1.6;">Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div style="flex: 1; min-width: 150px;">
+        <h4 style="color: #FAF8EB; margin-bottom: 16px; font-size: 1.1rem;">Explore</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+          <li><a href="/" style="color: #C6C8BB; text-decoration: none;">Home</a></li>
+          <li><a href="/tools.html" style="color: #C6C8BB; text-decoration: none;">Tools</a></li>
+          <li><a href="/guides.html" style="color: #C6C8BB; text-decoration: none;">Guides</a></li>
+          <li><a href="/studies.html" style="color: #C6C8BB; text-decoration: none;">Studies</a></li>
+        </ul>
+      </div>
+      <div style="flex: 1; min-width: 150px;">
+        <h4 style="color: #FAF8EB; margin-bottom: 16px; font-size: 1.1rem;">Connect</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+          <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none;">YouTube</a></li>
+          <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none;">Patreon</a></li>
+          <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none;">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="max-width: 1000px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid rgba(198, 200, 187, 0.2); text-align: center; color: #C6C8BB; font-size: 0.85rem;">
+      <p>&copy; 2026 Ali Imperiale. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    const questions = [
+      // Intimacy Styles
+      {
+        category: "Intimacy Styles",
+        question: "When you want to feel close to your partner, you prefer...",
+        options: [
+          { text: "Having a deep, meaningful conversation without distractions.", value: "emotional" },
+          { text: "Physical touch, like cuddling, holding hands, or massages.", value: "physical" },
+          { text: "Doing a shared activity or hobby together.", value: "activity" },
+          { text: "Exploring new experiences, like traveling or trying a new class.", value: "experiential" }
+        ]
+      },
+      {
+        category: "Intimacy Styles",
+        question: "How do you usually initiate intimacy or sex?",
+        options: [
+          { text: "Directly stating what I want or asking my partner.", value: "direct" },
+          { text: "Through physical touch or non-verbal cues (kissing, touching).", value: "physical" },
+          { text: "Setting a mood or creating a romantic atmosphere.", value: "romantic" },
+          { text: "Playfully teasing or sending suggestive messages beforehand.", value: "playful" }
+        ]
+      },
+      // Communication Preferences
+      {
+        category: "Communication",
+        question: "During sex, how do you prefer to communicate what feels good?",
+        options: [
+          { text: "Using words (e.g., 'Yes, right there', 'More of that').", value: "verbal" },
+          { text: "Making sounds (moaning, sighing) to show pleasure.", value: "vocal" },
+          { text: "Moving my body to guide them or show I'm enjoying it.", value: "physical" },
+          { text: "I prefer to tell them afterward rather than in the moment.", value: "reflective" }
+        ]
+      },
+      {
+        category: "Communication",
+        question: "When discussing a fantasy or something new you want to try, you prefer to...",
+        options: [
+          { text: "Bring it up casually during a non-sexual moment (like over dinner).", value: "casual" },
+          { text: "Mention it while we are already being intimate.", value: "intimate" },
+          { text: "Send an article, video, or quiz to start the conversation.", value: "indirect" },
+          { text: "Schedule a specific time to talk about our sex life and desires.", value: "structured" }
+        ]
+      },
+      // Boundaries
+      {
+        category: "Boundaries",
+        question: "How do you feel about spontaneity versus planning for sex?",
+        options: [
+          { text: "I love spontaneity; planning ruins the mood for me.", value: "spontaneous" },
+          { text: "I like a mix, but leaning towards spontaneity.", value: "flexible" },
+          { text: "I prefer knowing it might happen so I can get in the right headspace.", value: "preparative" },
+          { text: "I like scheduling it so it's guaranteed and prioritized.", value: "scheduled" }
+        ]
+      },
+      {
+        category: "Boundaries",
+        question: "When it comes to trying things outside your comfort zone...",
+        options: [
+          { text: "I'm very open and willing to try almost anything once.", value: "adventurous" },
+          { text: "I'm open, but I need lots of communication and reassurance.", value: "cautious" },
+          { text: "I have clear hard limits but enjoy exploring within my comfort zone.", value: "structured" },
+          { text: "I mostly prefer sticking to what I already know I like.", value: "traditional" }
+        ]
+      },
+      // Kink Interests
+      {
+        category: "Kink & Exploration",
+        question: "What dynamic appeals to you most in the bedroom?",
+        options: [
+          { text: "Taking charge and guiding the experience (Dominant).", value: "dominant" },
+          { text: "Surrendering control and following directions (Submissive).", value: "submissive" },
+          { text: "Switching back and forth depending on the mood (Switch).", value: "switch" },
+          { text: "Keeping things equal and mutual without distinct power roles (Egalitarian).", value: "egalitarian" }
+        ]
+      },
+      {
+        category: "Kink & Exploration",
+        question: "Which of these concepts intrigues you the most?",
+        options: [
+          { text: "Sensory play (blindfolds, temperature, different textures).", value: "sensory" },
+          { text: "Roleplay or exploring different personas.", value: "roleplay" },
+          { text: "Light bondage or restriction (handcuffs, ties).", value: "bondage" },
+          { text: "I prefer passionate, vanilla sex without added elements.", value: "vanilla" }
+        ]
+      },
+      // Romantic Languages
+      {
+        category: "Romantic Languages",
+        question: "You feel most desired when your partner...",
+        options: [
+          { text: "Tells you how attractive or sexy you are.", value: "words" },
+          { text: "Gives you a passionate, unexpected kiss or touch.", value: "touch" },
+          { text: "Plans a thoughtful, romantic date just for you.", value: "time" },
+          { text: "Does something helpful for you without being asked.", value: "acts" }
+        ]
+      },
+      // Physical Preferences
+      {
+        category: "Physical Preferences",
+        question: "After sex (aftercare), you usually prefer...",
+        options: [
+          { text: "Lots of physical affection, cuddling, and reassurance.", value: "cuddly" },
+          { text: "Chatting, laughing, or talking about what just happened.", value: "verbal" },
+          { text: "A little physical space, like lying side-by-side or showering.", value: "space" },
+          { text: "Getting a snack, a drink, or falling asleep immediately.", value: "practical" }
+        ]
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    const userAnswers = [];
+
+    // DOM Elements
+    const introContainer = document.getElementById('intro-container');
+    const quizContainer = document.getElementById('quiz-container');
+    const resultsContainer = document.getElementById('results-container');
+
+    const questionCategory = document.getElementById('question-category');
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const progressBar = document.getElementById('progress-bar');
+    const questionCounter = document.getElementById('question-counter');
+
+    const startBtn = document.getElementById('start-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const resultsContent = document.getElementById('results-content');
+
+    // Initialization
+    startBtn.addEventListener('click', () => {
+      introContainer.style.display = 'none';
+      quizContainer.style.display = 'block';
+      renderQuestion();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        renderQuestion();
+      } else {
+        generateResults();
+      }
+    });
+
+    function renderQuestion() {
+      const q = questions[currentQuestionIndex];
+      questionCategory.textContent = q.category;
+      questionText.textContent = q.question;
+
+      // Update progress
+      const progress = ((currentQuestionIndex) / questions.length) * 100;
+      progressBar.style.width = `${progress}%`;
+      questionCounter.textContent = `${currentQuestionIndex + 1} / ${questions.length}`;
+
+      // Render options
+      optionsContainer.innerHTML = '';
+      const savedAnswer = userAnswers[currentQuestionIndex];
+
+      q.options.forEach((opt, index) => {
+        const optionCard = document.createElement('label');
+        optionCard.className = `option-card ${savedAnswer === opt.value ? 'selected' : ''}`;
+        optionCard.innerHTML = `
+          <input type="radio" name="q${currentQuestionIndex}" value="${opt.value}" ${savedAnswer === opt.value ? 'checked' : ''}>
+          <span class="radio-custom"></span>
+          <span class="option-label">${opt.text}</span>
+        `;
+
+        optionCard.addEventListener('click', (e) => {
+          // If clicking the card, the input will be checked automatically by the browser due to the <label> tag.
+          // We handle styling here.
+          document.querySelectorAll('.option-card').forEach(card => card.classList.remove('selected'));
+          optionCard.classList.add('selected');
+          userAnswers[currentQuestionIndex] = opt.value;
+          updateNextButton();
+        });
+
+        optionsContainer.appendChild(optionCard);
+      });
+
+      // Update buttons
+      prevBtn.disabled = currentQuestionIndex === 0;
+      updateNextButton();
+
+      if (currentQuestionIndex === questions.length - 1) {
+        nextBtn.textContent = 'View Results';
+      } else {
+        nextBtn.textContent = 'Next';
+      }
+    }
+
+    function updateNextButton() {
+      if (userAnswers[currentQuestionIndex]) {
+        nextBtn.disabled = false;
+      } else {
+        nextBtn.disabled = true;
+      }
+    }
+
+    function generateResults() {
+      quizContainer.style.display = 'none';
+      resultsContainer.style.display = 'block';
+
+      progressBar.style.width = '100%';
+
+      // Analyze results (simplified algorithm for demonstration)
+      const categories = {};
+
+      // Categorize answers
+      questions.forEach((q, idx) => {
+        if (!categories[q.category]) categories[q.category] = [];
+        categories[q.category].push(userAnswers[idx]);
+      });
+
+      let html = '';
+
+      // Intimacy Styles
+      const intimacyStyle = categories["Intimacy Styles"][0]; // Based on Q1
+      html += createResultSection("Intimacy Styles", getIntimacyStyleDescription(intimacyStyle), [
+        "Ask your partner to take this quiz and compare your preferred intimacy styles.",
+        "Plan a date night specifically catering to your partner's top style."
+      ]);
+
+      // Communication
+      const commStyle = categories["Communication"][0]; // Based on Q3
+      html += createResultSection("Communication Preferences", getCommunicationDescription(commStyle), [
+        "Discuss a time when you felt completely understood in the bedroom.",
+        "Establish a 'safe word' or non-verbal signal for pausing during intimacy."
+      ]);
+
+      // Boundaries
+      const boundaryStyle = categories["Boundaries"][0]; // Based on Q5
+      html += createResultSection("Boundaries & Pacing", getBoundaryDescription(boundaryStyle), [
+        "Talk about a time when you felt pressured or uncomfortable, and how you can prevent it in the future.",
+        "Discuss your ideal balance between spontaneity and planned intimacy."
+      ]);
+
+      // Kink & Exploration
+      const kinkStyle = categories["Kink & Exploration"][1]; // Based on Q8
+      html += createResultSection("Curiosities & Exploration", getKinkDescription(kinkStyle), [
+        "Take a 'Yes/No/Maybe' list together to map out shared boundaries.",
+        "Pick one new sensory or roleplay element to try next time."
+      ]);
+
+      // Romantic Languages
+      const romanticLanguage = categories["Romantic Languages"][0]; // Based on Q9
+      html += createResultSection("Romantic Languages", getRomanticLanguageDescription(romanticLanguage), [
+        "Share three specific things your partner did recently that made you feel deeply loved.",
+        "Ask your partner what their ideal 'romantic gesture' looks like."
+      ]);
+
+      // Aftercare
+      const aftercare = categories["Physical Preferences"][0]; // Based on Q10
+      html += createResultSection("Aftercare & Connection", getAftercareDescription(aftercare), [
+        "Talk about what makes you feel safest and most loved right after sex.",
+        "Try adopting your partner's preferred aftercare routine just once to see how it feels."
+      ]);
+
+      resultsContent.innerHTML = html;
+
+      // Scroll to top
+      window.scrollTo(0, 0);
+    }
+
+    function createResultSection(title, description, steps) {
+      return `
+        <div class="result-section">
+          <h3>${title}</h3>
+          <p>${description}</p>
+          <div class="action-steps">
+            <h4>Conversation Starters:</h4>
+            <ul>
+              ${steps.map(step => `<li>${step}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      `;
+    }
+
+    // Result descriptions
+    function getIntimacyStyleDescription(value) {
+      const mapping = {
+        "emotional": "You thrive on emotional intimacy. Deep, vulnerable conversations make you feel most connected and often serve as the foundation for your physical desire.",
+        "physical": "Physical touch is your primary way of feeling close. Cuddling, holding hands, and skin-to-skin contact are essential for building trust and arousal for you.",
+        "activity": "You connect best through shared experiences. Doing hobbies, cooking, or playing games together builds a sense of teamwork that translates into the bedroom.",
+        "experiential": "You are fueled by novelty and adventure. Trying new things and breaking the routine is what sparks your desire and makes you feel deeply engaged with your partner."
+      };
+      return mapping[value] || mapping["emotional"];
+    }
+
+    function getCommunicationDescription(value) {
+      const mapping = {
+        "verbal": "You are a direct verbal communicator. Using explicit words to guide your partner and express pleasure works best for you and helps prevent misunderstandings.",
+        "vocal": "You prefer vocal communication. Moans, sighs, and breath patterns are your way of showing what feels good without breaking the flow with too many words.",
+        "physical": "You are a physical communicator. You prefer to guide your partner's hands or move your body to show exactly what you want in the moment.",
+        "reflective": "You are a reflective communicator. You prefer to immerse yourself in the moment and discuss what worked well after the fact when the pressure is off."
+      };
+      return mapping[value] || mapping["verbal"];
+    }
+
+    function getBoundaryDescription(value) {
+      const mapping = {
+        "spontaneous": "You thrive on spontaneous intimacy. Strict plans or rigid scheduling can sometimes dampen the mood for you, as you prefer to follow the natural flow of desire.",
+        "flexible": "You appreciate a flexible approach to intimacy. A gentle nudge or suggestion is often enough to get you in the mood, balancing a little planning with spontaneity.",
+        "preparative": "You value mental and emotional preparation. Having a heads-up gives you the necessary time to transition from the stress of daily life into an intimate headspace.",
+        "scheduled": "You benefit from scheduling intimacy. Knowing exactly when you'll connect allows you to look forward to it, clear distractions, and fully prioritize the experience."
+      };
+      return mapping[value] || mapping["flexible"];
+    }
+
+    function getRomanticLanguageDescription(value) {
+      const mapping = {
+        "words": "You feel most loved through words of affirmation. Hearing explicit compliments, expressions of desire, and loving words is essential for building your confidence.",
+        "touch": "Physical touch is your primary romantic language. Passionate kisses, lingering hugs, and non-sexual affectionate touches make you feel deeply connected and cherished.",
+        "time": "You value quality time above all else. Undivided attention, deep conversations, and thoughtfully planned dates show you that your partner truly prioritizes you.",
+        "acts": "Acts of service make you feel cared for. When your partner takes on tasks or does something helpful without being asked, it creates the emotional space you need for intimacy."
+      };
+      return mapping[value] || mapping["words"];
+    }
+
+    function getKinkDescription(value) {
+      const mapping = {
+        "sensory": "You have a strong interest in sensory play. Engaging different senses—like using blindfolds, temperature variations, or massage oils—heightens the experience for you.",
+        "roleplay": "You are intrigued by roleplay. Exploring different personas or scenarios allows you to step outside your everyday self and tap into different types of desire.",
+        "bondage": "You are curious about restriction and power dynamics. Light bondage or giving up physical control (or taking it) is something that excites you.",
+        "vanilla": "You prefer deep, passionate vanilla sex. You find the most satisfaction in profound emotional connection and physical intimacy without needing extra elements."
+      };
+      return mapping[value] || mapping["vanilla"];
+    }
+
+    function getAftercareDescription(value) {
+      const mapping = {
+        "cuddly": "You need high-touch aftercare. Cuddling, hugging, and continuous physical reassurance are vital for you to feel grounded and loved after intimacy.",
+        "verbal": "You prefer verbal aftercare. Talking, laughing, or debriefing the experience helps you transition back to reality while maintaining a connection.",
+        "space": "You value independent aftercare. You prefer to decompress with a little physical space—like lying side-by-side without touching—to process the experience.",
+        "practical": "You appreciate practical aftercare. Doing helpful tasks, like fetching water, grabbing a towel, or making a snack, makes you feel cared for."
+      };
+      return mapping[value] || mapping["cuddly"];
+    }
+  </script>
+
+  <script src="mobile-nav.js"></script>
+</body>
+</html>
