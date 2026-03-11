@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menstrual Cycle Tracker & Fertility Calculator — Ali Imperiale</title>
+  <meta name="description" content="Track your menstrual cycle, predict ovulation, monitor symptoms, and gain fertility insights with this free interactive tool.">
+  <meta property="og:title" content="Menstrual Cycle Tracker & Fertility Calculator — Ali Imperiale">
+  <meta property="og:description" content="Track your menstrual cycle, predict ovulation, monitor symptoms, and gain fertility insights with this free interactive tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/menstrual-cycle-tracker.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/menstrual-cycle-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Local styles */
+    main {
+      padding: 40px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    #tracker-container {
+      background: #fff;
+      border: 1px solid #e8e4d4;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(46,62,36,0.05);
+      margin-bottom: 40px;
+    }
+
+    /* Local Styles for Tracker Layout */
+    .tool-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .tool-header h1 {
+      font-size: 2rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+    }
+    .tool-header p {
+      color: #5a6b50;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .form-section, .results-section, .tracker-section, .history-section, .education-section {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #e8e4d4;
+    }
+    .education-section {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #2E3E24;
+      margin-bottom: 20px;
+      border-left: 4px solid #AD9846;
+      padding-left: 12px;
+    }
+    h3 {
+      font-size: 1.1rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+      margin-top: 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2E3E24;
+    }
+    input[type="date"], input[type="number"], select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #C6C8BB;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #fafafa;
+    }
+    input[type="date"]:focus, input[type="number"]:focus, select:focus {
+      outline: none;
+      border-color: #AD9846;
+      box-shadow: 0 0 0 2px rgba(173,152,70,0.2);
+    }
+    .btn-primary, .btn-secondary, .btn-outline, .btn-danger {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-primary {
+      background: #AD9846;
+      color: #fff;
+      width: 100%;
+    }
+    .btn-primary:hover {
+      background: #96833c;
+    }
+    .btn-secondary {
+      background: #2E3E24;
+      color: #fff;
+    }
+    .btn-secondary:hover {
+      background: #1f2a18;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #2E3E24;
+      color: #2E3E24;
+    }
+    .btn-outline:hover {
+      background: #2E3E24;
+      color: #fff;
+    }
+    .btn-danger {
+      background: transparent;
+      border: 1px solid #d9534f;
+      color: #d9534f;
+    }
+    .btn-danger:hover {
+      background: #d9534f;
+      color: #fff;
+    }
+    .hidden {
+      display: none !important;
+    }
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .insight-card {
+      background: #f9f8f3;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #e8e4d4;
+      text-align: center;
+    }
+    .insight-card h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #5a6b50;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    .insight-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #2E3E24;
+    }
+    .insight-card.highlight {
+      background: #fffbef;
+      border-color: #AD9846;
+      box-shadow: 0 4px 12px rgba(173,152,70,0.1);
+    }
+    .insight-card.highlight .insight-value {
+      color: #AD9846;
+    }
+    .radio-group, .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .radio-group label, .checkbox-group label {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 400;
+      background: #f0f0f0;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .radio-group input, .checkbox-group input {
+      margin-right: 8px;
+    }
+    .radio-group label:has(input:checked), .checkbox-group label:has(input:checked) {
+      background: #e6e2cd;
+      border: 1px solid #AD9846;
+    }
+    .success-msg {
+      color: #2E3E24;
+      background: #eaf2e8;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-weight: 600;
+    }
+    .history-list {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #e8e4d4;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .history-item {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e8e4d4;
+      font-size: 0.9rem;
+    }
+    .history-item:last-child {
+      border-bottom: none;
+    }
+    .history-item strong {
+      color: #AD9846;
+    }
+    .export-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .education-section p {
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .disclaimer {
+      font-size: 0.85rem;
+      color: #666;
+      background: #f5f5f5;
+      padding: 16px;
+      border-radius: 6px;
+      margin-top: 24px;
+    }
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div id="tracker-container">
+
+      <div class="tool-header">
+        <h1>Menstrual Cycle Tracker & Fertility Calculator</h1>
+        <p>A comprehensive tool to track your period, predict ovulation, monitor symptoms, and understand your fertility window.</p>
+      </div>
+
+      <div class="form-section">
+        <h2>Cycle Information</h2>
+        <form id="cycle-form">
+          <div class="form-group">
+            <label for="last-period">First Day of Last Period:</label>
+            <input type="date" id="last-period" required>
+          </div>
+          <div class="form-group">
+            <label for="cycle-length">Average Cycle Length (Days):</label>
+            <input type="number" id="cycle-length" min="20" max="45" value="28" required>
+          </div>
+          <div class="form-group">
+            <label for="period-length">Average Period Length (Days):</label>
+            <input type="number" id="period-length" min="1" max="10" value="5" required>
+          </div>
+          <button type="submit" class="btn-primary">Calculate & Save Cycle Insights</button>
+        </form>
+      </div>
+
+      <div class="results-section hidden" id="insights-container">
+        <h2>Cycle Insights</h2>
+        <div class="insights-grid">
+          <div class="insight-card">
+            <h3>Next Period Date</h3>
+            <p id="next-period-date" class="insight-value">--</p>
+          </div>
+          <div class="insight-card highlight">
+            <h3>Estimated Ovulation Date</h3>
+            <p id="ovulation-date" class="insight-value">--</p>
+          </div>
+          <div class="insight-card">
+            <h3>Fertility Window</h3>
+            <p id="fertility-window" class="insight-value">--</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tracker-section hidden" id="daily-tracker-container">
+        <h2>Daily Tracker</h2>
+        <form id="daily-tracker-form">
+          <div class="form-group">
+            <label for="tracker-date">Date:</label>
+            <input type="date" id="tracker-date" required>
+          </div>
+
+          <div class="form-group">
+            <label>Mood:</label>
+            <div class="radio-group">
+              <label><input type="radio" name="mood" value="happy"> Happy</label>
+              <label><input type="radio" name="mood" value="calm"> Calm</label>
+              <label><input type="radio" name="mood" value="anxious"> Anxious</label>
+              <label><input type="radio" name="mood" value="sad"> Sad</label>
+              <label><input type="radio" name="mood" value="irritable"> Irritable</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Energy Level:</label>
+            <div class="radio-group">
+              <label><input type="radio" name="energy" value="high"> High</label>
+              <label><input type="radio" name="energy" value="medium"> Medium</label>
+              <label><input type="radio" name="energy" value="low"> Low</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Symptoms (Select all that apply):</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="symptoms" value="cramps"> Cramps</label>
+              <label><input type="checkbox" name="symptoms" value="bloating"> Bloating</label>
+              <label><input type="checkbox" name="symptoms" value="headache"> Headache</label>
+              <label><input type="checkbox" name="symptoms" value="fatigue"> Fatigue</label>
+              <label><input type="checkbox" name="symptoms" value="acne"> Acne</label>
+              <label><input type="checkbox" name="symptoms" value="breast-tenderness"> Breast Tenderness</label>
+              <label><input type="checkbox" name="symptoms" value="spotting"> Spotting</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="flow">Menstrual Flow (if applicable):</label>
+            <select id="flow">
+              <option value="none">None</option>
+              <option value="light">Light</option>
+              <option value="medium">Medium</option>
+              <option value="heavy">Heavy</option>
+              <option value="spotting">Spotting</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-secondary">Save Daily Log</button>
+        </form>
+        <p id="tracker-success-msg" class="success-msg hidden">Daily log saved successfully!</p>
+      </div>
+
+      <div class="history-section hidden" id="history-container">
+        <h2>Tracking History</h2>
+        <div id="history-list" class="history-list">
+          <!-- History items will be injected here via JS -->
+        </div>
+        <div class="export-actions">
+           <button id="btn-export-csv" class="btn-outline">Export Data as CSV</button>
+           <button id="btn-clear-data" class="btn-danger">Clear All Data</button>
+        </div>
+      </div>
+
+      <div class="education-section">
+        <h2>Menstrual Health & Awareness</h2>
+        <p>Understanding your cycle is a key part of sexual and reproductive wellness. By tracking your periods and symptoms, you can better understand your body's natural rhythms and identify any irregularities.</p>
+
+        <h3>Polycystic Ovary Syndrome (PCOS) Awareness</h3>
+        <p>PCOS is a common hormonal disorder that can affect fertility and cause irregular periods, excess androgen levels, and polycystic ovaries. Tracking your cycle can help identify potential signs of PCOS, such as consistently irregular or missed periods. If you notice significant irregularities, consider discussing them with a healthcare provider.</p>
+
+        <h3>Endometriosis Awareness</h3>
+        <p>Endometriosis is a condition where tissue similar to the lining of the uterus grows outside the uterus, causing pain and sometimes infertility. Severe menstrual cramps (dysmenorrhea) that disrupt daily life, chronic pelvic pain, and pain during intercourse can be symptoms. Tracking the severity of your pain and symptoms can provide valuable information for your doctor.</p>
+
+        <p class="disclaimer"><em>Disclaimer: This tool is for educational purposes only and should not replace professional medical advice, diagnosis, or treatment. It is not intended as a reliable method of contraception. Always consult a healthcare provider for medical concerns.</em></p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cycleForm = document.getElementById('cycle-form');
+      const dailyTrackerForm = document.getElementById('daily-tracker-form');
+      const insightsContainer = document.getElementById('insights-container');
+      const dailyTrackerContainer = document.getElementById('daily-tracker-container');
+      const historyContainer = document.getElementById('history-container');
+      const historyList = document.getElementById('history-list');
+      const successMsg = document.getElementById('tracker-success-msg');
+      const btnExportCsv = document.getElementById('btn-export-csv');
+      const btnClearData = document.getElementById('btn-clear-data');
+
+      // Set today's date as default for daily tracker
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('tracker-date').value = today;
+
+      // Load saved cycle data on init
+      loadCycleData();
+      renderHistory();
+
+      // Cycle Form Submit
+      cycleForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const lastPeriod = document.getElementById('last-period').value;
+        const cycleLength = parseInt(document.getElementById('cycle-length').value, 10);
+        const periodLength = parseInt(document.getElementById('period-length').value, 10);
+
+        if (!lastPeriod || isNaN(cycleLength) || isNaN(periodLength)) {
+          alert('Please fill in all cycle information correctly.');
+          return;
+        }
+
+        const cycleData = { lastPeriod, cycleLength, periodLength };
+        localStorage.setItem('cycleData', JSON.stringify(cycleData));
+        calculateInsights(cycleData);
+      });
+
+      // Daily Tracker Form Submit
+      dailyTrackerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const date = document.getElementById('tracker-date').value;
+
+        const moodEl = document.querySelector('input[name="mood"]:checked');
+        const mood = moodEl ? moodEl.value : null;
+
+        const energyEl = document.querySelector('input[name="energy"]:checked');
+        const energy = energyEl ? energyEl.value : null;
+
+        const symptomsEls = document.querySelectorAll('input[name="symptoms"]:checked');
+        const symptoms = Array.from(symptomsEls).map(el => el.value);
+
+        const flow = document.getElementById('flow').value;
+
+        const dailyLog = { date, mood, energy, symptoms, flow };
+
+        saveDailyLog(dailyLog);
+
+        successMsg.classList.remove('hidden');
+        setTimeout(() => successMsg.classList.add('hidden'), 3000);
+
+        // Reset form except date
+        dailyTrackerForm.reset();
+        document.getElementById('tracker-date').value = date;
+      });
+
+      // Export CSV
+      btnExportCsv.addEventListener('click', () => {
+        const history = JSON.parse(localStorage.getItem('dailyTrackerHistory') || '[]');
+        if (history.length === 0) {
+          alert('No tracking data to export.');
+          return;
+        }
+
+        let csvContent = "data:text/csv;charset=utf-8,";
+        csvContent += "Date,Mood,Energy,Flow,Symptoms\n"; // Header row
+
+        history.forEach(log => {
+          const symptomsStr = log.symptoms && log.symptoms.length > 0 ? log.symptoms.join(' | ') : 'None';
+          const row = `${log.date},${log.mood || 'N/A'},${log.energy || 'N/A'},${log.flow || 'none'},"${symptomsStr}"`;
+          csvContent += row + "\n";
+        });
+
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "menstrual_cycle_tracker_data.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      // Clear Data
+      btnClearData.addEventListener('click', () => {
+        if (confirm('Are you sure you want to clear all your tracking data? This cannot be undone.')) {
+          localStorage.removeItem('cycleData');
+          localStorage.removeItem('dailyTrackerHistory');
+          insightsContainer.classList.add('hidden');
+          dailyTrackerContainer.classList.add('hidden');
+          historyContainer.classList.add('hidden');
+          cycleForm.reset();
+          alert('All data has been cleared.');
+        }
+      });
+
+      function loadCycleData() {
+        const savedData = localStorage.getItem('cycleData');
+        if (savedData) {
+          const cycleData = JSON.parse(savedData);
+          document.getElementById('last-period').value = cycleData.lastPeriod;
+          document.getElementById('cycle-length').value = cycleData.cycleLength;
+          document.getElementById('period-length').value = cycleData.periodLength;
+          calculateInsights(cycleData);
+        }
+      }
+
+      function calculateInsights(data) {
+        const [year, month, day] = data.lastPeriod.split('-');
+        const lastPeriodDate = new Date(year, month - 1, day);
+
+        // Next Period
+        const nextPeriodDate = new Date(lastPeriodDate);
+        nextPeriodDate.setDate(lastPeriodDate.getDate() + data.cycleLength);
+
+        // Ovulation (usually 14 days before next period)
+        const ovulationDate = new Date(nextPeriodDate);
+        ovulationDate.setDate(nextPeriodDate.getDate() - 14);
+
+        // Fertility Window (typically 5 days before ovulation to 1 day after)
+        const fertilityStart = new Date(ovulationDate);
+        fertilityStart.setDate(ovulationDate.getDate() - 5);
+        const fertilityEnd = new Date(ovulationDate);
+        fertilityEnd.setDate(ovulationDate.getDate() + 1);
+
+        const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+
+        document.getElementById('next-period-date').textContent = nextPeriodDate.toLocaleDateString(undefined, options);
+        document.getElementById('ovulation-date').textContent = ovulationDate.toLocaleDateString(undefined, options);
+        document.getElementById('fertility-window').textContent = `${fertilityStart.toLocaleDateString(undefined, {month: 'short', day: 'numeric'})} - ${fertilityEnd.toLocaleDateString(undefined, {month: 'short', day: 'numeric'})}`;
+
+        insightsContainer.classList.remove('hidden');
+        dailyTrackerContainer.classList.remove('hidden');
+      }
+
+      function saveDailyLog(log) {
+        let history = JSON.parse(localStorage.getItem('dailyTrackerHistory') || '[]');
+
+        // Remove existing log for this date if it exists (update)
+        history = history.filter(item => item.date !== log.date);
+
+        history.push(log);
+        // Sort newest first
+        history.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        localStorage.setItem('dailyTrackerHistory', JSON.stringify(history));
+        renderHistory();
+      }
+
+      function renderHistory() {
+        const history = JSON.parse(localStorage.getItem('dailyTrackerHistory') || '[]');
+        historyList.innerHTML = '';
+
+        if (history.length > 0) {
+          historyContainer.classList.remove('hidden');
+          history.forEach(log => {
+            const div = document.createElement('div');
+            div.className = 'history-item';
+
+            const symptomsStr = log.symptoms && log.symptoms.length > 0 ? log.symptoms.join(', ') : 'None';
+            const moodStr = log.mood ? log.mood.charAt(0).toUpperCase() + log.mood.slice(1) : 'N/A';
+            const energyStr = log.energy ? log.energy.charAt(0).toUpperCase() + log.energy.slice(1) : 'N/A';
+            const flowStr = log.flow !== 'none' ? log.flow.charAt(0).toUpperCase() + log.flow.slice(1) : 'None';
+
+            div.innerHTML = `
+              <strong>${new Date(log.date).toLocaleDateString()}</strong><br>
+              <span style="color:#5a6b50;">Mood:</span> ${moodStr} |
+              <span style="color:#5a6b50;">Energy:</span> ${energyStr} |
+              <span style="color:#5a6b50;">Flow:</span> ${flowStr}<br>
+              <span style="color:#5a6b50;">Symptoms:</span> ${symptomsStr}
+            `;
+            historyList.appendChild(div);
+          });
+        } else {
+          historyContainer.classList.add('hidden');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
