@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Sexual Communication Skills Builder — Ali Imperiale</title>
+  <meta name="description" content="Comprehensive training platform for sexual communication skills. Practice exercises, skill assessments, and interactive modules for intimate relationship communication.">
+  <meta property="og:title" content="Interactive Sexual Communication Skills Builder — Ali Imperiale">
+  <meta property="og:description" content="Comprehensive training platform for sexual communication skills. Practice exercises, skill assessments, and interactive modules for intimate relationship communication.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/interactive-sexual-communication-skills-builder.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/interactive-sexual-communication-skills-builder.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-color: #FAF8EB;
+      font-family: 'Montserrat', sans-serif;
+      color: #2E3E24;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Site nav inline */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #FAF8EB;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+    .site-nav .nav-links a:hover {
+      opacity: 0.8;
+      color: #AD9846;
+    }
+
+    /* Layout */
+    .page-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .hero-section {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+    .hero-section h1 {
+      font-size: 2.5rem;
+      color: #2E3E24;
+      margin-bottom: 16px;
+    }
+    .hero-section p {
+      font-size: 1.1rem;
+      color: #4A5D3F;
+      line-height: 1.6;
+    }
+
+    /* Content sections structure to be populated */
+    .builder-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .builder-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Sidebar Navigation */
+    .module-nav {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 100px;
+    }
+    .module-nav h3 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      color: #2E3E24;
+      font-size: 1.2rem;
+    }
+    .nav-items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .nav-item {
+      padding: 12px 16px;
+      background: #FAF8EB;
+      border: 1px solid #EAE3C8;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      color: #2E3E24;
+    }
+    .nav-item:hover {
+      background: #F0E8D0;
+    }
+    .nav-item.active {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border-color: #2E3E24;
+    }
+
+    /* Progress Gamification */
+    .progress-widget {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #EAE3C8;
+    }
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .progress-bar-bg {
+      height: 10px;
+      background: #EAE3C8;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: #AD9846;
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+    .milestone-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      background: #eee;
+      color: #888;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .badge.earned {
+      background: #AD9846;
+      color: white;
+    }
+
+    /* Main Content Area */
+    .content-area {
+      background: white;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      min-height: 500px;
+    }
+
+    .module-section {
+      display: none;
+    }
+    .module-section.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .module-title {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #2E3E24;
+      margin-bottom: 12px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #EAE3C8;
+    }
+
+    /* UI Components */
+    .info-box {
+      background: #FAF8EB;
+      padding: 20px;
+      border-left: 4px solid #AD9846;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+    }
+
+    .scenario-card {
+      background: #fff;
+      border: 1px solid #EAE3C8;
+      border-radius: 8px;
+      padding: 24px;
+      margin: 24px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .scenario-text {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #2E3E24;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .option-btn {
+      padding: 16px;
+      background: #FAF8EB;
+      border: 1px solid #EAE3C8;
+      border-radius: 8px;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .option-btn:hover {
+      background: #F0E8D0;
+      transform: translateX(4px);
+    }
+    .option-btn.correct {
+      background: #E8F5E9;
+      border-color: #4CAF50;
+      color: #2E7D32;
+    }
+    .option-btn.incorrect {
+      background: #FFEBEE;
+      border-color: #F44336;
+      color: #C62828;
+    }
+
+    .feedback-box {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 8px;
+      display: none;
+      font-weight: 500;
+    }
+    .feedback-box.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    .feedback-box.correct {
+      background: #E8F5E9;
+      color: #2E7D32;
+      border-left: 4px solid #4CAF50;
+    }
+    .feedback-box.incorrect {
+      background: #FFEBEE;
+      color: #C62828;
+      border-left: 4px solid #F44336;
+    }
+
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .phrase-card {
+      background: #FAF8EB;
+      border: 1px solid #EAE3C8;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .phrase-card h4 {
+      margin-top: 0;
+      color: #AD9846;
+      margin-bottom: 12px;
+    }
+    .phrase-card p {
+      margin: 0;
+      font-style: italic;
+      color: #2E3E24;
+    }
+
+    .action-btn {
+      background: #2E3E24;
+      color: #FAF8EB;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 24px;
+    }
+    .action-btn:hover {
+      background: #1a2414;
+    }
+
+    .quiz-question {
+      margin-bottom: 32px;
+    }
+    .quiz-question h4 {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    #quiz-result {
+      display: none;
+      margin-top: 32px;
+      padding: 24px;
+      background: #FAF8EB;
+      border-radius: 12px;
+      border: 2px solid #AD9846;
+    }
+
+    .template-card {
+      background: white;
+      border: 1px solid #EAE3C8;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .template-card h4 {
+      margin-top: 0;
+      color: #2E3E24;
+    }
+    .template-box {
+      background: #f9f9f9;
+      padding: 16px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      border-left: 3px solid #ccc;
+    }
+    .copy-btn {
+      background: #EAE3C8;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .copy-btn:hover {
+      background: #d4ccb3;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Interactive Sexual Communication Skills Builder",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "url": "https://aliimperiale.com/interactive-sexual-communication-skills-builder.html",
+    "description": "Interactive training platform with modules, practice exercises, and skill assessments for intimate communication.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Ali Imperiale",
+      "url": "https://aliimperiale.com"
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-container">
+    <section class="hero-section">
+      <h1>Interactive Sexual Communication Skills Builder</h1>
+      <p>A comprehensive training platform to help you build intimacy, navigate difficult conversations, and express your desires and boundaries with confidence.</p>
+    </section>
+
+    <div class="builder-container">
+      <aside class="module-nav">
+        <h3>Training Modules</h3>
+        <div class="nav-items" id="nav-items">
+
+          <button class="nav-item active" data-target="module-overview">Overview & Assessment</button>
+          <button class="nav-item" data-target="module-desires">Expressing Desires</button>
+          <button class="nav-item" data-target="module-boundaries">Setting Boundaries</button>
+          <button class="nav-item" data-target="module-feedback">Giving Feedback</button>
+          <button class="nav-item" data-target="module-conflict">Conflict Resolution</button>
+          <button class="nav-item" data-target="module-fantasies">Discussing Fantasies</button>
+          <button class="nav-item" data-target="module-templates">Templates & Scripts</button>
+
+        </div>
+
+        <div class="progress-widget">
+          <div class="progress-header">
+            <span>Overall Progress</span>
+            <span id="progress-text">0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar"></div>
+          </div>
+          <div class="milestone-badges" id="badges-container">
+            <!-- Badges populated by JS -->
+          </div>
+        </div>
+      </aside>
+
+      <section class="content-area" id="content-area">
+
+        <!-- Module: Overview & Assessment -->
+        <div class="module-section active" id="module-overview">
+          <h2 class="module-title">Communication Style Assessment</h2>
+          <p>Before diving into the skill-building modules, let's understand your baseline communication style. Answer the following questions honestly.</p>
+
+          <div class="info-box">
+            Understanding your default response helps tailor your practice. Do you tend to avoid, accommodate, assert, or compromise?
+          </div>
+
+          <div class="quiz-container" id="quiz-container">
+            <!-- Questions injected via JS -->
+          </div>
+          <button class="action-btn" id="submit-quiz-btn">Get My Results</button>
+
+          <div id="quiz-result">
+            <h3 id="quiz-result-title">Your Style: Assessing...</h3>
+            <p id="quiz-result-desc"></p>
+          </div>
+        </div>
+
+        <!-- Module: Expressing Desires -->
+        <div class="module-section" id="module-desires">
+          <h2 class="module-title">Expressing Desires</h2>
+          <p>Asking for what you want can feel vulnerable. This module helps you build the confidence and vocabulary to express your needs clearly and positively.</p>
+
+          <div class="info-box">
+            <strong>Key Concept: The "I Want" Formula.</strong> Use "I" statements to own your desire without making it a demand or a critique of your partner. <em>"I would love it if we..."</em> instead of <em>"You never..."</em>
+          </div>
+
+          <h3>Practice Scenario</h3>
+          <div class="scenario-card" id="scenario-desires">
+            <div class="scenario-text">You want to try incorporating a blindfold into your play, but you're nervous about how your partner will react. How do you bring it up?</div>
+            <div class="options-grid">
+              <button class="option-btn" data-correct="false" data-feedback="Too passive. Minimizing your desire makes it easy to brush off and lacks clarity.">"I don't know, maybe we could try a blindfold or something? It's fine if you don't want to."</button>
+              <button class="option-btn" data-correct="true" data-feedback="Excellent! It's positive, owns the desire, and invites collaboration without pressure.">"I was reading about sensory play and thought it sounded really hot. Would you be open to trying a blindfold sometime?"</button>
+              <button class="option-btn" data-correct="false" data-feedback="A bit demanding. This removes their agency and might put them on the defensive.">"We need to try using a blindfold tonight. Go get one."</button>
+            </div>
+            <div class="feedback-box"></div>
+          </div>
+
+          <h3>Conversation Starters</h3>
+          <div class="library-grid">
+            <div class="phrase-card">
+              <h4>The Soft Open</h4>
+              <p>"I've been thinking about [X] lately, and it turns me on. What are your thoughts on it?"</p>
+            </div>
+            <div class="phrase-card">
+              <h4>The Compliment Sandwich</h4>
+              <p>"I love when you do [Y]. I think it would feel amazing to combine that with [X]."</p>
+            </div>
+            <div class="phrase-card">
+              <h4>The Curiosity Approach</h4>
+              <p>"Have you ever thought about trying [X]? I'd love to explore that with you."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module: Setting Boundaries -->
+        <div class="module-section" id="module-boundaries">
+          <h2 class="module-title">Setting Boundaries</h2>
+          <p>Boundaries are essential for emotional safety and enthusiastic consent. They are not rejections; they are the guidelines for how you can best be loved and touched.</p>
+
+          <div class="info-box">
+            <strong>Key Concept: Clear and Firm.</strong> A boundary should be stated clearly without apology. Remember, "No" is a complete sentence.
+          </div>
+
+          <h3>Practice Scenario</h3>
+          <div class="scenario-card" id="scenario-boundaries">
+            <div class="scenario-text">Your partner touches you in a way that feels uncomfortable or painful. You need them to stop immediately.</div>
+            <div class="options-grid">
+              <button class="option-btn" data-correct="false" data-feedback="While polite, this doesn't clearly communicate that they need to stop right now.">"Um, maybe we could do something else?"</button>
+              <button class="option-btn" data-correct="false" data-feedback="Attacking your partner will cause them to shut down and become defensive, escalating the situation.">"Why do you always do that? It hurts! You never listen to me."</button>
+              <button class="option-btn" data-correct="true" data-feedback="Perfect. Direct, clear, and immediate. You can elaborate later once the action has stopped.">"Stop, that hurts. Let's take a break for a second."</button>
+            </div>
+            <div class="feedback-box"></div>
+          </div>
+
+          <h3>Boundary Phrases</h3>
+          <div class="library-grid">
+            <div class="phrase-card">
+              <h4>The Hard Limit</h4>
+              <p>"That is a hard limit for me. I am not comfortable with [X]."</p>
+            </div>
+            <div class="phrase-card">
+              <h4>The Redirection</h4>
+              <p>"I'm not into [X] right now, but I'd really love it if we did [Y]."</p>
+            </div>
+            <div class="phrase-card">
+              <h4>The Check-In</h4>
+              <p>"Can we pause? I need to check in with how I'm feeling right now."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module: Giving Feedback -->
+        <div class="module-section" id="module-feedback">
+          <h2 class="module-title">Giving & Receiving Feedback</h2>
+          <p>Navigating feedback during intimacy requires vulnerability and tact. The goal is to guide your partner toward what feels good, not criticize what doesn't.</p>
+
+          <div class="info-box">
+            <strong>Key Concept: Focus on the Positive.</strong> Guide your partner toward the sensations you enjoy ("faster," "slower," "right there") rather than critiquing their technique ("you're doing it wrong").
+          </div>
+
+          <h3>Practice Scenario</h3>
+          <div class="scenario-card" id="scenario-feedback">
+            <div class="scenario-text">Your partner is going a bit too fast and rough during manual stimulation. You want them to slow down and use a lighter touch.</div>
+            <div class="options-grid">
+              <button class="option-btn" data-correct="true" data-feedback="Excellent. Positive reinforcement combined with clear direction.">"That feels good, but it would feel amazing if you went a little slower and softer."</button>
+              <button class="option-btn" data-correct="false" data-feedback="While direct, it focuses entirely on the negative and might make them feel insecure.">"Ouch, you're going way too fast. Slow down."</button>
+              <button class="option-btn" data-correct="false" data-feedback="Ignoring your discomfort trains your partner to continue doing something you don't enjoy.">Say nothing and wait for them to finish or change their rhythm.</button>
+            </div>
+            <div class="feedback-box"></div>
+          </div>
+        </div>
+
+        <!-- Module: Conflict Resolution -->
+        <div class="module-section" id="module-conflict">
+          <h2 class="module-title">Navigating Differences & Conflict</h2>
+          <p>When desires are mismatched or feelings get hurt, communication is key. This module covers addressing concerns constructively.</p>
+
+          <div class="info-box">
+            <strong>Key Concept: The 'Us vs. The Problem' Mindset.</strong> Frame disagreements as a shared challenge you are working together to solve, rather than fighting against each other.
+          </div>
+
+          <h3>Practice Scenario</h3>
+          <div class="scenario-card" id="scenario-conflict">
+            <div class="scenario-text">You and your partner have different libidos recently, and it's causing tension. How do you address the 'elephant in the room'?</div>
+            <div class="options-grid">
+              <button class="option-btn" data-correct="false" data-feedback="Accusatory and places all the blame on them, leading to defensiveness.">"Why don't you ever want to be intimate anymore? Is there something wrong with me?"</button>
+              <button class="option-btn" data-correct="true" data-feedback="Perfect. Uses 'I' statements, expresses vulnerability, and invites a team approach to the issue.">"I've noticed we haven't been connecting physically as much lately, and I'm feeling a bit disconnected. Can we talk about where we're both at?"</button>
+              <button class="option-btn" data-correct="false" data-feedback="Sarcasm breeds resentment and doesn't actually solve the problem or open a healthy dialogue.">"Wow, a whole week without sex. New record for us."</button>
+            </div>
+            <div class="feedback-box"></div>
+          </div>
+        </div>
+
+        <!-- Module: Discussing Fantasies -->
+        <div class="module-section" id="module-fantasies">
+          <h2 class="module-title">Discussing Fantasies Safely</h2>
+          <p>Sharing fantasies requires immense trust. It's important to differentiate between fantasies you want to act out and those you just enjoy mentally.</p>
+
+          <div class="info-box">
+            <strong>Key Concept: Remove the Pressure.</strong> State upfront whether this is a fantasy you want to try, or just a fun scenario to talk about in bed.
+          </div>
+
+          <h3>Practice Scenario</h3>
+          <div class="scenario-card" id="scenario-fantasies">
+            <div class="scenario-text">You have a roleplay fantasy you'd love to try, but you're worried your partner might find it weird.</div>
+            <div class="options-grid">
+              <button class="option-btn" data-correct="false" data-feedback="Testing the waters by pretending it's a joke undermines your actual desire and makes it hard to have a genuine conversation.">"Haha, imagine if we roleplayed as strangers at a bar. That would be so silly, right?"</button>
+              <button class="option-btn" data-correct="true" data-feedback="Great! It acknowledges the vulnerability, sets a safe space, and asks for consent to even have the conversation.">"I had a really hot thought the other day about a roleplay scenario. Is it okay if I share it with you? No pressure to act on it."</button>
+              <button class="option-btn" data-correct="false" data-feedback="Surprising someone with a fantasy during the act without prior discussion can be jarring and violate consent if it involves unexpected actions.">Wait until you're in the middle of being intimate and suddenly start acting out the roleplay.</button>
+            </div>
+            <div class="feedback-box"></div>
+          </div>
+        </div>
+
+        <!-- Module: Templates -->
+        <div class="module-section" id="module-templates">
+          <h2 class="module-title">Communication Templates & Scripts</h2>
+          <p>Sometimes you just need a starting point. Use these templates to structure difficult conversations. Fill in the brackets with your specific feelings and needs.</p>
+
+          <div class="template-card">
+            <h4>The "When You / I Feel" Script</h4>
+            <p>Useful for addressing specific behaviors without attacking character.</p>
+            <div class="template-box">"When [describe the action neutrally], I feel [describe your emotion] because [explain your need or boundary]. Moving forward, I would appreciate it if we could [suggest an alternative]."</div>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy Text', 2000);">Copy Text</button>
+          </div>
+
+          <div class="template-card">
+            <h4>The Check-In Script</h4>
+            <p>Useful for initiating regular relationship or intimacy check-ins.</p>
+            <div class="template-box">"I've really enjoyed [something positive lately]. I wanted to check in and see how you're feeling about our physical connection right now. Is there anything you'd like more or less of?"</div>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy Text', 2000);">Copy Text</button>
+          </div>
+
+          <div class="template-card">
+            <h4>The "Not Tonight" Script</h4>
+            <p>Useful for declining intimacy gracefully while affirming your partner.</p>
+            <div class="template-box">"I love you, and I find you so attractive, but my body is telling me it needs rest tonight. Could we just cuddle instead, and maybe plan for [tomorrow/the weekend]?"</div>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy Text', 2000);">Copy Text</button>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+
+
+  <script src="mobile-nav.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Elements
+      const navItems = document.querySelectorAll('.nav-item');
+      const moduleSections = document.querySelectorAll('.module-section');
+      const optionBtns = document.querySelectorAll('.option-btn');
+      const progressBar = document.getElementById('progress-bar');
+      const progressText = document.getElementById('progress-text');
+      const badgesContainer = document.getElementById('badges-container');
+      const quizContainer = document.getElementById('quiz-container');
+      const submitQuizBtn = document.getElementById('submit-quiz-btn');
+      const quizResult = document.getElementById('quiz-result');
+      const quizResultTitle = document.getElementById('quiz-result-title');
+      const quizResultDesc = document.getElementById('quiz-result-desc');
+
+      // State (load from localStorage)
+      let state = JSON.parse(localStorage.getItem('sexualCommBuilderState')) || {
+        completedModules: [],
+        quizScore: null,
+        scenariosCompleted: 0
+      };
+
+      const totalModules = moduleSections.length;
+
+      // Update UI on load
+      updateProgressUI();
+
+      // Module Navigation
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          // Remove active classes
+          navItems.forEach(nav => nav.classList.remove('active'));
+          moduleSections.forEach(section => section.classList.remove('active'));
+
+          // Add active class to clicked nav and corresponding section
+          item.classList.add('active');
+          const targetId = item.getAttribute('data-target');
+          document.getElementById(targetId).classList.add('active');
+
+          // Mark module as visited/completed implicitly
+          if (!state.completedModules.includes(targetId)) {
+            state.completedModules.push(targetId);
+            saveState();
+            updateProgressUI();
+          }
+        });
+      });
+
+      // Interactive Simulator (Practice Scenarios)
+      optionBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const isCorrect = btn.getAttribute('data-correct') === 'true';
+          const feedbackText = btn.getAttribute('data-feedback');
+          const parentGrid = btn.closest('.options-grid');
+          const feedbackBox = parentGrid.nextElementSibling; // The feedback-box div
+
+          // Reset styles in this grid
+          parentGrid.querySelectorAll('.option-btn').forEach(b => {
+            b.classList.remove('correct', 'incorrect');
+          });
+
+          // Apply feedback classes
+          if (isCorrect) {
+            btn.classList.add('correct');
+            feedbackBox.className = 'feedback-box show correct';
+            feedbackBox.innerHTML = `<strong>Great Choice:</strong> ${feedbackText}`;
+
+            // Track scenario completion
+            const scenarioId = parentGrid.closest('.scenario-card').id;
+            if (!state.completedModules.includes(scenarioId)) {
+              state.scenariosCompleted++;
+              state.completedModules.push(scenarioId);
+              saveState();
+              updateProgressUI();
+            }
+          } else {
+            btn.classList.add('incorrect');
+            feedbackBox.className = 'feedback-box show incorrect';
+            feedbackBox.innerHTML = `<strong>Consider Rephrasing:</strong> ${feedbackText}`;
+          }
+        });
+      });
+
+      // Communication Style Assessment Quiz
+      const quizQuestions = [
+        { q: "When you want to initiate intimacy, you usually:", opts: [
+          { t: "Wait for them to initiate or drop subtle hints.", v: "avoid" },
+          { t: "Directly ask if they're in the mood.", v: "assert" },
+          { t: "Just go along with whatever they want to do.", v: "accommodate" }
+        ]},
+        { q: "If something doesn't feel good during sex, you:", opts: [
+          { t: "Power through it, hoping it ends soon.", v: "avoid" },
+          { t: "Politely suggest a different position or action.", v: "accommodate" },
+          { t: "Immediately ask to stop or change what we're doing.", v: "assert" }
+        ]},
+        { q: "When discussing a difficult emotional topic, you:", opts: [
+          { t: "Try to change the subject or avoid the conflict.", v: "avoid" },
+          { t: "Try to find a middle ground that makes everyone happy.", v: "accommodate" },
+          { t: "State your needs clearly, even if it causes tension.", v: "assert" }
+        ]}
+      ];
+
+      function renderQuiz() {
+        quizContainer.innerHTML = '';
+        quizQuestions.forEach((question, index) => {
+          const qDiv = document.createElement('div');
+          qDiv.className = 'quiz-question';
+          qDiv.innerHTML = `<h4>${index + 1}. ${question.q}</h4>`;
+
+          const optionsDiv = document.createElement('div');
+          optionsDiv.className = 'options-grid';
+
+          question.opts.forEach(opt => {
+            const label = document.createElement('label');
+            label.className = 'option-btn';
+            label.style.display = 'block';
+            label.innerHTML = `<input type="radio" name="q${index}" value="${opt.v}" style="margin-right:10px;"> ${opt.t}`;
+            optionsDiv.appendChild(label);
+          });
+
+          qDiv.appendChild(optionsDiv);
+          quizContainer.appendChild(qDiv);
+        });
+      }
+
+      renderQuiz();
+
+      submitQuizBtn.addEventListener('click', () => {
+        let avoid = 0, accommodate = 0, assert = 0;
+        let answered = 0;
+
+        quizQuestions.forEach((_, i) => {
+          const selected = document.querySelector(`input[name="q${i}"]:checked`);
+          if (selected) {
+            answered++;
+            if(selected.value === 'avoid') avoid++;
+            if(selected.value === 'accommodate') accommodate++;
+            if(selected.value === 'assert') assert++;
+          }
+        });
+
+        if (answered < quizQuestions.length) {
+          alert("Please answer all questions to see your results.");
+          return;
+        }
+
+        // Determine dominant style
+        let style = "Balanced Communicator";
+        let desc = "You adapt your communication style depending on the situation, balancing your needs with your partner's.";
+
+        if (avoid > accommodate && avoid > assert) {
+          style = "Avoidant Communicator";
+          desc = "You tend to withdraw from difficult conversations or wait for your partner to take the lead. Practice stating your needs using the 'I Want' formula in the Expressing Desires module.";
+        } else if (accommodate > avoid && accommodate > assert) {
+          style = "Accommodating Communicator";
+          desc = "You often prioritize your partner's needs over your own to keep the peace. Focus on the Setting Boundaries module to practice standing firm on what feels good for you.";
+        } else if (assert > avoid && assert > accommodate) {
+          style = "Assertive Communicator";
+          desc = "You are clear and direct about your needs. Ensure you're balancing this directness with active listening. Review the Giving Feedback module to ensure your assertiveness remains constructive.";
+        }
+
+        quizResultTitle.innerText = `Your Dominant Style: ${style}`;
+        quizResultDesc.innerText = desc;
+        quizResult.style.display = 'block';
+
+        // Save quiz completion to state
+        state.quizScore = style;
+        saveState();
+        updateProgressUI();
+
+        // Scroll to results
+        quizResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+      // Helper functions
+      function saveState() {
+        localStorage.setItem('sexualCommBuilderState', JSON.stringify(state));
+      }
+
+      function updateProgressUI() {
+        // Calculate progress based on unique visited modules + scenarios + quiz
+        let totalItems = totalModules + 4 + 1; // modules + scenarios + quiz
+        let completedCount = state.completedModules.length + (state.quizScore ? 1 : 0);
+
+        // Cap progress at 100%
+        let progressPercent = Math.min(100, Math.round((completedCount / totalItems) * 100));
+
+        progressBar.style.width = `${progressPercent}%`;
+        progressText.innerText = `${progressPercent}%`;
+
+        // Update badges
+        badgesContainer.innerHTML = '';
+        const milestones = [
+          { percent: 25, label: "Beginner Explorer" },
+          { percent: 50, label: "Skill Builder" },
+          { percent: 75, label: "Confident Communicator" },
+          { percent: 100, label: "Communication Master" }
+        ];
+
+        milestones.forEach(m => {
+          const badge = document.createElement('span');
+          badge.className = `badge ${progressPercent >= m.percent ? 'earned' : ''}`;
+          badge.innerText = m.label;
+          badgesContainer.appendChild(badge);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
