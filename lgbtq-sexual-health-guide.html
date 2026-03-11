@@ -512,6 +512,71 @@
       </div>
     </section>
 
+
+    <!-- New Content: Hormone Therapy -->
+    <section class="card" id="hormone-therapy">
+      <h2>Hormone Therapy Effects on Sexuality</h2>
+      <p>Hormone Replacement Therapy (HRT) can significantly impact libido, sexual function, and erogenous zones. Understanding these changes is crucial for a healthy sexual relationship with yourself and your partners.</p>
+      <ul style="margin-left: 20px; line-height: 1.6; color: #4a5a40;">
+        <li style="margin-bottom: 8px;"><strong>Testosterone:</strong> Often increases libido, can cause bottom growth (which may increase sensitivity), and can change the scent and taste of natural lubrication. It may also cause vaginal atrophy, making penetration painful without proper lubrication or localized estrogen.</li>
+        <li style="margin-bottom: 8px;"><strong>Estrogen/Progesterone:</strong> May initially decrease libido, alter erectile function (making erections softer or less frequent), and shift erogenous zones to be more full-body rather than genitally focused.</li>
+      </ul>
+      <p style="margin-top: 16px;"><em>Communication tip:</em> As your body changes, so might the words you use to describe it. Have ongoing conversations with partners about what feels good and what language is affirming.</p>
+    </section>
+
+    <!-- New Content: Safer Sex Practices -->
+    <section class="card" id="safer-sex">
+      <h2>Safer Sex Practices for All Gender Combinations</h2>
+      <p>Safer sex isn't a one-size-fits-all approach. It requires understanding the specific acts you engage in and the bodies involved.</p>
+      <ul style="margin-left: 20px; line-height: 1.6; color: #4a5a40;">
+        <li style="margin-bottom: 8px;"><strong>Barrier Methods:</strong> External and internal condoms, dental dams (or cut-open condoms), and gloves are essential for preventing STI transmission during penetrative and oral sex, as well as manual stimulation.</li>
+        <li style="margin-bottom: 8px;"><strong>Toy Safety:</strong> Never share porous toys (like jelly rubber) without a barrier. Wash silicone, glass, and metal toys with antibacterial soap or toy cleaner between partners or when switching between body parts.</li>
+        <li style="margin-bottom: 8px;"><strong>Testing:</strong> Regular STI screening is vital. Discuss your specific sexual practices with an affirming healthcare provider to ensure they test the correct sites (e.g., throat, rectum, genitals).</li>
+      </ul>
+      <div id="safer-sex-checklist" style="background: #FAF8EB; border: 1px solid #EBE9D9; padding: 24px; border-radius: 12px; margin-top: 24px;">
+        <h3 style="margin-top: 0; color: #2E3E24;">Essential Safer Sex Toolkit</h3>
+        <!-- Checklist injected via JS -->
+      </div>
+    </section>
+
+    <!-- New Content: Affirming Healthcare -->
+    <section class="card" id="affirming-healthcare">
+      <h2>Finding Affirming Healthcare</h2>
+      <p>Access to knowledgeable, non-judgmental healthcare is a cornerstone of LGBTQ+ sexual wellness. An affirming provider won't make assumptions about your orientation, practices, or gender identity.</p>
+      <div id="provider-finder" style="margin-top: 24px;">
+        <h3 style="color: #2E3E24;">Provider Interview Guide</h3>
+        <p>When seeking a new provider, consider asking these questions to gauge their cultural competency:</p>
+        <!-- Provider Qs injected via JS -->
+      </div>
+    </section>
+
+    <!-- New Content: Transition & Sexuality -->
+    <section class="card" id="transition-sexuality">
+      <h2>Transition and Sexuality</h2>
+      <p>Medical and social transition can reshape how you experience intimacy. Gender dysphoria can make sex challenging, while gender euphoria can unlock new levels of pleasure.</p>
+      <div id="transition-timeline-tool" style="background: #FAF8EB; border: 1px solid #EBE9D9; padding: 24px; border-radius: 12px; margin-top: 24px;">
+        <h3 style="margin-top: 0; color: #2E3E24;">Navigating Intimacy Through Transition Phases</h3>
+        <p>Click a phase to learn more about common sexual health considerations.</p>
+        <!-- Timeline injected via JS -->
+      </div>
+    </section>
+
+    <!-- New Content: Coming Out Resources -->
+    <section class="card" id="coming-out">
+      <h2>Coming Out & Sexual Identity</h2>
+      <p>Coming out is an ongoing process, not a single event. It can profoundly affect your sexual health by allowing you to authentically explore your desires. Remember that your sexuality is valid regardless of whether you are "out" or not. Finding community and supportive peers is critical during this phase.</p>
+    </section>
+
+    <!-- New Content: Mental Health & Community -->
+    <section class="card" id="mental-health">
+      <h2>Mental Health, Support, and Community Building</h2>
+      <p>Mental health and sexual health are deeply intertwined. Minority stress—the chronic stress of living in a marginalized group—can negatively impact libido and relationship satisfaction.</p>
+      <ul style="margin-left: 20px; line-height: 1.6; color: #4a5a40;">
+        <li style="margin-bottom: 8px;"><strong>Therapy:</strong> Seek out queer-affirming therapists who understand the nuances of LGBTQ+ relationships and minority stress.</li>
+        <li style="margin-bottom: 8px;"><strong>Community:</strong> Building a "chosen family" and engaging in queer spaces (both physical and digital) fosters resilience and provides safe environments to discuss sexual health openly.</li>
+      </ul>
+    </section>
+
     <!-- Visual FAQ Section -->
     <section class="card" id="faq">
       <h2>Frequently Asked Questions</h2>
@@ -610,6 +675,92 @@
 
   <script src="mobile-nav.js" defer></script>
   <script>
+
+    // Safer Sex Checklist
+    const saferSexChecklist = document.getElementById('safer-sex-checklist');
+    if (saferSexChecklist) {
+        const items = [
+            "Internal/External condoms (latex or polyisoprene if allergic)",
+            "Dental dams (or cut-open condoms)",
+            "Water-based or silicone lube (ensure compatibility with toys/condoms)",
+            "Gloves (nitrile or vinyl)",
+            "Antibacterial toy cleaner",
+            "Recent STI testing discussion"
+        ];
+
+        let checklistHTML = '<ul style="list-style: none; padding: 0; margin-top: 16px;">';
+        items.forEach((item, index) => {
+            checklistHTML += `
+                <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; transition: background 0.2s; position: relative;" class="checklist-item">
+                    <input type="checkbox" id="item-${index}" style="width: 20px; height: 20px; accent-color: #AD9846; cursor: pointer;">
+                    <label for="item-${index}" style="cursor: pointer; font-size: 1.05rem; color: #2E3E24; user-select: none;">${item}</label>
+                </li>
+            `;
+        });
+        checklistHTML += '</ul>';
+        saferSexChecklist.innerHTML += checklistHTML;
+
+        const styleBlock = document.createElement('style');
+        styleBlock.textContent = `
+            .checklist-item:focus-within {
+                background-color: #fff;
+                outline: 2px solid #AD9846;
+            }
+        `;
+        document.head.appendChild(styleBlock);
+    }
+
+    // Provider Interview Guide
+    const providerFinder = document.getElementById('provider-finder');
+    if (providerFinder) {
+        const questions = [
+            "What is your experience treating LGBTQ+ patients?",
+            "Are you familiar with WPATH standards of care?",
+            "Does your intake form include options for chosen name and pronouns?",
+            "If I need a specialist, do you have a network of affirming providers?",
+            "How do you handle discussions about sexual health outside of heteronormative frameworks?"
+        ];
+
+        let providerHTML = '<div style="background: #fff; padding: 20px; border-radius: 12px; margin-top: 16px; border: 1px solid #EBE9D9;">';
+        questions.forEach(q => {
+            providerHTML += `<div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: ${q === questions[questions.length - 1] ? 'none' : '1px solid #EBE9D9'};"><strong style="color: #AD9846;">Q:</strong> ${q}</div>`;
+        });
+        providerHTML += '</div>';
+        providerFinder.innerHTML += providerHTML;
+    }
+
+    // Transition Timeline
+    const transitionTimeline = document.getElementById('transition-timeline-tool');
+    const phases = [
+        { id: 'pre', title: 'Pre-Transition / Exploring', desc: 'Focus on communication. Discuss what words feel good for your body and what acts feel affirming or dysphoric.' },
+        { id: 'early', title: 'Early Medical Transition', desc: 'Hormonal shifts can wildly change libido (up or down). Sensitivity and erogenous zones may shift. Patience and relearning are key.' },
+        { id: 'post', title: 'Post-Surgical Healing', desc: 'Prioritize non-sexual intimacy and emotional connection while healing. Slowly reintroduce touch and communicate heavily about changing sensations.' }
+    ];
+
+    if (transitionTimeline) {
+        let timelineHTML = '<div style="display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap;">';
+        phases.forEach(phase => {
+            timelineHTML += `
+                <button class="phase-btn" data-phase="${phase.id}" style="padding: 10px 20px; background: #2E3E24; color: #FAF8EB; border: none; border-radius: 20px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.9rem; transition: background 0.2s;" onmouseover="this.style.background='#4a5a40'" onmouseout="this.style.background='#2E3E24'">
+                    ${phase.title}
+                </button>
+            `;
+        });
+        timelineHTML += '</div><div id="phase-content" style="background: #fff; border: 1px solid #EBE9D9; padding: 24px; border-radius: 12px; border-left: 4px solid #AD9846; min-height: 80px; font-size: 1.05rem; color: #4a5a40;">Select a phase above to learn more.</div>';
+        transitionTimeline.innerHTML += timelineHTML;
+
+        document.querySelectorAll('.phase-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const phaseId = this.getAttribute('data-phase');
+                const phase = phases.find(p => p.id === phaseId);
+                if (phase) {
+                    document.getElementById('phase-content').innerHTML = `<strong>${phase.title}:</strong> ${phase.desc}`;
+                }
+            });
+        });
+    }
+
+
     // FAQ Toggle
     document.querySelectorAll('.faq-question').forEach(function(question) {
       question.addEventListener('click', function() {
