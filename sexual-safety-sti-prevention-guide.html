@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Safety & STI Prevention Guide | Ali Imperiale</title>
+  <meta name="description" content="A comprehensive, evidence-based guide to sexual safety, STI prevention, barrier methods, testing schedules, and communication strategies for safer sex.">
+  <meta property="og:title" content="Sexual Safety & STI Prevention Guide">
+  <meta property="og:description" content="A comprehensive, evidence-based guide to sexual safety, STI prevention, barrier methods, testing schedules, and communication strategies for safer sex.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-safety-sti-prevention-guide.html">
+  <meta property="og:image" content="https://aliimperiale.com/hero-ali.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-safety-sti-prevention-guide.html">
+
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10S91R0C23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-10S91R0C23');
+  </script>
+
+  <style>
+    /* Guide Specific Styles */
+    :root {
+      --bg-color: #FAF8EB;
+      --text-color: #2E3E24;
+      --accent-color: #AD9846;
+      --card-bg: #FFFFFF;
+      --border-color: rgba(46, 62, 36, 0.1);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+
+    /* Site Nav Inline Styles (from index.html) */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+
+    .hero-header {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-header h1 {
+      color: var(--bg-color);
+      font-size: 2.5rem;
+      max-width: 800px;
+      margin: 0 auto 15px;
+    }
+
+    .hero-header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    .guide-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .guide-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .toc-sidebar {
+      position: sticky;
+      top: 100px;
+      height: max-content;
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    @media (max-width: 900px) {
+      .toc-sidebar {
+        position: static;
+        margin-bottom: 30px;
+      }
+    }
+
+    .toc-sidebar h3 {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 8px;
+    }
+
+    .toc-sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .toc-sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .toc-sidebar a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .toc-sidebar a:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    .content-area {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    @media (max-width: 600px) {
+      .content-area {
+        padding: 24px;
+      }
+    }
+
+    .content-section {
+      margin-bottom: 48px;
+    }
+
+    .content-section h2 {
+      font-size: 1.8rem;
+      color: var(--text-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .content-section h3 {
+      font-size: 1.4rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .content-section p {
+      margin-bottom: 16px;
+    }
+
+    .content-section ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .content-section li {
+      margin-bottom: 8px;
+    }
+
+    .info-box {
+      background-color: var(--bg-color);
+      border-left: 4px solid var(--accent-color);
+      padding: 20px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .info-box h4 {
+      margin-top: 0;
+      color: var(--accent-color);
+    }
+
+    .quote-block {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-color);
+      border-left: 3px solid var(--text-color);
+      padding-left: 20px;
+      margin: 30px 0;
+      opacity: 0.9;
+    }
+
+    .quote-author {
+      font-size: 0.9rem;
+      font-style: normal;
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+
+    .card {
+      background: var(--bg-color);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .card h4 {
+      color: var(--accent-color);
+      margin-top: 0;
+    }
+
+    .script-box {
+      background: #f0f4ec;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      font-family: monospace;
+      font-size: 0.95rem;
+      border: 1px dashed var(--text-color);
+    }
+
+    .disclaimer {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-question {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .faq-answer {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero-header">
+    <h1>The Comprehensive Guide to Sexual Safety &amp; STI Prevention</h1>
+    <p>Evidence-based information, practical tools, and communication strategies for prioritizing your sexual health.</p>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="guide-container">
+
+    <!-- Sidebar / TOC -->
+    <aside class="toc-sidebar">
+      <nav class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+          <li><a href="#barrier-methods">Barrier Methods</a></li>
+          <li><a href="#testing">STI Testing Schedules</a></li>
+          <li><a href="#communication">Communication &amp; Disclosure</a></li>
+          <li><a href="#risk-reduction">Risk Reduction</a></li>
+          <li><a href="#symptoms-care">Symptoms &amp; Seeking Care</a></li>
+          <li><a href="#prep-pep-vaccines">PrEP, PEP &amp; Vaccines</a></li>
+          <li><a href="#common-stis">Common STIs</a></li>
+          <li><a href="#myths-stigma">Myths &amp; Stigma</a></li>
+          <li><a href="#tools">Practical Tools</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <main class="content-area">
+
+      <!-- Introduction -->
+      <section class="content-section">
+        <p>Welcome to the <strong>Sexual Safety &amp; STI Prevention Guide</strong>. When it comes to sexual health, knowledge is your most powerful tool. Prioritizing safety doesn't mean sacrificing pleasure—in fact, when you and your partners communicate openly and take proactive steps, it builds trust and allows for deeper, more relaxed intimacy.</p>
+        <p>This comprehensive guide covers everything from proper barrier method usage and testing timelines to effective communication strategies and recognizing symptoms. Let's destigmatize sexual health and make informed, empowering choices.</p>
+      </section>
+
+      <!-- 1. Barrier Methods -->
+      <section id="barrier-methods" class="content-section">
+        <h2>1. Barrier Methods &amp; Proper Usage</h2>
+        <p>Barrier methods are the frontline defense against sexually transmitted infections (STIs) during penetrative and oral sex. When used correctly and consistently, they significantly reduce risk.</p>
+
+        <h3>Condom Types &amp; Effectiveness</h3>
+        <p>External (male) and internal (female) condoms provide excellent protection against fluid-transmitted STIs (like HIV, Chlamydia, Gonorrhea) and reduce the risk of skin-to-skin infections (like HPV, Herpes, Syphilis).</p>
+        <ul>
+          <li><strong>Latex Condoms:</strong> The most common, highly effective, and affordable. <em>Note: Only use water-based or silicone-based lubricants with latex. Oil-based lubes (like coconut oil or Vaseline) will break them down.</em></li>
+          <li><strong>Polyurethane/Polyisoprene:</strong> Excellent alternatives for those with latex allergies. Polyurethane conducts body heat well and can be used with oil-based lubes.</li>
+          <li><strong>Internal Condoms:</strong> Worn inside the vagina or anus. They provide a broader ring of coverage on the outside, which can offer slightly more protection against skin-to-skin STIs.</li>
+        </ul>
+
+        <h3>Dental Dams and Gloves</h3>
+        <p>For activities involving the vulva, anus, or manual stimulation, other barriers are crucial:</p>
+        <ul>
+          <li><strong>Dental Dams:</strong> Thin, square pieces of latex or polyurethane used during oral sex on a vulva or anus (rimming). They block fluids and skin-to-skin contact. <em>DIY tip: You can cut the tip and sides off an unlubricated condom to create a makeshift dam.</em></li>
+          <li><strong>Gloves:</strong> Latex or nitrile gloves are excellent for manual play (fingering, fisting), especially if you have cuts on your hands or are switching between partners or orifices.</li>
+        </ul>
+      </section>
+
+      <!-- 2. STI Testing -->
+      <section id="testing" class="content-section">
+        <h2>2. STI Testing Schedules &amp; Procedures</h2>
+        <p>Regular testing is a routine part of adult health maintenance. Many STIs are asymptomatic, meaning you can have and transmit them without ever showing signs.</p>
+
+        <h3>Recommended Testing Timelines</h3>
+        <div class="grid-cards">
+          <div class="card">
+            <h4>General Baseline</h4>
+            <p>Once a year for anyone who is sexually active, even in a monogamous relationship.</p>
+          </div>
+          <div class="card">
+            <h4>Multiple Partners</h4>
+            <p>Every 3 to 6 months for individuals with multiple or casual partners, or those engaging in group sex.</p>
+          </div>
+          <div class="card">
+            <h4>New Partners</h4>
+            <p>Before initiating sexual contact with a new partner, ideally completing a panel together.</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h4>Understanding "Window Periods"</h4>
+          <p>A window period is the time between potential exposure and when a test can accurately detect an infection. For example, testing for HIV the day after exposure will not yield an accurate result. The window period can range from a few days (Gonorrhea/Chlamydia) to up to 90 days (HIV, depending on the test type). Consult a healthcare provider if you have had a specific, recent risk exposure.</p>
+        </div>
+
+        <h3>What to Ask For</h3>
+        <p>Don't assume a "full panel" covers everything. Explicitly request testing for: HIV, Syphilis, Chlamydia, Gonorrhea (request throat and rectal swabs if you engage in oral or anal sex), and Hepatitis B/C. Herpes (HSV-1/HSV-2) blood tests are not always included in standard panels unless requested or if you have symptoms.</p>
+      </section>
+
+      <!-- 3. Communication & Disclosure -->
+      <section id="communication" class="content-section">
+        <h2>3. Communication &amp; Partner Disclosure Protocols</h2>
+        <p>Discussing sexual health history shouldn't be a mood killer—it's an essential boundary-setting conversation.</p>
+
+        <div class="quote-block">
+          "Having the 'STI talk' before clothes come off prevents panic later. Frame it as a mutual health check-in rather than an interrogation."
+          <span class="quote-author">— Dr. Alicia Chen, Sexual Health Physician</span>
+        </div>
+
+        <h3>Disclosure Scripts</h3>
+        <p>If you are nervous about how to bring it up, try these templates:</p>
+        <div class="script-box">
+          <strong>The Baseline Check-In:</strong><br>
+          "I'm really looking forward to this. Before we go any further, I like to check in about sexual health. I was last tested in [Month] and my results were [Status]. What about you?"
+        </div>
+        <div class="script-box">
+          <strong>Disclosing a Positive Status (e.g., Herpes/HPV):</strong><br>
+          "I really enjoy spending time with you and want to be fully transparent. I carry [STI name]. I manage it by [taking medication/monitoring symptoms], and we can protect ourselves by [using condoms/avoiding sex during outbreaks]. Do you have any questions about it?"
+        </div>
+      </section>
+
+      <!-- 4. Risk Reduction -->
+      <section id="risk-reduction" class="content-section">
+        <h2>4. Risk Reduction Strategies</h2>
+        <p>Risk operates on a spectrum. While abstaining is the only 100% effective method, harm reduction strategies allow for safe, fulfilling sex lives.</p>
+        <ul>
+          <li><strong>Fluid Bonding:</strong> An agreement between partners (often in closed or open relationships with strict rules) to stop using barriers. This should only happen after comprehensive testing and clear agreements on outside sexual contact.</li>
+          <li><strong>Activity Hierarchy:</strong> Understand that activities carry different risks. Mutual masturbation and dry humping are very low risk; unprotected receptive anal sex carries a higher risk for certain infections.</li>
+          <li><strong>Hygiene and Aftercare:</strong> Washing hands before and after play, peeing after penetrative sex to reduce UTI risk, and cleaning sex toys between uses (or covering them with a fresh condom) are vital practices.</li>
+        </ul>
+      </section>
+
+      <!-- 5. Symptoms & Seeking Care -->
+      <section id="symptoms-care" class="content-section">
+        <h2>5. Recognizing Symptoms &amp; Seeking Care</h2>
+        <p>Listen to your body. While many STIs show no symptoms, you should seek a healthcare provider if you notice any of the following:</p>
+        <ul>
+          <li>Unusual discharge from the penis, vagina, or anus (especially if yellow, green, or foul-smelling).</li>
+          <li>Burning or pain during urination.</li>
+          <li>Unexplained sores, bumps, blisters, or rashes around the genitals, thighs, or mouth.</li>
+          <li>Pain during penetrative sex or deep pelvic pain.</li>
+          <li>Swollen lymph nodes in the groin.</li>
+        </ul>
+        <p><em>Do not wait for symptoms to disappear, and avoid self-diagnosing with online images. Only clinical testing can confirm an STI.</em></p>
+      </section>
+
+      <!-- 6. PrEP, PEP & Vaccines -->
+      <section id="prep-pep-vaccines" class="content-section">
+        <h2>6. PrEP, PEP &amp; Vaccination Information</h2>
+        <p>Modern medicine provides incredible tools to prevent infections proactively and reactively.</p>
+
+        <h3>PrEP (Pre-Exposure Prophylaxis)</h3>
+        <p>A daily pill (or bi-monthly injection) that is highly effective at preventing HIV from sex or injection drug use. It does not protect against other STIs.</p>
+
+        <h3>PEP (Post-Exposure Prophylaxis)</h3>
+        <p>Emergency medication taken <strong>within 72 hours</strong> of a potential HIV exposure to prevent the virus from taking hold. The sooner it is started, the better.</p>
+
+        <h3>Vaccinations</h3>
+        <ul>
+          <li><strong>HPV (Gardasil 9):</strong> Protects against the strains of Human Papillomavirus that most commonly cause cervical/anal cancers and genital warts. Recommended for all genders.</li>
+          <li><strong>Hepatitis A &amp; B:</strong> Highly recommended, especially for individuals engaging in anal play or those with multiple partners.</li>
+          <li><strong>Mpox (Monkeypox):</strong> Vaccines are available for individuals at higher risk of exposure.</li>
+        </ul>
+      </section>
+
+      <!-- 7. Common STIs -->
+      <section id="common-stis" class="content-section">
+        <h2>7. Common STI Types &amp; Information</h2>
+        <p>Understanding the landscape helps reduce panic if you or a partner receive a positive result. <em>Most STIs are easily curable or manageable.</em></p>
+        <div class="grid-cards">
+          <div class="card">
+            <h4>Bacterial (Curable with Antibiotics)</h4>
+            <ul>
+              <li><strong>Chlamydia &amp; Gonorrhea:</strong> Often asymptomatic. Can affect genitals, throat, and rectum.</li>
+              <li><strong>Syphilis:</strong> Progresses in stages starting with a painless sore. Highly curable in early stages.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Viral (Manageable)</h4>
+            <ul>
+              <li><strong>Herpes (HSV-1 &amp; HSV-2):</strong> Very common. Causes occasional blister outbreaks. Managed with antivirals.</li>
+              <li><strong>HPV:</strong> The most common STI. Often clears on its own, but certain strains require monitoring.</li>
+              <li><strong>HIV:</strong> Managed effectively with Antiretroviral Therapy (ART). When viral load is undetectable, it is untransmittable (U=U).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Myths & Stigma -->
+      <section id="myths-stigma" class="content-section">
+        <h2>8. Addressing Myths and Stigma</h2>
+        <div class="info-box">
+          <h4>The Stigma is Worse Than the Infection</h4>
+          <p>STIs are simply localized infections, much like getting strep throat or a cold. They do not reflect your character, morality, or hygiene. The stigma surrounding them causes immense shame and prevents people from getting tested and seeking treatment. Normalize treating STIs as standard medical occurrences.</p>
+        </div>
+        <ul>
+          <li><strong>Myth:</strong> "I can tell if someone has an STI just by looking."<br><strong>Fact:</strong> Most people with an STI look and feel completely healthy.</li>
+          <li><strong>Myth:</strong> "Oral sex is completely safe sex."<br><strong>Fact:</strong> While the risk for HIV is lower, you can easily transmit Gonorrhea, Chlamydia, Syphilis, and Herpes via oral sex.</li>
+        </ul>
+      </section>
+
+      <!-- 9. Practical Tools -->
+      <section id="tools" class="content-section">
+        <h2>9. Practical Tools &amp; Checklists</h2>
+
+        <h3>Personal Risk Assessment Checklist</h3>
+        <p>Ask yourself these questions regularly:</p>
+        <ul>
+          <li>When was my last full STI panel?</li>
+          <li>Have I had any new partners since then?</li>
+          <li>Did we use barrier methods consistently?</li>
+          <li>Am I experiencing any unusual symptoms?</li>
+          <li>Are my vaccinations (HPV, Hep B) up to date?</li>
+        </ul>
+
+        <h3>Testing Schedule Tracker</h3>
+        <p>Set recurring calendar alerts. For example: "Schedule STI Check-in" every January 15th and July 15th.</p>
+      </section>
+
+      <!-- 10. FAQ -->
+      <section id="faq" class="content-section">
+        <h2>10. Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h4 class="faq-question">What does "U=U" mean?</h4>
+          <p class="faq-answer">U=U stands for Undetectable = Untransmittable. It means that a person living with HIV who is on effective treatment and has an undetectable viral load in their blood cannot transmit HIV to their sexual partners.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">Can I get an STI from a toilet seat or hot tub?</h4>
+          <p class="faq-answer">It is highly unlikely. STIs are transmitted through intimate skin-to-skin contact or the exchange of bodily fluids (semen, vaginal fluids, blood). Bacteria and viruses that cause STIs generally cannot survive long outside the human body.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4 class="faq-question">Does pulling out prevent STIs?</h4>
+          <p class="faq-answer">No. While withdrawal ("pulling out") reduces the amount of fluid exchanged, pre-seminal fluid (pre-cum) can still carry HIV, Gonorrhea, and Chlamydia. It also offers zero protection against skin-to-skin infections like Herpes and HPV.</p>
+        </div>
+      </section>
+
+      <!-- Disclaimer -->
+      <section class="disclaimer">
+        <p><strong>Educational Disclaimer:</strong> The information provided in this guide is for educational purposes only and does not substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or qualified health provider with any questions you may have regarding a medical condition or sexual health.</p>
+      </section>
+
+      <!-- JSON-LD Schema for FAQ -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "What does U=U mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "U=U stands for Undetectable = Untransmittable. It means that a person living with HIV who is on effective treatment and has an undetectable viral load in their blood cannot transmit HIV to their sexual partners."
+          }
+        }, {
+          "@type": "Question",
+          "name": "Can I get an STI from a toilet seat or hot tub?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is highly unlikely. STIs are transmitted through intimate skin-to-skin contact or the exchange of bodily fluids (semen, vaginal fluids, blood). Bacteria and viruses that cause STIs generally cannot survive long outside the human body."
+          }
+        }, {
+          "@type": "Question",
+          "name": "Does pulling out prevent STIs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. While withdrawal ('pulling out') reduces the amount of fluid exchanged, pre-seminal fluid (pre-cum) can still carry HIV, Gonorrhea, and Chlamydia. It also offers zero protection against skin-to-skin infections like Herpes and HPV."
+          }
+        }]
+      }
+      </script>
+
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <script src="consent.js" defer></script>
+  <script src="mobile-nav.js" defer></script>
+  <script src="back-to-top.js" defer></script>
+  <script src="newsletter-bar.js" defer></script>
+
+</body>
+</html>
