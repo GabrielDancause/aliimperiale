@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Health Risk Assessment Calculator — Ali Imperiale</title>
+  <meta name="description" content="Evaluate your sexual health risks with our interactive, privacy-focused calculator. Get personalized recommendations for STI testing and safer sex practices.">
+  <meta property="og:title" content="Sexual Health Risk Assessment Calculator — Ali Imperiale">
+  <meta property="og:description" content="Evaluate your sexual health risks with our interactive, privacy-focused calculator. Get personalized recommendations for STI testing and safer sex practices.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-health-risk-calculator.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-health-risk-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="shared.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Ensure heading font override */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif !important;
+    }
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+      .site-nav .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main id="app-content">
+
+    <style>
+      :root {
+        --c-cream: #FAF8EB;
+        --c-olive: #2E3E24;
+        --c-gold: #AD9846;
+        --c-light-olive: #5a6b50;
+        --c-gray: #f5f5f5;
+      }
+      body {
+        background-color: var(--c-cream);
+        color: var(--c-olive);
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+      }
+      .app-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+      .hero-section {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .hero-section h1 {
+        font-size: 2.5rem;
+        color: var(--c-olive);
+        margin-bottom: 15px;
+      }
+      .hero-section p {
+        font-size: 1.1rem;
+        color: var(--c-light-olive);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .disclaimer {
+        background-color: #fff3cd;
+        color: #856404;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      /* Calculator UI */
+      .calculator-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+        padding: 30px;
+        margin-bottom: 40px;
+      }
+      .question-group {
+        margin-bottom: 30px;
+      }
+      .question-label {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: block;
+      }
+      .options-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+      }
+      .option-card {
+        display: block;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+      }
+      .option-card:hover {
+        border-color: var(--c-gold);
+        background-color: #fdfaf0;
+      }
+      .option-card:focus-within {
+        border-color: var(--c-gold);
+        box-shadow: 0 0 0 3px rgba(173, 152, 70, 0.3);
+      }
+      .option-card input[type="radio"],
+      .option-card input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .option-card span {
+        display: block;
+        font-weight: 500;
+        text-align: center;
+      }
+      .option-card input:checked + span {
+        color: var(--c-olive);
+        font-weight: 700;
+      }
+      .option-card.selected {
+        border-color: var(--c-olive);
+        background-color: #f4f6f3;
+      }
+      .btn-submit {
+        display: block;
+        width: 100%;
+        background-color: var(--c-gold);
+        color: var(--c-olive);
+        border: none;
+        padding: 16px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .btn-submit:hover {
+        background-color: #c4ae5a;
+      }
+
+      /* Results UI */
+      .results-section {
+        display: none;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+        padding: 40px 30px;
+        margin-bottom: 40px;
+        animation: fadeIn 0.5s ease;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .risk-level-banner {
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+      .risk-low { background-color: #d4edda; color: #155724; }
+      .risk-medium { background-color: #fff3cd; color: #856404; }
+      .risk-high { background-color: #f8d7da; color: #721c24; }
+
+      .recommendation-list {
+        list-style: none;
+        padding: 0;
+      }
+      .recommendation-list li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+      }
+      .recommendation-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--c-gold);
+        font-weight: bold;
+      }
+      .btn-restart {
+        background: transparent;
+        color: var(--c-olive);
+        border: 2px solid var(--c-olive);
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        margin-top: 20px;
+        transition: all 0.2s;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .btn-restart:hover {
+        background: var(--c-olive);
+        color: var(--c-cream);
+      }
+
+      /* Educational Resources */
+      .resources-section {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 12px rgba(46, 62, 36, 0.08);
+      }
+      .resources-section h2 {
+        color: var(--c-olive);
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+      .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .resource-item {
+        background: var(--c-cream);
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .resource-item h3 {
+        margin-top: 0;
+        color: var(--c-olive);
+        font-size: 1.2rem;
+      }
+      .resource-item p {
+        font-size: 0.95rem;
+        color: #444;
+        margin-bottom: 0;
+      }
+    </style>
+
+    <div class="app-container">
+      <div class="hero-section">
+        <h1>Sexual Health Risk Assessment</h1>
+        <p>Evaluate your sexual health practices and receive personalized, evidence-based recommendations for testing and preventive care.</p>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Privacy Note:</strong> This calculator is completely private. All calculations happen locally on your device. No data is saved, tracked, or sent to any server. This tool provides educational guidance, not medical advice.
+      </div>
+
+      <!-- Calculator Form -->
+      <form id="riskCalculator" class="calculator-card">
+
+        <div class="question-group">
+          <label class="question-label">1. How many sexual partners have you had in the last 12 months?</label>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="partners" value="0">
+              <span>0</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="partners" value="1" required>
+              <span>1</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="partners" value="2-3">
+              <span>2-3</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="partners" value="4+">
+              <span>4 or more</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">2. How often do you use barrier methods (like condoms or dental dams) with new or casual partners?</label>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="protection" value="always" required>
+              <span>Always</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="protection" value="sometimes">
+              <span>Sometimes</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="protection" value="rarely">
+              <span>Rarely / Never</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="protection" value="na">
+              <span>N/A (monogamous/no partners)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">3. When was your last comprehensive STI screening?</label>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="testing" value="3mo" required>
+              <span>Within last 3 months</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="testing" value="6mo">
+              <span>Within last 6 months</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="testing" value="12mo">
+              <span>Within last year</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="testing" value="over1yr">
+              <span>More than a year ago / Never</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">4. Are you currently experiencing any unusual symptoms? (e.g., discharge, sores, pain during urination, itching)</label>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="symptoms" value="yes" required>
+              <span>Yes</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="symptoms" value="no">
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">5. Have you engaged in sexual activity while under the influence of alcohol or drugs in a way that affected your decision-making regarding protection?</label>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="substances" value="frequently" required>
+              <span>Frequently</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="substances" value="sometimes">
+              <span>Sometimes</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="substances" value="never">
+              <span>Never</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <label class="question-label">6. Have you or your partners been diagnosed with an STI in the past 12 months?</label>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="history" value="yes" required>
+              <span>Yes</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="history" value="no">
+              <span>No</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="history" value="unsure">
+              <span>Unsure</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Calculate Risk & Recommendations</button>
+      </form>
+
+      <!-- Results Section -->
+      <div id="resultsSection" class="results-section">
+        <h2>Your Assessment Results</h2>
+        <div id="riskBanner" class="risk-level-banner"></div>
+
+        <h3>Personalized Recommendations:</h3>
+        <ul id="recommendationsList" class="recommendation-list"></ul>
+
+        <button id="btnRestart" class="btn-restart">Retake Assessment</button>
+      </div>
+
+      <!-- Educational Resources -->
+      <div class="resources-section">
+        <h2>Educational Resources</h2>
+        <div class="resource-grid">
+          <div class="resource-item">
+            <h3>Routine STI Testing</h3>
+            <p>Most experts recommend annual screening for sexually active adults. Those with multiple partners or engaging in higher-risk activities should consider testing every 3-6 months. Standard panels usually cover Chlamydia, Gonorrhea, Syphilis, and HIV.</p>
+          </div>
+          <div class="resource-item">
+            <h3>Barrier Methods</h3>
+            <p>External (male) and internal (female) condoms, as well as dental dams, are highly effective at preventing the transmission of fluid-borne STIs when used correctly and consistently. They also reduce the risk of skin-to-skin STIs like HPV and Herpes.</p>
+          </div>
+          <div class="resource-item">
+            <h3>PrEP & Preventive Care</h3>
+            <p>PrEP (Pre-Exposure Prophylaxis) is a daily medication that significantly reduces the risk of contracting HIV. Discuss with a healthcare provider to see if PrEP, DoxyPEP, or vaccines (like HPV and Hepatitis B) are right for you.</p>
+          </div>
+          <div class="resource-item">
+            <h3>Treatment Options</h3>
+            <p>Many STIs, including Chlamydia, Gonorrhea, and Syphilis, are highly curable with antibiotics. Viral STIs like Herpes and HIV are treatable and highly manageable with modern medication, allowing individuals to live healthy lives and prevent transmission.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships &amp; other fun stuff</p>
+      </div>
+      <div class="footer-links">
+        <div class="link-col">
+          <h4>Explore</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/guides.html">Educational Guides</a>
+          <a href="/tools.html">Interactive Tools</a>
+          <a href="/lists.html">Curated Lists</a>
+          <a href="/studies.html">Research &amp; Data</a>
+        </div>
+        <div class="link-col">
+          <h4>Connect</h4>
+          <a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a>
+          <a href="/about.html">About Ali</a>
+          <a href="/open-and-honest.html">Course</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ali Imperiale. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="mobile-nav.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('riskCalculator');
+  const resultsSection = document.getElementById('resultsSection');
+  const riskBanner = document.getElementById('riskBanner');
+  const recommendationsList = document.getElementById('recommendationsList');
+  const btnRestart = document.getElementById('btnRestart');
+
+  // Option Card Interactivity
+  const optionCards = document.querySelectorAll('.option-card');
+  optionCards.forEach(card => {
+    const input = card.querySelector('input');
+
+    input.addEventListener('change', () => {
+      // Find all cards in this group
+      const groupCards = document.querySelectorAll(`input[name="${input.name}"]`);
+      groupCards.forEach(groupInput => {
+        groupInput.closest('.option-card').classList.remove('selected');
+      });
+      // Add selected class to chosen card
+      card.classList.add('selected');
+    });
+
+    // Keyboard accessibility - press enter/space to select
+    card.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        input.checked = true;
+        input.dispatchEvent(new Event('change'));
+      }
+    });
+    // Add tabindex to make it focusable
+    card.setAttribute('tabindex', '0');
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    // Privacy explicit checks
+    let riskScore = 0;
+    const recommendations = new Set();
+
+    // 1. Partners
+    const partners = formData.get('partners');
+    if (partners === '4+') { riskScore += 3; }
+    else if (partners === '2-3') { riskScore += 2; }
+    else if (partners === '1') { riskScore += 1; }
+
+    // 2. Protection
+    const protection = formData.get('protection');
+    if (protection === 'rarely') { riskScore += 3; recommendations.add("Use Barrier Methods: Consider carrying and consistently using barrier methods (condoms, dental dams) with casual partners to lower transmission rates."); }
+    else if (protection === 'sometimes') { riskScore += 2; recommendations.add("Consistent Protection: Ensure you have barrier methods available before initiating sexual contact to avoid 'in the moment' risks."); }
+
+    // 3. Testing
+    const testing = formData.get('testing');
+    if (testing === 'over1yr') { riskScore += 2; recommendations.add("Schedule STI Screening: It's been over a year. Book a comprehensive screening including Chlamydia, Gonorrhea, Syphilis, and HIV."); }
+    else if (testing === '12mo' && (partners === '2-3' || partners === '4+')) {
+        riskScore += 1;
+        recommendations.add("Increase Testing Frequency: With multiple partners, consider testing every 3 to 6 months rather than annually.");
+    }
+
+    // 4. Symptoms
+    const symptoms = formData.get('symptoms');
+    if (symptoms === 'yes') {
+        riskScore += 5;
+        recommendations.add("Urgent: You reported unusual symptoms. Schedule a clinical consultation with a healthcare provider immediately. Avoid sexual contact until you have been evaluated.");
+    }
+
+    // 5. Substance Use
+    const substances = formData.get('substances');
+    if (substances === 'frequently') {
+        riskScore += 2;
+        recommendations.add("Substance Use Awareness: Discuss risk-reduction strategies with your healthcare provider. Consider options like PrEP (Pre-Exposure Prophylaxis) if you struggle with consistent barrier use while intoxicated.");
+    } else if (substances === 'sometimes') {
+        riskScore += 1;
+        recommendations.add("Mindful Decisions: Try to have open conversations about protection boundaries before consuming substances.");
+    }
+
+    // 6. History
+    const history = formData.get('history');
+    if (history === 'yes') {
+        riskScore += 2;
+        recommendations.add("Recent Diagnosis Follow-Up: Ensure all treatments were fully completed and consider re-testing 3 months after treatment to confirm the infection has cleared.");
+    } else if (history === 'unsure') {
+        riskScore += 1;
+        recommendations.add("Partner Communication: Having conversations about testing history with new partners can help you make informed decisions.");
+    }
+
+    // Base recommendation for everyone
+    recommendations.add("Vaccinations: Confirm you are up-to-date on HPV and Hepatitis B vaccines.");
+
+    // Evaluate Risk Level
+    let riskLevel = 'Low';
+    let riskClass = 'risk-low';
+    let bannerText = 'Estimated Risk Level: Low to Moderate';
+
+    if (riskScore >= 7 || symptoms === 'yes') {
+        riskLevel = 'High';
+        riskClass = 'risk-high';
+        bannerText = 'Estimated Risk Level: Elevated. Action Recommended.';
+    } else if (riskScore >= 4) {
+        riskLevel = 'Medium';
+        riskClass = 'risk-medium';
+        bannerText = 'Estimated Risk Level: Moderate. Consider preventive measures.';
+    }
+
+    if (partners === '0' || protection === 'na') {
+         riskClass = 'risk-low';
+         bannerText = 'Estimated Risk Level: Low (Minimal current exposure)';
+    }
+
+    // Display Results
+    riskBanner.className = `risk-level-banner ${riskClass}`;
+    riskBanner.textContent = bannerText;
+
+    recommendationsList.innerHTML = '';
+    recommendations.forEach(rec => {
+        const li = document.createElement('li');
+        li.textContent = rec;
+        recommendationsList.appendChild(li);
+    });
+
+    form.style.display = 'none';
+    resultsSection.style.display = 'block';
+
+    // Scroll to results
+    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  btnRestart.addEventListener('click', () => {
+    form.reset();
+    optionCards.forEach(card => card.classList.remove('selected'));
+    resultsSection.style.display = 'none';
+    form.style.display = 'block';
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
