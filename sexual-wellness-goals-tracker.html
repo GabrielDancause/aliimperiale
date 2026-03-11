@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+<script src="consent.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Wellness Goals Tracker | Ali Imperiale</title>
+  <meta name="description" content="Set, track, and achieve your sexual wellness goals with this interactive privacy-focused tracker for individuals and couples.">
+  <meta property="og:title" content="Sexual Wellness Goals Tracker">
+  <meta property="og:description" content="Set, track, and achieve your sexual wellness goals with this interactive privacy-focused tracker for individuals and couples.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aliimperiale.com/sexual-wellness-goals-tracker.html">
+  <meta property="og:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sexual Wellness Goals Tracker">
+  <meta name="twitter:description" content="Plan and track your relationship and sexual wellness goals with this interactive tool.">
+  <meta name="twitter:image" content="https://aliimperiale.com/avatar-pro.jpg">
+  <link rel="canonical" href="https://aliimperiale.com/sexual-wellness-goals-tracker.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="shared.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Sexual Wellness Goals Tracker",
+  "url": "https://aliimperiale.com/sexual-wellness-goals-tracker.html",
+  "description": "Set, track, and achieve your sexual wellness goals with this interactive privacy-focused tracker for individuals and couples.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+  <style>
+    /* Base styles */
+    :root {
+      --bg-color: #FAF8EB;
+      --text-color: #2E3E24;
+      --accent-color: #AD9846;
+      --font-main: 'Montserrat', sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-main);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* Navigation Styles missing from shared.css */
+    .site-nav {
+      background: #2E3E24;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-logo {
+      height: 32px;
+      opacity: 0.9;
+    }
+    .site-nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav .nav-links a {
+      color: #C6C8BB;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .site-nav .nav-links a:hover,
+    .site-nav .nav-links a.active {
+      color: #FAF8EB;
+    }
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 12px 16px;
+      }
+    }
+
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .header-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .header-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #2E3E24;
+    }
+    .header-section p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #5a6b50;
+    }
+
+    .tool-wrapper {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .tabs-container {
+      display: flex;
+      background: #f4f0df;
+      border-bottom: 1px solid #e0d9b8;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 15px 10px;
+      background: none;
+      border: none;
+      font-family: var(--font-main);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-color);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0.7;
+    }
+    .tab-btn:hover {
+      opacity: 1;
+      background: rgba(173, 152, 70, 0.1);
+    }
+    .tab-btn.active {
+      opacity: 1;
+      background: white;
+      border-bottom: 3px solid var(--accent-color);
+      color: var(--accent-color);
+    }
+    .tab-content {
+      display: none;
+      padding: 30px;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .card h2 {
+      margin-top: 0;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #2E3E24;
+    }
+    .card h3 {
+      color: #2E3E24;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    /* Forms */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #2E3E24;
+    }
+    .form-group select, .form-group input[type="text"], .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #C6C8BB;
+      border-radius: 6px;
+      font-family: var(--font-main);
+      font-size: 1rem;
+      box-sizing: border-box;
+      background: #FAF8EB;
+      color: #2E3E24;
+    }
+    .form-group select:focus, .form-group input[type="text"]:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #AD9846;
+      box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: var(--accent-color);
+      color: #2E3E24;
+      border: none;
+      padding: 12px 24px;
+      font-family: var(--font-main);
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #c4b460;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent-color);
+      border: 2px solid var(--accent-color);
+      padding: 10px 20px;
+      font-family: var(--font-main);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      background: var(--accent-color);
+      color: #FAF8EB;
+      transform: translateY(-2px);
+    }
+
+    /* Progress */
+    .progress-container {
+      margin: 20px 0 30px;
+    }
+    .progress-bar-bg {
+      background: #e8e4d4;
+      border-radius: 10px;
+      height: 20px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .progress-bar-fill {
+      background: var(--accent-color);
+      height: 100%;
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+    .progress-text {
+      text-align: right;
+      font-size: 0.9rem;
+      margin: 0;
+      font-weight: 600;
+      color: #5a6b50;
+    }
+
+    /* Goals List */
+    .goal-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .goal-item {
+      background: var(--bg-color);
+      border: 1px solid #e0d9b8;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .goal-item:hover {
+      box-shadow: 0 4px 12px rgba(46,62,36,0.08);
+      transform: translateY(-2px);
+    }
+    .goal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid #e0d9b8;
+      padding-bottom: 10px;
+    }
+    .goal-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .goal-tag {
+      background: #2E3E24;
+      color: #FAF8EB;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .goal-term {
+      background: #e0d9b8;
+      color: #2E3E24;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .goal-desc {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin: 0 0 10px;
+      color: #2E3E24;
+    }
+    .goal-actions {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .check-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #5a6b50;
+    }
+    .check-container input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #AD9846;
+    }
+
+    .delete-btn {
+      background: none;
+      border: none;
+      color: #d9534f;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: var(--font-main);
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .delete-btn:hover {
+      background: rgba(217, 83, 79, 0.1);
+    }
+
+    /* Habits */
+    .habits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .habit-card {
+      background: white;
+      border: 1px solid #e0d9b8;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .habit-info {
+      flex: 1;
+    }
+    .habit-name {
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 4px;
+    }
+    .habit-streak {
+      font-size: 0.8rem;
+      color: #AD9846;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .habit-btn {
+      background: #f4f0df;
+      border: 1px solid #e0d9b8;
+      color: #5a6b50;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 1.2rem;
+    }
+    .habit-btn.completed {
+      background: #AD9846;
+      color: white;
+      border-color: #AD9846;
+    }
+
+    /* Milestones & Reflection */
+    .milestone-banner {
+      display: none;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #c8e6c9;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      font-weight: 600;
+      align-items: center;
+      gap: 12px;
+      animation: slideDown 0.4s ease;
+    }
+    .milestone-banner.visible {
+      display: flex;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reflection-box {
+      background: #FAF8EB;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #AD9846;
+      margin-bottom: 20px;
+    }
+    .reflection-prompt {
+      font-weight: 600;
+      color: #2E3E24;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    /* Utility */
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #8a8a7a;
+      font-style: italic;
+      background: #FAF8EB;
+      border-radius: 10px;
+      border: 1px dashed #C6C8BB;
+    }
+    .mt-20 { margin-top: 20px; }
+    .mb-20 { margin-bottom: 20px; }
+
+    /* Badges */
+    .badges-container {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .badge {
+      background: white;
+      border: 2px solid #e0d9b8;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      width: 120px;
+      opacity: 0.5;
+      filter: grayscale(100%);
+      transition: all 0.3s;
+    }
+    .badge.unlocked {
+      opacity: 1;
+      filter: grayscale(0%);
+      border-color: #AD9846;
+      box-shadow: 0 4px 10px rgba(173, 152, 70, 0.15);
+    }
+    .badge-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .badge-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #2E3E24;
+      line-height: 1.2;
+    }
+
+    /* Resources */
+    .resource-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      list-style: none;
+      padding: 0;
+    }
+    .resource-card {
+      background: white;
+      border: 1px solid #e0d9b8;
+      border-radius: 10px;
+      padding: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .resource-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(46,62,36,0.08);
+    }
+    .resource-card a {
+      color: #2E3E24;
+      font-weight: 600;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .resource-card a:hover {
+      color: #AD9846;
+    }
+    .resource-card p {
+      font-size: 0.85rem;
+      color: #5a6b50;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .tabs-container {
+        flex-direction: column;
+      }
+      .tab-btn {
+        border-bottom: 1px solid #e0d9b8;
+      }
+      .tab-btn.active {
+        border-bottom: none;
+        border-left: 4px solid var(--accent-color);
+      }
+      .goal-header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .goal-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+    }
+</style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="/open-and-honest.html">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+    </ul>
+  </nav>
+
+  <main id="app-root">
+
+    <div class="container">
+      <div class="header-section">
+        <h1>Sexual Wellness Goals Tracker</h1>
+        <p>Set, track, and reflect on your sexual wellness journey. Build healthy habits, improve communication, and celebrate milestones.</p>
+      </div>
+
+      <div class="tool-wrapper">
+        <div class="tabs-container">
+          <button class="tab-btn active" data-tab="tab-goals">1. Goals & Progress</button>
+          <button class="tab-btn" data-tab="tab-habits">2. Habits</button>
+          <button class="tab-btn" data-tab="tab-reflection">3. Reflection & Badges</button>
+          <button class="tab-btn" data-tab="tab-resources">4. Resources</button>
+        </div>
+
+        <!-- Tab 1: Goals -->
+        <div class="tab-content active" id="tab-goals">
+          <div class="card">
+            <div id="milestoneAlert" class="milestone-banner">
+              <span style="font-size: 1.5rem;">🎉</span>
+              <div>
+                <strong>Milestone Reached!</strong> You've completed a goal. Keep up the great work!
+              </div>
+            </div>
+
+            <h2>Set a New Goal (SMART)</h2>
+            <form id="goalForm">
+              <div class="form-group">
+                <label for="goalCategory">Focus Area</label>
+                <select id="goalCategory" required>
+                  <option value="" disabled selected>Select an area...</option>
+                  <option value="Communication Improvement">Communication Improvement</option>
+                  <option value="Intimacy Building">Intimacy Building</option>
+                  <option value="Sexual Exploration">Sexual Exploration</option>
+                  <option value="Body Confidence">Body Confidence</option>
+                  <option value="Health Habits">Health Habits</option>
+                  <option value="Relationship Milestones">Relationship Milestones</option>
+                  <option value="Personal Growth">Personal Growth</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="goalTerm">Timeframe</label>
+                <select id="goalTerm" required>
+                  <option value="This Week">This Week</option>
+                  <option value="This Month">This Month</option>
+                  <option value="3 Months">3 Months</option>
+                  <option value="6 Months">6 Months</option>
+                  <option value="Ongoing">Ongoing</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="goalDescription">Specific Goal Description</label>
+                <textarea id="goalDescription" rows="3" placeholder="E.g., Practice the 'I statement' communication template twice this week during our check-ins." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary">Add Goal</button>
+            </form>
+
+            <h3 class="mt-20">Your Goals & Progress</h3>
+            <div class="progress-container">
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="overallProgress"></div>
+              </div>
+              <p class="progress-text"><span id="progressPercent">0</span>% Goals Completed</p>
+            </div>
+
+            <ul id="goalList" class="goal-list">
+              <!-- Goals injected via JS -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tab 2: Habits -->
+        <div class="tab-content" id="tab-habits">
+          <div class="card">
+            <h2>Daily & Weekly Habits</h2>
+            <p style="color: #5a6b50; margin-bottom: 20px;">Consistency builds connection. Track small habits that support your overall goals.</p>
+
+            <form id="habitForm" style="display: flex; gap: 10px; margin-bottom: 24px;">
+              <input type="text" id="newHabitInput" placeholder="Add a new habit (e.g., 5-minute daily check-in)" required style="flex: 1; padding: 12px; border: 1px solid #C6C8BB; border-radius: 6px; background: #FAF8EB; color: #2E3E24; font-family: 'Montserrat', sans-serif;">
+              <button type="submit" class="btn-secondary">Add Habit</button>
+            </form>
+
+            <div id="habitsContainer" class="habits-grid">
+              <!-- Habits injected via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Reflection & Badges -->
+        <div class="tab-content" id="tab-reflection">
+          <div class="card">
+            <h2>Reflection & Milestones</h2>
+
+            <div class="reflection-box">
+              <div class="reflection-prompt" id="dailyPrompt">Today's Prompt: What is one thing your partner (or you) did recently that made you feel appreciated or desired?</div>
+              <textarea id="reflectionNotes" rows="4" placeholder="Write your thoughts here... (Saved privately to your device)" style="width: 100%; padding: 12px; border: 1px solid #C6C8BB; border-radius: 6px; background: white; font-family: 'Montserrat', sans-serif; resize: vertical;"></textarea>
+              <button id="saveReflectionBtn" class="btn-secondary mt-20">Save Reflection</button>
+              <span id="saveStatus" style="margin-left: 10px; font-size: 0.85rem; color: #5a6b50; opacity: 0; transition: opacity 0.3s;">Saved!</span>
+            </div>
+
+            <h3>Achievement Badges</h3>
+            <p style="font-size: 0.9rem; color: #5a6b50;">Unlock badges as you complete goals and build habits.</p>
+            <div class="badges-container">
+              <div class="badge" id="badge-first-goal">
+                <div class="badge-icon">🎯</div>
+                <div class="badge-name">First Goal Set</div>
+              </div>
+              <div class="badge" id="badge-communicator">
+                <div class="badge-icon">🗣️</div>
+                <div class="badge-name">Clear Communicator</div>
+              </div>
+              <div class="badge" id="badge-intimacy">
+                <div class="badge-icon">🔥</div>
+                <div class="badge-name">Intimacy Builder</div>
+              </div>
+              <div class="badge" id="badge-streak">
+                <div class="badge-icon">⭐</div>
+                <div class="badge-name">3-Day Habit Streak</div>
+              </div>
+              <div class="badge" id="badge-scholar">
+                <div class="badge-icon">📚</div>
+                <div class="badge-name">Wellness Scholar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Resources -->
+        <div class="tab-content" id="tab-resources">
+          <div class="card">
+            <h2>Personalized Resources</h2>
+            <p style="color: #5a6b50; margin-bottom: 20px;">Based on your active goals, here are recommended guides and tools.</p>
+
+            <div id="dynamicResources">
+              <!-- Resources injected via JS -->
+              <div class="empty-state">Add goals in Tab 1 to see personalized resource recommendations here.</div>
+            </div>
+
+            <h3 class="mt-20" style="margin-top: 40px; border-top: 1px solid #e0d9b8; padding-top: 20px;">General Toolkit</h3>
+            <ul class="resource-list mt-20">
+              <li class="resource-card">
+                <a href="/sexual-wellness-assessment.html" target="_blank">Comprehensive Sexual Wellness Assessment</a>
+                <p>Evaluate all aspects of sexual health, satisfaction, and communication.</p>
+              </li>
+              <li class="resource-card">
+                <a href="/sexual-communication-scripts-builder.html" target="_blank">Communication Scripts Builder</a>
+                <p>Create personalized scripts for difficult conversations about intimacy.</p>
+              </li>
+              <li class="resource-card">
+                <a href="/intimacy-goal-planner.html" target="_blank">Intimacy Goal Planner</a>
+                <p>A specialized tool for planning relationship objectives with a partner.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-beige.webp" alt="Ali Imperiale" width="98" height="28">
+        <p>Casual chats about sex, relationships & other fun stuff</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools.html">Tools</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/studies.html">Studies</a></li>
+            <li><a href="/lists.html">Lists</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/open-and-honest.html">Course</a></li>
+            <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener">Patreon</a></li>
+            <li><a href="https://www.tiktok.com/@aliimperiale" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.instagram.com/aliimperiale" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581368111171" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:ali@aliimperiale.com">ali@aliimperiale.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ali Imperiale</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mobile-nav.js"></script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Tab Navigation
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+      });
+
+      // 2. State Management (LocalStorage)
+      let goals = JSON.parse(localStorage.getItem('swGoals')) || [];
+      let habits = JSON.parse(localStorage.getItem('swHabits')) || [];
+      let reflection = localStorage.getItem('swReflection') || '';
+      let badges = JSON.parse(localStorage.getItem('swBadges')) || [];
+
+      // Element References
+      const goalForm = document.getElementById('goalForm');
+      const goalList = document.getElementById('goalList');
+      const overallProgress = document.getElementById('overallProgress');
+      const progressPercent = document.getElementById('progressPercent');
+      const milestoneAlert = document.getElementById('milestoneAlert');
+
+      const habitForm = document.getElementById('habitForm');
+      const newHabitInput = document.getElementById('newHabitInput');
+      const habitsContainer = document.getElementById('habitsContainer');
+
+      const reflectionNotes = document.getElementById('reflectionNotes');
+      const saveReflectionBtn = document.getElementById('saveReflectionBtn');
+      const saveStatus = document.getElementById('saveStatus');
+
+      const dynamicResources = document.getElementById('dynamicResources');
+
+      // Resource Database
+      const resourceDB = {
+        'Communication Improvement': [
+          { title: 'Communication Style Quiz', url: '/communication-style-quiz.html' },
+          { title: 'Sexual Communication Guide for Introverts', url: '/sexual-communication-guide-introverts.html' }
+        ],
+        'Intimacy Building': [
+          { title: 'Love Language Quiz', url: '/love-language-quiz.html' },
+          { title: 'Sexual Chemistry Assessment Tool', url: '/sexual-chemistry-assessment-tool.html' }
+        ],
+        'Sexual Exploration': [
+          { title: 'Pleasure Mapping Tracker', url: '/pleasure-mapping-tracker.html' },
+          { title: 'Sexual Fantasy Exploration Wheel', url: '/sexual-fantasy-exploration-wheel.html' }
+        ],
+        'Body Confidence': [
+          { title: 'Sexual Confidence Building Guide', url: '/sexual-confidence-building-guide.html' },
+          { title: 'Healing Sexual Shame Guide', url: '/healing-sexual-shame-guide.html' }
+        ],
+        'Health Habits': [
+          { title: 'Sexual Energy & Libido Tracker', url: '/sexual-energy-tracker.html' },
+          { title: 'Sexual Health Tracker', url: '/sexual-health-tracker.html' }
+        ],
+        'Relationship Milestones': [
+          { title: 'Relationship Milestone Tracker', url: '/relationship-milestone-tracker.html' },
+          { title: 'Interactive Relationship Goals Planner', url: '/interactive-relationship-goals-planner.html' }
+        ],
+        'Personal Growth': [
+          { title: 'Sexual Wellness Assessment', url: '/sexual-wellness-assessment.html' },
+          { title: 'Sexual Self Discovery Guide', url: '/sexual-self-discovery-guide.html' }
+        ]
+      };
+
+      // HTML Escaper
+      const escapeHTML = (str) => {
+        if (!str) return '';
+        return str.replace(/[&<>'"]/g, tag => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+        }[tag] || tag));
+      };
+
+      // 3. Goal Functions
+      const renderGoals = () => {
+        goalList.innerHTML = '';
+        if (goals.length === 0) {
+          goalList.innerHTML = `<li class="empty-state">No goals set yet. Use the form above to create your first SMART goal.</li>`;
+          return;
+        }
+
+        goals.forEach(goal => {
+          const li = document.createElement('li');
+          li.className = 'goal-item';
+          li.innerHTML = `
+            <div class="goal-header">
+              <div class="goal-meta">
+                <span class="goal-tag">${escapeHTML(goal.category)}</span>
+                <span class="goal-term">${escapeHTML(goal.term)}</span>
+              </div>
+              <button class="delete-btn" data-id="${goal.id}">Delete</button>
+            </div>
+            <p class="goal-desc" style="${goal.completed ? 'text-decoration: line-through; color: #8a8a7a;' : ''}">${escapeHTML(goal.desc)}</p>
+            <div class="goal-actions">
+              <label class="check-container">
+                <input type="checkbox" class="goal-check" data-id="${goal.id}" ${goal.completed ? 'checked' : ''}>
+                <span>${goal.completed ? 'Completed!' : 'Mark as Complete'}</span>
+              </label>
+            </div>
+          `;
+          goalList.appendChild(li);
+        });
+
+        // Attach Goal Event Listeners
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            goals = goals.filter(g => g.id != e.target.dataset.id);
+            saveAndRender();
+          });
+        });
+
+        document.querySelectorAll('.goal-check').forEach(chk => {
+          chk.addEventListener('change', (e) => {
+            const id = e.target.dataset.id;
+            const goal = goals.find(g => g.id == id);
+            goal.completed = e.target.checked;
+
+            if (goal.completed) {
+              milestoneAlert.classList.add('visible');
+              setTimeout(() => milestoneAlert.classList.remove('visible'), 4000);
+            }
+
+            saveAndRender();
+          });
+        });
+      };
+
+      const updateProgress = () => {
+        if (goals.length === 0) {
+          progressPercent.textContent = '0';
+          overallProgress.style.width = '0%';
+          return;
+        }
+        const completed = goals.filter(g => g.completed).length;
+        const pct = Math.round((completed / goals.length) * 100);
+        progressPercent.textContent = pct;
+        overallProgress.style.width = pct + '%';
+      };
+
+      // 4. Habit Functions
+      const renderHabits = () => {
+        habitsContainer.innerHTML = '';
+        if (habits.length === 0) {
+          habitsContainer.innerHTML = `<div class="empty-state" style="grid-column: 1 / -1;">No habits added yet. Start small!</div>`;
+          return;
+        }
+
+        // Today string YYYY-MM-DD
+        const today = new Date().toISOString().split('T')[0];
+
+        habits.forEach(habit => {
+          const isDoneToday = habit.history && habit.history.includes(today);
+
+          const div = document.createElement('div');
+          div.className = 'habit-card';
+          div.innerHTML = `
+            <div class="habit-info">
+              <div class="habit-name">${escapeHTML(habit.name)}</div>
+              <div class="habit-streak">🔥 ${habit.streak || 0} Day Streak</div>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <button class="habit-btn ${isDoneToday ? 'completed' : ''}" data-id="${habit.id}" title="${isDoneToday ? 'Completed' : 'Mark Done'}">
+                ${isDoneToday ? '✓' : ''}
+              </button>
+              <button class="delete-habit" data-id="${habit.id}" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #d9534f;" title="Remove Habit">×</button>
+            </div>
+          `;
+          habitsContainer.appendChild(div);
+        });
+
+        // Habit Listeners
+        document.querySelectorAll('.habit-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const id = e.target.dataset.id || e.target.parentElement.dataset.id;
+            const habit = habits.find(h => h.id == id);
+            if(!habit.history) habit.history = [];
+
+            if (habit.history.includes(today)) {
+              habit.history = habit.history.filter(d => d !== today);
+              habit.streak = Math.max(0, (habit.streak || 1) - 1);
+            } else {
+              habit.history.push(today);
+              habit.streak = (habit.streak || 0) + 1;
+            }
+            saveAndRender();
+          });
+        });
+
+        document.querySelectorAll('.delete-habit').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            habits = habits.filter(h => h.id != e.target.dataset.id);
+            saveAndRender();
+          });
+        });
+      };
+
+      // 5. Badges Logic
+      const checkBadges = () => {
+        // First Goal
+        if (goals.length > 0 && !badges.includes('first-goal')) badges.push('first-goal');
+        // Communicator
+        if (goals.some(g => g.category === 'Communication Improvement' && g.completed) && !badges.includes('communicator')) badges.push('communicator');
+        // Intimacy
+        if (goals.some(g => g.category === 'Intimacy Building' && g.completed) && !badges.includes('intimacy')) badges.push('intimacy');
+        // Streak
+        if (habits.some(h => (h.streak || 0) >= 3) && !badges.includes('streak')) badges.push('streak');
+        // Scholar
+        if (goals.length > 3 && !badges.includes('scholar')) badges.push('scholar');
+
+        // Render
+        document.querySelectorAll('.badge').forEach(b => {
+          const badgeId = b.id.replace('badge-', '');
+          if (badges.includes(badgeId)) {
+            b.classList.add('unlocked');
+          }
+        });
+
+        localStorage.setItem('swBadges', JSON.stringify(badges));
+      };
+
+      // 6. Resource Injection
+      const renderResources = () => {
+        const uniqueCats = [...new Set(goals.map(g => g.category))];
+        if (uniqueCats.length === 0) {
+          dynamicResources.innerHTML = `<div class="empty-state">Add goals in Tab 1 to see personalized resource recommendations here.</div>`;
+          return;
+        }
+
+        let htmlStr = `<ul class="resource-list">`;
+        uniqueCats.forEach(cat => {
+          if (resourceDB[cat]) {
+            resourceDB[cat].forEach(res => {
+              htmlStr += `
+                <li class="resource-card">
+                  <a href="${res.url}" target="_blank">${res.title}</a>
+                  <p>Recommended based on your focus: <strong>${cat}</strong></p>
+                </li>
+              `;
+            });
+          }
+        });
+        htmlStr += `</ul>`;
+        dynamicResources.innerHTML = htmlStr;
+      };
+
+      // Master Save
+      const saveAndRender = () => {
+        localStorage.setItem('swGoals', JSON.stringify(goals));
+        localStorage.setItem('swHabits', JSON.stringify(habits));
+
+        renderGoals();
+        updateProgress();
+        renderHabits();
+        renderResources();
+        checkBadges();
+      };
+
+      // Init
+      reflectionNotes.value = reflection;
+      saveAndRender();
+
+      // Form Submits
+      goalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const category = document.getElementById('goalCategory').value;
+        const term = document.getElementById('goalTerm').value;
+        const desc = document.getElementById('goalDescription').value;
+
+        goals.unshift({ id: Date.now(), category, term, desc, completed: false });
+        goalForm.reset();
+        saveAndRender();
+      });
+
+      habitForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = newHabitInput.value.trim();
+        if(name) {
+          habits.unshift({ id: Date.now(), name, streak: 0, history: [] });
+          newHabitInput.value = '';
+          saveAndRender();
+        }
+      });
+
+      // Reflection Save
+      saveReflectionBtn.addEventListener('click', () => {
+        localStorage.setItem('swReflection', reflectionNotes.value);
+        saveStatus.style.opacity = 1;
+        setTimeout(() => saveStatus.style.opacity = 0, 2000);
+      });
+
+    });
+  </script>
+</body>
+</html>
