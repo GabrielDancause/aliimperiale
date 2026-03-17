@@ -1,0 +1,4 @@
+PR,URL,Title,Content type,Is rendered page,HTTP status code,Organic traffic,Redirect URL,Redirect URL code,Redirect chain URLs,Redirect chain URLs codes,Is redirect loop,No. of all inlinks,No. of redirect inlinks,First found at
+0,http://www.aliimperiale.com/,,text/html,false,301,0,https://aliimperiale.com/,200,https://aliimperiale.com/,200,false,0,0,
+0,https://www.aliimperiale.com/,,text/html,false,301,0,https://aliimperiale.com/,200,https://aliimperiale.com/,200,false,0,0,
+0,http://aliimperiale.com/,,text/html,false,301,0,https://aliimperiale.com/,200,https://aliimperiale.com/,200,false,0,0,

@@ -1,0 +1,5 @@
+Link type,Is nofollow,Source URL,Source HTTP status code,Target URL,Target HTTP status code,Anchor,Target final redirect URL,Target final redirect HTTP status code,Is source canonical,Is source noindex,Is link internal
+Href link,false,https://aliimperiale.com/relationship-red-flags.html,200,https://aliimperiale.com/glossary.html,404,Glossary,,,true,false,true
+Href link,false,https://aliimperiale.com/guides.html,200,https://aliimperiale.com/exploring-sensual-touch-guide.html,404,"Guide Step-by-Step Guide to Exploring Sensual Touch Learn techniques for mindful, intimate touch that builds connection and pleasure between partners.",,,true,false,true
+Href link,false,https://aliimperiale.com/desire-compatibility-calculator.html,200,https://aliimperiale.com/blog/responsive-desire.html,404,Responsive vs. Spontaneous Desire,,,true,false,true
+Href link,false,https://aliimperiale.com/pregnancy-intimacy-calculator.html,200,https://aliimperiale.com/blog.html,404,Blog,,,true,false,true
