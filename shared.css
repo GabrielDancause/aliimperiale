@@ -113,6 +113,38 @@ body {
   text-decoration: underline;
 }
 
+/* Navigation */
+.site-nav {
+  background: #2E3E24;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-nav .nav-logo {
+  height: 32px;
+  opacity: 0.9;
+}
+.site-nav .nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.site-nav .nav-links a {
+  color: #C6C8BB;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.site-nav .nav-links a:hover,
+.site-nav .nav-links a.active {
+  color: #FAF8EB;
+}
+
 /* Hamburger Menu */
 .nav-hamburger {
   display: none;
