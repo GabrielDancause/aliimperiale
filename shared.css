@@ -32,6 +32,23 @@ body {
   min-height: 100vh;
 }
 
+/* Consistent heading letter-spacing */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.01em;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Footer */
 .site-footer {
   background: #2E3E24;
