@@ -77,8 +77,8 @@
     ]
   }
   </script>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="mobile-nav.js" defer></script>
@@ -88,15 +88,15 @@
   <style>
     /* Base styles and variables */
     :root {
-      --bg-color: #FAF8EB;
-      --text-color: #2E3E24;
-      --accent-color: #AD9846;
+      --bg-color: #faf6f0;
+      --text-color: #1a1510;
+      --accent-color: #c0603a;
       --light-green: #5a6b50;
     }
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
 
     /* Study specific styles */
@@ -250,7 +250,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -269,7 +269,7 @@
       padding: 0;
     }
     .site-nav .nav-links a {
-      color: #FAF8EB;
+      color: #faf6f0;
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 500;
@@ -277,13 +277,13 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #AD9846;
+      color: #c0603a;
     }
     .hamburger {
       display: none;
       background: none;
       border: none;
-      color: #FAF8EB;
+      color: #faf6f0;
       font-size: 1.5rem;
       cursor: pointer;
       padding: 8px;
@@ -298,7 +298,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: #2E3E24;
+        background: #1a1510;
         flex-direction: column;
         padding: 12px 24px 20px;
         gap: 0;
@@ -325,6 +325,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
@@ -510,7 +516,7 @@
             label: 'Incident Rate (per 100 employees)',
             data: [18.5, 14.2, 12.8, 8.5, 7.2, 6.4],
             backgroundColor: 'rgba(173, 152, 70, 0.8)',
-            borderColor: '#AD9846',
+            borderColor: '#c0603a',
             borderWidth: 1,
             borderRadius: 4
           }]
@@ -539,9 +545,9 @@
           datasets: [{
             data: [65, 25, 10],
             backgroundColor: [
-              '#2E3E24', // Dark Green
+              '#1a1510', // Dark Green
               '#5a6b50', // Light Green
-              '#AD9846'  // Gold
+              '#c0603a'  // Gold
             ],
             borderWidth: 0
           }]

@@ -21,13 +21,13 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Nav */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -38,13 +38,13 @@
     }
     .site-nav .nav-logo { height: 32px; opacity: 0.9; }
     .site-nav .nav-links { display: flex; gap: 24px; list-style: none; }
-    .site-nav .nav-links a { color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.15s; }
-    .site-nav .nav-links a:hover { color: #FAF8EB; }
+    .site-nav .nav-links a { color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.15s; }
+    .site-nav .nav-links a:hover { color: #faf6f0; }
 
     /* Hero */
     .guide-hero {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       text-align: center;
       padding: 64px 20px 80px;
       position: relative;
@@ -57,7 +57,7 @@
       left: 0;
       right: 0;
       height: 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 40px 40px 0 0;
     }
     .guide-hero .label {
@@ -66,20 +66,20 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 20px;
     }
     .guide-hero h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3.6rem;
       font-weight: 400;
       line-height: 1.1;
       margin-bottom: 18px;
     }
     .guide-hero .subtitle {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 520px;
       margin: 0 auto 36px;
       line-height: 1.7;
@@ -94,7 +94,7 @@
       border-radius: 30px;
       font-size: 0.82rem;
       font-weight: 600;
-      color: #AD9846;
+      color: #c0603a;
     }
     .guide-hero .hero-badge span { font-size: 1.1rem; }
 
@@ -116,9 +116,9 @@
       align-items: center;
       gap: 8px;
       font-size: 0.85rem;
-      color: #555549;
+      color: #7a6a5a;
     }
-    .trust-item strong { color: #2E3E24; }
+    .trust-item strong { color: #1a1510; }
     .trust-icon { font-size: 1.2rem; }
 
     /* Container */
@@ -134,22 +134,22 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #AD9846;
+      color: #c0603a;
       text-align: center;
       margin-bottom: 8px;
     }
     .section-title {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.4rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       text-align: center;
       margin-bottom: 12px;
     }
     .section-subtitle {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 0.95rem;
-      color: #555549;
+      color: #7a6a5a;
       text-align: center;
       max-width: 540px;
       margin: 0 auto 36px;
@@ -177,10 +177,10 @@
       margin-bottom: 12px;
     }
     .inside-card h4 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 0.95rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 6px;
     }
     .inside-card p {
@@ -205,7 +205,7 @@
     }
     .for-list li {
       font-size: 0.9rem;
-      color: #2E3E24;
+      color: #1a1510;
       padding: 10px 0;
       border-bottom: 1px solid rgba(46, 62, 36, 0.06);
       display: flex;
@@ -214,7 +214,7 @@
       line-height: 1.5;
     }
     .for-list li:last-child { border-bottom: none; }
-    .for-check { color: #AD9846; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+    .for-check { color: #c0603a; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
 
     /* About */
     .about-section {
@@ -235,19 +235,19 @@
       height: 100px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #AD9846;
+      border: 3px solid #c0603a;
       flex-shrink: 0;
     }
     .about-text h3 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.15rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .about-text p {
       font-size: 0.88rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.7;
     }
 
@@ -256,11 +256,11 @@
       padding: 48px 0;
     }
     .cta-card {
-      background: #2E3E24;
+      background: #1a1510;
       border-radius: 24px;
       padding: 48px 36px;
       text-align: center;
-      color: #FAF8EB;
+      color: #faf6f0;
       max-width: 560px;
       margin: 0 auto;
     }
@@ -269,14 +269,14 @@
       margin-bottom: 14px;
     }
     .cta-card h2 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.4rem;
       font-weight: 400;
       margin-bottom: 10px;
     }
     .cta-card p {
       font-size: 0.9rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       line-height: 1.7;
       margin-bottom: 28px;
       max-width: 400px;
@@ -294,26 +294,26 @@
       padding: 15px 18px;
       border: 1px solid rgba(198, 200, 187, 0.3);
       border-radius: 10px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.9rem;
       background: rgba(250, 248, 235, 0.08);
-      color: #FAF8EB;
+      color: #faf6f0;
       outline: none;
       transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .cta-input::placeholder { color: rgba(198, 200, 187, 0.5); }
     .cta-input:focus {
-      border-color: #AD9846;
+      border-color: #c0603a;
       box-shadow: 0 0 0 3px rgba(173, 152, 70, 0.2);
     }
     .cta-input.error { border-color: #c47070; }
     .cta-btn {
       padding: 15px 28px;
-      background: #AD9846;
-      color: #FAF8EB;
+      background: #c0603a;
+      color: #faf6f0;
       border: none;
       border-radius: 10px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
@@ -321,7 +321,7 @@
       transition: background 0.15s ease, transform 0.15s ease;
     }
     .cta-btn:hover {
-      background: #c4ad52;
+      background: #9e4626;
       transform: translateY(-1px);
     }
     .cta-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
@@ -344,21 +344,21 @@
       margin-bottom: 14px;
     }
     .cta-success h3 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2rem;
       font-weight: 400;
       margin-bottom: 10px;
     }
     .cta-success p {
       font-size: 0.9rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       margin-bottom: 24px;
     }
     .cta-download-btn {
       display: inline-block;
       padding: 15px 36px;
-      background: #AD9846;
-      color: #FAF8EB;
+      background: #c0603a;
+      color: #faf6f0;
       text-decoration: none;
       border-radius: 10px;
       font-weight: 600;
@@ -366,7 +366,7 @@
       transition: background 0.15s, transform 0.15s;
     }
     .cta-download-btn:hover {
-      background: #c4ad52;
+      background: #9e4626;
       transform: translateY(-1px);
     }
 
@@ -384,26 +384,26 @@
       padding: 15px 18px;
       border: 1px solid rgba(198, 200, 187, 0.3);
       border-radius: 10px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.9rem;
       background: rgba(250, 248, 235, 0.08);
-      color: #FAF8EB;
+      color: #faf6f0;
       outline: none;
       transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .hero-input::placeholder { color: rgba(198, 200, 187, 0.5); }
     .hero-input:focus {
-      border-color: #AD9846;
+      border-color: #c0603a;
       box-shadow: 0 0 0 3px rgba(173, 152, 70, 0.2);
     }
     .hero-input.error { border-color: #c47070; }
     .hero-btn {
       padding: 15px 28px;
-      background: #AD9846;
-      color: #FAF8EB;
+      background: #c0603a;
+      color: #faf6f0;
       border: none;
       border-radius: 10px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
@@ -411,7 +411,7 @@
       transition: background 0.15s ease, transform 0.15s ease;
     }
     .hero-btn:hover {
-      background: #c4ad52;
+      background: #9e4626;
       transform: translateY(-1px);
     }
     .hero-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
@@ -435,22 +435,22 @@
       margin-bottom: 10px;
     }
     .hero-success h3 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 1.8rem;
       font-weight: 400;
-      color: #FAF8EB;
+      color: #faf6f0;
       margin-bottom: 8px;
     }
     .hero-success p {
       font-size: 0.88rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       margin-bottom: 20px;
     }
 
     /* Final CTA */
     .final-cta {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       text-align: center;
       padding: 56px 20px;
       border-radius: 24px;
@@ -460,14 +460,14 @@
       margin-right: auto;
     }
     .final-cta h2 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.4rem;
       font-weight: 400;
       margin-bottom: 12px;
     }
     .final-cta p {
       font-size: 0.92rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       margin-bottom: 24px;
       max-width: 400px;
       margin-left: auto;
@@ -477,8 +477,8 @@
     .final-cta .btn-gold {
       display: inline-block;
       padding: 15px 36px;
-      background: #AD9846;
-      color: #FAF8EB;
+      background: #c0603a;
+      color: #faf6f0;
       text-decoration: none;
       border-radius: 10px;
       font-weight: 600;
@@ -486,7 +486,7 @@
       transition: background 0.15s, transform 0.15s;
       border: none;
       cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
     .final-cta .btn-gold:hover {
       background: #967f30;
@@ -516,7 +516,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Nav -->
   <nav class="site-nav">

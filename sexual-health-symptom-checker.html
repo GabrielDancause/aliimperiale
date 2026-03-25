@@ -19,14 +19,14 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -47,7 +47,7 @@
       padding: 0;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -55,7 +55,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Mobile Nav */
@@ -63,7 +63,7 @@
       display: none;
       background: none;
       border: none;
-      color: #FAF8EB;
+      color: #faf6f0;
       font-size: 1.5rem;
       cursor: pointer;
     }
@@ -78,7 +78,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: #2E3E24;
+        background: #1a1510;
         flex-direction: column;
         padding: 20px;
         gap: 15px;
@@ -89,21 +89,21 @@
     }
 
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .page-header {
       text-align: center;
       padding: 60px 20px 40px;
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
     }
     .page-header h1 {
       font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 16px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .page-header p {
       font-size: 1.05rem;
@@ -131,15 +131,15 @@
       font-size: 1.4rem;
       font-weight: 600;
       margin-bottom: 20px;
-      color: #2E3E24;
-      border-bottom: 2px solid #AD9846;
+      color: #1a1510;
+      border-bottom: 2px solid #c0603a;
       display: inline-block;
       padding-bottom: 5px;
     }
 
     .disclaimer-banner {
       background-color: rgba(173, 152, 70, 0.15);
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 16px 20px;
       margin-bottom: 30px;
       border-radius: 0 8px 8px 0;
@@ -148,7 +148,7 @@
       font-size: 1rem;
       font-weight: 700;
       margin-bottom: 8px;
-      color: #2E3E24;
+      color: #1a1510;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -163,11 +163,11 @@
     .btn {
       display: inline-block;
       padding: 12px 24px;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
       cursor: pointer;
@@ -181,8 +181,8 @@
     }
     .btn.btn-outline {
       background: transparent;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      color: #1a1510;
+      border: 2px solid #1a1510;
     }
     .btn.btn-outline:hover {
       background: rgba(46, 62, 36, 0.05);
@@ -190,7 +190,7 @@
 
     /* Checker UI */
     .checker-box {
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
       padding: 30px;
       text-align: center;
@@ -203,7 +203,7 @@
     .checker-question {
       font-size: 1.25rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 25px;
       line-height: 1.5;
     }
@@ -216,10 +216,10 @@
     .checker-btn {
       padding: 12px 24px;
       background: #FFFFFF;
-      color: #2E3E24;
-      border: 2px solid #AD9846;
+      color: #1a1510;
+      border: 2px solid #c0603a;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
@@ -227,7 +227,7 @@
       min-width: 120px;
     }
     .checker-btn:hover {
-      background: #AD9846;
+      background: #c0603a;
       color: #FFFFFF;
       transform: translateY(-2px);
     }
@@ -236,7 +236,7 @@
     }
     .checker-result h3 {
       font-size: 1.3rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 15px;
     }
     .checker-result p {
@@ -281,7 +281,7 @@
     }
     .history-card h4 {
       margin: 0 0 10px 0;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .history-card p {
       margin: 0 0 10px 0;
@@ -291,7 +291,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
   <nav class="site-nav">
@@ -331,7 +337,7 @@
       <div style="line-height: 1.7; color: #4A5D40;">
         <p>Our bodies are incredibly communicative, but we aren't always taught how to listen to them—especially when it comes to sexual and reproductive health. Symptoms like pain, unexpected changes in arousal, or unusual discharge are often your body's way of signaling that something needs attention. These aren't things to feel ashamed of; they are simply data points.</p>
 
-        <h3 style="color: #2E3E24; margin-top: 25px; margin-bottom: 10px;">When to See a Healthcare Provider</h3>
+        <h3 style="color: #1a1510; margin-top: 25px; margin-bottom: 10px;">When to See a Healthcare Provider</h3>
         <p>While an online tool can provide education and context, it cannot replace a conversation with a qualified professional. You should always consult a doctor or healthcare provider if you experience:</p>
         <ul style="padding-left: 20px; margin-bottom: 20px;">
           <li>Sudden, severe, or worsening pelvic pain.</li>
@@ -340,7 +346,7 @@
           <li>Any symptom that causes you distress or significantly impacts your quality of life.</li>
         </ul>
 
-        <h3 style="color: #2E3E24; margin-top: 25px; margin-bottom: 10px;">Finding Sex-Positive Care</h3>
+        <h3 style="color: #1a1510; margin-top: 25px; margin-bottom: 10px;">Finding Sex-Positive Care</h3>
         <p>Finding a healthcare provider who is informed, affirming, and sex-positive can make a massive difference in how you experience care. Look for clinics or practitioners who clearly state they are LGBTQ+ affirming, trauma-informed, and sex-positive. Don't be afraid to advocate for yourself or seek a second opinion if you feel your concerns are being dismissed.</p>
         <div style="margin-top: 20px;">
           <a href="/lgbtq-friendly-sex-educators.html" class="btn btn-outline" style="margin-right: 10px;">View LGBTQ+ Affirming Resources</a>
@@ -353,35 +359,35 @@
       <div>
 
                 <div style="margin-bottom: 20px;">
-          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Is it normal for sex to hurt sometimes?</h3>
+          <h3 style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">Is it normal for sex to hurt sometimes?</h3>
           <div>
             <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">While it's common for people to experience occasional discomfort (often due to lack of lubrication or arousal), sex should generally not be painful. Consistent pain during sex is a medical symptom that deserves to be evaluated by a healthcare provider. It is not something you just have to "put up with."</p>
           </div>
         </div>
 
         <div style="margin-bottom: 20px;">
-          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Can stress really affect my physical sexual response?</h3>
+          <h3 style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">Can stress really affect my physical sexual response?</h3>
           <div>
             <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">Absolutely. Stress, anxiety, and fatigue are some of the most common causes of changes in libido, erectile issues, and difficulty reaching orgasm. The brain is the most important sexual organ, and high stress levels can trigger physiological responses that inhibit sexual arousal.</p>
           </div>
         </div>
 
         <div style="margin-bottom: 20px;">
-          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">How do I know if my discharge is normal?</h3>
+          <h3 style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">How do I know if my discharge is normal?</h3>
           <div>
             <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">Healthy vaginal discharge changes throughout the menstrual cycle (from sticky and white to clear and stretchy). However, if the discharge suddenly changes in volume, becomes clumpy, smells strong or "fishy," or is accompanied by itching, burning, or a green/yellow color, it's a sign to get checked out by a doctor.</p>
           </div>
         </div>
 
         <div style="margin-bottom: 20px;">
-          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">When should I seek emergency medical care for sexual health symptoms?</h3>
+          <h3 style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">When should I seek emergency medical care for sexual health symptoms?</h3>
           <div>
             <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">You should seek emergency medical care if you experience sudden, severe pelvic pain, especially when accompanied by a high fever, vomiting, or unusual heavy bleeding. These can be signs of a medical emergency such as an ectopic pregnancy, ruptured ovarian cyst, or severe pelvic inflammatory disease (PID).</p>
           </div>
         </div>
 
         <div style="margin-bottom: 20px;">
-          <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Can relationship problems cause physical sexual dysfunction?</h3>
+          <h3 style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">Can relationship problems cause physical sexual dysfunction?</h3>
           <div>
             <p style="color: #4A5D40; font-size: 0.95rem; line-height: 1.6;">Yes, absolutely. Relationship concerns, recurring conflict, and trust issues can profoundly impact your physiological sexual response. Emotional safety is often a prerequisite for physical arousal, and chronic relationship stress can lead to low libido, erectile issues, and difficulty reaching orgasm.</p>
           </div>

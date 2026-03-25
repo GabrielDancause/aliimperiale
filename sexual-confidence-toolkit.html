@@ -22,11 +22,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shared.css">
   <style>
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -45,7 +45,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -53,24 +53,24 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     .page-header {
       text-align: center;
       padding: 60px 20px 40px;
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
     }
     .page-header h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 2.2rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .page-header p {
       font-size: 1.1rem;
-      color: #555549;
+      color: #7a6a5a;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -91,11 +91,11 @@
       margin-bottom: 40px;
     }
     .card h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 10px;
       display: inline-block;
     }
@@ -106,7 +106,7 @@
     .question-title {
       font-size: 1.1rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .options-grid {
@@ -117,14 +117,14 @@
       display: flex;
       align-items: center;
       padding: 16px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 2px solid #e8e4d4;
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.2s;
     }
     .option-label:hover {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: #fdfdf9;
     }
     .option-input {
@@ -132,7 +132,7 @@
       -webkit-appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 50%;
       margin-right: 16px;
       position: relative;
@@ -147,7 +147,7 @@
       transform: translate(-50%, -50%) scale(0);
       width: 10px;
       height: 10px;
-      background-color: #AD9846;
+      background-color: #c0603a;
       border-radius: 50%;
       transition: transform 0.2s ease-in-out;
     }
@@ -155,16 +155,16 @@
       transform: translate(-50%, -50%) scale(1);
     }
     .option-label:has(.option-input:checked) {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: #fcfbf5;
     }
 
     .btn-submit {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 16px 32px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.1rem;
       font-weight: 600;
       border-radius: 8px;
@@ -192,14 +192,14 @@
       margin-top: 30px;
     }
     .plan-card {
-      background: #FAF8EB;
-      border-left: 4px solid #AD9846;
+      background: #faf6f0;
+      border-left: 4px solid #c0603a;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 0 8px 8px 0;
     }
     .plan-card h3 {
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 1.2rem;
       margin-bottom: 12px;
     }
@@ -212,10 +212,10 @@
     }
     .btn-secondary {
       background: transparent;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      color: #1a1510;
+      border: 2px solid #1a1510;
       padding: 12px 24px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
       font-weight: 600;
       border-radius: 8px;
@@ -226,8 +226,8 @@
       min-width: 200px;
     }
     .btn-secondary:hover {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
 
     @media (min-width: 768px) {
@@ -238,6 +238,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -258,7 +264,7 @@
 
     <section class="card" id="quiz-view">
       <h2>Confidence Assessment</h2>
-      <p style="margin-bottom: 24px; color: #555549; line-height: 1.6;">Take this gentle, judgment-free assessment to help us build your personalized confidence plan. Answer honestly—this is just for you.</p>
+      <p style="margin-bottom: 24px; color: #7a6a5a; line-height: 1.6;">Take this gentle, judgment-free assessment to help us build your personalized confidence plan. Answer honestly—this is just for you.</p>
 
       <form id="assessment-form">
         <!-- Body Image -->
@@ -350,25 +356,25 @@
 
     <section class="card educational-section" style="margin-top: 60px;">
       <h2>Understanding Sexual Confidence</h2>
-      <p style="margin-bottom: 16px; color: #555549; line-height: 1.6;">Let's clear something up right away: there's a huge difference between sexual <em>confidence</em> and sexual <em>performance</em>.</p>
+      <p style="margin-bottom: 16px; color: #7a6a5a; line-height: 1.6;">Let's clear something up right away: there's a huge difference between sexual <em>confidence</em> and sexual <em>performance</em>.</p>
 
-      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Confidence vs. Performance</h3>
-      <ul style="margin-left: 20px; margin-bottom: 16px; color: #555549; font-size: 0.95rem; line-height: 1.7;">
+      <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1.2rem; color: #1a1510; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Confidence vs. Performance</h3>
+      <ul style="margin-left: 20px; margin-bottom: 16px; color: #7a6a5a; font-size: 0.95rem; line-height: 1.7;">
         <li style="margin-bottom: 8px;"><strong>Sexual Performance:</strong> Focuses on the external. It's about trying to impress a partner, worrying about how you look, and treating sex like a routine to be perfectly executed.</li>
         <li style="margin-bottom: 8px;"><strong>Sexual Confidence:</strong> Focuses on the internal experience. It's about being present in your body, focusing on pleasure, laughing when things get awkward, and trusting your worth.</li>
       </ul>
 
-      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Cultural Influences on Sexual Self-Worth</h3>
-      <p style="margin-bottom: 16px; color: #555549; line-height: 1.6;">We are bombarded with heavily edited, unrealistic images of what a "sexy" body is supposed to look like. Diet culture and the beauty industry profit off your insecurity. Reclaiming your body image is a radical act of self-love.</p>
+      <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1.2rem; color: #1a1510; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Cultural Influences on Sexual Self-Worth</h3>
+      <p style="margin-bottom: 16px; color: #7a6a5a; line-height: 1.6;">We are bombarded with heavily edited, unrealistic images of what a "sexy" body is supposed to look like. Diet culture and the beauty industry profit off your insecurity. Reclaiming your body image is a radical act of self-love.</p>
 
-      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Overcoming Sexual Shame and Anxiety</h3>
-      <p style="margin-bottom: 16px; color: #555549; line-height: 1.6;">None of us are born feeling insecure about our bodies or our desires. Those insecurities are learned. Negative experiences, shame-based sex education, or trauma can leave lasting scars. Acknowledge what's been tearing your confidence down. Saying, "I'm feeling a little nervous right now," takes the power away from the anxiety.</p>
+      <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1.2rem; color: #1a1510; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Overcoming Sexual Shame and Anxiety</h3>
+      <p style="margin-bottom: 16px; color: #7a6a5a; line-height: 1.6;">None of us are born feeling insecure about our bodies or our desires. Those insecurities are learned. Negative experiences, shame-based sex education, or trauma can leave lasting scars. Acknowledge what's been tearing your confidence down. Saying, "I'm feeling a little nervous right now," takes the power away from the anxiety.</p>
 
-      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Building Positive Sexual Identity</h3>
-      <p style="margin-bottom: 16px; color: #555549; line-height: 1.6;">Building sexual confidence starts with building sexual self-awareness. Taking the time to explore your own body, without the pressure of a partner, teaches you how you like to be touched. Define your boundaries and interests.</p>
+      <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1.2rem; color: #1a1510; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Building Positive Sexual Identity</h3>
+      <p style="margin-bottom: 16px; color: #7a6a5a; line-height: 1.6;">Building sexual confidence starts with building sexual self-awareness. Taking the time to explore your own body, without the pressure of a partner, teaches you how you like to be touched. Define your boundaries and interests.</p>
 
-      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Maintaining Confidence in Relationships</h3>
-      <p style="margin-bottom: 16px; color: #555549; line-height: 1.6;">Your sexual confidence will look different depending on the context. You might feel incredibly confident with a long-term partner but nervous on a first date. The goal is to develop an internal baseline of self-worth that you carry with you into any situation. Practice assertiveness outside the bedroom to build muscle memory for inside the bedroom.</p>
+      <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1.2rem; color: #1a1510; margin-top: 24px; margin-bottom: 12px; font-weight: 600;">Maintaining Confidence in Relationships</h3>
+      <p style="margin-bottom: 16px; color: #7a6a5a; line-height: 1.6;">Your sexual confidence will look different depending on the context. You might feel incredibly confident with a long-term partner but nervous on a first date. The goal is to develop an internal baseline of self-worth that you carry with you into any situation. Practice assertiveness outside the bedroom to build muscle memory for inside the bedroom.</p>
     </section>
   </main>
 
@@ -527,7 +533,7 @@
                 grid: { color: 'rgba(0, 0, 0, 0.1)' },
                 pointLabels: {
                   font: { family: 'Montserrat', size: 12 },
-                  color: '#2E3E24'
+                  color: '#1a1510'
                 },
                 ticks: {
                   min: 0,
@@ -546,8 +552,8 @@
 
       function generatePlan(scores) {
         let planHTML = `
-          <h3 style="color: #2E3E24; font-size: 1.4rem; margin-bottom: 20px;">Your Personalized Confidence Plan</h3>
-          <p style="margin-bottom: 24px; color: #555549; line-height: 1.6;">I've put together some guided exercises and coaching tips based on your answers. Remember, building confidence is a practice. Be gentle with yourself.</p>
+          <h3 style="color: #1a1510; font-size: 1.4rem; margin-bottom: 20px;">Your Personalized Confidence Plan</h3>
+          <p style="margin-bottom: 24px; color: #7a6a5a; line-height: 1.6;">I've put together some guided exercises and coaching tips based on your answers. Remember, building confidence is a practice. Be gentle with yourself.</p>
         `;
 
         if (scores.bodyImage <= 2) {
@@ -605,9 +611,9 @@
       function createPlanCard(title, category, content) {
         return `
           <div class="plan-card">
-            <span style="font-size: 0.8rem; font-weight: 700; color: #AD9846; text-transform: uppercase; letter-spacing: 0.5px;">${category}</span>
+            <span style="font-size: 0.8rem; font-weight: 700; color: #c0603a; text-transform: uppercase; letter-spacing: 0.5px;">${category}</span>
             <h3>${title}</h3>
-            <div style="color: #555549; font-size: 0.95rem; line-height: 1.6;">${content}</div>
+            <div style="color: #7a6a5a; font-size: 0.95rem; line-height: 1.6;">${content}</div>
           </div>
         `;
       }

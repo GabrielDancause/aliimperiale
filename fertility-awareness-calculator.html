@@ -24,17 +24,17 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
   body {
-    background-color: #FAF8EB;
-    color: #2E3E24;
+    background-color: #faf6f0;
+    color: #1a1510;
   }
 
   /* Navigation (copied from index) */
   .site-nav {
-    background: #2E3E24;
+    background: rgba(250,246,240,.93);
     padding: 16px 24px;
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,7 @@
     padding: 0;
   }
   .site-nav .nav-links a {
-    color: #C6C8BB;
+    color: #e8c4a8;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -67,13 +67,13 @@
     transition: color 0.15s ease;
   }
   .site-nav .nav-links a:hover, .site-nav .nav-links a.active {
-    color: #FAF8EB;
+    color: #faf6f0;
   }
 
   /* Page Header */
   .page-header {
-    background-color: #2E3E24;
-    color: #FAF8EB;
+    background-color: #1a1510;
+    color: #faf6f0;
     text-align: center;
     padding: 40px 20px 60px;
     position: relative;
@@ -85,18 +85,18 @@
     left: 0;
     right: 0;
     height: 30px;
-    background: #FAF8EB;
+    background: #faf6f0;
     border-radius: 30px 30px 0 0;
   }
   .page-header h1 {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.5rem;
     font-weight: 400;
     margin-bottom: 10px;
   }
   .page-header p {
     font-size: 1.05rem;
-    color: #C6C8BB;
+    color: #e8c4a8;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -122,10 +122,10 @@
   }
 
   .card h2 {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #2E3E24;
+    color: #1a1510;
     text-align: center;
   }
 
@@ -146,29 +146,29 @@
   .input-field label {
     font-weight: 600;
     font-size: 0.95rem;
-    color: #555549;
+    color: #7a6a5a;
   }
   .input-field input, .input-field select {
     padding: 12px 16px;
-    border: 1px solid #C6C8BB;
+    border: 1px solid #e8c4a8;
     border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 1rem;
-    background: #FAF8EB;
-    color: #2E3E24;
+    background: #faf6f0;
+    color: #1a1510;
   }
   .input-field input:focus, .input-field select:focus {
     outline: none;
-    border-color: #AD9846;
+    border-color: #c0603a;
     box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
   }
   .btn-calculate {
-    background: #2E3E24;
-    color: #FAF8EB;
+    background: #1a1510;
+    color: #faf6f0;
     border: none;
     padding: 12px 24px;
     border-radius: 24px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
@@ -190,7 +190,7 @@
     display: none;
   }
   .result-box {
-    background: #FAF8EB;
+    background: #faf6f0;
     border-radius: 12px;
     padding: 20px;
     text-align: center;
@@ -198,18 +198,18 @@
   }
   .result-box h3 {
     font-size: 1rem;
-    color: #555549;
+    color: #7a6a5a;
     margin-bottom: 10px;
     font-weight: 500;
   }
   .result-box p {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #2E3E24;
+    color: #1a1510;
   }
   .result-box.highlight {
     background: rgba(173, 152, 70, 0.1);
-    border-color: #AD9846;
+    border-color: #c0603a;
   }
 
   /* Share button */
@@ -219,18 +219,18 @@
     display: none;
   }
   .btn-share {
-    background: #FAF8EB;
-    color: #AD9846;
-    border: 2px solid #AD9846;
+    background: #faf6f0;
+    color: #c0603a;
+    border: 2px solid #c0603a;
     padding: 10px 20px;
     border-radius: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
   }
   .btn-share:hover {
-    background: #AD9846;
+    background: #c0603a;
     color: #fff;
   }
 
@@ -239,23 +239,23 @@
     margin-top: 20px;
   }
   .edu-section h3 {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.4rem;
-    color: #2E3E24;
+    color: #1a1510;
     margin-top: 24px;
     margin-bottom: 12px;
   }
   .edu-section p {
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #555549;
+    color: #7a6a5a;
     margin-bottom: 16px;
   }
   .edu-section ul {
     margin-left: 20px;
     margin-bottom: 16px;
     font-size: 0.95rem;
-    color: #555549;
+    color: #7a6a5a;
     line-height: 1.6;
   }
   .edu-section li {
@@ -281,7 +281,7 @@
     padding: 0 20px;
   }
   .faq-section h2 {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     text-align: center;
     font-size: 2rem;
     margin-bottom: 30px;
@@ -296,12 +296,12 @@
   .faq-question {
     font-weight: 600;
     font-size: 1.05rem;
-    color: #2E3E24;
+    color: #1a1510;
     margin-bottom: 10px;
   }
   .faq-answer {
     font-size: 0.95rem;
-    color: #555549;
+    color: #7a6a5a;
     line-height: 1.6;
   }
 
@@ -357,6 +357,12 @@
 </head>
 <body>
 
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+
   <!-- Navigation -->
   <nav class="site-nav">
     <a href="/">
@@ -385,7 +391,7 @@
     <!-- Input Card -->
     <section class="card">
       <h2>Log Your Daily Fertility Signs</h2>
-      <p style="text-align: center; margin-bottom: 20px; color: #555549; font-size: 0.95rem;">Enter your cycle details and today's observations to track your fertility window.</p>
+      <p style="text-align: center; margin-bottom: 20px; color: #7a6a5a; font-size: 0.95rem;">Enter your cycle details and today's observations to track your fertility window.</p>
 
       <div class="input-group">
         <div class="input-field">
@@ -443,13 +449,13 @@
       </div>
 
       <div style="margin-top: 30px; text-align: center;">
-        <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #2E3E24;">Today's Fertility Analysis</h3>
-        <p id="analysis-text" style="font-size: 1rem; color: #555549; line-height: 1.6; max-width: 600px; margin: 0 auto;">--</p>
+        <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #1a1510;">Today's Fertility Analysis</h3>
+        <p id="analysis-text" style="font-size: 1rem; color: #7a6a5a; line-height: 1.6; max-width: 600px; margin: 0 auto;">--</p>
       </div>
 
       <div class="share-container" id="share-container">
         <button class="btn-share" id="btn-share">Share Results (Copy to Clipboard)</button>
-        <span id="share-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-left: 10px;">Copied!</span>
+        <span id="share-msg" style="display:none; font-size: 0.85rem; color: #1a1510; margin-left: 10px;">Copied!</span>
       </div>
     </section>
 

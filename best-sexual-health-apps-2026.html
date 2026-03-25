@@ -19,14 +19,14 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -45,7 +45,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -53,20 +53,20 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Page Layout */
     .article-header {
       text-align: center;
       padding: 80px 24px 48px;
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
     }
     .article-header h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 2.4rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .article-header p.subtitle {
@@ -81,7 +81,7 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 0 24px 80px;
-      color: #2E3E24;
+      color: #1a1510;
       line-height: 1.8;
       font-size: 1.05rem;
     }
@@ -91,7 +91,7 @@
       font-weight: 600;
       margin-top: 48px;
       margin-bottom: 24px;
-      color: #2E3E24;
+      color: #1a1510;
       border-bottom: 2px solid #e8e4d4;
       padding-bottom: 8px;
     }
@@ -101,7 +101,7 @@
       font-weight: 600;
       margin-top: 32px;
       margin-bottom: 16px;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .article-content p {
@@ -128,7 +128,7 @@
     .app-title {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin: 0 0 8px 0;
     }
 
@@ -143,7 +143,7 @@
     }
 
     .app-rating {
-      color: #AD9846;
+      color: #c0603a;
       font-size: 1.1rem;
       font-weight: 600;
     }
@@ -162,7 +162,7 @@
     }
 
     .pros-box, .cons-box {
-      background: #faf8eb;
+      background: #faf6f0;
       border-radius: 8px;
       padding: 20px;
     }
@@ -173,7 +173,7 @@
       font-size: 1.1rem;
     }
 
-    .pros-box h4 { color: #2E3E24; }
+    .pros-box h4 { color: #1a1510; }
     .cons-box h4 { color: #8b3a3a; }
 
     .pros-box ul, .cons-box ul {
@@ -195,13 +195,13 @@
     }
 
     .app-meta strong {
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .btn-visit {
       display: inline-block;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
@@ -212,7 +212,7 @@
 
     .btn-visit:hover {
       background: #1a2414;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Comparison Table */
@@ -236,9 +236,9 @@
     }
 
     th {
-      background: #FAF8EB;
+      background: #faf6f0;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     tr:last-child td {
@@ -272,6 +272,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <!-- Navigation -->
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>

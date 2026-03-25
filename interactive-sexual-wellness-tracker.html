@@ -19,8 +19,8 @@
 
   <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
 
   <!-- Shared CSS -->
   <link rel="preload" as="style" href="shared.css">
@@ -37,9 +37,9 @@
 
   <style>
     :root {
-      --cream: #FAF8EB;
-      --olive: #2E3E24;
-      --gold: #AD9846;
+      --cream: #faf6f0;
+      --olive: #1a1510;
+      --gold: #c0603a;
       --gold-hover: #8f7d3a;
       --white: #ffffff;
       --gray-light: #e5e5e5;
@@ -49,13 +49,13 @@
     body {
       background-color: var(--cream);
       color: var(--olive);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       margin: 0;
       padding: 0;
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       color: var(--olive);
     }
 
@@ -94,7 +94,7 @@
     .tab-btn {
       background: none;
       border: none;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
       font-weight: 600;
       color: var(--gray);
@@ -170,7 +170,7 @@
       padding: 12px;
       border: 1px solid var(--gray-light);
       border-radius: 6px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       min-height: 80px;
       box-sizing: border-box;
       resize: vertical;
@@ -195,7 +195,7 @@
       display: inline-block;
       text-align: center;
       width: 100%;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .btn-primary:hover {
@@ -212,7 +212,7 @@
       border-radius: 6px;
       cursor: pointer;
       transition: all 0.3s;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .btn-secondary:hover {
@@ -322,7 +322,7 @@
       padding: 10px;
       border: 1px solid var(--gray-light);
       border-radius: 6px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
 
     /* Calendar */
@@ -494,6 +494,12 @@
 
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <!-- Navigation -->
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -935,7 +941,7 @@
               {
                 label: 'Desire',
                 data: chartDesire,
-                borderColor: '#AD9846', // Gold
+                borderColor: '#c0603a', // Gold
                 backgroundColor: 'rgba(173, 152, 70, 0.1)',
                 tension: 0.3,
                 fill: true
@@ -943,7 +949,7 @@
               {
                 label: 'Energy',
                 data: chartEnergy,
-                borderColor: '#2E3E24', // Olive
+                borderColor: '#1a1510', // Olive
                 backgroundColor: 'transparent',
                 tension: 0.3
               },

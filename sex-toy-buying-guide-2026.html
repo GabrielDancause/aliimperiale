@@ -20,13 +20,13 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Nav */
     nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -42,7 +42,7 @@
       list-style: none;
     }
     nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -50,7 +50,7 @@
     }
     nav .nav-links a:hover,
     nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Guide Container */
@@ -64,16 +64,16 @@
       padding: 48px 20px 36px;
     }
     .page-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .page-header p {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.1rem;
-      color: #555549;
+      color: #7a6a5a;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -93,15 +93,15 @@
     }
 
     .card h2 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .card h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin: 24px 0 12px;
     }
     .card p, .card li {
@@ -117,22 +117,22 @@
 
     /* Interactive Tools Styles */
     .tool-section {
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
       padding: 24px;
       margin-top: 24px;
       border: 1px solid rgba(173, 152, 70, 0.3);
     }
-    .tool-section h3 { margin-top: 0; color: #AD9846; }
+    .tool-section h3 { margin-top: 0; color: #c0603a; }
 
     .btn {
       display: inline-block;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 12px 24px;
       border: none;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.9rem;
       cursor: pointer;
@@ -146,31 +146,31 @@
     .quiz-option {
       background: #fff; border: 1px solid #ddd; padding: 12px 16px; border-radius: 8px; cursor: pointer; transition: 0.2s;
     }
-    .quiz-option:hover { border-color: #AD9846; background: #fdfcf7; }
-    .quiz-option.selected { border-color: #AD9846; background: #AD9846; color: #fff; }
-    #quiz-result { display: none; margin-top: 20px; padding: 16px; background: #fff; border-radius: 8px; border-left: 4px solid #AD9846; }
+    .quiz-option:hover { border-color: #c0603a; background: #fdfcf7; }
+    .quiz-option.selected { border-color: #c0603a; background: #c0603a; color: #fff; }
+    #quiz-result { display: none; margin-top: 20px; padding: 16px; background: #fff; border-radius: 8px; border-left: 4px solid #c0603a; }
 
     /* Comparison Table */
     .table-responsive { overflow-x: auto; margin-bottom: 20px; }
     table { width: 100%; border-collapse: collapse; min-width: 600px; }
     th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #eee; font-size: 0.9rem; }
-    th { background: #FAF8EB; color: #2E3E24; font-weight: 600; }
+    th { background: #faf6f0; color: #1a1510; font-weight: 600; }
 
     /* Budget Calc */
     .calc-row { display: flex; justify-content: space-between; margin-bottom: 12px; align-items: center; }
     .calc-row input { width: 100px; padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
-    #calc-total { font-weight: 700; font-size: 1.2rem; color: #2E3E24; margin-top: 16px; border-top: 1px solid #ddd; padding-top: 16px; }
+    #calc-total { font-weight: 700; font-size: 1.2rem; color: #1a1510; margin-top: 16px; border-top: 1px solid #ddd; padding-top: 16px; }
 
     /* FAQ Accordion */
     .faq-item { border-bottom: 1px solid #eee; }
-    .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 16px 0; font-size: 1.05rem; font-weight: 600; color: #2E3E24; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Montserrat', sans-serif; }
-    .faq-question::after { content: '+'; font-size: 1.5rem; color: #AD9846; }
+    .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 16px 0; font-size: 1.05rem; font-weight: 600; color: #1a1510; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'DM Sans', sans-serif; }
+    .faq-question::after { content: '+'; font-size: 1.5rem; color: #c0603a; }
     .faq-question.active::after { content: '-'; }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
     .faq-answer-inner { padding-bottom: 16px; color: #555; line-height: 1.6; font-size: 0.95rem; }
 
     .share-container { text-align: center; margin-top: 40px; }
-    #share-msg { font-size: 0.85rem; color: #AD9846; margin-top: 8px; display: none; }
+    #share-msg { font-size: 0.85rem; color: #c0603a; margin-top: 8px; display: none; }
   </style>
 <script type="application/ld+json">
 {
@@ -222,7 +222,13 @@
 </script>
 </head>
 <body>
-<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <nav>
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" height="32"></a>
@@ -295,7 +301,7 @@
         <li><strong>Air-Pulse / Suction Toys:</strong> These don't vibrate; they use gentle air pressure to simulate oral sex on the clitoris. Highly recommended for intense, quick orgasms.</li>
       </ul>
       <div class="tool-section" style="padding: 16px; margin-top: 12px; margin-bottom: 24px;">
-        <h4 style="margin-top:0; color:#AD9846;">Safety Checklist: Vibrators</h4>
+        <h4 style="margin-top:0; color:#c0603a;">Safety Checklist: Vibrators</h4>
         <ul style="margin-bottom: 0;">
           <li>Check if it is waterproof before submerging in the bath/shower.</li>
           <li>Avoid using a vibrating toy for longer than 45-60 minutes to prevent numbing or desensitization.</li>
@@ -305,7 +311,7 @@
       <h3>Dildos and Penetrative Toys</h3>
       <p>A dildo is simply a non-vibrating toy used for penetration. For beginners, look for something with a slight curve (to target the G-spot or prostate) and a smooth silicone finish. Start with an average size—don't buy the biggest one you can find right away.</p>
       <div class="tool-section" style="padding: 16px; margin-top: 12px; margin-bottom: 24px;">
-        <h4 style="margin-top:0; color:#AD9846;">Safety Checklist: Dildos</h4>
+        <h4 style="margin-top:0; color:#c0603a;">Safety Checklist: Dildos</h4>
         <ul style="margin-bottom: 0;">
           <li>Start slow and always use plenty of water-based lubricant to avoid micro-tears.</li>
           <li>Never force insertion if you feel sharp pain—stop, breathe, and use a smaller size if necessary.</li>
@@ -315,7 +321,7 @@
       <h3>Couples Toys and Accessories</h3>
       <p>Toys designed to be worn during sex. The most common is the C-shaped vibrator: one end goes inside the vagina (stimulating the G-spot), while the other rests on the clitoris, vibrating for both partners during penetration.</p>
       <div class="tool-section" style="padding: 16px; margin-top: 12px; margin-bottom: 24px;">
-        <h4 style="margin-top:0; color:#AD9846;">Safety Checklist: Couples Toys</h4>
+        <h4 style="margin-top:0; color:#c0603a;">Safety Checklist: Couples Toys</h4>
         <ul style="margin-bottom: 0;">
           <li>Communicate constantly: "Does this feel good? Is it pinching?"</li>
           <li>Ensure the toy is comfortable for <em>both</em> partners during movement.</li>
@@ -325,7 +331,7 @@
       <h3>Anal Play Toys</h3>
       <p><strong>Crucial Rule:</strong> Any toy going in the butt <em>must</em> have a flared base so it doesn't get lost inside. Look for small, beginner-friendly silicone butt plugs or anal beads. Start small, use plenty of lube, and go slow.</p>
       <div class="tool-section" style="padding: 16px; margin-top: 12px; margin-bottom: 24px;">
-        <h4 style="margin-top:0; color:#AD9846;">Safety Checklist: Anal Toys</h4>
+        <h4 style="margin-top:0; color:#c0603a;">Safety Checklist: Anal Toys</h4>
         <ul style="margin-bottom: 0;">
           <li><strong>Must have a flared base</strong>—the rectum creates a vacuum and will pull toys inside.</li>
           <li>Never move a toy from the anus to the vagina without washing it thoroughly or changing the condom, to avoid bacterial infections.</li>
@@ -336,7 +342,7 @@
       <h3>BDSM and Kink Gear</h3>
       <p>Curious about kink? Start with soft restraints (like silk ties or velcro cuffs), a lightweight riding crop, or a blindfold. Communication and a safe word are your most important tools here.</p>
       <div class="tool-section" style="padding: 16px; margin-top: 12px; margin-bottom: 24px;">
-        <h4 style="margin-top:0; color:#AD9846;">Safety Checklist: BDSM Gear</h4>
+        <h4 style="margin-top:0; color:#c0603a;">Safety Checklist: BDSM Gear</h4>
         <ul style="margin-bottom: 0;">
           <li>Always establish a safe word (e.g., "Red") before beginning any kink play.</li>
           <li>Keep trauma shears nearby if using ropes or hard restraints, and monitor circulation (check for cold or blue fingers/toes).</li>
@@ -435,7 +441,7 @@
           <div class="quiz-option" data-result="anal">I'm curious about beginner-friendly anal play.</div>
         </div>
         <div id="quiz-result">
-          <h4 style="margin-top:0; color:#AD9846;">My Recommendation:</h4>
+          <h4 style="margin-top:0; color:#c0603a;">My Recommendation:</h4>
           <p id="quiz-result-text"></p>
         </div>
       </div>
@@ -555,11 +561,11 @@
   <!-- Newsletter -->
   <div style="padding:48px 20px 56px;text-align:center">
     <div style="max-width:480px;margin:0 auto;background:#fff;border-radius:18px;padding:36px 30px;box-shadow:0 1px 4px rgba(46,62,36,.06);border:1px solid rgba(46,62,36,.06)">
-      <h2 style="font-family:'The Bloomington',cursive;font-size:2rem;font-weight:400;color:#2E3E24;margin-bottom:10px">Stay curious</h2>
-      <p style="font-size:.9rem;color:#555549;line-height:1.7;margin-bottom:20px">Join the newsletter and get a free copy of the Ethical Nightlife Guide. Plus new articles, guides, and honest real talk.</p>
+      <h2 style="font-family:'DM Serif Display',cursive;font-size:2rem;font-weight:400;color:#1a1510;margin-bottom:10px">Stay curious</h2>
+      <p style="font-size:.9rem;color:#7a6a5a;line-height:1.7;margin-bottom:20px">Join the newsletter and get a free copy of the Ethical Nightlife Guide. Plus new articles, guides, and honest real talk.</p>
       <form style="display:flex;gap:10px;max-width:380px;margin:0 auto" id="blog-subscribe">
-        <input type="email" name="email" placeholder="Your email" required aria-label="Email address" style="flex:1;padding:12px 16px;border:1px solid #C6C8BB;border-radius:10px;font-family:Montserrat,sans-serif;font-size:.88rem;background:#FAF8EB;color:#2E3E24;outline:none">
-        <button type="submit" style="padding:12px 24px;background:#2E3E24;color:#FAF8EB;border:none;border-radius:10px;font-family:Montserrat,sans-serif;font-weight:600;font-size:.88rem;cursor:pointer;white-space:nowrap">Join Free</button>
+        <input type="email" name="email" placeholder="Your email" required aria-label="Email address" style="flex:1;padding:12px 16px;border:1px solid #e8c4a8;border-radius:10px;font-family:Montserrat,sans-serif;font-size:.88rem;background:#faf6f0;color:#1a1510;outline:none">
+        <button type="submit" style="padding:12px 24px;background:#1a1510;color:#faf6f0;border:none;border-radius:10px;font-family:Montserrat,sans-serif;font-weight:600;font-size:.88rem;cursor:pointer;white-space:nowrap">Join Free</button>
       </form>
       <p class="blog-subscribe-status" style="display:none;margin-top:14px;font-size:.85rem"></p>
     </div>
@@ -687,12 +693,12 @@
         .then(function(r) { return r.json(); })
         .then(function() {
           status.style.display = 'block';
-          status.style.color = '#2E3E24';
+          status.style.color = '#1a1510';
           status.textContent = 'You\u2019re in! Check your email to confirm.';
           form.style.display = 'none';
         }).catch(function() {
           status.style.display = 'block';
-          status.style.color = '#AD9846';
+          status.style.color = '#c0603a';
           status.textContent = 'Something went wrong. Please try again.';
           btn.textContent = 'Subscribe';
           btn.disabled = false;

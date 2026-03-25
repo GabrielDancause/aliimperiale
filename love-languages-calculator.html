@@ -24,7 +24,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -32,7 +32,7 @@
   <style>
   /* Base & Navigation Overrides (if any) */
   .site-nav {
-    background: #2E3E24;
+    background: rgba(250,246,240,.93);
     padding: 16px 24px;
     display: flex;
     align-items: center;
@@ -51,7 +51,7 @@
     list-style: none;
   }
   .site-nav .nav-links a {
-    color: #C6C8BB;
+    color: #e8c4a8;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
@@ -59,13 +59,13 @@
   }
   .site-nav .nav-links a:hover,
   .site-nav .nav-links a.active {
-    color: #FAF8EB;
+    color: #faf6f0;
   }
 
   /* Tool Specific Styles */
   .page-header {
-    background-color: #2E3E24;
-    color: #FAF8EB;
+    background-color: #1a1510;
+    color: #faf6f0;
     padding: 40px 20px 60px;
     text-align: center;
     position: relative;
@@ -77,18 +77,18 @@
     left: 0;
     right: 0;
     height: 30px;
-    background: #FAF8EB;
+    background: #faf6f0;
     border-radius: 30px 30px 0 0;
   }
   .page-header h1 {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.2rem;
     font-weight: 400;
     margin-bottom: 12px;
   }
   .page-header p {
     font-size: 0.95rem;
-    color: #C6C8BB;
+    color: #e8c4a8;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -111,14 +111,14 @@
     text-align: center;
   }
   .card h2 {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.6rem;
-    color: #2E3E24;
+    color: #1a1510;
     margin-bottom: 16px;
   }
   .card p {
     font-size: 0.95rem;
-    color: #555549;
+    color: #7a6a5a;
     line-height: 1.7;
     margin-bottom: 24px;
   }
@@ -127,9 +127,9 @@
   .btn-primary {
     display: inline-block;
     padding: 14px 32px;
-    background: #2E3E24;
-    color: #FAF8EB;
-    font-family: 'Montserrat', sans-serif;
+    background: #1a1510;
+    color: #faf6f0;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none;
@@ -147,26 +147,26 @@
     display: inline-block;
     padding: 14px 32px;
     background: transparent;
-    color: #2E3E24;
-    font-family: 'Montserrat', sans-serif;
+    color: #1a1510;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none;
     border-radius: 12px;
-    border: 2px solid #2E3E24;
+    border: 2px solid #1a1510;
     cursor: pointer;
     transition: background 0.2s, color 0.2s, transform 0.15s;
   }
   .btn-secondary:hover {
-    background: #2E3E24;
-    color: #FAF8EB;
+    background: #1a1510;
+    color: #faf6f0;
     transform: translateY(-2px);
   }
 
   /* Quiz specific */
   .progress-bar-container {
     width: 100%;
-    background: #FAF8EB;
+    background: #faf6f0;
     height: 8px;
     border-radius: 4px;
     margin-bottom: 24px;
@@ -174,7 +174,7 @@
   }
   .progress-bar {
     height: 100%;
-    background: #AD9846;
+    background: #c0603a;
     width: 0%;
     transition: width 0.3s ease;
   }
@@ -187,10 +187,10 @@
   }
   .quiz-option {
     padding: 16px 20px;
-    background: #FAF8EB;
+    background: #faf6f0;
     border: 1px solid rgba(46, 62, 36, 0.1);
     border-radius: 12px;
-    color: #2E3E24;
+    color: #1a1510;
     font-size: 0.95rem;
     font-weight: 500;
     cursor: pointer;
@@ -199,7 +199,7 @@
   }
   .quiz-option:hover {
     background: rgba(173, 152, 70, 0.1);
-    border-color: #AD9846;
+    border-color: #c0603a;
   }
 
   /* Results specific */
@@ -219,14 +219,14 @@
   }
   .language-name {
     font-weight: 600;
-    color: #2E3E24;
+    color: #1a1510;
     margin-bottom: 4px;
     display: flex;
     justify-content: space-between;
   }
   .language-desc {
     font-size: 0.85rem;
-    color: #555549;
+    color: #7a6a5a;
     line-height: 1.5;
   }
 
@@ -235,9 +235,9 @@
     text-align: left;
   }
   .educational-content h3 {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.3rem;
-    color: #AD9846;
+    color: #c0603a;
     margin: 24px 0 12px;
   }
 
@@ -249,7 +249,7 @@
   }
   .faq-item h3 {
     font-size: 1rem;
-    color: #2E3E24;
+    color: #1a1510;
     margin-bottom: 8px;
     font-weight: 600;
   }
@@ -304,7 +304,13 @@
 </script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
     <nav class="site-nav">
@@ -337,7 +343,7 @@
     <div class="progress-bar-container">
       <div class="progress-bar" id="quiz-progress"></div>
     </div>
-    <p style="font-size:0.85rem; color:#8a8a7a; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;" id="question-counter">Question 1 of 30</p>
+    <p style="font-size:0.85rem; color:#7a6a5a; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;" id="question-counter">Question 1 of 30</p>
     <h2 id="question-text" style="font-size:1.3rem; margin-bottom:10px;">Loading question...</h2>
 
     <div class="quiz-options" id="quiz-options-container">
@@ -363,10 +369,10 @@
       <button class="btn-secondary" onclick="shareResults()">Share Results</button>
       <button class="btn-secondary" onclick="startPartnerComparison()">Compare with Partner</button>
     </div>
-    <p id="share-notification" style="color:#AD9846; font-size:0.85rem; margin-top:10px; display:none;">Results copied to clipboard!</p>
+    <p id="share-notification" style="color:#c0603a; font-size:0.85rem; margin-top:10px; display:none;">Results copied to clipboard!</p>
 
-    <div id="date-idea-container" style="margin-top:24px; padding:20px; background:#FAF8EB; border-radius:12px; display:none;">
-      <h3 style="font-size:1rem; color:#2E3E24; margin-bottom:8px;">Your Custom Date Idea:</h3>
+    <div id="date-idea-container" style="margin-top:24px; padding:20px; background:#faf6f0; border-radius:12px; display:none;">
+      <h3 style="font-size:1rem; color:#1a1510; margin-bottom:8px;">Your Custom Date Idea:</h3>
       <p id="date-idea-text" style="margin:0; font-weight:500;"></p>
     </div>
   </section>
@@ -876,8 +882,8 @@
             <span>${languageNames[key]}</span>
             <span>${pct}%</span>
           </div>
-          <div style="background:#FAF8EB; height:6px; border-radius:3px; margin-bottom:8px; overflow:hidden;">
-            <div style="background:${isTop ? '#AD9846' : '#C6C8BB'}; height:100%; width:${pct}%"></div>
+          <div style="background:#faf6f0; height:6px; border-radius:3px; margin-bottom:8px; overflow:hidden;">
+            <div style="background:${isTop ? '#c0603a' : '#e8c4a8'}; height:100%; width:${pct}%"></div>
           </div>
           ${isTop ? `<div class="language-desc">${languageDescriptions[key]}</div>` : ''}
         </div>
@@ -922,11 +928,11 @@
           label: 'Your Love Profile',
           data: dataValues,
           backgroundColor: 'rgba(173, 152, 70, 0.2)',
-          borderColor: '#AD9846',
-          pointBackgroundColor: '#2E3E24',
+          borderColor: '#c0603a',
+          pointBackgroundColor: '#1a1510',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: '#2E3E24'
+          pointHoverBorderColor: '#1a1510'
         }]
       },
       options: {
@@ -937,8 +943,8 @@
             angleLines: { color: 'rgba(46, 62, 36, 0.1)' },
             grid: { color: 'rgba(46, 62, 36, 0.1)' },
             pointLabels: {
-              font: { family: "'Montserrat', sans-serif", size: 12 },
-              color: '#2E3E24'
+              font: { family: "'DM Sans', sans-serif", size: 12 },
+              color: '#1a1510'
             },
             ticks: {
               display: false,
@@ -1008,15 +1014,15 @@
             label: 'Your Profile',
             data: u1Vals,
             backgroundColor: 'rgba(173, 152, 70, 0.2)',
-            borderColor: '#AD9846',
-            pointBackgroundColor: '#AD9846'
+            borderColor: '#c0603a',
+            pointBackgroundColor: '#c0603a'
           },
           {
             label: 'Partner Profile',
             data: u2Vals,
             backgroundColor: 'rgba(46, 62, 36, 0.2)',
-            borderColor: '#2E3E24',
-            pointBackgroundColor: '#2E3E24'
+            borderColor: '#1a1510',
+            pointBackgroundColor: '#1a1510'
           }
         ]
       },
@@ -1028,8 +1034,8 @@
             angleLines: { color: 'rgba(46, 62, 36, 0.1)' },
             grid: { color: 'rgba(46, 62, 36, 0.1)' },
             pointLabels: {
-              font: { family: "'Montserrat', sans-serif", size: 12 },
-              color: '#2E3E24'
+              font: { family: "'DM Sans', sans-serif", size: 12 },
+              color: '#1a1510'
             },
             ticks: { display: false, min: 0, max: 100 }
           }
@@ -1037,7 +1043,7 @@
         plugins: {
           legend: {
             position: 'top',
-            labels: { font: { family: "'Montserrat', sans-serif" } }
+            labels: { font: { family: "'DM Sans', sans-serif" } }
           }
         }
       }
@@ -1048,12 +1054,12 @@
     let u1Primary = u1Sorted[0];
     let u2Primary = partnerSortedKeys[0];
 
-    let insightHtml = `<p style="font-size:0.95rem; color:#555549; line-height:1.6;">Your primary language is <strong>${languageNames[u1Primary]}</strong>, while your partner's is <strong>${languageNames[u2Primary]}</strong>.</p>`;
+    let insightHtml = `<p style="font-size:0.95rem; color:#7a6a5a; line-height:1.6;">Your primary language is <strong>${languageNames[u1Primary]}</strong>, while your partner's is <strong>${languageNames[u2Primary]}</strong>.</p>`;
 
     if (u1Primary === u2Primary) {
-      insightHtml += `<p style="font-size:0.95rem; color:#2E3E24; font-weight:500;">You both share the same primary love language! It should be relatively easy for you to naturally make each other feel loved.</p>`;
+      insightHtml += `<p style="font-size:0.95rem; color:#1a1510; font-weight:500;">You both share the same primary love language! It should be relatively easy for you to naturally make each other feel loved.</p>`;
     } else {
-      insightHtml += `<p style="font-size:0.95rem; color:#2E3E24; font-weight:500;">You have different primary languages. Remember that your partner receives love differently than you do. You'll need to actively "translate" your affection into their language: ${languageNames[u2Primary]}.</p>`;
+      insightHtml += `<p style="font-size:0.95rem; color:#1a1510; font-weight:500;">You have different primary languages. Remember that your partner receives love differently than you do. You'll need to actively "translate" your affection into their language: ${languageNames[u2Primary]}.</p>`;
     }
     document.getElementById('comparison-insights').innerHTML = insightHtml;
   }

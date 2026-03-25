@@ -21,8 +21,8 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
 
@@ -62,7 +62,7 @@
   <style>
     /* Announcement Bar & Nav Styles from Index */
     .announcement-bar {
-      background: #AD9846;
+      background: #c0603a;
       padding: 10px 20px;
       text-align: center;
       display: flex;
@@ -72,19 +72,19 @@
       flex-wrap: wrap;
     }
     .announcement-bar p {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.85rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin: 0;
       letter-spacing: 0.3px;
     }
     .announcement-bar a {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.75rem;
       font-weight: 700;
-      color: #FAF8EB;
-      background: #2E3E24;
+      color: #faf6f0;
+      background: #1a1510;
       padding: 6px 18px;
       border-radius: 20px;
       text-decoration: none;
@@ -100,7 +100,7 @@
     .announcement-close {
       background: none;
       border: none;
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 1.2rem;
       cursor: pointer;
       padding: 0 0 0 8px;
@@ -114,7 +114,7 @@
 
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -133,7 +133,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -141,7 +141,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Page Specific Styles */
@@ -152,9 +152,9 @@
       margin: 0 auto;
     }
     .page-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .page-header p {
@@ -193,17 +193,17 @@
     .filter-group label {
       font-size: 0.85rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
     .filter-select {
       padding: 12px;
       border-radius: 8px;
-      border: 1px solid #C6C8BB;
-      background: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      border: 1px solid #e8c4a8;
+      background: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
       cursor: pointer;
       appearance: none;
@@ -214,7 +214,7 @@
     }
     .filter-select:focus {
       outline: none;
-      border-color: #AD9846;
+      border-color: #c0603a;
       box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
     }
     .results-count {
@@ -260,15 +260,15 @@
       letter-spacing: 0.5px;
       padding: 4px 10px;
       border-radius: 20px;
-      background: #FAF8EB;
-      color: #AD9846;
+      background: #faf6f0;
+      color: #c0603a;
       border: 1px solid rgba(173, 152, 70, 0.3);
     }
 
     .book-title {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.4rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 6px;
       line-height: 1.3;
     }
@@ -287,7 +287,7 @@
     }
 
     .book-details {
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 8px;
       padding: 16px;
       margin-bottom: 20px;
@@ -302,14 +302,14 @@
     }
     .detail-label {
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .why-read {
       font-size: 0.9rem;
       font-style: italic;
       color: #5a6b50;
-      border-left: 3px solid #AD9846;
+      border-left: 3px solid #c0603a;
       padding-left: 12px;
       margin-bottom: 24px;
     }
@@ -317,8 +317,8 @@
     .btn-buy {
       display: inline-block;
       text-align: center;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 12px;
       border-radius: 8px;
       text-decoration: none;
@@ -342,7 +342,7 @@
     }
     .empty-state h3 {
       font-size: 1.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
 
@@ -354,9 +354,9 @@
     }
     .faq-section h2 {
       text-align: center;
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 32px;
     }
     .faq-item {
@@ -369,7 +369,7 @@
     }
     .faq-item h3 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .faq-item p {
@@ -390,6 +390,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <!-- Announcement Bar (Hidden initially, logic in JS) -->
   <div class="announcement-bar" id="announcement-bar">
     <p>Sign up for the Open & Honest Course today!</p>

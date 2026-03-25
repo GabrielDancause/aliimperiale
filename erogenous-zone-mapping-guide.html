@@ -8,10 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shared.css">
   <style>
-    body { background-color: #FAF8EB; }
+    body { background-color: #faf6f0; }
 
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -30,7 +30,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -38,20 +38,20 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Hero Section */
     .guide-hero {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       padding: 60px 24px;
       text-align: center;
     }
     .guide-hero h1 {
       font-size: 2.5rem;
       margin-bottom: 16px;
-      color: #AD9846;
+      color: #c0603a;
     }
     .guide-hero p {
       max-width: 800px;
@@ -61,7 +61,7 @@
     }
     .medical-disclaimer {
       font-size: 0.85rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 800px;
       margin: 0 auto;
       font-style: italic;
@@ -97,19 +97,19 @@
       margin-bottom: 24px;
     }
     .toggle-btn {
-      background: #FAF8EB;
-      border: 2px solid #2E3E24;
-      color: #2E3E24;
+      background: #faf6f0;
+      border: 2px solid #1a1510;
+      color: #1a1510;
       padding: 8px 16px;
       border-radius: 20px;
       cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       transition: all 0.2s;
     }
     .toggle-btn.active {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
     .svg-container {
       width: 100%;
@@ -122,18 +122,18 @@
     }
     .zone {
       fill: #e0e0e0;
-      stroke: #2E3E24;
+      stroke: #1a1510;
       stroke-width: 2;
       cursor: pointer;
       transition: fill 0.3s, opacity 0.3s;
     }
     .zone:hover {
       opacity: 0.8;
-      stroke: #AD9846;
+      stroke: #c0603a;
       stroke-width: 3;
     }
     .zone.selected {
-      stroke: #AD9846;
+      stroke: #c0603a;
       stroke-width: 4;
     }
 
@@ -147,7 +147,7 @@
       flex-direction: column;
     }
     .panel-section h2 {
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
       font-size: 1.8rem;
     }
@@ -165,14 +165,14 @@
       line-height: 1.6;
     }
     .exercise-box {
-      background: #FAF8EB;
-      border-left: 4px solid #AD9846;
+      background: #faf6f0;
+      border-left: 4px solid #c0603a;
       padding: 16px;
       margin-bottom: 24px;
     }
     .exercise-box h4 {
       margin-bottom: 8px;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     /* Rating System */
@@ -228,7 +228,7 @@
       box-shadow: 0 4px 12px rgba(46,62,36,0.08);
     }
     .feature-card h3 {
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 16px;
     }
     .progress-list {
@@ -241,7 +241,7 @@
       border-bottom: 1px solid #eee;
     }
     .template-box {
-      background: #FAF8EB;
+      background: #faf6f0;
       padding: 16px;
       margin-bottom: 16px;
       border-radius: 8px;
@@ -256,7 +256,7 @@
     .faq-section h2 {
       text-align: center;
       margin-bottom: 40px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .faq-item {
       background: #fff;
@@ -266,7 +266,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     .faq-item h3 {
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 12px;
     }
     .faq-item p {
@@ -298,6 +298,12 @@
   <meta name="twitter:description" content="Discover and map your personal pleasure zones with this interactive educational guide. Explore anatomy, arousal, and guided self-discovery exercises.">
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -341,13 +347,13 @@
             <ellipse class="zone" data-id="inner-thighs" cx="270" cy="450" rx="30" ry="60" />
             <circle class="zone" data-id="genitals-v" cx="200" cy="420" r="45" />
 
-            <text x="200" y="125" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Neck</text>
-            <text x="140" y="190" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Breast</text>
-            <text x="260" y="190" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Breast</text>
-            <text x="200" y="325" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Stomach</text>
-            <text x="130" y="455" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Thigh</text>
-            <text x="270" y="455" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Thigh</text>
-            <text x="200" y="425" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Vulva/Clitoris</text>
+            <text x="200" y="125" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Neck</text>
+            <text x="140" y="190" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Breast</text>
+            <text x="260" y="190" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Breast</text>
+            <text x="200" y="325" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Stomach</text>
+            <text x="130" y="455" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Thigh</text>
+            <text x="270" y="455" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Thigh</text>
+            <text x="200" y="425" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Vulva/Clitoris</text>
           </svg>
 
           <!-- Penis/Testicular Map -->
@@ -367,14 +373,14 @@
             <circle class="zone" data-id="perineum" cx="200" cy="465" r="20" />
             <rect class="zone" data-id="genitals-p" x="175" y="380" width="50" height="70" rx="10" />
 
-            <text x="200" y="125" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Neck/Ears</text>
-            <text x="150" y="175" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Chest</text>
-            <text x="250" y="175" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Chest</text>
-            <text x="200" y="315" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Stomach</text>
-            <text x="130" y="455" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Thigh</text>
-            <text x="270" y="455" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Thigh</text>
-            <text x="200" y="415" text-anchor="middle" font-size="12" fill="#2E3E24" pointer-events="none">Penis/Testes</text>
-            <text x="200" y="495" text-anchor="middle" font-size="10" fill="#2E3E24" pointer-events="none">Perineum</text>
+            <text x="200" y="125" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Neck/Ears</text>
+            <text x="150" y="175" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Chest</text>
+            <text x="250" y="175" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Chest</text>
+            <text x="200" y="315" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Stomach</text>
+            <text x="130" y="455" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Thigh</text>
+            <text x="270" y="455" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Thigh</text>
+            <text x="200" y="415" text-anchor="middle" font-size="12" fill="#1a1510" pointer-events="none">Penis/Testes</text>
+            <text x="200" y="495" text-anchor="middle" font-size="10" fill="#1a1510" pointer-events="none">Perineum</text>
           </svg>
         </div>
       </div>
@@ -409,7 +415,7 @@
               <button class="rating-btn" data-val="9">9</button>
               <button class="rating-btn" data-val="10">10</button>
             </div>
-            <p id="rating-feedback" style="font-size: 0.9rem; color: #AD9846; font-weight: 600; min-height: 20px;"></p>
+            <p id="rating-feedback" style="font-size: 0.9rem; color: #c0603a; font-weight: 600; min-height: 20px;"></p>
           </div>
         </div>
       </div>
@@ -430,7 +436,7 @@
         <p style="margin-bottom: 16px; font-size: 0.95rem;">Use these templates to share your discoveries with a partner.</p>
 
         <div class="template-box">
-          "I've been exploring what feels good for me lately, and I realized my <span id="comm-zone-1" style="font-weight:600;color:#2E3E24;">[Zone]</span> is really sensitive. Next time we're together, I'd love if you tried touching it by <span id="comm-action-1" style="font-weight:600;color:#2E3E24;">[Action]</span>."
+          "I've been exploring what feels good for me lately, and I realized my <span id="comm-zone-1" style="font-weight:600;color:#1a1510;">[Zone]</span> is really sensitive. Next time we're together, I'd love if you tried touching it by <span id="comm-action-1" style="font-weight:600;color:#1a1510;">[Action]</span>."
         </div>
 
         <div class="template-box">
@@ -635,7 +641,7 @@
           li.className = 'progress-item';
           li.innerHTML = `
             <span style="font-weight: 500;">${data.title}</span>
-            <span style="color: #AD9846; font-weight: 600;">Rating: ${val}/10</span>
+            <span style="color: #c0603a; font-weight: 600;">Rating: ${val}/10</span>
           `;
           progressList.appendChild(li);
         });

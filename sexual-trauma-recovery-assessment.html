@@ -24,8 +24,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
@@ -35,13 +35,13 @@
       flex-direction: column;
       min-height: 100vh;
       margin: 0;
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
     }
     main { flex: 1; }
 
     /* Navigation Styles (Inline Required) */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -59,21 +59,21 @@
       padding: 0;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
       transition: color 0.15s;
     }
     .site-nav .nav-links a:hover,
-    .site-nav .nav-links a.active { color: #FAF8EB; }
+    .site-nav .nav-links a.active { color: #faf6f0; }
 
     /* Tracker/Tool Layout */
     .tracker-container {
       max-width: 800px;
       margin: 40px auto;
       padding: 0 20px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .page-header {
@@ -81,7 +81,7 @@
       margin-bottom: 40px;
     }
     .page-header h1 {
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 16px;
@@ -118,8 +118,8 @@
     }
 
     .crisis-banner {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       padding: 20px;
       border-radius: 8px;
       margin-bottom: 40px;
@@ -129,14 +129,14 @@
       margin-top: 0;
       margin-bottom: 10px;
       font-size: 1.2rem;
-      color: #AD9846;
+      color: #c0603a;
     }
     .crisis-banner p {
       margin: 5px 0;
       font-size: 0.95rem;
     }
     .crisis-banner a {
-      color: #FAF8EB;
+      color: #faf6f0;
       text-decoration: underline;
       font-weight: bold;
     }
@@ -150,7 +150,7 @@
     }
 
     .card h2 {
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 1.4rem;
       margin-top: 0;
       margin-bottom: 20px;
@@ -164,7 +164,7 @@
     }
     .question-block h3 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 15px;
       font-weight: 600;
     }
@@ -204,7 +204,7 @@
       -webkit-appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 50%; /* For radio buttons */
       margin-right: 12px;
       position: relative;
@@ -224,7 +224,7 @@
       transform: translate(-50%, -50%) scale(0);
       width: 10px;
       height: 10px;
-      background-color: #AD9846;
+      background-color: #c0603a;
       border-radius: 50%;
       transition: transform 0.2s ease;
     }
@@ -241,18 +241,18 @@
 
     .option-input:checked + span {
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .option-label:has(.option-input:checked) {
       background-color: rgba(173, 152, 70, 0.1);
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
 
     /* Custom check for browsers not supporting :has */
     .option-label.selected {
       background-color: rgba(173, 152, 70, 0.1);
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
 
     .opt-out-btn {
@@ -271,14 +271,14 @@
     }
 
     .btn-submit {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       border: none;
       border-radius: 8px;
       padding: 16px 32px;
       font-size: 1.1rem;
       font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       cursor: pointer;
       width: 100%;
       transition: background-color 0.2s;
@@ -304,7 +304,7 @@
       margin-bottom: 30px;
     }
     .resource-category h3 {
-      color: #AD9846;
+      color: #c0603a;
       font-size: 1.2rem;
       margin-bottom: 15px;
       display: flex;
@@ -320,14 +320,14 @@
 
     .resource-item {
       background-color: #f9f9f9;
-      border-left: 4px solid #2E3E24;
+      border-left: 4px solid #1a1510;
       padding: 15px 20px;
       margin-bottom: 15px;
       border-radius: 0 8px 8px 0;
     }
     .resource-item h4 {
       margin: 0 0 5px 0;
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 1.05rem;
     }
     .resource-item p {
@@ -337,7 +337,7 @@
       line-height: 1.4;
     }
     .resource-item a {
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 600;
       text-decoration: none;
       font-size: 0.9rem;
@@ -354,13 +354,13 @@
 
     .btn-secondary {
       background-color: transparent;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      color: #1a1510;
+      border: 2px solid #1a1510;
       border-radius: 8px;
       padding: 12px 24px;
       font-size: 1rem;
       font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       cursor: pointer;
       text-align: center;
       flex: 1;
@@ -376,12 +376,12 @@
       border-top: 1px solid #ddd;
     }
     .educational-content h2 {
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 1.6rem;
       margin-bottom: 20px;
     }
     .educational-content h3 {
-      color: #AD9846;
+      color: #c0603a;
       font-size: 1.2rem;
       margin-top: 25px;
       margin-bottom: 10px;
@@ -405,7 +405,7 @@
     /* Coping Strategy Note */
     .gentle-note {
       background-color: #fdfaf6;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 15px;
       margin: 10px 0 20px;
       font-size: 0.9rem;
@@ -431,6 +431,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">

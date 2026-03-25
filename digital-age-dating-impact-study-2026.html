@@ -22,8 +22,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Inline CSS for Site Nav - copied from index.html / shared conventions */
@@ -32,7 +32,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: var(--bg-color); /* Usually #FAF8EB */
+      background-color: var(--bg-color); /* Usually #faf6f0 */
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -47,7 +47,7 @@
       background: none;
       border: none;
       font-size: 1.5rem;
-      color: var(--text-color, #2E3E24);
+      color: var(--text-color, #1a1510);
       cursor: pointer;
     }
     .nav-links {
@@ -59,12 +59,12 @@
     }
     .nav-links a {
       text-decoration: none;
-      color: var(--text-color, #2E3E24);
+      color: var(--text-color, #1a1510);
       font-weight: 500;
       transition: color 0.2s;
     }
     .nav-links a:hover, .nav-links a.active {
-      color: var(--accent-color, #AD9846); /* Gold */
+      color: var(--accent-color, #c0603a); /* Gold */
     }
     @media (max-width: 768px) {
       .hamburger {
@@ -76,7 +76,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background-color: var(--bg-color, #FAF8EB);
+        background-color: var(--bg-color, #faf6f0);
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -87,20 +87,20 @@
     }
     /* Specific styles for study pages */
     .study-header {
-      background-color: var(--text-color, #2E3E24);
-      color: var(--bg-color, #FAF8EB);
+      background-color: var(--text-color, #1a1510);
+      color: var(--bg-color, #faf6f0);
       padding: 4rem 2rem;
       text-align: center;
     }
     .study-header h1 {
       margin-bottom: 1rem;
-      color: var(--accent-color, #AD9846);
+      color: var(--accent-color, #c0603a);
     }
     .study-container {
       max-width: 800px;
       margin: 0 auto;
       padding: 2rem;
-      color: var(--text-color, #2E3E24);
+      color: var(--text-color, #1a1510);
     }
     .card {
       background: #fff;
@@ -139,6 +139,12 @@
 </script>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
@@ -280,9 +286,9 @@
     document.addEventListener('DOMContentLoaded', function() {
       // Styling configuration for charts
       const chartColors = {
-        olive: '#2E3E24',
-        gold: '#AD9846',
-        cream: '#FAF8EB',
+        olive: '#1a1510',
+        gold: '#c0603a',
+        cream: '#faf6f0',
         lightOlive: 'rgba(46, 62, 36, 0.2)',
         lightGold: 'rgba(173, 152, 70, 0.2)'
       };

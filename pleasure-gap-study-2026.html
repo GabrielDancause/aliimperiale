@@ -19,24 +19,24 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
   <style>
-    body { background-color: #FAF8EB; }
-    .site-nav { background-color: #2E3E24; }
-    .site-nav .nav-links a { color: #FAF8EB; }
+    body { background-color: #faf6f0; }
+    .site-nav { background: rgba(250,246,240,.93); }
+    .site-nav .nav-links a { color: #faf6f0; }
     .study-header {
       text-align: center;
       padding: 80px 24px 48px;
     }
     .study-header h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 2.8rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .study-header p {
@@ -59,19 +59,19 @@
       margin-bottom: 32px;
     }
     .study-container h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.8rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 24px;
-      border-bottom: 2px solid #FAF8EB;
+      border-bottom: 2px solid #faf6f0;
       padding-bottom: 12px;
     }
     .study-container h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.3rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin: 32px 0 16px;
     }
     .study-container p {
@@ -97,8 +97,8 @@
       margin: 40px 0;
     }
     .stat-box {
-      background: #FAF8EB;
-      border-left: 4px solid #AD9846;
+      background: #faf6f0;
+      border-left: 4px solid #c0603a;
       padding: 24px;
       margin: 32px 0;
       border-radius: 0 8px 8px 0;
@@ -106,13 +106,13 @@
     .stat-box .number {
       font-size: 3rem;
       font-weight: 700;
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 8px;
     }
     .stat-box .text {
       font-size: 1.1rem;
       font-weight: 500;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .faq-item {
       margin-bottom: 24px;
@@ -127,7 +127,7 @@
     .faq-question {
       font-weight: 600;
       font-size: 1.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .faq-answer {
@@ -143,6 +143,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -326,7 +332,7 @@
           responsive: true,
           maintainAspectRatio: false,
           plugins: {
-            legend: { position: 'bottom', labels: { font: { family: "'Montserrat', sans-serif" } } }
+            legend: { position: 'bottom', labels: { font: { family: "'DM Sans', sans-serif" } } }
           }
         };
 
@@ -339,7 +345,7 @@
             datasets: [{
               label: '% Usually/Always Orgasm',
               data: [95, 65, 86, 88, 66],
-              backgroundColor: ['#2E3E24', '#AD9846', '#5a6b50', '#8b9b80', '#d4c58f']
+              backgroundColor: ['#1a1510', '#c0603a', '#5a6b50', '#8b9b80', '#d4c58f']
             }]
           },
           options: {
@@ -358,7 +364,7 @@
             labels: ['Overemphasis on PIV', 'Lack of Clitoral Stimulation', 'Communication Barriers', 'Performance Pressure', 'Other'],
             datasets: [{
               data: [35, 30, 20, 10, 5],
-              backgroundColor: ['#2E3E24', '#AD9846', '#5a6b50', '#d4c58f', '#e8e4d4']
+              backgroundColor: ['#1a1510', '#c0603a', '#5a6b50', '#d4c58f', '#e8e4d4']
             }]
           },
           options: commonOptions
@@ -374,14 +380,14 @@
               {
                 label: 'Men (% Orgasm)',
                 data: [96, 95, 94, 93],
-                borderColor: '#2E3E24',
+                borderColor: '#1a1510',
                 tension: 0.1,
                 fill: false
               },
               {
                 label: 'Women (% Orgasm)',
                 data: [61, 63, 67, 71],
-                borderColor: '#AD9846',
+                borderColor: '#c0603a',
                 tension: 0.1,
                 fill: false
               }

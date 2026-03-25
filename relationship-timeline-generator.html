@@ -32,21 +32,21 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="stylesheet" href="shared.css">
 
   <style>
     /* Base Tool Styles */
     :root {
-      --cream: #FAF8EB;
-      --olive: #2E3E24;
-      --gold: #AD9846;
+      --cream: #faf6f0;
+      --olive: #1a1510;
+      --gold: #c0603a;
       --olive-light: #4A5E3D;
       --gold-light: #C4B271;
     }
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background-color: var(--cream);
       color: var(--olive);
     }
@@ -268,7 +268,7 @@
     .site-nav {
       position: sticky;
       top: 0;
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -289,19 +289,19 @@
     }
     .nav-links a {
       text-decoration: none;
-      color: #2E3E24;
+      color: #1a1510;
       font-weight: 500;
       transition: color 0.2s ease;
     }
     .nav-links a:hover {
-      color: #AD9846;
+      color: #c0603a;
     }
     .hamburger {
       display: none;
       background: none;
       border: none;
       font-size: 1.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       cursor: pointer;
     }
     @media (max-width: 768px) {
@@ -314,7 +314,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background-color: #FAF8EB;
+        background-color: #faf6f0;
         flex-direction: column;
         padding: 1rem;
         border-bottom: 1px solid rgba(46, 62, 36, 0.1);
@@ -333,6 +333,12 @@
   <script src="back-to-top.js" defer></script>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
@@ -653,7 +659,7 @@
 
             // Check if future
             const isFuture = displayDate > new Date();
-            const futureTag = isFuture ? `<span style="color:#AD9846; font-size:0.8rem; margin-left:8px;">(Future)</span>` : '';
+            const futureTag = isFuture ? `<span style="color:#c0603a; font-size:0.8rem; margin-left:8px;">(Future)</span>` : '';
 
             let healthHTML = '';
             if (item.health) {

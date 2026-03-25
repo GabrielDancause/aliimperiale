@@ -31,14 +31,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 
 <style>
   body {
-    background-color: #FAF8EB;
-    color: #2E3E24;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #faf6f0;
+    color: #1a1510;
+    font-family: 'DM Sans', sans-serif;
   }
 
   /* Sticky Quick Exit */
@@ -47,8 +47,8 @@
     top: 20px;
     right: 20px;
     z-index: 1000;
-    background-color: #2E3E24;
-    color: #FAF8EB;
+    background-color: #1a1510;
+    color: #faf6f0;
     padding: 10px 16px;
     border-radius: 4px;
     text-decoration: none;
@@ -63,7 +63,7 @@
 
   /* Navigation */
   .site-nav {
-    background: #2E3E24;
+    background: rgba(250,246,240,.93);
     padding: 16px 24px;
     display: flex;
     justify-content: space-between;
@@ -84,7 +84,7 @@
     display: none;
     background: none;
     border: none;
-    color: #FAF8EB;
+    color: #faf6f0;
     font-size: 1.5rem;
     cursor: pointer;
   }
@@ -97,7 +97,7 @@
     padding: 0;
   }
   .site-nav .nav-links a {
-    color: #C6C8BB;
+    color: #e8c4a8;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -105,7 +105,7 @@
     transition: color 0.15s ease;
   }
   .site-nav .nav-links a:hover, .site-nav .nav-links a.active {
-    color: #FAF8EB;
+    color: #faf6f0;
   }
 
   @media (max-width: 768px) {
@@ -118,7 +118,7 @@
       top: 100%;
       left: 0;
       right: 0;
-      background: #2E3E24;
+      background: #1a1510;
       flex-direction: column;
       padding: 12px 24px 20px;
       gap: 0;
@@ -145,8 +145,8 @@
 
   /* Header */
   .page-header {
-    background-color: #2E3E24;
-    color: #FAF8EB;
+    background-color: #1a1510;
+    color: #faf6f0;
     text-align: center;
     padding: 60px 20px 80px;
     position: relative;
@@ -158,19 +158,19 @@
     left: 0;
     right: 0;
     height: 40px;
-    background: #FAF8EB;
+    background: #faf6f0;
     border-radius: 40px 40px 0 0;
   }
   .page-header h1 {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.5rem;
     font-weight: 400;
     margin-bottom: 16px;
-    color: #AD9846;
+    color: #c0603a;
   }
   .page-header p {
     font-size: 1.1rem;
-    color: #C6C8BB;
+    color: #e8c4a8;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -184,7 +184,7 @@
   }
   .disclaimer {
     background-color: #fff;
-    border-left: 4px solid #AD9846;
+    border-left: 4px solid #c0603a;
     padding: 16px 20px;
     border-radius: 0 8px 8px 0;
     margin-bottom: 40px;
@@ -213,11 +213,11 @@
     box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
   }
   .card h2 {
-    color: #2E3E24;
+    color: #1a1510;
     font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: 24px;
-    border-bottom: 2px solid #FAF8EB;
+    border-bottom: 2px solid #faf6f0;
     padding-bottom: 12px;
   }
 
@@ -228,7 +228,7 @@
     display: block;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #2E3E24;
+    color: #1a1510;
   }
   .form-group input[type="date"],
   .form-group input[type="number"],
@@ -237,15 +237,15 @@
     padding: 10px;
     border: 1px solid #d4d4d4;
     border-radius: 6px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 1rem;
-    background: #FAF8EB;
-    color: #2E3E24;
+    background: #faf6f0;
+    color: #1a1510;
   }
   .form-group input[type="range"] {
     width: 100%;
     margin-top: 8px;
-    accent-color: #AD9846;
+    accent-color: #c0603a;
   }
   .range-labels {
     display: flex;
@@ -264,12 +264,12 @@
   .checkbox-group input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: #AD9846;
+    accent-color: #c0603a;
   }
 
   .cycle-phase-container {
     display: none;
-    background: #FAF8EB;
+    background: #faf6f0;
     padding: 16px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -281,7 +281,7 @@
   .btn-primary {
     display: block;
     width: 100%;
-    background: #AD9846;
+    background: #c0603a;
     color: #fff;
     border: none;
     padding: 14px;
@@ -327,7 +327,7 @@
 
   .insights-card {
     background: #f4f6ed;
-    border-left: 4px solid #2E3E24;
+    border-left: 4px solid #1a1510;
   }
   .insight-item {
     margin-bottom: 16px;
@@ -341,7 +341,7 @@
   }
   .insight-title {
     font-weight: 600;
-    color: #2E3E24;
+    color: #1a1510;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -350,7 +350,7 @@
   .insight-title svg {
     width: 18px;
     height: 18px;
-    fill: #AD9846;
+    fill: #c0603a;
   }
   .insight-desc {
     font-size: 0.95rem;
@@ -374,9 +374,9 @@
     border-bottom: 1px solid #e0e4d8;
   }
   th {
-    background: #FAF8EB;
+    background: #faf6f0;
     font-weight: 600;
-    color: #2E3E24;
+    color: #1a1510;
     white-space: nowrap;
   }
   td {
@@ -400,7 +400,7 @@
   }
   .faq-section h2 {
     text-align: center;
-    color: #2E3E24;
+    color: #1a1510;
     font-size: 2rem;
     margin-bottom: 30px;
   }
@@ -413,7 +413,7 @@
   }
   .faq-item h3 {
     margin: 0 0 10px;
-    color: #AD9846;
+    color: #c0603a;
     font-size: 1.1rem;
   }
   .faq-item p {
@@ -425,6 +425,12 @@
 </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
 
 <a href="https://google.com" class="quick-exit" aria-label="Quick Exit">Quick Exit</a>
 
@@ -595,7 +601,7 @@
   </section>
 </main>
 
-<footer class="site-footer" style="background:#2E3E24; color:#FAF8EB; text-align:center; padding:40px 20px; margin-top:60px;">
+<footer class="site-footer" style="background:#1a1510; color:#faf6f0; text-align:center; padding:40px 20px; margin-top:60px;">
   <p>&copy; 2026 Ali Imperiale. All rights reserved.</p>
 </footer>
 
@@ -687,7 +693,7 @@
       btn.style.background = '#4A5D3E';
       setTimeout(() => {
         btn.textContent = originalText;
-        btn.style.background = '#AD9846';
+        btn.style.background = '#c0603a';
       }, 2000);
     });
 
@@ -774,7 +780,7 @@
             {
               label: 'Libido',
               data: libidoData,
-              borderColor: '#AD9846',
+              borderColor: '#c0603a',
               backgroundColor: 'rgba(173, 152, 70, 0.1)',
               borderWidth: 3,
               tension: 0.3,
@@ -792,7 +798,7 @@
             {
               label: 'Energy',
               data: energyData,
-              borderColor: '#2E3E24',
+              borderColor: '#1a1510',
               borderWidth: 2,
               tension: 0.3,
               hidden: true // hide by default to avoid clutter

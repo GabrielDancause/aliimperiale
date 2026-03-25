@@ -21,7 +21,7 @@
   <style>
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -42,7 +42,7 @@
       padding: 0;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -50,13 +50,13 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     body {
-      background-color: #FAF8EB;
-      font-family: 'Montserrat', sans-serif;
-      color: #2E3E24;
+      background-color: #faf6f0;
+      font-family: 'DM Sans', sans-serif;
+      color: #1a1510;
       line-height: 1.6;
     }
 
@@ -72,7 +72,7 @@
     }
 
     .tool-header h1 {
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 2.5rem;
       margin-bottom: 10px;
     }
@@ -86,7 +86,7 @@
 
     .medical-disclaimer {
       background-color: #f1ebd7;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 15px;
       margin-bottom: 30px;
       font-size: 0.9rem;
@@ -109,7 +109,7 @@
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1);
-      border: 8px solid #2E3E24;
+      border: 8px solid #1a1510;
     }
 
     .wheel-pointer {
@@ -121,7 +121,7 @@
       height: 0;
       border-left: 20px solid transparent;
       border-right: 20px solid transparent;
-      border-top: 40px solid #AD9846;
+      border-top: 40px solid #c0603a;
       z-index: 10;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
     }
@@ -133,8 +133,8 @@
     }
 
     .spin-btn {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 15px 40px;
       font-size: 1.2rem;
@@ -142,7 +142,7 @@
       border-radius: 30px;
       cursor: pointer;
       transition: background-color 0.3s, transform 0.1s;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       box-shadow: 0 4px 6px rgba(46, 62, 36, 0.2);
     }
 
@@ -168,7 +168,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       margin-bottom: 40px;
       display: none;
-      border-top: 5px solid #AD9846;
+      border-top: 5px solid #c0603a;
     }
 
     .result-section.active {
@@ -182,7 +182,7 @@
     }
 
     .fantasy-title {
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 2rem;
       margin-top: 0;
       margin-bottom: 10px;
@@ -223,7 +223,7 @@
     }
 
     .result-card h3 {
-      color: #AD9846;
+      color: #c0603a;
       margin-top: 0;
       margin-bottom: 10px;
       font-size: 1.2rem;
@@ -237,7 +237,7 @@
       border-radius: 8px;
       font-style: italic;
       margin-top: 10px;
-      border-left: 3px solid #AD9846;
+      border-left: 3px solid #c0603a;
     }
 
     /* Form within results */
@@ -249,7 +249,7 @@
 
     .intensity-form h4 {
       margin-top: 0;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .radio-group {
@@ -270,7 +270,7 @@
       -webkit-appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 50%;
       margin-right: 10px;
       position: relative;
@@ -285,18 +285,18 @@
       transform: translate(-50%, -50%) scale(1);
       width: 10px;
       height: 10px;
-      background-color: #2E3E24;
+      background-color: #1a1510;
       border-radius: 50%;
     }
 
     .save-btn {
-      background-color: #AD9846;
+      background-color: #c0603a;
       color: #fff;
       border: none;
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       transition: background-color 0.2s;
     }
@@ -325,7 +325,7 @@
 
     .history-header h2 {
       margin: 0;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .clear-btn {
@@ -362,7 +362,7 @@
 
     .history-item-details h4 {
       margin: 0 0 5px 0;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .history-item-details p {
@@ -372,7 +372,7 @@
     }
 
     .history-tag {
-      background-color: #AD9846;
+      background-color: #c0603a;
       color: #fff;
       padding: 4px 10px;
       border-radius: 15px;
@@ -401,7 +401,7 @@
     }
 
     .faq-item h3 {
-      color: #2E3E24;
+      color: #1a1510;
       margin-top: 0;
     }
 
@@ -448,6 +448,12 @@
   <meta name="twitter:description" content="Discover and categorize your sexual desires safely with our interactive Sexual Fantasy Exploration Wheel. A desire discovery tool and sexual imagination guide.">
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
 
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -706,7 +712,7 @@
       ];
 
       // Wheel Configuration
-      const colors = ['#2E3E24', '#556B48', '#8c9b83', '#AD9846', '#c4b370', '#FAF8EB', '#e8e3cf', '#d1c7a3'];
+      const colors = ['#1a1510', '#556B48', '#8c9b83', '#c0603a', '#c4b370', '#faf6f0', '#e8e3cf', '#d1c7a3'];
       const numSegments = fantasies.length;
       const arc = Math.PI * 2 / numSegments;
       let currentAngle = 0;
@@ -730,7 +736,7 @@
 
           // Border
           ctx.lineWidth = 2;
-          ctx.strokeStyle = '#FAF8EB';
+          ctx.strokeStyle = '#faf6f0';
           ctx.stroke();
 
           // Text
@@ -742,10 +748,10 @@
           ctx.rotate(angle + arc / 2);
 
           // Choose text color based on background
-          const isDarkBg = ['#2E3E24', '#556B48', '#8c9b83', '#AD9846'].includes(colors[i % colors.length]);
-          ctx.fillStyle = isDarkBg ? '#FAF8EB' : '#2E3E24';
+          const isDarkBg = ['#1a1510', '#556B48', '#8c9b83', '#c0603a'].includes(colors[i % colors.length]);
+          ctx.fillStyle = isDarkBg ? '#faf6f0' : '#1a1510';
 
-          ctx.font = 'bold 14px Montserrat, sans-serif';
+          ctx.font = 'bold 14px 'DM Sans', sans-serif';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
 

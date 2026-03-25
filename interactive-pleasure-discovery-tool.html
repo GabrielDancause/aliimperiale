@@ -24,8 +24,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script type="application/ld+json">
@@ -59,7 +59,7 @@
   <style>
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -78,7 +78,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -86,13 +86,13 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Page Header */
     .page-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       padding: 60px 20px 80px;
       text-align: center;
       position: relative;
@@ -104,20 +104,20 @@
       left: 0;
       right: 0;
       height: 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 40px 40px 0 0;
     }
     .page-header h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 16px;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .page-header p {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.15rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -140,9 +140,9 @@
       margin-bottom: 40px;
     }
     .card h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -163,26 +163,26 @@
       border-radius: 3px;
     }
     .tabs-nav::-webkit-scrollbar-thumb {
-      background: #C6C8BB;
+      background: #e8c4a8;
       border-radius: 3px;
     }
     .tab-btn {
       padding: 10px 20px;
-      background: #FAF8EB;
-      border: 1.5px solid #C6C8BB;
+      background: #faf6f0;
+      border: 1.5px solid #e8c4a8;
       border-radius: 20px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.9rem;
-      color: #555549;
+      color: #7a6a5a;
       cursor: pointer;
       transition: all 0.2s;
       white-space: nowrap;
     }
     .tab-btn.active {
-      background: #2E3E24;
-      border-color: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      border-color: #1a1510;
+      color: #faf6f0;
     }
     .tab-pane {
       display: none;
@@ -204,7 +204,7 @@
       display: block;
       font-weight: 600;
       font-size: 1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .radio-group {
@@ -223,7 +223,7 @@
       appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #C6C8BB;
+      border: 2px solid #e8c4a8;
       border-radius: 4px; /* Default for checkbox */
       margin: 0;
       margin-top: 2px;
@@ -243,14 +243,14 @@
       border-radius: 2px; /* Default for checkbox */
       transform: scale(0);
       transition: 120ms transform ease-in-out;
-      background-color: #AD9846;
+      background-color: #c0603a;
     }
     .radio-option input[type="radio"]::before {
       border-radius: 50%;
     }
     .radio-option input[type="radio"]:checked,
     .radio-option input[type="checkbox"]:checked {
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
     .radio-option input[type="radio"]:checked::before,
     .radio-option input[type="checkbox"]:checked::before {
@@ -258,7 +258,7 @@
     }
     .radio-label {
       font-size: 0.95rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.5;
     }
     .range-slider-container {
@@ -268,7 +268,7 @@
     }
     input[type="range"] {
       flex-grow: 1;
-      accent-color: #AD9846;
+      accent-color: #c0603a;
       height: 8px;
       border-radius: 4px;
       background: #e6e4d9;
@@ -276,7 +276,7 @@
     }
     .range-value {
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       width: 32px;
       text-align: center;
       font-size: 1rem;
@@ -284,16 +284,16 @@
     .text-input, .textarea-input {
       width: 100%;
       padding: 12px 16px;
-      border: 1px solid #C6C8BB;
+      border: 1px solid #e8c4a8;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
       outline: none;
-      background: #FAF8EB;
-      color: #2E3E24;
+      background: #faf6f0;
+      color: #1a1510;
     }
     .text-input:focus, .textarea-input:focus {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: #fff;
     }
     .textarea-input {
@@ -305,7 +305,7 @@
     .btn {
       padding: 14px 28px;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
@@ -315,8 +315,8 @@
       display: inline-block;
     }
     .btn-primary {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       width: 100%;
       margin-top: 20px;
     }
@@ -325,8 +325,8 @@
       transform: translateY(-1px);
     }
     .btn-secondary {
-      background: #AD9846;
-      color: #2E3E24;
+      background: #c0603a;
+      color: #1a1510;
       width: 100%;
       margin-top: 12px;
     }
@@ -337,8 +337,8 @@
 
     /* Results Profile */
     .profile-card {
-      background: #FAF8EB;
-      border: 2px solid #AD9846;
+      background: #faf6f0;
+      border: 2px solid #c0603a;
       border-radius: 12px;
       padding: 24px;
       margin-top: 30px;
@@ -349,7 +349,7 @@
       animation: fadeIn 0.4s ease-in-out;
     }
     .profile-card h3 {
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 16px;
       font-size: 1.4rem;
     }
@@ -365,12 +365,12 @@
     }
     .profile-section h4 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .profile-content {
       font-size: 0.95rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.6;
       white-space: pre-wrap;
     }
@@ -379,13 +379,13 @@
     .education-content p {
       font-size: 0.95rem;
       line-height: 1.7;
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 16px;
     }
     .education-content h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.3rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-top: 32px;
       margin-bottom: 16px;
     }
@@ -398,7 +398,7 @@
       padding-left: 28px;
       margin-bottom: 12px;
       font-size: 0.95rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.5;
     }
     .education-content li::before {
@@ -422,7 +422,7 @@
     }
     .faq-question {
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 1.05rem;
       margin-bottom: 8px;
       cursor: pointer;
@@ -433,7 +433,7 @@
     .faq-answer {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: #555549;
+      color: #7a6a5a;
       display: none;
     }
     .faq-answer.open {
@@ -447,8 +447,8 @@
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 12px 24px;
       border-radius: 8px;
       font-size: 0.9rem;
@@ -472,7 +472,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
     <nav class="site-nav">
@@ -508,7 +514,7 @@
       <!-- Erogenous Zones -->
       <section class="card tab-pane active" id="tab-zones">
         <h2>Erogenous Zones & Sensitivity</h2>
-        <p style="text-align:center; color:#555549; margin-bottom:24px;">Map out the areas of your body that feel most alive when touched.</p>
+        <p style="text-align:center; color:#7a6a5a; margin-bottom:24px;">Map out the areas of your body that feel most alive when touched.</p>
 
         <div class="form-group">
           <label>Highly Sensitive Areas (Mark all that apply)</label>
@@ -536,7 +542,7 @@
       <!-- Touch Preferences -->
       <section class="card tab-pane" id="tab-touch">
         <h2>Touch Preferences & Techniques</h2>
-        <p style="text-align:center; color:#555549; margin-bottom:24px;">Explore the specific kinds of touch that resonate with your body.</p>
+        <p style="text-align:center; color:#7a6a5a; margin-bottom:24px;">Explore the specific kinds of touch that resonate with your body.</p>
 
         <div class="form-group">
           <label>Preferred Pressure Level</label>
@@ -568,7 +574,7 @@
       <!-- Arousal Patterns -->
       <section class="card tab-pane" id="tab-arousal">
         <h2>Arousal Patterns & Timing</h2>
-        <p style="text-align:center; color:#555549; margin-bottom:24px;">Understand how your desire builds and what helps you transition into a sensual headspace.</p>
+        <p style="text-align:center; color:#7a6a5a; margin-bottom:24px;">Understand how your desire builds and what helps you transition into a sensual headspace.</p>
 
         <div class="form-group">
           <label>How long does it typically take you to feel fully aroused?</label>
@@ -599,7 +605,7 @@
       <!-- Pleasure Intensity -->
       <section class="card tab-pane" id="tab-intensity">
         <h2>Pleasure Intensity Scales</h2>
-        <p style="text-align:center; color:#555549; margin-bottom:24px;">Rate your comfort and preference for different levels of stimulation.</p>
+        <p style="text-align:center; color:#7a6a5a; margin-bottom:24px;">Rate your comfort and preference for different levels of stimulation.</p>
 
         <div class="form-group">
           <label>Preference for Direct vs. Indirect Stimulation (1 = entirely indirect/teasing, 10 = highly direct/focused)</label>
@@ -626,7 +632,7 @@
       <!-- Emotional Connection -->
       <section class="card tab-pane" id="tab-emotion">
         <h2>Emotional Connection Factors</h2>
-        <p style="text-align:center; color:#555549; margin-bottom:24px;">Explore how your emotions and mental state intersect with your physical pleasure.</p>
+        <p style="text-align:center; color:#7a6a5a; margin-bottom:24px;">Explore how your emotions and mental state intersect with your physical pleasure.</p>
 
         <div class="form-group">
           <label>How important is emotional intimacy for your physical arousal?</label>
@@ -651,7 +657,7 @@
       <!-- Comfort Zones -->
       <section class="card tab-pane" id="tab-comfort">
         <h2>Exploration Comfort Zones</h2>
-        <p style="text-align:center; color:#555549; margin-bottom:24px;">Define where your boundaries lie when it comes to trying new things.</p>
+        <p style="text-align:center; color:#7a6a5a; margin-bottom:24px;">Define where your boundaries lie when it comes to trying new things.</p>
 
         <div class="form-group">
           <label>How would you describe your current appetite for exploration?</label>
@@ -710,10 +716,10 @@
       <h2>Resource Recommendations</h2>
       <p>Want to explore further? Here are some trusted resources to help you continue your pleasure journey:</p>
       <ul>
-        <li><a href="/sexual-communication-guide.html" class="btn-link" style="color: #AD9846; font-weight: 600;">Sexual Communication Guide</a> - Learn how to effectively share the profile you just created with a partner.</li>
-        <li><a href="/anatomy-quiz.html" class="btn-link" style="color: #AD9846; font-weight: 600;">Pleasure Anatomy Quiz</a> - Test your knowledge of the human body and how it experiences pleasure.</li>
-        <li><a href="/sex-positive-books-essential.html" class="btn-link" style="color: #AD9846; font-weight: 600;">Essential Sex-Positive Books</a> - My curated list of the best books on pleasure, anatomy, and relationships.</li>
-        <li><a href="/kink-curiosity-explorer.html" class="btn-link" style="color: #AD9846; font-weight: 600;">Kink Curiosity Explorer</a> - If your exploration comfort zones are leading you toward kink, start here.</li>
+        <li><a href="/sexual-communication-guide.html" class="btn-link" style="color: #c0603a; font-weight: 600;">Sexual Communication Guide</a> - Learn how to effectively share the profile you just created with a partner.</li>
+        <li><a href="/anatomy-quiz.html" class="btn-link" style="color: #c0603a; font-weight: 600;">Pleasure Anatomy Quiz</a> - Test your knowledge of the human body and how it experiences pleasure.</li>
+        <li><a href="/sex-positive-books-essential.html" class="btn-link" style="color: #c0603a; font-weight: 600;">Essential Sex-Positive Books</a> - My curated list of the best books on pleasure, anatomy, and relationships.</li>
+        <li><a href="/kink-curiosity-explorer.html" class="btn-link" style="color: #c0603a; font-weight: 600;">Kink Curiosity Explorer</a> - If your exploration comfort zones are leading you toward kink, start here.</li>
       </ul>
     </section>
 

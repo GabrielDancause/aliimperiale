@@ -24,36 +24,36 @@
 
   <style>
     body {
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
     }
 
     /* Additional nav styling specific to tools with dark headers */
     .site-nav {
-      background-color: #2E3E24;
+      background: rgba(250,246,240,.93);
     }
     .site-nav .nav-links a {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .site-nav .nav-links a:hover {
-      color: #AD9846;
+      color: #c0603a;
     }
     .nav-hamburger span {
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
     }
 
     .tracker-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       text-align: center;
       padding: 60px 24px;
       margin-top: -1px; /* seamless with nav */
     }
     .tracker-header h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 16px;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .tracker-header p {
       font-size: 1.1rem;
@@ -76,7 +76,7 @@
       margin-bottom: 32px;
       border-radius: 4px;
       font-size: 0.95rem;
-      color: #2E3E24;
+      color: #1a1510;
       line-height: 1.5;
     }
     .disclaimer strong {
@@ -93,9 +93,9 @@
 
     .tracker-section h2 {
       font-size: 1.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 8px;
     }
 
@@ -112,7 +112,7 @@
     label {
       display: block;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
 
@@ -123,7 +123,7 @@
       padding: 12px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
     }
 
@@ -155,19 +155,19 @@
 
     .mood-btn {
       padding: 10px 16px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 20px;
       background: transparent;
-      color: #2E3E24;
+      color: #1a1510;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .mood-btn.selected,
     .mood-btn:hover {
-      background: #AD9846;
+      background: #c0603a;
       color: #fff;
     }
 
@@ -175,7 +175,7 @@
       display: inline-block;
       width: 100%;
       padding: 14px;
-      background-color: #2E3E24;
+      background-color: #1a1510;
       color: #fff;
       border: none;
       border-radius: 8px;
@@ -183,7 +183,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: background 0.3s ease;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       margin-top: 10px;
     }
     .btn-submit:hover {
@@ -199,7 +199,7 @@
       border: 1px solid #d9534f;
       border-radius: 6px;
       cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       transition: all 0.2s;
     }
     .btn-clear:hover {
@@ -217,8 +217,8 @@
       margin-top: 20px;
     }
     .history-item {
-      background: #FAF8EB;
-      border-left: 4px solid #AD9846;
+      background: #faf6f0;
+      border-left: 4px solid #c0603a;
       padding: 16px;
       margin-bottom: 12px;
       border-radius: 4px;
@@ -234,7 +234,7 @@
       line-height: 1.5;
     }
     .resources-list a {
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 600;
       text-decoration: none;
     }
@@ -250,7 +250,7 @@
     }
     .faq-item h3 {
       font-size: 1.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .faq-item p {
@@ -307,6 +307,12 @@
   <meta name="twitter:description" content="A gentle, trauma-informed interactive tool for tracking your healing progress, managing triggers, and celebrating positive milestones in intimacy after trauma.">
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -548,12 +554,12 @@
             datasets: [{
               label: 'Comfort Level (1-10)',
               data: comfortData,
-              borderColor: '#AD9846',
+              borderColor: '#c0603a',
               backgroundColor: 'rgba(173, 152, 70, 0.1)',
               borderWidth: 3,
               tension: 0.3,
               fill: true,
-              pointBackgroundColor: '#2E3E24',
+              pointBackgroundColor: '#1a1510',
               pointRadius: 5
             }]
           },

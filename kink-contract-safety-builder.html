@@ -24,15 +24,15 @@
   <link rel="canonical" href="https://aliimperiale.com/kink-contract-safety-builder.html">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="stylesheet" href="shared.css">
   <script src="mobile-nav.js" defer></script>
   <script src="newsletter-bar.js" defer></script>
   <script src="email-capture.js" defer></script>
   <script src="back-to-top.js" defer></script>
   <style>
-    body { background-color: #FAF8EB; }
+    body { background-color: #faf6f0; }
 
     /* Tool Styles */
     .hero-tool {
@@ -42,7 +42,7 @@
     .hero-tool h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .hero-tool p {
       font-size: 1.1rem;
@@ -127,11 +127,11 @@
       z-index: 2;
     }
     .step.active {
-      background: #AD9846;
+      background: #c0603a;
       color: white;
     }
     .step.completed {
-      background: #2E3E24;
+      background: #1a1510;
       color: white;
     }
 
@@ -155,7 +155,7 @@
       display: block;
       margin-bottom: 0.5rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .form-group input[type="text"],
     .form-group input[type="email"],
@@ -245,9 +245,9 @@
       transition: opacity 0.2s;
     }
     .btn:hover { opacity: 0.9; }
-    .btn-primary { background: #AD9846; color: white; }
+    .btn-primary { background: #c0603a; color: white; }
     .btn-secondary { background: #eee; color: #333; }
-    .btn-success { background: #2E3E24; color: white; }
+    .btn-success { background: #1a1510; color: white; }
     .btn-clear { background: transparent; color: #dc3545; border: 1px solid #dc3545; }
 
     /* Results */
@@ -274,19 +274,25 @@
       margin-top: 3rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
-    .edu-section h2 { color: #2E3E24; margin-bottom: 1rem; }
-    .edu-section h3 { color: #AD9846; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .edu-section h2 { color: #1a1510; margin-bottom: 1rem; }
+    .edu-section h3 { color: #c0603a; margin-top: 1.5rem; margin-bottom: 0.5rem; }
     .edu-section p, .edu-section ul { margin-bottom: 1rem; line-height: 1.6; }
     .edu-section ul { padding-left: 1.5rem; }
 
     .faq-container { margin-top: 3rem; }
     .faq-item { margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem; }
-    .faq-question { font-weight: 600; color: #2E3E24; margin-bottom: 0.5rem; cursor: pointer; display: flex; justify-content: space-between; }
+    .faq-question { font-weight: 600; color: #1a1510; margin-bottom: 0.5rem; cursor: pointer; display: flex; justify-content: space-between; }
     .faq-answer { display: none; color: #444; line-height: 1.6; }
     .faq-item.active .faq-answer { display: block; }
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <!-- Site Nav -->
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -495,7 +501,7 @@
     <!-- Results Area -->
     <div id="results-area">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-        <h2 style="color: #2E3E24; margin: 0;">Your Kink Agreement</h2>
+        <h2 style="color: #1a1510; margin: 0;">Your Kink Agreement</h2>
         <div>
             <button type="button" class="btn btn-primary" id="btn-print">Print / Save as PDF</button>
             <button type="button" class="btn btn-secondary" id="btn-download-txt">Download .txt</button>
@@ -528,7 +534,7 @@
 
     <!-- FAQ -->
     <section class="faq-container">
-      <h2 style="color: #2E3E24; margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
+      <h2 style="color: #1a1510; margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
 
       <div class="faq-item">
         <div class="faq-question">Is this contract legally binding? <span>+</span></div>

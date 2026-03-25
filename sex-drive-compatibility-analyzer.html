@@ -19,28 +19,28 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
-      background-color: #FAF8EB;
-      font-family: 'Montserrat', sans-serif;
-      color: #2E3E24;
+      background-color: #faf6f0;
+      font-family: 'DM Sans', sans-serif;
+      color: #1a1510;
       margin: 0;
       padding: 0;
     }
     .tool-header {
       text-align: center;
       padding: 80px 24px 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
     }
     .tool-header h1 {
       font-size: 2.2rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .tool-header p {
@@ -52,7 +52,7 @@
     }
     .disclaimer-box {
       background: #fff;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 16px 24px;
       margin: 24px auto;
       max-width: 800px;
@@ -63,7 +63,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     .disclaimer-box strong {
-      color: #2E3E24;
+      color: #1a1510;
     }
     .tool-container {
       max-width: 900px;
@@ -84,7 +84,7 @@
       transition: background 0.3s ease;
     }
     .step-dot.active {
-      background: #AD9846;
+      background: #c0603a;
     }
     .form-section {
       background: #fff;
@@ -104,7 +104,7 @@
     }
     .form-section h2 {
       font-size: 1.6rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-top: 0;
       margin-bottom: 8px;
     }
@@ -144,17 +144,17 @@
       display: flex;
       align-items: flex-start;
       padding: 14px 16px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 2px solid #e0d8c0;
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.2s ease;
     }
     .option-label:hover {
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
     .option-label.selected {
-      border-color: #2E3E24;
+      border-color: #1a1510;
       background: #f0f4eb;
     }
     .option-input {
@@ -162,7 +162,7 @@
       -webkit-appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 50%;
       margin-right: 12px;
       margin-top: 2px;
@@ -178,7 +178,7 @@
       transform: translate(-50%, -50%) scale(1);
       width: 10px;
       height: 10px;
-      background: #2E3E24;
+      background: #1a1510;
       border-radius: 50%;
       animation: scaleIn 0.2s ease;
     }
@@ -196,7 +196,7 @@
       margin-top: 32px;
     }
     .btn {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
       font-weight: 600;
       padding: 14px 28px;
@@ -206,8 +206,8 @@
       transition: all 0.3s ease;
     }
     .btn-primary {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
     .btn-primary:hover {
       background: #4a5c40;
@@ -219,9 +219,9 @@
       transform: none;
     }
     .btn-secondary {
-      background: #FAF8EB;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      background: #faf6f0;
+      color: #1a1510;
+      border: 2px solid #1a1510;
     }
     .btn-secondary:hover {
       background: #e0d8c0;
@@ -247,8 +247,8 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      background: #FAF8EB;
-      border: 8px solid #AD9846;
+      background: #faf6f0;
+      border: 8px solid #c0603a;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -258,7 +258,7 @@
     .score-value {
       font-size: 3rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       line-height: 1;
     }
     .score-label {
@@ -268,7 +268,7 @@
     }
     .score-title {
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .score-desc {
@@ -288,7 +288,7 @@
       text-align: center;
       margin-top: 0;
       margin-bottom: 24px;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .analysis-card {
@@ -300,7 +300,7 @@
     }
     .analysis-card h3 {
       font-size: 1.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-top: 0;
       margin-bottom: 20px;
       display: flex;
@@ -315,7 +315,7 @@
     }
     .analysis-item h4 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .analysis-item p {
@@ -326,14 +326,14 @@
 
     .script-box {
       background: #f9f6e8;
-      border-left: 4px solid #2E3E24;
+      border-left: 4px solid #1a1510;
       padding: 20px;
       margin-top: 16px;
       border-radius: 0 8px 8px 0;
     }
     .script-box p {
       font-style: italic;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 0;
     }
 
@@ -363,10 +363,10 @@
     }
     .history-date {
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .history-score {
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 700;
     }
     .btn-small {
@@ -386,6 +386,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
 
   <!-- Site Navigation -->
   <nav class="site-nav">
@@ -478,20 +484,20 @@
 
     <!-- FAQ Section -->
     <div style="max-width: 800px; margin: 60px auto; padding: 0 24px;">
-      <h2 style="color: #2E3E24; font-size: 1.8rem; margin-bottom: 24px; text-align: center;">Frequently Asked Questions About Libido Mismatches</h2>
+      <h2 style="color: #1a1510; font-size: 1.8rem; margin-bottom: 24px; text-align: center;">Frequently Asked Questions About Libido Mismatches</h2>
 
       <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #e0d8c0;">
-        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 8px;">Is it normal for couples to have different sex drives?</h3>
+        <h3 style="color: #1a1510; font-size: 1.2rem; margin-bottom: 8px;">Is it normal for couples to have different sex drives?</h3>
         <p style="color: #5a6b50; line-height: 1.6;">Absolutely! It is incredibly common for partners to have different levels of sexual desire. Libido naturally fluctuates throughout life due to stress, hormones, medication, and relationship dynamics. A mismatch doesn't mean your relationship is doomed; it just means you need good communication to navigate it.</p>
       </div>
 
       <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #e0d8c0;">
-        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 8px;">How can we improve our sexual desire compatibility?</h3>
+        <h3 style="color: #1a1510; font-size: 1.2rem; margin-bottom: 8px;">How can we improve our sexual desire compatibility?</h3>
         <p style="color: #5a6b50; line-height: 1.6;">Improving compatibility starts with removing pressure. Try scheduling intimacy without the expectation of penetrative sex. Explore different forms of touch (like cuddling or massage), communicate your core turn-ons, and prioritize emotional connection outside the bedroom. Often, addressing underlying stress or relationship resentment is the key to unlocking desire.</p>
       </div>
 
       <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #e0d8c0;">
-        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 8px;">When should we seek help for mismatched sex drives?</h3>
+        <h3 style="color: #1a1510; font-size: 1.2rem; margin-bottom: 8px;">When should we seek help for mismatched sex drives?</h3>
         <p style="color: #5a6b50; line-height: 1.6;">If the libido mismatch is causing significant distress, resentment, or impacting your relationship stability, it's time to seek help. A certified sex therapist can provide professional guidance. Additionally, if the sudden drop in libido is linked to physical pain, hormonal changes, or medication, please consult a healthcare provider.</p>
       </div>
     </div>

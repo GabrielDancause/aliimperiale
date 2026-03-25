@@ -24,17 +24,17 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
   body {
-    background-color: #FAF8EB;
-    color: #2E3E24;
+    background-color: #faf6f0;
+    color: #1a1510;
   }
 
   /* Navigation (copied from index) */
   .site-nav {
-    background: #2E3E24;
+    background: rgba(250,246,240,.93);
     padding: 16px 24px;
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,7 @@
     padding: 0;
   }
   .site-nav .nav-links a {
-    color: #C6C8BB;
+    color: #e8c4a8;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -67,13 +67,13 @@
     transition: color 0.15s ease;
   }
   .site-nav .nav-links a:hover, .site-nav .nav-links a.active {
-    color: #FAF8EB;
+    color: #faf6f0;
   }
 
   /* Page Header */
   .page-header {
-    background-color: #2E3E24;
-    color: #FAF8EB;
+    background-color: #1a1510;
+    color: #faf6f0;
     text-align: center;
     padding: 40px 20px 60px;
     position: relative;
@@ -85,18 +85,18 @@
     left: 0;
     right: 0;
     height: 30px;
-    background: #FAF8EB;
+    background: #faf6f0;
     border-radius: 30px 30px 0 0;
   }
   .page-header h1 {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.5rem;
     font-weight: 400;
     margin-bottom: 10px;
   }
   .page-header p {
     font-size: 1.05rem;
-    color: #C6C8BB;
+    color: #e8c4a8;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -122,10 +122,10 @@
   }
 
   .card h2 {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #2E3E24;
+    color: #1a1510;
     text-align: center;
   }
 
@@ -141,21 +141,21 @@
   }
   .btn-nav {
     background: none;
-    border: 1px solid #AD9846;
-    color: #2E3E24;
+    border: 1px solid #c0603a;
+    color: #1a1510;
     padding: 6px 16px;
     border-radius: 16px;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     transition: all 0.2s;
   }
   .btn-nav:hover {
-    background: #AD9846;
+    background: #c0603a;
     color: #fff;
   }
   .calendar-month {
-    font-family: 'New Standard', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.4rem;
     font-weight: 600;
   }
@@ -167,7 +167,7 @@
   }
   .calendar-day-header {
     font-weight: 600;
-    color: #8a8a7a;
+    color: #7a6a5a;
     font-size: 0.85rem;
     padding-bottom: 8px;
   }
@@ -195,7 +195,7 @@
     transform: none;
   }
 
-  .day-today { border: 2px solid #2E3E24; font-weight: bold; }
+  .day-today { border: 2px solid #1a1510; font-weight: bold; }
 
   /* Logged state colors */
   .day-period { background-color: #e5b3b3; color: #5a2a2a; }
@@ -207,7 +207,7 @@
     transform: translateX(-50%);
     width: 4px;
     height: 4px;
-    background-color: #2E3E24;
+    background-color: #1a1510;
     border-radius: 50%;
   }
 
@@ -232,7 +232,7 @@
   .legend-dot {
     width: 4px;
     height: 4px;
-    background-color: #2E3E24;
+    background-color: #1a1510;
     border-radius: 50%;
   }
 
@@ -240,9 +240,9 @@
   .logging-section {
     margin-top: 20px;
     padding: 20px;
-    background: #FAF8EB;
+    background: #faf6f0;
     border-radius: 12px;
-    border: 1px dashed #C6C8BB;
+    border: 1px dashed #e8c4a8;
     display: none;
   }
   .logging-header {
@@ -254,14 +254,14 @@
   .logging-date {
     font-weight: 700;
     font-size: 1.1rem;
-    color: #2E3E24;
+    color: #1a1510;
   }
   .btn-close-log {
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #8a8a7a;
+    color: #7a6a5a;
   }
   .log-options {
     display: grid;
@@ -281,8 +281,8 @@
     width: 100%;
     padding: 10px;
     border-radius: 8px;
-    border: 1px solid #C6C8BB;
-    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #e8c4a8;
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.95rem;
   }
   .checkbox-group {
@@ -295,15 +295,15 @@
   .checkbox-group input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: #2E3E24;
+    accent-color: #1a1510;
   }
   .checkbox-group label {
     font-weight: 600;
-    color: #2E3E24;
+    color: #1a1510;
   }
   .btn-save-log {
-    background: #2E3E24;
-    color: #FAF8EB;
+    background: #1a1510;
+    color: #faf6f0;
     border: none;
     padding: 12px 24px;
     border-radius: 24px;
@@ -311,7 +311,7 @@
     cursor: pointer;
     width: 100%;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 1rem;
     transition: background 0.2s, transform 0.1s;
   }
@@ -329,25 +329,25 @@
     margin-top: 25px;
   }
   .btn-action {
-    background: #FAF8EB;
-    color: #AD9846;
-    border: 2px solid #AD9846;
+    background: #faf6f0;
+    color: #c0603a;
+    border: 2px solid #c0603a;
     padding: 10px 20px;
     border-radius: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
   }
   .btn-action:hover {
-    background: #AD9846;
+    background: #c0603a;
     color: #fff;
   }
 
   .privacy-note {
     text-align: center;
     font-size: 0.85rem;
-    color: #8a8a7a;
+    color: #7a6a5a;
     margin-top: 15px;
   }
 
@@ -402,6 +402,12 @@
 </head>
 <body>
 
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+
   <!-- Navigation -->
     <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -424,10 +430,10 @@
   <main class="tracker-container">
     <section class="card">
       <h2>Wellness Calendar & Cycle Tracking</h2>
-      <div style="margin-bottom: 20px; background: #FAF8EB; padding: 15px; border-radius: 8px; border: 1px dashed #C6C8BB;">
+      <div style="margin-bottom: 20px; background: #faf6f0; padding: 15px; border-radius: 8px; border: 1px dashed #e8c4a8;">
         <label for="cycle-length" style="font-weight:600; font-size: 0.95rem;">Average Cycle Length (days): </label>
-        <input type="number" id="cycle-length" value="28" min="20" max="45" style="width: 60px; padding: 5px; border-radius: 4px; border: 1px solid #C6C8BB;">
-        <p style="font-size: 0.85rem; color: #555549; margin-top: 5px;">We use this to estimate your next ovulation window (typically ~14 days before your next period).</p>
+        <input type="number" id="cycle-length" value="28" min="20" max="45" style="width: 60px; padding: 5px; border-radius: 4px; border: 1px solid #e8c4a8;">
+        <p style="font-size: 0.85rem; color: #7a6a5a; margin-top: 5px;">We use this to estimate your next ovulation window (typically ~14 days before your next period).</p>
       </div>
 
       <div class="calendar-container">
@@ -516,7 +522,7 @@
             </div>
           </div>
           <button class="btn-save-log" id="btn-save-log">Save Log</button>
-          <span id="log-save-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-top: 10px; text-align: center; display:block;"></span>
+          <span id="log-save-msg" style="display:none; font-size: 0.85rem; color: #1a1510; margin-top: 10px; text-align: center; display:block;"></span>
         </div>
       </div>
     </section>
@@ -543,13 +549,13 @@
         </div>
       </div>
       <button class="btn-save-log" id="btn-save-contra" style="width:auto; padding: 10px 20px;">Set Reminder</button>
-      <span id="contra-save-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-left: 10px;">Saved!</span>
+      <span id="contra-save-msg" style="display:none; font-size: 0.85rem; color: #1a1510; margin-left: 10px;">Saved!</span>
     </section>
 
     <!-- STI Testing Tracker -->
     <section class="card">
       <h2>STI Testing Schedule</h2>
-      <p style="font-size: 0.9rem; color: #555549; margin-bottom: 15px;">Regular testing is a vital part of sexual health. Log your last test to calculate your next recommended check-up.</p>
+      <p style="font-size: 0.9rem; color: #7a6a5a; margin-bottom: 15px;">Regular testing is a vital part of sexual health. Log your last test to calculate your next recommended check-up.</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
         <div class="log-group">
           <label for="sti-last-test">Last Test Date</label>
@@ -564,20 +570,20 @@
           </select>
         </div>
       </div>
-      <div style="background: #FAF8EB; padding: 15px; border-radius: 8px; border: 1px solid #C6C8BB;">
-        <strong>Next Recommended Test: </strong> <span id="sti-next-test" style="color: #AD9846; font-weight: bold;">Not calculated yet</span>
+      <div style="background: #faf6f0; padding: 15px; border-radius: 8px; border: 1px solid #e8c4a8;">
+        <strong>Next Recommended Test: </strong> <span id="sti-next-test" style="color: #c0603a; font-weight: bold;">Not calculated yet</span>
       </div>
       <button class="btn-save-log" id="btn-save-sti" style="width:auto; padding: 10px 20px; margin-top: 15px;">Save Schedule</button>
-      <span id="sti-save-msg" style="display:none; font-size: 0.85rem; color: #2E3E24; margin-left: 10px;">Saved!</span>
+      <span id="sti-save-msg" style="display:none; font-size: 0.85rem; color: #1a1510; margin-left: 10px;">Saved!</span>
     </section>
 
     <!-- Partner Communication Log -->
     <section class="card">
       <h2>Partner Communication Log</h2>
-      <p style="font-size: 0.9rem; color: #555549; margin-bottom: 15px;">Track important conversations about boundaries, desires, or sexual health with your partner(s).</p>
+      <p style="font-size: 0.9rem; color: #7a6a5a; margin-bottom: 15px;">Track important conversations about boundaries, desires, or sexual health with your partner(s).</p>
       <div class="log-group" style="margin-bottom: 15px;">
         <label for="partner-log-entry">New Entry</label>
-        <textarea id="partner-log-entry" rows="3" placeholder="e.g. Discussed getting tested together next week..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #C6C8BB; font-family: 'Montserrat', sans-serif; resize: vertical;"></textarea>
+        <textarea id="partner-log-entry" rows="3" placeholder="e.g. Discussed getting tested together next week..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #e8c4a8; font-family: 'DM Sans', sans-serif; resize: vertical;"></textarea>
       </div>
       <button class="btn-save-log" id="btn-add-partner-log" style="width:auto; padding: 10px 20px;">Add Entry</button>
 
@@ -591,7 +597,7 @@
       <button class="btn-action" id="btn-share">Share Results (Copy to Clipboard)</button>
     </div>
     <p class="privacy-note">Your data is stored securely in your browser's local storage and never leaves your device.</p>
-    <div style="text-align: center;"><span id="share-msg" style="display:none; font-size: 0.85rem; color: #2E3E24;">Copied!</span></div>
+    <div style="text-align: center;"><span id="share-msg" style="display:none; font-size: 0.85rem; color: #1a1510;">Copied!</span></div>
 
     <!-- Education Section -->
     <section class="card edu-section" style="margin-top: 30px;">
@@ -599,18 +605,18 @@
       <p style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6;">Your sexual health is an ongoing journey, not a one-time destination. As our bodies, relationships, and life stages evolve, so do our sexual health needs. Regular tracking and check-ups are essential tools for staying attuned to those changes.</p>
 
       <div style="margin-bottom: 24px;">
-        <h3 style="font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">The Power of Regular STI Testing</h3>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: #555549;">STI testing isn't just for when you have symptoms—in fact, many common STIs are entirely asymptomatic. Making testing a regular part of your health routine (every 6-12 months, or before new partners) removes the stigma and empowers you to take control of your wellness. It's a proactive act of self-care and mutual respect for your partners.</p>
+        <h3 style="font-size: 1.2rem; color: #1a1510; margin-bottom: 8px;">The Power of Regular STI Testing</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #7a6a5a;">STI testing isn't just for when you have symptoms—in fact, many common STIs are entirely asymptomatic. Making testing a regular part of your health routine (every 6-12 months, or before new partners) removes the stigma and empowers you to take control of your wellness. It's a proactive act of self-care and mutual respect for your partners.</p>
       </div>
 
       <div style="margin-bottom: 24px;">
-        <h3 style="font-size: 1.2rem; color: #2E3E24; margin-bottom: 8px;">Tracking Your Cycle & Libido</h3>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: #555549;">Understanding your natural hormonal rhythms can profoundly impact how you view your desire. Libido naturally fluctuates throughout your cycle, often peaking around ovulation due to estrogen and testosterone surges. By tracking these shifts alongside your mood and energy, you can stop judging yourself for "low" days and lean into your natural peaks.</p>
+        <h3 style="font-size: 1.2rem; color: #1a1510; margin-bottom: 8px;">Tracking Your Cycle & Libido</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #7a6a5a;">Understanding your natural hormonal rhythms can profoundly impact how you view your desire. Libido naturally fluctuates throughout your cycle, often peaking around ovulation due to estrogen and testosterone surges. By tracking these shifts alongside your mood and energy, you can stop judging yourself for "low" days and lean into your natural peaks.</p>
       </div>
 
-      <div style="background: rgba(173, 152, 70, 0.1); border-left: 4px solid #AD9846; padding: 16px; border-radius: 0 8px 8px 0; margin-top: 24px;">
-        <h3 style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Important Disclaimer</h3>
-        <p style="font-size: 0.9rem; line-height: 1.5; color: #555549; margin-bottom: 0;">This tool is for educational and personal tracking purposes only and is <strong>not medical advice</strong>. If you experience sudden changes in your cycle, severe pain, unusual discharge, or any concerning symptoms, please consult a healthcare professional. Always speak with a doctor to determine the best contraception methods and testing schedules for your unique body.</p>
+      <div style="background: rgba(173, 152, 70, 0.1); border-left: 4px solid #c0603a; padding: 16px; border-radius: 0 8px 8px 0; margin-top: 24px;">
+        <h3 style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">Important Disclaimer</h3>
+        <p style="font-size: 0.9rem; line-height: 1.5; color: #7a6a5a; margin-bottom: 0;">This tool is for educational and personal tracking purposes only and is <strong>not medical advice</strong>. If you experience sudden changes in your cycle, severe pain, unusual discharge, or any concerning symptoms, please consult a healthcare professional. Always speak with a doctor to determine the best contraception methods and testing schedules for your unique body.</p>
       </div>
     </section>
   </main>
@@ -618,31 +624,31 @@
   <!-- FAQ Section -->
 
   <section style="max-width: 900px; margin: 40px auto; padding: 0 20px;">
-    <h2 style="font-family: 'New Standard', Georgia, serif; text-align: center; font-size: 2rem; margin-bottom: 30px;">Frequently Asked Questions</h2>
+    <h2 style="font-family: 'Playfair Display', Georgia, serif; text-align: center; font-size: 2rem; margin-bottom: 30px;">Frequently Asked Questions</h2>
 
     <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">How does tracking my cycle help my sexual health?</div>
-      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Cycle tracking allows you to anticipate hormonal fluctuations that directly impact your mood, energy levels, and libido. By understanding these patterns, you can optimize your sexual experiences and identify any irregular symptoms early on.</div>
+      <div style="font-weight: 600; font-size: 1.05rem; color: #1a1510; margin-bottom: 10px;">How does tracking my cycle help my sexual health?</div>
+      <div style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">Cycle tracking allows you to anticipate hormonal fluctuations that directly impact your mood, energy levels, and libido. By understanding these patterns, you can optimize your sexual experiences and identify any irregular symptoms early on.</div>
     </div>
 
     <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">How often should I get tested for STIs?</div>
-      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">For sexually active adults, testing every 6 to 12 months is generally recommended. However, if you have multiple partners, or are starting a new relationship, more frequent testing (every 3 to 6 months) is a best practice. Always consult your healthcare provider for personalized advice.</div>
+      <div style="font-weight: 600; font-size: 1.05rem; color: #1a1510; margin-bottom: 10px;">How often should I get tested for STIs?</div>
+      <div style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">For sexually active adults, testing every 6 to 12 months is generally recommended. However, if you have multiple partners, or are starting a new relationship, more frequent testing (every 3 to 6 months) is a best practice. Always consult your healthcare provider for personalized advice.</div>
     </div>
 
     <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">Is my tracking data safe and private?</div>
-      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Yes, absolutely. This tracker is built with a privacy-first approach. All your data—including your logs, contraception reminders, and communication notes—is stored locally in your browser and never leaves your device.</div>
+      <div style="font-weight: 600; font-size: 1.05rem; color: #1a1510; margin-bottom: 10px;">Is my tracking data safe and private?</div>
+      <div style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">Yes, absolutely. This tracker is built with a privacy-first approach. All your data—including your logs, contraception reminders, and communication notes—is stored locally in your browser and never leaves your device.</div>
     </div>
 
     <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">What is a partner communication log used for?</div>
-      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">A partner communication log provides a space to document important conversations about boundaries, desires, and health statuses. Tracking these discussions helps ensure mutual understanding and builds a healthier, more transparent sexual relationship.</div>
+      <div style="font-weight: 600; font-size: 1.05rem; color: #1a1510; margin-bottom: 10px;">What is a partner communication log used for?</div>
+      <div style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">A partner communication log provides a space to document important conversations about boundaries, desires, and health statuses. Tracking these discussions helps ensure mutual understanding and builds a healthier, more transparent sexual relationship.</div>
     </div>
 
     <div style="background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-      <div style="font-weight: 600; font-size: 1.05rem; color: #2E3E24; margin-bottom: 10px;">Can this tracker replace my doctor's advice?</div>
-      <div style="font-size: 0.95rem; color: #555549; line-height: 1.6;">No. This tool is designed strictly for personal tracking and educational insights. It is not a substitute for professional medical diagnosis, advice, or treatment. Always speak with a healthcare provider regarding contraception, abnormal symptoms, or medical concerns.</div>
+      <div style="font-weight: 600; font-size: 1.05rem; color: #1a1510; margin-bottom: 10px;">Can this tracker replace my doctor's advice?</div>
+      <div style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">No. This tool is designed strictly for personal tracking and educational insights. It is not a substitute for professional medical diagnosis, advice, or treatment. Always speak with a healthcare provider regarding contraception, abnormal symptoms, or medical concerns.</div>
     </div>
   </section>
 
@@ -934,7 +940,7 @@
         container.innerHTML = '';
 
         if(logs.length === 0) {
-            container.innerHTML = '<p style="color:#8a8a7a; font-size:0.9rem;">No entries yet.</p>';
+            container.innerHTML = '<p style="color:#7a6a5a; font-size:0.9rem;">No entries yet.</p>';
             return;
         }
 
@@ -942,9 +948,9 @@
         [...logs].reverse().forEach((log, index) => {
             const div = document.createElement('div');
             div.style.padding = '10px';
-            div.style.background = '#FAF8EB';
+            div.style.background = '#faf6f0';
             div.style.borderRadius = '8px';
-            div.style.border = '1px solid #C6C8BB';
+            div.style.border = '1px solid #e8c4a8';
 
             const header = document.createElement('div');
             header.style.display = 'flex';
@@ -957,7 +963,7 @@
             btnDelete.style.background = 'none';
             btnDelete.style.border = 'none';
             btnDelete.style.cursor = 'pointer';
-            btnDelete.style.color = '#8a8a7a';
+            btnDelete.style.color = '#7a6a5a';
 
             // Need actual index from original array to delete
             const origIndex = logs.length - 1 - index;

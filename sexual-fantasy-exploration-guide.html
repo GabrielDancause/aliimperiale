@@ -19,14 +19,14 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Site Nav Inline Styles */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -45,7 +45,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -53,7 +53,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     @media (max-width: 480px) {
       .site-nav { padding: 12px 16px; }
@@ -65,10 +65,10 @@
       padding: 60px 24px 40px;
     }
     .page-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .page-header p {
@@ -95,9 +95,9 @@
     }
 
     .card h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
       border-bottom: 1px solid #e8e4d4;
       padding-bottom: 12px;
@@ -111,10 +111,10 @@
     }
 
     .question-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1.05rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
       line-height: 1.4;
     }
@@ -127,7 +127,7 @@
     .option-label {
       display: flex;
       align-items: center;
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 1px solid #e8e4d4;
       padding: 14px 18px;
       border-radius: 10px;
@@ -143,7 +143,7 @@
       -webkit-appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 50%;
       margin-right: 14px;
       position: relative;
@@ -159,7 +159,7 @@
       left: 50%;
       width: 10px;
       height: 10px;
-      background: #AD9846;
+      background: #c0603a;
       border-radius: 50%;
       transform: translate(-50%, -50%) scale(0);
       transition: transform 0.2s ease-in-out;
@@ -171,7 +171,7 @@
 
     .option-input:checked + span {
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .option-text {
@@ -191,7 +191,7 @@
       display: inline-block;
       padding: 14px 28px;
       border-radius: 10px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
@@ -201,8 +201,8 @@
     }
 
     .btn-primary {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
     .btn-primary:hover {
       background: #3a5030;
@@ -210,9 +210,9 @@
     }
 
     .btn-secondary {
-      background: #FAF8EB;
-      color: #2E3E24;
-      border: 1px solid #2E3E24;
+      background: #faf6f0;
+      color: #1a1510;
+      border: 1px solid #1a1510;
     }
     .btn-secondary:hover {
       background: #e8e4d4;
@@ -223,18 +223,18 @@
     }
 
     .result-category {
-      background: #FAF8EB;
+      background: #faf6f0;
       padding: 24px;
       border-radius: 12px;
       margin-bottom: 24px;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
     }
 
     .result-category h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.1rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
 
@@ -252,10 +252,10 @@
     }
 
     .recommendations h4 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
 
@@ -273,7 +273,7 @@
 
     .recommendations li::before {
       content: '•';
-      color: #AD9846;
+      color: #c0603a;
       position: absolute;
       left: 0;
       font-weight: bold;
@@ -286,17 +286,17 @@
     }
 
     .educational-content h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 24px;
     }
 
     .educational-content h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.2rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-top: 32px;
       margin-bottom: 12px;
     }
@@ -318,11 +318,11 @@
       bottom: 24px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 12px 24px;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.9rem;
       font-weight: 500;
       opacity: 0;
@@ -347,6 +347,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">

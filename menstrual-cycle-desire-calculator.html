@@ -179,15 +179,15 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
-    body { background-color: #FAF8EB; }
+    body { background-color: #faf6f0; }
 
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -206,7 +206,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -214,7 +214,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     .calculator-container {
@@ -231,10 +231,10 @@
       margin-bottom: 40px;
     }
     .calculator-header h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 2.2rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .calculator-header p {
@@ -248,7 +248,7 @@
     .form-group label {
       display: block;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .form-group input, .form-group select {
@@ -256,23 +256,23 @@
       padding: 14px 16px;
       border: 1px solid #d4cfb8;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
-      background-color: #FAF8EB;
-      color: #2E3E24;
+      background-color: #faf6f0;
+      color: #1a1510;
       transition: border-color 0.2s;
     }
     .form-group input:focus, .form-group select:focus {
       outline: none;
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
     .btn {
       display: inline-block;
       width: 100%;
       padding: 16px 24px;
-      background-color: #AD9846;
+      background-color: #c0603a;
       color: #fff;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1.1rem;
       text-align: center;
@@ -285,8 +285,8 @@
       background-color: #8c7a38;
     }
     .btn-secondary {
-      background-color: #FAF8EB;
-      color: #2E3E24;
+      background-color: #faf6f0;
+      color: #1a1510;
       border: 1px solid #d4cfb8;
       margin-top: 16px;
     }
@@ -300,14 +300,14 @@
       border-top: 1px solid #e8e4d4;
     }
     .phase-card {
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
       border-radius: 8px;
       padding: 24px;
       margin-bottom: 24px;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
     }
     .phase-card h3 {
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
       font-size: 1.4rem;
     }
@@ -317,7 +317,7 @@
       margin-bottom: 12px;
     }
     .phase-card strong {
-      color: #2E3E24;
+      color: #1a1510;
     }
     .history-section {
       margin-top: 40px;
@@ -334,7 +334,7 @@
     }
     .history-item h4 {
       margin-bottom: 4px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .clear-btn-container {
       margin-bottom: 20px;
@@ -359,6 +359,12 @@
   <meta name="twitter:description" content="Understand how your menstrual cycle affects sexual desire, arousal, and pleasure. Calculate hormone cycle phases and get personalized insights on.">
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -393,7 +399,7 @@
     </div>
 
     <div id="results-section">
-      <h2 style="text-align:center; color:#2E3E24; margin-bottom:30px;">Your Current Cycle Phase</h2>
+      <h2 style="text-align:center; color:#1a1510; margin-bottom:30px;">Your Current Cycle Phase</h2>
       <div id="current-phase-card" class="phase-card">
         <!-- Content injected by JS -->
       </div>
@@ -401,7 +407,7 @@
     </div>
 
     <div id="history-section" class="history-section">
-      <h3 style="color:#2E3E24; margin-bottom:20px;">Saved History</h3>
+      <h3 style="color:#1a1510; margin-bottom:20px;">Saved History</h3>
       <div class="clear-btn-container">
         <button type="button" class="btn btn-secondary" style="padding:10px 16px; font-size:0.9rem; margin-top:0;" onclick="clearHistory()">Clear All History</button>
       </div>
@@ -420,31 +426,31 @@
 
 
   <section class="educational-content" style="max-width: 800px; margin: 60px auto; padding: 0 20px;">
-    <h2 style="color:#2E3E24; font-family:'Montserrat', sans-serif; margin-bottom: 20px;">Understanding Your Menstrual Cycle & Libido</h2>
+    <h2 style="color:#1a1510; font-family:'DM Sans', sans-serif; margin-bottom: 20px;">Understanding Your Menstrual Cycle & Libido</h2>
     <p style="color:#5a6b50; line-height:1.6; margin-bottom: 20px;">Our bodies are beautifully complex, and it's totally normal for sexual desire to fluctuate throughout the month. When we track these changes, we can stop wondering "what's wrong with me?" on low-energy days and instead lean into what our bodies actually need.</p>
 
-    <h3 style="color:#2E3E24; font-family:'Montserrat', sans-serif; margin-bottom: 15px; margin-top: 30px;">Hormones and Desire</h3>
+    <h3 style="color:#1a1510; font-family:'DM Sans', sans-serif; margin-bottom: 15px; margin-top: 30px;">Hormones and Desire</h3>
     <p style="color:#5a6b50; line-height:1.6; margin-bottom: 20px;">Estrogen, progesterone, and testosterone are the main hormones driving your cycle. During the follicular and ovulatory phases, estrogen and testosterone rise, often leading to increased natural lubrication, energy, and sexual desire. In the luteal and menstrual phases, progesterone dominates and estrogen drops, which can make you feel more inward, sleepy, or sensitive.</p>
 
-    <h3 style="color:#2E3E24; font-family:'Montserrat', sans-serif; margin-bottom: 15px; margin-top: 30px;">Partner Communication</h3>
+    <h3 style="color:#1a1510; font-family:'DM Sans', sans-serif; margin-bottom: 15px; margin-top: 30px;">Partner Communication</h3>
     <p style="color:#5a6b50; line-height:1.6; margin-bottom: 20px;">I always say, communication is the ultimate foreplay! Sharing your cycle insights with a partner can take the pressure off. You can say things like, <em>"I'm in my luteal phase right now, so I'm craving more cuddling and low-pressure touch,"</em> or <em>"I'm ovulating and feeling super energized—let's try that new thing we talked about."</em></p>
   </section>
 
   <section class="faq-section" style="max-width: 800px; margin: 60px auto; padding: 0 20px;">
-    <h2 style="color:#2E3E24; font-family:'Montserrat', sans-serif; margin-bottom: 30px;">Frequently Asked Questions</h2>
+    <h2 style="color:#1a1510; font-family:'DM Sans', sans-serif; margin-bottom: 30px;">Frequently Asked Questions</h2>
 
     <div class="faq-item" style="margin-bottom: 24px;">
-      <h3 style="color:#AD9846; font-size: 1.1rem; margin-bottom: 10px;">Why is my period sexual desire so low sometimes?</h3>
+      <h3 style="color:#c0603a; font-size: 1.1rem; margin-bottom: 10px;">Why is my period sexual desire so low sometimes?</h3>
       <p style="color:#5a6b50; line-height:1.6;">It's completely normal for period sexual desire to drop. During menstruation, your estrogen and progesterone levels are at their lowest. You might also be experiencing cramping or fatigue. Give yourself grace and focus on comforting touch rather than penetrative sex if that's what your body wants.</p>
     </div>
 
     <div class="faq-item" style="margin-bottom: 24px;">
-      <h3 style="color:#AD9846; font-size: 1.1rem; margin-bottom: 10px;">How does this hormone cycle calculator work?</h3>
+      <h3 style="color:#c0603a; font-size: 1.1rem; margin-bottom: 10px;">How does this hormone cycle calculator work?</h3>
       <p style="color:#5a6b50; line-height:1.6;">This hormone cycle calculator estimates your current phase based on standard cycle algorithms (your cycle length and period length). It breaks down your cycle into four phases—menstrual, follicular, ovulatory, and luteal—to help you understand typical hormonal shifts and their impact on your sexuality and energy.</p>
     </div>
 
     <div class="faq-item" style="margin-bottom: 24px;">
-      <h3 style="color:#AD9846; font-size: 1.1rem; margin-bottom: 10px;">Does menstrual cycle libido change if I'm on birth control?</h3>
+      <h3 style="color:#c0603a; font-size: 1.1rem; margin-bottom: 10px;">Does menstrual cycle libido change if I'm on birth control?</h3>
       <p style="color:#5a6b50; line-height:1.6;">Yes! Hormonal birth control overrides your natural hormonal fluctuations to prevent ovulation. This means you might not experience the typical peaks and valleys in menstrual cycle libido described here. However, tracking your mood and energy can still provide valuable insights into your body's unique patterns.</p>
     </div>
   </section>

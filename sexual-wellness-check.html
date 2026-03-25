@@ -24,7 +24,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -32,8 +32,8 @@
   <style>
     /* Tool Specific Styles */
     .tool-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       padding: 60px 20px 80px;
       text-align: center;
       position: relative;
@@ -45,21 +45,21 @@
       left: 0;
       right: 0;
       height: 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 40px 40px 0 0;
     }
     .tool-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3.5rem;
       font-weight: 400;
       line-height: 1.1;
       margin-bottom: 16px;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .tool-header p {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.1rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 600px;
       margin: 0 auto 16px;
       line-height: 1.6;
@@ -70,7 +70,7 @@
       gap: 8px;
       background: rgba(173, 152, 70, 0.15);
       border: 1px solid rgba(173, 152, 70, 0.3);
-      color: #AD9846;
+      color: #c0603a;
       padding: 8px 16px;
       border-radius: 20px;
       font-size: 0.8rem;
@@ -109,32 +109,32 @@
       text-align: center;
     }
     .start-screen h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .start-screen p {
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.7;
       margin-bottom: 24px;
     }
     .disclaimer {
       font-size: 0.8rem;
-      color: #8a8a7a;
-      background: #FAF8EB;
+      color: #7a6a5a;
+      background: #faf6f0;
       padding: 12px 16px;
       border-radius: 10px;
       margin-bottom: 24px;
-      border-left: 3px solid #AD9846;
+      border-left: 3px solid #c0603a;
       text-align: left;
     }
     .btn {
       display: inline-block;
       padding: 14px 32px;
-      background: #2E3E24;
-      color: #FAF8EB;
-      font-family: 'Montserrat', sans-serif;
+      background: #1a1510;
+      color: #faf6f0;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       border: none;
@@ -149,8 +149,8 @@
     }
     .btn-secondary {
       background: transparent;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      color: #1a1510;
+      border: 2px solid #1a1510;
     }
     .btn-secondary:hover {
       background: rgba(46, 62, 36, 0.05);
@@ -160,30 +160,30 @@
     .progress-bar-container {
       width: 100%;
       height: 6px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 3px;
       margin-bottom: 30px;
       overflow: hidden;
     }
     .progress-bar {
       height: 100%;
-      background: #AD9846;
+      background: #c0603a;
       width: 0%;
       transition: width 0.3s ease;
     }
     .question-counter {
       font-size: 0.85rem;
       font-weight: 600;
-      color: #AD9846;
+      color: #c0603a;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 12px;
       display: block;
     }
     .question-text {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 30px;
       line-height: 1.4;
     }
@@ -194,10 +194,10 @@
     }
     .option-btn {
       padding: 16px 20px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 1px solid rgba(46, 62, 36, 0.1);
       border-radius: 12px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
       color: #3a4a30;
       font-weight: 500;
@@ -212,25 +212,25 @@
       content: '';
       width: 20px;
       height: 20px;
-      border: 2px solid #C6C8BB;
+      border: 2px solid #e8c4a8;
       border-radius: 50%;
       display: inline-block;
       flex-shrink: 0;
       transition: all 0.2s ease;
     }
     .option-btn:hover {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: #fff;
       transform: translateX(4px);
     }
     .option-btn.selected {
       background: rgba(173, 152, 70, 0.1);
-      border-color: #AD9846;
+      border-color: #c0603a;
       font-weight: 600;
     }
     .option-btn.selected::before {
-      border-color: #AD9846;
-      background: #AD9846;
+      border-color: #c0603a;
+      background: #c0603a;
       box-shadow: inset 0 0 0 4px #fff;
     }
 
@@ -244,9 +244,9 @@
     .nav-btn {
       background: none;
       border: none;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
-      color: #8a8a7a;
+      color: #7a6a5a;
       cursor: pointer;
       font-size: 0.9rem;
       display: flex;
@@ -255,7 +255,7 @@
       transition: color 0.2s;
     }
     .nav-btn:hover {
-      color: #2E3E24;
+      color: #1a1510;
     }
     .nav-btn:disabled {
       opacity: 0.3;
@@ -268,13 +268,13 @@
       margin-bottom: 30px;
     }
     .results-header h2 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .results-header p {
-      color: #555549;
+      color: #7a6a5a;
       font-size: 0.95rem;
       max-width: 600px;
       margin: 0 auto;
@@ -287,56 +287,56 @@
       max-width: 500px;
     }
     .score-normalization {
-      background: #FAF8EB;
+      background: #faf6f0;
       padding: 16px 20px;
       border-radius: 12px;
       text-align: center;
       font-size: 0.9rem;
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 40px;
       border: 1px solid rgba(173, 152, 70, 0.2);
     }
     .score-normalization strong {
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .recommendations-container h3 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.4rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
-      border-bottom: 2px solid #FAF8EB;
+      border-bottom: 2px solid #faf6f0;
       padding-bottom: 10px;
     }
 
     .rec-card {
       background: rgba(173, 152, 70, 0.05);
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 20px;
       border-radius: 0 12px 12px 0;
       margin-bottom: 20px;
     }
     .rec-card h4 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .rec-card p {
       font-size: 0.9rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.6;
       margin-bottom: 12px;
     }
     .rec-card ul {
       margin-left: 20px;
       font-size: 0.85rem;
-      color: #555549;
+      color: #7a6a5a;
     }
     .rec-card li {
       margin-bottom: 6px;
     }
     .rec-card a {
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 600;
       text-decoration: none;
     }
@@ -361,9 +361,9 @@
       margin-bottom: 40px;
     }
     .edu-section h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       text-align: center;
       margin-bottom: 30px;
     }
@@ -374,12 +374,12 @@
     }
     .edu-item {
       padding: 20px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
     }
     .edu-item h3 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
@@ -387,7 +387,7 @@
     }
     .edu-item p {
       font-size: 0.88rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.6;
     }
 
@@ -396,9 +396,9 @@
       margin-bottom: 60px;
     }
     .faq-section h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       text-align: center;
       margin-bottom: 30px;
     }
@@ -417,7 +417,7 @@
     }
     .faq-question {
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -426,7 +426,7 @@
     .faq-question::after {
       content: '+';
       font-size: 1.5rem;
-      color: #AD9846;
+      color: #c0603a;
       transition: transform 0.3s ease;
     }
     .faq-item.active .faq-question::after {
@@ -436,7 +436,7 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease, margin-top 0.3s ease;
-      color: #555549;
+      color: #7a6a5a;
       font-size: 0.95rem;
       line-height: 1.6;
     }
@@ -447,7 +447,7 @@
 
     /* Navigation Override */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -466,7 +466,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -474,7 +474,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Toast Notification */
@@ -483,8 +483,8 @@
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 12px 24px;
       border-radius: 30px;
       font-weight: 500;
@@ -560,6 +560,12 @@
 </script>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <!-- Navigation -->
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -915,8 +921,8 @@
       radarChart.destroy();
     }
 
-    Chart.defaults.font.family = "'Montserrat', sans-serif";
-    Chart.defaults.color = '#555549';
+    Chart.defaults.font.family = "'DM Sans', sans-serif";
+    Chart.defaults.color = '#7a6a5a';
 
     radarChart = new Chart(ctx, {
       type: 'radar',
@@ -926,11 +932,11 @@
           label: 'Your Score',
           data: scores,
           backgroundColor: 'rgba(173, 152, 70, 0.2)',
-          borderColor: '#AD9846',
-          pointBackgroundColor: '#2E3E24',
+          borderColor: '#c0603a',
+          pointBackgroundColor: '#1a1510',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: '#2E3E24',
+          pointHoverBorderColor: '#1a1510',
           borderWidth: 2,
         }]
       },
@@ -943,7 +949,7 @@
             grid: { color: 'rgba(46, 62, 36, 0.1)' },
             pointLabels: {
               font: { size: 13, weight: '600' },
-              color: '#2E3E24'
+              color: '#1a1510'
             },
             ticks: {
               display: false,
@@ -956,9 +962,9 @@
         plugins: {
           legend: { display: false },
           tooltip: {
-            backgroundColor: '#2E3E24',
+            backgroundColor: '#1a1510',
             titleFont: { family: "'New Standard', serif", size: 14 },
-            bodyFont: { family: "'Montserrat', sans-serif", size: 13 },
+            bodyFont: { family: "'DM Sans', sans-serif", size: 13 },
             callbacks: {
               label: function(context) {
                 return context.raw + '%';

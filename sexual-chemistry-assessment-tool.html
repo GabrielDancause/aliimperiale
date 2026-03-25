@@ -24,15 +24,15 @@
   <script src="back-to-top.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="stylesheet" href="shared.css">
 
   <style>
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
     }
     .tool-header {
       text-align: center;
@@ -41,7 +41,7 @@
     .tool-header h1 {
       font-size: 2.2rem;
       margin-bottom: 15px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .tool-header p {
       max-width: 600px;
@@ -51,7 +51,7 @@
     }
     .disclaimer {
       background-color: rgba(173, 152, 70, 0.1);
-      border: 1px solid #AD9846;
+      border: 1px solid #c0603a;
       padding: 15px;
       margin: 20px auto;
       max-width: 800px;
@@ -60,7 +60,7 @@
       text-align: center;
     }
     .disclaimer strong {
-      color: #AD9846;
+      color: #c0603a;
     }
 
     .tool-container {
@@ -87,7 +87,7 @@
     }
     .progress-bar {
       height: 100%;
-      background-color: #AD9846;
+      background-color: #c0603a;
       width: 0%;
       transition: width 0.3s ease;
     }
@@ -102,7 +102,7 @@
     h2.step-title {
       font-size: 1.5rem;
       margin-bottom: 10px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     p.step-desc {
       margin-bottom: 25px;
@@ -137,22 +137,22 @@
       transition: all 0.2s;
     }
     .option-label:hover {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background-color: rgba(173, 152, 70, 0.05);
     }
     .option-label input[type="radio"] {
       display: none;
     }
     .option-label.selected {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background-color: rgba(173, 152, 70, 0.1);
     }
 
     .btn {
       display: inline-block;
       padding: 12px 24px;
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       text-decoration: none;
       border-radius: 8px;
       font-weight: 600;
@@ -166,14 +166,14 @@
     }
     .btn-secondary {
       background-color: transparent;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      color: #1a1510;
+      border: 2px solid #1a1510;
     }
     .btn-secondary:hover {
       background-color: #f0f4e8;
     }
     .btn-accent {
-      background-color: #AD9846;
+      background-color: #c0603a;
       color: #fff;
     }
     .btn-accent:hover {
@@ -193,7 +193,7 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      background: conic-gradient(#AD9846 0%, #e5e9db 0%);
+      background: conic-gradient(#c0603a 0%, #e5e9db 0%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -212,7 +212,7 @@
       position: relative;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .dimension-bars {
@@ -235,7 +235,7 @@
     }
     .d-fill {
       height: 100%;
-      background-color: #AD9846;
+      background-color: #c0603a;
       border-radius: 5px;
       width: 0%;
       transition: width 1s ease-out;
@@ -249,7 +249,7 @@
     }
     .action-plan h3 {
       margin-bottom: 15px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .action-plan ul {
       list-style-type: none;
@@ -264,7 +264,7 @@
       content: "✓";
       position: absolute;
       left: 0;
-      color: #AD9846;
+      color: #c0603a;
       font-weight: bold;
     }
 
@@ -299,7 +299,7 @@
       align-items: center;
     }
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -318,7 +318,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -326,7 +326,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
   </style>
@@ -335,6 +335,12 @@
   <meta name="twitter:description" content="Discover your sexual compatibility with our advanced sexual chemistry test and relationship compatibility analyzer. Get customized enhancement recommendations.">
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="site-nav">
@@ -613,11 +619,11 @@
         if (currentScore >= results.overall) {
           clearInterval(timer);
           scoreEl.innerText = `${results.overall}%`;
-          circleEl.style.background = `conic-gradient(#AD9846 ${results.overall * 3.6}deg, #e5e9db 0deg)`;
+          circleEl.style.background = `conic-gradient(#c0603a ${results.overall * 3.6}deg, #e5e9db 0deg)`;
         } else {
           currentScore++;
           scoreEl.innerText = `${currentScore}%`;
-          circleEl.style.background = `conic-gradient(#AD9846 ${currentScore * 3.6}deg, #e5e9db 0deg)`;
+          circleEl.style.background = `conic-gradient(#c0603a ${currentScore * 3.6}deg, #e5e9db 0deg)`;
         }
       }, 20);
 
@@ -756,15 +762,15 @@
 
   <!-- FAQ Section -->
   <section class="faq-section" style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-    <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #2E3E24; text-align: center;">Frequently Asked Questions</h2>
+    <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #1a1510; text-align: center;">Frequently Asked Questions</h2>
     <div style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-      <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">What is sexual chemistry?</h3>
+      <h3 style="font-size: 1.2rem; color: #c0603a; margin-bottom: 10px;">What is sexual chemistry?</h3>
       <p style="margin-bottom: 20px; color: #4a5c3f;">Sexual chemistry goes beyond physical attraction. It's the complex interplay of emotional connection, communication styles, fantasy alignment, and mutual desire that creates intense mutual attraction and satisfying intimacy between partners.</p>
 
-      <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">Can sexual compatibility be improved?</h3>
+      <h3 style="font-size: 1.2rem; color: #c0603a; margin-bottom: 10px;">Can sexual compatibility be improved?</h3>
       <p style="margin-bottom: 20px; color: #4a5c3f;">Absolutely. While initial sparks are largely spontaneous, long-term sexual chemistry requires effort, open communication, and a willingness to explore each other's evolving desires. Our tool provides targeted exercises to help build this connection.</p>
 
-      <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">Is this assessment medically diagnostic?</h3>
+      <h3 style="font-size: 1.2rem; color: #c0603a; margin-bottom: 10px;">Is this assessment medically diagnostic?</h3>
       <p style="margin-bottom: 0; color: #4a5c3f;">No, this tool is strictly educational. It is designed to spark self-discovery and facilitate communication between partners based on relationship psychology principles, not to diagnose medical or psychological conditions.</p>
     </div>
   </section>

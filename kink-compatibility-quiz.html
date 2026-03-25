@@ -15,7 +15,7 @@
   <style>
     /* Desktop Nav Overrides */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -34,7 +34,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -42,7 +42,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     @media (max-width: 768px) {
@@ -56,17 +56,17 @@
 
     /* Page specific styles */
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
+      background-color: #faf6f0;
+      color: #1a1510;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
     }
     h1, h2, h3, h4, h5, h6 {
-      font-family: 'Montserrat', sans-serif;
-      color: #2E3E24;
+      font-family: 'DM Sans', sans-serif;
+      color: #1a1510;
     }
     a {
-      color: #AD9846;
+      color: #c0603a;
     }
     .main-content {
       max-width: 800px;
@@ -154,6 +154,12 @@
 </head>
 <body>
 
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+
   <!-- Navigation -->
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -168,8 +174,8 @@
   </nav>
 
   <main class="main-content" id="app-container">
-    <div class="disclaimer-banner" style="background-color: #E8F0E4; padding: 15px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid #2E3E24;">
-      <p style="margin: 0; font-size: 0.9em; color: #2E3E24;"><strong>Educational Disclaimer:</strong> This assessment is intended for educational and self-exploration purposes only. Kink and BDSM require explicit communication, enthusiastic consent, and proper safety knowledge. This quiz does not replace professional guidance or proper risk-aware consensual kink (RACK) education.</p>
+    <div class="disclaimer-banner" style="background-color: #E8F0E4; padding: 15px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid #1a1510;">
+      <p style="margin: 0; font-size: 0.9em; color: #1a1510;"><strong>Educational Disclaimer:</strong> This assessment is intended for educational and self-exploration purposes only. Kink and BDSM require explicit communication, enthusiastic consent, and proper safety knowledge. This quiz does not replace professional guidance or proper risk-aware consensual kink (RACK) education.</p>
     </div>
 
     <h1 style="text-align: center; margin-bottom: 10px;">Kink Compatibility Quiz</h1>
@@ -188,17 +194,17 @@
       </ul>
 
       <div style="text-align: center; margin-top: 30px;">
-        <button id="start-btn" style="background-color: #AD9846; color: white; border: none; padding: 12px 24px; font-size: 1.1em; border-radius: 6px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 600; transition: background 0.2s;">I Understand, Let's Start</button>
+        <button id="start-btn" style="background-color: #c0603a; color: white; border: none; padding: 12px 24px; font-size: 1.1em; border-radius: 6px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 600; transition: background 0.2s;">I Understand, Let's Start</button>
       </div>
     </div>
 
     <!-- Quiz UI Container -->
     <div id="quiz-container" class="card" style="display: none; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px;">
       <div class="progress-bar-container" style="background-color: #f0f0f0; border-radius: 4px; height: 10px; margin-bottom: 20px; overflow: hidden;">
-        <div id="progress-bar" style="background-color: #2E3E24; height: 100%; width: 0%; transition: width 0.3s;"></div>
+        <div id="progress-bar" style="background-color: #1a1510; height: 100%; width: 0%; transition: width 0.3s;"></div>
       </div>
 
-      <div id="category-badge" style="display: inline-block; background-color: #E8F0E4; color: #2E3E24; padding: 4px 12px; border-radius: 20px; font-size: 0.8em; font-weight: bold; margin-bottom: 15px; text-transform: uppercase;">Category</div>
+      <div id="category-badge" style="display: inline-block; background-color: #E8F0E4; color: #1a1510; padding: 4px 12px; border-radius: 20px; font-size: 0.8em; font-weight: bold; margin-bottom: 15px; text-transform: uppercase;">Category</div>
 
       <h2 id="question-text" style="margin-top: 0; margin-bottom: 25px; font-size: 1.4em;">Question text goes here?</h2>
 
@@ -209,21 +215,21 @@
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <button id="prev-btn" style="background: none; border: 1px solid #ccc; padding: 8px 16px; border-radius: 4px; cursor: pointer; display: none;">Previous</button>
         <span id="question-counter" style="color: #666; font-size: 0.9em;">1 / X</span>
-        <button id="next-btn" style="background-color: #2E3E24; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Next</button>
+        <button id="next-btn" style="background-color: #1a1510; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Next</button>
       </div>
     </div>
 
     <!-- Results UI Container -->
     <div id="results-container" class="card" style="display: none; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px;">
-      <h2 style="text-align: center; color: #2E3E24; font-size: 2em; margin-bottom: 10px;">Your Kink Profile</h2>
+      <h2 style="text-align: center; color: #1a1510; font-size: 2em; margin-bottom: 10px;">Your Kink Profile</h2>
       <p style="text-align: center; color: #666; margin-bottom: 30px;">Here is a breakdown of your preferences and guidance for sharing this with a partner.</p>
 
       <div id="profile-breakdown" style="margin-bottom: 40px;">
         <!-- Results injected here -->
       </div>
 
-      <div style="background-color: #FAF8EB; padding: 25px; border-radius: 8px; margin-bottom: 30px;">
-        <h3 style="margin-top: 0; color: #AD9846;">Partner Compatibility Discussion</h3>
+      <div style="background-color: #faf6f0; padding: 25px; border-radius: 8px; margin-bottom: 30px;">
+        <h3 style="margin-top: 0; color: #c0603a;">Partner Compatibility Discussion</h3>
         <p>The true value of this assessment is discussing it with your partner. Here are some templates to help start the conversation:</p>
         <ul style="padding-left: 20px; margin-bottom: 0;">
           <li style="margin-bottom: 10px;"><em>"I recently took a kink compatibility quiz to explore some of my interests, and I learned [X] about myself. I'd love to share my results with you and hear your thoughts."</em></li>
@@ -242,7 +248,7 @@
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
-        <button id="retake-btn" style="background: none; border: 2px solid #2E3E24; color: #2E3E24; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: 600;">Retake Quiz</button>
+        <button id="retake-btn" style="background: none; border: 2px solid #1a1510; color: #1a1510; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: 600;">Retake Quiz</button>
       </div>
     </div>
 
@@ -252,27 +258,27 @@
       <h2 style="margin-top: 0;">Frequently Asked Questions About Kink Safety</h2>
 
       <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="font-size: 1.1em; color: #2E3E24; margin-bottom: 8px;">1. What is the difference between SSC and RACK?</h3>
+        <h3 style="font-size: 1.1em; color: #1a1510; margin-bottom: 8px;">1. What is the difference between SSC and RACK?</h3>
         <p style="margin: 0; color: #555;">SSC stands for Safe, Sane, and Consensual, emphasizing that all activities must not cause permanent harm. RACK stands for Risk-Aware Consensual Kink, acknowledging that some activities inherently carry risk, but participants are educated on mitigating those risks and have consented to them.</p>
       </div>
 
       <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="font-size: 1.1em; color: #2E3E24; margin-bottom: 8px;">2. Why are safe words important if I already consented?</h3>
+        <h3 style="font-size: 1.1em; color: #1a1510; margin-bottom: 8px;">2. Why are safe words important if I already consented?</h3>
         <p style="margin: 0; color: #555;">Consent is continuous. A safe word acts as a fail-safe, allowing either partner to pause or completely stop a scene without breaking immersion or if the intensity becomes overwhelming. It ensures safety and trust are maintained.</p>
       </div>
 
       <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="font-size: 1.1em; color: #2E3E24; margin-bottom: 8px;">3. What should I include in my kink negotiation?</h3>
+        <h3 style="font-size: 1.1em; color: #1a1510; margin-bottom: 8px;">3. What should I include in my kink negotiation?</h3>
         <p style="margin: 0; color: #555;">Negotiations should cover hard limits (absolute no's), soft limits (maybe/needs caution), safe words, aftercare needs, and any health concerns or triggers. It is a time to discuss desires, roles, and boundaries clearly before any scene begins.</p>
       </div>
 
       <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-        <h3 style="font-size: 1.1em; color: #2E3E24; margin-bottom: 8px;">4. Is aftercare only for the submissive partner?</h3>
+        <h3 style="font-size: 1.1em; color: #1a1510; margin-bottom: 8px;">4. Is aftercare only for the submissive partner?</h3>
         <p style="margin: 0; color: #555;">No. Both dominant and submissive partners can experience 'sub drop' or 'dom drop'—a sudden crash in hormones/endorphins after a scene. Aftercare is essential for all participants to process the experience and return to baseline emotional states.</p>
       </div>
 
       <div class="faq-item" style="margin-bottom: 0;">
-        <h3 style="font-size: 1.1em; color: #2E3E24; margin-bottom: 8px;">5. How do I bring up my kink interests to a new partner?</h3>
+        <h3 style="font-size: 1.1em; color: #1a1510; margin-bottom: 8px;">5. How do I bring up my kink interests to a new partner?</h3>
         <p style="margin: 0; color: #555;">Start by discussing desires in a non-pressured environment outside the bedroom. Use "I" statements, such as "I've been interested in exploring X." Taking an educational quiz together or discussing general kink resources can be a great icebreaker.</p>
       </div>
     </section>
@@ -469,8 +475,8 @@
 
         // If previously selected
         if(userAnswers[currentQuestionIndex] && userAnswers[currentQuestionIndex].value === opt.value) {
-          btn.style.borderColor = '#AD9846';
-          btn.style.backgroundColor = '#FAF8EB';
+          btn.style.borderColor = '#c0603a';
+          btn.style.backgroundColor = '#faf6f0';
           btn.style.fontWeight = 'bold';
         }
 
@@ -563,18 +569,18 @@
       }[aftercare];
 
       breakdown.innerHTML = `
-        <div style="background: #FAF8EB; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #AD9846;">
-          <h4 style="margin-top: 0; color: #2E3E24;">Role Preference</h4>
+        <div style="background: #faf6f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #c0603a;">
+          <h4 style="margin-top: 0; color: #1a1510;">Role Preference</h4>
           <p style="margin-bottom: 0;">${roleText}</p>
         </div>
 
-        <div style="background: #FAF8EB; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #AD9846;">
-          <h4 style="margin-top: 0; color: #2E3E24;">Sensory Profile</h4>
+        <div style="background: #faf6f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #c0603a;">
+          <h4 style="margin-top: 0; color: #1a1510;">Sensory Profile</h4>
           <p style="margin-bottom: 0;">${sensoryText}</p>
         </div>
 
-        <div style="background: #FAF8EB; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #AD9846;">
-          <h4 style="margin-top: 0; color: #2E3E24;">Primary Aftercare Need</h4>
+        <div style="background: #faf6f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #c0603a;">
+          <h4 style="margin-top: 0; color: #1a1510;">Primary Aftercare Need</h4>
           <p style="margin-bottom: 0;">Your primary way of returning to baseline is through <strong>${aftercareText}</strong> Ensure your partner knows this is what you need most after a scene.</p>
         </div>
       `;

@@ -24,20 +24,20 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     /* Add inline CSS for the tool here */
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
     }
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -56,7 +56,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -64,7 +64,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .main-container {
       max-width: 900px;
@@ -72,17 +72,17 @@
       padding: 0 20px;
     }
     .page-title {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3rem;
       text-align: center;
       margin-bottom: 10px;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .page-subtitle {
       text-align: center;
       font-size: 1rem;
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 40px;
     }
     .tool-card {
@@ -94,12 +94,12 @@
     }
     /* Buttons */
     .btn-primary {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 12px 24px;
       border-radius: 20px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
       cursor: pointer;
@@ -110,24 +110,24 @@
       transform: translateY(-2px);
     }
     .btn-secondary {
-      background: #FAF8EB;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      background: #faf6f0;
+      color: #1a1510;
+      border: 2px solid #1a1510;
       padding: 10px 22px;
       border-radius: 20px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
     }
     .btn-secondary:hover {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
     /* Links */
     a {
-      color: #AD9846;
+      color: #c0603a;
     }
     a:hover {
       text-decoration: none;
@@ -146,18 +146,18 @@
     }
     .mode-btn {
       padding: 10px 20px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       background: transparent;
-      color: #2E3E24;
+      color: #1a1510;
       border-radius: 20px;
       cursor: pointer;
       font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       transition: all 0.2s;
     }
     .mode-btn.active {
-      background: #AD9846;
-      color: #FAF8EB;
+      background: #c0603a;
+      color: #faf6f0;
     }
 
     .question-container {
@@ -172,7 +172,7 @@
       font-size: 1.05rem;
       font-weight: 500;
       margin-bottom: 15px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .options-grid {
       display: flex;
@@ -190,19 +190,19 @@
     .option-box {
       display: block;
       padding: 10px 5px;
-      background: #FAF8EB;
-      border: 1px solid #C6C8BB;
+      background: #faf6f0;
+      border: 1px solid #e8c4a8;
       border-radius: 8px;
       font-size: 0.85rem;
       transition: all 0.15s;
     }
     .option-label input:checked + .option-box {
-      background: #2E3E24;
-      color: #FAF8EB;
-      border-color: #2E3E24;
+      background: #1a1510;
+      color: #faf6f0;
+      border-color: #1a1510;
     }
     .option-label:hover .option-box {
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
 
     /* Results UI */
@@ -224,7 +224,7 @@
       color: #fff;
     }
     .score-banner.green { background: #4CAF50; }
-    .score-banner.yellow { background: #FFB300; color: #2E3E24; }
+    .score-banner.yellow { background: #FFB300; color: #1a1510; }
     .score-banner.red { background: #F44336; }
 
     .score-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; }
@@ -238,14 +238,14 @@
       margin-bottom: 30px;
     }
     .analysis-card {
-      background: #FAF8EB;
+      background: #faf6f0;
       padding: 20px;
       border-radius: 12px;
     }
     .analysis-card h3 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.2rem;
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 15px;
     }
     .analysis-list {
@@ -260,7 +260,7 @@
     }
     .analysis-list li::before {
       content: '•';
-      color: #2E3E24;
+      color: #1a1510;
       font-weight: bold;
       position: absolute;
       left: 0;
@@ -268,21 +268,21 @@
 
     .tips-section { margin-bottom: 30px; }
     .tips-section h3 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.4rem;
       margin-bottom: 15px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .tip-card {
       background: #fff;
       border: 1px solid #e0e0e0;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 15px 20px;
       border-radius: 8px;
       margin-bottom: 15px;
     }
     .tip-card h4 { margin-bottom: 5px; font-size: 1.05rem; }
-    .tip-card p { font-size: 0.9rem; color: #555549; margin: 0; }
+    .tip-card p { font-size: 0.9rem; color: #7a6a5a; margin: 0; }
 
     .action-buttons {
       display: flex;
@@ -296,7 +296,7 @@
       margin-bottom: 20px;
       font-weight: 600;
       font-size: 1.1rem;
-      color: #AD9846;
+      color: #c0603a;
     }
 
     /* Educational Section */
@@ -308,16 +308,16 @@
       box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06);
     }
     .edu-section h2 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       text-align: center;
       margin-bottom: 20px;
     }
     .edu-section p {
       font-size: 0.95rem;
       line-height: 1.7;
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 20px;
     }
     .edu-grid {
@@ -327,8 +327,8 @@
       margin-top: 30px;
     }
     .edu-item h4 {
-      font-family: 'New Standard', Georgia, serif;
-      color: #AD9846;
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #c0603a;
       font-size: 1.1rem;
       margin-bottom: 8px;
     }
@@ -347,20 +347,20 @@
       margin-bottom: 25px;
     }
     .faq-item h4 {
-      font-family: 'New Standard', Georgia, serif;
-      color: #2E3E24;
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #1a1510;
       font-size: 1.1rem;
       margin-bottom: 8px;
     }
     .faq-item p {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: #555549;
+      color: #7a6a5a;
     }
 
     .disclaimer {
       font-size: 0.8rem;
-      color: #8a8a7a;
+      color: #7a6a5a;
       text-align: center;
       margin-top: 30px;
       font-style: italic;
@@ -432,6 +432,12 @@
 </head>
 <body>
 
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+
   <!-- Navigation -->
     <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -475,7 +481,7 @@
 
     <!-- Results Section -->
     <div class="tool-card" id="results-section">
-      <h2 style="text-align: center; font-family: 'The Bloomington', cursive; font-size: 2.5rem; margin-bottom: 20px;">Your Results</h2>
+      <h2 style="text-align: center; font-family: 'DM Serif Display', cursive; font-size: 2.5rem; margin-bottom: 20px;">Your Results</h2>
 
       <div id="score-banner" class="score-banner">
         <div class="score-title">Overall Relationship Health</div>
@@ -546,7 +552,7 @@
       </div>
 
       <div class="faq-section">
-        <h3 style="text-align:center; font-family:'The Bloomington', cursive; font-size:2rem; color:#2E3E24; margin-top:20px; margin-bottom:30px;">Frequently Asked Questions</h3>
+        <h3 style="text-align:center; font-family:'DM Serif Display', cursive; font-size:2rem; color:#1a1510; margin-top:20px; margin-bottom:30px;">Frequently Asked Questions</h3>
         <div class="faq-item">
           <h4>What is a relationship health check?</h4>
           <p>A relationship health check is a tool to assess the strengths and areas for growth in your partnership across key dimensions like communication, trust, intimacy, respect, fun, and growth.</p>
@@ -800,8 +806,8 @@
         label: currentMode === 'couples' ? 'Partner 1' : 'Your Score',
         data: dimensions.map(d => partner1Scores[d.id]),
         backgroundColor: 'rgba(46, 62, 36, 0.2)',
-        borderColor: '#2E3E24',
-        pointBackgroundColor: '#2E3E24',
+        borderColor: '#1a1510',
+        pointBackgroundColor: '#1a1510',
         borderWidth: 2
       });
 
@@ -810,8 +816,8 @@
           label: 'Partner 2',
           data: dimensions.map(d => partner2Scores[d.id]),
           backgroundColor: 'rgba(173, 152, 70, 0.2)',
-          borderColor: '#AD9846',
-          pointBackgroundColor: '#AD9846',
+          borderColor: '#c0603a',
+          pointBackgroundColor: '#c0603a',
           borderWidth: 2
         });
       }

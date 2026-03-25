@@ -19,13 +19,13 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
         .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -44,7 +44,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -52,7 +52,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     @media (max-width: 480px) {
       .site-nav {
@@ -64,10 +64,10 @@
       padding: 60px 24px 40px;
     }
     .tool-hero h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 2.2rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .tool-hero p {
@@ -82,7 +82,7 @@
       margin: 0 auto 30px;
       padding: 16px 20px;
       background: #f4f1e1;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       border-radius: 4px 8px 8px 4px;
       font-size: 0.85rem;
       color: #5a6b50;
@@ -104,33 +104,33 @@
       display: block;
       font-weight: 600;
       margin-bottom: 10px;
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 0.95rem;
     }
     .form-group select, .form-group input[type="number"] {
       width: 100%;
       padding: 12px 16px;
-      border: 1px solid #C6C8BB;
+      border: 1px solid #e8c4a8;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
-      background: #FAF8EB;
-      color: #2E3E24;
+      background: #faf6f0;
+      color: #1a1510;
       outline: none;
       transition: border-color 0.2s;
     }
     .form-group select:focus, .form-group input[type="number"]:focus {
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
     .btn-submit {
       display: block;
       width: 100%;
       padding: 16px;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
@@ -156,15 +156,15 @@
       to { opacity: 1; transform: translateY(0); }
     }
     .result-card {
-      background: #FAF8EB;
+      background: #faf6f0;
       padding: 24px;
       border-radius: 12px;
       margin-bottom: 20px;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
     }
     .result-card h3 {
       font-size: 1.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .result-card p, .result-card ul {
@@ -187,8 +187,8 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: #AD9846;
-      color: #FAF8EB;
+      background: #c0603a;
+      color: #faf6f0;
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 16px;
@@ -196,7 +196,7 @@
     .score-label {
       font-size: 1.1rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     /* FAQ Section */
@@ -206,10 +206,10 @@
       padding: 0 24px;
     }
     .faq-section h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.8rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       text-align: center;
       margin-bottom: 32px;
     }
@@ -226,10 +226,10 @@
       padding: 18px 24px;
       background: none;
       border: none;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.05rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -238,7 +238,7 @@
     .faq-question::after {
       content: '+';
       font-size: 1.4rem;
-      color: #AD9846;
+      color: #c0603a;
       transition: transform 0.3s ease;
     }
     .faq-question[aria-expanded="true"]::after {
@@ -312,6 +312,12 @@
   </script>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
 
 <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -570,7 +576,7 @@
     let color = "";
 
     if (severityScore <= 5) { label = "Low Barrier"; color = "#7b9e66"; }
-    else if (severityScore <= 8) { label = "Moderate Block"; color = "#AD9846"; }
+    else if (severityScore <= 8) { label = "Moderate Block"; color = "#c0603a"; }
     else { label = "High Impact"; color = "#a65c5c"; }
 
     const circle = document.getElementById('score-circle');

@@ -23,33 +23,33 @@
   <script src="consent.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
 
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
 
   <style>
     :root {
-      --bg-color: #FAF8EB;
-      --text-color: #2E3E24;
-      --accent-color: #AD9846;
+      --bg-color: #faf6f0;
+      --text-color: #1a1510;
+      --accent-color: #c0603a;
       --border-color: #e8e4d4;
       --text-light: #5a6b50;
     }
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
     h1, h2, h3, h4, h5, h6 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       color: var(--text-color);
     }
 /* Navigation */
 
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -68,7 +68,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -76,13 +76,13 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Hero Section — Split Layout */
     .hero {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       position: relative;
       overflow: hidden;
     }
@@ -254,7 +254,7 @@
     }
     .bar-fill.tinder { background: #ff6b6b; }
     .bar-fill.bumble { background: #feca57; }
-    .bar-fill.hinge { background: #2E3E24; }
+    .bar-fill.hinge { background: #1a1510; }
     .bar-fill.okc { background: #54a0ff; }
     .bar-fill.match { background: #1dd1a1; }
   </style>
@@ -309,6 +309,12 @@
   </script>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -435,10 +441,10 @@
             if (canvas && canvas.getContext) {
               const ctx = canvas.getContext('2d');
               const data = [
-                { label: 'Clear Face Photo (Primary)', value: 85, color: '#AD9846' },
-                { label: 'Specific Prompt Answers', value: 65, color: '#2E3E24' },
+                { label: 'Clear Face Photo (Primary)', value: 85, color: '#c0603a' },
+                { label: 'Specific Prompt Answers', value: 65, color: '#1a1510' },
                 { label: 'Full Body Photo Included', value: 50, color: '#5a6b50' },
-                { label: 'Connected Instagram/Spotify', value: 25, color: '#C6C8BB' }
+                { label: 'Connected Instagram/Spotify', value: 25, color: '#e8c4a8' }
               ];
 
               const maxVal = 100;
@@ -447,8 +453,8 @@
               const startX = 220;
               const maxWidth = 400;
 
-              ctx.font = '14px Montserrat, sans-serif';
-              ctx.fillStyle = '#2E3E24';
+              ctx.font = '14px 'DM Sans', sans-serif';
+              ctx.fillStyle = '#1a1510';
 
               data.forEach((item, index) => {
                 const y = startY + (index * (barHeight + 30));
@@ -467,7 +473,7 @@
                 ctx.fillRect(startX, y, barWidth, barHeight);
 
                 // Draw value
-                ctx.fillStyle = '#2E3E24';
+                ctx.fillStyle = '#1a1510';
                 ctx.textAlign = 'left';
                 ctx.fillText('+' + item.value + '%', startX + barWidth + 10, y + 25);
               });

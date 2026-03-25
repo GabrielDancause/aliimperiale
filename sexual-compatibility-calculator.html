@@ -19,8 +19,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
 
@@ -78,8 +78,8 @@
       position: absolute;
       top: -40px;
       left: 0;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 8px;
       z-index: 100;
       transition: top 0.2s;
@@ -94,7 +94,7 @@
     }
     .question-group h3 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
       font-weight: 600;
     }
@@ -107,24 +107,24 @@
       display: flex;
       align-items: center;
       padding: 12px 16px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 1px solid #e8e4d4;
       border-radius: 10px;
       cursor: pointer;
       transition: all 0.2s ease;
       font-size: 0.95rem;
-      color: #555549;
+      color: #7a6a5a;
     }
     .option-label:hover {
       background: #f2ebd1;
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
     .option-input {
       appearance: none;
       -webkit-appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #C6C8BB;
+      border: 2px solid #e8c4a8;
       border-radius: 50%;
       margin-right: 12px;
       position: relative;
@@ -139,19 +139,19 @@
       left: 50%;
       width: 10px;
       height: 10px;
-      background: #AD9846;
+      background: #c0603a;
       border-radius: 50%;
       transform: translate(-50%, -50%) scale(0);
       transition: transform 0.2s ease;
     }
     .option-input:checked {
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
     .option-input:checked::before {
       transform: translate(-50%, -50%) scale(1);
     }
     .option-input:checked + span {
-      color: #2E3E24;
+      color: #1a1510;
       font-weight: 500;
     }
 
@@ -176,14 +176,14 @@
     }
     .progress-fill {
       height: 100%;
-      background: #AD9846;
+      background: #c0603a;
       width: 0%;
       transition: width 0.3s ease;
     }
 
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -202,7 +202,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -210,14 +210,14 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Layout & Base Styles */
     body {
-        background-color: #FAF8EB;
-        color: #2E3E24;
-        font-family: 'Montserrat', sans-serif;
+        background-color: #faf6f0;
+        color: #1a1510;
+        font-family: 'DM Sans', sans-serif;
     }
 
     .page-header {
@@ -229,13 +229,13 @@
     .page-header h1 {
       font-size: 2.2rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .page-header p {
       font-size: 1.05rem;
       line-height: 1.6;
-      color: #555549;
+      color: #7a6a5a;
     }
 
     .tracker-container {
@@ -254,9 +254,9 @@
 
     .card h2 {
       font-size: 1.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 24px;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 10px;
       display: inline-block;
     }
@@ -265,9 +265,9 @@
     .btn {
       display: inline-block;
       padding: 14px 28px;
-      background: #2E3E24;
-      color: #FAF8EB;
-      font-family: 'Montserrat', sans-serif;
+      background: #1a1510;
+      color: #faf6f0;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       text-decoration: none;
@@ -293,6 +293,12 @@
 
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Navigation -->
@@ -325,7 +331,7 @@
       <!-- Section 1: Communication Styles (Q1-Q3) -->
       <section class="card form-section" id="section-1">
         <h2>Communication Styles</h2>
-        <p style="margin-bottom: 20px; color: #555549; font-size: 0.95rem;">How do you navigate conversations about sex and intimacy?</p>
+        <p style="margin-bottom: 20px; color: #7a6a5a; font-size: 0.95rem;">How do you navigate conversations about sex and intimacy?</p>
 
         <div class="question-group">
           <h3>1. How comfortable are you discussing your sexual fantasies and desires?</h3>
@@ -363,7 +369,7 @@
       <!-- Section 2: Intimacy Preferences (Q4-Q6) -->
       <section class="card form-section" id="section-2" style="display: none;">
         <h2>Intimacy Preferences</h2>
-        <p style="margin-bottom: 20px; color: #555549; font-size: 0.95rem;">What physical acts and environments make you feel the most connected?</p>
+        <p style="margin-bottom: 20px; color: #7a6a5a; font-size: 0.95rem;">What physical acts and environments make you feel the most connected?</p>
 
         <div class="question-group">
           <h3>4. How important is extended foreplay to you?</h3>
@@ -393,7 +399,7 @@
         </div>
 
         <div class="section-nav">
-          <button type="button" class="btn prev-btn" data-prev="section-1" style="background: transparent; border: 2px solid #2E3E24; color: #2E3E24;">Back</button>
+          <button type="button" class="btn prev-btn" data-prev="section-1" style="background: transparent; border: 2px solid #1a1510; color: #1a1510;">Back</button>
           <button type="button" class="btn next-btn" data-next="section-3">Next Section</button>
         </div>
       </section>
@@ -401,7 +407,7 @@
       <!-- Section 3: Relationship Goals (Q7-Q9) -->
       <section class="card form-section" id="section-3" style="display: none;">
         <h2>Relationship Goals</h2>
-        <p style="margin-bottom: 20px; color: #555549; font-size: 0.95rem;">Looking at the broader picture of commitment and what you're building together.</p>
+        <p style="margin-bottom: 20px; color: #7a6a5a; font-size: 0.95rem;">Looking at the broader picture of commitment and what you're building together.</p>
 
         <div class="question-group">
           <h3>7. What is your primary view on monogamy?</h3>
@@ -431,7 +437,7 @@
         </div>
 
         <div class="section-nav">
-          <button type="button" class="btn prev-btn" data-prev="section-2" style="background: transparent; border: 2px solid #2E3E24; color: #2E3E24;">Back</button>
+          <button type="button" class="btn prev-btn" data-prev="section-2" style="background: transparent; border: 2px solid #1a1510; color: #1a1510;">Back</button>
           <button type="button" class="btn next-btn" data-next="section-4">Next Section</button>
         </div>
       </section>
@@ -439,7 +445,7 @@
       <!-- Section 4: Conflict Resolution (Q10-Q11) -->
       <section class="card form-section" id="section-4" style="display: none;">
         <h2>Conflict Resolution</h2>
-        <p style="margin-bottom: 20px; color: #555549; font-size: 0.95rem;">How you handle disagreements and their impact on intimacy.</p>
+        <p style="margin-bottom: 20px; color: #7a6a5a; font-size: 0.95rem;">How you handle disagreements and their impact on intimacy.</p>
 
         <div class="question-group">
           <h3>10. When you have a major argument, what happens to your desire for sex?</h3>
@@ -460,7 +466,7 @@
         </div>
 
         <div class="section-nav">
-          <button type="button" class="btn prev-btn" data-prev="section-3" style="background: transparent; border: 2px solid #2E3E24; color: #2E3E24;">Back</button>
+          <button type="button" class="btn prev-btn" data-prev="section-3" style="background: transparent; border: 2px solid #1a1510; color: #1a1510;">Back</button>
           <button type="button" class="btn next-btn" data-next="section-5">Next Section</button>
         </div>
       </section>
@@ -468,7 +474,7 @@
       <!-- Section 5: Sexual Frequency Desires (Q12-Q14) -->
       <section class="card form-section" id="section-5" style="display: none;">
         <h2>Sexual Frequency Desires</h2>
-        <p style="margin-bottom: 20px; color: #555549; font-size: 0.95rem;">Aligning your baseline libidos and ideal schedules.</p>
+        <p style="margin-bottom: 20px; color: #7a6a5a; font-size: 0.95rem;">Aligning your baseline libidos and ideal schedules.</p>
 
         <div class="question-group">
           <h3>12. In an ideal world (no stress, plenty of free time), how often would you want to have sex?</h3>
@@ -500,7 +506,7 @@
         </div>
 
         <div class="section-nav">
-          <button type="button" class="btn prev-btn" data-prev="section-4" style="background: transparent; border: 2px solid #2E3E24; color: #2E3E24;">Back</button>
+          <button type="button" class="btn prev-btn" data-prev="section-4" style="background: transparent; border: 2px solid #1a1510; color: #1a1510;">Back</button>
           <button type="button" class="btn next-btn" data-next="section-6">Next Section</button>
         </div>
       </section>
@@ -508,7 +514,7 @@
       <!-- Section 6: Adventure Levels (Q15-Q17) -->
       <section class="card form-section" id="section-6" style="display: none;">
         <h2>Adventure Levels</h2>
-        <p style="margin-bottom: 20px; color: #555549; font-size: 0.95rem;">Exploring novelty, toys, and breaking routines.</p>
+        <p style="margin-bottom: 20px; color: #7a6a5a; font-size: 0.95rem;">Exploring novelty, toys, and breaking routines.</p>
 
         <div class="question-group">
           <h3>15. How do you feel about sexual routines?</h3>
@@ -538,7 +544,7 @@
         </div>
 
         <div class="section-nav">
-          <button type="button" class="btn prev-btn" data-prev="section-5" style="background: transparent; border: 2px solid #2E3E24; color: #2E3E24;">Back</button>
+          <button type="button" class="btn prev-btn" data-prev="section-5" style="background: transparent; border: 2px solid #1a1510; color: #1a1510;">Back</button>
           <button type="button" class="btn next-btn" data-next="section-7">Next Section</button>
         </div>
       </section>
@@ -546,7 +552,7 @@
       <!-- Section 7: Emotional Connection Needs (Q18-Q20) -->
       <section class="card form-section" id="section-7" style="display: none;">
         <h2>Emotional Connection Needs</h2>
-        <p style="margin-bottom: 20px; color: #555549; font-size: 0.95rem;">How your emotions intersect with physical intimacy.</p>
+        <p style="margin-bottom: 20px; color: #7a6a5a; font-size: 0.95rem;">How your emotions intersect with physical intimacy.</p>
 
         <div class="question-group">
           <h3>18. Do you need a strong emotional bond to enjoy sex?</h3>
@@ -576,7 +582,7 @@
         </div>
 
         <div class="section-nav">
-          <button type="button" class="btn prev-btn" data-prev="section-6" style="background: transparent; border: 2px solid #2E3E24; color: #2E3E24;">Back</button>
+          <button type="button" class="btn prev-btn" data-prev="section-6" style="background: transparent; border: 2px solid #1a1510; color: #1a1510;">Back</button>
           <button type="submit" class="btn" id="submit-btn">Calculate Compatibility</button>
         </div>
       </section>
@@ -586,14 +592,14 @@
     <div id="results-section" style="display: none;">
       <div class="card">
         <h2 style="font-size: 2rem; border-bottom: none; text-align: center; display: block; margin-bottom: 8px;">Your Compatibility Profile</h2>
-        <p style="text-align: center; margin-bottom: 30px; color: #555549;">Compare these archetype results with your partner to see where you align and where you can grow.</p>
+        <p style="text-align: center; margin-bottom: 30px; color: #7a6a5a;">Compare these archetype results with your partner to see where you align and where you can grow.</p>
 
         <div id="results-content"></div>
 
         <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e8e4d4;">
-            <button class="btn" id="share-btn" style="margin-right: 12px; background: #AD9846; color: #2E3E24;">Share Results</button>
-            <button class="btn" id="retake-btn" style="background: transparent; border: 2px solid #2E3E24; color: #2E3E24;">Retake Test</button>
-            <p id="share-feedback" style="display: none; color: #2E3E24; font-size: 0.85rem; margin-top: 10px; font-weight: 600;">Copied to clipboard!</p>
+            <button class="btn" id="share-btn" style="margin-right: 12px; background: #c0603a; color: #1a1510;">Share Results</button>
+            <button class="btn" id="retake-btn" style="background: transparent; border: 2px solid #1a1510; color: #1a1510;">Retake Test</button>
+            <p id="share-feedback" style="display: none; color: #1a1510; font-size: 0.85rem; margin-top: 10px; font-weight: 600;">Copied to clipboard!</p>
         </div>
       </div>
     </div>
@@ -601,35 +607,35 @@
     <!-- Educational & FAQ Section -->
     <div class="card" style="margin-top: 40px;">
       <h2>Understanding Sexual Compatibility</h2>
-      <p style="color: #555549; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">
+      <p style="color: #7a6a5a; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">
         Pop culture often tells us that sexual compatibility is something you either instantly have or don't. The truth is much more nuanced. Compatibility is built through communication, a willingness to adapt, and an understanding of your partner's unique emotional and physical landscape.
       </p>
 
-      <h3 style="font-size: 1.2rem; color: #2E3E24; margin-bottom: 12px; margin-top: 30px;">Frequently Asked Questions</h3>
+      <h3 style="font-size: 1.2rem; color: #1a1510; margin-bottom: 12px; margin-top: 30px;">Frequently Asked Questions</h3>
 
       <div style="margin-bottom: 20px;">
-        <h4 style="font-size: 1.05rem; color: #AD9846; margin-bottom: 8px;">What is sexual compatibility?</h4>
-        <p style="color: #555549; font-size: 0.95rem; line-height: 1.5;">Sexual compatibility isn't about having identical desires; it's about how well two people can communicate, compromise, and find mutual satisfaction across different dimensions like libido, kink, emotional intimacy, and physical preferences.</p>
+        <h4 style="font-size: 1.05rem; color: #c0603a; margin-bottom: 8px;">What is sexual compatibility?</h4>
+        <p style="color: #7a6a5a; font-size: 0.95rem; line-height: 1.5;">Sexual compatibility isn't about having identical desires; it's about how well two people can communicate, compromise, and find mutual satisfaction across different dimensions like libido, kink, emotional intimacy, and physical preferences.</p>
       </div>
 
       <div style="margin-bottom: 20px;">
-        <h4 style="font-size: 1.05rem; color: #AD9846; margin-bottom: 8px;">Can you improve sexual compatibility?</h4>
-        <p style="color: #555549; font-size: 0.95rem; line-height: 1.5;">Yes! Compatibility is often built, not just found. Through open communication, a willingness to explore, and mutual empathy, couples can significantly improve their sexual connection over time.</p>
+        <h4 style="font-size: 1.05rem; color: #c0603a; margin-bottom: 8px;">Can you improve sexual compatibility?</h4>
+        <p style="color: #7a6a5a; font-size: 0.95rem; line-height: 1.5;">Yes! Compatibility is often built, not just found. Through open communication, a willingness to explore, and mutual empathy, couples can significantly improve their sexual connection over time.</p>
       </div>
 
       <div style="margin-bottom: 20px;">
-        <h4 style="font-size: 1.05rem; color: #AD9846; margin-bottom: 8px;">What if our libidos don't match?</h4>
-        <p style="color: #555549; font-size: 0.95rem; line-height: 1.5;">Mismatched libidos are extremely common. The key is removing pressure, understanding responsive versus spontaneous desire, and finding middle ground where both partners feel loved and satisfied without guilt.</p>
+        <h4 style="font-size: 1.05rem; color: #c0603a; margin-bottom: 8px;">What if our libidos don't match?</h4>
+        <p style="color: #7a6a5a; font-size: 0.95rem; line-height: 1.5;">Mismatched libidos are extremely common. The key is removing pressure, understanding responsive versus spontaneous desire, and finding middle ground where both partners feel loved and satisfied without guilt.</p>
       </div>
 
       <div style="margin-bottom: 20px;">
-        <h4 style="font-size: 1.05rem; color: #AD9846; margin-bottom: 8px;">Should we take this calculator together or separately?</h4>
-        <p style="color: #555549; font-size: 0.95rem; line-height: 1.5;">You can do both! Taking it separately and then comparing results is a great way to spark honest conversations about your differences and similarities without immediate bias.</p>
+        <h4 style="font-size: 1.05rem; color: #c0603a; margin-bottom: 8px;">Should we take this calculator together or separately?</h4>
+        <p style="color: #7a6a5a; font-size: 0.95rem; line-height: 1.5;">You can do both! Taking it separately and then comparing results is a great way to spark honest conversations about your differences and similarities without immediate bias.</p>
       </div>
 
       <div style="margin-bottom: 20px;">
-        <h4 style="font-size: 1.05rem; color: #AD9846; margin-bottom: 8px;">Is it normal for desires to change over time?</h4>
-        <p style="color: #555549; font-size: 0.95rem; line-height: 1.5;">Absolutely. Stress, aging, hormones, and relationship length all impact sexual desire and preferences. A healthy sex life requires ongoing check-ins and adaptability.</p>
+        <h4 style="font-size: 1.05rem; color: #c0603a; margin-bottom: 8px;">Is it normal for desires to change over time?</h4>
+        <p style="color: #7a6a5a; font-size: 0.95rem; line-height: 1.5;">Absolutely. Stress, aging, hormones, and relationship length all impact sexual desire and preferences. A healthy sex life requires ongoing check-ins and adaptability.</p>
       </div>
     </div>
 
@@ -758,14 +764,14 @@
 
         const createDimension = (title, score, description) => `
           <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #e8e4d4;">
-            <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 8px;">${title}</h3>
+            <h3 style="font-size: 1.2rem; color: #c0603a; margin-bottom: 8px;">${title}</h3>
             <div style="display: flex; align-items: center; margin-bottom: 12px;">
               <div style="flex-grow: 1; height: 10px; background: #e8e4d4; border-radius: 5px; margin-right: 15px; overflow: hidden;">
-                <div style="height: 100%; width: ${score}%; background: #2E3E24;"></div>
+                <div style="height: 100%; width: ${score}%; background: #1a1510;"></div>
               </div>
               <span style="font-weight: 600; font-size: 0.9rem;">${score}/100</span>
             </div>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.5;">${description}</p>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.5;">${description}</p>
           </div>
         `;
 
@@ -817,9 +823,9 @@
           ${createDimension("Adventure Levels", data.adventureScore, getAdvice(data.adventureScore, 'adventure'))}
           ${createDimension("Emotional Connection Needs", data.emotionScore, getAdvice(data.emotionScore, 'emotion'))}
 
-          <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; margin-top: 30px;">
-            <h4 style="color: #2E3E24; font-size: 1.1rem; margin-bottom: 10px;">Ali's Advice</h4>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">
+          <div style="background: #faf6f0; padding: 20px; border-radius: 12px; margin-top: 30px;">
+            <h4 style="color: #1a1510; font-size: 1.1rem; margin-bottom: 10px;">Ali's Advice</h4>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">
               Remember, there's no "perfect" score! Compatibility isn't about having the exact same answers; it's about understanding each other's baselines and finding the beautiful overlap. Use these results to start a judgment-free conversation with your partner.
             </p>
           </div>

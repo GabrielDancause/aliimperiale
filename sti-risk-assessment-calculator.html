@@ -24,16 +24,16 @@
 
   <style>
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
       margin: 0;
       padding: 0;
     }
 
     /* Navigation - Match index.html */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -54,7 +54,7 @@
       padding: 0;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -62,7 +62,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     @media (max-width: 768px) {
       .site-nav .nav-links {
@@ -82,7 +82,7 @@
       padding: 0 20px;
     }
     h1, h2, h3, h4 {
-      color: #2E3E24;
+      color: #1a1510;
       margin-top: 0;
     }
     h1 {
@@ -94,18 +94,18 @@
       text-align: center;
       font-size: 1.1rem;
       margin-bottom: 30px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .medical-disclaimer {
       background-color: #e8eaca;
-      border-left: 5px solid #AD9846;
+      border-left: 5px solid #c0603a;
       padding: 15px 20px;
       margin-bottom: 40px;
       font-size: 0.9rem;
       border-radius: 4px;
     }
     .medical-disclaimer strong {
-      color: #AD9846;
+      color: #c0603a;
     }
 
     .section-card {
@@ -119,7 +119,7 @@
       border-bottom: 2px solid #e8eaca;
       padding-bottom: 10px;
       margin-bottom: 20px;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     /* Form Styles */
@@ -142,7 +142,7 @@
       cursor: pointer;
       font-size: 1rem;
       padding: 10px 15px;
-      border: 1px solid #c6c8bb;
+      border: 1px solid #e8c4a8;
       border-radius: 8px;
       transition: all 0.2s;
     }
@@ -154,7 +154,7 @@
       margin: 0 10px 0 0;
       width: 20px;
       height: 20px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 50%; /* For radio */
       display: inline-grid;
       place-content: center;
@@ -169,7 +169,7 @@
       border-radius: 50%;
       transform: scale(0);
       transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em #AD9846;
+      box-shadow: inset 1em 1em #c0603a;
     }
     .option-input.checkbox::before {
       border-radius: 2px;
@@ -182,8 +182,8 @@
     }
 
     .btn {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 14px 24px;
       font-size: 1.1rem;
@@ -201,16 +201,16 @@
     }
     .btn-secondary {
       background-color: transparent;
-      border: 2px solid #2E3E24;
-      color: #2E3E24;
+      border: 2px solid #1a1510;
+      color: #1a1510;
     }
     .btn-secondary:hover {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
     }
     .btn-gold {
-      background-color: #AD9846;
-      color: #FAF8EB;
+      background-color: #c0603a;
+      color: #faf6f0;
     }
     .btn-gold:hover {
       background-color: #c0aa55;
@@ -222,7 +222,7 @@
     }
     #results-section {
       background-color: #e8eaca;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
     }
     .risk-level-banner {
       padding: 20px;
@@ -239,7 +239,7 @@
       padding: 20px;
       border-radius: 8px;
       margin-top: 15px;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
     }
 
     /* Script Generator */
@@ -251,7 +251,7 @@
     select, input[type="text"] {
       width: 100%;
       padding: 12px;
-      border: 1px solid #c6c8bb;
+      border: 1px solid #e8c4a8;
       border-radius: 6px;
       font-family: inherit;
       font-size: 1rem;
@@ -272,7 +272,7 @@
     }
     .faq-question {
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .faq-answer {
@@ -339,6 +339,12 @@
   <meta name="twitter:description" content="An interactive educational tool to help you understand STI risks, explore prevention methods, and build a testing timeline.">
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
 
   <!-- Site Navigation -->
   <nav class="site-nav">

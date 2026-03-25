@@ -27,7 +27,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
 
@@ -113,7 +113,7 @@
   <style>
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -134,7 +134,7 @@
       padding: 0;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -142,13 +142,13 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Article Header */
     .page-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       text-align: center;
       padding: 48px 20px 60px;
       position: relative;
@@ -160,29 +160,29 @@
       left: 0;
       right: 0;
       height: 30px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 30px 30px 0 0;
     }
     .article-date {
       font-size: 0.8rem;
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 500;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       margin-bottom: 12px;
     }
     .page-header h1 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 2.2rem;
       font-weight: 400;
       line-height: 1.3;
       max-width: 700px;
       margin: 0 auto;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .article-subtitle {
       font-size: 0.95rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       margin-top: 14px;
       max-width: 600px;
       margin-left: auto;
@@ -197,13 +197,13 @@
       padding: 20px 20px 0;
     }
 
-    .article-body p { font-size: 0.95rem; line-height: 1.85; color: #2E3E24; margin-bottom: 20px; }
-    .article-body h2 { font-family: 'New Standard', Georgia, serif; font-size: 1.4rem; font-weight: 400; color: #2E3E24; margin-top: 36px; margin-bottom: 16px; line-height: 1.35; }
-    .article-body h3 { font-family: 'New Standard', Georgia, serif; font-size: 1.15rem; font-weight: 400; color: #422626; margin-top: 28px; margin-bottom: 12px; }
+    .article-body p { font-size: 0.95rem; line-height: 1.85; color: #1a1510; margin-bottom: 20px; }
+    .article-body h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-weight: 400; color: #1a1510; margin-top: 36px; margin-bottom: 16px; line-height: 1.35; }
+    .article-body h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 400; color: #1a1510; margin-top: 28px; margin-bottom: 12px; }
     .article-body ul, .article-body ol { margin-bottom: 20px; padding-left: 24px; }
     .article-body ul li, .article-body ol li { font-size: 0.95rem; line-height: 1.85; margin-bottom: 6px; }
-    .article-body a { color: #AD9846; text-decoration: underline; text-underline-offset: 2px; }
-    .pull-quote { border-left: 3px solid #AD9846; padding: 16px 0 16px 24px; margin: 32px 0; font-family: 'New Standard', Georgia, serif; font-size: 1.1rem; color: #422626; line-height: 1.65; }
+    .article-body a { color: #c0603a; text-decoration: underline; text-underline-offset: 2px; }
+    .pull-quote { border-left: 3px solid #c0603a; padding: 16px 0 16px 24px; margin: 32px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; color: #1a1510; line-height: 1.65; }
 
     .methodology-box {
       background: #ffffff;
@@ -215,7 +215,7 @@
     }
     .methodology-box h3 {
       margin-top: 0;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     @media (max-width: 480px) {
@@ -226,7 +226,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
   <nav class="site-nav">
@@ -307,22 +313,22 @@
         <p><em>Note: This article presents a synthesis of these independent studies. No primary survey data was collected by Ali Imperiale for this specific report.</em></p>
       </div>
 
-      <div class="faq-section" style="margin-top: 48px; border-top: 2px solid #AD9846; padding-top: 32px;">
+      <div class="faq-section" style="margin-top: 48px; border-top: 2px solid #c0603a; padding-top: 32px;">
         <h2>Frequently Asked Questions About Sexual Wellness in 2026</h2>
 
-        <h3 style="font-family: 'New Standard', Georgia, serif; color: #422626; margin-top: 24px;">What is the average frequency of sexual activity in 2026?</h3>
+        <h3 style="font-family: 'Playfair Display', Georgia, serif; color: #1a1510; margin-top: 24px;">What is the average frequency of sexual activity in 2026?</h3>
         <p>Data indicates frequency varies significantly by age. On average, younger adults (18-29) report engaging in sexual activity approximately 112 times per year, while those in the 30-39 bracket report an average of 86 times per year. However, frequency alone is not the primary indicator of sexual wellness.</p>
 
-        <h3 style="font-family: 'New Standard', Georgia, serif; color: #422626; margin-top: 24px;">How is sex tech changing intimate relationships?</h3>
+        <h3 style="font-family: 'Playfair Display', Georgia, serif; color: #1a1510; margin-top: 24px;">How is sex tech changing intimate relationships?</h3>
         <p>The adoption of sex tech—including connected devices, apps, and wellness platforms—is growing exponentially, with the global market projected to exceed $144 billion. While it offers new avenues for exploration and long-distance connection, studies suggest it must be balanced with direct interpersonal communication to avoid feelings of emotional distance.</p>
 
-        <h3 style="font-family: 'New Standard', Georgia, serif; color: #422626; margin-top: 24px;">Why are more couples seeking sex therapy today?</h3>
+        <h3 style="font-family: 'Playfair Display', Georgia, serif; color: #1a1510; margin-top: 24px;">Why are more couples seeking sex therapy today?</h3>
         <p>Couples are increasingly turning to sex therapy not just for crisis management, but as proactive maintenance. Key drivers include communication breakdowns, shifting libidos (such as navigating spontaneous vs. responsive desire), and a broader cultural destigmatization of seeking professional help for intimacy issues.</p>
 
-        <h3 style="font-family: 'New Standard', Georgia, serif; color: #422626; margin-top: 24px;">Does age affect sexual satisfaction?</h3>
+        <h3 style="font-family: 'Playfair Display', Georgia, serif; color: #1a1510; margin-top: 24px;">Does age affect sexual satisfaction?</h3>
         <p>Yes, but not always in the way people expect. While younger demographics often prioritize frequency, AARP data reveals that 61% of adults over 40 consider sexual activity critical to a good relationship. Many older adults report higher qualitative satisfaction due to better communication, established trust, and a deeper understanding of their own bodies.</p>
 
-        <h3 style="font-family: 'New Standard', Georgia, serif; color: #422626; margin-top: 24px;">How does mental health impact sexual wellness?</h3>
+        <h3 style="font-family: 'Playfair Display', Georgia, serif; color: #1a1510; margin-top: 24px;">How does mental health impact sexual wellness?</h3>
         <p>There is a profound bidirectional relationship between mental health and sexual wellness. High stress, anxiety, and performance pressure significantly lower desire and satisfaction. Conversely, healthy, communicative intimate relationships are shown to reduce cortisol levels and improve overall mental well-being.</p>
       </div>
 
@@ -336,9 +342,9 @@
     </div>
 
     <div style="background: #ffffff; border-radius: 18px; padding: 32px 28px; margin: 44px 0 20px; text-align: center; box-shadow: 0 1px 4px rgba(46, 62, 36, 0.06); border: 1px solid rgba(46, 62, 36, 0.06);">
-      <p style="font-family: 'The Bloomington', cursive; font-size: 2rem; font-weight: 400; color: #2E3E24; margin-bottom: 10px;">Want more honest chats?</p>
-      <p style="font-size: 0.92rem; color: #555549; line-height: 1.7; margin-bottom: 20px;">I post new videos every week about sex, relationships, and all the stuff we're secretly curious about. Subscribe so you don't miss any of it &mdash; and come hang out with me in the comments.</p>
-      <a href="https://www.youtube.com/@aliimperiale?sub_confirmation=1" target="_blank" rel="noopener" style="display: inline-block; padding: 14px 32px; background: #2E3E24; color: #FAF8EB; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.01em; transition: background 0.15s ease, transform 0.15s ease;">Subscribe on YouTube &rarr;</a>
+      <p style="font-family: 'DM Serif Display', cursive; font-size: 2rem; font-weight: 400; color: #1a1510; margin-bottom: 10px;">Want more honest chats?</p>
+      <p style="font-size: 0.92rem; color: #7a6a5a; line-height: 1.7; margin-bottom: 20px;">I post new videos every week about sex, relationships, and all the stuff we're secretly curious about. Subscribe so you don't miss any of it &mdash; and come hang out with me in the comments.</p>
+      <a href="https://www.youtube.com/@aliimperiale?sub_confirmation=1" target="_blank" rel="noopener" style="display: inline-block; padding: 14px 32px; background: #1a1510; color: #faf6f0; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.01em; transition: background 0.15s ease, transform 0.15s ease;">Subscribe on YouTube &rarr;</a>
     </div>
   </main>
 
@@ -398,7 +404,7 @@
           datasets: [{
             label: 'Average Frequency (Times Per Year)',
             data: [112, 86, 69, 52], // 52 is an extrapolated estimate for visual continuity based on Kinsey trends
-            backgroundColor: '#2E3E24',
+            backgroundColor: '#1a1510',
             borderRadius: 6,
             barThickness: 40
           }]
@@ -408,20 +414,20 @@
           plugins: {
             legend: { display: false },
             tooltip: {
-              backgroundColor: '#AD9846',
-              titleFont: { family: "'Montserrat', sans-serif", size: 14 },
-              bodyFont: { family: "'Montserrat', sans-serif", size: 13 }
+              backgroundColor: '#c0603a',
+              titleFont: { family: "'DM Sans', sans-serif", size: 14 },
+              bodyFont: { family: "'DM Sans', sans-serif", size: 13 }
             }
           },
           scales: {
             y: {
               beginAtZero: true,
               grid: { color: 'rgba(46, 62, 36, 0.1)' },
-              ticks: { font: { family: "'Montserrat', sans-serif" }, color: '#555549' }
+              ticks: { font: { family: "'DM Sans', sans-serif" }, color: '#7a6a5a' }
             },
             x: {
               grid: { display: false },
-              ticks: { font: { family: "'Montserrat', sans-serif" }, color: '#2E3E24' }
+              ticks: { font: { family: "'DM Sans', sans-serif" }, color: '#1a1510' }
             }
           }
         }

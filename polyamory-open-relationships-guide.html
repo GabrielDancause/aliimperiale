@@ -24,8 +24,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
 
@@ -105,14 +105,14 @@
   <style>
     /* Guide Specific Styles */
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
     }
 
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -131,7 +131,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -139,7 +139,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     .guide-header {
@@ -148,17 +148,17 @@
     }
 
     .guide-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
       line-height: 1.1;
     }
 
     .guide-header p {
       font-size: 1.1rem;
-      color: #555549;
+      color: #7a6a5a;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -179,26 +179,26 @@
     }
 
     .card h2 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 10px;
       display: inline-block;
     }
 
     .card h3 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.4rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin: 30px 0 15px;
     }
 
     .card p, .card li {
       line-height: 1.7;
       margin-bottom: 16px;
-      color: #422626;
+      color: #1a1510;
     }
 
     .card ul, .card ol {
@@ -208,7 +208,7 @@
 
     /* Table of Contents */
     .toc {
-      background: #FAF8EB;
+      background: #faf6f0;
       padding: 24px;
       border-radius: 12px;
       border: 1px solid rgba(46, 62, 36, 0.1);
@@ -231,21 +231,21 @@
     }
 
     .toc a {
-      color: #AD9846;
+      color: #c0603a;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.2s;
     }
 
     .toc a:hover {
-      color: #2E3E24;
+      color: #1a1510;
       text-decoration: underline;
     }
 
     /* Callout Boxes */
     .callout {
-      background: #FAF8EB;
-      border-left: 4px solid #AD9846;
+      background: #faf6f0;
+      border-left: 4px solid #c0603a;
       padding: 20px;
       border-radius: 0 12px 12px 0;
       margin: 24px 0;
@@ -253,7 +253,7 @@
 
     .callout-title {
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
       font-size: 1.1rem;
     }
@@ -262,7 +262,7 @@
     .btn {
       padding: 12px 24px;
       border-radius: 10px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
       cursor: pointer;
@@ -273,8 +273,8 @@
     }
 
     .btn-primary {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
 
     .btn-primary:hover {
@@ -284,7 +284,7 @@
 
     /* Quiz Specific Styles */
     .quiz-container {
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 1px solid rgba(46, 62, 36, 0.1);
       border-radius: 12px;
       padding: 30px;
@@ -294,7 +294,7 @@
     .quiz-question {
       font-size: 1.2rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
     }
 
@@ -309,9 +309,9 @@
       border: 1px solid rgba(46, 62, 36, 0.1);
       border-radius: 10px;
       padding: 16px 20px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
-      color: #2E3E24;
+      color: #1a1510;
       cursor: pointer;
       transition: all 0.2s ease;
       text-align: left;
@@ -330,7 +330,7 @@
     .result-title {
       font-size: 1.8rem;
       font-weight: 700;
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 15px;
     }
 
@@ -349,13 +349,13 @@
       margin-bottom: 20px;
     }
     .scheduler-day {
-      background: #FAF8EB;
+      background: #faf6f0;
       padding: 10px;
       text-align: center;
       border-radius: 8px;
       font-size: 0.8rem;
       font-weight: 600;
-      color: #555549;
+      color: #7a6a5a;
     }
     .scheduler-slot {
       height: 60px;
@@ -367,13 +367,13 @@
     .scheduler-slot:hover {
       background: #e0e0e0;
     }
-    .slot-me { background: #AD9846; color: #fff; }
-    .slot-partner1 { background: #2E3E24; color: #fff; }
-    .slot-partner2 { background: #8a8a7a; color: #fff; }
+    .slot-me { background: #c0603a; color: #fff; }
+    .slot-partner1 { background: #1a1510; color: #fff; }
+    .slot-partner2 { background: #7a6a5a; color: #fff; }
 
     /* FAQ Section */
     .faq-item {
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 16px;
@@ -383,13 +383,13 @@
     .faq-item h3 {
       margin-top: 0;
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
 
     .faq-item p {
       margin-bottom: 0;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.6;
       font-size: 0.95rem;
     }
@@ -408,7 +408,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
   <nav class="site-nav">
@@ -498,8 +504,8 @@
           <div class="result-title" id="quiz-result-title">Your Style</div>
           <p id="quiz-result-desc">Description goes here.</p>
           <button class="btn btn-primary" onclick="resetENMQuiz()" style="margin-top: 20px;">Retake Quiz</button>
-          <button class="btn" style="background: #AD9846; color: #2E3E24; margin-top: 20px; margin-left: 10px;" onclick="copyENMResults()" id="share-enm-btn">Share Results</button>
-          <p id="share-enm-toast" style="display:none; color: #2E3E24; margin-top: 10px; font-weight: 500; font-size: 0.85rem;">Copied to clipboard!</p>
+          <button class="btn" style="background: #c0603a; color: #1a1510; margin-top: 20px; margin-left: 10px;" onclick="copyENMResults()" id="share-enm-btn">Share Results</button>
+          <p id="share-enm-toast" style="display:none; color: #1a1510; margin-top: 10px; font-weight: 500; font-size: 0.85rem;">Copied to clipboard!</p>
         </div>
       </div>
     </section>
@@ -560,8 +566,8 @@
       <p>When you have multiple partners, it's incredibly easy to schedule away all your free time. You must consciously schedule dates with yourself. Protect this time fiercely.</p>
 
       <div class="scheduler-tool">
-        <h4 style="margin-top:0; color: #2E3E24;">Visual Calendar Balancing Concept</h4>
-        <p style="font-size: 0.85rem; color: #555549;">A healthy week isn't about perfectly equal time, but equitable time based on needs.</p>
+        <h4 style="margin-top:0; color: #1a1510;">Visual Calendar Balancing Concept</h4>
+        <p style="font-size: 0.85rem; color: #7a6a5a;">A healthy week isn't about perfectly equal time, but equitable time based on needs.</p>
         <div class="scheduler-grid">
           <div class="scheduler-day">Mon</div>
           <div class="scheduler-day">Tue</div>
@@ -593,7 +599,7 @@
         <li><strong>Disclosure:</strong> If a barrier breaks or you have unprotected sex outside your agreements, disclose this to all relevant partners <em>before</em> having sex with them again.</li>
         <li><strong>Vaccinations:</strong> Ensure you are vaccinated for HPV and Hepatitis A/B. Consider discussing PrEP (Pre-Exposure Prophylaxis) with your doctor if appropriate.</li>
       </ul>
-      <p><em>Check out the full <a href="/safer-sex-complete-guide.html" style="color: #AD9846;">Safer Sex Complete Guide</a> for more details.</em></p>
+      <p><em>Check out the full <a href="/safer-sex-complete-guide.html" style="color: #c0603a;">Safer Sex Complete Guide</a> for more details.</em></p>
     </section>
 
     <section id="legal" class="card">
@@ -660,19 +666,19 @@
     <section id="glossary" class="card">
       <h2>Glossary of Terms</h2>
       <dl>
-        <dt style="font-weight: 700; color: #AD9846;">Compersion</dt>
+        <dt style="font-weight: 700; color: #c0603a;">Compersion</dt>
         <dd style="margin-bottom: 15px; margin-left: 0;">The feeling of joy one has experiencing another's joy; often described as the opposite of jealousy.</dd>
 
-        <dt style="font-weight: 700; color: #AD9846;">Metamour</dt>
+        <dt style="font-weight: 700; color: #c0603a;">Metamour</dt>
         <dd style="margin-bottom: 15px; margin-left: 0;">Your partner's partner, with whom you do not have a romantic or sexual relationship.</dd>
 
-        <dt style="font-weight: 700; color: #AD9846;">Polycule</dt>
+        <dt style="font-weight: 700; color: #c0603a;">Polycule</dt>
         <dd style="margin-bottom: 15px; margin-left: 0;">A connected network of people in polyamorous relationships.</dd>
 
-        <dt style="font-weight: 700; color: #AD9846;">NRE (New Relationship Energy)</dt>
+        <dt style="font-weight: 700; color: #c0603a;">NRE (New Relationship Energy)</dt>
         <dd style="margin-bottom: 15px; margin-left: 0;">The intense, euphoric feeling at the beginning of a new relationship. It's important to manage NRE so existing partners don't feel neglected.</dd>
 
-        <dt style="font-weight: 700; color: #AD9846;">Veto Power</dt>
+        <dt style="font-weight: 700; color: #c0603a;">Veto Power</dt>
         <dd style="margin-bottom: 15px; margin-left: 0;">An agreement where one partner has the right to force the other partner to end an external relationship. Highly controversial and often considered unethical in modern poly circles.</dd>
       </dl>
     </section>

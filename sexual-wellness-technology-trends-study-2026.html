@@ -25,11 +25,11 @@
   <link rel="stylesheet" href="shared.css">
   <style>
     :root {
-      --bg-cream: #FAF8EB;
-      --text-olive: #2E3E24;
-      --accent-gold: #AD9846;
+      --bg-cream: #faf6f0;
+      --text-olive: #1a1510;
+      --accent-gold: #c0603a;
       --border-light: rgba(46, 62, 36, 0.1);
-      --font-main: 'Montserrat', sans-serif;
+      --font-main: 'DM Sans', sans-serif;
     }
 
     body {
@@ -79,7 +79,7 @@
       display: flex;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 1rem;
       font-weight: 500;
@@ -257,6 +257,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -456,7 +462,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Common Chart options
-      Chart.defaults.font.family = "'Montserrat', sans-serif";
+      Chart.defaults.font.family = "'DM Sans', sans-serif";
       Chart.defaults.color = '#5a6b50';
       const commonOptions = {
         responsive: true,
@@ -495,7 +501,7 @@
               {
                 label: 'Adoption Rate (%)',
                 data: [64, 22, 31],
-                backgroundColor: '#AD9846',
+                backgroundColor: '#c0603a',
                 borderRadius: 6,
                 barPercentage: 0.6
               }
@@ -542,9 +548,9 @@
             datasets: [{
               data: [42, 28, 15, 10, 5],
               backgroundColor: [
-                '#2E3E24',
+                '#1a1510',
                 '#4A5D3E',
-                '#AD9846',
+                '#c0603a',
                 '#C5B268',
                 '#E8E4D4'
               ],
@@ -587,7 +593,7 @@
           // Simulate API call for the demo
           setTimeout(() => {
             status.style.display = 'block';
-            status.style.color = '#2E3E24';
+            status.style.color = '#1a1510';
             status.textContent = 'You’re in! Check your email to confirm.';
             studyForm.style.display = 'none';
           }, 800);

@@ -15,9 +15,9 @@
   <link rel="stylesheet" href="shared.css">
   <style>
     body {
-      background-color: #FAF8EB;
-      font-family: 'Montserrat', sans-serif;
-      color: #2E3E24;
+      background-color: #faf6f0;
+      font-family: 'DM Sans', sans-serif;
+      color: #1a1510;
       line-height: 1.6;
       margin: 0;
       padding: 0;
@@ -32,7 +32,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 16px 32px;
-      background: #FAF8EB;
+      background: #faf6f0;
       box-shadow: 0 2px 10px rgba(46,62,36,0.05);
     }
     .nav-logo {
@@ -50,14 +50,14 @@
     }
     .nav-links li a {
       text-decoration: none;
-      color: #2E3E24;
+      color: #1a1510;
       font-weight: 500;
       font-size: 0.95rem;
       transition: color 0.2s;
     }
     .nav-links li a:hover,
     .nav-links li a.active {
-      color: #AD9846;
+      color: #c0603a;
     }
 
     /* Study Layout */
@@ -72,7 +72,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: #AD9846;
+      color: #c0603a;
       display: inline-block;
       margin-bottom: 16px;
     }
@@ -123,15 +123,15 @@
 
     .study-container h2 {
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin: 40px 0 20px;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 8px;
       display: inline-block;
     }
     .study-container h3 {
       font-size: 1.4rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin: 30px 0 16px;
     }
     .study-container p {
@@ -151,7 +151,7 @@
     .chart-container {
       margin: 40px 0;
       padding: 24px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 8px;
       border: 1px solid #e8e4d4;
     }
@@ -164,14 +164,14 @@
 
     .callout-box {
       background: rgba(173, 152, 70, 0.1);
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 24px;
       margin: 32px 0;
       border-radius: 0 8px 8px 0;
     }
     .callout-box h4 {
       margin: 0 0 12px 0;
-      color: #AD9846;
+      color: #c0603a;
       font-size: 1.1rem;
     }
     .callout-box p {
@@ -203,6 +203,12 @@
   <meta name="twitter:description" content="A comprehensive research article analyzing worldwide trends in sexual attitudes and behaviors, including cross-cultural analysis, generational differences,.">
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
 
   <!-- Site Navigation -->
   <nav class="site-nav">
@@ -341,24 +347,24 @@
             position: 'top',
             labels: {
               font: {
-                family: "'Montserrat', sans-serif"
+                family: "'DM Sans', sans-serif"
               },
-              color: '#2E3E24'
+              color: '#1a1510'
             }
           }
         },
         scales: {
           x: {
             ticks: {
-              font: { family: "'Montserrat', sans-serif" },
-              color: '#2E3E24'
+              font: { family: "'DM Sans', sans-serif" },
+              color: '#1a1510'
             },
             grid: { display: false }
           },
           y: {
             ticks: {
-              font: { family: "'Montserrat', sans-serif" },
-              color: '#2E3E24'
+              font: { family: "'DM Sans', sans-serif" },
+              color: '#1a1510'
             },
             grid: { color: '#e8e4d4' }
           }
@@ -374,7 +380,7 @@
           datasets: [{
             label: 'Index Score (0-100)',
             data: [89, 87, 76, 74, 85],
-            backgroundColor: '#AD9846',
+            backgroundColor: '#c0603a',
             borderRadius: 4
           }]
         },
@@ -396,7 +402,7 @@
               { x: 45, y: 62 }, // Low Eq, High Gap
               { x: 30, y: 75 }
             ],
-            backgroundColor: '#2E3E24',
+            backgroundColor: '#1a1510',
             pointRadius: 6,
             pointHoverRadius: 8
           }]
@@ -408,16 +414,16 @@
               title: {
                 display: true,
                 text: 'UN Gender Equality Index Score',
-                color: '#2E3E24',
-                font: { family: "'Montserrat', sans-serif" }
+                color: '#1a1510',
+                font: { family: "'DM Sans', sans-serif" }
               }
             },
             y: {
               title: {
                 display: true,
                 text: 'Orgasm Gap (%)',
-                color: '#2E3E24',
-                font: { family: "'Montserrat', sans-serif" }
+                color: '#1a1510',
+                font: { family: "'DM Sans', sans-serif" }
               }
             }
           }
@@ -441,7 +447,7 @@
             {
               label: '2026 Support',
               data: [82, 88, 71, 55, 31],
-              borderColor: '#AD9846',
+              borderColor: '#c0603a',
               tension: 0.3,
               fill: false
             }

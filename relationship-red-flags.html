@@ -24,14 +24,14 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Site Nav Inline Styles */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -52,20 +52,20 @@
       margin: 0;
     }
     .nav-links a {
-      color: #FAF8EB;
+      color: #faf6f0;
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 500;
       transition: color 0.2s;
     }
     .nav-links a:hover, .nav-links a.active {
-      color: #AD9846;
+      color: #c0603a;
     }
     .hamburger {
       display: none;
       background: none;
       border: none;
-      color: #FAF8EB;
+      color: #faf6f0;
       font-size: 24px;
       cursor: pointer;
       padding: 4px;
@@ -80,7 +80,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: #2E3E24;
+        background: #1a1510;
         flex-direction: column;
         padding: 20px;
         text-align: center;
@@ -140,7 +140,7 @@
     .page-header h1 {
       font-size: 2.2rem;
       margin-bottom: 16px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .page-header p {
       font-size: 1.1rem;
@@ -157,16 +157,16 @@
     }
 
     /* Typography & Utilities */
-    h2 { color: #2E3E24; margin-bottom: 20px; font-size: 1.5rem; }
-    h3 { color: #AD9846; margin-bottom: 16px; font-size: 1.2rem; }
+    h2 { color: #1a1510; margin-bottom: 20px; font-size: 1.5rem; }
+    h3 { color: #c0603a; margin-bottom: 16px; font-size: 1.2rem; }
     p { margin-bottom: 16px; line-height: 1.6; }
     ul { margin-bottom: 16px; padding-left: 20px; }
     li { margin-bottom: 8px; line-height: 1.5; }
 
     .btn {
       display: inline-block;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
@@ -179,7 +179,7 @@
     .btn:hover { background: #3a4f2d; }
     .btn-secondary {
       background: #e8e4d4;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .btn-secondary:hover { background: #dcd7c5; }
 
@@ -188,6 +188,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <a href="#main-content" class="skip-link" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">Skip to content</a>
 
   <nav class="site-nav">
@@ -514,23 +520,23 @@
               <p style="margin-bottom: 8px; font-weight: 500;">${item}</p>
               <div class="options-group" style="display: flex; gap: 15px;">
                 <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                  <input type="radio" name="${inputId}" value="0" style="appearance: none; width: 16px; height: 16px; border: 2px solid #2E3E24; border-radius: 50%; display: grid; place-content: center; position: relative;">
+                  <input type="radio" name="${inputId}" value="0" style="appearance: none; width: 16px; height: 16px; border: 2px solid #1a1510; border-radius: 50%; display: grid; place-content: center; position: relative;">
                   Never
                 </label>
                 <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                  <input type="radio" name="${inputId}" value="1" style="appearance: none; width: 16px; height: 16px; border: 2px solid #2E3E24; border-radius: 50%; display: grid; place-content: center; position: relative;">
+                  <input type="radio" name="${inputId}" value="1" style="appearance: none; width: 16px; height: 16px; border: 2px solid #1a1510; border-radius: 50%; display: grid; place-content: center; position: relative;">
                   Rarely
                 </label>
                 <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                  <input type="radio" name="${inputId}" value="2" style="appearance: none; width: 16px; height: 16px; border: 2px solid #2E3E24; border-radius: 50%; display: grid; place-content: center; position: relative;">
+                  <input type="radio" name="${inputId}" value="2" style="appearance: none; width: 16px; height: 16px; border: 2px solid #1a1510; border-radius: 50%; display: grid; place-content: center; position: relative;">
                   Sometimes
                 </label>
                 <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                  <input type="radio" name="${inputId}" value="3" style="appearance: none; width: 16px; height: 16px; border: 2px solid #2E3E24; border-radius: 50%; display: grid; place-content: center; position: relative;">
+                  <input type="radio" name="${inputId}" value="3" style="appearance: none; width: 16px; height: 16px; border: 2px solid #1a1510; border-radius: 50%; display: grid; place-content: center; position: relative;">
                   Often
                 </label>
                 <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                  <input type="radio" name="${inputId}" value="4" style="appearance: none; width: 16px; height: 16px; border: 2px solid #2E3E24; border-radius: 50%; display: grid; place-content: center; position: relative;">
+                  <input type="radio" name="${inputId}" value="4" style="appearance: none; width: 16px; height: 16px; border: 2px solid #1a1510; border-radius: 50%; display: grid; place-content: center; position: relative;">
                   Always
                 </label>
               </div>
@@ -547,8 +553,8 @@
       scenarioData.forEach((scenario, index) => {
         const inputId = `scenario-${index}`;
         html += `
-          <div class="scenario-block" style="margin-bottom: 30px; background: #FAF8EB; padding: 20px; border-radius: 12px;">
-            <h4 style="color: #2E3E24; margin-bottom: 10px;">${scenario.title}</h4>
+          <div class="scenario-block" style="margin-bottom: 30px; background: #faf6f0; padding: 20px; border-radius: 12px;">
+            <h4 style="color: #1a1510; margin-bottom: 10px;">${scenario.title}</h4>
             <p style="font-style: italic; margin-bottom: 15px;">"${scenario.text}"</p>
             <p style="font-weight: 600; margin-bottom: 10px;">${scenario.question}</p>
             <div class="scenario-options">
@@ -557,7 +563,7 @@
         scenario.options.forEach((opt, optIndex) => {
           html += `
             <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-              <input type="radio" name="${inputId}" value="${opt.value}" style="appearance: none; width: 16px; height: 16px; border: 2px solid #2E3E24; border-radius: 50%; display: inline-grid; place-content: center; margin-right: 8px; vertical-align: middle;">
+              <input type="radio" name="${inputId}" value="${opt.value}" style="appearance: none; width: 16px; height: 16px; border: 2px solid #1a1510; border-radius: 50%; display: inline-grid; place-content: center; margin-right: 8px; vertical-align: middle;">
               <span style="vertical-align: middle;">${opt.text}</span>
             </label>
           `;
@@ -578,8 +584,8 @@
           border-radius: 50%;
           transform: scale(0);
           transition: 120ms transform ease-in-out;
-          box-shadow: inset 1em 1em #2E3E24;
-          background-color: #2E3E24;
+          box-shadow: inset 1em 1em #1a1510;
+          background-color: #1a1510;
         }
         input[type="radio"]:checked::before {
           transform: scale(1);
@@ -693,7 +699,7 @@
 
       if (percent < 15) {
         riskLevel = 'Low Risk Indicators';
-        riskColor = '#2E3E24'; // Green-ish
+        riskColor = '#1a1510'; // Green-ish
         feedback = 'You are experiencing very few red flags. While no relationship is perfect, the behaviors you described are generally consistent with healthy relationship dynamics.';
       } else if (percent < 40) {
         riskLevel = 'Moderate Risk: Yellow Flags Present';
@@ -717,10 +723,10 @@
 
       Object.values(categoryScores).forEach(cat => {
         const catPercent = Math.round((cat.score / cat.max) * 100);
-        let barColor = catPercent > 50 ? '#c0392b' : (catPercent > 20 ? '#d35400' : '#2E3E24');
+        let barColor = catPercent > 50 ? '#c0392b' : (catPercent > 20 ? '#d35400' : '#1a1510');
 
         html += `
-          <div style="background: #FAF8EB; padding: 15px; border-radius: 8px;">
+          <div style="background: #faf6f0; padding: 15px; border-radius: 8px;">
             <p style="font-weight: 600; margin-bottom: 8px; font-size: 0.95rem;">${cat.name}</p>
             <div style="width: 100%; background: #e8e4d4; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 5px;">
               <div style="width: ${catPercent}%; background: ${barColor}; height: 100%;"></div>
@@ -734,8 +740,8 @@
       // Scenario Feedback
       const scenarioPercent = Math.round((scenarioScore / scenarioMax) * 100);
       html += `
-        <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 4px solid #AD9846;">
-          <h4 style="margin-bottom: 10px; color: #2E3E24;">Scenario Recognition Skills</h4>
+        <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 4px solid #c0603a;">
+          <h4 style="margin-bottom: 10px; color: #1a1510;">Scenario Recognition Skills</h4>
           <p style="font-size: 0.95rem;">You scored ${scenarioScore} out of ${scenarioMax} in identifying abusive tactics disguised as normal behavior.
           ${scenarioPercent > 70 ? 'You have a strong grasp of identifying manipulation tactics.' : 'Consider reading more about love bombing and gaslighting to better protect yourself from subtle manipulation.'}</p>
         </div>

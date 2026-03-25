@@ -24,21 +24,21 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Custom Styles for this page */
     body {
-        background-color: #FAF8EB;
-        color: #2E3E24;
-        font-family: 'Montserrat', sans-serif;
+        background-color: #faf6f0;
+        color: #1a1510;
+        font-family: 'DM Sans', sans-serif;
     }
 
     /* Navigation (copied from index.html) */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -57,7 +57,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -65,13 +65,13 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Page Header */
     .page-header {
-        background-color: #2E3E24;
-        color: #FAF8EB;
+        background-color: #1a1510;
+        color: #faf6f0;
         padding: 60px 20px;
         text-align: center;
     }
@@ -85,7 +85,7 @@
         font-size: 1.1rem;
         max-width: 800px;
         margin: 0 auto;
-        color: #C6C8BB;
+        color: #e8c4a8;
     }
 
     /* Container */
@@ -105,15 +105,15 @@
     }
 
     .card h2 {
-        color: #2E3E24;
+        color: #1a1510;
         margin-bottom: 20px;
-        border-bottom: 2px solid #AD9846;
+        border-bottom: 2px solid #c0603a;
         padding-bottom: 10px;
         display: inline-block;
     }
 
     .card h3 {
-        color: #2E3E24;
+        color: #1a1510;
         margin-top: 25px;
         margin-bottom: 15px;
     }
@@ -139,26 +139,26 @@
     }
 
     .product-card {
-        background: #FAF8EB;
+        background: #faf6f0;
         border-radius: 12px;
         padding: 20px;
         border: 1px solid #E5E0C8;
     }
 
     .product-card h4 {
-        color: #2E3E24;
+        color: #1a1510;
         margin-bottom: 10px;
         font-size: 1.1rem;
     }
 
     .product-meta {
         font-size: 0.9rem;
-        color: #555549;
+        color: #7a6a5a;
         margin-bottom: 10px;
     }
 
     .product-meta strong {
-        color: #AD9846;
+        color: #c0603a;
     }
 
     .pros-cons {
@@ -173,7 +173,7 @@
 
     .pros h5, .cons h5 {
         margin-bottom: 5px;
-        color: #2E3E24;
+        color: #1a1510;
     }
 
     .pros ul, .cons ul {
@@ -183,7 +183,7 @@
 
     /* Quiz Styles */
     #quiz-container {
-        background: #FAF8EB;
+        background: #faf6f0;
         padding: 25px;
         border-radius: 12px;
         text-align: center;
@@ -193,7 +193,7 @@
         font-size: 1.2rem;
         font-weight: 600;
         margin-bottom: 20px;
-        color: #2E3E24;
+        color: #1a1510;
     }
 
     .quiz-options {
@@ -205,13 +205,13 @@
     }
 
     .quiz-btn {
-        background: #2E3E24;
-        color: #FAF8EB;
+        background: #1a1510;
+        color: #faf6f0;
         border: none;
         padding: 12px 20px;
         border-radius: 25px;
         cursor: pointer;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'DM Sans', sans-serif;
         font-weight: 500;
         transition: background 0.3s;
     }
@@ -226,11 +226,11 @@
         padding: 20px;
         background: #fff;
         border-radius: 12px;
-        border: 2px solid #AD9846;
+        border: 2px solid #c0603a;
     }
 
     #quiz-result h3 {
-        color: #AD9846;
+        color: #c0603a;
         margin-top: 0;
     }
 
@@ -241,13 +241,13 @@
 
     .faq-question {
         font-weight: 600;
-        color: #2E3E24;
+        color: #1a1510;
         margin-bottom: 5px;
         cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: #FAF8EB;
+        background: #faf6f0;
         padding: 15px;
         border-radius: 8px;
     }
@@ -255,7 +255,7 @@
     .faq-question::after {
         content: '+';
         font-size: 1.5rem;
-        color: #AD9846;
+        color: #c0603a;
     }
 
     .faq-question.active::after {
@@ -265,7 +265,7 @@
     .faq-answer {
         display: none;
         padding: 15px;
-        color: #555549;
+        color: #7a6a5a;
     }
 
     .faq-answer.active {
@@ -366,7 +366,13 @@
 </script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
   <nav class="site-nav">

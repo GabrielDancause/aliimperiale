@@ -19,8 +19,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
@@ -29,7 +29,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 16px 24px;
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -43,13 +43,13 @@
       padding: 0;
     }
     .nav-links a {
-      color: #FAF8EB;
+      color: #faf6f0;
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
       transition: color 0.2s;
     }
-    .nav-links a:hover, .nav-links a.active { color: #AD9846; }
+    .nav-links a:hover, .nav-links a.active { color: #c0603a; }
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -57,7 +57,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: #2E3E24;
+        background: #1a1510;
         flex-direction: column;
         padding: 20px 24px;
         gap: 16px;
@@ -76,19 +76,19 @@
     }
     .tab-btn {
       background: #fff;
-      border: 2px solid #2E3E24;
-      color: #2E3E24;
+      border: 2px solid #1a1510;
+      color: #1a1510;
       padding: 12px 24px;
       border-radius: 30px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
       font-size: 1rem;
     }
     .tab-btn.active, .tab-btn:hover {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
 
     .tool-section { display: none; }
@@ -104,9 +104,9 @@
     }
     .card h2 {
       font-size: 1.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 24px;
-      border-bottom: 2px solid #FAF8EB;
+      border-bottom: 2px solid #faf6f0;
       padding-bottom: 12px;
     }
 
@@ -116,7 +116,7 @@
     .form-group label {
       display: block;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
       font-size: 1.05rem;
     }
@@ -138,17 +138,17 @@
       align-items: center;
       background: #fff;
     }
-    .option-card:hover { border-color: #AD9846; }
+    .option-card:hover { border-color: #c0603a; }
     .option-card.selected {
-      border-color: #2E3E24;
-      background: #FAF8EB;
+      border-color: #1a1510;
+      background: #faf6f0;
     }
 
     .option-input {
       appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 50%;
       margin-right: 12px;
       position: relative;
@@ -162,7 +162,7 @@
       left: 50%;
       width: 10px;
       height: 10px;
-      background: #2E3E24;
+      background: #1a1510;
       border-radius: 50%;
       transform: translate(-50%, -50%) scale(0);
       transition: transform 0.2s;
@@ -174,11 +174,11 @@
       color: #5a6b50;
       font-size: 0.95rem;
     }
-    .option-card.selected .option-text { color: #2E3E24; }
+    .option-card.selected .option-text { color: #1a1510; }
 
     .btn-submit {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 16px 32px;
       font-size: 1.1rem;
@@ -186,7 +186,7 @@
       border-radius: 8px;
       cursor: pointer;
       width: 100%;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       transition: background 0.2s;
     }
     .btn-submit:hover { background: #3a4f2d; }
@@ -196,14 +196,14 @@
       display: none;
     }
     .script-box {
-      background: #FAF8EB;
-      border-left: 4px solid #AD9846;
+      background: #faf6f0;
+      border-left: 4px solid #c0603a;
       padding: 24px;
       border-radius: 0 12px 12px 0;
       margin-bottom: 20px;
       font-size: 1.1rem;
       line-height: 1.6;
-      color: #2E3E24;
+      color: #1a1510;
       position: relative;
     }
 
@@ -219,18 +219,18 @@
       border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       transition: all 0.2s;
       background: #fff;
-      border: 2px solid #2E3E24;
-      color: #2E3E24;
+      border: 2px solid #1a1510;
+      color: #1a1510;
     }
     .btn-action:hover {
-      background: #FAF8EB;
+      background: #faf6f0;
     }
     .btn-action.primary {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
     .btn-action.primary:hover {
       background: #3a4f2d;
@@ -241,7 +241,7 @@
       font-weight: 600;
       line-height: 1.5;
       margin-bottom: 24px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .feedback-box {
       display: none;
@@ -259,12 +259,12 @@
     .feedback-box.warning {
       background: #fff3e0;
       border: 1px solid #ffe0b2;
-      color: #e65100;
+      color: #c0603a;
     }
     .rp-progress {
       text-align: center;
       font-weight: 600;
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 16px;
       font-size: 0.9rem;
       text-transform: uppercase;
@@ -279,6 +279,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -292,7 +298,7 @@
   </nav>
 
   <header class="page-header" style="text-align:center; padding: 60px 20px 40px;">
-    <h1 style="font-family:'Montserrat',sans-serif; color:#2E3E24; font-size: 2.5rem; margin-bottom: 16px; font-weight:700;">Consent Communication Scripts Generator</h1>
+    <h1 style="font-family:'DM Sans',sans-serif; color:#1a1510; font-size: 2.5rem; margin-bottom: 16px; font-weight:700;">Consent Communication Scripts Generator</h1>
     <p style="color:#5a6b50; max-width:600px; margin:0 auto; line-height:1.6; font-size:1.1rem;">
       Practice effective consent conversations. Generate personalized scripts or try the interactive role-play tool to build your confidence in setting boundaries and checking in.
     </p>
@@ -381,14 +387,14 @@
 
         <div class="form-group" style="margin-bottom: 32px;">
           <label for="specific_activity">4. (Optional) Name a specific activity or boundary:</label>
-          <input type="text" id="specific_activity" placeholder="e.g., trying a new toy, choking, keeping the lights on" style="width: 100%; padding: 14px; border: 2px solid #e8e4d4; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #2E3E24; outline: none;">
+          <input type="text" id="specific_activity" placeholder="e.g., trying a new toy, choking, keeping the lights on" style="width: 100%; padding: 14px; border: 2px solid #e8e4d4; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #1a1510; outline: none;">
         </div>
 
         <button type="button" id="btn-generate" class="btn-submit">Generate Scripts</button>
       </form>
 
       <div id="results-area" class="results-area">
-        <h3 style="margin-bottom: 20px; color: #2E3E24;">Your Personalized Scripts:</h3>
+        <h3 style="margin-bottom: 20px; color: #1a1510;">Your Personalized Scripts:</h3>
         <div id="scripts-container">
           <!-- Scripts will be injected here -->
         </div>
@@ -439,7 +445,7 @@
           <li style="margin-bottom: 12px;"><strong>It's Clear-Headed:</strong> Someone who is heavily intoxicated, asleep, or otherwise incapacitated cannot legally or ethically give consent.</li>
         </ul>
 
-        <h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 12px; margin-top: 24px;">Non-Verbal Cues</h3>
+        <h3 style="color: #1a1510; font-size: 1.2rem; margin-bottom: 12px; margin-top: 24px;">Non-Verbal Cues</h3>
         <p style="margin-bottom: 16px;">While verbal check-ins are the gold standard, pay close attention to body language. Pulling away, tensing up, avoiding eye contact, or going silent are signs to pause and check in immediately. Nodding, leaning in, actively participating, and relaxed breathing are positive cues.</p>
       </div>
     </section>
@@ -450,23 +456,23 @@
         <p style="margin-bottom: 16px;">Consent isn't a one-size-fits-all script. It adapts to the people involved, the relationship dynamic, and the specific situation.</p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px;">
-          <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; border-left: 4px solid #AD9846;">
-            <h4 style="color: #2E3E24; font-size: 1.1rem; margin-bottom: 8px;">Substances & Alcohol</h4>
+          <div style="background: #faf6f0; padding: 20px; border-radius: 12px; border-left: 4px solid #c0603a;">
+            <h4 style="color: #1a1510; font-size: 1.1rem; margin-bottom: 8px;">Substances & Alcohol</h4>
             <p style="font-size: 0.95rem;">Alcohol and drugs impair judgment and the ability to gauge a partner's enthusiasm. If someone is visibly intoxicated, slurring, stumbling, or not fully present, they <strong>cannot</strong> legally or ethically consent. It's always best to wait until everyone is sober.</p>
           </div>
 
-          <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; border-left: 4px solid #AD9846;">
-            <h4 style="color: #2E3E24; font-size: 1.1rem; margin-bottom: 8px;">Power Dynamics</h4>
+          <div style="background: #faf6f0; padding: 20px; border-radius: 12px; border-left: 4px solid #c0603a;">
+            <h4 style="color: #1a1510; font-size: 1.1rem; margin-bottom: 8px;">Power Dynamics</h4>
             <p style="font-size: 0.95rem;">Consent can be compromised when there is an imbalance of power (e.g., age differences, professional relationships, or financial dependence). The person with less power may feel pressured to say yes. Extra care and explicit communication are required.</p>
           </div>
 
-          <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; border-left: 4px solid #AD9846;">
-            <h4 style="color: #2E3E24; font-size: 1.1rem; margin-bottom: 8px;">Cultural Differences</h4>
+          <div style="background: #faf6f0; padding: 20px; border-radius: 12px; border-left: 4px solid #c0603a;">
+            <h4 style="color: #1a1510; font-size: 1.1rem; margin-bottom: 8px;">Cultural Differences</h4>
             <p style="font-size: 0.95rem;">Different cultures have varying norms around physical touch, direct communication, and gender roles. What might seem like a straightforward check-in to one person could feel overly blunt to another. Take time to understand your partner's communication style.</p>
           </div>
 
-          <div style="background: #FAF8EB; padding: 20px; border-radius: 12px; border-left: 4px solid #AD9846;">
-            <h4 style="color: #2E3E24; font-size: 1.1rem; margin-bottom: 8px;">Long-Term Relationships</h4>
+          <div style="background: #faf6f0; padding: 20px; border-radius: 12px; border-left: 4px solid #c0603a;">
+            <h4 style="color: #1a1510; font-size: 1.1rem; margin-bottom: 8px;">Long-Term Relationships</h4>
             <p style="font-size: 0.95rem;">Even if you've been together for years and have had sex hundreds of times, consent is still required. While it might look more fluid or non-verbal over time, neither partner should ever assume sex is an obligation.</p>
           </div>
         </div>
@@ -485,8 +491,8 @@
         </ul>
 
         <div style="background: #fff3e0; border: 1px solid #ffe0b2; padding: 20px; border-radius: 12px; margin-top: 24px;">
-          <h4 style="color: #e65100; margin-bottom: 8px; font-size: 1.1rem;">Crisis Resources</h4>
-          <p style="font-size: 0.95rem; color: #e65100; margin-bottom: 0;">If you or someone you know has experienced sexual assault or coercion, help is available. You can call the National Sexual Assault Hotline at <strong>800-656-HOPE</strong> or chat online at <a href="https://www.rainn.org" target="_blank" rel="noopener" style="color: #e65100; text-decoration: underline; font-weight: 600;">RAINN.org</a>.</p>
+          <h4 style="color: #c0603a; margin-bottom: 8px; font-size: 1.1rem;">Crisis Resources</h4>
+          <p style="font-size: 0.95rem; color: #c0603a; margin-bottom: 0;">If you or someone you know has experienced sexual assault or coercion, help is available. You can call the National Sexual Assault Hotline at <strong>800-656-HOPE</strong> or chat online at <a href="https://www.rainn.org" target="_blank" rel="noopener" style="color: #c0603a; text-decoration: underline; font-weight: 600;">RAINN.org</a>.</p>
         </div>
       </div>
     </section>

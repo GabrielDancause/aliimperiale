@@ -19,8 +19,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
@@ -29,10 +29,10 @@
   <script src="email-capture.js" defer></script>
   <script src="back-to-top.js" defer></script>
   <style>
-    body { background-color: #FAF8EB; }
+    body { background-color: #faf6f0; }
 
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -51,7 +51,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -59,7 +59,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     @media (max-width: 768px) {
       .site-nav { padding: 12px 16px; }
@@ -80,17 +80,17 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
-      color: #2E3E24;
+      color: #1a1510;
       transition: all 0.2s ease;
     }
     .option-label:hover {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: #fdfcfa;
     }
     .option-label.selected {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: #fdfcfa;
       font-weight: 600;
     }
@@ -113,10 +113,10 @@
       border-radius: 50%;
       transform: scale(0);
       transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em #AD9846;
+      box-shadow: inset 1em 1em #c0603a;
     }
     .option-input:checked {
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
     .option-input:checked::before {
       transform: scale(1);
@@ -141,8 +141,8 @@
       margin-bottom: 32px;
     }
     .tracker-header h1 {
-      font-family: 'Montserrat', sans-serif;
-      color: #2E3E24;
+      font-family: 'DM Sans', sans-serif;
+      color: #1a1510;
       font-size: 2.2rem;
       margin-bottom: 12px;
     }
@@ -152,12 +152,12 @@
       line-height: 1.6;
     }
     .section-title {
-      font-family: 'Montserrat', sans-serif;
-      color: #2E3E24;
+      font-family: 'DM Sans', sans-serif;
+      color: #1a1510;
       font-size: 1.5rem;
       margin-top: 32px;
       margin-bottom: 16px;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 8px;
     }
     .form-group {
@@ -166,18 +166,18 @@
     .form-label {
       display: block;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
     .form-input, .form-textarea {
       width: 100%;
       padding: 12px;
       border: 1px solid #ddd;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
-      color: #2E3E24;
+      color: #1a1510;
       box-sizing: border-box;
     }
     .form-textarea {
@@ -186,7 +186,7 @@
     }
     .form-input:focus, .form-textarea:focus {
       outline: none;
-      border-color: #AD9846;
+      border-color: #c0603a;
       box-shadow: 0 0 0 2px rgba(173,152,70,0.2);
     }
 
@@ -202,7 +202,7 @@
     .scale-value {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #AD9846;
+      color: #c0603a;
       width: 40px;
       text-align: center;
     }
@@ -212,8 +212,8 @@
     }
 
     .btn-primary {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 14px 28px;
       font-size: 1.1rem;
@@ -222,7 +222,7 @@
       cursor: pointer;
       width: 100%;
       transition: background 0.2s, transform 0.1s;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
     .btn-primary:hover {
       background: #1a2414;
@@ -233,19 +233,19 @@
 
     .btn-secondary {
       background: transparent;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      color: #1a1510;
+      border: 2px solid #1a1510;
       padding: 10px 20px;
       font-size: 1rem;
       font-weight: 600;
       border-radius: 30px;
       cursor: pointer;
       transition: all 0.2s;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
     .btn-secondary:hover {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
 
     .actions-row {
@@ -287,9 +287,9 @@
     }
     .history-date {
       font-weight: 700;
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
     .history-details {
       display: grid;
@@ -298,7 +298,7 @@
       font-size: 0.95rem;
     }
     .history-details div strong {
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .disclaimer {
@@ -318,18 +318,18 @@
       max-width: 800px;
       margin: 40px auto;
       padding: 0 24px;
-      color: #2E3E24;
+      color: #1a1510;
       line-height: 1.7;
     }
     .educational-content h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.8rem;
       margin-top: 40px;
       margin-bottom: 20px;
-      color: #AD9846;
+      color: #c0603a;
     }
     .educational-content h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.4rem;
       margin-top: 24px;
       margin-bottom: 12px;
@@ -351,11 +351,17 @@
       font-weight: 700;
       font-size: 1.1rem;
       margin-bottom: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -498,9 +504,9 @@
           <label class="form-label">Overall Sexual Satisfaction / Erectile Function (1-10)</label>
           <p style="font-size: 0.9rem; color: #5a6b50; margin-bottom: 8px;">Rate your ability to achieve and maintain an erection today, and overall satisfaction (1 = Very Poor, 10 = Excellent).</p>
           <div class="scale-container">
-            <span style="font-size: 0.9rem; font-weight: 600; color: #2E3E24;">1</span>
+            <span style="font-size: 0.9rem; font-weight: 600; color: #1a1510;">1</span>
             <input type="range" id="satisfaction-slider" min="1" max="10" value="5" class="scale-slider">
-            <span style="font-size: 0.9rem; font-weight: 600; color: #2E3E24;">10</span>
+            <span style="font-size: 0.9rem; font-weight: 600; color: #1a1510;">10</span>
             <div class="scale-value" id="satisfaction-display">5</div>
           </div>
         </div>
@@ -512,7 +518,7 @@
         </div>
 
         <button type="submit" class="btn-primary" id="save-btn">Save Daily Log</button>
-        <p id="save-msg" style="color: #2E3E24; font-weight: 600; text-align: center; margin-top: 16px; display: none;">Log saved successfully!</p>
+        <p id="save-msg" style="color: #1a1510; font-weight: 600; text-align: center; margin-top: 16px; display: none;">Log saved successfully!</p>
       </form>
     </div>
 
@@ -529,7 +535,7 @@
         <canvas id="satisfactionChart"></canvas>
       </div>
 
-      <h3 style="font-family: 'Montserrat', sans-serif; color: #2E3E24; margin-bottom: 16px;">History Log</h3>
+      <h3 style="font-family: 'DM Sans', sans-serif; color: #1a1510; margin-bottom: 16px;">History Log</h3>
       <div id="history-container" class="history-list">
         <!-- History items will be injected here -->
       </div>
@@ -661,25 +667,25 @@
       btnViewTracker.addEventListener('click', () => {
         trackerView.style.display = 'block';
         resultsView.classList.remove('active');
-        btnViewTracker.style.background = '#2E3E24';
-        btnViewTracker.style.color = '#FAF8EB';
+        btnViewTracker.style.background = '#1a1510';
+        btnViewTracker.style.color = '#faf6f0';
         btnViewResults.style.background = 'transparent';
-        btnViewResults.style.color = '#2E3E24';
+        btnViewResults.style.color = '#1a1510';
       });
 
       btnViewResults.addEventListener('click', () => {
         trackerView.style.display = 'none';
         resultsView.classList.add('active');
-        btnViewResults.style.background = '#2E3E24';
-        btnViewResults.style.color = '#FAF8EB';
+        btnViewResults.style.background = '#1a1510';
+        btnViewResults.style.color = '#faf6f0';
         btnViewTracker.style.background = 'transparent';
-        btnViewTracker.style.color = '#2E3E24';
+        btnViewTracker.style.color = '#1a1510';
         renderHistory();
       });
 
       // Initialize view button state
-      btnViewTracker.style.background = '#2E3E24';
-      btnViewTracker.style.color = '#FAF8EB';
+      btnViewTracker.style.background = '#1a1510';
+      btnViewTracker.style.color = '#faf6f0';
 
       // Handle form submission
       form.addEventListener('submit', (e) => {
@@ -820,10 +826,10 @@
             datasets: [{
               label: 'Overall Satisfaction (1-10)',
               data: satisfactionData,
-              borderColor: '#AD9846',
+              borderColor: '#c0603a',
               backgroundColor: 'rgba(173,152,70,0.1)',
               borderWidth: 2,
-              pointBackgroundColor: '#2E3E24',
+              pointBackgroundColor: '#1a1510',
               fill: true,
               tension: 0.3
             }]

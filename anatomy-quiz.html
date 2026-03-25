@@ -24,14 +24,14 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -50,7 +50,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -58,13 +58,13 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Header */
     .page-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       padding: 60px 20px 80px;
       text-align: center;
       position: relative;
@@ -76,20 +76,20 @@
       left: 0;
       right: 0;
       height: 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 40px 40px 0 0;
     }
     .page-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3.5rem;
       font-weight: 400;
       margin-bottom: 16px;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .page-header p {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.15rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -112,16 +112,16 @@
     }
 
     .card h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
       text-align: center;
     }
 
     .card p {
       font-size: 0.95rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.7;
       margin-bottom: 16px;
     }
@@ -133,11 +133,11 @@
       justify-content: center;
       gap: 8px;
       padding: 14px 28px;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
       cursor: pointer;
@@ -155,11 +155,11 @@
       justify-content: center;
       gap: 8px;
       padding: 14px 28px;
-      background: #AD9846;
-      color: #2E3E24;
+      background: #c0603a;
+      color: #1a1510;
       border: none;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
       cursor: pointer;
@@ -179,7 +179,7 @@
     }
     .question-counter {
       font-size: 0.85rem;
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -187,9 +187,9 @@
       text-align: center;
     }
     .question-text {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.4rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 24px;
       text-align: center;
     }
@@ -202,38 +202,38 @@
 
     .option-btn {
       padding: 16px 20px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 1.5px solid #e0e2d5;
       border-radius: 12px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
-      color: #2E3E24;
+      color: #1a1510;
       cursor: pointer;
       transition: all 0.2s;
       text-align: left;
     }
 
     .option-btn:hover:not(:disabled) {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: #fff;
     }
 
     .option-btn.selected {
-      background: #2E3E24;
-      color: #FAF8EB;
-      border-color: #2E3E24;
+      background: #1a1510;
+      color: #faf6f0;
+      border-color: #1a1510;
     }
 
     .option-btn.correct {
       background: #e8f5e9;
       border-color: #4caf50;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .option-btn.incorrect {
       background: #ffebee;
       border-color: #f44336;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     /* Explanation Area */
@@ -242,14 +242,14 @@
       margin-top: 24px;
       padding: 20px;
       background: #fdfaf0;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       border-radius: 0 12px 12px 0;
     }
 
     #explanation-area h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 10px;
     }
 
@@ -274,8 +274,8 @@
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      background: #FAF8EB;
-      border: 6px solid #AD9846;
+      background: #faf6f0;
+      border: 6px solid #c0603a;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -284,15 +284,15 @@
     }
 
     .score-number {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3rem;
-      color: #2E3E24;
+      color: #1a1510;
       line-height: 1;
     }
 
     .score-text {
       font-size: 0.9rem;
-      color: #555549;
+      color: #7a6a5a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-top: 4px;
@@ -321,15 +321,15 @@
     }
 
     .edu-item {
-      background: #FAF8EB;
+      background: #faf6f0;
       padding: 24px;
       border-radius: 12px;
     }
 
     .edu-item h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
       display: flex;
       align-items: center;
@@ -341,9 +341,9 @@
       margin-bottom: 24px;
     }
     .faq-item h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.05rem;
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 8px;
     }
     .faq-item p {
@@ -354,7 +354,7 @@
     .anatomy-diagram-wrapper {
       margin: 24px 0;
       padding: 20px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
       text-align: center;
       position: relative;
@@ -362,7 +362,7 @@
 
     .diagram-note {
       font-size: 0.8rem;
-      color: #8a8a7a;
+      color: #7a6a5a;
       font-style: italic;
       margin-top: 16px;
     }
@@ -442,7 +442,7 @@
 
     .diagram-label {
       position: absolute;
-      background: #2E3E24;
+      background: #1a1510;
       color: #fff;
       font-size: 0.7rem;
       padding: 4px 8px;
@@ -457,7 +457,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
     <nav class="site-nav">
@@ -517,7 +523,7 @@
         </div>
 
         <div class="recommendation-box">
-          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 12px;">Your Personalized Recommendation</h3>
+          <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1.2rem; color: #1a1510; margin-bottom: 12px;">Your Personalized Recommendation</h3>
           <p id="recommendation-text">Recommendation goes here based on score.</p>
         </div>
 
@@ -532,10 +538,10 @@
 
       <!-- Educational Content Section -->
       <div id="educational-section" style="margin-top: 60px;">
-        <h2 style="font-family: 'The Bloomington', cursive; font-size: 2.5rem; text-align: center; color: #2E3E24; margin-bottom: 30px;">Let's Talk About Bodies</h2>
+        <h2 style="font-family: 'DM Serif Display', cursive; font-size: 2.5rem; text-align: center; color: #1a1510; margin-bottom: 30px;">Let's Talk About Bodies</h2>
 
         <div class="anatomy-diagram-wrapper">
-          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #2E3E24; margin-bottom: 20px;">The Internal Clitoris</h3>
+          <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1.2rem; color: #1a1510; margin-bottom: 20px;">The Internal Clitoris</h3>
           <div class="css-diagram">
             <div class="clit-glans"></div>
             <div class="clit-body"></div>
@@ -555,22 +561,22 @@
         <div class="edu-grid">
           <div class="edu-item">
             <h3><span style="font-size: 1.4rem;">🗺️</span> Pleasure Mapping</h3>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Pleasure mapping is the practice of exploring your body without the goal of orgasm. Take 15 minutes to gently touch different areas—the neck, inner thighs, perineum—and rate the sensation from 1-10. It's a great way to discover new erogenous zones.</p>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">Pleasure mapping is the practice of exploring your body without the goal of orgasm. Take 15 minutes to gently touch different areas—the neck, inner thighs, perineum—and rate the sensation from 1-10. It's a great way to discover new erogenous zones.</p>
           </div>
 
           <div class="edu-item">
             <h3><span style="font-size: 1.4rem;">🌈</span> Normal Variations</h3>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Pornography often shows a very narrow range of genital appearances. In reality, labia can be asymmetrical, long, or dark; penises curve in different directions; nipples vary wildly. All of these variations are completely normal and healthy.</p>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">Pornography often shows a very narrow range of genital appearances. In reality, labia can be asymmetrical, long, or dark; penises curve in different directions; nipples vary wildly. All of these variations are completely normal and healthy.</p>
           </div>
 
           <div class="edu-item">
             <h3><span style="font-size: 1.4rem;">🛑</span> Myth Busting</h3>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;"><strong>Myth:</strong> Penetration is the main way women orgasm.<br><strong>Fact:</strong> 70-80% of women require direct clitoral stimulation to reach orgasm. The idea that vaginal intercourse alone should be enough is a persistent, frustrating myth.</p>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;"><strong>Myth:</strong> Penetration is the main way women orgasm.<br><strong>Fact:</strong> 70-80% of women require direct clitoral stimulation to reach orgasm. The idea that vaginal intercourse alone should be enough is a persistent, frustrating myth.</p>
           </div>
 
           <div class="edu-item">
             <h3><span style="font-size: 1.4rem;">🛡️</span> Safe Exploration</h3>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">When exploring new areas (like anal play), safety is key. Use plenty of high-quality, body-safe lubricant, start very slow, communicate constantly with your partner, and never use toys that don't have a flared base.</p>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">When exploring new areas (like anal play), safety is key. Use plenty of high-quality, body-safe lubricant, start very slow, communicate constantly with your partner, and never use toys that don't have a flared base.</p>
           </div>
         </div>
 
@@ -580,27 +586,27 @@
 
           <div class="faq-item">
             <h3>What is the difference between the vulva and the vagina?</h3>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">The vulva refers to the external female genitalia, including the labia, clitoris, and the vaginal opening. The vagina is the internal muscular canal that connects the vulva to the cervix.</p>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">The vulva refers to the external female genitalia, including the labia, clitoris, and the vaginal opening. The vagina is the internal muscular canal that connects the vulva to the cervix.</p>
           </div>
 
           <div class="faq-item">
             <h3>Where is the G-spot located?</h3>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">The G-spot isn't a separate organ, but a highly sensitive area located on the anterior (front) wall of the vagina, about 1-2 inches inside. Its sensitivity is believed to come from the internal roots of the clitoris pressing against the vaginal wall.</p>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">The G-spot isn't a separate organ, but a highly sensitive area located on the anterior (front) wall of the vagina, about 1-2 inches inside. Its sensitivity is believed to come from the internal roots of the clitoris pressing against the vaginal wall.</p>
           </div>
 
           <div class="faq-item">
             <h3>What is the primary function of the clitoris?</h3>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">The clitoris is the only human organ designed exclusively for pleasure. It contains thousands of nerve endings and has internal structures (crura and bulbs) that wrap around the vaginal canal.</p>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">The clitoris is the only human organ designed exclusively for pleasure. It contains thousands of nerve endings and has internal structures (crura and bulbs) that wrap around the vaginal canal.</p>
           </div>
 
           <div class="faq-item">
             <h3>Can men have multiple orgasms?</h3>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">While men typically experience a refractory period after ejaculation (a recovery time before they can be aroused again), some men can learn to separate orgasm from ejaculation, allowing for multiple orgasms.</p>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">While men typically experience a refractory period after ejaculation (a recovery time before they can be aroused again), some men can learn to separate orgasm from ejaculation, allowing for multiple orgasms.</p>
           </div>
 
           <div class="faq-item">
             <h3>Why is it important to understand sexual anatomy?</h3>
-            <p style="font-size: 0.95rem; color: #555549; line-height: 1.6;">Understanding your own and your partner's sexual anatomy is crucial for communicating desires, exploring pleasure safely, debunking harmful myths, and improving overall sexual wellness and intimacy.</p>
+            <p style="font-size: 0.95rem; color: #7a6a5a; line-height: 1.6;">Understanding your own and your partner's sexual anatomy is crucial for communicating desires, exploring pleasure safely, debunking harmful myths, and improving overall sexual wellness and intimacy.</p>
           </div>
         </div>
 

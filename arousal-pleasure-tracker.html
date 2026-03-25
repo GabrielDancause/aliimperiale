@@ -30,17 +30,17 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
 
   <!-- CSS -->
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Base styling inherited from shared.css, adding tool-specific overrides */
     body {
-      background-color: #FAF8EB; /* Cream */
-      color: #2E3E24; /* Olive */
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0; /* Cream */
+      color: #1a1510; /* Olive */
+      font-family: 'DM Sans', sans-serif;
     }
 
     /* Global Navigation Styles (copied from index.html for horizontal layout) */
@@ -48,7 +48,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       justify-content: space-between;
@@ -64,7 +64,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -72,7 +72,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Mobile Nav Hamburger overrides */
@@ -80,7 +80,7 @@
       display: none;
       background: none;
       border: none;
-      color: #FAF8EB;
+      color: #faf6f0;
       font-size: 1.5rem;
       cursor: pointer;
     }
@@ -94,7 +94,7 @@
       font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 16px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .page-header p {
       font-size: 1.1rem;
@@ -122,7 +122,7 @@
     .card h2 {
       font-size: 1.5rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .card > p {
@@ -139,7 +139,7 @@
     .form-group label {
       display: block;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
       font-size: 0.95rem;
     }
@@ -152,7 +152,7 @@
       border-radius: 8px;
       font-family: inherit;
       font-size: 1rem;
-      color: #2E3E24;
+      color: #1a1510;
       background-color: #fafbf9;
       box-sizing: border-box;
     }
@@ -160,7 +160,7 @@
     select:focus,
     textarea:focus {
       outline: none;
-      border-color: #AD9846; /* Gold */
+      border-color: #c0603a; /* Gold */
       box-shadow: 0 0 0 2px rgba(173,152,70,0.2);
     }
 
@@ -190,7 +190,7 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: #AD9846;
+      background: #c0603a;
       cursor: pointer;
       transition: background 0.15s;
     }
@@ -201,7 +201,7 @@
       text-align: center;
       font-weight: 700;
       font-size: 1.2rem;
-      color: #AD9846;
+      color: #c0603a;
     }
 
     /* Checkbox Grid */
@@ -220,7 +220,7 @@
     .checkbox-label input[type="checkbox"] {
       width: 18px;
       height: 18px;
-      accent-color: #AD9846;
+      accent-color: #c0603a;
       cursor: pointer;
     }
 
@@ -237,8 +237,8 @@
     .btn-primary {
       width: 100%;
       padding: 14px 24px;
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       border: none;
     }
     .btn-primary:hover {
@@ -246,8 +246,8 @@
     }
     .btn-secondary {
       padding: 10px 20px;
-      background-color: #AD9846;
-      color: #FAF8EB;
+      background-color: #c0603a;
+      color: #faf6f0;
       border: none;
       font-size: 0.9rem;
     }
@@ -257,8 +257,8 @@
     .btn-outline {
       padding: 10px 20px;
       background-color: transparent;
-      color: #2E3E24;
-      border: 1px solid #2E3E24;
+      color: #1a1510;
+      border: 1px solid #1a1510;
       font-size: 0.9rem;
     }
     .btn-outline:hover {
@@ -283,7 +283,7 @@
       margin: 32px 0;
     }
     .insight-box {
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 1px solid #e2e5d9;
       border-radius: 8px;
       padding: 20px;
@@ -299,11 +299,11 @@
     .insight-value {
       font-size: 2rem;
       font-weight: 700;
-      color: #AD9846;
+      color: #c0603a;
     }
     .insight-value.text-value {
       font-size: 1.2rem;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .chart-container {
       margin: 32px 0;
@@ -313,26 +313,26 @@
     }
     .chart-container h3 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
       text-align: center;
     }
     .personalized-insights {
       background: rgba(173,152,70,0.1);
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 20px;
       border-radius: 0 8px 8px 0;
       margin-top: 32px;
     }
     .personalized-insights h3 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .personalized-insights ul {
       margin: 0;
       padding-left: 20px;
-      color: #2E3E24;
+      color: #1a1510;
       line-height: 1.6;
     }
     .personalized-insights li {
@@ -344,7 +344,7 @@
     }
     .share-msg {
       display: none;
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 600;
       margin-left: 12px;
       font-size: 0.9rem;
@@ -374,7 +374,7 @@
       white-space: nowrap;
     }
     td {
-      color: #2E3E24;
+      color: #1a1510;
     }
     .delete-btn {
       color: #d32f2f;
@@ -391,7 +391,7 @@
     /* Educational Content & FAQ */
     .educational-content h3 {
       font-size: 1.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin: 24px 0 12px;
     }
     .faq-section h2 {
@@ -402,7 +402,7 @@
     }
     .faq-item h3 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .faq-item p {
@@ -448,7 +448,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background-color: #2E3E24;
+        background-color: #1a1510;
         padding: 16px 24px 24px;
         gap: 16px;
         border-top: 1px solid rgba(250, 248, 235, 0.1);
@@ -505,6 +505,12 @@
   </script>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <!-- Navigation -->
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -1092,7 +1098,7 @@
               {
                 label: 'Arousal',
                 data: arousalData,
-                borderColor: '#2E3E24',
+                borderColor: '#1a1510',
                 backgroundColor: 'rgba(46,62,36,0.1)',
                 tension: 0.3,
                 fill: true
@@ -1100,7 +1106,7 @@
               {
                 label: 'Pleasure',
                 data: pleasureData,
-                borderColor: '#AD9846',
+                borderColor: '#c0603a',
                 backgroundColor: 'rgba(173,152,70,0.1)',
                 tension: 0.3,
                 fill: true
@@ -1137,7 +1143,7 @@
             datasets: [{
               label: 'Average Pleasure Score',
               data: moodData,
-              backgroundColor: '#AD9846',
+              backgroundColor: '#c0603a',
               borderRadius: 4
             }]
           },

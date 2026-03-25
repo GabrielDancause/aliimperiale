@@ -19,14 +19,14 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -47,7 +47,7 @@
       padding: 0;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -55,7 +55,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     @media (max-width: 480px) {
       .site-nav {
@@ -65,22 +65,22 @@
 
     /* Base Guide Layout Styles */
     .guide-hero {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 80px 24px 60px;
       text-align: center;
     }
     .guide-hero h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3.5rem;
       font-weight: 400;
       margin-bottom: 20px;
       line-height: 1.1;
     }
     .guide-hero p {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.1rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 700px;
       margin: 0 auto;
       line-height: 1.6;
@@ -99,16 +99,16 @@
       border: 1px solid #e8e4d4;
     }
     .guide-section h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.8rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
       padding-bottom: 12px;
       border-bottom: 2px solid #f0ecdb;
     }
     .guide-section h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.3rem;
       font-weight: 600;
       color: #3a5030;
@@ -134,7 +134,7 @@
     /* Anatomy Diagram */
     .anatomy-diagram-wrapper {
       margin-top: 30px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
       padding: 24px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -150,15 +150,15 @@
       background: #e8e4d4;
       border: none;
       border-radius: 6px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       cursor: pointer;
       transition: all 0.2s;
     }
     .diagram-tab.active {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
     .diagram-content-area {
       display: none;
@@ -196,7 +196,7 @@
     }
     .diagram-info h4 {
       margin-top: 0;
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 1.2rem;
     }
     .diagram-info p {
@@ -307,7 +307,7 @@
       position: absolute;
       width: 24px;
       height: 24px;
-      background: #AD9846;
+      background: #c0603a;
       color: #fff;
       border-radius: 50%;
       display: flex;
@@ -322,10 +322,10 @@
     }
     .hotspot:hover, .hotspot.active {
       transform: scale(1.2);
-      background: #2E3E24;
+      background: #1a1510;
     }
     .interactive-card {
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
       padding: 24px;
       margin: 24px 0;
@@ -334,7 +334,7 @@
 
     /* Interactive Elements - Myth vs Fact */
     .myth-fact-item {
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 1px solid #e8e4d4;
       border-radius: 12px;
       margin-bottom: 16px;
@@ -348,17 +348,17 @@
       align-items: center;
       background: #fff;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .myth-header:hover {
-      background: #FAF8EB;
+      background: #faf6f0;
     }
     .myth-content {
       padding: 0 20px;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-      background: #FAF8EB;
+      background: #faf6f0;
       color: #4a5a40;
     }
     .myth-content.open {
@@ -415,14 +415,14 @@
       background: #fff;
       cursor: pointer;
       transition: all 0.2s;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
-      color: #2E3E24;
+      color: #1a1510;
       text-align: left;
     }
     .quiz-option:hover {
-      border-color: #AD9846;
-      background: #FAF8EB;
+      border-color: #c0603a;
+      background: #faf6f0;
     }
     .quiz-option.correct {
       background: #d4edda;
@@ -459,11 +459,11 @@
       display: none;
       margin-top: 20px;
       padding: 12px 24px;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       cursor: pointer;
       transition: background 0.2s;
@@ -476,7 +476,7 @@
     }
     .quiz-progress {
       font-size: 0.9rem;
-      color: #8a8a7a;
+      color: #7a6a5a;
       margin-bottom: 16px;
       text-align: right;
     }
@@ -494,17 +494,17 @@
     }
     .zone-item {
       padding: 10px 16px;
-      border: 1px solid #AD9846;
+      border: 1px solid #c0603a;
       border-radius: 20px;
       background: #fff;
-      color: #2E3E24;
+      color: #1a1510;
       cursor: pointer;
       transition: all 0.2s;
       font-size: 0.9rem;
       user-select: none;
     }
     .zone-item.selected {
-      background: #AD9846;
+      background: #c0603a;
       color: #fff;
     }
     .pleasure-map-result {
@@ -517,11 +517,11 @@
     }
     .btn-generate-map {
       padding: 12px 24px;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       cursor: pointer;
       margin-top: 10px;
@@ -546,7 +546,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
   <nav class="site-nav">

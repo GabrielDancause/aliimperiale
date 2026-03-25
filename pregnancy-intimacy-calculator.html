@@ -22,14 +22,14 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="stylesheet" href="shared.css">
   <style>
     body {
-      background-color: #FAF8EB;
-      font-family: 'Montserrat', sans-serif;
-      color: #2E3E24;
+      background-color: #faf6f0;
+      font-family: 'DM Sans', sans-serif;
+      color: #1a1510;
       line-height: 1.6;
       margin: 0;
       padding: 0;
@@ -41,7 +41,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -60,27 +60,27 @@
     }
     .nav-links li a {
       text-decoration: none;
-      color: #2E3E24;
+      color: #1a1510;
       font-weight: 500;
       font-size: 1rem;
       transition: color 0.3s ease;
     }
     .nav-links li a:hover,
     .nav-links li a.active {
-      color: #AD9846;
+      color: #c0603a;
     }
 
     /* Study / Tool Container */
     .study-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       padding: 60px 20px;
       text-align: center;
     }
     .study-header h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
-      color: #AD9846;
+      color: #c0603a;
     }
     .study-header p {
       font-size: 1.1rem;
@@ -106,24 +106,24 @@
       border-bottom: none;
     }
     .tool-section h2 {
-      color: #AD9846;
+      color: #c0603a;
       font-size: 1.8rem;
       margin-bottom: 20px;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       display: inline-block;
       padding-bottom: 5px;
     }
 
     .disclaimer-box {
       background-color: #fdfaf2;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 20px;
       margin: 30px 0;
       font-size: 0.95rem;
       border-radius: 0 8px 8px 0;
     }
     .disclaimer-box strong {
-      color: #AD9846;
+      color: #c0603a;
     }
 
     /* Tool Interactive Elements */
@@ -146,12 +146,12 @@
     }
     select:focus, input:focus, textarea:focus {
       outline: none;
-      border-color: #AD9846;
+      border-color: #c0603a;
       box-shadow: 0 0 0 2px rgba(173, 152, 70, 0.2);
     }
     .btn-primary {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 12px 24px;
       font-size: 1.1rem;
@@ -168,8 +168,8 @@
     }
     .btn-secondary {
       background-color: transparent;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      color: #1a1510;
+      border: 2px solid #1a1510;
       padding: 10px 20px;
       font-size: 1rem;
       font-weight: 600;
@@ -178,8 +178,8 @@
       transition: all 0.3s;
     }
     .btn-secondary:hover {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
     }
 
     .results-area {
@@ -201,11 +201,11 @@
       border-radius: 8px;
       margin-bottom: 15px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      border-left: 4px solid #2E3E24;
+      border-left: 4px solid #1a1510;
     }
     .result-card h4 {
       margin-top: 0;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     /* Radio buttons styling */
@@ -225,14 +225,14 @@
       transition: all 0.2s;
     }
     .radio-label:hover {
-      border-color: #AD9846;
-      background: #FAF8EB;
+      border-color: #c0603a;
+      background: #faf6f0;
     }
     .radio-label input[type="radio"] {
       appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 50%;
       margin-right: 15px;
       position: relative;
@@ -246,7 +246,7 @@
       transform: translate(-50%, -50%) scale(1);
       width: 10px;
       height: 10px;
-      background-color: #AD9846;
+      background-color: #c0603a;
       border-radius: 50%;
     }
     .radio-label input[type="radio"]::before {
@@ -268,7 +268,7 @@
     .abstract-person {
       width: 40px;
       height: 100px;
-      background-color: #2E3E24;
+      background-color: #1a1510;
       border-radius: 20px;
       position: relative;
     }
@@ -279,14 +279,14 @@
       left: 5px;
       width: 30px;
       height: 30px;
-      background-color: #AD9846;
+      background-color: #c0603a;
       border-radius: 50%;
     }
     .person-partner {
-      background-color: #AD9846;
+      background-color: #c0603a;
     }
     .person-partner::before {
-      background-color: #2E3E24;
+      background-color: #1a1510;
     }
     /* Specific positioning styles */
     .pos-spoons { transform: rotate(15deg); }
@@ -308,7 +308,7 @@
     }
     .progress-fill {
       height: 100%;
-      background-color: #AD9846;
+      background-color: #c0603a;
       width: 0%;
       transition: width 0.3s ease;
     }
@@ -325,7 +325,7 @@
       margin-right: 12px;
       width: 18px;
       height: 18px;
-      accent-color: #AD9846;
+      accent-color: #c0603a;
     }
 
     .clear-btn {
@@ -380,6 +380,12 @@
   </script>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img src="logo-beige.webp" alt="Ali Imperiale Logo" class="nav-logo"></a>
     <ul class="nav-links">
@@ -559,7 +565,7 @@
       <button class="btn-primary" id="generate-q-btn">Generate a Question</button>
 
       <div id="question-result" class="results-area">
-        <p id="question-text" style="font-size: 1.2rem; font-weight: 500; font-style: italic; color: #2E3E24;"></p>
+        <p id="question-text" style="font-size: 1.2rem; font-weight: 500; font-style: italic; color: #1a1510;"></p>
       </div>
     </section>
 

@@ -12,15 +12,15 @@
   <script src="consent.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="stylesheet" href="shared.css">
 
   <style>
-    body { background-color: #FAF8EB; }
+    body { background-color: #faf6f0; }
 
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -39,7 +39,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -47,7 +47,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     .directory-hero {
@@ -55,10 +55,10 @@
       padding: 80px 24px 48px;
     }
     .directory-hero h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 2.4rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
     .directory-hero p {
@@ -95,20 +95,20 @@
     }
 
     .filter-group label {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.85rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
 
     .filter-group select, .filter-group input {
       padding: 10px 14px;
-      border: 1px solid #C6C8BB;
+      border: 1px solid #e8c4a8;
       border-radius: 6px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
-      color: #2E3E24;
+      color: #1a1510;
       background-color: #fff;
     }
 
@@ -132,16 +132,16 @@
     }
 
     .therapist-name {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.25rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 4px;
     }
 
     .therapist-credentials {
       font-size: 0.85rem;
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 600;
       margin-bottom: 12px;
     }
@@ -155,7 +155,7 @@
 
     .specialty-tag {
       background-color: #f0f2e9;
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 0.75rem;
       padding: 4px 8px;
       border-radius: 12px;
@@ -170,14 +170,14 @@
     }
 
     .therapist-details strong {
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .contact-btn {
       display: block;
       text-align: center;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       text-decoration: none;
       padding: 10px;
       border-radius: 6px;
@@ -199,9 +199,9 @@
     }
 
     .info-section h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
 
@@ -232,10 +232,10 @@
     }
 
     .faq-question {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
 
@@ -267,6 +267,12 @@
   <meta name="twitter:description" content="A comprehensive, curated directory of certified sex-positive mental health professionals, including LGBTQ+ affirming counselors, polyamory specialists,.">
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -329,7 +335,7 @@
           <div class="therapist-details">
             <p><strong>Location:</strong> New York, NY (In-person & Telehealth)</p>
             <p><strong>Insurance:</strong> Aetna, BCBS, Sliding Scale</p>
-            <p class="review-stars" style="color: #AD9846; margin: 0.5rem 0;">★★★★★ <span style="color: #2E3E24; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
+            <p class="review-stars" style="color: #c0603a; margin: 0.5rem 0;">★★★★★ <span style="color: #1a1510; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
             <p>Specializing in somatic experiencing and EMDR for sexual trauma survivors. Dr. Rostova provides a deeply compassionate, queer-affirming space for reclaiming bodily autonomy and pleasure.</p>
           </div>
           <a href="#" class="contact-btn">Contact Dr. Rostova</a>
@@ -347,7 +353,7 @@
           <div class="therapist-details">
             <p><strong>Location:</strong> Austin, TX (Telehealth Only)</p>
             <p><strong>Insurance:</strong> Out-of-Network, Sliding Scale</p>
-            <p class="review-stars" style="color: #AD9846; margin: 0.5rem 0;">★★★★★ <span style="color: #2E3E24; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
+            <p class="review-stars" style="color: #c0603a; margin: 0.5rem 0;">★★★★★ <span style="color: #1a1510; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
             <p>Marcus specializes in navigating ethical non-monogamy and alternative relationship structures. He helps partners communicate desires, establish boundaries, and deepen intimacy without judgment.</p>
           </div>
           <a href="#" class="contact-btn">Contact Marcus Chen</a>
@@ -364,7 +370,7 @@
           <div class="therapist-details">
             <p><strong>Location:</strong> Chicago, IL (In-person)</p>
             <p><strong>Insurance:</strong> Cigna, UnitedHealthcare</p>
-            <p class="review-stars" style="color: #AD9846; margin: 0.5rem 0;">★★★★★ <span style="color: #2E3E24; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
+            <p class="review-stars" style="color: #c0603a; margin: 0.5rem 0;">★★★★★ <span style="color: #1a1510; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
             <p>Working from a sex-positive, non-shaming framework, Sarah helps clients address compulsive sexual behaviors and their underlying traumas to foster healthier relationships with sex.</p>
           </div>
           <a href="#" class="contact-btn">Contact Sarah Jenkins</a>
@@ -382,7 +388,7 @@
           <div class="therapist-details">
             <p><strong>Location:</strong> Seattle, WA (In-person & Telehealth)</p>
             <p><strong>Insurance:</strong> BCBS, Aetna, Sliding Scale</p>
-            <p class="review-stars" style="color: #AD9846; margin: 0.5rem 0;">★★★★★ <span style="color: #2E3E24; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
+            <p class="review-stars" style="color: #c0603a; margin: 0.5rem 0;">★★★★★ <span style="color: #1a1510; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
             <p>Jordan provides crucial support for individuals exploring gender transition, managing dysphoria, and navigating intimacy as a transgender or non-binary person.</p>
           </div>
           <a href="#" class="contact-btn">Contact Jordan Ellis</a>
@@ -400,7 +406,7 @@
           <div class="therapist-details">
             <p><strong>Location:</strong> Los Angeles, CA (Telehealth Only)</p>
             <p><strong>Insurance:</strong> Out-of-Network only</p>
-            <p class="review-stars" style="color: #AD9846; margin: 0.5rem 0;">★★★★★ <span style="color: #2E3E24; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
+            <p class="review-stars" style="color: #c0603a; margin: 0.5rem 0;">★★★★★ <span style="color: #1a1510; font-size: 0.9rem;">(4.9/5 Average, 30+ Client Reviews)</span></p>
             <p>Dr. Patel focuses on helping long-term couples reignite passion, explore power dynamics safely, and transition from monogamy to ENM with comprehensive communication tools.</p>
           </div>
           <a href="#" class="contact-btn">Contact Dr. Patel</a>
@@ -429,7 +435,7 @@
       </div>
 
       <div class="faq-section">
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: #2E3E24; margin-bottom: 24px;">Frequently Asked Questions</h2>
+        <h2 style="font-family: 'DM Sans', sans-serif; font-size: 1.8rem; color: #1a1510; margin-bottom: 24px;">Frequently Asked Questions</h2>
         <div class="faq-item">
           <div class="faq-question">What is a sex-positive therapist?</div>
           <div class="faq-answer">A sex-positive therapist operates from the perspective that all consensual sexual activities, desires, and identities are fundamentally healthy and valid. They provide a non-judgmental, affirming space to explore sexuality, free from cultural shame or stigma.</div>

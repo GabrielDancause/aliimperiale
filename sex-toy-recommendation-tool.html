@@ -24,8 +24,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,7 +84,7 @@
 
     /* Navigation Override for correct visual */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -103,7 +103,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -111,13 +111,13 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Page Header */
     .page-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       padding: 60px 20px 80px;
       text-align: center;
       position: relative;
@@ -129,20 +129,20 @@
       left: 0;
       right: 0;
       height: 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 40px 40px 0 0;
     }
     .page-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3.5rem;
       font-weight: 400;
       margin-bottom: 16px;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .page-header p {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.15rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -165,9 +165,9 @@
     }
 
     .card-title {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 24px;
       text-align: center;
     }
@@ -190,18 +190,18 @@
     }
 
     .scenario-progress {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.85rem;
-      color: #8a8a7a;
+      color: #7a6a5a;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
     .scenario-question {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       font-weight: 600;
       margin-bottom: 24px;
       line-height: 1.5;
@@ -223,7 +223,7 @@
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.2s;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
       color: #3a4a30;
       line-height: 1.4;
@@ -231,13 +231,13 @@
 
     .option-input {
       appearance: none;
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
       margin: 0;
       font: inherit;
       color: currentColor;
       width: 20px;
       height: 20px;
-      border: 1.5px solid #C6C8BB;
+      border: 1.5px solid #e8c4a8;
       border-radius: 50%;
       display: grid;
       place-content: center;
@@ -255,22 +255,22 @@
       background-color: white;
     }
     .option-label.selected .option-input {
-      background-color: #AD9846;
-      border-color: #AD9846;
+      background-color: #c0603a;
+      border-color: #c0603a;
     }
     .option-label.selected .option-input::before {
       transform: scale(1);
     }
 
     .option-label:hover {
-      background: #FAF8EB;
-      border-color: #AD9846;
+      background: #faf6f0;
+      border-color: #c0603a;
     }
 
     .option-label.selected {
-      background: #FAF8EB;
-      border-color: #AD9846;
-      box-shadow: 0 0 0 1px #AD9846;
+      background: #faf6f0;
+      border-color: #c0603a;
+      box-shadow: 0 0 0 1px #c0603a;
     }
 
     .quiz-actions {
@@ -282,7 +282,7 @@
     .btn {
       padding: 12px 24px;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.9rem;
       cursor: pointer;
@@ -295,8 +295,8 @@
     }
 
     .btn-primary {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
 
     .btn-primary:hover {
@@ -305,19 +305,19 @@
     }
 
     .btn-primary:disabled {
-      background: #C6C8BB;
+      background: #e8c4a8;
       cursor: not-allowed;
       transform: none;
     }
 
     .btn-secondary {
-      background: #FAF8EB;
-      color: #2E3E24;
-      border: 1.5px solid #C6C8BB;
+      background: #faf6f0;
+      color: #1a1510;
+      border: 1.5px solid #e8c4a8;
     }
 
     .btn-secondary:hover:not(:disabled) {
-      border-color: #2E3E24;
+      border-color: #1a1510;
       background: #f4f5f0;
     }
 
@@ -340,23 +340,23 @@
     }
 
     .result-title {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.8rem;
-      color: #AD9846;
+      color: #c0603a;
       margin: 16px 0;
       line-height: 1.1;
     }
 
     .result-description {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.6;
       margin-bottom: 24px;
     }
 
     .recommendation-box {
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 24px;
@@ -373,11 +373,11 @@
     }
 
     .recommendation-badge {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.75rem;
       font-weight: 700;
-      background: #AD9846;
-      color: #2E3E24;
+      background: #c0603a;
+      color: #1a1510;
       padding: 4px 10px;
       border-radius: 20px;
       text-transform: uppercase;
@@ -385,16 +385,16 @@
     }
 
     .recommendation-title {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin: 0;
     }
 
     .recommendation-content {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
-      color: #422626;
+      color: #1a1510;
       line-height: 1.6;
     }
 
@@ -409,20 +409,20 @@
 
     .feature-list li {
       font-size: 0.85rem;
-      color: #555549;
+      color: #7a6a5a;
       display: flex;
       align-items: center;
       gap: 8px;
     }
     .feature-list li::before {
       content: "✓";
-      color: #AD9846;
+      color: #c0603a;
       font-weight: bold;
     }
 
     .tips-box {
       background: #fff;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 16px 20px;
       margin-bottom: 24px;
       border-radius: 0 8px 8px 0;
@@ -430,9 +430,9 @@
     }
 
     .tips-box h4 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -441,7 +441,7 @@
     .tips-box p {
       margin: 0 0 8px 0;
       font-size: 0.9rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.5;
     }
     .tips-box p:last-child {
@@ -462,16 +462,16 @@
     }
 
     .info-section h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
       text-align: center;
     }
 
     .info-section p {
       font-size: 0.95rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.7;
       margin-bottom: 16px;
     }
@@ -481,9 +481,9 @@
     }
 
     .faq-item h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 8px;
     }
 
@@ -517,7 +517,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
     <nav class="site-nav">
@@ -885,7 +891,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let featuresHtml = rec.features.map(f => `<li>${f}</li>`).join('');
 
             const recHtml = `
-                <div class="recommendation-box" style="${isTop ? 'border-color: #AD9846; border-width: 2px;' : ''}">
+                <div class="recommendation-box" style="${isTop ? 'border-color: #c0603a; border-width: 2px;' : ''}">
                     <div class="recommendation-header">
                         <span class="recommendation-badge">${isTop ? '★ Top Match' : 'Great Alternative'}</span>
                     </div>

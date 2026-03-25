@@ -22,8 +22,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -71,14 +71,14 @@
   </script>
   <style>
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
+      background-color: #faf6f0;
+      color: #1a1510;
     }
 
     /* Page Header */
     .page-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       text-align: center;
       padding: 60px 20px;
       position: relative;
@@ -90,11 +90,11 @@
       left: 0;
       right: 0;
       height: 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 40px 40px 0 0;
     }
     .page-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3.5rem;
       font-weight: 400;
       margin-bottom: 16px;
@@ -102,7 +102,7 @@
     }
     .page-header p {
       font-size: 1.05rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -127,10 +127,10 @@
       border: 1px solid rgba(46, 62, 36, 0.04);
     }
     .card h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
       margin-bottom: 24px;
-      color: #2E3E24;
+      color: #1a1510;
       text-align: center;
     }
 
@@ -152,30 +152,30 @@
     .form-group label {
       font-weight: 600;
       font-size: 0.95rem;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .form-group input {
       padding: 14px;
-      border: 1px solid #C6C8BB;
+      border: 1px solid #e8c4a8;
       border-radius: 12px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
-      background: #FAF8EB;
-      color: #2E3E24;
+      background: #faf6f0;
+      color: #1a1510;
       transition: border-color 0.2s;
     }
     .form-group input:focus {
       outline: none;
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
 
     .btn-primary {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 14px 28px;
       border-radius: 30px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
@@ -192,19 +192,19 @@
 
     .btn-secondary {
       background: transparent;
-      color: #2E3E24;
-      border: 1.5px solid #2E3E24;
+      color: #1a1510;
+      border: 1.5px solid #1a1510;
       padding: 12.5px 28px;
       border-radius: 30px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
       transition: all 0.2s;
     }
     .btn-secondary:hover {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
 
     /* Calendar Grid */
@@ -219,25 +219,25 @@
       margin-bottom: 20px;
     }
     .calendar-month {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.5rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .btn-nav {
       background: none;
-      border: 1px solid #C6C8BB;
-      color: #2E3E24;
+      border: 1px solid #e8c4a8;
+      color: #1a1510;
       padding: 8px 16px;
       border-radius: 20px;
       cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       transition: all 0.2s;
     }
     .btn-nav:hover {
-      background: #AD9846;
-      border-color: #AD9846;
+      background: #c0603a;
+      border-color: #c0603a;
       color: #fff;
     }
     .calendar-grid {
@@ -249,7 +249,7 @@
     }
     .calendar-day-header {
       font-weight: 600;
-      color: #8a8a7a;
+      color: #7a6a5a;
       font-size: 0.85rem;
       padding-bottom: 8px;
       text-transform: uppercase;
@@ -271,7 +271,7 @@
     }
     .calendar-day:hover {
       transform: scale(1.05);
-      border-color: #AD9846;
+      border-color: #c0603a;
       z-index: 10;
     }
     .calendar-day.empty {
@@ -285,10 +285,10 @@
 
     /* Phase Styling */
     .phase-menstrual { background-color: #fce8e8; color: #d9534f; border-color: #f5c6c6; }
-    .phase-follicular { background-color: #e8f5e9; color: #2E3E24; border-color: #c8e6c9; }
+    .phase-follicular { background-color: #e8f5e9; color: #1a1510; border-color: #c8e6c9; }
     .phase-ovulation { background-color: #fff8e1; color: #b08d00; border-color: #ffe082; font-weight: 700; }
     .phase-luteal { background-color: #f3e5f5; color: #6a1b9a; border-color: #e1bee7; }
-    .day-today { border: 2px solid #2E3E24 !important; font-weight: 700; }
+    .day-today { border: 2px solid #1a1510 !important; font-weight: 700; }
 
     .has-log::after {
       content: '';
@@ -298,7 +298,7 @@
       transform: translateX(-50%);
       width: 6px;
       height: 6px;
-      background-color: #AD9846;
+      background-color: #c0603a;
       border-radius: 50%;
     }
 
@@ -308,7 +308,7 @@
       gap: 16px;
       justify-content: center;
       font-size: 0.85rem;
-      color: #555549;
+      color: #7a6a5a;
     }
     .legend-item {
       display: flex;
@@ -324,7 +324,7 @@
     /* Modals & Logging */
     .logging-panel {
       display: none;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
       padding: 24px;
       margin-top: 24px;
@@ -339,9 +339,9 @@
       border-bottom: 1px solid rgba(46, 62, 36, 0.1);
     }
     .logging-date {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.4rem;
-      color: #2E3E24;
+      color: #1a1510;
       font-weight: 600;
     }
     .btn-close-log {
@@ -349,10 +349,10 @@
       border: none;
       font-size: 1.5rem;
       cursor: pointer;
-      color: #8a8a7a;
+      color: #7a6a5a;
       transition: color 0.2s;
     }
-    .btn-close-log:hover { color: #2E3E24; }
+    .btn-close-log:hover { color: #1a1510; }
 
     .log-grid {
       display: grid;
@@ -361,7 +361,7 @@
     }
     .log-section h4 {
       font-size: 1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
       font-weight: 600;
     }
@@ -375,7 +375,7 @@
       justify-content: space-between;
       margin-bottom: 8px;
       font-size: 0.9rem;
-      color: #555549;
+      color: #7a6a5a;
       font-weight: 500;
     }
     .slider {
@@ -392,7 +392,7 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: #AD9846;
+      background: #c0603a;
       cursor: pointer;
       transition: transform 0.1s;
     }
@@ -400,7 +400,7 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: #AD9846;
+      background: #c0603a;
       cursor: pointer;
       border: none;
     }
@@ -417,7 +417,7 @@
       display: inline-flex;
       align-items: center;
       background: #fff;
-      border: 1px solid #C6C8BB;
+      border: 1px solid #e8c4a8;
       padding: 8px 14px;
       border-radius: 20px;
       font-size: 0.85rem;
@@ -432,18 +432,18 @@
       font-weight: 600;
     }
     .checkbox-label:has(input:checked) {
-      background: #2E3E24;
-      color: #FAF8EB;
-      border-color: #2E3E24;
+      background: #1a1510;
+      color: #faf6f0;
+      border-color: #1a1510;
     }
 
     .log-notes {
       width: 100%;
       padding: 12px;
-      border: 1px solid #C6C8BB;
+      border: 1px solid #e8c4a8;
       border-radius: 8px;
       background: #fff;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       resize: vertical;
       min-height: 80px;
       margin-top: 10px;
@@ -470,7 +470,7 @@
     /* Insights Box */
     .insight-box {
       background: rgba(173, 152, 70, 0.1);
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 16px 20px;
       border-radius: 0 8px 8px 0;
       margin-top: 20px;
@@ -479,7 +479,7 @@
       display: none;
     }
     .insight-box h4 {
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
       font-size: 1.05rem;
     }
@@ -491,9 +491,9 @@
       padding: 0 20px;
     }
     .content-section h3 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.6rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
       margin-top: 32px;
     }
@@ -515,7 +515,7 @@
       border: 1px solid rgba(46,62,36,0.1);
     }
     .phase-card h4 {
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 1.2rem;
       margin-bottom: 12px;
       display: flex;
@@ -532,7 +532,7 @@
     .faq-question {
       font-weight: 600;
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
 
@@ -558,17 +558,23 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
-  <nav class="site-nav" style="background: #2E3E24; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;">
+  <nav class="site-nav" style="background: #1a1510; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32" style="height: 32px; opacity: 0.9;"></a>
     <ul class="nav-links" style="display: flex; gap: 24px; list-style: none;">
-      <li><a href="/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Home</a></li>
-      <li><a href="/blog/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Blog</a></li>
-      <li><a href="/about.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">About</a></li>
-      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">YouTube</a></li>
-      <li><a href="/open-and-honest.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Course</a></li>
+      <li><a href="/" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Home</a></li>
+      <li><a href="/blog/" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Blog</a></li>
+      <li><a href="/about.html" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">YouTube</a></li>
+      <li><a href="/open-and-honest.html" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Course</a></li>
     </ul>
     <button class="nav-hamburger" aria-label="Toggle Menu">
       <span></span><span></span><span></span>
@@ -656,10 +662,10 @@
             <div class="slider-group">
               <div class="slider-header">
                 <span>Libido / Sex Drive</span>
-                <span id="libido-val" style="color: #AD9846; font-weight: 700;">3</span>
+                <span id="libido-val" style="color: #c0603a; font-weight: 700;">3</span>
               </div>
               <input type="range" id="log-libido" class="slider" min="1" max="5" value="3">
-              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #8a8a7a; margin-top: 4px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #7a6a5a; margin-top: 4px;">
                 <span>Low</span><span>High</span>
               </div>
             </div>
@@ -667,13 +673,13 @@
             <div class="slider-group">
               <div class="slider-header">
                 <span>Arousal / Sensitivity</span>
-                <span id="arousal-val" style="color: #AD9846; font-weight: 700;">3</span>
+                <span id="arousal-val" style="color: #c0603a; font-weight: 700;">3</span>
               </div>
               <input type="range" id="log-arousal" class="slider" min="1" max="5" value="3">
             </div>
 
             <div style="margin-top: 16px;">
-              <span style="display: block; font-size: 0.9rem; color: #555549; font-weight: 500; margin-bottom: 8px;">Activity / Notes:</span>
+              <span style="display: block; font-size: 0.9rem; color: #7a6a5a; font-weight: 500; margin-bottom: 8px;">Activity / Notes:</span>
               <div class="checkbox-group">
                 <label class="checkbox-label"><input type="checkbox" name="sex_act" value="solo"><span>Solo Play</span></label>
                 <label class="checkbox-label"><input type="checkbox" name="sex_act" value="partnered"><span>Partnered</span></label>
@@ -683,7 +689,7 @@
             </div>
 
             <div style="margin-top: 16px;">
-              <span style="display: block; font-size: 0.9rem; color: #555549; font-weight: 500; margin-bottom: 8px;">Partner Communication:</span>
+              <span style="display: block; font-size: 0.9rem; color: #7a6a5a; font-weight: 500; margin-bottom: 8px;">Partner Communication:</span>
               <div class="checkbox-group">
                 <label class="checkbox-label"><input type="checkbox" name="communication" value="discussed_needs"><span>Discussed Needs</span></label>
                 <label class="checkbox-label"><input type="checkbox" name="communication" value="set_boundaries"><span>Set Boundaries</span></label>
@@ -693,7 +699,7 @@
             </div>
 
             <div style="margin-top: 16px;">
-              <span style="display: block; font-size: 0.9rem; color: #555549; font-weight: 500; margin-bottom: 8px;">Contraception & Safety:</span>
+              <span style="display: block; font-size: 0.9rem; color: #7a6a5a; font-weight: 500; margin-bottom: 8px;">Contraception & Safety:</span>
               <div class="checkbox-group">
                 <label class="checkbox-label"><input type="checkbox" name="contraception" value="pill_taken"><span>Pill Taken</span></label>
                 <label class="checkbox-label"><input type="checkbox" name="contraception" value="condom_used"><span>Condom/Barrier Used</span></label>
@@ -710,14 +716,14 @@
             <div class="slider-group">
               <div class="slider-header">
                 <span>Energy Level</span>
-                <span id="energy-val" style="color: #AD9846; font-weight: 700;">3</span>
+                <span id="energy-val" style="color: #c0603a; font-weight: 700;">3</span>
               </div>
               <input type="range" id="log-energy" class="slider" min="1" max="5" value="3">
             </div>
             <div class="slider-group">
               <div class="slider-header">
                 <span>Mood (1=Low, 5=Great)</span>
-                <span id="mood-val" style="color: #AD9846; font-weight: 700;">3</span>
+                <span id="mood-val" style="color: #c0603a; font-weight: 700;">3</span>
               </div>
               <input type="range" id="log-mood" class="slider" min="1" max="5" value="3">
             </div>
@@ -725,17 +731,17 @@
             <div class="slider-group">
               <div class="slider-header">
                 <span>Comfort Level / Pain</span>
-                <span id="comfort-val" style="color: #AD9846; font-weight: 700;">3</span>
+                <span id="comfort-val" style="color: #c0603a; font-weight: 700;">3</span>
               </div>
               <input type="range" id="log-comfort" class="slider" min="1" max="5" value="3">
-              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #8a8a7a; margin-top: 4px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #7a6a5a; margin-top: 4px;">
                 <span>Low Pain</span><span>High Pain</span>
               </div>
             </div>
 
 
             <div style="margin-top: 16px;">
-              <span style="display: block; font-size: 0.9rem; color: #555549; font-weight: 500; margin-bottom: 8px;">Cycle Flow:</span>
+              <span style="display: block; font-size: 0.9rem; color: #7a6a5a; font-weight: 500; margin-bottom: 8px;">Cycle Flow:</span>
               <div class="checkbox-group">
                 <label class="checkbox-label"><input type="radio" name="flow" value="none"><span>None</span></label>
                 <label class="checkbox-label"><input type="radio" name="flow" value="spotting"><span>Spotting</span></label>
@@ -746,7 +752,7 @@
             </div>
 
             <div style="margin-top: 16px;">
-              <span style="display: block; font-size: 0.9rem; color: #555549; font-weight: 500; margin-bottom: 8px;">Physical Symptoms:</span>
+              <span style="display: block; font-size: 0.9rem; color: #7a6a5a; font-weight: 500; margin-bottom: 8px;">Physical Symptoms:</span>
               <div class="checkbox-group">
                 <label class="checkbox-label"><input type="checkbox" name="symptom" value="cramps"><span>Cramps</span></label>
                 <label class="checkbox-label"><input type="checkbox" name="symptom" value="bloating"><span>Bloating</span></label>
@@ -769,7 +775,7 @@
     <!-- Data Visualization -->
     <section class="card" id="data-view" style="display: none;">
       <h2>Your Patterns</h2>
-            <p style="text-align: center; color: #555549; margin-bottom: 24px;">See how your libido, mood, and energy fluctuate throughout your cycle.</p>
+            <p style="text-align: center; color: #7a6a5a; margin-bottom: 24px;">See how your libido, mood, and energy fluctuate throughout your cycle.</p>
 
       <div id="dynamic-insights-container" style="margin-bottom: 24px;"></div>
 
@@ -1270,8 +1276,8 @@
           chartInstance.destroy();
         }
 
-        Chart.defaults.font.family = "'Montserrat', sans-serif";
-        Chart.defaults.color = '#555549';
+        Chart.defaults.font.family = "'DM Sans', sans-serif";
+        Chart.defaults.color = '#7a6a5a';
 
         chartInstance = new Chart(ctx, {
           type: 'line',
@@ -1291,23 +1297,23 @@
               {
                 label: 'Mood',
                 data: moodData,
-                borderColor: '#2E3E24',
+                borderColor: '#1a1510',
                 backgroundColor: 'rgba(46, 62, 36, 0.1)',
                 tension: 0.3,
                 borderWidth: 2,
                 pointRadius: 4,
-                pointBackgroundColor: '#2E3E24'
+                pointBackgroundColor: '#1a1510'
               },
               {
                 label: 'Energy',
                 data: energyData,
-                borderColor: '#AD9846',
+                borderColor: '#c0603a',
                 backgroundColor: 'rgba(173, 152, 70, 0.1)',
                 tension: 0.3,
                 borderWidth: 2,
                 borderDash: [5, 5],
                 pointRadius: 4,
-                pointBackgroundColor: '#AD9846'
+                pointBackgroundColor: '#c0603a'
               },
               {
                 label: 'Comfort',
@@ -1338,9 +1344,9 @@
                 labels: { boxWidth: 12, usePointStyle: true }
               },
               tooltip: {
-                backgroundColor: '#2E3E24',
-                titleColor: '#FAF8EB',
-                bodyColor: '#FAF8EB',
+                backgroundColor: '#1a1510',
+                titleColor: '#faf6f0',
+                bodyColor: '#faf6f0',
                 padding: 10,
                 cornerRadius: 8
               }

@@ -19,8 +19,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -102,7 +102,7 @@
   <style>
     /* Site Nav Inline Styles */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -121,7 +121,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -129,7 +129,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     @media (max-width: 480px) {
       .site-nav { padding: 12px 16px; }
@@ -137,13 +137,13 @@
 
     /* Page specific styles */
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
     }
     .page-header {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 80px 20px 60px;
       text-align: center;
     }
@@ -151,11 +151,11 @@
       font-size: 2.8rem;
       font-weight: 700;
       margin-bottom: 16px;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .page-header p {
       font-size: 1.1rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 700px;
       margin: 0 auto;
       line-height: 1.6;
@@ -177,16 +177,16 @@
     .card h2 {
       font-size: 1.8rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 10px;
       display: inline-block;
     }
     .card h3 {
       font-size: 1.3rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-top: 24px;
       margin-bottom: 12px;
     }
@@ -219,14 +219,14 @@
     .chart-container {
       margin: 30px 0;
       padding: 20px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
       border: 1px solid rgba(173, 152, 70, 0.3);
     }
     .chart-title {
       font-weight: 600;
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -239,7 +239,7 @@
       width: 200px;
       font-weight: 500;
       font-size: 0.9rem;
-      color: #2E3E24;
+      color: #1a1510;
       text-align: right;
       padding-right: 16px;
     }
@@ -253,7 +253,7 @@
     }
     .bar-fill {
       height: 100%;
-      background: #AD9846;
+      background: #c0603a;
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -261,10 +261,10 @@
       transition: width 1s ease-out;
     }
     .bar-fill.highlight {
-      background: #2E3E24;
+      background: #1a1510;
     }
     .bar-fill.warning {
-      background: #8a8a7a;
+      background: #7a6a5a;
     }
     .bar-value {
       font-size: 0.8rem;
@@ -292,8 +292,8 @@
       border-bottom: 1px solid #e8e4d4;
     }
     .comparison-table th {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       font-weight: 600;
       font-size: 0.95rem;
     }
@@ -312,7 +312,7 @@
     .faq-question {
       font-weight: 600;
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .faq-answer {
@@ -336,6 +336,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -644,7 +650,7 @@
     const ctx = document.getElementById('perspectivesChart').getContext('2d');
 
     // Set default font to match site design
-    Chart.defaults.font.family = "'Montserrat', sans-serif";
+    Chart.defaults.font.family = "'DM Sans', sans-serif";
     Chart.defaults.color = '#4A5D40';
 
     new Chart(ctx, {
@@ -663,22 +669,22 @@
             label: 'Students Deeming Essential',
             data: [88, 92, 91, 85, 78, 89],
             backgroundColor: 'rgba(173, 152, 70, 0.2)',
-            borderColor: '#AD9846',
-            pointBackgroundColor: '#AD9846',
+            borderColor: '#c0603a',
+            pointBackgroundColor: '#c0603a',
             pointBorderColor: '#fff',
             pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: '#AD9846',
+            pointHoverBorderColor: '#c0603a',
             borderWidth: 2
           },
           {
             label: 'Parents Supportive of Inclusion',
             data: [96, 94, 86, 68, 62, 81],
             backgroundColor: 'rgba(46, 62, 36, 0.2)',
-            borderColor: '#2E3E24',
-            pointBackgroundColor: '#2E3E24',
+            borderColor: '#1a1510',
+            pointBackgroundColor: '#1a1510',
             pointBorderColor: '#fff',
             pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: '#2E3E24',
+            pointHoverBorderColor: '#1a1510',
             borderWidth: 2
           }
         ]
@@ -699,7 +705,7 @@
                 size: 12,
                 weight: '500'
               },
-              color: '#2E3E24'
+              color: '#1a1510'
             },
             ticks: {
               backdropColor: 'transparent',
@@ -722,8 +728,8 @@
           },
           tooltip: {
             backgroundColor: 'rgba(46, 62, 36, 0.9)',
-            titleFont: { size: 13, family: "'Montserrat', sans-serif" },
-            bodyFont: { size: 13, family: "'Montserrat', sans-serif" },
+            titleFont: { size: 13, family: "'DM Sans', sans-serif" },
+            bodyFont: { size: 13, family: "'DM Sans', sans-serif" },
             padding: 12,
             cornerRadius: 8,
             callbacks: {

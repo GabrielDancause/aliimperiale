@@ -13,8 +13,8 @@
   <!-- Preload fonts to avoid FOUT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap">
 
   <!-- FAQPage JSON-LD -->
   <script type="application/ld+json">
@@ -68,7 +68,7 @@
   <style>
     /* Site Nav Styling (copied from index to ensure correct layout) */
     .site-nav {
-      background-color: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 15px 20px;
       display: flex;
       justify-content: space-between;
@@ -86,14 +86,14 @@
       padding: 0;
     }
     .nav-links a {
-      color: #FAF8EB;
+      color: #faf6f0;
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
       transition: color 0.2s ease;
     }
-    .nav-links a:hover, .nav-links a.active { color: #AD9846; }
-    .hamburger { display: none; background: none; border: none; color: #FAF8EB; font-size: 1.5rem; cursor: pointer; }
+    .nav-links a:hover, .nav-links a.active { color: #c0603a; }
+    .hamburger { display: none; background: none; border: none; color: #faf6f0; font-size: 1.5rem; cursor: pointer; }
 
     @media (max-width: 768px) {
       .hamburger { display: block; }
@@ -104,7 +104,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background-color: #2E3E24;
+        background-color: #1a1510;
         padding: 20px;
         gap: 15px;
         border-top: 1px solid rgba(250, 248, 235, 0.1);
@@ -114,21 +114,21 @@
 
     /* Tool Specific Styling */
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .page-header {
       text-align: center;
       padding: 40px 20px;
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
     }
     .page-header h1 {
       font-size: 2rem;
       margin-bottom: 15px;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .page-header p {
       font-size: 1rem;
@@ -154,7 +154,7 @@
     .card h2 {
       font-size: 1.5rem;
       margin-bottom: 15px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .card p {
       line-height: 1.6;
@@ -163,11 +163,11 @@
     }
 
     .category-section {
-      border-top: 4px solid #AD9846;
+      border-top: 4px solid #c0603a;
     }
     .category-title {
       font-size: 1.3rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 5px;
     }
     .category-desc {
@@ -189,7 +189,7 @@
     }
     .question-text {
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 15px;
       font-size: 1.05rem;
     }
@@ -213,14 +213,14 @@
     }
     .option-label:hover {
       background-color: #f0f3eb;
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
     .option-input {
       appearance: none;
       -webkit-appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 50%;
       margin-right: 12px;
       margin-top: 2px;
@@ -237,7 +237,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: #AD9846;
+      background-color: #c0603a;
       transition: transform 0.2s ease;
     }
     .option-input:checked::before {
@@ -245,7 +245,7 @@
     }
     .option-input:checked + .option-text {
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .option-text {
       font-size: 0.95rem;
@@ -258,7 +258,7 @@
       display: inline-block;
       padding: 12px 24px;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
@@ -268,8 +268,8 @@
       text-decoration: none;
     }
     .btn-start, .btn-primary {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
     }
     .btn-start:hover, .btn-primary:hover {
       background-color: #1a2414;
@@ -277,8 +277,8 @@
     }
     .btn-secondary {
       background-color: transparent;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      color: #1a1510;
+      border: 2px solid #1a1510;
     }
     .btn-secondary:hover {
       background-color: rgba(46, 62, 36, 0.05);
@@ -297,7 +297,7 @@
     }
     .score-item h4 {
       margin-bottom: 8px;
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 1.05rem;
     }
     .progress-bar-container {
@@ -310,7 +310,7 @@
     }
     .progress-bar {
       height: 100%;
-      background-color: #AD9846;
+      background-color: #c0603a;
       width: 0%;
       transition: width 1s ease-in-out;
     }
@@ -323,7 +323,7 @@
       padding: 20px;
       border-radius: 8px;
       margin-top: 30px;
-      border-left: 4px solid #2E3E24;
+      border-left: 4px solid #1a1510;
     }
     .recommendations h3 {
       font-size: 1.2rem;
@@ -353,13 +353,13 @@
       color: #5a6b50;
     }
     .educational-section a {
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 500;
       text-decoration: underline;
       text-decoration-color: rgba(173, 152, 70, 0.3);
     }
     .educational-section a:hover {
-      text-decoration-color: #AD9846;
+      text-decoration-color: #c0603a;
     }
 
     @media (min-width: 768px) {
@@ -378,6 +378,12 @@
   <meta name="twitter:description" content="Calculate and explore your sexual compatibility with your partner. A judgment-free tool covering libidos, communication, kink, and emotional intimacy needs.">
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
 
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -762,35 +768,35 @@
       <h2>Frequently Asked Questions</h2>
 
       <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 20px;">
-        <h3 itemprop="name" style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">What is sexual compatibility?</h3>
+        <h3 itemprop="name" style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">What is sexual compatibility?</h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <p itemprop="text">Sexual compatibility isn't just about liking the same acts; it's about how well your communication styles, libido frequencies, and emotional intimacy needs align, and how willing you are to compromise.</p>
         </div>
       </div>
 
       <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 20px;">
-        <h3 itemprop="name" style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">How do you handle mismatched libidos in a relationship?</h3>
+        <h3 itemprop="name" style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">How do you handle mismatched libidos in a relationship?</h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <p itemprop="text">Handling mismatched libidos involves open communication without blame. It often requires finding a middle ground, exploring responsive desire, removing pressure, and sometimes incorporating solo play.</p>
         </div>
       </div>
 
       <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 20px;">
-        <h3 itemprop="name" style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Can you fix sexual incompatibility?</h3>
+        <h3 itemprop="name" style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">Can you fix sexual incompatibility?</h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <p itemprop="text">Yes, many aspects of sexual incompatibility can be improved through honest communication, empathy, exploring new things together, and sometimes working with a sex therapist to bridge the gaps.</p>
         </div>
       </div>
 
       <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 20px;">
-        <h3 itemprop="name" style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">What is the difference between spontaneous and responsive desire?</h3>
+        <h3 itemprop="name" style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">What is the difference between spontaneous and responsive desire?</h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <p itemprop="text">Spontaneous desire is feeling aroused out of nowhere, while responsive desire requires external stimuli (like physical touch or a romantic setting) to trigger arousal. Both are completely normal.</p>
         </div>
       </div>
 
       <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 20px;">
-        <h3 itemprop="name" style="font-size: 1.1rem; color: #2E3E24; margin-bottom: 8px;">Why is communication important for sexual compatibility?</h3>
+        <h3 itemprop="name" style="font-size: 1.1rem; color: #1a1510; margin-bottom: 8px;">Why is communication important for sexual compatibility?</h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <p itemprop="text">Communication is essential because nobody is a mind reader. Being able to safely discuss boundaries, fantasies, and feedback is the foundation of building a fulfilling and compatible sex life.</p>
         </div>

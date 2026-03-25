@@ -24,8 +24,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script type="application/ld+json">
@@ -59,7 +59,7 @@
   <style>
     /* Site Nav Inline Styles (from index.html/other tools) */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -78,7 +78,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -86,7 +86,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     @media (max-width: 768px) {
@@ -110,7 +110,7 @@
     .page-header h1 {
       font-size: 2.2rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
 
@@ -133,7 +133,7 @@
 
     .section-title {
       font-size: 1.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 24px;
       font-weight: 600;
     }
@@ -145,7 +145,7 @@
     .group-label {
       display: block;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
       font-size: 1.1rem;
     }
@@ -160,7 +160,7 @@
       display: flex;
       align-items: center;
       padding: 16px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 1px solid #e8e4d4;
       border-radius: 12px;
       cursor: pointer;
@@ -168,7 +168,7 @@
     }
 
     .option-label:hover {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: #fdfcee;
     }
 
@@ -177,7 +177,7 @@
       -webkit-appearance: none;
       width: 22px;
       height: 22px;
-      border: 2px solid #AD9846;
+      border: 2px solid #c0603a;
       border-radius: 50%;
       margin-right: 16px;
       position: relative;
@@ -193,7 +193,7 @@
       content: "";
       width: 12px;
       height: 12px;
-      background: #AD9846;
+      background: #c0603a;
       border-radius: 50%;
       transform: scale(0);
       transition: transform 0.2s ease-in-out;
@@ -205,7 +205,7 @@
 
     .option-input:checked + .option-text {
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .option-text {
@@ -217,8 +217,8 @@
     .btn-primary {
       display: block;
       width: 100%;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 16px 24px;
       border-radius: 12px;
@@ -252,12 +252,12 @@
 
     .script-box {
       background: #fdfcee;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 20px;
       border-radius: 0 12px 12px 0;
       font-size: 1.05rem;
       line-height: 1.6;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .results-actions {
@@ -267,7 +267,7 @@
     }
 
     .btn-secondary {
-      background: #AD9846;
+      background: #c0603a;
       color: #fff;
       border: none;
       padding: 14px 24px;
@@ -285,8 +285,8 @@
 
     .btn-outline {
       background: transparent;
-      color: #2E3E24;
-      border: 2px solid #2E3E24;
+      color: #1a1510;
+      border: 2px solid #1a1510;
       padding: 14px 24px;
       border-radius: 12px;
       font-size: 1rem;
@@ -297,8 +297,8 @@
     }
 
     .btn-outline:hover {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
 
     /* Practice Mode & Edu */
@@ -309,7 +309,7 @@
     }
 
     .practice-steps {
-      color: #2E3E24;
+      color: #1a1510;
       line-height: 1.6;
       padding-left: 20px;
     }
@@ -319,7 +319,7 @@
     }
 
     .practice-steps strong {
-      color: #AD9846;
+      color: #c0603a;
     }
 
     .edu-grid {
@@ -329,14 +329,14 @@
     }
 
     .edu-card {
-      background: #FAF8EB;
+      background: #faf6f0;
       padding: 24px;
       border-radius: 12px;
     }
 
     .edu-card h3 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
 
@@ -357,7 +357,7 @@
 
     .faq-item h3 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
 
@@ -380,6 +380,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
     <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">

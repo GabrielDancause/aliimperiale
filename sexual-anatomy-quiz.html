@@ -20,16 +20,16 @@
 
   <style>
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
     }
     .site-nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
     }
     .nav-links {
       display: flex;
@@ -40,12 +40,12 @@
     }
     .nav-links a {
       text-decoration: none;
-      color: #2E3E24;
+      color: #1a1510;
       font-weight: 500;
     }
     .nav-links a.active {
       font-weight: 700;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
     }
 
     .container {
@@ -60,7 +60,7 @@
     }
 
     .header h1 {
-      color: #AD9846;
+      color: #c0603a;
       font-size: 2.5rem;
       margin-bottom: 10px;
     }
@@ -104,17 +104,17 @@
     }
 
     .level-card:hover, .level-card.selected {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background-color: rgba(173, 152, 70, 0.05);
     }
 
     .btn {
-      background-color: #2E3E24;
+      background-color: #1a1510;
       color: white;
       border: none;
       padding: 12px 24px;
       border-radius: 6px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s;
@@ -128,8 +128,8 @@
 
     .btn-secondary {
       background-color: transparent;
-      border: 2px solid #2E3E24;
-      color: #2E3E24;
+      border: 2px solid #1a1510;
+      color: #1a1510;
     }
 
     .btn-secondary:hover {
@@ -147,7 +147,7 @@
 
     .progress-fill {
       height: 100%;
-      background-color: #AD9846;
+      background-color: #c0603a;
       width: 0%;
       transition: width 0.3s ease;
     }
@@ -158,7 +158,7 @@
       align-items: center;
       margin-bottom: 20px;
       font-weight: 600;
-      color: #AD9846;
+      color: #c0603a;
     }
 
     .question-text {
@@ -186,14 +186,14 @@
 
     .option-label:hover {
       background-color: rgba(173, 152, 70, 0.05);
-      border-color: #AD9846;
+      border-color: #c0603a;
     }
 
     .option-input {
       appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #2E3E24;
+      border: 2px solid #1a1510;
       border-radius: 50%;
       margin-right: 15px;
       position: relative;
@@ -207,7 +207,7 @@
       transform: translate(-50%, -50%) scale(0);
       width: 10px;
       height: 10px;
-      background-color: #2E3E24;
+      background-color: #1a1510;
       border-radius: 50%;
       transition: transform 0.2s ease;
     }
@@ -246,7 +246,7 @@
     }
 
     .hotspot:hover {
-      fill: #AD9846 !important;
+      fill: #c0603a !important;
       opacity: 0.8;
     }
 
@@ -275,7 +275,7 @@
     .hint-btn {
       background: none;
       border: none;
-      color: #AD9846;
+      color: #c0603a;
       text-decoration: underline;
       cursor: pointer;
       font-family: inherit;
@@ -292,7 +292,7 @@
       margin-top: 10px;
       padding: 15px;
       background-color: #fff9e6;
-      border: 1px dashed #AD9846;
+      border: 1px dashed #c0603a;
       border-radius: 4px;
       font-size: 0.9rem;
     }
@@ -309,7 +309,7 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      border: 8px solid #AD9846;
+      border: 8px solid #c0603a;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -317,7 +317,7 @@
       margin: 0 auto 30px;
       font-size: 2rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     .score-circle span {
@@ -348,12 +348,12 @@
       border-radius: 8px;
       padding: 20px;
       margin-bottom: 15px;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
     }
 
     .myth-fact-card h4 {
       margin-top: 0;
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     /* Disclaimer */
@@ -390,6 +390,12 @@
   <meta name="twitter:description" content="Test your knowledge of sexual anatomy with this interactive, educational quiz. Learn about the vulva, penis, their functions, and common myths vs. facts.">
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
     <ul class="nav-links">
@@ -872,35 +878,35 @@
       function getDiagramSVG(type, highlightArea) {
         if (type === 'vulva') {
           // Geometric abstract vulva representation
-          const clitColor = highlightArea === 'clitoris' ? '#AD9846' : '#2E3E24';
-          const labiaColor = highlightArea === 'labia' ? '#AD9846' : 'none';
+          const clitColor = highlightArea === 'clitoris' ? '#c0603a' : '#1a1510';
+          const labiaColor = highlightArea === 'labia' ? '#c0603a' : 'none';
           return `
             <svg viewBox="0 0 200 250" class="anatomy-svg" width="200" height="250">
               <!-- Labia Majora -->
-              <path d="M100 20 C60 50, 40 120, 100 220 C160 120, 140 50, 100 20 Z" fill="${labiaColor}" stroke="#2E3E24" stroke-width="3" />
+              <path d="M100 20 C60 50, 40 120, 100 220 C160 120, 140 50, 100 20 Z" fill="${labiaColor}" stroke="#1a1510" stroke-width="3" />
               <!-- Labia Minora -->
-              <path d="M100 60 C80 90, 75 140, 100 180 C125 140, 120 90, 100 60 Z" fill="none" stroke="#2E3E24" stroke-width="2" />
+              <path d="M100 60 C80 90, 75 140, 100 180 C125 140, 120 90, 100 60 Z" fill="none" stroke="#1a1510" stroke-width="2" />
               <!-- Clitoris Glans -->
               <circle cx="100" cy="70" r="8" fill="${clitColor}" />
               <!-- Urethra -->
-              <circle cx="100" cy="100" r="4" fill="#2E3E24" />
+              <circle cx="100" cy="100" r="4" fill="#1a1510" />
               <!-- Vaginal Opening -->
-              <ellipse cx="100" cy="135" rx="10" ry="20" fill="#2E3E24" />
+              <ellipse cx="100" cy="135" rx="10" ry="20" fill="#1a1510" />
             </svg>
           `;
         } else if (type === 'penis_internal') {
            // Geometric abstract penis/internal representation
-           const prostateColor = highlightArea === 'prostate' ? '#AD9846' : 'none';
+           const prostateColor = highlightArea === 'prostate' ? '#c0603a' : 'none';
            return `
             <svg viewBox="0 0 200 250" class="anatomy-svg" width="200" height="250">
               <!-- Bladder -->
-              <circle cx="100" cy="60" r="30" fill="none" stroke="#2E3E24" stroke-width="3" />
+              <circle cx="100" cy="60" r="30" fill="none" stroke="#1a1510" stroke-width="3" />
               <!-- Prostate -->
-              <ellipse cx="100" cy="105" rx="20" ry="15" fill="${prostateColor}" stroke="#2E3E24" stroke-width="3" />
+              <ellipse cx="100" cy="105" rx="20" ry="15" fill="${prostateColor}" stroke="#1a1510" stroke-width="3" />
               <!-- Urethra -->
-              <line x1="100" y1="90" x2="100" y2="200" stroke="#2E3E24" stroke-width="4" />
+              <line x1="100" y1="90" x2="100" y2="200" stroke="#1a1510" stroke-width="4" />
               <!-- Seminal Vesicle -->
-              <path d="M130 70 C140 60, 150 80, 120 100" fill="none" stroke="#2E3E24" stroke-width="4" stroke-linecap="round" />
+              <path d="M130 70 C140 60, 150 80, 120 100" fill="none" stroke="#1a1510" stroke-width="4" stroke-linecap="round" />
             </svg>
           `;
         }
@@ -1074,11 +1080,11 @@
         const percentage = Math.round((state.score / questions.length) * 100);
 
         // Clear
-        ctx.fillStyle = '#FAF8EB';
+        ctx.fillStyle = '#faf6f0';
         ctx.fillRect(0, 0, certCanvas.width, certCanvas.height);
 
         // Border
-        ctx.strokeStyle = '#AD9846';
+        ctx.strokeStyle = '#c0603a';
         ctx.lineWidth = 15;
         ctx.strokeRect(20, 20, certCanvas.width - 40, certCanvas.height - 40);
         ctx.lineWidth = 2;
@@ -1088,37 +1094,37 @@
         ctx.textAlign = 'center';
 
         // Header
-        ctx.fillStyle = '#2E3E24';
-        ctx.font = 'bold 40px Montserrat, sans-serif';
+        ctx.fillStyle = '#1a1510';
+        ctx.font = 'bold 40px 'DM Sans', sans-serif';
         ctx.fillText('Certificate of Completion', certCanvas.width / 2, 120);
 
-        ctx.font = '20px Montserrat, sans-serif';
+        ctx.font = '20px 'DM Sans', sans-serif';
         ctx.fillText('This certifies that', certCanvas.width / 2, 180);
 
         // Name
-        ctx.fillStyle = '#AD9846';
-        ctx.font = 'bold 50px Montserrat, sans-serif';
+        ctx.fillStyle = '#c0603a';
+        ctx.font = 'bold 50px 'DM Sans', sans-serif';
         ctx.fillText(name, certCanvas.width / 2, 250);
 
         // Description
-        ctx.fillStyle = '#2E3E24';
-        ctx.font = '20px Montserrat, sans-serif';
+        ctx.fillStyle = '#1a1510';
+        ctx.font = '20px 'DM Sans', sans-serif';
         ctx.fillText('has successfully completed the', certCanvas.width / 2, 320);
 
-        ctx.font = 'bold 24px Montserrat, sans-serif';
+        ctx.font = 'bold 24px 'DM Sans', sans-serif';
         ctx.fillText(`Vulva & Penis Anatomy Quiz (${state.level.charAt(0).toUpperCase() + state.level.slice(1)} Level)`, certCanvas.width / 2, 360);
 
-        ctx.font = '20px Montserrat, sans-serif';
+        ctx.font = '20px 'DM Sans', sans-serif';
         ctx.fillText(`with a score of ${percentage}%`, certCanvas.width / 2, 400);
 
         // Footer / Brand
-        ctx.font = 'italic 18px Montserrat, sans-serif';
+        ctx.font = 'italic 18px 'DM Sans', sans-serif';
         ctx.fillStyle = '#666';
         ctx.fillText('Ali Imperiale - Sex Educator & Content Creator', certCanvas.width / 2, 500);
 
         // Date
         const today = new Date().toLocaleDateString();
-        ctx.font = '16px Montserrat, sans-serif';
+        ctx.font = '16px 'DM Sans', sans-serif';
         ctx.fillText(`Date: ${today}`, certCanvas.width / 2, 540);
 
         // Create Blob and Download Link

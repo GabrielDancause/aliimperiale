@@ -21,20 +21,20 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <style>
-    .site-nav { background: #2E3E24; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .site-nav { background: rgba(250,246,240,.93); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
     .site-nav .nav-logo { height: 32px; opacity: 0.9; }
     .site-nav .nav-links { display: flex; gap: 24px; list-style: none; }
-    .site-nav .nav-links a { color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.15s; }
-    .site-nav .nav-links a:hover { color: #FAF8EB; }
+    .site-nav .nav-links a { color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.15s; }
+    .site-nav .nav-links a:hover { color: #faf6f0; }
 
     /* Hero */
     .nl-hero {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       text-align: center;
       padding: 64px 20px 88px;
       position: relative;
@@ -46,7 +46,7 @@
       bottom: -1px;
       left: 0; right: 0;
       height: 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 40px 40px 0 0;
     }
     .nl-hero .label {
@@ -55,20 +55,20 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 20px;
     }
     .nl-hero h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3.8rem;
       font-weight: 400;
       line-height: 1.1;
       margin-bottom: 18px;
     }
     .nl-hero .subtitle {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 500px;
       margin: 0 auto 32px;
       line-height: 1.7;
@@ -81,36 +81,36 @@
       flex: 1; padding: 15px 18px;
       border: 1px solid rgba(198,200,187,.3);
       border-radius: 10px;
-      font-family: 'Montserrat', sans-serif; font-size: 0.9rem;
-      background: rgba(250,248,235,.08); color: #FAF8EB;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      background: rgba(250,248,235,.08); color: #faf6f0;
       outline: none;
       transition: border-color .15s, box-shadow .15s;
     }
     .nl-input::placeholder { color: rgba(198,200,187,.5); }
-    .nl-input:focus { border-color: #AD9846; box-shadow: 0 0 0 3px rgba(173,152,70,.2); }
+    .nl-input:focus { border-color: #c0603a; box-shadow: 0 0 0 3px rgba(173,152,70,.2); }
     .nl-btn {
-      padding: 15px 28px; background: #AD9846; color: #FAF8EB;
+      padding: 15px 28px; background: #c0603a; color: #faf6f0;
       border: none; border-radius: 10px;
-      font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 600;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600;
       cursor: pointer; white-space: nowrap;
       transition: background .15s, transform .15s;
     }
-    .nl-btn:hover { background: #c4ad52; transform: translateY(-1px); }
+    .nl-btn:hover { background: #9e4626; transform: translateY(-1px); }
     .nl-btn:disabled { opacity: .6; cursor: wait; transform: none; }
     .nl-note { font-size: 0.75rem; color: rgba(198,200,187,.5); margin-top: 14px; }
     .nl-error { font-size: 0.82rem; color: #e88; margin-top: 10px; display: none; }
     .nl-success { display: none; text-align: center; }
     .nl-success .success-icon { font-size: 2.4rem; margin-bottom: 10px; }
-    .nl-success h3 { font-family: 'The Bloomington', cursive; font-size: 2rem; font-weight: 400; color: #FAF8EB; margin-bottom: 8px; }
-    .nl-success p { font-size: 0.9rem; color: #C6C8BB; margin-bottom: 20px; }
+    .nl-success h3 { font-family: 'DM Serif Display', cursive; font-size: 2rem; font-weight: 400; color: #faf6f0; margin-bottom: 8px; }
+    .nl-success p { font-size: 0.9rem; color: #e8c4a8; margin-bottom: 20px; }
     .nl-success .download-link {
       display: inline-block; padding: 13px 32px;
-      background: #AD9846; color: #FAF8EB;
+      background: #c0603a; color: #faf6f0;
       text-decoration: none; border-radius: 10px;
       font-weight: 600; font-size: 0.9rem;
       transition: background .15s, transform .15s;
     }
-    .nl-success .download-link:hover { background: #c4ad52; transform: translateY(-1px); }
+    .nl-success .download-link:hover { background: #9e4626; transform: translateY(-1px); }
 
     /* Free guide badge */
     .hero-bonus {
@@ -118,16 +118,16 @@
       background: rgba(173,152,70,.15);
       border: 1px solid rgba(173,152,70,.3);
       padding: 10px 22px; border-radius: 30px;
-      font-size: 0.82rem; font-weight: 600; color: #AD9846;
+      font-size: 0.82rem; font-weight: 600; color: #c0603a;
       margin-top: 24px;
     }
     .hero-bonus span { font-size: 1.1rem; }
 
     /* Container */
     .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
-    .section-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #AD9846; text-align: center; margin-bottom: 8px; }
-    .section-title { font-family: 'The Bloomington', cursive; font-size: 2.4rem; font-weight: 400; color: #2E3E24; text-align: center; margin-bottom: 12px; }
-    .section-subtitle { font-family: 'New Standard', Georgia, serif; font-size: 0.95rem; color: #555549; text-align: center; max-width: 500px; margin: 0 auto 36px; line-height: 1.7; }
+    .section-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #c0603a; text-align: center; margin-bottom: 8px; }
+    .section-title { font-family: 'DM Serif Display', cursive; font-size: 2.4rem; font-weight: 400; color: #1a1510; text-align: center; margin-bottom: 12px; }
+    .section-subtitle { font-family: 'Playfair Display', Georgia, serif; font-size: 0.95rem; color: #7a6a5a; text-align: center; max-width: 500px; margin: 0 auto 36px; line-height: 1.7; }
 
     /* Perks */
     .perks-section { padding: 48px 0; }
@@ -138,7 +138,7 @@
       border: 1px solid rgba(46,62,36,.06);
     }
     .perk-icon { font-size: 1.6rem; margin-bottom: 12px; }
-    .perk-card h4 { font-family: 'New Standard', Georgia, serif; font-size: 0.95rem; font-weight: 400; color: #2E3E24; margin-bottom: 6px; }
+    .perk-card h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 0.95rem; font-weight: 400; color: #1a1510; margin-bottom: 6px; }
     .perk-card p { font-size: 0.82rem; color: #777; line-height: 1.6; }
 
     /* Sample topics */
@@ -149,7 +149,7 @@
       background: #fff; border-radius: 12px; padding: 16px 18px;
       box-shadow: 0 1px 4px rgba(46,62,36,.06);
       border: 1px solid rgba(46,62,36,.06);
-      font-size: 0.88rem; color: #2E3E24; line-height: 1.4;
+      font-size: 0.88rem; color: #1a1510; line-height: 1.4;
     }
     .topic-icon { font-size: 1.2rem; flex-shrink: 0; }
 
@@ -162,12 +162,12 @@
     }
     .promise-list { list-style: none; }
     .promise-list li {
-      font-size: 0.9rem; color: #2E3E24; padding: 10px 0;
+      font-size: 0.9rem; color: #1a1510; padding: 10px 0;
       border-bottom: 1px solid rgba(46,62,36,.06);
       display: flex; align-items: center; gap: 12px; line-height: 1.5;
     }
     .promise-list li:last-child { border-bottom: none; }
-    .promise-check { color: #AD9846; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+    .promise-check { color: #c0603a; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
     .promise-x { color: #c47070; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
 
     /* About */
@@ -178,51 +178,51 @@
       border: 1px solid rgba(46,62,36,.06);
       display: flex; gap: 24px; align-items: center;
     }
-    .about-avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #AD9846; flex-shrink: 0; }
-    .about-text h3 { font-family: 'New Standard', Georgia, serif; font-size: 1.15rem; font-weight: 400; color: #2E3E24; margin-bottom: 8px; }
-    .about-text p { font-size: 0.88rem; color: #555549; line-height: 1.7; }
+    .about-avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #c0603a; flex-shrink: 0; }
+    .about-text h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 400; color: #1a1510; margin-bottom: 8px; }
+    .about-text p { font-size: 0.88rem; color: #7a6a5a; line-height: 1.7; }
 
     /* Bottom CTA */
     .bottom-cta {
-      background: #2E3E24; color: #FAF8EB; text-align: center;
+      background: #1a1510; color: #faf6f0; text-align: center;
       padding: 56px 20px; border-radius: 24px;
       margin: 0 20px 48px; max-width: 720px; margin-left: auto; margin-right: auto;
     }
-    .bottom-cta h2 { font-family: 'The Bloomington', cursive; font-size: 2.4rem; font-weight: 400; margin-bottom: 12px; }
-    .bottom-cta > p { font-size: 0.92rem; color: #C6C8BB; margin-bottom: 28px; max-width: 400px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+    .bottom-cta h2 { font-family: 'DM Serif Display', cursive; font-size: 2.4rem; font-weight: 400; margin-bottom: 12px; }
+    .bottom-cta > p { font-size: 0.92rem; color: #e8c4a8; margin-bottom: 28px; max-width: 400px; margin-left: auto; margin-right: auto; line-height: 1.6; }
     .bottom-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
     .bottom-input {
       flex: 1; padding: 15px 18px;
       border: 1px solid rgba(198,200,187,.3); border-radius: 10px;
-      font-family: 'Montserrat', sans-serif; font-size: 0.9rem;
-      background: rgba(250,248,235,.08); color: #FAF8EB; outline: none;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      background: rgba(250,248,235,.08); color: #faf6f0; outline: none;
       transition: border-color .15s, box-shadow .15s;
     }
     .bottom-input::placeholder { color: rgba(198,200,187,.5); }
-    .bottom-input:focus { border-color: #AD9846; box-shadow: 0 0 0 3px rgba(173,152,70,.2); }
+    .bottom-input:focus { border-color: #c0603a; box-shadow: 0 0 0 3px rgba(173,152,70,.2); }
     .bottom-btn {
-      padding: 15px 28px; background: #AD9846; color: #FAF8EB;
+      padding: 15px 28px; background: #c0603a; color: #faf6f0;
       border: none; border-radius: 10px;
-      font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 600;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600;
       cursor: pointer; white-space: nowrap;
       transition: background .15s, transform .15s;
     }
-    .bottom-btn:hover { background: #c4ad52; transform: translateY(-1px); }
+    .bottom-btn:hover { background: #9e4626; transform: translateY(-1px); }
     .bottom-btn:disabled { opacity: .6; cursor: wait; transform: none; }
     .bottom-note { font-size: 0.75rem; color: rgba(198,200,187,.5); margin-top: 14px; }
     .bottom-error { font-size: 0.82rem; color: #e88; margin-top: 10px; display: none; }
     .bottom-success { display: none; }
     .bottom-success .success-icon { font-size: 2.4rem; margin-bottom: 10px; }
-    .bottom-success h3 { font-family: 'The Bloomington', cursive; font-size: 2rem; font-weight: 400; margin-bottom: 8px; }
-    .bottom-success p { font-size: 0.9rem; color: #C6C8BB; margin-bottom: 20px; }
+    .bottom-success h3 { font-family: 'DM Serif Display', cursive; font-size: 2rem; font-weight: 400; margin-bottom: 8px; }
+    .bottom-success p { font-size: 0.9rem; color: #e8c4a8; margin-bottom: 20px; }
     .bottom-success .download-link {
       display: inline-block; padding: 13px 32px;
-      background: #AD9846; color: #FAF8EB;
+      background: #c0603a; color: #faf6f0;
       text-decoration: none; border-radius: 10px;
       font-weight: 600; font-size: 0.9rem;
       transition: background .15s, transform .15s;
     }
-    .bottom-success .download-link:hover { background: #c4ad52; transform: translateY(-1px); }
+    .bottom-success .download-link:hover { background: #9e4626; transform: translateY(-1px); }
 
     /* Responsive */
     @media (max-width: 480px) {
@@ -245,7 +245,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" height="32"></a>

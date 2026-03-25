@@ -24,8 +24,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <script type="application/ld+json">
 {
@@ -72,13 +72,13 @@
   <link rel="stylesheet" href="shared.css">
   <style>
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
     }
     .tool-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       padding: 60px 20px;
       text-align: center;
       position: relative;
@@ -90,19 +90,19 @@
       left: 0;
       right: 0;
       height: 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 40px 40px 0 0;
     }
     .tool-header h1 {
       font-size: 2.8rem;
       font-weight: 400;
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       margin-bottom: 16px;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .tool-header p {
       font-size: 1.1rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -129,17 +129,17 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background-color: #C6C8BB;
+      background-color: #e8c4a8;
       transition: background-color 0.3s;
     }
     .step-dot.active {
-      background-color: #AD9846;
+      background-color: #c0603a;
     }
     .question-category {
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 700;
       text-align: center;
       margin-bottom: 10px;
@@ -163,10 +163,10 @@
     }
     .btn-rating {
       padding: 14px 32px;
-      border: 2px solid #2E3E24;
+      border: 2px solid #1a1510;
       background: transparent;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       border-radius: 30px;
@@ -177,19 +177,19 @@
       max-width: 200px;
     }
     .btn-rating:hover {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
-    .btn-rating.yes:hover { background: #2E3E24; border-color: #2E3E24; }
-    .btn-rating.no:hover { background: #8a8a7a; border-color: #8a8a7a; }
-    .btn-rating.maybe:hover { background: #AD9846; border-color: #AD9846; }
+    .btn-rating.yes:hover { background: #1a1510; border-color: #1a1510; }
+    .btn-rating.no:hover { background: #7a6a5a; border-color: #7a6a5a; }
+    .btn-rating.maybe:hover { background: #c0603a; border-color: #c0603a; }
 
     .btn-primary {
       display: inline-block;
       padding: 16px 40px;
-      background: #2E3E24;
-      color: #FAF8EB;
-      font-family: 'Montserrat', sans-serif;
+      background: #1a1510;
+      color: #faf6f0;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       text-decoration: none;
@@ -205,9 +205,9 @@
     .btn-secondary {
       display: inline-block;
       padding: 16px 40px;
-      background: #AD9846;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background: #c0603a;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       text-decoration: none;
@@ -224,14 +224,14 @@
     .progress-bar-container {
       width: 100%;
       height: 6px;
-      background: #C6C8BB;
+      background: #e8c4a8;
       border-radius: 3px;
       margin-top: 40px;
       overflow: hidden;
     }
     .progress-bar {
       height: 100%;
-      background: #AD9846;
+      background: #c0603a;
       width: 0%;
       transition: width 0.3s ease;
     }
@@ -244,8 +244,8 @@
     }
     .results-category h3 {
       font-size: 1.4rem;
-      color: #2E3E24;
-      border-bottom: 2px solid #AD9846;
+      color: #1a1510;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 10px;
       margin-bottom: 20px;
     }
@@ -267,8 +267,8 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    .badge-yes { background: #2E3E24; color: #FAF8EB; }
-    .badge-maybe { background: #AD9846; color: #2E3E24; }
+    .badge-yes { background: #1a1510; color: #faf6f0; }
+    .badge-maybe { background: #c0603a; color: #1a1510; }
 
     .intro-screen, .partner-transition-screen {
       text-align: center;
@@ -284,10 +284,10 @@
       margin: 0 auto;
     }
     .edu-inner h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 2rem;
       margin-bottom: 24px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .edu-inner p {
       line-height: 1.8;
@@ -317,18 +317,24 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
-  <nav class="site-nav" style="background: #2E3E24; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;">
+  <nav class="site-nav" style="background: #1a1510; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32" style="height: 32px; opacity: 0.9;"></a>
     <ul class="nav-links" style="display: flex; gap: 24px; list-style: none; margin: 0; padding: 0;">
-      <li><a href="/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Home</a></li>
-      <li><a href="/blog/" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Blog</a></li>
-      <li><a href="/about.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">About</a></li>
-      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">YouTube</a></li>
-      <li><a href="/open-and-honest.html" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Course</a></li>
-      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener" style="color: #C6C8BB; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Patreon</a></li>
+      <li><a href="/" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Home</a></li>
+      <li><a href="/blog/" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Blog</a></li>
+      <li><a href="/about.html" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">YouTube</a></li>
+      <li><a href="/open-and-honest.html" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Course</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" target="_blank" rel="noopener" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500;">Patreon</a></li>
     </ul>
   </nav>
 
@@ -343,15 +349,15 @@
 
         <!-- Intro Screen -->
         <div id="screen-intro" class="intro-screen">
-          <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 2rem; color: #2E3E24; margin-bottom: 20px;">Ready to explore?</h2>
-          <p style="font-size: 1.1rem; color: #555549; margin-bottom: 30px; line-height: 1.6;">How this works:<br>1. <strong>Partner 1</strong> goes through the list alone.<br>2. <strong>Partner 2</strong> goes through the same list.<br>3. The tool reveals <em>only</em> the things you both said Yes or Maybe to.</p>
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; color: #1a1510; margin-bottom: 20px;">Ready to explore?</h2>
+          <p style="font-size: 1.1rem; color: #7a6a5a; margin-bottom: 30px; line-height: 1.6;">How this works:<br>1. <strong>Partner 1</strong> goes through the list alone.<br>2. <strong>Partner 2</strong> goes through the same list.<br>3. The tool reveals <em>only</em> the things you both said Yes or Maybe to.</p>
           <button class="btn-primary" onclick="startApp()">Start: Partner 1</button>
         </div>
 
         <!-- Question Screen -->
         <div id="screen-questions" style="display: none;">
           <div class="step-indicator">
-            <span style="font-weight: 600; font-size: 0.9rem; color: #8a8a7a;" id="partner-label">Partner 1</span>
+            <span style="font-weight: 600; font-size: 0.9rem; color: #7a6a5a;" id="partner-label">Partner 1</span>
           </div>
           <div class="question-category" id="q-category">Romantic</div>
           <div class="question-text" id="q-text">Holding hands in public</div>
@@ -363,27 +369,27 @@
           <div class="progress-bar-container">
             <div class="progress-bar" id="progress-bar"></div>
           </div>
-          <div style="text-align: center; margin-top: 10px; font-size: 0.8rem; color: #8a8a7a;" id="progress-text">1 / 60</div>
+          <div style="text-align: center; margin-top: 10px; font-size: 0.8rem; color: #7a6a5a;" id="progress-text">1 / 60</div>
         </div>
 
         <!-- Transition Screen -->
         <div id="screen-transition" class="partner-transition-screen" style="display: none;">
-          <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 2rem; color: #2E3E24; margin-bottom: 20px;">Partner 1 Complete!</h2>
-          <p style="font-size: 1.1rem; color: #555549; margin-bottom: 30px;">Pass the device to Partner 2. No peeking!</p>
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; color: #1a1510; margin-bottom: 20px;">Partner 1 Complete!</h2>
+          <p style="font-size: 1.1rem; color: #7a6a5a; margin-bottom: 30px;">Pass the device to Partner 2. No peeking!</p>
           <button class="btn-secondary" onclick="startPartnerTwo()">Start: Partner 2</button>
         </div>
 
         <!-- Results Screen -->
         <div id="screen-results" class="results-section">
-          <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 2rem; color: #2E3E24; margin-bottom: 10px; text-align: center;">Your Overlap</h2>
-          <p style="text-align: center; margin-bottom: 40px; color: #555549;">Here are the things you both said Yes or Maybe to. Time to talk!</p>
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; color: #1a1510; margin-bottom: 10px; text-align: center;">Your Overlap</h2>
+          <p style="text-align: center; margin-bottom: 40px; color: #7a6a5a;">Here are the things you both said Yes or Maybe to. Time to talk!</p>
 
           <div id="results-container"></div>
 
           <div style="text-align: center; margin-top: 50px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
             <button class="btn-secondary" onclick="shareResults()">Copy Summary</button>
             <button class="btn-primary" onclick="window.print()">Save PDF / Print</button>
-            <button class="btn-secondary" style="background: transparent; border: 2px solid #2E3E24;" onclick="location.reload()">Reset List</button>
+            <button class="btn-secondary" style="background: transparent; border: 2px solid #1a1510;" onclick="location.reload()">Reset List</button>
           </div>
         </div>
 
@@ -398,7 +404,7 @@
         <p>A Yes/No/Maybe list removes the pressure. It’s a structured, gamified way to explore what’s on the table. Because this tool only shows you the <strong>overlap</strong> (the things you both said Yes or Maybe to), you never have to feel rejected if you propose something your partner isn't into. If they marked it "No," it just disappears from the final results.</p>
         <p>Think of this not as a to-do list, but as a conversation starter. If you both marked "Maybe" on something, that doesn't mean you have to do it tonight. It just means: <em>"I'm curious enough to talk about this over a glass of wine."</em></p>
 
-        <div style="width: 40px; height: 2px; background: #AD9846; margin: 40px 0; border-radius: 1px;"></div>
+        <div style="width: 40px; height: 2px; background: #c0603a; margin: 40px 0; border-radius: 1px;"></div>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
@@ -629,7 +635,7 @@
     let html = '';
 
     if (Object.keys(overlaps).length === 0) {
-      html = '<p style="text-align:center; padding: 40px; color: #555549; background: #FAF8EB; border-radius: 12px;">No overlaps found this time. That is okay! This is just a starting point for communication.</p>';
+      html = '<p style="text-align:center; padding: 40px; color: #7a6a5a; background: #faf6f0; border-radius: 12px;">No overlaps found this time. That is okay! This is just a starting point for communication.</p>';
     } else {
       for (const cat in overlaps) {
         html += `<div class="results-category">

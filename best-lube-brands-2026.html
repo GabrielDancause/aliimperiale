@@ -21,15 +21,15 @@
 
   <!-- Preload Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
 
   <style>
     /* Site Nav CSS copied from index.html */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -48,7 +48,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -56,17 +56,17 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Guide specific styles */
     h1, h2, h3, h4, h5, h6 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .guide-hero {
-      background-color: #FAF8EB;
-      color: #2E3E24;
+      background-color: #faf6f0;
+      color: #1a1510;
       padding: 60px 24px;
       text-align: center;
       border-bottom: 1px solid rgba(46, 62, 36, 0.1);
@@ -75,7 +75,7 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 16px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .guide-hero p {
       font-size: 1.1rem;
@@ -98,16 +98,16 @@
 
     .guide-content h2 {
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-top: 40px;
       margin-bottom: 20px;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 8px;
     }
 
     .guide-content h3 {
       font-size: 1.4rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-top: 30px;
       margin-bottom: 15px;
     }
@@ -149,7 +149,7 @@
       margin-bottom: 10px;
     }
     .toc a {
-      color: #AD9846;
+      color: #c0603a;
       text-decoration: none;
       font-weight: 500;
     }
@@ -159,7 +159,7 @@
 
     .disclaimer {
       background-color: #f8f9fa;
-      border-left: 4px solid #AD9846;
+      border-left: 4px solid #c0603a;
       padding: 16px;
       margin-bottom: 30px;
       font-size: 0.9rem;
@@ -182,8 +182,8 @@
       text-align: left;
     }
     th {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       font-weight: 600;
       cursor: pointer;
       position: relative;
@@ -216,14 +216,14 @@
     }
     .review-card h4 {
       font-size: 1.3rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 10px;
       margin-top: 0;
     }
     .tag {
       display: inline-block;
       background: #eaf0e6;
-      color: #2E3E24;
+      color: #1a1510;
       padding: 4px 10px;
       border-radius: 20px;
       font-size: 0.75rem;
@@ -233,7 +233,7 @@
     }
     .price {
       font-weight: 600;
-      color: #AD9846;
+      color: #c0603a;
       margin-bottom: 12px;
     }
     .pros-cons {
@@ -246,13 +246,13 @@
       margin: 0 0 5px 0;
       font-size: 0.95rem;
     }
-    .pros { color: #2E3E24; }
+    .pros { color: #1a1510; }
     .cons { color: #8b3a3a; }
 
     .buy-btn {
       display: inline-block;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       padding: 8px 16px;
       border-radius: 4px;
       text-decoration: none;
@@ -262,7 +262,7 @@
     }
     .buy-btn:hover {
       background: #3a4f2d;
-      color: #FAF8EB;
+      color: #faf6f0;
       text-decoration: none;
     }
 
@@ -275,7 +275,7 @@
     .faq-question {
       font-weight: 600;
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 10px;
       cursor: pointer;
       display: flex;
@@ -359,7 +359,13 @@
   <meta name="twitter:description" content="A comprehensive comparison of the best personal lubricant brands for 2026. Compare water-based, silicone, hybrid, organic options, and top reviews for.">
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
     <nav class="site-nav">
@@ -641,27 +647,27 @@
     <h2 id="faq">8. Frequently Asked Questions</h2>
     <div class="faq-section">
       <div class="faq-item" onclick="this.classList.toggle('open')">
-        <h4 class="faq-question">Can I use coconut oil as a lubricant? <span style="font-size:0.8em;color:#AD9846;">▼</span></h4>
+        <h4 class="faq-question">Can I use coconut oil as a lubricant? <span style="font-size:0.8em;color:#c0603a;">▼</span></h4>
         <div class="faq-answer">Coconut oil is a popular natural, oil-based lubricant. However, it is strictly <strong>not safe</strong> to use with latex condoms as it will cause them to break. Additionally, because it is antibacterial and antifungal, it can disrupt the natural vaginal microbiome for some people, leading to infections. It is best used for external massage or with non-latex (polyurethane) condoms.</div>
       </div>
 
       <div class="faq-item" onclick="this.classList.toggle('open')">
-        <h4 class="faq-question">Why does my water-based lube get sticky? <span style="font-size:0.8em;color:#AD9846;">▼</span></h4>
+        <h4 class="faq-question">Why does my water-based lube get sticky? <span style="font-size:0.8em;color:#c0603a;">▼</span></h4>
         <div class="faq-answer">Water-based lubricants evaporate over time due to body heat and friction. When the water evaporates, it leaves behind the base ingredients (often plant cellulose or glycerin), which causes a tacky or sticky feeling. You can easily reactivate it by adding a few drops of water.</div>
       </div>
 
       <div class="faq-item" onclick="this.classList.toggle('open')">
-        <h4 class="faq-question">Is flavored lube safe for penetration? <span style="font-size:0.8em;color:#AD9846;">▼</span></h4>
+        <h4 class="faq-question">Is flavored lube safe for penetration? <span style="font-size:0.8em;color:#c0603a;">▼</span></h4>
         <div class="faq-answer">Flavored lubricants often contain sugars or artificial sweeteners to make them taste good. These sugars can alter vaginal pH and promote yeast infections. It is generally recommended to reserve flavored lubes strictly for oral play and use a plain, body-safe lube for penetration.</div>
       </div>
 
       <div class="faq-item" onclick="this.classList.toggle('open')">
-        <h4 class="faq-question">What is 'osmolality' and why does it matter? <span style="font-size:0.8em;color:#AD9846;">▼</span></h4>
+        <h4 class="faq-question">What is 'osmolality' and why does it matter? <span style="font-size:0.8em;color:#c0603a;">▼</span></h4>
         <div class="faq-answer">Osmolality refers to the concentration of particles in a fluid. A lube with high osmolality (hyperosmolar) pulls water out of your cells, which can cause tissue damage and irritation. Look for 'iso-osmolar' lubes, which match the body's natural cellular concentration and are much gentler on sensitive tissues.</div>
       </div>
 
       <div class="faq-item" onclick="this.classList.toggle('open')">
-        <h4 class="faq-question">Can I use silicone lube with my sex toys? <span style="font-size:0.8em;color:#AD9846;">▼</span></h4>
+        <h4 class="faq-question">Can I use silicone lube with my sex toys? <span style="font-size:0.8em;color:#c0603a;">▼</span></h4>
         <div class="faq-answer">It depends on the toy's material. You should <strong>never</strong> use silicone lube with silicone toys. The silicone in the lube binds with the silicone in the toy, causing it to degrade, melt, and become permanently sticky or porous. Silicone lube is safe with glass, metal, hard plastic (ABS), and sealed wood toys.</div>
       </div>
     </div>

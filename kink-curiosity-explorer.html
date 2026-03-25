@@ -23,7 +23,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
 
@@ -78,14 +78,14 @@
 
   <style>
     body {
-      background-color: #FAF8EB;
-      color: #2E3E24;
-      font-family: 'Montserrat', sans-serif;
+      background-color: #faf6f0;
+      color: #1a1510;
+      font-family: 'DM Sans', sans-serif;
     }
 
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -104,7 +104,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -112,13 +112,13 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Page Header */
     .page-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       padding: 60px 20px 80px;
       text-align: center;
       position: relative;
@@ -130,11 +130,11 @@
       left: 0;
       right: 0;
       height: 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 40px 40px 0 0;
     }
     .page-header h1 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 3rem;
       font-weight: 400;
       margin-bottom: 16px;
@@ -143,7 +143,7 @@
       font-size: 1.1rem;
       max-width: 600px;
       margin: 0 auto;
-      color: #C6C8BB;
+      color: #e8c4a8;
       line-height: 1.6;
     }
 
@@ -168,7 +168,7 @@
     .progress-text {
       font-weight: 600;
       margin-bottom: 12px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .progress-bar-bg {
       background-color: #e9e6d3;
@@ -177,7 +177,7 @@
       overflow: hidden;
     }
     .progress-bar-fill {
-      background-color: #AD9846;
+      background-color: #c0603a;
       height: 100%;
       width: 0%;
       transition: width 0.3s ease;
@@ -194,19 +194,19 @@
     .cat-btn {
       background: #ffffff;
       border: 1px solid #c4b460;
-      color: #AD9846;
+      color: #c0603a;
       padding: 8px 16px;
       border-radius: 20px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.2s;
     }
     .cat-btn.active {
-      background: #AD9846;
-      color: #2E3E24;
-      border-color: #AD9846;
+      background: #c0603a;
+      color: #1a1510;
+      border-color: #c0603a;
     }
 
     /* Item Cards */
@@ -235,7 +235,7 @@
     .item-title {
       font-size: 1.2rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .item-status {
       font-size: 0.8rem;
@@ -246,8 +246,8 @@
       color: #777;
     }
     .item-status.status-curious {
-      background: #AD9846;
-      color: #2E3E24;
+      background: #c0603a;
+      color: #1a1510;
     }
     .item-status.status-not-for-me {
       background: #e0e0e0;
@@ -256,7 +256,7 @@
     .item-desc {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 20px;
     }
 
@@ -269,7 +269,7 @@
     .action-btn {
       padding: 10px 20px;
       border-radius: 25px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.9rem;
       cursor: pointer;
@@ -277,12 +277,12 @@
       transition: all 0.2s;
     }
     .btn-curious {
-      background: #FAF8EB;
-      color: #2E3E24;
-      border-color: #AD9846;
+      background: #faf6f0;
+      color: #1a1510;
+      border-color: #c0603a;
     }
     .btn-curious:hover, .btn-curious.selected {
-      background: #AD9846;
+      background: #c0603a;
     }
     .btn-not {
       background: #f5f5f5;
@@ -295,14 +295,14 @@
     }
     .btn-more {
       background: transparent;
-      color: #AD9846;
+      color: #c0603a;
       text-decoration: underline;
       border: none;
       padding: 10px 5px;
       margin-left: auto;
     }
     .btn-more:hover {
-      color: #2E3E24;
+      color: #1a1510;
     }
 
     /* Expandable Content */
@@ -314,7 +314,7 @@
     }
     .item-details h4 {
       font-size: 1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
       margin-top: 16px;
     }
@@ -324,7 +324,7 @@
     .item-details p {
       font-size: 0.9rem;
       line-height: 1.6;
-      color: #555549;
+      color: #7a6a5a;
     }
 
     /* Results Section */
@@ -338,16 +338,16 @@
       margin-top: 40px;
     }
     .results-title {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.5rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
     }
     .results-summary {
       font-size: 1.2rem;
       font-weight: 600;
       margin-bottom: 30px;
-      color: #AD9846;
+      color: #c0603a;
     }
     .top-categories {
       display: flex;
@@ -357,21 +357,21 @@
       margin-bottom: 30px;
     }
     .top-cat-badge {
-      background: #FAF8EB;
-      border: 1px solid #AD9846;
-      color: #2E3E24;
+      background: #faf6f0;
+      border: 1px solid #c0603a;
+      color: #1a1510;
       padding: 8px 16px;
       border-radius: 20px;
       font-weight: 600;
       font-size: 0.9rem;
     }
     .share-btn {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 14px 32px;
       border-radius: 12px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       cursor: pointer;
@@ -385,7 +385,7 @@
       display: block;
       margin-top: 10px;
       font-size: 0.85rem;
-      color: #AD9846;
+      color: #c0603a;
       min-height: 20px;
     }
 
@@ -404,21 +404,21 @@
       margin-bottom: 30px;
     }
     .edu-card h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .edu-card h3 {
       font-size: 1.2rem;
-      color: #AD9846;
+      color: #c0603a;
       margin-top: 24px;
       margin-bottom: 12px;
     }
     .edu-card p {
       font-size: 1rem;
       line-height: 1.7;
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 16px;
     }
 
@@ -433,14 +433,14 @@
     }
     .faq-q {
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 1.1rem;
       margin-bottom: 8px;
     }
     .faq-a {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: #555549;
+      color: #7a6a5a;
     }
 
     /* Footer styles are in shared.css but we ensure proper padding */
@@ -467,7 +467,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
   <nav class="site-nav">
@@ -536,7 +542,7 @@
     </div>
 
     <div class="faq-section">
-      <h2 style="font-family: 'New Standard', Georgia, serif; font-size: 1.8rem; color: #2E3E24; margin-bottom: 24px;">Frequently Asked Questions</h2>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.8rem; color: #1a1510; margin-bottom: 24px;">Frequently Asked Questions</h2>
       <div class="faq-item">
         <div class="faq-q">What is the Kink Curiosity Explorer?</div>
         <div class="faq-a">The Kink Curiosity Explorer is a free, educational, and judgment-free tool designed to help you discover and articulate your interests in various areas of intimate exploration, such as Power Play, Sensory play, Role Play, Exhibition, and Novelty.</div>

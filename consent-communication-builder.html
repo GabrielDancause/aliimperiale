@@ -24,8 +24,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script type="application/ld+json">
@@ -66,7 +66,7 @@
   <style>
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -85,7 +85,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -93,13 +93,13 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Page Header */
     .page-header {
-      background-color: #2E3E24;
-      color: #FAF8EB;
+      background-color: #1a1510;
+      color: #faf6f0;
       padding: 60px 20px 80px;
       text-align: center;
       position: relative;
@@ -111,20 +111,20 @@
       left: 0;
       right: 0;
       height: 40px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 40px 40px 0 0;
     }
     .page-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3.5rem;
       font-weight: 400;
       margin-bottom: 16px;
-      color: #FAF8EB;
+      color: #faf6f0;
     }
     .page-header p {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.15rem;
-      color: #C6C8BB;
+      color: #e8c4a8;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -177,7 +177,7 @@
       height: 30px;
       border-radius: 50%;
       background: #e0e2d5;
-      color: #8a8a7a;
+      color: #7a6a5a;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -188,12 +188,12 @@
       transition: all 0.3s ease;
     }
     .step-dot.active {
-      background: #AD9846;
-      color: #FAF8EB;
+      background: #c0603a;
+      color: #faf6f0;
     }
     .step-dot.completed {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
 
     .step-content {
@@ -210,14 +210,14 @@
     }
 
     .step-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.5rem;
       font-weight: 700;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
     .step-desc {
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 24px;
       font-size: 0.95rem;
       line-height: 1.6;
@@ -229,7 +229,7 @@
     .form-label {
       display: block;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
 
@@ -245,7 +245,7 @@
       background: #fafbfc;
     }
     .option-card:hover {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: #fff;
     }
     .option-card input[type="radio"],
@@ -253,10 +253,10 @@
       display: none;
     }
     .option-card input:checked + .option-content {
-      color: #2E3E24;
+      color: #1a1510;
     }
     .option-card.selected {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: rgba(173, 152, 70, 0.05);
       box-shadow: 0 2px 8px rgba(173, 152, 70, 0.1);
     }
@@ -264,11 +264,11 @@
       font-weight: 600;
       display: block;
       margin-bottom: 4px;
-      color: #2E3E24;
+      color: #1a1510;
     }
     .option-desc {
       font-size: 0.85rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.4;
     }
 
@@ -277,17 +277,17 @@
       padding: 12px 16px;
       border: 1.5px solid #e0e2d5;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
       background: #fafbfc;
-      color: #2E3E24;
+      color: #1a1510;
       outline: none;
       transition: border-color 0.2s;
       resize: vertical;
       min-height: 100px;
     }
     textarea.custom-input:focus {
-      border-color: #AD9846;
+      border-color: #c0603a;
       background: #fff;
     }
 
@@ -302,7 +302,7 @@
     .btn {
       padding: 12px 24px;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.9rem;
       cursor: pointer;
@@ -311,14 +311,14 @@
     }
     .btn-prev {
       background: #e0e2d5;
-      color: #555549;
+      color: #7a6a5a;
     }
     .btn-prev:hover {
       background: #d1d3c4;
     }
     .btn-next {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
     }
     .btn-next:hover {
       background: #3a5030;
@@ -332,7 +332,7 @@
       align-self: start;
     }
     .document-preview {
-      background: #FAF8EB;
+      background: #faf6f0;
       border-radius: 12px;
       padding: 32px;
       box-shadow: 0 4px 16px rgba(46, 62, 36, 0.08);
@@ -340,12 +340,12 @@
       min-height: 500px;
     }
     .document-preview h2 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 24px;
       text-align: center;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 16px;
     }
 
@@ -359,15 +359,15 @@
     .preview-title {
       font-weight: 700;
       font-size: 0.95rem;
-      color: #AD9846;
+      color: #c0603a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-bottom: 8px;
     }
     .preview-text {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
-      color: #2E3E24;
+      color: #1a1510;
       line-height: 1.6;
       white-space: pre-wrap;
       font-style: italic;
@@ -375,7 +375,7 @@
 
     .empty-state {
       text-align: center;
-      color: #8a8a7a;
+      color: #7a6a5a;
       font-style: italic;
       font-size: 0.95rem;
       margin-top: 60px;
@@ -390,7 +390,7 @@
     .btn-action {
       padding: 12px 20px;
       border-radius: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.85rem;
       cursor: pointer;
@@ -400,9 +400,9 @@
       align-items: center;
       gap: 8px;
     }
-    .btn-primary { background: #2E3E24; color: #FAF8EB; }
+    .btn-primary { background: #1a1510; color: #faf6f0; }
     .btn-primary:hover { background: #3a5030; }
-    .btn-secondary { background: #AD9846; color: #2E3E24; }
+    .btn-secondary { background: #c0603a; color: #1a1510; }
     .btn-secondary:hover { background: #c4b460; }
 
     /* Educational Sections */
@@ -420,22 +420,22 @@
       margin-bottom: 40px;
     }
     .info-section h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
       text-align: center;
     }
     .info-section p {
       font-size: 0.95rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.7;
       margin-bottom: 16px;
     }
     .info-section ul {
       margin-left: 20px;
       margin-bottom: 16px;
-      color: #555549;
+      color: #7a6a5a;
       font-size: 0.95rem;
       line-height: 1.7;
     }
@@ -471,7 +471,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
     <nav class="site-nav">
@@ -723,22 +729,22 @@
         <h2>Frequently Asked Questions About Consent</h2>
 
         <div style="margin-bottom: 24px;">
-          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #AD9846; margin-bottom: 8px;">How do I bring up safe words if we aren't doing hardcore BDSM?</h3>
+          <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #c0603a; margin-bottom: 8px;">How do I bring up safe words if we aren't doing hardcore BDSM?</h3>
           <p>Safe words aren't just for BDSM! They are a great tool for any sexual encounter to easily communicate "stop" without having to explain why in the moment. You can simply say, "Hey, just so you know, if I ever say 'red', it means I need to pause or stop."</p>
         </div>
 
         <div style="margin-bottom: 24px;">
-          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #AD9846; margin-bottom: 8px;">What if I change my mind in the middle of sex?</h3>
+          <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #c0603a; margin-bottom: 8px;">What if I change my mind in the middle of sex?</h3>
           <p>You have the absolute right to change your mind at any point, even if you are already naked or in the middle of the act. A healthy partner will immediately stop and check in with you without making you feel guilty.</p>
         </div>
 
         <div style="margin-bottom: 24px;">
-          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #AD9846; margin-bottom: 8px;">Does silence mean yes?</h3>
+          <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #c0603a; margin-bottom: 8px;">Does silence mean yes?</h3>
           <p>No, silence does not mean yes. A lack of a "no" is not consent. Look for enthusiastic participation, verbal confirmation, and positive body language. If you aren't sure, ask: "Are you into this?"</p>
         </div>
 
         <div style="margin-bottom: 24px;">
-          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #AD9846; margin-bottom: 8px;">Is it awkward to ask for consent?</h3>
+          <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #c0603a; margin-bottom: 8px;">Is it awkward to ask for consent?</h3>
           <p>It can feel awkward at first if you aren't used to it, but it actually builds trust and intimacy. Asking "Can I kiss you?" or "Do you like this?" shows respect and often turns partners on because it shows you care about their pleasure.</p>
         </div>
       </div>

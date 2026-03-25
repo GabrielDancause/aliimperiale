@@ -28,7 +28,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -36,7 +36,7 @@
   <style>
   /* Base & Navigation Overrides */
   .site-nav {
-    background: #2E3E24;
+    background: rgba(250,246,240,.93);
     padding: 16px 24px;
     display: flex;
     align-items: center;
@@ -58,7 +58,7 @@
     align-items: center;
   }
   .site-nav .nav-links a {
-    color: #FAF8EB;
+    color: #faf6f0;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
@@ -66,13 +66,13 @@
   }
   .site-nav .nav-links a:hover,
   .site-nav .nav-links a.active {
-    color: #AD9846;
+    color: #c0603a;
   }
   .site-nav .hamburger {
     display: none;
     background: none;
     border: none;
-    color: #FAF8EB;
+    color: #faf6f0;
     font-size: 1.8rem;
     cursor: pointer;
     padding: 0;
@@ -81,9 +81,9 @@
 
   /* Mobile-First Custom CSS for Tool */
   body {
-    background-color: #FAF8EB;
-    color: #2E3E24;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #faf6f0;
+    color: #1a1510;
+    font-family: 'DM Sans', sans-serif;
   }
 
   .tool-header {
@@ -94,7 +94,7 @@
   }
   .tool-header h1 {
     font-size: 2rem;
-    color: #2E3E24;
+    color: #1a1510;
     margin-bottom: 16px;
   }
   .tool-header p {
@@ -115,20 +115,20 @@
     padding: 30px;
     box-shadow: 0 4px 15px rgba(46, 62, 36, 0.08);
     margin-bottom: 30px;
-    border-top: 5px solid #AD9846;
+    border-top: 5px solid #c0603a;
   }
 
   .card-title {
     font-size: 1.5rem;
-    color: #2E3E24;
+    color: #1a1510;
     margin-bottom: 20px;
     border-bottom: 1px solid rgba(173, 152, 70, 0.3);
     padding-bottom: 10px;
   }
 
   .btn-primary {
-    background: #AD9846;
-    color: #FAF8EB;
+    background: #c0603a;
+    color: #faf6f0;
     border: none;
     padding: 14px 28px;
     font-size: 1rem;
@@ -136,7 +136,7 @@
     border-radius: 30px;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     display: inline-block;
     text-align: center;
     width: 100%;
@@ -149,28 +149,28 @@
 
   .btn-secondary {
     background: transparent;
-    color: #2E3E24;
-    border: 2px solid #2E3E24;
+    color: #1a1510;
+    border: 2px solid #1a1510;
     padding: 12px 26px;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 30px;
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     display: inline-block;
     text-align: center;
     width: 100%;
     margin-top: 10px;
   }
   .btn-secondary:hover {
-    background: #2E3E24;
-    color: #FAF8EB;
+    background: #1a1510;
+    color: #faf6f0;
   }
 
   .medical-disclaimer {
     background: #f4f1e1;
-    border-left: 4px solid #AD9846;
+    border-left: 4px solid #c0603a;
     padding: 15px 20px;
     border-radius: 0 8px 8px 0;
     font-size: 0.9rem;
@@ -179,7 +179,7 @@
     margin-bottom: 30px;
   }
   .medical-disclaimer strong {
-    color: #2E3E24;
+    color: #1a1510;
   }
 
   /* Responsive breakpoints */
@@ -194,7 +194,7 @@
       position: absolute;
       top: 64px;
       left: 0;
-      background: #2E3E24;
+      background: #1a1510;
       padding: 20px 0;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
@@ -250,6 +250,12 @@
 
 <body>
 
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+
   <a href="#main-content" class="skip-link">Skip to content</a>
 
   <nav class="site-nav">
@@ -285,10 +291,10 @@
 
         <div style="margin-top: 25px;">
           <label for="partner1Name" style="display:block; font-weight: 600; margin-bottom: 8px;">Your Name (Partner A):</label>
-          <input type="text" id="partner1Name" placeholder="Enter your name" style="width: 100%; max-width: 300px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: 'Montserrat', sans-serif; margin-bottom: 15px;">
+          <input type="text" id="partner1Name" placeholder="Enter your name" style="width: 100%; max-width: 300px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: 'DM Sans', sans-serif; margin-bottom: 15px;">
 
           <label for="partner2Name" style="display:block; font-weight: 600; margin-bottom: 8px;">Your Partner's Name (Partner B):</label>
-          <input type="text" id="partner2Name" placeholder="Enter their name" style="width: 100%; max-width: 300px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: 'Montserrat', sans-serif; margin-bottom: 25px;">
+          <input type="text" id="partner2Name" placeholder="Enter their name" style="width: 100%; max-width: 300px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: 'DM Sans', sans-serif; margin-bottom: 25px;">
         </div>
 
         <button class="btn-primary" onclick="startAssessment()">Start Assessment</button>
@@ -298,15 +304,15 @@
       <div id="assessment-card" class="card" style="display: none;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
           <h2 class="card-title" id="currentPlayerName" style="border: none; margin: 0; padding: 0;">Partner A's Turn</h2>
-          <span style="font-size: 0.9rem; font-weight: 600; color: #AD9846; background: rgba(173, 152, 70, 0.1); padding: 5px 12px; border-radius: 20px;" id="progress-indicator">Category 1 of 25</span>
+          <span style="font-size: 0.9rem; font-weight: 600; color: #c0603a; background: rgba(173, 152, 70, 0.1); padding: 5px 12px; border-radius: 20px;" id="progress-indicator">Category 1 of 25</span>
         </div>
 
-        <div id="category-container" style="background: #FAF8EB; padding: 25px; border-radius: 12px; border-left: 4px solid #AD9846;">
-          <h3 id="category-title" style="font-size: 1.3rem; margin-top: 0; color: #2E3E24;">Family</h3>
+        <div id="category-container" style="background: #faf6f0; padding: 25px; border-radius: 12px; border-left: 4px solid #c0603a;">
+          <h3 id="category-title" style="font-size: 1.3rem; margin-top: 0; color: #1a1510;">Family</h3>
           <p id="category-desc" style="font-size: 1rem; color: #4a5c3e; margin-bottom: 20px;">How important is maintaining close ties with extended family?</p>
 
           <div class="slider-container" style="margin-top: 30px; margin-bottom: 40px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600; color: #2E3E24;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600; color: #1a1510;">
               <span>Not Important (1)</span>
               <span>Crucial (10)</span>
             </div>
@@ -318,7 +324,7 @@
                 width: 24px;
                 height: 24px;
                 border-radius: 50%;
-                background: #AD9846;
+                background: #c0603a;
                 cursor: pointer;
                 transition: transform 0.1s;
               }
@@ -329,12 +335,12 @@
                 width: 24px;
                 height: 24px;
                 border-radius: 50%;
-                background: #AD9846;
+                background: #c0603a;
                 cursor: pointer;
                 border: none;
               }
             </style>
-            <div style="text-align: center; margin-top: 15px; font-size: 1.5rem; font-weight: 700; color: #AD9846;" id="slider-value">5</div>
+            <div style="text-align: center; margin-top: 15px; font-size: 1.5rem; font-weight: 700; color: #c0603a;" id="slider-value">5</div>
           </div>
 
           <div style="display: flex; gap: 15px;">
@@ -356,7 +362,7 @@
       <!-- Results Card -->
       <div id="results-card" class="card" style="display: none;">
         <h2 class="card-title">Your Values Alignment</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 30px;">Overall Compatibility Score: <strong id="overall-score" style="color: #AD9846; font-size: 1.4rem;">--%</strong></p>
+        <p style="font-size: 1.1rem; margin-bottom: 30px;">Overall Compatibility Score: <strong id="overall-score" style="color: #c0603a; font-size: 1.4rem;">--%</strong></p>
 
         <div style="position: relative; height: 350px; width: 100%; margin-bottom: 40px;">
           <canvas id="alignmentChart"></canvas>
@@ -367,7 +373,7 @@
         </div>
 
         <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
-          <h3 style="font-size: 1.3rem; color: #2E3E24; margin-bottom: 15px;">Expert Tips for Navigating Differences</h3>
+          <h3 style="font-size: 1.3rem; color: #1a1510; margin-bottom: 15px;">Expert Tips for Navigating Differences</h3>
           <ul style="line-height: 1.6; color: #4a5c3e; padding-left: 20px;">
             <li style="margin-bottom: 10px;"><strong>Curiosity over Judgment:</strong> When discussing a misaligned value, approach it with curiosity. Ask "Help me understand why this is so important to you" instead of judging their score.</li>
             <li style="margin-bottom: 10px;"><strong>Compromise vs. Sacrifice:</strong> A healthy compromise means you both give a little. If one person is constantly sacrificing a core value, resentment will build.</li>
@@ -386,20 +392,20 @@
 
     <!-- FAQ Section -->
     <div style="max-width: 800px; margin: 60px auto 40px; padding: 0 20px;">
-      <h2 style="font-size: 1.8rem; color: #2E3E24; text-align: center; margin-bottom: 30px;">Frequently Asked Questions</h2>
+      <h2 style="font-size: 1.8rem; color: #1a1510; text-align: center; margin-bottom: 30px;">Frequently Asked Questions</h2>
 
       <div style="margin-bottom: 25px;">
-        <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">What happens if we have a low compatibility score?</h3>
+        <h3 style="font-size: 1.2rem; color: #c0603a; margin-bottom: 10px;">What happens if we have a low compatibility score?</h3>
         <p style="color: #4a5c3e; line-height: 1.6;">A low score simply means you have different priorities in certain areas. It doesn't mean your relationship is doomed! It's a wonderful opportunity to understand each other better. Use the discussion prompts to talk through your differences gracefully.</p>
       </div>
 
       <div style="margin-bottom: 25px;">
-        <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">Is 100% alignment necessary for a healthy relationship?</h3>
+        <h3 style="font-size: 1.2rem; color: #c0603a; margin-bottom: 10px;">Is 100% alignment necessary for a healthy relationship?</h3>
         <p style="color: #4a5c3e; line-height: 1.6;">Absolutely not. While it's helpful to be aligned on dealbreakers (like having kids or financial security), differences in lifestyle, hobbies, and socialization can actually create a beautiful balance in a relationship. The key is mutual respect for those differences.</p>
       </div>
 
       <div style="margin-bottom: 25px;">
-        <h3 style="font-size: 1.2rem; color: #AD9846; margin-bottom: 10px;">Can our core values change over time?</h3>
+        <h3 style="font-size: 1.2rem; color: #c0603a; margin-bottom: 10px;">Can our core values change over time?</h3>
         <p style="color: #4a5c3e; line-height: 1.6;">Yes! As you grow, experience new things, and navigate different life stages, your priorities will naturally shift. We recommend retaking this calculator every year or so as a fun relationship check-in.</p>
       </div>
     </div>
@@ -620,7 +626,7 @@
     let html = '';
 
     if (highlyAligned.length > 0) {
-      html += `<h3 style="color: #2E3E24; font-size: 1.2rem; margin-bottom: 15px;">Where You're Highly Aligned:</h3>`;
+      html += `<h3 style="color: #1a1510; font-size: 1.2rem; margin-bottom: 15px;">Where You're Highly Aligned:</h3>`;
       html += `<div style="background: rgba(173, 152, 70, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 30px;">`;
       highlyAligned.forEach(d => {
         html += `<p style="margin-bottom: 8px; font-size: 0.95rem;"><strong>${d.name}</strong> - ${safeP1Name}: ${d.p1}, ${safeP2Name}: ${d.p2}</p>`;
@@ -637,7 +643,7 @@
       html += `<div style="margin-top: 15px; font-size: 0.9rem; font-style: italic; color: #555;"><strong>Discussion Prompt:</strong> "I noticed we ranked [Category] quite differently. Can you share what a ${misaligned[0]?.p2 || 'score'} looks like or means to you in a relationship?"</div>`;
       html += `</div>`;
     } else {
-      html += `<p style="font-size: 1.1rem; color: #2E3E24; font-weight: bold; margin-bottom: 30px;">Wow! You two are exceptionally aligned across all major categories.</p>`;
+      html += `<p style="font-size: 1.1rem; color: #1a1510; font-weight: bold; margin-bottom: 30px;">Wow! You two are exceptionally aligned across all major categories.</p>`;
     }
 
     document.getElementById('breakdown-container').innerHTML = html;
@@ -673,15 +679,15 @@
             label: p1Name,
             data: p1Data,
             backgroundColor: 'rgba(173, 152, 70, 0.2)',
-            borderColor: '#AD9846',
-            pointBackgroundColor: '#AD9846'
+            borderColor: '#c0603a',
+            pointBackgroundColor: '#c0603a'
           },
           {
             label: p2Name,
             data: p2Data,
             backgroundColor: 'rgba(46, 62, 36, 0.2)',
-            borderColor: '#2E3E24',
-            pointBackgroundColor: '#2E3E24'
+            borderColor: '#1a1510',
+            pointBackgroundColor: '#1a1510'
           }
         ]
       },
@@ -693,8 +699,8 @@
             angleLines: { color: 'rgba(46, 62, 36, 0.1)' },
             grid: { color: 'rgba(46, 62, 36, 0.1)' },
             pointLabels: {
-              font: { family: "'Montserrat', sans-serif", size: 10 },
-              color: '#2E3E24'
+              font: { family: "'DM Sans', sans-serif", size: 10 },
+              color: '#1a1510'
             },
             min: 0,
             max: 10,
@@ -707,7 +713,7 @@
         plugins: {
           legend: {
             position: 'top',
-            labels: { font: { family: "'Montserrat', sans-serif" } }
+            labels: { font: { family: "'DM Sans', sans-serif" } }
           }
         }
       }

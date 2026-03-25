@@ -22,8 +22,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap"></noscript>
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
   <script type="application/ld+json">
@@ -77,7 +77,7 @@
   <style>
     /* Navigation */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -96,7 +96,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -104,7 +104,7 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Quiz Layout */
@@ -120,16 +120,16 @@
     }
 
     .quiz-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
     }
 
     .quiz-header p {
       font-size: 1.05rem;
-      color: #555549;
+      color: #7a6a5a;
       line-height: 1.6;
       max-width: 600px;
       margin: 0 auto;
@@ -157,9 +157,9 @@
     }
 
     #start-screen h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       font-weight: 400;
       margin-bottom: 16px;
     }
@@ -167,7 +167,7 @@
     #start-screen p {
       font-size: 0.95rem;
       line-height: 1.7;
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 24px;
     }
 
@@ -175,11 +175,11 @@
     .btn-primary {
       display: inline-block;
       padding: 14px 32px;
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       border-radius: 10px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
@@ -195,11 +195,11 @@
     .btn-secondary {
       display: inline-block;
       padding: 12px 24px;
-      background: #AD9846;
-      color: #2E3E24;
+      background: #c0603a;
+      color: #1a1510;
       border: none;
       border-radius: 10px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.9rem;
       cursor: pointer;
@@ -217,7 +217,7 @@
 
     .progress-text {
       font-size: 0.85rem;
-      color: #8a8a7a;
+      color: #7a6a5a;
       font-weight: 600;
       margin-bottom: 8px;
       text-align: right;
@@ -233,17 +233,17 @@
 
     .progress-bar-fill {
       height: 100%;
-      background: #AD9846;
+      background: #c0603a;
       width: 0%;
       transition: width 0.3s ease;
       border-radius: 4px;
     }
 
     .question-text {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.4rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 24px;
       line-height: 1.4;
     }
@@ -257,12 +257,12 @@
     .option-btn {
       text-align: left;
       padding: 16px 20px;
-      background: #FAF8EB;
+      background: #faf6f0;
       border: 1px solid rgba(46, 62, 36, 0.1);
       border-radius: 12px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
-      color: #2E3E24;
+      color: #1a1510;
       cursor: pointer;
       transition: background 0.15s, border-color 0.15s, transform 0.15s;
       line-height: 1.5;
@@ -270,7 +270,7 @@
 
     .option-btn:hover {
       background: #f0eee1;
-      border-color: #AD9846;
+      border-color: #c0603a;
       transform: translateX(4px);
     }
 
@@ -283,10 +283,10 @@
     }
 
     .results-header h2 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 2.8rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 8px;
     }
 
@@ -294,7 +294,7 @@
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 600;
     }
 
@@ -313,7 +313,7 @@
       width: 140px;
       font-size: 0.85rem;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       text-align: right;
     }
 
@@ -334,33 +334,33 @@
     .fill-assertive { background: #5c7b48; }
     .fill-passive { background: #8ba699; }
     .fill-aggressive { background: #d46b5a; }
-    .fill-passive-aggressive { background: #AD9846; }
+    .fill-passive-aggressive { background: #c0603a; }
 
     .bar-value {
       width: 40px;
       font-size: 0.85rem;
-      color: #555549;
+      color: #7a6a5a;
       font-weight: 500;
     }
 
     .result-content h3 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.4rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin: 24px 0 12px;
     }
 
     .result-content p {
       font-size: 0.95rem;
       line-height: 1.7;
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 16px;
     }
 
     .script-box {
-      background: #FAF8EB;
-      border-left: 4px solid #AD9846;
+      background: #faf6f0;
+      border-left: 4px solid #c0603a;
       padding: 16px 20px;
       border-radius: 0 8px 8px 0;
       margin: 20px 0;
@@ -370,15 +370,15 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 700;
       margin-bottom: 8px;
     }
 
     .script-box .script-text {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       font-style: italic;
     }
 
@@ -398,10 +398,10 @@
     }
 
     .edu-section h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -417,7 +417,7 @@
 
     .edu-card h3 {
       font-size: 1.1rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 12px;
       display: flex;
       align-items: center;
@@ -427,19 +427,19 @@
     .edu-card p {
       font-size: 0.95rem;
       line-height: 1.7;
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 10px;
     }
 
     /* FAQ Section */
     .faq-section { max-width: 800px; margin: 60px auto; padding: 0 20px; }
-    .faq-section h2 { font-family: 'New Standard', Georgia, serif; font-size: 1.8rem; font-weight: 400; color: #2E3E24; margin-bottom: 30px; text-align: center; }
+    .faq-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.8rem; font-weight: 400; color: #1a1510; margin-bottom: 30px; text-align: center; }
     .faq-item { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(46, 62, 36, 0.1); }
     .faq-item:last-child { border-bottom: none; }
-    .faq-item h3 { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; color: #2E3E24; margin-bottom: 12px; font-weight: 600; }
-    .faq-item p { font-size: 0.95rem; line-height: 1.7; color: #555549; }
+    .faq-item h3 { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; color: #1a1510; margin-bottom: 12px; font-weight: 600; }
+    .faq-item p { font-size: 0.95rem; line-height: 1.7; color: #7a6a5a; }
     .partner-block { background: #f4f7f2; border: 1px solid #c2d1b8; border-radius: 12px; padding: 24px; margin: 30px 0; text-align: center; }
-    .partner-block h3 { color: #5c7b48; margin-bottom: 12px; font-family: 'New Standard', Georgia, serif; font-size: 1.4rem; }
+    .partner-block h3 { color: #5c7b48; margin-bottom: 12px; font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; }
 
     /* Mobile Responsive */
     @media (max-width: 600px) {
@@ -457,6 +457,12 @@
   </style>
 </head>
 <body>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
   <!-- Navigation -->
     <nav class="site-nav">
     <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32"></a>
@@ -520,7 +526,7 @@
           <button class="btn-secondary" id="retake-btn">Retake Quiz</button>
         </div>
         <p id="share-feedback" style="text-align:center; color:#5c7b48; font-size:0.85rem; margin-top:10px; display:none;">Copied to clipboard!</p>
-        <p id="partner-feedback" style="text-align:center; color:#AD9846; font-size:0.85rem; margin-top:10px; display:none;">Partner link copied to clipboard! Send it to them!</p>
+        <p id="partner-feedback" style="text-align:center; color:#c0603a; font-size:0.85rem; margin-top:10px; display:none;">Partner link copied to clipboard! Send it to them!</p>
       </div>
     </div>
   </main>
@@ -820,7 +826,7 @@
       },
       "passive-aggressive": {
         title: "Passive-Aggressive",
-        color: "#AD9846",
+        color: "#c0603a",
         desc: "You express anger or resentment indirectly rather than openly addressing the issue. You might use sarcasm, the silent treatment, or subtle sabotage to make your point.",
         script: "Instead of sighing loudly or giving the silent treatment, try 'I'm actually feeling upset about X. Can we talk about it?'",
         shift: "Acknowledge your anger. It's okay to be mad! But forcing your partner to guess why you're mad is a trap. Practice saying 'I am angry because...' directly.",

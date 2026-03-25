@@ -31,14 +31,14 @@
   <!-- Fonts & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="preload" as="style" href="shared.css">
   <link rel="stylesheet" href="shared.css">
 
   <style>
     /* Navigation Styles (from shared CSS) */
     .site-nav {
-      background: #2E3E24;
+      background: rgba(250,246,240,.93);
       padding: 16px 24px;
       display: flex;
       align-items: center;
@@ -57,7 +57,7 @@
       list-style: none;
     }
     .site-nav .nav-links a {
-      color: #C6C8BB;
+      color: #e8c4a8;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -65,26 +65,26 @@
     }
     .site-nav .nav-links a:hover,
     .site-nav .nav-links a.active {
-      color: #FAF8EB;
+      color: #faf6f0;
     }
 
     /* Page Specific Styles */
     .page-header {
       text-align: center;
       padding: 60px 20px 40px;
-      background-color: #FAF8EB;
+      background-color: #faf6f0;
     }
     .page-header h1 {
-      font-family: 'The Bloomington', cursive;
+      font-family: 'DM Serif Display', cursive;
       font-size: 3rem;
       font-weight: 400;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 16px;
     }
     .page-header p {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.1rem;
-      color: #555549;
+      color: #7a6a5a;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -105,31 +105,31 @@
       margin-bottom: 40px;
     }
     .card h2 {
-      font-family: 'New Standard', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-bottom: 20px;
-      border-bottom: 2px solid #AD9846;
+      border-bottom: 2px solid #c0603a;
       padding-bottom: 10px;
       display: inline-block;
     }
     .card h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1.2rem;
-      color: #2E3E24;
+      color: #1a1510;
       margin-top: 24px;
       margin-bottom: 12px;
     }
     .card p {
       font-size: 0.95rem;
       line-height: 1.7;
-      color: #555549;
+      color: #7a6a5a;
       margin-bottom: 16px;
     }
     .card ul, .card ol {
       margin-left: 20px;
       margin-bottom: 16px;
-      color: #555549;
+      color: #7a6a5a;
       font-size: 0.95rem;
       line-height: 1.7;
     }
@@ -137,7 +137,7 @@
       margin-bottom: 8px;
     }
     .card a {
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 600;
       text-decoration: none;
       transition: color 0.2s;
@@ -149,11 +149,11 @@
 
     /* Buttons */
     .btn-primary {
-      background: #2E3E24;
-      color: #FAF8EB;
+      background: #1a1510;
+      color: #faf6f0;
       border: none;
       padding: 12px 24px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
       font-weight: 600;
       border-radius: 8px;
@@ -178,7 +178,7 @@
       display: block;
       margin-top: 10px;
       font-size: 0.85rem;
-      color: #AD9846;
+      color: #c0603a;
       font-weight: 500;
       opacity: 0;
       transition: opacity 0.3s;
@@ -186,7 +186,7 @@
 
     /* Interactive Tool Styles */
     .tool-container {
-      background: #FAF8EB;
+      background: #faf6f0;
       padding: 20px;
       border-radius: 12px;
       border: 1px solid #e0dfd5;
@@ -199,18 +199,18 @@
       display: block;
       font-weight: 600;
       margin-bottom: 8px;
-      color: #2E3E24;
+      color: #1a1510;
       font-size: 0.95rem;
     }
     .input-group input, .input-group select {
       width: 100%;
       padding: 12px;
       border-radius: 8px;
-      border: 1px solid #C6C8BB;
+      border: 1px solid #e8c4a8;
       background: #fff;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem;
-      color: #2E3E24;
+      color: #1a1510;
       outline: none;
     }
     .results-box {
@@ -233,7 +233,7 @@
       background: #f9f9f9;
       padding: 16px;
       font-weight: 600;
-      color: #2E3E24;
+      color: #1a1510;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -332,7 +332,13 @@
   </script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#2E3E24;color:#FAF8EB;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
+
+<div class="bar">
+  ✨ Exclusive content, early access & real talk — <a href="https://www.patreon.com/c/aliimperiale">Join the Patreon</a>
+</div>
+
+
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:10000;padding:8px 16px;background:#1a1510;color:#faf6f0;font-family:Montserrat,sans-serif;font-size:0.9rem;text-decoration:none;border-radius:0 0 8px 0'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden'">Skip to content</a>
 
   <!-- Navigation -->
     <nav class="site-nav">
@@ -499,8 +505,8 @@
       </div>
 
       <div id="resource-results" class="results-box">
-        <h3 style="margin-top: 0; color: #2E3E24;">Recommended Directories</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 12px; color: #555549;">We recommend starting with these verified global and national databases to find care in <strong id="display-location">your area</strong>:</p>
+        <h3 style="margin-top: 0; color: #1a1510;">Recommended Directories</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 12px; color: #7a6a5a;">We recommend starting with these verified global and national databases to find care in <strong id="display-location">your area</strong>:</p>
         <ul id="dynamic-resource-list" style="list-style-type: none; margin-left: 0; padding-left: 0;">
           <!-- Dynamically populated -->
         </ul>
@@ -664,8 +670,8 @@
         }
 
         li.innerHTML = `
-          <a href="${linkUrl}" target="_blank" rel="noopener" style="color: #AD9846; font-weight: 600; text-decoration: none; display: block; margin-bottom: 4px; font-size: 1.05rem;">${res.name} &rarr;</a>
-          <span style="font-size: 0.85rem; color: #555549;">${res.desc}</span>
+          <a href="${linkUrl}" target="_blank" rel="noopener" style="color: #c0603a; font-weight: 600; text-decoration: none; display: block; margin-bottom: 4px; font-size: 1.05rem;">${res.name} &rarr;</a>
+          <span style="font-size: 0.85rem; color: #7a6a5a;">${res.desc}</span>
         `;
         list.appendChild(li);
       });
