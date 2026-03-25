@@ -476,17 +476,18 @@
   <script>if(sessionStorage.getItem('hide-announcement')==='1'){document.getElementById('announcement-bar').style.display='none'}</script>
 
   <!-- Navigation -->
-  <nav class="site-nav" style="background: #1a1510; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;">
-    <a href="/"><img class="nav-logo" src="logo-beige.webp" alt="Ali Imperiale" width="112" height="32" style="height: 32px; opacity: 0.9;"></a>
-    <ul class="nav-links" style="display: flex; gap: 24px; list-style: none; margin: 0; padding: 0;">
-      <li><a href="/" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'DM Sans', sans-serif;">Home</a></li>
-      <li><a href="/blog/" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'DM Sans', sans-serif;">Blog</a></li>
-      <li><a href="/about.html" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'DM Sans', sans-serif;">About</a></li>
-      <li><a href="https://www.youtube.com/@aliimperiale" target="_blank" rel="noopener" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'DM Sans', sans-serif;">YouTube</a></li>
-      <li><a href="/open-and-honest.html" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'DM Sans', sans-serif;">Course</a></li>
-      <li><a href="/reads.html" style="color: #e8c4a8; text-decoration: none; font-size: 0.85rem; font-weight: 500; font-family: 'DM Sans', sans-serif;">Reads</a></li>
+  <nav>
+  <div class="nav-wrap">
+    <a href="/" class="nav-logo">Ali <em>Imperiale</em></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="https://www.youtube.com/@aliimperiale">YouTube</a></li>
+      <li><a href="https://www.patreon.com/c/aliimperiale" class="nav-pill">Join Patreon</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
 
   <main id="main-content">
     <div class="generator-header">

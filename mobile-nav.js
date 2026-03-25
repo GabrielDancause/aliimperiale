@@ -6,13 +6,16 @@
   var links = nav.querySelector('.nav-links');
   if (!links) return;
 
+  // Find the best container to append to (nav-wrap if exists, else nav itself)
+  var container = nav.querySelector('.nav-wrap') || nav;
+
   // Create hamburger button
   var btn = document.createElement('button');
   btn.className = 'nav-hamburger';
   btn.setAttribute('aria-label', 'Toggle menu');
   btn.setAttribute('aria-expanded', 'false');
   btn.innerHTML = '<span></span><span></span><span></span>';
-  nav.appendChild(btn);
+  container.appendChild(btn);
 
   function closeMenu() {
     links.classList.remove('nav-open');
@@ -26,7 +29,6 @@
     btn.setAttribute('aria-expanded', 'true');
   }
 
-  // Toggle menu — use explicit open/close instead of toggle
   btn.addEventListener('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -42,7 +44,7 @@
     a.addEventListener('click', closeMenu);
   });
 
-  // Close when tapping outside the nav
+  // Close when tapping outside
   document.addEventListener('click', function(e) {
     if (!nav.contains(e.target) && links.classList.contains('nav-open')) {
       closeMenu();
